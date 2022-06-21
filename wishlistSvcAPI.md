@@ -1,0 +1,467 @@
+# **Wishlist API**
+The Wishlist resource stores information about a customer's wishlist, which includes the list products which the customer wish to buy.
+
+one customer may have mulitple wishlist and also need a valid customer to create a wishlist.
+
+## **Representations**
+
+All representations are JSON objects submitted or received as payload to API requests or responses.
+
+##  Wishlist
+
+
+<details>
+ <summary>WishList</summary>
+ 
+```customerId``` - string - the unique id of the customer
+
+```customerRef``` - string - the reference of the customer
+
+```deleted``` - boolean - to indicate the wishlist is deleted to not
+
+```description``` - string - description of the wishlist
+
+```id``` - string - the unique id of the wishlist. it will automatically generate at the time of wishlist creation.
+
+```isPrivate``` - boolean 
+
+```name``` - string - name of the wishlist
+
+```wishlistRef``` - string- reference of the wishlist
+
+```attributeGroups```- to add any additional information
+
+</details>
+<details>
+ <summary>WishList Item</summary>
+
+```datePurchased``` - DateTime - the Date of purchase if the wishlist items is purchased.
+
+```wishlistId``` - string - the unique id of the respective wishlist.
+
+```purchased``` - boolean - to indicate the wishlist item is purchased to not
+
+```wishlistItemRef``` - string - the unique reference of the wishlist item
+
+```id``` - string - the unique id of the wishlist item. it will automatically generate at the time of wishlist item creation.
+
+```wishlistRef``` - string- reference of the respective wishlist
+
+</details>
+
+<details>
+ <summary>Product</summary>
+
+```oldVariantId``` - string - the existing product variant id. this needs only incase of updating an existing variant in a wishlist item.
+
+```productId``` - string - the unique id of the product
+
+```productRef``` - string - the unique ref of the product
+
+```selectedVariantId``` - string- the unique id of the product variant which the customer need to add.
+
+```selectedVariantRef``` - string- the unique ref of the product variant which the customer need to add.
+
+</details>
+
+
+
+## Create a Wishlist
+Creates a new wishlist data set in the TWC system, then the wishlist is assigned to the respective customer.
+
+Endpoint: ```/api/wishlists```
+
+Method: ``` POST ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+Sample Request:
+<details>
+<!-- ```markdown  -->
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "customerId": "string",
+  "customerRef": "string",
+  "deleted": true,
+  "description": "string",
+  "id": "string",
+  "isPrivate": true,
+  "name": "string",
+  "wishlistItems": [
+    {
+      "attributeGroups": {
+        "additionalProp1": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        },
+        "additionalProp2": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        },
+        "additionalProp3": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        }
+      },
+      "datePurchased": "2022-06-20T05:55:48.831Z",
+      "id": "string",
+      "product": {
+        "oldVariantId": "string",
+        "productId": "string",
+        "productRef": "string",
+        "selectedVariantId": "string",
+        "selectedVariantRef": "string"
+      },
+      "purchased": true,
+      "wishlistId": "string",
+      "wishlistItemRef": "string",
+      "wishlistRef": "string"
+    }
+  ],
+  "wishlistRef": "string"
+}
+</details>
+
+Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+
+
+### Update a Wishlist
+Updates Wishlist data set in the TWC system.
+
+Endpoint: ```/api/wishlists```
+
+Method: ``` PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+Sample Request:
+
+<!-- ```markdown  -->
+<details>
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "customerId": "string",
+  "customerRef": "string",
+  "deleted": true,
+  "description": "string",
+  "id": "string",
+  "isPrivate": true,
+  "name": "string",
+  "wishlistItems": [
+    {
+      "attributeGroups": {
+        "additionalProp1": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        },
+        "additionalProp2": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        },
+        "additionalProp3": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        }
+      },
+      "datePurchased": "2022-06-20T06:29:49.032Z",
+      "id": "string",
+      "product": {
+        "oldVariantId": "string",
+        "productId": "string",
+        "productRef": "string",
+        "selectedVariantId": "string",
+        "selectedVariantRef": "string"
+      },
+      "purchased": true,
+      "wishlistId": "string",
+      "wishlistItemRef": "string",
+      "wishlistRef": "string"
+    }
+  ],
+  "wishlistRef": "string"
+}
+</details>
+<!-- ``` -->
+
+Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+
+### Delete Wishlist by ID/Ref
+Deleting a Wishlist marks the wishlist as deleted and produces the HTTP response confirming the action.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlist```
+
+Method: ``` DELETE ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
+
+Response : `200 OK ,204	No Content, 401 Unauthorized, 403 Forbidden`
+
+### Find Wishlist by id/wishlistRef
+Returns the  wishlist belongs to the given  Id and Ref.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlists/```
+
+Method: ``` GET ``` 
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `          
+
+Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+
+
+### Find Wishlist by CustomerId
+Returns the list of wishlists belongs to the given customer id.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlists/customer/{customerId}```
+
+Method: ``` GET ``` 
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+
+
+### Find Wishlist by CustomerRef
+Returns the list of wishlists belongs to the given customer reference.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlists/customer/{customerRef}/byref```
+
+Method: ``` GET ``` 
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+
+
+## Create a Wishlist Item
+Creates a new wishlist item data set  into an existing wishlist in the TWC system.
+
+Endpoint: ```/api/wishlist/items```
+
+Method: ``` POST ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+Sample Request:
+
+<!-- ```markdown  -->
+<details>
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "datePurchased": "2022-06-20T06:46:40.643Z",
+  "id": "string",
+  "product": {
+    "oldVariantId": "string",
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "wishlistId": "string",
+  "wishlistItemRef": "string",
+  "wishlistRef": "string"
+}
+
+</details>
+<!-- ``` -->
+
+Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+
+
+### Update a Wishlist Item
+Updates Wishlist item data set in the TWC system.
+
+Endpoint: ```/api/wishlist/items```
+
+Method: ``` PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+Sample Request:
+
+<!-- ```markdown  -->
+<details>
+
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "datePurchased": "2022-06-20T06:51:56.516Z",
+  "id": "string",
+  "product": {
+    "oldVariantId": "string",
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "wishlistId": "string",
+  "wishlistItemRef": "string",
+  "wishlistRef": "string"
+}
+<!-- ``` -->
+</details>
+
+Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+
+### Delete Wishlist Item by wishlist Id and item Id
+Deleting a Wishlist item marks the item as deleted and produces the HTTP response confirming the action.
+If the wishlist/item does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlist/{wishlistId}/items/{id}```
+
+Method: ``` DELETE ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+Request Parameters: `Id  : Wishlist item Id, wishlistId : Wishlist Id`
+
+Response : `200 OK ,204	No Content, 401 Unauthorized, 403 Forbidden`
+
+
+
+### Find Wishlist Item by WishlistId and Item Id
+Returns the  wishlist item belongs to the given wishlist id and item id
+If the item does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```​/api​/wishlist​/{wishlistId}​/items​/{id}```
+
+Method: ``` GET ``` 
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+
+
+
