@@ -9,7 +9,7 @@ An order is a customer's request to purchase one or more products from a shop. Y
 All representations are JSON objects submitted or received as payload to API requests or responses.
 
 <!-- <details> -->
- <!-- <summary><font size="4">Import Batch Resource</font></summary> -->
+ <!-- <summary><font size="4">Expand for details</font></summary> -->
 
 `acceptsMarketing` - boolean - option to enable of disable marketing notifications.
 
@@ -184,6 +184,102 @@ All representations are JSON objects submitted or received as payload to API req
 
 ## **REST Endpoints**
 
-- ## **Impex Batch Resource**
+- ## **Order Item Resource**
+
+## Validate Order Entry
+
+Endpoint: ```​/api​/v1​/orders​/entries​/validate```
+
+Method: ```POST ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+- ## **Order Resource**
+
+## Create an order
+
+Endpoint: ```​/api​/v1​/orders​```
+
+Method: ```POST ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+## Updates an order
+
+Endpoint: ```​/api​/v1​/orders​```
+
+Method: ```PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+## FInd an orders
+
+Endpoint: ```​/api​/v1​/orders```
+
+Method: ```GET ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+
+## Search orders
+
+Endpoint: ```​​/api​/v1​/orders​/search```
+
+Method: ```GET ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+## Validate Order
+
+Endpoint: ```​​/api​/v1​/orders​/validate```
+
+Method: ```POST ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+- ## **Order Item**
+
+## Search entries for an order
+Endpoint: ```​​/api​/v1​/orders​/entries```
+
+Method: ```GET ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+## Create an order entry
+Endpoint: ```​​/api​/v1​/orders​/entries```
+
+Method: ```POST ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+## Update an order entry
+Endpoint: ```​​/api​/v1​/orders​/entries```
+
+Method: ```PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+## Search an order entry
+
+Endpoint: ```​​/api​/v1​/orders​/entry```
+
+Method: ```GET ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+## Delete entry
+
+Endpoint: ```​​/api​/v1​/orders​/entry```
+
+Method: ```DELETE ```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+
+***
+[Back to Index](index.md)
+
+
 
 

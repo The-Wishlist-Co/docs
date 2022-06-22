@@ -61,11 +61,11 @@ All representations are JSON objects submitted or received as payload to API req
 - product_variant
 - price
 
-`customer` - [customer ](customer.md) 
+`customer` -[inventory Level ](inventory.md) 
 
-`products` -
+`products` - [products](inventory.md)
 
-`variants` -
+`variants` - [product variants](inventory.md)
 
 `orders` -
 
@@ -1253,3 +1253,6 @@ Request Parameters : `Id : id`
 
 Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
+
+***
+[Back to Index](index.md)

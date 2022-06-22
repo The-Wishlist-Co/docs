@@ -1,6 +1,6 @@
 
 # **Price API**
-The Price resource stores information about a particular product variant price details.
+The Price resource stores information about price details of  particular product variant.
 
 
 ## **Representations**
@@ -155,3 +155,5 @@ Method: ``` GET ```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+
+***[Back to Index](index.md)

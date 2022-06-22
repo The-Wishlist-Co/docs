@@ -1769,3 +1769,6 @@ OAuth 2.0 Scopes:
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Response : `200 OK ,204	No Content, 401 Unauthorized, 403 Forbidden`
+
+***
+[Back to Index](index.md)
