@@ -137,3 +137,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 
 
+***
+[Back to Shopify connector](../ShopifyConnector.md)
+
+[Back to Index](index.md)
