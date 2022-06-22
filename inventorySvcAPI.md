@@ -82,16 +82,23 @@ All representations are JSON objects submitted or received as payload to API req
 
 </details>
 
+## **REST Endpoints**
+
+- ## **Location Resource**
+
 ## Create an inventory Location
 
-Method: ``` POST ``` 
+Method : ``` POST ``` 
 
-Endpoint: ```/api/location```
+Endpoint : ```/api/location```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication`
 
-Sample Request :
+
 <details> 
+<summary> Request Payload : </summary>
+
+```json
 {
   "address": {
     "building": "string",
@@ -168,20 +175,30 @@ Sample Request :
   "locationRef": "string",
   "locationType": "STORE"
 }   
+```
 </details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details> 
+ <summary> Response : </summary>
+
+``` json
+200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+
+```
+</details> 
+
 
 ## Create multiple inventory Locations
 
-Method: ``` POST ``` 
+Method : ``` POST ``` 
 
-Endpoint: ```/api/locations```
+Endpoint : ```/api/locations```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication`
+<details> 
+<summary> Request Payload : </summary>
 
-Sample Request :
-<details>
+```json
 [
   {
     "address": {
@@ -260,49 +277,33 @@ Sample Request :
     "locationType": "STORE"
   }
 ]
+```
 </details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details> 
+ <summary> Response : </summary>
+ 
+``` json
 
+200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
 
+```
+</details> 
 
-### Delete Inventory Location
-
-Endpoint: ```/api/location```
-
-Method: ``` DELETE ```
-
-OAuth 2.0 Scopes: `Tenant authentication`
-
-Request Parameters: `id  : Location Id, locationRef : Location reference`
-
-Response : `200 OK ,204	No Content, 401 Unauthorized, 403 Forbidden`
-
-
-
-### Find Inventory Location by id and locationRef
-
-Endpoint: ```/api/location```
-
-Method: ``` GET ```
-
-OAuth 2.0 Scopes: `Tenant authentication`
-
-Request Parameters: `id  : Location Id, locationRef : Location reference`
-
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 
 ## Validate an inventory Location
 
-Method: ``` POST ``` 
+Method : ``` POST ``` 
 
-Endpoint: ```​/api​/location​/validate```
+Endpoint : ```​/api​/location​/validate```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication`
 
-Sample Request :
-<details>
+<details> 
+<summary> Request Payload : </summary>
+
+```json
 {
   "address": {
     "building": "string",
@@ -379,21 +380,87 @@ Sample Request :
   "locationRef": "string",
   "locationType": "STORE"
 }
+```
 </details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details> 
+ <summary> Response : </summary>
+ 
+``` json
+200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+
+```
+</details> 
 
 
-## Create an inventory level
+## Find Inventory Location by id and locationRef
 
-Method: ``` POST ``` 
+Endpoint : ```/api/location```
 
-Endpoint: ```/api/stocklevel```
+Method : ``` GET ```
+
+OAuth 2.0 Scopes : `Tenant authentication`
+
+<details> 
+ <summary> Request Parameters : </summary>
+ 
+``` json
+"id": "{{Location Id}}",
+"locationRef":"{{Location reference}}"
+```
+</details> 
+
+<details> 
+ <summary> Response : </summary>
+ 
+``` json
+200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+
+```
+</details> 
+
+
+## Delete Inventory Location
+
+Endpoint: ```/api/location```
+
+Method: ``` DELETE ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-Sample Request :
-<details>
+
+<details> 
+ <summary> Request Parameters : </summary>
+ 
+``` json
+"id": "{{Location Id}}",
+"locationRef":"{{Location reference}}"
+```
+</details> 
+
+<details> 
+ <summary> Response : </summary>
+ 
+``` json
+200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+
+```
+</details> 
+
+- ## **Stock Level Resource**
+
+## Create an inventory level
+
+Method : ``` POST ``` 
+
+Endpoint : ```/api/stocklevel```
+
+OAuth 2.0 Scopes : `Tenant authentication`
+
+<details> 
+<summary> Request Payload : </summary>
+
+```json
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -463,102 +530,30 @@ Sample Request :
   "stockOnHand": 0,
   "stockRef": "string"
 }
+```
 </details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details> 
+ <summary> Response : </summary>
+ 
+``` json
+200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
 
-
-## Update an inventory level
-
-Method: ``` PUT ``` 
-
-Endpoint: ```/api/stocklevel```
-
-OAuth 2.0 Scopes: `Tenant authentication`
-
-Sample Request :
-<details>
-{
-  "attributeGroups": {
-    "additionalProp1": {
-      "attribute_group": "string",
-      "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
-      },
-      "is_obsolete": true
-    },
-    "additionalProp2": {
-      "attribute_group": "string",
-      "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
-      },
-      "is_obsolete": true
-    },
-    "additionalProp3": {
-      "attribute_group": "string",
-      "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
-      },
-      "is_obsolete": true
-    }
-  },
-  "deleted": true,
-  "excludedQuantity": 0,
-  "futureStock": true,
-  "id": "string",
-  "reserved": 0,
-  "status": "IN_STOCK",
-  "stockDate": "2022-06-20T09:51:02.857Z",
-  "stockOnHand": 0,
-  "stockRef": "string"
-}
-</details>
-
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+```
+</details> 
 
 ## Create Multiple inventory level
 
-Method: ``` POST ``` 
+Method : ``` POST ``` 
 
-Endpoint: ```/api/stocklevels```
+Endpoint : ```/api/stocklevels```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication`
 
-Sample Request :
-<details>
+<details> 
+<summary> Request Payload : </summary>
+
+```json
 [
   {
     "attributeGroups": {
@@ -632,7 +627,14 @@ Sample Request :
 ]
 </details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details> 
+ <summary> Response : </summary>
+ 
+``` json
+200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+
+```
+</details> 
 
 ## Validate inventory level
 
@@ -642,8 +644,10 @@ Endpoint: ```/api/stocklevel/validate```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-Sample Request :
-<details>
+<details> 
+<summary> Request Payload : </summary>
+
+```json
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -713,12 +717,111 @@ Sample Request :
   "stockOnHand": 0,
   "stockRef": "string"
 }
+```
 </details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details> 
+ <summary> Response : </summary>
+ 
+``` json
+200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+
+```
+</details> 
+
+## Update an inventory level
+
+Method: ``` PUT ``` 
+
+Endpoint: ```/api/stocklevel```
+
+OAuth 2.0 Scopes: `Tenant authentication`
+
+<details> 
+<summary> Request Payload : </summary>
+
+```json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "deleted": true,
+  "excludedQuantity": 0,
+  "futureStock": true,
+  "id": "string",
+  "reserved": 0,
+  "status": "IN_STOCK",
+  "stockDate": "2022-06-20T09:51:02.857Z",
+  "stockOnHand": 0,
+  "stockRef": "string"
+}
+```
+</details>
+
+<details> 
+ <summary> Response : </summary>
+ 
+``` json
+200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+
+```
+</details> 
 
 
-### Find Inventory level by id and stockRef
+## Find Inventory level by id and stockRef
 
 Endpoint: ```/api/stocklevel```
 
@@ -726,11 +829,25 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-Request Parameters: `id  : inventory level Id, stockRef : Inventory level reference`
+<details> 
+ <summary> Request Parameters : </summary>
+ 
+``` json
+"id": "{{inventory level Id}}",
+"locationRef": "{{Inventory level reference}}"
+```
+</details> 
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details> 
+ <summary> Response : </summary>
+ 
+``` json
+200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
 
-### Find Inventory level for product and location
+```
+</details> 
+
+## Find Inventory level for product and location
 
 Endpoint: ```/api/product/stocklevels```
 
@@ -740,9 +857,27 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `locationId  : inventory location Id, locationRef : Inventory location reference,productId: unique Product Id,productRef: unique product reference`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details> 
+ <summary> Request Parameters : </summary>
+ 
+``` json
+"locationId"  : "{{inventory location Id}}",
+"locationRef" : "{{Inventory location reference}}",
+"productId": "{{unique Product Id}}",
+"productRef": "{{unique product reference}}"
+```
+</details> 
 
-### Find Aggregated inventory level for a product variant
+<details> 
+ <summary> Response : </summary>
+ 
+``` json
+200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+
+```
+</details> 
+
+## Find Aggregated inventory level for a product variant
 
 Endpoint: ```/api/stocklevel/{id}```
 
@@ -750,7 +885,22 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details> 
+ <summary> Request Parameters : </summary>
+ 
+``` json
+"id": "{{inventory level Id}}"
+```
+</details> 
+
+<details> 
+ <summary> Response : </summary>
+ 
+``` json
+200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+
+```
+</details> 
 
 
 ***
