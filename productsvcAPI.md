@@ -3556,6 +3556,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Payload</summary>
  
  ```
+ 
  {
   "active": true,
   "additionalImageLink": "string",
@@ -5072,7 +5073,3 @@ OAuth 2.0 Scopes: `Tenant authentication`
 </details> 
 
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
-
-
-***
-[Back to Index](index.md)

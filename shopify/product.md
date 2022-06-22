@@ -62,6 +62,381 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Payload</summary>
+ 
+```json
+{
+  "admin_graphql_api_id": "string",
+  "body_html": "string",
+  "created_at": "2022-06-22T10:19:06.867Z",
+  "handle": "string",
+  "id": "string",
+  "image": {
+    "admin_graphql_api_id": "string",
+    "alt": "string",
+    "created_at": "string",
+    "height": 0,
+    "id": "string",
+    "position": 0,
+    "product_id": "string",
+    "src": "string",
+    "updated_at": "string",
+    "variant_ids": [
+      "string"
+    ],
+    "width": 0
+  },
+  "images": [
+    {
+      "admin_graphql_api_id": "string",
+      "alt": "string",
+      "created_at": "string",
+      "height": 0,
+      "id": "string",
+      "position": 0,
+      "product_id": "string",
+      "src": "string",
+      "updated_at": "string",
+      "variant_ids": [
+        "string"
+      ],
+      "width": 0
+    }
+  ],
+  "options": [
+    {
+      "id": "string",
+      "name": "string",
+      "position": 0,
+      "product_id": "string",
+      "values": [
+        "string"
+      ]
+    }
+  ],
+  "product_type": "string",
+  "published_at": "2022-06-22T10:19:06.867Z",
+  "published_scope": "web",
+  "status": "active",
+  "tags": "string",
+  "template_suffix": "string",
+  "title": "string",
+  "twc_product_id": "string",
+  "updated_at": "2022-06-22T10:19:06.868Z",
+  "variants": [
+    {
+      "admin_graphql_api_id": "string",
+      "barcode": "string",
+      "compare_at_price": 0,
+      "created_at": "2022-06-22T10:19:06.868Z",
+      "fulfillment_service": "string",
+      "grams": 0,
+      "id": "string",
+      "image_id": "string",
+      "inventory_item_id": "string",
+      "inventory_management": "string",
+      "inventory_policy": "string",
+      "inventory_quantity": 0,
+      "old_inventory_quantity": 0,
+      "option1": "string",
+      "option2": "string",
+      "option3": "string",
+      "position": 0,
+      "presentment_prices": [
+        {
+          "compare_at_price": 0,
+          "price": {
+            "amount": 0,
+            "currency_code": "string"
+          }
+        }
+      ],
+      "price": 0,
+      "product_id": "string",
+      "requires_shipping": true,
+      "sku": "string",
+      "tax_code": "string",
+      "taxable": true,
+      "title": "string",
+      "updated_at": "2022-06-22T10:19:06.868Z",
+      "weight": 0,
+      "weight_unit": "string"
+    }
+  ],
+  "vendor": "string"
+}      
+```
+ 
+</details>
+
+<details>
+ <summary>Response - 200 (OK)</summary>
+
+```json
+{
+  "admin_graphql_api_id": "string",
+  "body_html": "string",
+  "created_at": "2022-06-22T11:14:41.935Z",
+  "handle": "string",
+  "id": "string",
+  "image": {
+    "admin_graphql_api_id": "string",
+    "alt": "string",
+    "created_at": "string",
+    "height": 0,
+    "id": "string",
+    "position": 0,
+    "product_id": "string",
+    "src": "string",
+    "updated_at": "string",
+    "variant_ids": [
+      "string"
+    ],
+    "width": 0
+  },
+  "images": [
+    {
+      "admin_graphql_api_id": "string",
+      "alt": "string",
+      "created_at": "string",
+      "height": 0,
+      "id": "string",
+      "position": 0,
+      "product_id": "string",
+      "src": "string",
+      "updated_at": "string",
+      "variant_ids": [
+        "string"
+      ],
+      "width": 0
+    }
+  ],
+  "options": [
+    {
+      "id": "string",
+      "name": "string",
+      "position": 0,
+      "product_id": "string",
+      "values": [
+        "string"
+      ]
+    }
+  ],
+  "product_type": "string",
+  "published_at": "2022-06-22T11:14:41.935Z",
+  "published_scope": "web",
+  "status": "active",
+  "tags": "string",
+  "template_suffix": "string",
+  "title": "string",
+  "twc_product_id": "string",
+  "updated_at": "2022-06-22T11:14:41.935Z",
+  "variants": [
+    {
+      "admin_graphql_api_id": "string",
+      "barcode": "string",
+      "compare_at_price": 0,
+      "created_at": "2022-06-22T11:14:41.935Z",
+      "fulfillment_service": "string",
+      "grams": 0,
+      "id": "string",
+      "image_id": "string",
+      "inventory_item_id": "string",
+      "inventory_management": "string",
+      "inventory_policy": "string",
+      "inventory_quantity": 0,
+      "old_inventory_quantity": 0,
+      "option1": "string",
+      "option2": "string",
+      "option3": "string",
+      "position": 0,
+      "presentment_prices": [
+        {
+          "compare_at_price": 0,
+          "price": {
+            "amount": 0,
+            "currency_code": "string"
+          }
+        }
+      ],
+      "price": 0,
+      "product_id": "string",
+      "requires_shipping": true,
+      "sku": "string",
+      "tax_code": "string",
+      "taxable": true,
+      "title": "string",
+      "updated_at": "2022-06-22T11:14:41.935Z",
+      "weight": 0,
+      "weight_unit": "string"
+    }
+  ],
+  "vendor": "string"
+}  
+  
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 201 (product created)</summary>
+ 
+ ```json
+ {
+  "admin_graphql_api_id": "string",
+  "body_html": "string",
+  "created_at": "2022-06-22T11:14:41.937Z",
+  "handle": "string",
+  "id": "string",
+  "image": {
+    "admin_graphql_api_id": "string",
+    "alt": "string",
+    "created_at": "string",
+    "height": 0,
+    "id": "string",
+    "position": 0,
+    "product_id": "string",
+    "src": "string",
+    "updated_at": "string",
+    "variant_ids": [
+      "string"
+    ],
+    "width": 0
+  },
+  "images": [
+    {
+      "admin_graphql_api_id": "string",
+      "alt": "string",
+      "created_at": "string",
+      "height": 0,
+      "id": "string",
+      "position": 0,
+      "product_id": "string",
+      "src": "string",
+      "updated_at": "string",
+      "variant_ids": [
+        "string"
+      ],
+      "width": 0
+    }
+  ],
+  "options": [
+    {
+      "id": "string",
+      "name": "string",
+      "position": 0,
+      "product_id": "string",
+      "values": [
+        "string"
+      ]
+    }
+  ],
+  "product_type": "string",
+  "published_at": "2022-06-22T11:14:41.937Z",
+  "published_scope": "web",
+  "status": "active",
+  "tags": "string",
+  "template_suffix": "string",
+  "title": "string",
+  "twc_product_id": "string",
+  "updated_at": "2022-06-22T11:14:41.937Z",
+  "variants": [
+    {
+      "admin_graphql_api_id": "string",
+      "barcode": "string",
+      "compare_at_price": 0,
+      "created_at": "2022-06-22T11:14:41.937Z",
+      "fulfillment_service": "string",
+      "grams": 0,
+      "id": "string",
+      "image_id": "string",
+      "inventory_item_id": "string",
+      "inventory_management": "string",
+      "inventory_policy": "string",
+      "inventory_quantity": 0,
+      "old_inventory_quantity": 0,
+      "option1": "string",
+      "option2": "string",
+      "option3": "string",
+      "position": 0,
+      "presentment_prices": [
+        {
+          "compare_at_price": 0,
+          "price": {
+            "amount": 0,
+            "currency_code": "string"
+          }
+        }
+      ],
+      "price": 0,
+      "product_id": "string",
+      "requires_shipping": true,
+      "sku": "string",
+      "tax_code": "string",
+      "taxable": true,
+      "title": "string",
+      "updated_at": "2022-06-22T11:14:41.937Z",
+      "weight": 0,
+      "weight_unit": "string"
+    }
+  ],
+  "vendor": "string"
+}
+ ```
+ </details> 
+
+<details>
+ <summary>Response - 400 (Bad request)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 405 (Invalid input)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+ 
+HTTP Status Code: 
+- 200 OK
+- 201 Product created
+- 400 Invalid status value
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+
+
 ## Add products from shopify to TWC
 The shopify product data is translated and transformed according to the TWC system requiremennts through product section of the shopify connector api. This endpoint is for creating bulk entries at a time.
 Endpoint: ```/api/products/upload-products```
@@ -69,6 +444,169 @@ Endpoint: ```/api/products/upload-products```
 Method: ``` POST ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
+
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Payload</summary>
+ 
+```json
+{
+  "products": [
+    {
+      "admin_graphql_api_id": "string",
+      "body_html": "string",
+      "created_at": "2022-06-22T10:19:24.800Z",
+      "handle": "string",
+      "id": "string",
+      "image": {
+        "admin_graphql_api_id": "string",
+        "alt": "string",
+        "created_at": "string",
+        "height": 0,
+        "id": "string",
+        "position": 0,
+        "product_id": "string",
+        "src": "string",
+        "updated_at": "string",
+        "variant_ids": [
+          "string"
+        ],
+        "width": 0
+      },
+      "images": [
+        {
+          "admin_graphql_api_id": "string",
+          "alt": "string",
+          "created_at": "string",
+          "height": 0,
+          "id": "string",
+          "position": 0,
+          "product_id": "string",
+          "src": "string",
+          "updated_at": "string",
+          "variant_ids": [
+            "string"
+          ],
+          "width": 0
+        }
+      ],
+      "options": [
+        {
+          "id": "string",
+          "name": "string",
+          "position": 0,
+          "product_id": "string",
+          "values": [
+            "string"
+          ]
+        }
+      ],
+      "product_type": "string",
+      "published_at": "2022-06-22T10:19:24.800Z",
+      "published_scope": "web",
+      "status": "active",
+      "tags": "string",
+      "template_suffix": "string",
+      "title": "string",
+      "twc_product_id": "string",
+      "updated_at": "2022-06-22T10:19:24.800Z",
+      "variants": [
+        {
+          "admin_graphql_api_id": "string",
+          "barcode": "string",
+          "compare_at_price": 0,
+          "created_at": "2022-06-22T10:19:24.800Z",
+          "fulfillment_service": "string",
+          "grams": 0,
+          "id": "string",
+          "image_id": "string",
+          "inventory_item_id": "string",
+          "inventory_management": "string",
+          "inventory_policy": "string",
+          "inventory_quantity": 0,
+          "old_inventory_quantity": 0,
+          "option1": "string",
+          "option2": "string",
+          "option3": "string",
+          "position": 0,
+          "presentment_prices": [
+            {
+              "compare_at_price": 0,
+              "price": {
+                "amount": 0,
+                "currency_code": "string"
+              }
+            }
+          ],
+          "price": 0,
+          "product_id": "string",
+          "requires_shipping": true,
+          "sku": "string",
+          "tax_code": "string",
+          "taxable": true,
+          "title": "string",
+          "updated_at": "2022-06-22T10:19:24.800Z",
+          "weight": 0,
+          "weight_unit": "string"
+        }
+      ],
+      "vendor": "string"
+    }
+  ]
+}      
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 400 (Invalid status value)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 405 (Invalid input)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+ 
+HTTP Status Code: 
+- 200 OK
+- 201 created
+- 400 Invalid status value
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+
 
 ## Update an existing product
 Updates an already existing product. If the product does not exist, this method returns a ResourceNotFound error.
@@ -78,6 +616,304 @@ Endpoint: ```/api/products```
 Method: ``` PUT ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
+
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Payload</summary>
+ 
+```json
+{
+  "admin_graphql_api_id": "string",
+  "body_html": "string",
+  "created_at": "2022-06-22T10:19:16.410Z",
+  "handle": "string",
+  "id": "string",
+  "image": {
+    "admin_graphql_api_id": "string",
+    "alt": "string",
+    "created_at": "string",
+    "height": 0,
+    "id": "string",
+    "position": 0,
+    "product_id": "string",
+    "src": "string",
+    "updated_at": "string",
+    "variant_ids": [
+      "string"
+    ],
+    "width": 0
+  },
+  "images": [
+    {
+      "admin_graphql_api_id": "string",
+      "alt": "string",
+      "created_at": "string",
+      "height": 0,
+      "id": "string",
+      "position": 0,
+      "product_id": "string",
+      "src": "string",
+      "updated_at": "string",
+      "variant_ids": [
+        "string"
+      ],
+      "width": 0
+    }
+  ],
+  "options": [
+    {
+      "id": "string",
+      "name": "string",
+      "position": 0,
+      "product_id": "string",
+      "values": [
+        "string"
+      ]
+    }
+  ],
+  "product_type": "string",
+  "published_at": "2022-06-22T10:19:16.410Z",
+  "published_scope": "web",
+  "status": "active",
+  "tags": "string",
+  "template_suffix": "string",
+  "title": "string",
+  "twc_product_id": "string",
+  "updated_at": "2022-06-22T10:19:16.410Z",
+  "variants": [
+    {
+      "admin_graphql_api_id": "string",
+      "barcode": "string",
+      "compare_at_price": 0,
+      "created_at": "2022-06-22T10:19:16.410Z",
+      "fulfillment_service": "string",
+      "grams": 0,
+      "id": "string",
+      "image_id": "string",
+      "inventory_item_id": "string",
+      "inventory_management": "string",
+      "inventory_policy": "string",
+      "inventory_quantity": 0,
+      "old_inventory_quantity": 0,
+      "option1": "string",
+      "option2": "string",
+      "option3": "string",
+      "position": 0,
+      "presentment_prices": [
+        {
+          "compare_at_price": 0,
+          "price": {
+            "amount": 0,
+            "currency_code": "string"
+          }
+        }
+      ],
+      "price": 0,
+      "product_id": "string",
+      "requires_shipping": true,
+      "sku": "string",
+      "tax_code": "string",
+      "taxable": true,
+      "title": "string",
+      "updated_at": "2022-06-22T10:19:16.410Z",
+      "weight": 0,
+      "weight_unit": "string"
+    }
+  ],
+  "vendor": "string"
+}      
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 200 (OK)</summary>
+
+```json
+ {
+  "admin_graphql_api_id": "string",
+  "body_html": "string",
+  "created_at": "2022-06-22T11:20:55.611Z",
+  "handle": "string",
+  "id": "string",
+  "image": {
+    "admin_graphql_api_id": "string",
+    "alt": "string",
+    "created_at": "string",
+    "height": 0,
+    "id": "string",
+    "position": 0,
+    "product_id": "string",
+    "src": "string",
+    "updated_at": "string",
+    "variant_ids": [
+      "string"
+    ],
+    "width": 0
+  },
+  "images": [
+    {
+      "admin_graphql_api_id": "string",
+      "alt": "string",
+      "created_at": "string",
+      "height": 0,
+      "id": "string",
+      "position": 0,
+      "product_id": "string",
+      "src": "string",
+      "updated_at": "string",
+      "variant_ids": [
+        "string"
+      ],
+      "width": 0
+    }
+  ],
+  "options": [
+    {
+      "id": "string",
+      "name": "string",
+      "position": 0,
+      "product_id": "string",
+      "values": [
+        "string"
+      ]
+    }
+  ],
+  "product_type": "string",
+  "published_at": "2022-06-22T11:20:55.611Z",
+  "published_scope": "web",
+  "status": "active",
+  "tags": "string",
+  "template_suffix": "string",
+  "title": "string",
+  "twc_product_id": "string",
+  "updated_at": "2022-06-22T11:20:55.611Z",
+  "variants": [
+    {
+      "admin_graphql_api_id": "string",
+      "barcode": "string",
+      "compare_at_price": 0,
+      "created_at": "2022-06-22T11:20:55.611Z",
+      "fulfillment_service": "string",
+      "grams": 0,
+      "id": "string",
+      "image_id": "string",
+      "inventory_item_id": "string",
+      "inventory_management": "string",
+      "inventory_policy": "string",
+      "inventory_quantity": 0,
+      "old_inventory_quantity": 0,
+      "option1": "string",
+      "option2": "string",
+      "option3": "string",
+      "position": 0,
+      "presentment_prices": [
+        {
+          "compare_at_price": 0,
+          "price": {
+            "amount": 0,
+            "currency_code": "string"
+          }
+        }
+      ],
+      "price": 0,
+      "product_id": "string",
+      "requires_shipping": true,
+      "sku": "string",
+      "tax_code": "string",
+      "taxable": true,
+      "title": "string",
+      "updated_at": "2022-06-22T11:20:55.611Z",
+      "weight": 0,
+      "weight_unit": "string"
+    }
+  ],
+  "vendor": "string"
+}     
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 400 (Invalid ID supplied)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 401 (Unauthorized)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+
+<details>
+ <summary>Response - 404 (Product not found)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 405 (Validation exception)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+ 
+HTTP Status Code: 
+- 200 OK
+- 201 created
+- 400 Invalid ID supplied
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Product not found
+- 405 Validation exception
+
 
 ## Find product by ID
 Returns an products by its id from a specific Store while passing the respective id as a path param in the endpoint. 
@@ -89,6 +925,171 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Path Variable</summary>
+ 
+  - {id}
+  
+</details>
+
+<details>
+ <summary>Response - 200 (successful operation)</summary>
+
+```json
+  {
+  "admin_graphql_api_id": "string",
+  "body_html": "string",
+  "created_at": "2022-06-22T11:25:51.404Z",
+  "handle": "string",
+  "id": "string",
+  "image": {
+    "admin_graphql_api_id": "string",
+    "alt": "string",
+    "created_at": "string",
+    "height": 0,
+    "id": "string",
+    "position": 0,
+    "product_id": "string",
+    "src": "string",
+    "updated_at": "string",
+    "variant_ids": [
+      "string"
+    ],
+    "width": 0
+  },
+  "images": [
+    {
+      "admin_graphql_api_id": "string",
+      "alt": "string",
+      "created_at": "string",
+      "height": 0,
+      "id": "string",
+      "position": 0,
+      "product_id": "string",
+      "src": "string",
+      "updated_at": "string",
+      "variant_ids": [
+        "string"
+      ],
+      "width": 0
+    }
+  ],
+  "options": [
+    {
+      "id": "string",
+      "name": "string",
+      "position": 0,
+      "product_id": "string",
+      "values": [
+        "string"
+      ]
+    }
+  ],
+  "product_type": "string",
+  "published_at": "2022-06-22T11:25:51.404Z",
+  "published_scope": "web",
+  "status": "active",
+  "tags": "string",
+  "template_suffix": "string",
+  "title": "string",
+  "twc_product_id": "string",
+  "updated_at": "2022-06-22T11:25:51.404Z",
+  "variants": [
+    {
+      "admin_graphql_api_id": "string",
+      "barcode": "string",
+      "compare_at_price": 0,
+      "created_at": "2022-06-22T11:25:51.404Z",
+      "fulfillment_service": "string",
+      "grams": 0,
+      "id": "string",
+      "image_id": "string",
+      "inventory_item_id": "string",
+      "inventory_management": "string",
+      "inventory_policy": "string",
+      "inventory_quantity": 0,
+      "old_inventory_quantity": 0,
+      "option1": "string",
+      "option2": "string",
+      "option3": "string",
+      "position": 0,
+      "presentment_prices": [
+        {
+          "compare_at_price": 0,
+          "price": {
+            "amount": 0,
+            "currency_code": "string"
+          }
+        }
+      ],
+      "price": 0,
+      "product_id": "string",
+      "requires_shipping": true,
+      "sku": "string",
+      "tax_code": "string",
+      "taxable": true,
+      "title": "string",
+      "updated_at": "2022-06-22T11:25:51.404Z",
+      "weight": 0,
+      "weight_unit": "string"
+    }
+  ],
+  "vendor": "string"
+}    
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 400 (Invalid ID supplied)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 404 (Product not found)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+ 
+HTTP Status Code: 
+- 200 successful operation
+- 400 Invalid ID supplied
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Product not found
+
+
+
 ## Deletes a product
 Product is marked as deleted by passing id as a path param of the endpoint.
 
@@ -97,6 +1098,172 @@ Endpoint: ```/api/products​/{id}```
 Method: ``` DELETE ``` 
 
 OAuth 2.0 Scopes: `Tenant authentication`
+
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Path Variable</summary>
+ 
+  - {id}
+ 
+</details>
+
+<details>
+ <summary>Response - 200 (Product deleted)</summary>
+
+```json
+   {
+  "admin_graphql_api_id": "string",
+  "body_html": "string",
+  "created_at": "2022-06-22T11:28:20.435Z",
+  "handle": "string",
+  "id": "string",
+  "image": {
+    "admin_graphql_api_id": "string",
+    "alt": "string",
+    "created_at": "string",
+    "height": 0,
+    "id": "string",
+    "position": 0,
+    "product_id": "string",
+    "src": "string",
+    "updated_at": "string",
+    "variant_ids": [
+      "string"
+    ],
+    "width": 0
+  },
+  "images": [
+    {
+      "admin_graphql_api_id": "string",
+      "alt": "string",
+      "created_at": "string",
+      "height": 0,
+      "id": "string",
+      "position": 0,
+      "product_id": "string",
+      "src": "string",
+      "updated_at": "string",
+      "variant_ids": [
+        "string"
+      ],
+      "width": 0
+    }
+  ],
+  "options": [
+    {
+      "id": "string",
+      "name": "string",
+      "position": 0,
+      "product_id": "string",
+      "values": [
+        "string"
+      ]
+    }
+  ],
+  "product_type": "string",
+  "published_at": "2022-06-22T11:28:20.435Z",
+  "published_scope": "web",
+  "status": "active",
+  "tags": "string",
+  "template_suffix": "string",
+  "title": "string",
+  "twc_product_id": "string",
+  "updated_at": "2022-06-22T11:28:20.435Z",
+  "variants": [
+    {
+      "admin_graphql_api_id": "string",
+      "barcode": "string",
+      "compare_at_price": 0,
+      "created_at": "2022-06-22T11:28:20.435Z",
+      "fulfillment_service": "string",
+      "grams": 0,
+      "id": "string",
+      "image_id": "string",
+      "inventory_item_id": "string",
+      "inventory_management": "string",
+      "inventory_policy": "string",
+      "inventory_quantity": 0,
+      "old_inventory_quantity": 0,
+      "option1": "string",
+      "option2": "string",
+      "option3": "string",
+      "position": 0,
+      "presentment_prices": [
+        {
+          "compare_at_price": 0,
+          "price": {
+            "amount": 0,
+            "currency_code": "string"
+          }
+        }
+      ],
+      "price": 0,
+      "product_id": "string",
+      "requires_shipping": true,
+      "sku": "string",
+      "tax_code": "string",
+      "taxable": true,
+      "title": "string",
+      "updated_at": "2022-06-22T11:28:20.435Z",
+      "weight": 0,
+      "weight_unit": "string"
+    }
+  ],
+  "vendor": "string"
+}   
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 400 (Invalid ID supplied)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 404 (Product not found)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+ 
+HTTP Status Code: 
+- 200 Product deleted
+- 204 No Content
+- 400 Invalid ID supplied
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Product not found
+
 
 ***
 [Back to Shopify connector](../ShopifyConnector.md)

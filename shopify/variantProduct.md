@@ -84,6 +84,195 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Payload</summary>
+ 
+```json
+{
+  "admin_graphql_api_id": "string",
+  "barcode": "string",
+  "compare_at_price": 0,
+  "created_at": "2022-06-22T11:35:05.578Z",
+  "fulfillment_service": "string",
+  "grams": 0,
+  "id": "string",
+  "image_id": "string",
+  "inventory_item_id": "string",
+  "inventory_management": "string",
+  "inventory_policy": "string",
+  "inventory_quantity": 0,
+  "old_inventory_quantity": 0,
+  "option1": "string",
+  "option2": "string",
+  "option3": "string",
+  "position": 0,
+  "presentment_prices": [
+    {
+      "compare_at_price": 0,
+      "price": {
+        "amount": 0,
+        "currency_code": "string"
+      }
+    }
+  ],
+  "price": 0,
+  "product_id": "string",
+  "requires_shipping": true,
+  "sku": "string",
+  "tax_code": "string",
+  "taxable": true,
+  "title": "string",
+  "updated_at": "2022-06-22T11:35:05.578Z",
+  "weight": 0,
+  "weight_unit": "string"
+}
+      
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 200 (OK)</summary>
+
+```json
+{
+  "admin_graphql_api_id": "string",
+  "barcode": "string",
+  "compare_at_price": 0,
+  "created_at": "2022-06-22T11:35:05.603Z",
+  "fulfillment_service": "string",
+  "grams": 0,
+  "id": "string",
+  "image_id": "string",
+  "inventory_item_id": "string",
+  "inventory_management": "string",
+  "inventory_policy": "string",
+  "inventory_quantity": 0,
+  "old_inventory_quantity": 0,
+  "option1": "string",
+  "option2": "string",
+  "option3": "string",
+  "position": 0,
+  "presentment_prices": [
+    {
+      "compare_at_price": 0,
+      "price": {
+        "amount": 0,
+        "currency_code": "string"
+      }
+    }
+  ],
+  "price": 0,
+  "product_id": "string",
+  "requires_shipping": true,
+  "sku": "string",
+  "tax_code": "string",
+  "taxable": true,
+  "title": "string",
+  "updated_at": "2022-06-22T11:35:05.603Z",
+  "weight": 0,
+  "weight_unit": "string"
+}      
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 201 (Variant  created)</summary>
+ 
+ ```json
+ {
+  "admin_graphql_api_id": "string",
+  "barcode": "string",
+  "compare_at_price": 0,
+  "created_at": "2022-06-22T11:35:05.606Z",
+  "fulfillment_service": "string",
+  "grams": 0,
+  "id": "string",
+  "image_id": "string",
+  "inventory_item_id": "string",
+  "inventory_management": "string",
+  "inventory_policy": "string",
+  "inventory_quantity": 0,
+  "old_inventory_quantity": 0,
+  "option1": "string",
+  "option2": "string",
+  "option3": "string",
+  "position": 0,
+  "presentment_prices": [
+    {
+      "compare_at_price": 0,
+      "price": {
+        "amount": 0,
+        "currency_code": "string"
+      }
+    }
+  ],
+  "price": 0,
+  "product_id": "string",
+  "requires_shipping": true,
+  "sku": "string",
+  "tax_code": "string",
+  "taxable": true,
+  "title": "string",
+  "updated_at": "2022-06-22T11:35:05.606Z",
+  "weight": 0,
+  "weight_unit": "string"
+}
+ ```
+ </details> 
+
+<details>
+ <summary>Response - 400 (Bad request)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 405 (Invalid input)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+ 
+HTTP Status Code: 
+- 200 OK
+- 201 Variant created
+- 400 Bad Request
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+
+
 ## Add products from shopify to TWC
 Used for entering multiple variant data of a product to the TWC system from a bulk Shopify data. 
 
@@ -93,6 +282,140 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Payload</summary>
+ 
+```json
+{
+  "variants": [
+    {
+      "admin_graphql_api_id": "string",
+      "barcode": "string",
+      "compare_at_price": 0,
+      "created_at": "2022-06-22T11:38:04.413Z",
+      "fulfillment_service": "string",
+      "grams": 0,
+      "id": "string",
+      "image_id": "string",
+      "inventory_item_id": "string",
+      "inventory_management": "string",
+      "inventory_policy": "string",
+      "inventory_quantity": 0,
+      "old_inventory_quantity": 0,
+      "option1": "string",
+      "option2": "string",
+      "option3": "string",
+      "position": 0,
+      "presentment_prices": [
+        {
+          "compare_at_price": 0,
+          "price": {
+            "amount": 0,
+            "currency_code": "string"
+          }
+        }
+      ],
+      "price": 0,
+      "product_id": "string",
+      "requires_shipping": true,
+      "sku": "string",
+      "tax_code": "string",
+      "taxable": true,
+      "title": "string",
+      "updated_at": "2022-06-22T11:38:04.413Z",
+      "weight": 0,
+      "weight_unit": "string"
+    }
+  ]
+}      
+```
+ 
+</details>
+
+
+<details>
+ <summary>Response - 400 (Invalid ID supplied)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 401 (Unauthorized)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+
+<details>
+ <summary>Response - 405 (Invalid input)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 406 (Unacceptable Input)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+ 
+HTTP Status Code: 
+- 200 Variant updated
+- 201 created
+- 400 Invalid ID suppied
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Validation exception
+- 406 Unacceptable Input
+
+
 ## Update an existing variant
 Updates an already existing variant. If the product or the variant does not exist, this method returns a ResourceNotFound error.
 
@@ -101,6 +424,180 @@ Endpoint: ```/api/products/variant```
 Method: ``` PUT ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
+
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Payload</summary>
+ 
+```json
+{
+  "admin_graphql_api_id": "string",
+  "barcode": "string",
+  "compare_at_price": 0,
+  "created_at": "2022-06-22T11:41:24.349Z",
+  "fulfillment_service": "string",
+  "grams": 0,
+  "id": "string",
+  "image_id": "string",
+  "inventory_item_id": "string",
+  "inventory_management": "string",
+  "inventory_policy": "string",
+  "inventory_quantity": 0,
+  "old_inventory_quantity": 0,
+  "option1": "string",
+  "option2": "string",
+  "option3": "string",
+  "position": 0,
+  "presentment_prices": [
+    {
+      "compare_at_price": 0,
+      "price": {
+        "amount": 0,
+        "currency_code": "string"
+      }
+    }
+  ],
+  "price": 0,
+  "product_id": "string",
+  "requires_shipping": true,
+  "sku": "string",
+  "tax_code": "string",
+  "taxable": true,
+  "title": "string",
+  "updated_at": "2022-06-22T11:41:24.349Z",
+  "weight": 0,
+  "weight_unit": "string"
+}      
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 200 (Variant updated)</summary>
+
+```json
+  {
+  "admin_graphql_api_id": "string",
+  "barcode": "string",
+  "compare_at_price": 0,
+  "created_at": "2022-06-22T11:41:24.376Z",
+  "fulfillment_service": "string",
+  "grams": 0,
+  "id": "string",
+  "image_id": "string",
+  "inventory_item_id": "string",
+  "inventory_management": "string",
+  "inventory_policy": "string",
+  "inventory_quantity": 0,
+  "old_inventory_quantity": 0,
+  "option1": "string",
+  "option2": "string",
+  "option3": "string",
+  "position": 0,
+  "presentment_prices": [
+    {
+      "compare_at_price": 0,
+      "price": {
+        "amount": 0,
+        "currency_code": "string"
+      }
+    }
+  ],
+  "price": 0,
+  "product_id": "string",
+  "requires_shipping": true,
+  "sku": "string",
+  "tax_code": "string",
+  "taxable": true,
+  "title": "string",
+  "updated_at": "2022-06-22T11:41:24.376Z",
+  "weight": 0,
+  "weight_unit": "string"
+}    
+ ```
+ 
+</details> 
+
+
+<details>
+ <summary>Response - 400 (Invalid ID Supplied)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 401 (Unauthorized)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+
+<details>
+ <summary>Response - 404 (Product not found)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 405 (Validation exception)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+ 
+HTTP Status Code: 
+- 200 Variant updated
+- 201 created
+- 400 Invalid ID Supplied
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Product Not Found
+- 405 Validation exception
 
 ## Find product by ID
 Returns an products by its id and variant id by passing the respective id's as a path params in the endpoint. 
@@ -112,6 +609,109 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Path Variables</summary>
+ 
+	- {id}
+	- {productId}
+ 
+</details>
+
+<details>
+ <summary>Response - 200 (successful operation)</summary>
+
+```json
+ {
+  "admin_graphql_api_id": "string",
+  "barcode": "string",
+  "compare_at_price": 0,
+  "created_at": "2022-06-22T11:44:28.261Z",
+  "fulfillment_service": "string",
+  "grams": 0,
+  "id": "string",
+  "image_id": "string",
+  "inventory_item_id": "string",
+  "inventory_management": "string",
+  "inventory_policy": "string",
+  "inventory_quantity": 0,
+  "old_inventory_quantity": 0,
+  "option1": "string",
+  "option2": "string",
+  "option3": "string",
+  "position": 0,
+  "presentment_prices": [
+    {
+      "compare_at_price": 0,
+      "price": {
+        "amount": 0,
+        "currency_code": "string"
+      }
+    }
+  ],
+  "price": 0,
+  "product_id": "string",
+  "requires_shipping": true,
+  "sku": "string",
+  "tax_code": "string",
+  "taxable": true,
+  "title": "string",
+  "updated_at": "2022-06-22T11:44:28.261Z",
+  "weight": 0,
+  "weight_unit": "string"
+}     
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 400 (Invalid Id supplied)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 404 (Product not found)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+HTTP Status Code: 
+- 200 successful created
+- 400 Invalid ID supplied
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Product Not Found
+
+
 ## Deletes a product
 Product variant is marked as deleted by passing id as a path param of the endpoint.
 
@@ -120,6 +720,64 @@ Endpoint: ```/api/products/{productId}/variants/{id}```
 Method: ``` DELETE ``` 
 
 OAuth 2.0 Scopes: `Tenant authentication`
+
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Path Variables</summary>
+ 
+ - {id}
+ - {productId}
+	
+ 
+</details>
+
+<details>
+ <summary>Response - 400 (Invalid ID supplied)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 404 (Product not found)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+ 
+HTTP Status Code: 
+- 200 Product deleted
+- 201 No Content
+- 400 Invalid Id Supplied
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Product Not Found
 
 
 

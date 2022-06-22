@@ -97,6 +97,303 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Payload</summary>
+ 
+ ```json
+ {
+  "accepts_marketing": true,
+  "accepts_marketing_updated_at": "2022-06-22T09:29:16.251Z",
+  "addresses": [
+    {
+      "address1": "string",
+      "address2": "string",
+      "city": "string",
+      "company": "string",
+      "country": "string",
+      "country_code": "string",
+      "country_name": "string",
+      "customer_id": "string",
+      "default": true,
+      "email": "string",
+      "first_name": "string",
+      "id": "string",
+      "last_name": "string",
+      "latitude": 0,
+      "longitude": 0,
+      "name": "string",
+      "phone": "string",
+      "province": "string",
+      "province_code": "string",
+      "zip": "string"
+    }
+  ],
+  "admin_graphql_api_id": "string",
+  "created_at": "2022-06-22T09:29:16.251Z",
+  "currency": "string",
+  "default_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "country_name": "string",
+    "customer_id": "string",
+    "default": true,
+    "email": "string",
+    "first_name": "string",
+    "id": "string",
+    "last_name": "string",
+    "latitude": 0,
+    "longitude": 0,
+    "name": "string",
+    "phone": "string",
+    "province": "string",
+    "province_code": "string",
+    "zip": "string"
+  },
+  "email": "string",
+  "first_name": "string",
+  "id": "string",
+  "last_name": "string",
+  "last_order_id": "string",
+  "last_order_name": "string",
+  "marketing_opt_in_level": "single_opt_in",
+  "multipass_identifier": "string",
+  "note": "string",
+  "orders_count": 0,
+  "phone": "string",
+  "state": "disabled",
+  "tags": "string",
+  "tax_exempt": true,
+  "tax_exemptions": [
+    "string"
+  ],
+  "total_spent": 0,
+  "twc_customer_id": "string",
+  "updated_at": "2022-06-22T09:29:16.251Z",
+  "verified_email": true
+}
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 200 (OK)</summary>
+ 
+ ```json
+ {
+  "accepts_marketing": true,
+  "accepts_marketing_updated_at": "2022-06-22T09:29:16.267Z",
+  "addresses": [
+    {
+      "address1": "string",
+      "address2": "string",
+      "city": "string",
+      "company": "string",
+      "country": "string",
+      "country_code": "string",
+      "country_name": "string",
+      "customer_id": "string",
+      "default": true,
+      "email": "string",
+      "first_name": "string",
+      "id": "string",
+      "last_name": "string",
+      "latitude": 0,
+      "longitude": 0,
+      "name": "string",
+      "phone": "string",
+      "province": "string",
+      "province_code": "string",
+      "zip": "string"
+    }
+  ],
+  "admin_graphql_api_id": "string",
+  "created_at": "2022-06-22T09:29:16.267Z",
+  "currency": "string",
+  "default_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "country_name": "string",
+    "customer_id": "string",
+    "default": true,
+    "email": "string",
+    "first_name": "string",
+    "id": "string",
+    "last_name": "string",
+    "latitude": 0,
+    "longitude": 0,
+    "name": "string",
+    "phone": "string",
+    "province": "string",
+    "province_code": "string",
+    "zip": "string"
+  },
+  "email": "string",
+  "first_name": "string",
+  "id": "string",
+  "last_name": "string",
+  "last_order_id": "string",
+  "last_order_name": "string",
+  "marketing_opt_in_level": "single_opt_in",
+  "multipass_identifier": "string",
+  "note": "string",
+  "orders_count": 0,
+  "phone": "string",
+  "state": "disabled",
+  "tags": "string",
+  "tax_exempt": true,
+  "tax_exemptions": [
+    "string"
+  ],
+  "total_spent": 0,
+  "twc_customer_id": "string",
+  "updated_at": "2022-06-22T09:29:16.267Z",
+  "verified_email": true
+}
+
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 201 (OK Customer created)</summary>
+
+```json
+{
+  "accepts_marketing": true,
+  "accepts_marketing_updated_at": "2022-06-22T09:29:16.268Z",
+  "addresses": [
+    {
+      "address1": "string",
+      "address2": "string",
+      "city": "string",
+      "company": "string",
+      "country": "string",
+      "country_code": "string",
+      "country_name": "string",
+      "customer_id": "string",
+      "default": true,
+      "email": "string",
+      "first_name": "string",
+      "id": "string",
+      "last_name": "string",
+      "latitude": 0,
+      "longitude": 0,
+      "name": "string",
+      "phone": "string",
+      "province": "string",
+      "province_code": "string",
+      "zip": "string"
+    }
+  ],
+  "admin_graphql_api_id": "string",
+  "created_at": "2022-06-22T09:29:16.268Z",
+  "currency": "string",
+  "default_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "country_name": "string",
+    "customer_id": "string",
+    "default": true,
+    "email": "string",
+    "first_name": "string",
+    "id": "string",
+    "last_name": "string",
+    "latitude": 0,
+    "longitude": 0,
+    "name": "string",
+    "phone": "string",
+    "province": "string",
+    "province_code": "string",
+    "zip": "string"
+  },
+  "email": "string",
+  "first_name": "string",
+  "id": "string",
+  "last_name": "string",
+  "last_order_id": "string",
+  "last_order_name": "string",
+  "marketing_opt_in_level": "single_opt_in",
+  "multipass_identifier": "string",
+  "note": "string",
+  "orders_count": 0,
+  "phone": "string",
+  "state": "disabled",
+  "tags": "string",
+  "tax_exempt": true,
+  "tax_exemptions": [
+    "string"
+  ],
+  "total_spent": 0,
+  "twc_customer_id": "string",
+  "updated_at": "2022-06-22T09:29:16.268Z",
+  "verified_email": true
+}
+```
+
+</details> 
+
+<details>
+ <summary>Response - 401 (Unauthorized)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 405 (Invalid input)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+ 
+HTTP Status Code: 
+- 200 OK
+- 201 OK Customer created
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+
+
 ## Upload Customers
 Creates an array of new Customers in the TWC system.
 
@@ -106,6 +403,188 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Payload</summary>
+ 
+ ```json
+ {
+  "customers": [
+    {
+      "accepts_marketing": true,
+      "accepts_marketing_updated_at": "2022-06-22T09:50:04.163Z",
+      "addresses": [
+        {
+          "address1": "string",
+          "address2": "string",
+          "city": "string",
+          "company": "string",
+          "country": "string",
+          "country_code": "string",
+          "country_name": "string",
+          "customer_id": "string",
+          "default": true,
+          "email": "string",
+          "first_name": "string",
+          "id": "string",
+          "last_name": "string",
+          "latitude": 0,
+          "longitude": 0,
+          "name": "string",
+          "phone": "string",
+          "province": "string",
+          "province_code": "string",
+          "zip": "string"
+        }
+      ],
+      "admin_graphql_api_id": "string",
+      "created_at": "2022-06-22T09:50:04.163Z",
+      "currency": "string",
+      "default_address": {
+        "address1": "string",
+        "address2": "string",
+        "city": "string",
+        "company": "string",
+        "country": "string",
+        "country_code": "string",
+        "country_name": "string",
+        "customer_id": "string",
+        "default": true,
+        "email": "string",
+        "first_name": "string",
+        "id": "string",
+        "last_name": "string",
+        "latitude": 0,
+        "longitude": 0,
+        "name": "string",
+        "phone": "string",
+        "province": "string",
+        "province_code": "string",
+        "zip": "string"
+      },
+      "email": "string",
+      "first_name": "string",
+      "id": "string",
+      "last_name": "string",
+      "last_order_id": "string",
+      "last_order_name": "string",
+      "marketing_opt_in_level": "single_opt_in",
+      "multipass_identifier": "string",
+      "note": "string",
+      "orders_count": 0,
+      "phone": "string",
+      "state": "disabled",
+      "tags": "string",
+      "tax_exempt": true,
+      "tax_exemptions": [
+        "string"
+      ],
+      "total_spent": 0,
+      "twc_customer_id": "string",
+      "updated_at": "2022-06-22T09:50:04.163Z",
+      "verified_email": true
+    }
+  ]
+}
+ 
+ ```
+</details> 
+
+
+<details>
+ <summary>Response - 400 (Bad request)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 401 (Unauthorized) </summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 403 (Forbidden) </summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 404 (Customer not found) </summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 405 (Invalid input)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+ 
+ 
+HTTP Status Code: 
+- 200 OK
+- 201 OK Customer created
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+
 ## Update a Customer
 Updates Customer data set in the TWC system.
 
@@ -114,6 +593,267 @@ Endpoint: ```/api/customers```
 Method: ``` PUT ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Payload</summary>
+ 
+ ```json
+ {
+  "accepts_marketing": true,
+  "accepts_marketing_updated_at": "2022-06-22T09:37:03.664Z",
+  "addresses": [
+    {
+      "address1": "string",
+      "address2": "string",
+      "city": "string",
+      "company": "string",
+      "country": "string",
+      "country_code": "string",
+      "country_name": "string",
+      "customer_id": "string",
+      "default": true,
+      "email": "string",
+      "first_name": "string",
+      "id": "string",
+      "last_name": "string",
+      "latitude": 0,
+      "longitude": 0,
+      "name": "string",
+      "phone": "string",
+      "province": "string",
+      "province_code": "string",
+      "zip": "string"
+    }
+  ],
+  "admin_graphql_api_id": "string",
+  "created_at": "2022-06-22T09:37:03.664Z",
+  "currency": "string",
+  "default_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "country_name": "string",
+    "customer_id": "string",
+    "default": true,
+    "email": "string",
+    "first_name": "string",
+    "id": "string",
+    "last_name": "string",
+    "latitude": 0,
+    "longitude": 0,
+    "name": "string",
+    "phone": "string",
+    "province": "string",
+    "province_code": "string",
+    "zip": "string"
+  },
+  "email": "string",
+  "first_name": "string",
+  "id": "string",
+  "last_name": "string",
+  "last_order_id": "string",
+  "last_order_name": "string",
+  "marketing_opt_in_level": "single_opt_in",
+  "multipass_identifier": "string",
+  "note": "string",
+  "orders_count": 0,
+  "phone": "string",
+  "state": "disabled",
+  "tags": "string",
+  "tax_exempt": true,
+  "tax_exemptions": [
+    "string"
+  ],
+  "total_spent": 0,
+  "twc_customer_id": "string",
+  "updated_at": "2022-06-22T09:37:03.664Z",
+  "verified_email": true
+}
+ ```
+ 
+</details> 
+
+<details>
+ <summary>Response - 200 (OK Customer updated)</summary>
+ 
+ ```json
+ {
+  "accepts_marketing": true,
+  "accepts_marketing_updated_at": "2022-06-22T09:42:12.070Z",
+  "addresses": [
+    {
+      "address1": "string",
+      "address2": "string",
+      "city": "string",
+      "company": "string",
+      "country": "string",
+      "country_code": "string",
+      "country_name": "string",
+      "customer_id": "string",
+      "default": true,
+      "email": "string",
+      "first_name": "string",
+      "id": "string",
+      "last_name": "string",
+      "latitude": 0,
+      "longitude": 0,
+      "name": "string",
+      "phone": "string",
+      "province": "string",
+      "province_code": "string",
+      "zip": "string"
+    }
+  ],
+  "admin_graphql_api_id": "string",
+  "created_at": "2022-06-22T09:42:12.070Z",
+  "currency": "string",
+  "default_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "country_name": "string",
+    "customer_id": "string",
+    "default": true,
+    "email": "string",
+    "first_name": "string",
+    "id": "string",
+    "last_name": "string",
+    "latitude": 0,
+    "longitude": 0,
+    "name": "string",
+    "phone": "string",
+    "province": "string",
+    "province_code": "string",
+    "zip": "string"
+  },
+  "email": "string",
+  "first_name": "string",
+  "id": "string",
+  "last_name": "string",
+  "last_order_id": "string",
+  "last_order_name": "string",
+  "marketing_opt_in_level": "single_opt_in",
+  "multipass_identifier": "string",
+  "note": "string",
+  "orders_count": 0,
+  "phone": "string",
+  "state": "disabled",
+  "tags": "string",
+  "tax_exempt": true,
+  "tax_exemptions": [
+    "string"
+  ],
+  "total_spent": 0,
+  "twc_customer_id": "string",
+  "updated_at": "2022-06-22T09:42:12.070Z",
+  "verified_email": true
+}
+``` 
+ 
+</details>
+ 
+ 
+ <details>
+ <summary>Response - 400 (Bad request)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 401 (Unauthorized) </summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 403 (Forbidden) </summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 404 (Customer not found) </summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 405 (Invalid input)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+ 
+ 
+HTTP Status Code: 
+- 200 OK
+- 201 OK Customer created
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Customer not found 
+- 405 Invalid input
+ 
 
 ## Find Customer by Ref
 Returns a customer by its Ref from a specific Store while passing the respective Ref as a path param in the endpoint. The Tenant authentication maps to a Store.
@@ -125,6 +865,193 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Path Variable</summary>
+ 
+ - {customerRef}
+ 
+</details> 
+
+<details>
+ <summary>Response - 200 (OK Found customer)</summary>
+ 
+ ```json
+ {
+  "accepts_marketing": true,
+  "accepts_marketing_updated_at": "2022-06-22T09:44:19.317Z",
+  "addresses": [
+    {
+      "address1": "string",
+      "address2": "string",
+      "city": "string",
+      "company": "string",
+      "country": "string",
+      "country_code": "string",
+      "country_name": "string",
+      "customer_id": "string",
+      "default": true,
+      "email": "string",
+      "first_name": "string",
+      "id": "string",
+      "last_name": "string",
+      "latitude": 0,
+      "longitude": 0,
+      "name": "string",
+      "phone": "string",
+      "province": "string",
+      "province_code": "string",
+      "zip": "string"
+    }
+  ],
+  "admin_graphql_api_id": "string",
+  "created_at": "2022-06-22T09:44:19.318Z",
+  "currency": "string",
+  "default_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "country_name": "string",
+    "customer_id": "string",
+    "default": true,
+    "email": "string",
+    "first_name": "string",
+    "id": "string",
+    "last_name": "string",
+    "latitude": 0,
+    "longitude": 0,
+    "name": "string",
+    "phone": "string",
+    "province": "string",
+    "province_code": "string",
+    "zip": "string"
+  },
+  "email": "string",
+  "first_name": "string",
+  "id": "string",
+  "last_name": "string",
+  "last_order_id": "string",
+  "last_order_name": "string",
+  "marketing_opt_in_level": "single_opt_in",
+  "multipass_identifier": "string",
+  "note": "string",
+  "orders_count": 0,
+  "phone": "string",
+  "state": "disabled",
+  "tags": "string",
+  "tax_exempt": true,
+  "tax_exemptions": [
+    "string"
+  ],
+  "total_spent": 0,
+  "twc_customer_id": "string",
+  "updated_at": "2022-06-22T09:44:19.318Z",
+  "verified_email": true
+}
+ ```
+ 
+</details>
+ 
+ 
+ 
+ <details>
+ <summary>Response - 400 (Bad request)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 401 (Unauthorized) </summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 403 (Forbidden) </summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 404 (Customer not found) </summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 405 (Invalid input)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+ 
+ 
+HTTP Status Code: 
+- 200 OK
+- 201 OK Customer created
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Customer not found
+- 405 Invalid input 
+
+
 ## Delete Customer by ID
 Deleting a Customer marks the customer as deleted and produces the HTTP response confirming the action.
 If the customer does not exist, this method returns a ResourceNotFound error.
@@ -134,6 +1061,192 @@ Endpoint: ```/api/customers/{id}```
 Method: ``` DELETE ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
+
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Path Variable</summary>
+ 
+ - {id}
+ 
+</details> 
+
+<details>
+ <summary>Response - 200 (Customer deleted)</summary>
+ 
+ ```json
+ {
+  "accepts_marketing": true,
+  "accepts_marketing_updated_at": "2022-06-22T09:46:29.559Z",
+  "addresses": [
+    {
+      "address1": "string",
+      "address2": "string",
+      "city": "string",
+      "company": "string",
+      "country": "string",
+      "country_code": "string",
+      "country_name": "string",
+      "customer_id": "string",
+      "default": true,
+      "email": "string",
+      "first_name": "string",
+      "id": "string",
+      "last_name": "string",
+      "latitude": 0,
+      "longitude": 0,
+      "name": "string",
+      "phone": "string",
+      "province": "string",
+      "province_code": "string",
+      "zip": "string"
+    }
+  ],
+  "admin_graphql_api_id": "string",
+  "created_at": "2022-06-22T09:46:29.559Z",
+  "currency": "string",
+  "default_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "country_name": "string",
+    "customer_id": "string",
+    "default": true,
+    "email": "string",
+    "first_name": "string",
+    "id": "string",
+    "last_name": "string",
+    "latitude": 0,
+    "longitude": 0,
+    "name": "string",
+    "phone": "string",
+    "province": "string",
+    "province_code": "string",
+    "zip": "string"
+  },
+  "email": "string",
+  "first_name": "string",
+  "id": "string",
+  "last_name": "string",
+  "last_order_id": "string",
+  "last_order_name": "string",
+  "marketing_opt_in_level": "single_opt_in",
+  "multipass_identifier": "string",
+  "note": "string",
+  "orders_count": 0,
+  "phone": "string",
+  "state": "disabled",
+  "tags": "string",
+  "tax_exempt": true,
+  "tax_exemptions": [
+    "string"
+  ],
+  "total_spent": 0,
+  "twc_customer_id": "string",
+  "updated_at": "2022-06-22T09:46:29.559Z",
+  "verified_email": true
+}
+ ```
+ 
+</details>
+ 
+<details>
+ <summary>Response - 400 (Bad request)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 401 (Unauthorized) </summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 403 (Forbidden) </summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 404 (Customer not found) </summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+
+<details>
+ <summary>Response - 405 (Invalid input)</summary>
+ 
+ ```json
+ {
+  "error": "string",
+  "message": "string",
+  "path": "string",
+  "status": 0,
+  "timestamp": "2022-06-22T09:29:16.269Z"
+}
+ ```
+ 
+</details>
+ 
+ 
+HTTP Status Code: 
+- 200 OK
+- 201 OK Customer created
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+ 
 
 
 
