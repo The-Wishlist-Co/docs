@@ -1,6 +1,6 @@
 
 # **Price API**
-The Price resource stores information about a particular product variant price details.
+The Price resource stores information about price details of  particular product variant.
 
 
 ## **Representations**
