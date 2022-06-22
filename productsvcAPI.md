@@ -5,6 +5,9 @@ The Product resource stores information about a product, its variants.
 
 All representations are JSON objects submitted or received as payload to API requests or responses.
 
+
+
+
 ##  Product
 ***
 Represents a product. 
@@ -121,8 +124,20 @@ Method Name: `createProduct`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Payload</summary>
  
+ ```
  {
   "active": true,
   "additionalImageLink": "string",
@@ -232,12 +247,13 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ],
   "variantsAvailable": true
 }
- 
+ ```
 </details>
 
 <details>
  <summary>Response</summary>
-	
+
+```
 	{
   "active": true,
   "additionalImageLink": "string",
@@ -476,6 +492,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ],
   "variantsAvailable": true
 }
+
+```
 	
 </details> 
 
@@ -494,8 +512,20 @@ Method Name: `updateProduct`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Payload</summary>
  
+ ```
  {
   "active": true,
   "additionalImageLink": "string",
@@ -734,12 +764,15 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ],
   "variantsAvailable": true
 }
+
+ ```
  
 </details>
 
 <details>
  <summary>Response</summary>
-	
+ 
+ ```
 	{
   "active": true,
   "additionalImageLink": "string",
@@ -812,7 +845,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "description": "string",
   "digitalProduct": true,
   "disabled": true,
-  "expirationDate": "2022-06-21T05:57:31.432Z",
+  "expirationDate": "2022-06-22T07:32:52.279Z",
   "featured": true,
   "gtin": "string",
   "gtinType": "GTIN8",
@@ -923,7 +956,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
       "description": "string",
       "digitalProduct": true,
       "disabled": true,
-      "expirationDate": "2022-06-21T05:57:31.432Z",
+      "expirationDate": "2022-06-22T07:32:52.279Z",
       "featured": true,
       "gtin": "string",
       "gtinType": "GTIN8",
@@ -978,8 +1011,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ],
   "variantsAvailable": true
 }
-
-	
+```
 </details> 
 
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
@@ -997,6 +1029,17 @@ Method Name: `lookupProduct`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Query Parameters</summary>
  
  - {gtin}
@@ -1007,6 +1050,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Response</summary>
  
+ ```
  {
   "products": [
     {
@@ -1378,7 +1422,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ]
 }
 
+```
+
 </details> 
+
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Validate Request
@@ -1394,8 +1441,20 @@ Method Name: `validateRequest`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Payload</summary>
 
+```
 {
   "active": true,
   "additionalImageLink": "string",
@@ -1634,6 +1693,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ],
   "variantsAvailable": true
 }
+```
 
 </details>
 
@@ -1641,6 +1701,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Response</summary>
  OK
 </details> 
+
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Validate Product
@@ -1655,12 +1716,25 @@ Method Name: `validateProduct`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Path Variable</summary>
  - {id}
 </details>
 
 <details>
  <summary>Response</summary>
+ 
+ ```
  {
   "product": {
     "active": true,
@@ -2028,7 +2102,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
     ]
   }
 }
+```
+
 </details> 
+
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 
@@ -2044,12 +2121,25 @@ Method Name: `validateProductRef`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Path Variable</summary>
  - {ref}
 </details>
 
 <details>
  <summary>Response</summary>
+ 
+ ```
  {
   "product": {
     "active": true,
@@ -2417,7 +2507,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
     ]
   }
 }
+```
+
 </details> 
+
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Find Product by ID
@@ -2434,6 +2527,17 @@ Method Name: `getProduct`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Path Variable</summary>
  - {id}
  
@@ -2441,7 +2545,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
  <summary>Response</summary>
-
+ 
+ ```
 {
   "active": true,
   "additionalImageLink": "string",
@@ -2680,8 +2785,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ],
   "variantsAvailable": true
 }
+```
 
 </details> 
+
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Delete Product by ID
@@ -2697,6 +2804,17 @@ Method Name: `deleteProduct`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Path Variable</summary>
 	- {id}
 </details>
@@ -2705,6 +2823,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Response</summary>
  OK
 </details> 
+
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Find Product by Ref
@@ -2721,6 +2840,17 @@ Method Name: `getProductByRef`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Path Variable</summary>
 - {productRef}
 </details>
@@ -2728,6 +2858,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Response</summary>
  
+ ```
  {
   "active": true,
   "additionalImageLink": "string",
@@ -2966,8 +3097,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ],
   "variantsAvailable": true
 }
+```
  
 </details> 
+
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 
@@ -2983,6 +3116,17 @@ Method: ``` DELETE ```
 Method Name: `deleteProductByExternalRef`
 
 OAuth 2.0 Scopes: `Tenant authentication`
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
 
 <details>
 
@@ -3010,8 +3154,20 @@ Method Name: `/api/v2/uploadProducts`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Payload</summary>
-  
+ 
+  ```
   [
   {
     "active": true,
@@ -3252,6 +3408,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
     "variantsAvailable": true
   }
 ]
+  ```
   
 </details>
 
@@ -3268,8 +3425,10 @@ HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not
 ***
 Represents a product Variant.
 
+
 <details>
  <summary>Expand for details</summary>
+ 
   `active` - boolean - To enable  a product variant.
  
  `additionalImageLink` - string - Image link.
@@ -3383,8 +3542,20 @@ Method Name: `createVariantProduct`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Payload</summary>
  
+ ```
  {
   "active": true,
   "additionalImageLink": "string",
@@ -3511,12 +3682,14 @@ OAuth 2.0 Scopes: `Tenant authentication`
     }
   ]
 }
+ ```
  
 </details>
 
 <details>
  <summary>Response</summary>
  
+ ```
  {
   "active": true,
   "additionalImageLink": "string",
@@ -3644,6 +3817,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ]
 }
 
+```
+
 </details> 
 
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
@@ -3661,8 +3836,20 @@ Method Name: `updateVariantProduct`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Payload</summary>
  
+ ```
  {
   "active": true,
   "additionalImageLink": "string",
@@ -3789,12 +3976,15 @@ OAuth 2.0 Scopes: `Tenant authentication`
     }
   ]
 }
+```
+
  
 </details>
 
 <details>
  <summary>Response</summary>
  
+ ```
 {
   "active": true,
   "additionalImageLink": "string",
@@ -3921,6 +4111,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
     }
   ]
 }
+```
 
 </details> 
 
@@ -3939,8 +4130,20 @@ Method Name: `validateVariantProduct`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Payload</summary>
  
+ ```
  {
   "active": true,
   "additionalImageLink": "string",
@@ -4067,7 +4270,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
     }
   ]
 }
-
+```
 
 </details>
 
@@ -4092,6 +4295,17 @@ Method Name: `getVariantProduct`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Request Parameters</summary>
  
  - Query Paramters
@@ -4105,6 +4319,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Response</summary>
  
+ ```
  {
   "active": true,
   "additionalImageLink": "string",
@@ -4231,8 +4446,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
     }
   ]
 }
+ ```
  
 </details> 
+
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Find Product Variant by Ref
@@ -4247,6 +4464,17 @@ Method: ``` GET ```
 Method Name: `getVariantProductByRef`
 
 OAuth 2.0 Scopes: `Tenant authentication`
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
 
 <details>
  <summary>Request Parameters</summary>
@@ -4264,6 +4492,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Response</summary>
  
+ ``` 
  {
   "active": true,
   "additionalImageLink": "string",
@@ -4390,8 +4619,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
     }
   ]
 }
+ ```
  
 </details> 
+
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Delete Product variant by Ref
@@ -4408,6 +4639,17 @@ Method Name: `deleteVariantProductbyRef`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
 
  <summary>Path Variable</summary>
  
@@ -4422,7 +4664,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
-### Find  Product variants by productId
+### Find Product variants by productId
 Returns a list of  Product variants  from a specific Store while passing the productId as a Path variable in the endpoint. The Tenant authentication maps to a Store.
 If the Product variants does not exist, this method returns a empty list.
 
@@ -4435,6 +4677,17 @@ Method Name: `getAllVariantProducts`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Path Variable</summary>
  - {productId}
  
@@ -4444,6 +4697,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Response</summary>
  OK
 </details> 
+
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Find  Product variants by productId
@@ -4459,6 +4713,17 @@ Method Name: `getVariantProducts`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Path Variable</summary>
  - {productId}
  
@@ -4467,6 +4732,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Response</summary>
  
+ ```
  [
   {
     "active": true,
@@ -4595,8 +4861,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
     ]
   }
 ]
+ ```
  
 </details> 
+
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Delete Product variants by product Id/variantId
@@ -4613,6 +4881,17 @@ Method Name: `deleteVariantProduct`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Path Variable</summary>
  
 	- {productId}
@@ -4624,6 +4903,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Response</summary>
  OK
 </details> 
+
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 
@@ -4640,8 +4920,20 @@ Method Name: `uploadProducts`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+</details>
+
+<details>
  <summary>Payload</summary>
  
+ ```
  [
   {
     "active": true,
@@ -4770,6 +5062,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
     ]
   }
 ]
+  ```
   
 </details>
 

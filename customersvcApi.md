@@ -80,8 +80,19 @@ Method Name: `createCustomer`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
- <summary>Payload</summary>
+ <summary>Request Headers</summary>
 
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+<details>
+ <summary>Payload</summary>
+ 
+```
 {
   "accepts_marketing": true,
   "active": true,
@@ -201,10 +212,13 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "verified_email": true
 }
 
+```
 </details>
 
 <details>
  <summary>Response</summary>
+ 
+ ```
  {
   "accepts_marketing": true,
   "active": true,
@@ -323,8 +337,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ],
   "verified_email": true
 }
+
+```
 </details> 
-HTTP Status Code: 200
+
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 
 ### Upload Customers
@@ -339,7 +356,20 @@ Method Name: `createCustomer`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+
+<details>
  <summary>Payload</summary>
+ 
+ ```
   [
   {
     "accepts_marketing": true,
@@ -460,13 +490,16 @@ OAuth 2.0 Scopes: `Tenant authentication`
     "verified_email": true
   }
 ]
+
+```
 </details>
 
 <details>
  <summary>Response</summary>
  OK
 </details> 
-HTTP Status Code: 200
+
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 
 ### Validate Customer Input
@@ -481,7 +514,20 @@ Method Name: `validateCustomerRequest`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+
+<details>
  <summary>Payload</summary>
+
+```
 {
   "accepts_marketing": true,
   "active": true,
@@ -600,13 +646,16 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ],
   "verified_email": true
 }
+
+```
 </details>
 
 <details>
  <summary>Response</summary>
  OK
 </details> 
-HTTP Status Code: 200
+
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Update a Customer
 Updates Customer data set in the TWC system.
@@ -620,7 +669,20 @@ Method Name: `updateCustomer`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+
+<details>
  <summary>Payload</summary>
+
+```
 {
   "accepts_marketing": true,
   "active": true,
@@ -739,10 +801,14 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ],
   "verified_email": true
 }
+
+```
 </details>
 
 <details>
  <summary>Response</summary>
+
+```
  {
   "accepts_marketing": true,
   "active": true,
@@ -861,8 +927,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ],
   "verified_email": true
 }
+
+```
 </details> 
-HTTP Status Code: 200
+
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Add address to Existing Customer
 Update the Customer data by adding the new address details.
@@ -876,7 +945,20 @@ Method Name: `addCustomerAddress`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+
+<details>
  <summary>Payload</summary>
+
+```
 {
   "address1": "string",
   "address2": "string",
@@ -896,10 +978,14 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "province": "string",
   "provinceCode": "string"
 }
+
+```
 </details>
 
 <details>
  <summary>Response</summary>
+
+```
  {
   "accepts_marketing": true,
   "active": true,
@@ -1018,8 +1104,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ],
   "verified_email": true
 }
+
+```
 </details> 
-HTTP Status Code: 200
+
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Find Customer by Id
 Returns a customer by its ID from a specific Store while passing the respective ID as a path param in the endpoint. The Tenant authentication maps to a Store.
@@ -1034,12 +1123,25 @@ Method Name: `getCustomer`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+
+<details>
  <summary>Path variable</summary>
 	{id} 
 </details>
 
 <details>
  <summary>Response</summary>
+
+```
  {
   "accepts_marketing": true,
   "active": true,
@@ -1158,8 +1260,12 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ],
   "verified_email": true
 }
+
+```
+
 </details> 
-HTTP Status Code: 200
+
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Find Customer by Ref
 Returns a customer by its Ref from a specific Store while passing the respective Ref as a path param in the endpoint. The Tenant authentication maps to a Store.
@@ -1174,12 +1280,25 @@ Method Name: `getCustomerByRef`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+
+<details>
  <summary>Path Variable</summary>
 	{customerRef}
 </details>
 
 <details>
  <summary>Response</summary>
+
+```
  {
   "accepts_marketing": true,
   "active": true,
@@ -1298,8 +1417,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ],
   "verified_email": true
 }
+
+```
 </details> 
-HTTP Status Code: 200
+
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 
 ### Look up  Customers by email/mobile/phone/firstName/lastName
@@ -1315,7 +1437,19 @@ Method Name: `lookupCustomer`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+
+<details>
  <summary>Query Parameters</summary>
+ 
  - email
  - firstName
  - lastName
@@ -1326,6 +1460,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
  <summary>Response</summary>
+
+```
  [
   {
     "accepts_marketing": true,
@@ -1446,8 +1582,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
     "verified_email": true
   }
 ]
+
+```
 </details> 
-HTTP Status Code: 200
+
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Delete Customer by ID
 Deleting a Customer marks the customer as deleted and produces the HTTP response confirming the action.
@@ -1462,7 +1601,19 @@ Method Name: `deleteCustomer`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+
+<details>
  <summary>Path Variable</summary>
+ 
 	- {id}
 </details>
 
@@ -1470,7 +1621,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Response</summary>
  OK
 </details> 
-HTTP Status Code: 200
+
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ### Delete Customer by Ref
 Deleting a Customer by ref marks the customer as deleted and produces the HTTP response confirming the action.
@@ -1485,7 +1637,19 @@ Method Name: `deleteCustomerByRef`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
+
+
+<details>
  <summary>Query Paramters</summary>
+ 
 	- {customerRef}
 	- {id}
 
@@ -1495,7 +1659,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Response</summary>
  OK
 </details> 
-HTTP Status Code: 200
+
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 
 
