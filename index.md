@@ -5,12 +5,27 @@
 
 **The wishlist** contains an wide array of api'sto meet all customer demands for the fluid evperieance that they are looking for. It employs automation to attain great results with minimum intervention or assistance.
 For more detailed informaation, check out the collection and follow the service documentations.
- 
-### Api Collection
+
+
+### Api Collection Index
 
 - [Customer Service API](customersvcApi.md)
   
   The Customer Service API stores information about a shop's customers, it also holds information on the status of a customer's account. You can create, retrieve, update, and delete customers using the Customer Service api.
+  
+    - [**Representations**](customersvcApi.md#representations)
+    - [**REST Endpoints**](customersvcApi.md#rest-endpoints)
+      - [Create a Customer](customersvcApi.md#create-a-customer)
+      - [Upload Customers](customersvcApi.md#upload-customers)
+      - [Validate Customer Input](customersvcApi.md#validate-customer-input)
+      - [Update a Customer](customersvcApi.md#update-a-customer)
+      - [Add address to Existing Customer](customersvcApi.md#add-address-to-existing-customer)
+      - [Find Customer by Id](customersvcApi.md#find-customer-by-id)
+      - [Find Customer by Ref](customersvcApi.md#find-customer-by-ref)
+      - [Look up Customers by email/mobile/phone/firstName/lastName](customersvcApi.md#look-up-customers-by-emailmobilephonefirstnamelastname)
+      - [Delete Customer by ID](customersvcApi.md#delete-customer-by-id)
+      - [Delete Customer by Ref](customersvcApi.md#delete-customer-by-ref)
+
 
 
 - [Inventory Service API](inventorySvcAPI.md)
@@ -43,6 +58,17 @@ For more detailed informaation, check out the collection and follow the service 
 - [Impex Service API](impexAPI.md)
 
     The ImpEx API allows you to interact with all the core api's in the TWC system at a unified REST interface for the seemless interegration of bulk data in to the system. 
+
+  - [**Representations**](impexAPI.md#representations)
+  - [**REST Endpoints**](impexAPI.md#rest-endpoints)
+    - [Create Batch](impexAPI.md#create-batch)
+    - [Change State](impexAPI.md#change-state)
+    - [Get Batch](impexAPI.md#get-batch)
+    - [Query Batch](impexAPI.md#query-batch)
+    - [Create Resources](impexAPI.md#create-resources)
+    - [Update State](impexAPI.md#update-state)
+    - [Get Resource By Id](impexAPI.md#get-resource-by-id)
+    - [Query Resources](impexAPI.md#query-resources)
 
 - [Shopify Connector](ShopifyConnector.md)
   
