@@ -103,7 +103,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Request Headers: </summary>
 
-```json
+```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
@@ -115,7 +115,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Request Payload: </summary>
  
-```json
+```
 {
   "accepts_marketing": true,
   "active": true,
@@ -241,7 +241,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Response: </summary>
  
- ```json
+ ```
  {
   "accepts_marketing": true,
   "active": true,
@@ -368,7 +368,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>HTTP response Status Codes: </summary>
 
- ```json
+ ```
 200 OK ,
 201 Created,
 202 Accepted,
@@ -397,7 +397,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Request Headers: </summary>
 
-```json
+```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
@@ -410,7 +410,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Payload: </summary>
  
- ```json
+ ```
   [
   {
     "accepts_marketing": true,
@@ -543,7 +543,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>HTTP response Status Codes: </summary>
 
- ```json
+ ```
 200 OK ,
 201 Created,
 202 Accepted,
@@ -573,7 +573,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Request Headers: </summary>
 
-```json
+```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
@@ -586,7 +586,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Request Payload: </summary>
 
-```json
+```
 {
   "accepts_marketing": true,
   "active": true,
@@ -717,7 +717,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>HTTP response Status Codes: </summary>
 
- ```json
+ ```
 200 OK ,
 201 Created,
 202 Accepted,
@@ -746,7 +746,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Request Headers: </summary>
 
-```json
+```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
@@ -759,7 +759,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Request Payload: </summary>
 
-```json
+```
 {
   "accepts_marketing": true,
   "active": true,
@@ -885,7 +885,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Response:</summary>
 
-```json
+```
  {
   "accepts_marketing": true,
   "active": true,
@@ -1011,7 +1011,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>HTTP response Status Codes: </summary>
 
- ```json
+ ```
 200 OK ,
 201 Created,
 202 Accepted,
@@ -1040,7 +1040,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Request Headers:</summary>
 
- ```json
+ ```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
@@ -1053,7 +1053,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Request Payload: </summary>
 
-```json
+```
 {
   "address1": "string",
   "address2": "string",
@@ -1080,7 +1080,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Response: </summary>
 
-```json
+```
  {
   "accepts_marketing": true,
   "active": true,
@@ -1206,7 +1206,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>HTTP response Status Codes: </summary>
 
- ```json
+ ```
 200 OK ,
 201 Created,
 202 Accepted,
@@ -1236,7 +1236,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Request Headers: </summary>
 
- ```json
+ ```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
@@ -1249,7 +1249,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Path variable: </summary>
  
- ```json
+ ```
   "id": "{{id}}"
   ``` 
 <!-- </details> -->
@@ -1257,7 +1257,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Response</summary>
 
-```json
+```
  {
   "accepts_marketing": true,
   "active": true,
@@ -1384,7 +1384,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>HTTP response Status Codes: </summary>
 
- ```json
+ ```
 200 OK ,
 201 Created,
 202 Accepted,
@@ -1415,7 +1415,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Request Headers: </summary>
 
 
-```json
+```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
@@ -1428,7 +1428,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Path Variable: </summary>
  
- ```json
+ ```
   "customerRef": "{{customerRef}}"
 ```
 <!-- </details> -->
@@ -1436,7 +1436,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Response: </summary>
 
-```json
+```
  {
   "accepts_marketing": true,
   "active": true,
@@ -1562,7 +1562,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>HTTP response Status Codes: </summary>
 
- ```json
+ ```
 200 OK ,
 201 Created,
 202 Accepted,
@@ -1604,7 +1604,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Query Parameters: </summary>
  
- ```json
+ ```
  "email": "{{email}}" 
  "firstName": "{{firstName}}"
  "lastName": "{{lastName}}"
@@ -1617,7 +1617,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Response: </summary>
 
-```json
+```
  [
   {
     "accepts_marketing": true,
@@ -1745,7 +1745,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>HTTP response Status Codes: </summary>
 
- ```json
+ ```
 200 OK ,
 201 Created,
 202 Accepted,
@@ -1775,7 +1775,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Request Headers: </summary>
 
-```json
+```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
@@ -1787,7 +1787,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Path Variable: </summary>
 
-```json
+```
  "id": "{{id}}"
 ```
 
@@ -1801,7 +1801,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>HTTP response Status Codes: </summary>
 
- ```json
+ ```
 200 OK ,
 201 Created,
 202 Accepted,
@@ -1831,7 +1831,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Request Headers: </summary>
 
-```json
+```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
@@ -1843,7 +1843,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Query Paramters: </summary>
  
- ```json
+ ```
  "id": "{{id}}"
  "customerRef": "{{customerRef}}"
 ```
@@ -1857,7 +1857,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>HTTP response Status Codes:</summary>
 
- ```json
+ ```
 200 OK ,
 201 Created,
 202 Accepted,
