@@ -5,7 +5,7 @@ The Customer resource also holds information on the status of a customer's accou
 
 For security reasons, the Customer resource doesn't store credit card information. Customers always need to enter this information at checkout.
 
-  ### Index
+### Index
 
 ***
 
@@ -30,7 +30,7 @@ All representations are JSON objects submitted or received as payloads to API re
 Represents a customer. If a store field is defined in a store, then the customer account is specific to the store.
 
 <details>
- <summary>Expand for details</summary>
+ <summary>Expand for details : </summary>
 
 ```accepts_marketing``` - boolean - To enable marketing for a customer.
 
@@ -100,8 +100,8 @@ Method Name: `createCustomer`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+<!-- <details> -->
+ <summary>Request Headers: </summary>
 
 ```json
 | Key           | Value            |
@@ -110,10 +110,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {{Tenant Name}}  |  
 ```
 
-</details>
+<!-- </details> -->
 
-<details>
- <summary>Request Payload</summary>
+<!-- <details> -->
+ <summary>Request Payload: </summary>
  
 ```json
 {
@@ -236,10 +236,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-</details>
+<!-- </details> -->
 
-<details>
- <summary>Response</summary>
+<!-- <details> -->
+ <summary>Response: </summary>
  
  ```json
  {
@@ -362,11 +362,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-</details> 
+<!-- </details>  -->
 
 
-<details>
- <summary>HTTP response Status Codes</summary>
+<!-- <details> -->
+ <summary>HTTP response Status Codes: </summary>
 
  ```json
 200 OK ,
@@ -381,7 +381,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 409 Conflict,
 417 Expectation Failed
 ```
-</details>
+<!-- </details> -->
 
 ## Upload Customers
 Creates an array of new Customers in the TWC system.
@@ -394,8 +394,8 @@ Method Name: `createCustomer`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+<!-- <details> -->
+ <summary>Request Headers: </summary>
 
 ```json
 | Key           | Value            |
@@ -404,11 +404,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {{Tenant Name}}   
 ```
 
-</details>
+<!-- </details> -->
 
 
-<details>
- <summary>Payload</summary>
+<!-- <details> -->
+ <summary>Payload: </summary>
  
  ```json
   [
@@ -533,15 +533,15 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ]
 
 ```
-</details>
+<!-- </details> -->
 
-<details>
- <summary>Response</summary>
+<!-- <details> -->
+ <summary>Response: </summary>
  Ok
-</details> 
+<!-- </details>  -->
 
-<details>
- <summary>HTTP response Status Codes</summary>
+<!-- <details> -->
+ <summary>HTTP response Status Codes: </summary>
 
  ```json
 200 OK ,
@@ -556,7 +556,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 409 Conflict,
 417 Expectation Failed
 ```
-</details>
+<!-- </details> -->
 
 
 ## Validate Customer Input
@@ -570,8 +570,8 @@ Method Name: `validateCustomerRequest`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+<!-- <details> -->
+ <summary>Request Headers: </summary>
 
 ```json
 | Key           | Value            |
@@ -580,11 +580,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {{Tenant Name}}  |
 ```
 
-</details>
+<!-- </details> -->
 
 
-<details>
- <summary>Request Payload</summary>
+<!-- <details> -->
+ <summary>Request Payload: </summary>
 
 ```json
 {
@@ -707,15 +707,15 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-</details>
+<!-- </details> -->
 
-<details>
- <summary>Response</summary>
+<!-- <details> -->
+ <summary>Response: </summary>
  OK
-</details> 
+<!-- </details>  -->
 
-<details>
- <summary>HTTP response Status Codes</summary>
+<!-- <details> -->
+ <summary>HTTP response Status Codes: </summary>
 
  ```json
 200 OK ,
@@ -730,7 +730,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 409 Conflict,
 417 Expectation Failed
 ```
-</details>
+<!-- </details> -->
 
 ## Update a Customer
 Updates Customer data set in the TWC system.
@@ -743,8 +743,8 @@ Method Name: `updateCustomer`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+<!-- <details> -->
+ <summary>Request Headers: </summary>
 
 ```json
 | Key           | Value            |
@@ -753,11 +753,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {{Tenant Name}}  |
 ```
 
-</details>
+<!-- </details> -->
 
 
-<details>
- <summary>Request Payload</summary>
+<!-- <details> -->
+ <summary>Request Payload: </summary>
 
 ```json
 {
@@ -880,10 +880,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-</details>
+<!-- </details> -->
 
-<details>
- <summary>Response</summary>
+<!-- <details> -->
+ <summary>Response:</summary>
 
 ```json
  {
@@ -1006,10 +1006,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-</details> 
+<!-- </details>  -->
 
-<details>
- <summary>HTTP response Status Codes</summary>
+<!-- <details> -->
+ <summary>HTTP response Status Codes: </summary>
 
  ```json
 200 OK ,
@@ -1024,7 +1024,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 409 Conflict,
 417 Expectation Failed
 ```
-</details>
+<!-- </details> -->
 
 ## Add address to Existing Customer
 Update the Customer data by adding the new address details.
@@ -1037,8 +1037,8 @@ Method Name: `addCustomerAddress`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+<!-- <details> -->
+ <summary>Request Headers:</summary>
 
  ```json
 | Key           | Value            |
@@ -1047,11 +1047,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {{Tenant Name}}  |
 ```
 
-</details>
+<!-- </details> -->
 
 
-<details>
- <summary>Request Payload</summary>
+<!-- <details> -->
+ <summary>Request Payload: </summary>
 
 ```json
 {
@@ -1075,10 +1075,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-</details>
+<!-- </details> -->
 
-<details>
- <summary>Response</summary>
+<!-- <details> -->
+ <summary>Response: </summary>
 
 ```json
  {
@@ -1201,10 +1201,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-</details> 
+<!-- </details>  -->
 
-<details>
- <summary>HTTP response Status Codes</summary>
+<!-- <details> -->
+ <summary>HTTP response Status Codes: </summary>
 
  ```json
 200 OK ,
@@ -1219,7 +1219,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 409 Conflict,
 417 Expectation Failed
 ```
-</details>
+<!-- </details> -->
 
 ## Find Customer by Id
 Returns a customer by its ID from a specific Store while passing the respective ID as a path param in the endpoint. The Tenant authentication maps to a Store.
@@ -1234,7 +1234,7 @@ Method Name: `getCustomer`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
- <summary>Request Headers</summary>
+ <summary>Request Headers: </summary>
 
  ```json
 | Key           | Value            |
@@ -1246,15 +1246,15 @@ OAuth 2.0 Scopes: `Tenant authentication`
 </details>
 
 
-<details>
- <summary>Path variable</summary>
+<!-- <details> -->
+ <summary>Path variable: </summary>
  
  ```json
   "id": "{{id}}"
   ``` 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response</summary>
 
 ```json
@@ -1379,10 +1379,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 ```
 
-</details> 
+<!-- </details>  -->
 
-<details>
- <summary>HTTP response Status Codes</summary>
+<!-- <details> -->
+ <summary>HTTP response Status Codes: </summary>
 
  ```json
 200 OK ,
@@ -1397,7 +1397,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 409 Conflict,
 417 Expectation Failed
 ```
-</details>
+<!-- </details> -->
 
 ## Find Customer by Ref
 Returns a customer by its Ref from a specific Store while passing the respective Ref as a path param in the endpoint. The Tenant authentication maps to a Store.
@@ -1411,8 +1411,8 @@ Method Name: `getCustomerByRef`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+<!-- <details> -->
+ <summary>Request Headers: </summary>
 
 
 ```json
@@ -1422,19 +1422,19 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {{Tenant Name}}  |
 ```
 
-</details>
+<!-- </details> -->
 
 
-<details>
- <summary>Path Variable</summary>
+<!-- <details> -->
+ <summary>Path Variable: </summary>
  
  ```json
   "customerRef": "{{customerRef}}"
 ```
-</details>
+<!-- </details> -->
 
-<details>
- <summary>Response</summary>
+<!-- <details> -->
+ <summary>Response: </summary>
 
 ```json
  {
@@ -1557,9 +1557,25 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-</details> 
+<!-- </details>  -->
 
-HTTP Status Code: `200 OK ,201  Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<!-- <details> -->
+ <summary>HTTP response Status Codes: </summary>
+
+ ```json
+200 OK ,
+201 Created,
+202 Accepted,
+400 Bad Request,
+401 Unauthorized,
+403 Forbidden,
+404 Not Found,
+405 Method Not Allowed,
+406 Not Acceptable,
+409 Conflict,
+417 Expectation Failed
+```
+<!-- </details> -->
 
 
 ## Look up  Customers by email/mobile/phone/firstName/lastName
@@ -1574,30 +1590,32 @@ Method Name: `lookupCustomer`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+<!-- <details> -->
+ <summary>Request Headers: </summary>
 
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
 
-<details>
- <summary>Query Parameters</summary>
+<!-- <details> -->
+ <summary>Query Parameters: </summary>
  
- - email
- - firstName
- - lastName
- - mobile
- - phone
+ ```json
+ "email": "{{email}}" 
+ "firstName": "{{firstName}}"
+ "lastName": "{{lastName}}"
+ "mobile": "{{mobile}}"
+ "phone": "{{phone}}"
+ ```
 
-</details>
+<!-- </details> -->
 
-<details>
- <summary>Response</summary>
+<!-- <details> -->
+ <summary>Response: </summary>
 
 ```json
  [
@@ -1722,10 +1740,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ]
 
 ```
-</details> 
+<!-- </details>  -->
 
-<details>
- <summary>HTTP response Status Codes</summary>
+<!-- <details> -->
+ <summary>HTTP response Status Codes: </summary>
 
  ```json
 200 OK ,
@@ -1740,7 +1758,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 409 Conflict,
 417 Expectation Failed
 ```
-</details>
+<!-- </details> -->
 
 ## Delete Customer by ID
 Deleting a Customer marks the customer as deleted and produces the HTTP response confirming the action.
@@ -1754,8 +1772,8 @@ Method Name: `deleteCustomer`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+<!-- <details> -->
+ <summary>Request Headers: </summary>
 
 ```json
 | Key           | Value            |
@@ -1763,25 +1781,25 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {{Tenant Name}}  |
 ```
-</details>
+<!-- </details> -->
 
 
-<details>
- <summary>Path Variable</summary>
+<!-- <details> -->
+ <summary>Path Variable: </summary>
 
 ```json
  "id": "{{id}}"
 ```
 
-</details>
+<!-- </details> -->
 
-<details>
- <summary>Response</summary>
+<!-- <details> -->
+ <summary>Response: </summary>
  OK
-</details> 
+<!-- </details>  -->
 
-<details>
- <summary>HTTP response Status Codes</summary>
+<!-- <details> -->
+ <summary>HTTP response Status Codes: </summary>
 
  ```json
 200 OK ,
@@ -1796,7 +1814,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 409 Conflict,
 417 Expectation Failed
 ```
-</details>
+<!-- </details> -->
 
 ## Delete Customer by Ref
 Deleting a Customer by ref marks the customer as deleted and produces the HTTP response confirming the action.
@@ -1810,8 +1828,8 @@ Method Name: `deleteCustomerByRef`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+<!-- <details> -->
+ <summary>Request Headers: </summary>
 
 ```json
 | Key           | Value            |
@@ -1819,25 +1837,25 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {{Tenant Name}}  |
 ```
-</details>
+<!-- </details> -->
 
 
-<details>
- <summary>Query Paramters</summary>
+<!-- <details> -->
+ <summary>Query Paramters: </summary>
  
  ```json
  "id": "{{id}}"
  "customerRef": "{{customerRef}}"
 ```
-</details>
+<!-- </details> -->
 
-<details>
- <summary>Response</summary>
+<!-- <details> -->
+ <summary>Response: </summary>
  OK
-</details> 
+<!-- </details>  -->
 
-<details>
- <summary>HTTP response Status Codes</summary>
+<!-- <details> -->
+ <summary>HTTP response Status Codes:</summary>
 
  ```json
 200 OK ,
@@ -1852,7 +1870,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 409 Conflict,
 417 Expectation Failed
 ```
-</details>
+<!-- </details> -->
 
 
 
