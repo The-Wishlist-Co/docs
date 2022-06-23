@@ -5,11 +5,28 @@ The Customer resource also holds information on the status of a customer's accou
 
 For security reasons, the Customer resource doesn't store credit card information. Customers always need to enter this information at checkout.
 
+  ### Index
+
+***
+
+- [**Customer API**](#customer-api)
+    <!-- - [Index](#index) -->
+  - [**Representations**](#representations)
+  - [**REST Endpoints**](#rest-endpoints)
+    - [Create a Customer](#create-a-customer)
+    - [Upload Customers](#upload-customers)
+    - [Validate Customer Input](#validate-customer-input)
+    - [Update a Customer](#update-a-customer)
+    - [Add address to Existing Customer](#add-address-to-existing-customer)
+    - [Find Customer by Id](#find-customer-by-id)
+    - [Find Customer by Ref](#find-customer-by-ref)
+    - [Look up  Customers by email/mobile/phone/firstName/lastName](#look-up--customers-by-emailmobilephonefirstnamelastname)
+    - [Delete Customer by ID](#delete-customer-by-id)
+    - [Delete Customer by Ref](#delete-customer-by-ref)
+
 ## **Representations**
 
-All representations are JSON objects submitted or received as payload to API requests or responses.
-
-##  Customer
+All representations are JSON objects submitted or received as payloads to API requests or responses.
 Represents a customer. If a store field is defined in a store, then the customer account is specific to the store.
 
 <details>
@@ -17,7 +34,7 @@ Represents a customer. If a store field is defined in a store, then the customer
 
 ```accepts_marketing``` - boolean - To enable marketing for a customer.
 
-```active``` - boolean - To enable  a customer.
+```active``` - boolean - To enable a customer.
 
 ```addresses``` - [Address](Common_Fields/address.md) - The address is saved as an array. The Address of the customer will be set to the ID of that address.
 
@@ -27,15 +44,15 @@ Represents a customer. If a store field is defined in a store, then the customer
 
 ```customerRef``` - string - User generated refernce number.
 
-```customerState``` - string - Represents the customer current active status.
+```customerState``` - string - Represents the customer's current active status.
 - disabled
 - invited
 - enabled
 - declined 
 
-```default_address``` - [Address](Common_Fields/address.md) - The default address for the customer. The address is saved as an array. The defaultShippingAddress of the customer will be set to the ID of that address.
+```default_address``` - [Address](Common_Fields/address.md) - The default address for the customer. The address is saved like an array. The default shipping address of the customer will be set to the ID of that address.
 
-```dob``` - string - The Customer's Date of Birth .
+```dob``` - string - The Customer's Date of Birth.
 
 ```email``` - string -
 The customer's email address and the main identifier of uniqueness for a customer account. Attempting to assign the same email address to multiple customers returns an error.
@@ -68,7 +85,11 @@ The customer's email address and the main identifier of uniqueness for a custome
 
 </details>
 
-### Create a Customer
+## **REST Endpoints**
+
+- ##  **Customer**
+
+## Create a Customer
 Creates a new Customer data set in the TWC system, then the wishlist is assigned to the created customer. All wishlists and orders will be assigned to the created customer.
 
 Endpoint: ```/api/v2/customers```
@@ -82,17 +103,19 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Request Headers</summary>
 
+```json
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
+| X-TWC-Tenant  | {{Tenant Name}}  |  
+```
 
 </details>
 
 <details>
- <summary>Payload</summary>
+ <summary>Request Payload</summary>
  
-```
+```json
 {
   "accepts_marketing": true,
   "active": true,
@@ -218,7 +241,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Response</summary>
  
- ```
+ ```json
  {
   "accepts_marketing": true,
   "active": true,
@@ -341,10 +364,26 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ```
 </details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
+<details>
+ <summary>HTTP response Status Codes</summary>
 
-### Upload Customers
+ ```json
+200 OK ,
+201 Created,
+202 Accepted,
+400 Bad Request,
+401 Unauthorized,
+403 Forbidden,
+404 Not Found,
+405 Method Not Allowed,
+406 Not Acceptable,
+409 Conflict,
+417 Expectation Failed
+```
+</details>
+
+## Upload Customers
 Creates an array of new Customers in the TWC system.
 
 Endpoint: ```/api/v2/upload-customers```
@@ -358,10 +397,12 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Request Headers</summary>
 
+```json
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
+| X-TWC-Tenant  | {{Tenant Name}}   
+```
 
 </details>
 
@@ -369,7 +410,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Payload</summary>
  
- ```
+ ```json
   [
   {
     "accepts_marketing": true,
@@ -496,13 +537,29 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
  <summary>Response</summary>
- OK
+ Ok
 </details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details>
+ <summary>HTTP response Status Codes</summary>
+
+ ```json
+200 OK ,
+201 Created,
+202 Accepted,
+400 Bad Request,
+401 Unauthorized,
+403 Forbidden,
+404 Not Found,
+405 Method Not Allowed,
+406 Not Acceptable,
+409 Conflict,
+417 Expectation Failed
+```
+</details>
 
 
-### Validate Customer Input
+## Validate Customer Input
 Validates the customer input
 
 Endpoint: ```/api/v2/customers/validate```
@@ -516,18 +573,20 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Request Headers</summary>
 
+```json
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
+| X-TWC-Tenant  | {{Tenant Name}}  |
+```
 
 </details>
 
 
 <details>
- <summary>Payload</summary>
+ <summary>Request Payload</summary>
 
-```
+```json
 {
   "accepts_marketing": true,
   "active": true,
@@ -655,9 +714,25 @@ OAuth 2.0 Scopes: `Tenant authentication`
  OK
 </details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details>
+ <summary>HTTP response Status Codes</summary>
 
-### Update a Customer
+ ```json
+200 OK ,
+201 Created,
+202 Accepted,
+400 Bad Request,
+401 Unauthorized,
+403 Forbidden,
+404 Not Found,
+405 Method Not Allowed,
+406 Not Acceptable,
+409 Conflict,
+417 Expectation Failed
+```
+</details>
+
+## Update a Customer
 Updates Customer data set in the TWC system.
 
 Endpoint: ```/api/v2/customers```
@@ -671,18 +746,20 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Request Headers</summary>
 
+```json
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
+| X-TWC-Tenant  | {{Tenant Name}}  |
+```
 
 </details>
 
 
 <details>
- <summary>Payload</summary>
+ <summary>Request Payload</summary>
 
-```
+```json
 {
   "accepts_marketing": true,
   "active": true,
@@ -808,7 +885,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Response</summary>
 
-```
+```json
  {
   "accepts_marketing": true,
   "active": true,
@@ -931,9 +1008,25 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ```
 </details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details>
+ <summary>HTTP response Status Codes</summary>
 
-### Add address to Existing Customer
+ ```json
+200 OK ,
+201 Created,
+202 Accepted,
+400 Bad Request,
+401 Unauthorized,
+403 Forbidden,
+404 Not Found,
+405 Method Not Allowed,
+406 Not Acceptable,
+409 Conflict,
+417 Expectation Failed
+```
+</details>
+
+## Add address to Existing Customer
 Update the Customer data by adding the new address details.
 
 Endpoint: ```/api/v2/customers/{id}/address```
@@ -947,18 +1040,20 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Request Headers</summary>
 
+ ```json
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
+| X-TWC-Tenant  | {{Tenant Name}}  |
+```
 
 </details>
 
 
 <details>
- <summary>Payload</summary>
+ <summary>Request Payload</summary>
 
-```
+```json
 {
   "address1": "string",
   "address2": "string",
@@ -985,7 +1080,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Response</summary>
 
-```
+```json
  {
   "accepts_marketing": true,
   "active": true,
@@ -1108,9 +1203,25 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ```
 </details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details>
+ <summary>HTTP response Status Codes</summary>
 
-### Find Customer by Id
+ ```json
+200 OK ,
+201 Created,
+202 Accepted,
+400 Bad Request,
+401 Unauthorized,
+403 Forbidden,
+404 Not Found,
+405 Method Not Allowed,
+406 Not Acceptable,
+409 Conflict,
+417 Expectation Failed
+```
+</details>
+
+## Find Customer by Id
 Returns a customer by its ID from a specific Store while passing the respective ID as a path param in the endpoint. The Tenant authentication maps to a Store.
 If the customer does not exist, this method returns a Blank.
 
@@ -1125,23 +1236,28 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Request Headers</summary>
 
+ ```json
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
+| X-TWC-Tenant  | {{Tenant Name}}  |
+```
 
 </details>
 
 
 <details>
  <summary>Path variable</summary>
-	{id} 
+ 
+ ```json
+  "id": "{{id}}"
+  ``` 
 </details>
 
 <details>
  <summary>Response</summary>
 
-```
+```json
  {
   "accepts_marketing": true,
   "active": true,
@@ -1265,9 +1381,25 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 </details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details>
+ <summary>HTTP response Status Codes</summary>
 
-### Find Customer by Ref
+ ```json
+200 OK ,
+201 Created,
+202 Accepted,
+400 Bad Request,
+401 Unauthorized,
+403 Forbidden,
+404 Not Found,
+405 Method Not Allowed,
+406 Not Acceptable,
+409 Conflict,
+417 Expectation Failed
+```
+</details>
+
+## Find Customer by Ref
 Returns a customer by its Ref from a specific Store while passing the respective Ref as a path param in the endpoint. The Tenant authentication maps to a Store.
 If the customer does not exist, this method returns a ResourceNotFound error.
 
@@ -1282,23 +1414,29 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Request Headers</summary>
 
+
+```json
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
+| X-TWC-Tenant  | {{Tenant Name}}  |
+```
 
 </details>
 
 
 <details>
  <summary>Path Variable</summary>
-	{customerRef}
+ 
+ ```json
+  "customerRef": "{{customerRef}}"
+```
 </details>
 
 <details>
  <summary>Response</summary>
 
-```
+```json
  {
   "accepts_marketing": true,
   "active": true,
@@ -1421,12 +1559,12 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ```
 </details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+HTTP Status Code: `200 OK ,201  Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 
-### Look up  Customers by email/mobile/phone/firstName/lastName
-Returns a list of  customers  from a specific Store while passing the email/mobile/phone/firstName/lastName as a Query params in the endpoint. The Tenant authentication maps to a Store.
-If the customers does not exist, this method returns a empty list.
+## Look up  Customers by email/mobile/phone/firstName/lastName
+Returns a list of customers from a specific Store while passing the email/mobile/phone/firstName/lastName as a Query params in the endpoint. The Tenant authentication maps to a Store.
+If the customers do not exist, this method returns an empty list.
 
 Endpoint: ```/api/v2/customers/search```
 
@@ -1461,7 +1599,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Response</summary>
 
-```
+```json
  [
   {
     "accepts_marketing": true,
@@ -1586,11 +1724,27 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ```
 </details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details>
+ <summary>HTTP response Status Codes</summary>
 
-### Delete Customer by ID
+ ```json
+200 OK ,
+201 Created,
+202 Accepted,
+400 Bad Request,
+401 Unauthorized,
+403 Forbidden,
+404 Not Found,
+405 Method Not Allowed,
+406 Not Acceptable,
+409 Conflict,
+417 Expectation Failed
+```
+</details>
+
+## Delete Customer by ID
 Deleting a Customer marks the customer as deleted and produces the HTTP response confirming the action.
-If the customer does not exist, this method returns a empty response.
+If the customer does not exist, this method returns an empty response.
 
 Endpoint: ```/api/v2/customers/{id}```
 
@@ -1603,18 +1757,22 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Request Headers</summary>
 
+```json
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
+| X-TWC-Tenant  | {{Tenant Name}}  |
+```
 </details>
 
 
 <details>
  <summary>Path Variable</summary>
- 
-	- {id}
+
+```json
+ "id": "{{id}}"
+```
+
 </details>
 
 <details>
@@ -1622,11 +1780,27 @@ OAuth 2.0 Scopes: `Tenant authentication`
  OK
 </details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details>
+ <summary>HTTP response Status Codes</summary>
 
-### Delete Customer by Ref
+ ```json
+200 OK ,
+201 Created,
+202 Accepted,
+400 Bad Request,
+401 Unauthorized,
+403 Forbidden,
+404 Not Found,
+405 Method Not Allowed,
+406 Not Acceptable,
+409 Conflict,
+417 Expectation Failed
+```
+</details>
+
+## Delete Customer by Ref
 Deleting a Customer by ref marks the customer as deleted and produces the HTTP response confirming the action.
-If the customer does not exist, this method returns a empty response.
+If the customer does not exist, this method returns an empty response.
 
 Endpoint: ```/api/v2/customers/{customerRef}/ref```
 
@@ -1639,20 +1813,22 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details>
  <summary>Request Headers</summary>
 
+```json
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
+| X-TWC-Tenant  | {{Tenant Name}}  |
+```
 </details>
 
 
 <details>
  <summary>Query Paramters</summary>
  
-	- {customerRef}
-	- {id}
-
+ ```json
+ "id": "{{id}}"
+ "customerRef": "{{customerRef}}"
+```
 </details>
 
 <details>
@@ -1660,9 +1836,27 @@ OAuth 2.0 Scopes: `Tenant authentication`
  OK
 </details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<details>
+ <summary>HTTP response Status Codes</summary>
+
+ ```json
+200 OK ,
+201 Created,
+202 Accepted,
+400 Bad Request,
+401 Unauthorized,
+403 Forbidden,
+404 Not Found,
+405 Method Not Allowed,
+406 Not Acceptable,
+409 Conflict,
+417 Expectation Failed
+```
+</details>
 
 
 
 ***
-[Back to Index](index.md)
+[Back to Index](#index)
+  
+[Back to Home](index.md)
