@@ -2,7 +2,25 @@
 # **Order Svc API**
 An order is a customer's request to purchase one or more products from a shop. You can create, retrieve, update, and delete orders using the Order resource.
 
+### Index
 
+***
+
+- [**Order Svc API**](#order-svc-api)
+    - [Index](#index)
+  - [**Representations**](#representations)
+  - [**REST Endpoints**](#rest-endpoints)
+  - [Validate Order Entry](#validate-order-entry)
+  - [Create an order](#create-an-order)
+  - [Updates an order](#updates-an-order)
+  - [FInd an orders](#find-an-orders)
+  - [Search orders](#search-orders)
+  - [Validate Order](#validate-order)
+  - [Search entries for an order](#search-entries-for-an-order)
+  - [Create an order entry](#create-an-order-entry)
+  - [Update an order entry](#update-an-order-entry)
+  - [Search an order entry](#search-an-order-entry)
+  - [Delete entry](#delete-entry)
 
 ## **Representations**
 

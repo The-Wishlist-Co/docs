@@ -1,11 +1,42 @@
 # **Product API**
 The Product resource stores information about a product, its variants.
 
+### Index
+
+***
+
+- [**Product API**](#product-api)
+    <!-- - [Index](#index) -->
+  - [**Representations**](#representations)
+    - [Product](#product)
+    - [Product Variant](#product-variant)
+  - [**REST Endpoints**](#rest-endpoints)
+    - [Create a Product](#create-a-product)
+    - [Update a Product](#update-a-product)
+    - [Look up Product by gtin/productRef](#look-up-product-by-gtinproductref)
+    - [Validate Request](#validate-request)
+    - [Validate Product](#validate-product)
+    - [Validate Product by Ref](#validate-product-by-ref)
+    - [Find Product by ID](#find-product-by-id)
+    - [Delete Product by ID](#delete-product-by-id)
+    - [Find Product by Ref](#find-product-by-ref)
+    - [Delete Product by Ref](#delete-product-by-ref)
+    - [Upload Products](#upload-products)
+    - [Create a Product Variants](#create-a-product-variants)
+    - [Update a Product Variant](#update-a-product-variant)
+    - [Validate Product Variant](#validate-product-variant)
+    - [Find Product Variant by ID](#find-product-variant-by-id)
+    - [Find Product Variant by Ref](#find-product-variant-by-ref)
+    - [Delete Product variant by Ref](#delete-product-variant-by-ref)
+    - [Find Product variants by productId](#find-product-variants-by-productid)
+    - [Find  Product variants by productId](#find--product-variants-by-productid)
+    - [Delete Product variants by product Id/variantId](#delete-product-variants-by-product-idvariantid)
+    - [Upload Product Variants](#upload-product-variants)
+
+
 ## **Representations**
 
 All representations are JSON objects submitted or received as payload to API requests or responses.
-
-
 
 
 ##  Product
@@ -111,6 +142,119 @@ Represents a product.
  
  `variantsAvailable` - boolean -
  </details>
+
+
+ ##  Product Variant
+***
+Represents a product Variant.
+
+
+<details>
+ <summary>Expand for details</summary>
+ 
+  `active` - boolean - To enable  a product variant.
+ 
+ `additionalImageLink` - string - Image link.
+ 
+ `attributeGroups` - [AttributeGroup](Common_Fields/attributeGroup.md) - The group of attibute values stored under as a object in group of atributeGroups.
+ 
+ `availability` - string - Product Availablity and value should be one of the below values.
+ - available
+ - preorder
+ - disabled 
+ 
+ `availabilityDescription` - String- In detailed details of the product availability.
+ 
+ `baseProductId` - string - Base Product Id.
+ 
+ `baseProductRef` - string - Base Product Name.
+ 
+ `brandId` - string - Product brand Id.
+ 
+ `brandName` - string - Product brand Name.
+ 
+ `calculatedPrice` - number - Product calculated price.
+ 
+ `color` - string  - Product Color.
+ 
+ `condition` - String - Product Condition and it can be either of the below values.
+ - New
+ - Used
+ - Refurbished 
+ 
+ `cost`- number - Product's Cost
+ 
+ `defaultVariant` - string - Default variant for the Product.
+ 
+ `deleted` -  boolean
+ 
+ `description` -  string
+ 
+ `digitalProduct` -  
+ 
+ `disabled` - 
+ 
+ `expirationDate` - 
+ 
+ `featured` - boolean
+ 
+ `gtin` - 
+ 
+ `gtinType` -
+- GTIN8
+- GTIN12
+- GTIN13
+- ITF
+- MPN
+- UPC
+- JAN
+- EAN
+- GTIN14 
+  
+ `id` - string - 
+ 
+ `imageLink` - string -
+ 
+ `inventoryLevel` - integer - 
+ 
+ `inventoryTracking` - string -
+ - none
+ - product
+ - variant 
+ 
+ `isbn` - string -
+ 
+ `link` - string -
+ 
+ `maxOrderQuantity` - 
+ 
+ `minOrderQuantity` - 
+ 
+ `mobileLink` - 
+ 
+ `physicalSpecs	` - [PhysicalSpecifications](Common_Fields/physicalspecs.md) -
+  
+ `productRef` - string -
+ 
+ `status` - 
+ - APPROVED
+ - UNAPPROVED
+ - CHECK
+ - VERIFICATION_PENDING 
+ 
+ `stock` - [Stock](Common_Fields/stock.md)
+ 
+ `title` - string  - Title
+  
+ `variance` - The array for vaiants.
+  
+ `variantOptions` - [VariantOptions](Common_Fields/variantoptions.md) - Array of variant Options. 
+ 
+</details> 
+
+ ## **REST Endpoints**
+
+- ## **Product Service**
  
 ### Create a Product
 Creates a new Product data set in the TWC system.
@@ -3419,115 +3563,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
+- ## **Product Variant Service**
 
 
-##  Product Variant
-***
-Represents a product Variant.
-
-
-<details>
- <summary>Expand for details</summary>
- 
-  `active` - boolean - To enable  a product variant.
- 
- `additionalImageLink` - string - Image link.
- 
- `attributeGroups` - [AttributeGroup](Common_Fields/attributeGroup.md) - The group of attibute values stored under as a object in group of atributeGroups.
- 
- `availability` - string - Product Availablity and value should be one of the below values.
- - available
- - preorder
- - disabled 
- 
- `availabilityDescription` - String- In detailed details of the product availability.
- 
- `baseProductId` - string - Base Product Id.
- 
- `baseProductRef` - string - Base Product Name.
- 
- `brandId` - string - Product brand Id.
- 
- `brandName` - string - Product brand Name.
- 
- `calculatedPrice` - number - Product calculated price.
- 
- `color` - string  - Product Color.
- 
- `condition` - String - Product Condition and it can be either of the below values.
- - New
- - Used
- - Refurbished 
- 
- `cost`- number - Product's Cost
- 
- `defaultVariant` - string - Default variant for the Product.
- 
- `deleted` -  boolean
- 
- `description` -  string
- 
- `digitalProduct` -  
- 
- `disabled` - 
- 
- `expirationDate` - 
- 
- `featured` - boolean
- 
- `gtin` - 
- 
- `gtinType` -
-- GTIN8
-- GTIN12
-- GTIN13
-- ITF
-- MPN
-- UPC
-- JAN
-- EAN
-- GTIN14 
-  
- `id` - string - 
- 
- `imageLink` - string -
- 
- `inventoryLevel` - integer - 
- 
- `inventoryTracking` - string -
- - none
- - product
- - variant 
- 
- `isbn` - string -
- 
- `link` - string -
- 
- `maxOrderQuantity` - 
- 
- `minOrderQuantity` - 
- 
- `mobileLink` - 
- 
- `physicalSpecs	` - [PhysicalSpecifications](Common_Fields/physicalspecs.md) -
-  
- `productRef` - string -
- 
- `status` - 
- - APPROVED
- - UNAPPROVED
- - CHECK
- - VERIFICATION_PENDING 
- 
- `stock` - [Stock](Common_Fields/stock.md)
- 
- `title` - string  - Title
-  
- `variance` - The array for vaiants.
-  
- `variantOptions` - [VariantOptions](Common_Fields/variantoptions.md) - Array of variant Options. 
- 
-</details> 
 
 ### Create a Product Variants
 

@@ -5,7 +5,7 @@ The Customer resource also holds information on the status of a customer's accou
 
 For security reasons, the Customer resource doesn't store credit card information. Customers always need to enter this information at checkout.
 
-### Index
+  ### Index
 
 ***
 
@@ -26,15 +26,15 @@ For security reasons, the Customer resource doesn't store credit card informatio
 
 ## **Representations**
 
-All representations are JSON objects submitted or received as payloads to API requests or responses.
+All representations are JSON objects submitted or received as payload to API requests or responses.
 Represents a customer. If a store field is defined in a store, then the customer account is specific to the store.
 
 <details>
- <summary>Expand for details : </summary>
+ <summary>Expand for details</summary>
 
 ```accepts_marketing``` - boolean - To enable marketing for a customer.
 
-```active``` - boolean - To enable a customer.
+```active``` - boolean - To enable  a customer.
 
 ```addresses``` - [Address](Common_Fields/address.md) - The address is saved as an array. The Address of the customer will be set to the ID of that address.
 
@@ -44,15 +44,15 @@ Represents a customer. If a store field is defined in a store, then the customer
 
 ```customerRef``` - string - User generated refernce number.
 
-```customerState``` - string - Represents the customer's current active status.
+```customerState``` - string - Represents the customer current active status.
 - disabled
 - invited
 - enabled
 - declined 
 
-```default_address``` - [Address](Common_Fields/address.md) - The default address for the customer. The address is saved like an array. The default shipping address of the customer will be set to the ID of that address.
+```default_address``` - [Address](Common_Fields/address.md) - The default address for the customer. The address is saved as an array. The defaultShippingAddress of the customer will be set to the ID of that address.
 
-```dob``` - string - The Customer's Date of Birth.
+```dob``` - string - The Customer's Date of Birth .
 
 ```email``` - string -
 The customer's email address and the main identifier of uniqueness for a customer account. Attempting to assign the same email address to multiple customers returns an error.
@@ -85,6 +85,8 @@ The customer's email address and the main identifier of uniqueness for a custome
 
 </details>
 
+[Back to Index](#index)
+
 ## **REST Endpoints**
 
 - ##  **Customer**
@@ -100,20 +102,18 @@ Method Name: `createCustomer`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<!-- <details> -->
- <summary>Request Headers: </summary>
+<details>
+ <summary>Request Headers</summary>
 
-```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {{Tenant Name}}  |  
-```
+| X-TWC-Tenant  | {Tenant Name}    |
 
-<!-- </details> -->
+</details>
 
-<!-- <details> -->
- <summary>Request Payload: </summary>
+<details>
+ <summary>Payload</summary>
  
 ```
 {
@@ -236,10 +236,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-<!-- </details> -->
+</details>
 
-<!-- <details> -->
- <summary>Response: </summary>
+<details>
+ <summary>Response</summary>
  
  ```
  {
@@ -362,26 +362,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-<!-- </details>  -->
+</details> 
 
-
-<!-- <details> -->
- <summary>HTTP response Status Codes: </summary>
-
- ```
-200 OK ,
-201 Created,
-202 Accepted,
-400 Bad Request,
-401 Unauthorized,
-403 Forbidden,
-404 Not Found,
-405 Method Not Allowed,
-406 Not Acceptable,
-409 Conflict,
-417 Expectation Failed
-```
-<!-- </details> -->
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ## Upload Customers
 Creates an array of new Customers in the TWC system.
@@ -394,21 +377,19 @@ Method Name: `createCustomer`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<!-- <details> -->
- <summary>Request Headers: </summary>
+<details>
+ <summary>Request Headers</summary>
 
-```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {{Tenant Name}}   
-```
+| X-TWC-Tenant  | {Tenant Name}    |
 
-<!-- </details> -->
+</details>
 
 
-<!-- <details> -->
- <summary>Payload: </summary>
+<details>
+ <summary>Payload</summary>
  
  ```
   [
@@ -533,30 +514,14 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ]
 
 ```
-<!-- </details> -->
+</details>
 
-<!-- <details> -->
- <summary>Response: </summary>
- Ok
-<!-- </details>  -->
+<details>
+ <summary>Response</summary>
+ OK
+</details> 
 
-<!-- <details> -->
- <summary>HTTP response Status Codes: </summary>
-
- ```
-200 OK ,
-201 Created,
-202 Accepted,
-400 Bad Request,
-401 Unauthorized,
-403 Forbidden,
-404 Not Found,
-405 Method Not Allowed,
-406 Not Acceptable,
-409 Conflict,
-417 Expectation Failed
-```
-<!-- </details> -->
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 
 ## Validate Customer Input
@@ -570,21 +535,19 @@ Method Name: `validateCustomerRequest`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<!-- <details> -->
- <summary>Request Headers: </summary>
+<details>
+ <summary>Request Headers</summary>
 
-```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {{Tenant Name}}  |
-```
+| X-TWC-Tenant  | {Tenant Name}    |
 
-<!-- </details> -->
+</details>
 
 
-<!-- <details> -->
- <summary>Request Payload: </summary>
+<details>
+ <summary>Payload</summary>
 
 ```
 {
@@ -707,30 +670,14 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-<!-- </details> -->
+</details>
 
-<!-- <details> -->
- <summary>Response: </summary>
+<details>
+ <summary>Response</summary>
  OK
-<!-- </details>  -->
+</details> 
 
-<!-- <details> -->
- <summary>HTTP response Status Codes: </summary>
-
- ```
-200 OK ,
-201 Created,
-202 Accepted,
-400 Bad Request,
-401 Unauthorized,
-403 Forbidden,
-404 Not Found,
-405 Method Not Allowed,
-406 Not Acceptable,
-409 Conflict,
-417 Expectation Failed
-```
-<!-- </details> -->
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ## Update a Customer
 Updates Customer data set in the TWC system.
@@ -743,21 +690,19 @@ Method Name: `updateCustomer`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<!-- <details> -->
- <summary>Request Headers: </summary>
+<details>
+ <summary>Request Headers</summary>
 
-```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {{Tenant Name}}  |
-```
+| X-TWC-Tenant  | {Tenant Name}    |
 
-<!-- </details> -->
+</details>
 
 
-<!-- <details> -->
- <summary>Request Payload: </summary>
+<details>
+ <summary>Payload</summary>
 
 ```
 {
@@ -880,10 +825,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-<!-- </details> -->
+</details>
 
-<!-- <details> -->
- <summary>Response:</summary>
+<details>
+ <summary>Response</summary>
 
 ```
  {
@@ -1006,25 +951,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-<!-- </details>  -->
+</details> 
 
-<!-- <details> -->
- <summary>HTTP response Status Codes: </summary>
-
- ```
-200 OK ,
-201 Created,
-202 Accepted,
-400 Bad Request,
-401 Unauthorized,
-403 Forbidden,
-404 Not Found,
-405 Method Not Allowed,
-406 Not Acceptable,
-409 Conflict,
-417 Expectation Failed
-```
-<!-- </details> -->
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ## Add address to Existing Customer
 Update the Customer data by adding the new address details.
@@ -1037,21 +966,19 @@ Method Name: `addCustomerAddress`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<!-- <details> -->
- <summary>Request Headers:</summary>
+<details>
+ <summary>Request Headers</summary>
 
- ```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {{Tenant Name}}  |
-```
+| X-TWC-Tenant  | {Tenant Name}    |
 
-<!-- </details> -->
+</details>
 
 
-<!-- <details> -->
- <summary>Request Payload: </summary>
+<details>
+ <summary>Payload</summary>
 
 ```
 {
@@ -1075,10 +1002,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-<!-- </details> -->
+</details>
 
-<!-- <details> -->
- <summary>Response: </summary>
+<details>
+ <summary>Response</summary>
 
 ```
  {
@@ -1201,25 +1128,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-<!-- </details>  -->
+</details> 
 
-<!-- <details> -->
- <summary>HTTP response Status Codes: </summary>
-
- ```
-200 OK ,
-201 Created,
-202 Accepted,
-400 Bad Request,
-401 Unauthorized,
-403 Forbidden,
-404 Not Found,
-405 Method Not Allowed,
-406 Not Acceptable,
-409 Conflict,
-417 Expectation Failed
-```
-<!-- </details> -->
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ## Find Customer by Id
 Returns a customer by its ID from a specific Store while passing the respective ID as a path param in the endpoint. The Tenant authentication maps to a Store.
@@ -1234,27 +1145,22 @@ Method Name: `getCustomer`
 OAuth 2.0 Scopes: `Tenant authentication`
 
 <details>
- <summary>Request Headers: </summary>
+ <summary>Request Headers</summary>
 
- ```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {{Tenant Name}}  |
-```
+| X-TWC-Tenant  | {Tenant Name}    |
 
 </details>
 
 
-<!-- <details> -->
- <summary>Path variable: </summary>
- 
- ```
-  "id": "{{id}}"
-  ``` 
-<!-- </details> -->
+<details>
+ <summary>Path variable</summary>
+	{id} 
+</details>
 
-<!-- <details> -->
+<details>
  <summary>Response</summary>
 
 ```
@@ -1379,25 +1285,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 ```
 
-<!-- </details>  -->
+</details> 
 
-<!-- <details> -->
- <summary>HTTP response Status Codes: </summary>
-
- ```
-200 OK ,
-201 Created,
-202 Accepted,
-400 Bad Request,
-401 Unauthorized,
-403 Forbidden,
-404 Not Found,
-405 Method Not Allowed,
-406 Not Acceptable,
-409 Conflict,
-417 Expectation Failed
-```
-<!-- </details> -->
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ## Find Customer by Ref
 Returns a customer by its Ref from a specific Store while passing the respective Ref as a path param in the endpoint. The Tenant authentication maps to a Store.
@@ -1411,30 +1301,24 @@ Method Name: `getCustomerByRef`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<!-- <details> -->
- <summary>Request Headers: </summary>
+<details>
+ <summary>Request Headers</summary>
 
-
-```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {{Tenant Name}}  |
-```
+| X-TWC-Tenant  | {Tenant Name}    |
 
-<!-- </details> -->
+</details>
 
 
-<!-- <details> -->
- <summary>Path Variable: </summary>
- 
- ```
-  "customerRef": "{{customerRef}}"
-```
-<!-- </details> -->
+<details>
+ <summary>Path Variable</summary>
+	{customerRef}
+</details>
 
-<!-- <details> -->
- <summary>Response: </summary>
+<details>
+ <summary>Response</summary>
 
 ```
  {
@@ -1557,30 +1441,14 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-<!-- </details>  -->
+</details> 
 
-<!-- <details> -->
- <summary>HTTP response Status Codes: </summary>
-
- ```
-200 OK ,
-201 Created,
-202 Accepted,
-400 Bad Request,
-401 Unauthorized,
-403 Forbidden,
-404 Not Found,
-405 Method Not Allowed,
-406 Not Acceptable,
-409 Conflict,
-417 Expectation Failed
-```
-<!-- </details> -->
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 
 ## Look up  Customers by email/mobile/phone/firstName/lastName
-Returns a list of customers from a specific Store while passing the email/mobile/phone/firstName/lastName as a Query params in the endpoint. The Tenant authentication maps to a Store.
-If the customers do not exist, this method returns an empty list.
+Returns a list of  customers  from a specific Store while passing the email/mobile/phone/firstName/lastName as a Query params in the endpoint. The Tenant authentication maps to a Store.
+If the customers does not exist, this method returns a empty list.
 
 Endpoint: ```/api/v2/customers/search```
 
@@ -1590,32 +1458,30 @@ Method Name: `lookupCustomer`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<!-- <details> -->
- <summary>Request Headers: </summary>
+<details>
+ <summary>Request Headers</summary>
 
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-<!-- </details> -->
+</details>
 
 
-<!-- <details> -->
- <summary>Query Parameters: </summary>
+<details>
+ <summary>Query Parameters</summary>
  
- ```
- "email": "{{email}}" 
- "firstName": "{{firstName}}"
- "lastName": "{{lastName}}"
- "mobile": "{{mobile}}"
- "phone": "{{phone}}"
- ```
+ - email
+ - firstName
+ - lastName
+ - mobile
+ - phone
 
-<!-- </details> -->
+</details>
 
-<!-- <details> -->
- <summary>Response: </summary>
+<details>
+ <summary>Response</summary>
 
 ```
  [
@@ -1740,29 +1606,13 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ]
 
 ```
-<!-- </details>  -->
+</details> 
 
-<!-- <details> -->
- <summary>HTTP response Status Codes: </summary>
-
- ```
-200 OK ,
-201 Created,
-202 Accepted,
-400 Bad Request,
-401 Unauthorized,
-403 Forbidden,
-404 Not Found,
-405 Method Not Allowed,
-406 Not Acceptable,
-409 Conflict,
-417 Expectation Failed
-```
-<!-- </details> -->
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ## Delete Customer by ID
 Deleting a Customer marks the customer as deleted and produces the HTTP response confirming the action.
-If the customer does not exist, this method returns an empty response.
+If the customer does not exist, this method returns a empty response.
 
 Endpoint: ```/api/v2/customers/{id}```
 
@@ -1772,53 +1622,33 @@ Method Name: `deleteCustomer`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<!-- <details> -->
- <summary>Request Headers: </summary>
+<details>
+ <summary>Request Headers</summary>
 
-```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {{Tenant Name}}  |
-```
-<!-- </details> -->
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
 
 
-<!-- <details> -->
- <summary>Path Variable: </summary>
+<details>
+ <summary>Path Variable</summary>
+ 
+	- {id}
+</details>
 
-```
- "id": "{{id}}"
-```
-
-<!-- </details> -->
-
-<!-- <details> -->
- <summary>Response: </summary>
+<details>
+ <summary>Response</summary>
  OK
-<!-- </details>  -->
+</details> 
 
-<!-- <details> -->
- <summary>HTTP response Status Codes: </summary>
-
- ```
-200 OK ,
-201 Created,
-202 Accepted,
-400 Bad Request,
-401 Unauthorized,
-403 Forbidden,
-404 Not Found,
-405 Method Not Allowed,
-406 Not Acceptable,
-409 Conflict,
-417 Expectation Failed
-```
-<!-- </details> -->
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 ## Delete Customer by Ref
 Deleting a Customer by ref marks the customer as deleted and produces the HTTP response confirming the action.
-If the customer does not exist, this method returns an empty response.
+If the customer does not exist, this method returns a empty response.
 
 Endpoint: ```/api/v2/customers/{customerRef}/ref```
 
@@ -1828,49 +1658,31 @@ Method Name: `deleteCustomerByRef`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<!-- <details> -->
- <summary>Request Headers: </summary>
+<details>
+ <summary>Request Headers</summary>
 
-```
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
-| X-TWC-Tenant  | {{Tenant Name}}  |
-```
-<!-- </details> -->
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
 
 
-<!-- <details> -->
- <summary>Query Paramters: </summary>
+<details>
+ <summary>Query Paramters</summary>
  
- ```
- "id": "{{id}}"
- "customerRef": "{{customerRef}}"
-```
-<!-- </details> -->
+	- {customerRef}
+	- {id}
 
-<!-- <details> -->
- <summary>Response: </summary>
+</details>
+
+<details>
+ <summary>Response</summary>
  OK
-<!-- </details>  -->
+</details> 
 
-<!-- <details> -->
- <summary>HTTP response Status Codes:</summary>
-
- ```
-200 OK ,
-201 Created,
-202 Accepted,
-400 Bad Request,
-401 Unauthorized,
-403 Forbidden,
-404 Not Found,
-405 Method Not Allowed,
-406 Not Acceptable,
-409 Conflict,
-417 Expectation Failed
-```
-<!-- </details> -->
+HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 
 

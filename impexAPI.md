@@ -4,6 +4,25 @@
 The ImpEx API allows you to interact with all the core api's in the TWC system at a unified REST interface for the seemless interegration of bulk data in to the system. You can use the API to import and export data, and extend or adapt it to your needs as it works with multiple combinations of entity types and data is translated and transformed to the system requirements internally. 
 
 
+### Index
+
+***
+
+- [**Impex API**](#impex-api)
+    <!-- - [Index](#index) -->
+  - [**Representations**](#representations)
+  - [**REST Endpoints**](#rest-endpoints)
+    - [Create Batch](#create-batch)
+    - [Change State](#change-state)
+    - [Get Batch](#get-batch)
+    - [Query Batch](#query-batch)
+    - [Create Resources](#create-resources)
+    - [Update State](#update-state)
+    - [Get Resource By Id](#get-resource-by-id)
+    - [Query Resources](#query-resources)
+      
+
+
 ## **Representations**
 
 All representations are JSON objects submitted or received as payload to API requests or responses.

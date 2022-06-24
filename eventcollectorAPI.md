@@ -2,6 +2,25 @@
 
 The event collector api is employed for enabling various events and campains that pertains to a customer. Various event suscriptions such as notification services, loyality services etc can be enabled by the customer and the information related to these events are also stored here.
 
+### Index
+
+***
+
+- [**Event Collector API**](#event-collector-api)
+    <!-- - [Index](#index) -->
+  - [**Representations**](#representations)
+    - [Order](#order)
+  - [**REST Endpoints**](#rest-endpoints)
+    - [Create Event](#create-event)
+    - [Find Events](#find-events)
+    - [Create  Event Subscriptions](#create--event-subscriptions)
+    - [Update  Event Subscriptions](#update--event-subscriptions)
+    - [Get All Event Subscriptions](#get-all-event-subscriptions)
+    - [Get  Event Subscriptions](#get--event-subscriptions)
+    - [Deactivate Event Subscriptions](#deactivate-event-subscriptions)
+  
+
+
 
 ## **Representations**
 

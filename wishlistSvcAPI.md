@@ -3,6 +3,25 @@ The Wishlist resource stores information about a customer's wishlist, which incl
 
 one customer may have mulitple wishlist and also need a valid customer to create a wishlist.
 
+### Index
+
+***
+
+- [**Wishlist API**](#wishlist-api)
+    <!-- - [Index](#index) -->
+  - [**Representations**](#representations)
+    - [Wishlist](#wishlist)
+      - [Create a Wishlist](#create-a-wishlist)
+      - [Update a Wishlist](#update-a-wishlist)
+      - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
+      - [Find Wishlist by id/wishlistRef](#find-wishlist-by-idwishlistref)
+      - [Find Wishlist by CustomerId](#find-wishlist-by-customerid)
+      - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
+      - [Create a Wishlist Item](#create-a-wishlist-item)
+      - [Update a Wishlist Item](#update-a-wishlist-item)
+      - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
+      - [Find Wishlist Item by WishlistId and Item Id](#find-wishlist-item-by-wishlistid-and-item-id)
+
 ## **Representations**
 
 All representations are JSON objects submitted or received as payload to API requests or responses.

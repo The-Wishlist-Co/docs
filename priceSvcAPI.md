@@ -2,6 +2,20 @@
 # **Price API**
 The Price resource stores information about price details of  particular product variant.
 
+### Index
+
+***
+
+- [**Price API**](#price-api)
+    <!-- - [Index](#index) -->
+  - [**Representations**](#representations)
+    - [Create A Price](#create-a-price)
+    - [Update A Price](#update-a-price)
+    - [Delete A Price](#delete-a-price)
+    - [Find Price by id and priceRef](#find-price-by-id-and-priceref)
+    - [Validate an price](#validate-an-price)
+    - [Find All Prices](#find-all-prices)
+
 
 ## **Representations**
 

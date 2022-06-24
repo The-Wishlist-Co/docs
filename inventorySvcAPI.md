@@ -9,6 +9,28 @@ Each **inventory level** belongs to one product variant and has one location. Fo
 
 An **inventory location** represents a geographical location where your stores, pop-up stores, headquarters, and warehouses exist. You can use the Location resource to track sales, manage inventory, and configure the tax rates to apply at checkout. 
 
+### Index
+
+***
+
+- [**Inventory API**](#inventory-api)
+    <!-- - [Index](#index) -->
+  - [**Representations**](#representations)
+  - [**REST Endpoints**](#rest-endpoints)
+    - [Create an inventory Location](#create-an-inventory-location)
+    - [Create multiple inventory Locations](#create-multiple-inventory-locations)
+    - [Validate an inventory Location](#validate-an-inventory-location)
+    - [Find Inventory Location by id and locationRef](#find-inventory-location-by-id-and-locationref)
+    - [Delete Inventory Location](#delete-inventory-location)
+    - [Create an inventory level](#create-an-inventory-level)
+    - [Create Multiple inventory level](#create-multiple-inventory-level)
+    - [Validate inventory level](#validate-inventory-level)
+    - [Update an inventory level](#update-an-inventory-level)
+    - [Find Inventory level by id and stockRef](#find-inventory-level-by-id-and-stockref)
+    - [Find Inventory level for product and location](#find-inventory-level-for-product-and-location)
+    - [Find Aggregated inventory level for a product variant](#find-aggregated-inventory-level-for-a-product-variant)
+    
+
 ## **Representations**
 
 All representations are JSON objects submitted or received as payload to API requests or responses.
@@ -93,6 +115,16 @@ Method : ``` POST ```
 Endpoint : ```/api/location```
 
 OAuth 2.0 Scopes : `Tenant authentication`
+
+<details>
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+</details>
 
 
 <details> 
