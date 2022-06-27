@@ -11,12 +11,17 @@ one customer may have mulitple wishlist and also need a valid customer to create
     <!-- - [Index](#index) -->
   - [**Representations**](#representations)
     - [Wishlist](#wishlist)
+    - [Wishlist Item](#wishlist-item)
+    - [Product](#product)
+  - [**REST Endpoints**](#rest-endpoints)
+    - [**Wishlist Resource**](#wishlist-resource)
       - [Create a Wishlist](#create-a-wishlist)
       - [Update a Wishlist](#update-a-wishlist)
       - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
       - [Find Wishlist by id/wishlistRef](#find-wishlist-by-idwishlistref)
       - [Find Wishlist by CustomerId](#find-wishlist-by-customerid)
       - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
+    - [**Wishlist Item Resource**](#wishlist-item-resource)
       - [Create a Wishlist Item](#create-a-wishlist-item)
       - [Update a Wishlist Item](#update-a-wishlist-item)
       - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
@@ -28,9 +33,8 @@ All representations are JSON objects submitted or received as payload to API req
 
 ##  Wishlist
 
-
-<details>
- <summary>WishList</summary>
+<!-- <details> -->
+ <!-- <summary>WishList</summary> -->
  
 ```customerId``` - string - the unique id of the customer
 
@@ -50,9 +54,10 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```attributeGroups```- to add any additional information
 
-</details>
-<details>
- <summary>WishList Item</summary>
+<!-- </details>
+<details> -->
+##  Wishlist Item
+ <!-- <summary>WishList Item</summary> -->
 
 ```datePurchased``` - DateTime - the Date of purchase if the wishlist items is purchased.
 
@@ -66,10 +71,12 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```wishlistRef``` - string- reference of the respective wishlist
 
-</details>
+<!-- </details>
 
-<details>
- <summary>Product</summary>
+<details> -->
+ <!-- <summary>Product</summary> -->
+ ## Product
+ 
 
 ```oldVariantId``` - string - the existing product variant id. this needs only incase of updating an existing variant in a wishlist item.
 
@@ -81,9 +88,11 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```selectedVariantRef``` - string- the unique ref of the product variant which the customer need to add.
 
-</details>
+<!-- </details> -->
 
+## **REST Endpoints**
 
+## **Wishlist Resource**
 
 ## Create a Wishlist
 Creates a new wishlist data set in the TWC system, then the wishlist is assigned to the respective customer.
@@ -94,9 +103,17 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Sample Request:
-<details>
-<!-- ```markdown  -->
+<!-- <details> -->
+``` 
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -176,12 +193,26 @@ Sample Request:
   ],
   "wishlistRef": "string"
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : `201	Created`
+
+ 
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
 
-### Update a Wishlist
+## Update a Wishlist
 Updates Wishlist data set in the TWC system.
 
 Endpoint: ```/api/wishlists```
@@ -190,10 +221,18 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Sample Request:
 
-<!-- ```markdown  -->
-<details>
+<!-- <details> -->
+``` 
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -273,12 +312,26 @@ Sample Request:
   ],
   "wishlistRef": "string"
 }
-</details>
-<!-- ``` -->
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : `200 Created`
 
-### Delete Wishlist by ID/Ref
+ 
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+## Delete Wishlist by ID/Ref
 Deleting a Wishlist marks the wishlist as deleted and produces the HTTP response confirming the action.
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
@@ -288,11 +341,32 @@ Method: ``` DELETE ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
 
-Response : `200 OK ,204	No Content, 401 Unauthorized, 403 Forbidden`
+Response : `201	Created`
 
-### Find Wishlist by id/wishlistRef
+ 
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Find Wishlist by id/wishlistRef
 Returns the  wishlist belongs to the given  Id and Ref.
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
@@ -302,12 +376,29 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `          
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
-
-### Find Wishlist by CustomerId
+## Find Wishlist by CustomerId
 Returns the list of wishlists belongs to the given customer id.
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
@@ -317,10 +408,27 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
 
 
-### Find Wishlist by CustomerRef
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Find Wishlist by CustomerRef
 Returns the list of wishlists belongs to the given customer reference.
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
@@ -330,8 +438,26 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+ <summary>Request Headers :</summary>
 
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+## **Wishlist Item Resource**
 
 ## Create a Wishlist Item
 Creates a new wishlist item data set  into an existing wishlist in the TWC system.
@@ -342,10 +468,19 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Sample Request:
 
-<!-- ```markdown  -->
-<details>
+<!-- <details> -->
+``` 
+
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -387,12 +522,21 @@ Sample Request:
   "wishlistItemRef": "string",
   "wishlistRef": "string"
 }
+```
 
-</details>
-<!-- ``` -->
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
-
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
 ### Update a Wishlist Item
 Updates Wishlist item data set in the TWC system.
@@ -403,11 +547,18 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Sample Request:
+<!-- <details> -->
 
-<!-- ```markdown  -->
-<details>
-
+```markdown 
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -449,11 +600,20 @@ Sample Request:
   "wishlistItemRef": "string",
   "wishlistRef": "string"
 }
-<!-- ``` -->
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
-
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 ### Delete Wishlist Item by wishlist Id and item Id
 Deleting a Wishlist item marks the item as deleted and produces the HTTP response confirming the action.
 If the wishlist/item does not exist, this method returns a ResourceNotFound error.
@@ -464,10 +624,26 @@ Method: ``` DELETE ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
 Request Parameters: `Id  : Wishlist item Id, wishlistId : Wishlist Id`
 
-Response : `200 OK ,204	No Content, 401 Unauthorized, 403 Forbidden`
-
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
 
 ### Find Wishlist Item by WishlistId and Item Id
@@ -480,8 +656,26 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+ <summary>Request Headers :</summary>
 
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
 ***
+[Back to Home](index.md)
+
 [Back to Index](index.md)
