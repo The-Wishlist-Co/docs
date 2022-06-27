@@ -249,8 +249,8 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
-- 401 Unauthorized,
+
+- 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
@@ -412,8 +412,8 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
-- 401 Unauthorized,
+
+- 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
@@ -448,8 +448,8 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
-- 401 Unauthorized,
+
+- 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
@@ -563,8 +563,8 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
-- 401 Unauthorized,
+
+- 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
@@ -587,7 +587,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-Path Variable: ` customerId - Unique Customer Id`
+Path Variable: `customerId - Unique Customer Id`
 
 Response:
 
@@ -680,8 +680,8 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
-- 401 Unauthorized,
+
+- 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
@@ -798,8 +798,8 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
-- 401 Unauthorized,
+
+- 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
@@ -924,8 +924,8 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
-- 401 Unauthorized,
+
+- 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
@@ -1047,8 +1047,8 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
-- 401 Unauthorized,
+
+- 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
@@ -1077,8 +1077,8 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
-- 401 Unauthorized,
+
+- 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
@@ -1155,8 +1155,8 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
-- 401 Unauthorized,
+
+- 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
