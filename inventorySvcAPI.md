@@ -36,7 +36,7 @@ An **inventory location** represents a geographical location where your stores, 
 All representations are JSON objects submitted or received as payload to API requests or responses.
 
 
-<details>
+<!-- <details> -->
  <summary><font size="4">Location </font></summary>
 
 ```id``` - string -The unique ID of the location.It will auotmatically generate while creating the location.
@@ -45,7 +45,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```locationType``` - string -The location type  of the location. whether its STORE OR PICKUP_POINT
 
-<details>
+<!-- <details> -->
  <summary><font size="4">Address </font></summary>
 
 ```building``` - string - The location's building address.
@@ -74,10 +74,10 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```streetNumber``` - string - The location's street number.
 
- </details>
-</details>
+ <!-- </details> -->
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary><font size="4">Inventory Level </font></summary>
 
 ```deleted``` - boolean - The inventory level is deleted or not
@@ -102,7 +102,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```stockRef``` - string - The unique reference of the inventory level
 
-</details>
+<!-- </details> -->
 
 ## **REST Endpoints**
 
@@ -116,7 +116,7 @@ Endpoint : ```/api/location```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -124,10 +124,10 @@ OAuth 2.0 Scopes : `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
 
-<details> 
+<!-- <details> --> 
 <summary> Request Payload : </summary>
 
 ```json
@@ -208,17 +208,101 @@ OAuth 2.0 Scopes : `Tenant authentication`
   "locationType": "STORE"
 }   
 ```
-</details>
+<!-- </details> -->
 
-<details> 
+<!-- <details> --> 
  <summary> Response : </summary>
 
 ``` json
-200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+{
+  "address": {
+    "building": "string",
+    "city": "string",
+    "contactPerson": "string",
+    "countryIsocode": "string",
+    "countryName": "string",
+    "county": "string",
+    "fax": "string",
+    "level": "string",
+    "phone": "string",
+    "postcode": "string",
+    "state": "string",
+    "street": "string",
+    "streetNumber": "string"
+  },
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "id": "string",
+  "locationRef": "string",
+  "locationType": "STORE"
+}
 
 ```
-</details> 
+<!-- </details> --> 
 
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Create multiple inventory Locations
 
@@ -227,7 +311,7 @@ Method : ``` POST ```
 Endpoint : ```/api/locations```
 
 OAuth 2.0 Scopes : `Tenant authentication`
-<details> 
+<!-- <details> --> 
 <summary> Request Payload : </summary>
 
 ```json
@@ -310,18 +394,96 @@ OAuth 2.0 Scopes : `Tenant authentication`
   }
 ]
 ```
-</details>
+<!-- </details> -->
 
-<details> 
- <summary> Response : </summary>
- 
-``` json
-
-200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
-
+<summary> Sample Response : </summary>
+```json
+{
+  "address": {
+    "building": "string",
+    "city": "string",
+    "contactPerson": "string",
+    "countryIsocode": "string",
+    "countryName": "string",
+    "county": "string",
+    "fax": "string",
+    "level": "string",
+    "phone": "string",
+    "postcode": "string",
+    "state": "string",
+    "street": "string",
+    "streetNumber": "string"
+  },
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "id": "string",
+  "locationRef": "string",
+  "locationType": "STORE"
+}
 ```
-</details> 
 
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 
 ## Validate an inventory Location
@@ -332,7 +494,7 @@ Endpoint : ```​/api​/location​/validate```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<details> 
+<!-- <details> --> 
 <summary> Request Payload : </summary>
 
 ```json
@@ -413,17 +575,17 @@ OAuth 2.0 Scopes : `Tenant authentication`
   "locationType": "STORE"
 }
 ```
-</details>
+<!-- </details> -->
 
-<details> 
- <summary> Response : </summary>
- 
-``` json
-200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
 
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
 ```
-</details> 
-
 
 ## Find Inventory Location by id and locationRef
 
@@ -433,24 +595,107 @@ Method : ``` GET ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<details> 
+<!-- <details> --> 
  <summary> Request Parameters : </summary>
  
 ``` json
 "id": "{{Location Id}}",
 "locationRef":"{{Location reference}}"
 ```
-</details> 
+<!-- </details> --> 
 
-<details> 
+<!-- <details> --> 
  <summary> Response : </summary>
  
 ``` json
-200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+{
+  "address": {
+    "building": "string",
+    "city": "string",
+    "contactPerson": "string",
+    "countryIsocode": "string",
+    "countryName": "string",
+    "county": "string",
+    "fax": "string",
+    "level": "string",
+    "phone": "string",
+    "postcode": "string",
+    "state": "string",
+    "street": "string",
+    "streetNumber": "string"
+  },
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "id": "string",
+  "locationRef": "string",
+  "locationType": "STORE"
+}
 
 ```
-</details> 
+<!-- </details> --> 
 
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Delete Inventory Location
 
@@ -461,23 +706,22 @@ Method: ``` DELETE ```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
-<details> 
+<!-- <details> --> 
  <summary> Request Parameters : </summary>
  
 ``` json
 "id": "{{Location Id}}",
 "locationRef":"{{Location reference}}"
 ```
-</details> 
+<!-- </details> --> 
 
-<details> 
- <summary> Response : </summary>
- 
-``` json
-200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
-
+	HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
 ```
-</details> 
 
 - ## **Stock Level Resource**
 
@@ -489,7 +733,7 @@ Endpoint : ```/api/stocklevel```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<details> 
+<!-- <details> --> 
 <summary> Request Payload : </summary>
 
 ```json
@@ -563,16 +807,93 @@ OAuth 2.0 Scopes : `Tenant authentication`
   "stockRef": "string"
 }
 ```
-</details>
+<!-- </details> -->
 
-<details> 
+<!-- <details> --> 
  <summary> Response : </summary>
  
 ``` json
-200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "deleted": true,
+  "excludedQuantity": 0,
+  "futureStock": true,
+  "id": "string",
+  "locationId": "string",
+  "productVariantId": "string",
+  "reserved": 0,
+  "status": "IN_STOCK",
+  "stockDate": "2022-06-27T06:37:59.881Z",
+  "stockOnHand": 0,
+  "stockRef": "string"
+}
 
 ```
-</details> 
+<!-- </details> --> 
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Create Multiple inventory level
 
@@ -582,7 +903,7 @@ Endpoint : ```/api/stocklevels```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<details> 
+<!-- <details> --> 
 <summary> Request Payload : </summary>
 
 ```json
@@ -657,16 +978,94 @@ OAuth 2.0 Scopes : `Tenant authentication`
     "stockRef": "string"
   }
 ]
-</details>
+```
+<!-- </details> -->
 
-<details> 
+<!-- <details> --> 
  <summary> Response : </summary>
  
 ``` json
-200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "deleted": true,
+  "excludedQuantity": 0,
+  "futureStock": true,
+  "id": "string",
+  "locationId": "string",
+  "productVariantId": "string",
+  "reserved": 0,
+  "status": "IN_STOCK",
+  "stockDate": "2022-06-27T06:38:28.943Z",
+  "stockOnHand": 0,
+  "stockRef": "string"
+}
 
 ```
-</details> 
+<!-- </details> --> 
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Validate inventory level
 
@@ -676,7 +1075,7 @@ Endpoint: ```/api/stocklevel/validate```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details> 
+<!-- <details> --> 
 <summary> Request Payload : </summary>
 
 ```json
@@ -750,16 +1149,18 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "stockRef": "string"
 }
 ```
-</details>
+<!-- </details> -->
 
-<details> 
- <summary> Response : </summary>
- 
-``` json
-200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
 
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
 ```
-</details> 
 
 ## Update an inventory level
 
@@ -769,7 +1170,7 @@ Endpoint: ```/api/stocklevel```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details> 
+<!-- <details> --> 
 <summary> Request Payload : </summary>
 
 ```json
@@ -841,16 +1242,94 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "stockRef": "string"
 }
 ```
-</details>
+<!-- </details> -->
 
-<details> 
+<!-- <details> --> 
  <summary> Response : </summary>
  
 ``` json
-200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "deleted": true,
+  "excludedQuantity": 0,
+  "futureStock": true,
+  "id": "string",
+  "locationId": "string",
+  "productVariantId": "string",
+  "reserved": 0,
+  "status": "IN_STOCK",
+  "stockDate": "2022-06-27T06:39:30.214Z",
+  "stockOnHand": 0,
+  "stockRef": "string"
+}
 
 ```
-</details> 
+<!-- </details> --> 
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 
 ## Find Inventory level by id and stockRef
@@ -861,23 +1340,24 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details> 
+<!-- <details> --> 
  <summary> Request Parameters : </summary>
  
 ``` json
 "id": "{{inventory level Id}}",
 "locationRef": "{{Inventory level reference}}"
 ```
-</details> 
+<!-- </details> --> 
 
-<details> 
- <summary> Response : </summary>
- 
-``` json
-200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
-
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
 ```
-</details> 
+
 
 ## Find Inventory level for product and location
 
@@ -889,7 +1369,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `locationId  : inventory location Id, locationRef : Inventory location reference,productId: unique Product Id,productRef: unique product reference`
 
-<details> 
+<!-- <details> --> 
  <summary> Request Parameters : </summary>
  
 ``` json
@@ -898,16 +1378,95 @@ Request Parameters: `locationId  : inventory location Id, locationRef : Inventor
 "productId": "{{unique Product Id}}",
 "productRef": "{{unique product reference}}"
 ```
-</details> 
+<!-- </details> --> 
 
-<details> 
+<!-- <details> --> 
  <summary> Response : </summary>
  
 ``` json
-200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+[
+  {
+    "attributeGroups": {
+      "additionalProp1": {
+        "attribute_group": "string",
+        "attributes": {
+          "additionalProp1": {
+            "attribute_value": "string",
+            "value_type": "INTEGER"
+          },
+          "additionalProp2": {
+            "attribute_value": "string",
+            "value_type": "INTEGER"
+          },
+          "additionalProp3": {
+            "attribute_value": "string",
+            "value_type": "INTEGER"
+          }
+        },
+        "is_obsolete": true
+      },
+      "additionalProp2": {
+        "attribute_group": "string",
+        "attributes": {
+          "additionalProp1": {
+            "attribute_value": "string",
+            "value_type": "INTEGER"
+          },
+          "additionalProp2": {
+            "attribute_value": "string",
+            "value_type": "INTEGER"
+          },
+          "additionalProp3": {
+            "attribute_value": "string",
+            "value_type": "INTEGER"
+          }
+        },
+        "is_obsolete": true
+      },
+      "additionalProp3": {
+        "attribute_group": "string",
+        "attributes": {
+          "additionalProp1": {
+            "attribute_value": "string",
+            "value_type": "INTEGER"
+          },
+          "additionalProp2": {
+            "attribute_value": "string",
+            "value_type": "INTEGER"
+          },
+          "additionalProp3": {
+            "attribute_value": "string",
+            "value_type": "INTEGER"
+          }
+        },
+        "is_obsolete": true
+      }
+    },
+    "deleted": true,
+    "excludedQuantity": 0,
+    "futureStock": true,
+    "id": "string",
+    "locationId": "string",
+    "productVariantId": "string",
+    "reserved": 0,
+    "status": "IN_STOCK",
+    "stockDate": "2022-06-27T06:40:40.732Z",
+    "stockOnHand": 0,
+    "stockRef": "string"
+  }
+]
 
 ```
-</details> 
+<!-- </details> --> 
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Find Aggregated inventory level for a product variant
 
@@ -917,22 +1476,42 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details> 
+<!-- <details> --> 
  <summary> Request Parameters : </summary>
  
 ``` json
 "id": "{{inventory level Id}}"
 ```
-</details> 
+<!-- </details> --> 
 
-<details> 
+<!-- <details> --> 
  <summary> Response : </summary>
  
 ``` json
-200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found
+{
+  "productVariantId": "string",
+  "stockLevels": [
+    {
+      "locationRef": "string",
+      "locationid": "string",
+      "stock": "string"
+    }
+  ],
+  "totalStock": "string"
+}
 
 ```
-</details> 
+<!-- </details> --> 
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 
 ***
