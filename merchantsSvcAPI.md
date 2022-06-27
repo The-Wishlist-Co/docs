@@ -168,7 +168,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```store_url```-string
 
-```targeted_countries```-string
+```targeted_countries``` - string
 
 ```updated_at``` - Datetime
 
