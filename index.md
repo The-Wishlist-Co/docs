@@ -133,32 +133,32 @@ For more detailed informaation, check out the collection and follow the service 
     The Product resource stores information about a product, its variants. You can create, retrieve, update, and delete orders using the Product Service api.
 
 
-     <!-- - [Index](#index) -->
-    - [**Representations**](#representations)
-      - [Product](#product)
-      - [Product Variant](#product-variant)
-    - [**REST Endpoints**](#rest-endpoints)
-      - [Create a Product](#create-a-product)
-      - [Update a Product](#update-a-product)
-      - [Look up Product by gtin/productRef](#look-up-product-by-gtinproductref)
-      - [Validate Request](#validate-request)
-      - [Validate Product](#validate-product)
-      - [Validate Product by Ref](#validate-product-by-ref)
-      - [Find Product by ID](#find-product-by-id)
-      - [Delete Product by ID](#delete-product-by-id)
-      - [Find Product by Ref](#find-product-by-ref)
-      - [Delete Product by Ref](#delete-product-by-ref)
-      - [Upload Products](#upload-products)
-      - [Create a Product Variants](#create-a-product-variants)
-      - [Update a Product Variant](#update-a-product-variant)
-      - [Validate Product Variant](#validate-product-variant)
-      - [Find Product Variant by ID](#find-product-variant-by-id)
-      - [Find Product Variant by Ref](#find-product-variant-by-ref)
-      - [Delete Product variant by Ref](#delete-product-variant-by-ref)
-      - [Find Product variants by productId](#find-product-variants-by-productid)
-      - [Find  Product variants by productId](#find--product-variants-by-productid)
-      - [Delete Product variants by product Id/variantId](#delete-product-variants-by-product-idvariantid)
-      - [Upload Product Variants](#upload-product-variants)
+    
+  - [**REST Endpoints**](#rest-endpoints)
+      - [**Product Service**](#product-service)
+          - [Create a Product](#create-a-product)
+          - [Update a Product](#update-a-product)
+          - [Look up Product by gtin/productRef](#look-up-product-by-gtinproductref)
+          - [Validate Request](#validate-request)
+          - [Validate Product](#validate-product)
+          - [Validate Product by Ref](#validate-product-by-ref)
+          - [Find Product by ID](#find-product-by-id)
+          - [Delete Product by ID](#delete-product-by-id)
+          - [Find Product by Ref](#find-product-by-ref)
+          - [Delete Product by Ref](#delete-product-by-ref)
+          - [Upload Products](#upload-products)
+      - [**Product Variant Service**](#product-variant-service)
+          - [Create a Product Variants](#create-a-product-variants)
+          - [Update a Product Variant](#update-a-product-variant)
+          - [Validate Product Variant](#validate-product-variant)
+          - [Find Product Variant by ID](#find-product-variant-by-id)
+          - [Find Product Variant by Ref](#find-product-variant-by-ref)
+          - [Delete Product variant by Ref](#delete-product-variant-by-ref)
+          - [Find Product variants by productId](#find-product-variants-by-productid)
+          - [Find  Product variants by productId](#find--product-variants-by-productid)
+          - [Delete Product variants by product Id/variantId](#delete-product-variants-by-product-idvariantid)
+          - [Upload Product Variants](#upload-product-variants)
+
 
 - [**Order Service API**](ordersSvcApi.md)
 
@@ -184,19 +184,24 @@ For more detailed informaation, check out the collection and follow the service 
   
   The Wishlist resource stores information about a customer's wishlist, which includes the list products which the customer wish to buy. You can create, retrieve, update, and delete wishlists using the Wishlist Service api.
 
-    <!-- - [Index](#index) -->
-  - [**Representations**](#representations)
-    - [Wishlist](#wishlist)
+   - [**Representations**](#representations)
+      - [Wishlist](#wishlist)
+      - [Wishlist Item](#wishlist-item)
+      - [Product](#product)
+  - [**REST Endpoints**](#rest-endpoints)
+    - [**Wishlist Resource**](#wishlist-resource)
       - [Create a Wishlist](#create-a-wishlist)
       - [Update a Wishlist](#update-a-wishlist)
       - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
       - [Find Wishlist by id/wishlistRef](#find-wishlist-by-idwishlistref)
       - [Find Wishlist by CustomerId](#find-wishlist-by-customerid)
       - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
+    - [**Wishlist Item Resource**](#wishlist-item-resource)
       - [Create a Wishlist Item](#create-a-wishlist-item)
       - [Update a Wishlist Item](#update-a-wishlist-item)
       - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
       - [Find Wishlist Item by WishlistId and Item Id](#find-wishlist-item-by-wishlistid-and-item-id)
+
 
 
 - [**Impex Service API**](impexAPI.md)

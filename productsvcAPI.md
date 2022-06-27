@@ -5,33 +5,36 @@ The Product resource stores information about a product, its variants.
 
 ***
 
-- [**Product API**](#product-api)
-    <!-- - [Index](#index) -->
+[//]: # (- [**Product API**]&#40;#product-api&#41;)
+
+[//]: # (    - [Index]&#40;#index&#41;)
   - [**Representations**](#representations)
     - [Product](#product)
     - [Product Variant](#product-variant)
   - [**REST Endpoints**](#rest-endpoints)
-    - [Create a Product](#create-a-product)
-    - [Update a Product](#update-a-product)
-    - [Look up Product by gtin/productRef](#look-up-product-by-gtinproductref)
-    - [Validate Request](#validate-request)
-    - [Validate Product](#validate-product)
-    - [Validate Product by Ref](#validate-product-by-ref)
-    - [Find Product by ID](#find-product-by-id)
-    - [Delete Product by ID](#delete-product-by-id)
-    - [Find Product by Ref](#find-product-by-ref)
-    - [Delete Product by Ref](#delete-product-by-ref)
-    - [Upload Products](#upload-products)
-    - [Create a Product Variants](#create-a-product-variants)
-    - [Update a Product Variant](#update-a-product-variant)
-    - [Validate Product Variant](#validate-product-variant)
-    - [Find Product Variant by ID](#find-product-variant-by-id)
-    - [Find Product Variant by Ref](#find-product-variant-by-ref)
-    - [Delete Product variant by Ref](#delete-product-variant-by-ref)
-    - [Find Product variants by productId](#find-product-variants-by-productid)
-    - [Find  Product variants by productId](#find--product-variants-by-productid)
-    - [Delete Product variants by product Id/variantId](#delete-product-variants-by-product-idvariantid)
-    - [Upload Product Variants](#upload-product-variants)
+    - [**Product Service**](#product-service)
+      - [Create a Product](#create-a-product)
+      - [Update a Product](#update-a-product)
+      - [Look up Product by gtin/productRef](#look-up-product-by-gtinproductref)
+      - [Validate Request](#validate-request)
+      - [Validate Product](#validate-product)
+      - [Validate Product by Ref](#validate-product-by-ref)
+      - [Find Product by ID](#find-product-by-id)
+      - [Delete Product by ID](#delete-product-by-id)
+      - [Find Product by Ref](#find-product-by-ref)
+      - [Delete Product by Ref](#delete-product-by-ref)
+      - [Upload Products](#upload-products)
+    - [**Product Variant Service**](#product-variant-service)
+      - [Create a Product Variants](#create-a-product-variants)
+      - [Update a Product Variant](#update-a-product-variant)
+      - [Validate Product Variant](#validate-product-variant)
+      - [Find Product Variant by ID](#find-product-variant-by-id)
+      - [Find Product Variant by Ref](#find-product-variant-by-ref)
+      - [Delete Product variant by Ref](#delete-product-variant-by-ref)
+      - [Find Product variants by productId](#find-product-variants-by-productid)
+      - [Find  Product variants by productId](#find--product-variants-by-productid)
+      - [Delete Product variants by product Id/variantId](#delete-product-variants-by-product-idvariantid)
+      - [Upload Product Variants](#upload-product-variants)
 
 
 ## **Representations**
@@ -42,9 +45,6 @@ All representations are JSON objects submitted or received as payload to API req
 ##  Product
 ***
 Represents a product. 
-
-<details>
- <summary>Expand for details</summary>
  
  `active` - boolean - To enable  a product.
  
@@ -57,7 +57,7 @@ Represents a product.
  - preorder
  - disabled 
  
- `availabilityDescription` - String- In detailed details of the product availability.
+ `availabilityDescription` - String- In detail of the product availability.
  
  `brandId` - string - Product brand Id.
  
@@ -141,16 +141,13 @@ Represents a product.
  `variants` - [productVariants](Common_Fields/productvariant.md) - Array of variant Options.
  
  `variantsAvailable` - boolean -
- </details>
 
 
- ##  Product Variant
+
+##  Product Variant
 ***
 Represents a product Variant.
 
-
-<details>
- <summary>Expand for details</summary>
  
   `active` - boolean - To enable  a product variant.
  
@@ -163,7 +160,8 @@ Represents a product Variant.
  - preorder
  - disabled 
  
- `availabilityDescription` - String- In detailed details of the product availability.
+ `availabilityDescription` - String- In detailed <!-- <details> -->
+ of the product availability.
  
  `baseProductId` - string - Base Product Id.
  
@@ -249,14 +247,12 @@ Represents a product Variant.
  `variance` - The array for vaiants.
   
  `variantOptions` - [VariantOptions](Common_Fields/variantoptions.md) - Array of variant Options. 
- 
-</details> 
 
  ## **REST Endpoints**
 
-- ## **Product Service**
+## **Product Service**
  
-### Create a Product
+## Create a Product
 Creates a new Product data set in the TWC system.
 
 Endpoint: ```/api/v2/products```
@@ -267,8 +263,7 @@ Method Name: `createProduct`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -276,10 +271,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Payload</summary>
+ <summary>Request Payload :</summary>
  
  ```
  {
@@ -392,10 +385,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "variantsAvailable": true
 }
  ```
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :</summary>
 
 ```
 	{
@@ -638,13 +629,21 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-	
-</details> 
-
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
 
-### Update a Product
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Update a Product
 Update Product data set in the TWC system.
 
 Endpoint: ```/api/v2/products```
@@ -655,8 +654,8 @@ Method Name: `updateProduct`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -664,10 +663,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Payload</summary>
+ <summary>Request Payload :</summary>
  
  ```
  {
@@ -911,10 +908,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  ```
  
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :</summary>
  
  ```
 	{
@@ -1156,11 +1151,21 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "variantsAvailable": true
 }
 ```
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+> 
 
-### Look up Product by gtin/productRef
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+## Look up Product by gtin/productRef
 Returns a list of  products  from a specific Store while passing the gtin/productRef as a query params in the endpoint. The Tenant authentication maps to a Store.
 If the products does not exist, this method returns a empty list.
 
@@ -1172,8 +1177,9 @@ Method Name: `lookupProduct`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+
+
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1181,18 +1187,13 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Query Parameters</summary>
+ <summary>Query Parameters :</summary>
  
  - {gtin}
  - {productRef}
- 
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :</summary>
  
  ```
  {
@@ -1567,14 +1568,21 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
-</details> 
+## Validate Request
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
-
-### Validate Request
-
-Validates the Prodcut Request 
+Validates the Product Request 
 
 Endpoint: ```/api/v2/products/validate```
 
@@ -1584,8 +1592,7 @@ Method Name: `validateRequest`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1593,10 +1600,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Payload</summary>
+ <summary>Request Payload : </summary>
 
 ```
 {
@@ -1839,16 +1844,23 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
-</details>
-
-<details>
- <summary>Response</summary>
+ <summary>Response :
+</summary>
  OK
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
-### Validate Product
+## Validate Product
 Validates the product based on ID and ID will be passed as path variable.
 
 Endpoint: ```/api/v2/products/validate/{id}```
@@ -1859,8 +1871,8 @@ Method Name: `validateProduct`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1868,15 +1880,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Path Variable</summary>
+ <summary>Path Variable : </summary>
  - {id}
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :</summary>
  
  ```
  {
@@ -2248,12 +2256,20 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
-
-### Validate Product by Ref
+## Validate Product by Ref
 Validates the product based on ref and ref will be passed as path variable.
 
 Endpoint: ```/api/v2/products/validateRef/{ref}```
@@ -2264,8 +2280,7 @@ Method Name: `validateProductRef`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2273,15 +2288,13 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Path Variable</summary>
+ <summary>Path Variable :
+
+</summary>
  - {ref}
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :</summary>
  
  ```
  {
@@ -2653,11 +2666,20 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
-### Find Product by ID
+## Find Product by ID
 
 Returns a Product by its ID from a specific Store while passing the respective ID as a path variable in the endpoint. The Tenant authentication maps to a Store.
 If the Product does not exist, this method returns a Blank.
@@ -2670,25 +2692,24 @@ Method Name: `getProduct`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+
+ <summary>Request Headers :
+
+</summary>
 
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
- 
-</details>
 
-<details>
- <summary>Path Variable</summary>
+ <summary>Path Variable :
+
+</summary>
  - {id}
- 
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :
+</summary>
  
  ```
 {
@@ -2931,11 +2952,20 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
-### Delete Product by ID
+## Delete Product by ID
 Deleting a Product marks the Product as deleted and produces the HTTP response confirming the action.
 If the Product does not exist, this method returns a empty response.
 
@@ -2947,8 +2977,7 @@ Method Name: `deleteProduct`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2956,21 +2985,26 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Path Variable</summary>
+ <summary>Path Variable :</summary>
 	- {id}
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :</summary>
  OK
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
-### Find Product by Ref
+## Find Product by Ref
 
 Returns a Product by its Ref from a specific Store while passing the respective Ref as a path param in the endpoint. The Tenant authentication maps to a Store.
 If the Product does not exist, this method returns a blank response.
@@ -2983,8 +3017,7 @@ Method Name: `getProductByRef`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2992,15 +3025,14 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Path Variable</summary>
+ <summary>Path Variable :
+
+</summary>
 - {productRef}
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :
+</summary>
  
  ```
  {
@@ -3242,13 +3274,20 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "variantsAvailable": true
 }
 ```
- 
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
-
-### Delete Product by Ref
+## Delete Product by Ref
 
 Deleting a Product by ref marks the Product as deleted and produces the HTTP response confirming the action.
 If the product does not exist, this method returns a empty response.
@@ -3261,8 +3300,10 @@ Method Name: `deleteProductByExternalRef`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+
+ <summary>Request Headers :
+
+</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -3270,23 +3311,32 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
+ <summary>Path Variable :
 
- <summary>Path Variable</summary>
+</summary>
 	- {productRef}
 	
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :
+</summary>
  OK
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
-### Upload Products
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Upload Products
 Creates an array of new products in the TWC system.
 
 Endpoint: ```/api/v2/uploadProducts```
@@ -3297,8 +3347,10 @@ Method Name: `/api/v2/uploadProducts`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+
+ <summary>Request Headers :
+
+</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -3306,10 +3358,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Payload</summary>
+ <summary>Request Payload :
+
+</summary>
  
   ```
   [
@@ -3554,20 +3606,26 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ]
   ```
   
-</details>
 
-<details>
- <summary>Response</summary>
- OK
-</details> 
+ <summary>Response :
+</summary>
+ OK 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
-- ## **Product Variant Service**
+## **Product Variant Service**
 
-
-
-### Create a Product Variants
+## Create a Product Variant
 
 Creates a new Product Variants data set in the TWC system.
 
@@ -3579,19 +3637,20 @@ Method Name: `createVariantProduct`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+
+ <summary>Request Headers :
+
+</summary>
 
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
- 
-</details>
 
-<details>
- <summary>Payload</summary>
+ <summary>Request Payload :
+
+</summary>
  
  ```
  
@@ -3722,11 +3781,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ]
 }
  ```
- 
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :
+</summary>
  
  ```
  {
@@ -3858,12 +3915,22 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 ```
 
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+> 
 
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
-### Update a Product Variant
+## Update a Product Variant
 Update Product Variant data set in the TWC system.
 
 Endpoint: ```/api/v2/products/variants```
@@ -3874,8 +3941,9 @@ Method Name: `updateVariantProduct`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+ <summary>Request Headers :
+
+</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -3883,10 +3951,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Payload</summary>
+ <summary>Request Payload :
+
+</summary>
  
  ```
  {
@@ -4017,11 +4085,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
- 
-</details>
-
-<details>
- <summary>Response</summary>
+ <summary>Response :
+</summary>
  
  ```
 {
@@ -4152,11 +4217,19 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
-</details> 
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
-
-### Validate Product Variant
+## Validate Product Variant
 
 Validates the Product Variant 
 
@@ -4168,8 +4241,10 @@ Method Name: `validateVariantProduct`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+
+ <summary>Request Headers :
+
+</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4177,10 +4252,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Payload</summary>
+ <summary>Request Payload :
+
+</summary>
  
  ```
  {
@@ -4311,17 +4386,24 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :
+</summary>
  OK
-</details> 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
-
-### Find Product Variant by ID
+## Find Product Variant by ID
 
 Returns a Product Variant by its ID from a specific Store while passing the respective ID as a query param in the endpoint. The Tenant authentication maps to a Store.
 If the Product Variant does not exist, this method returns a Blank.
@@ -4333,8 +4415,9 @@ Method Name: `getVariantProduct`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+ <summary>Request Headers :
+
+</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4342,10 +4425,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Request Parameters</summary>
+ <summary>Request Parameters :</summary>
  
  - Query Paramters
 	- {aggregateStock}
@@ -4353,10 +4434,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 	
  - Path variables
 	- {id}
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :
+</summary>
  
  ```
  {
@@ -4486,12 +4566,19 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ]
 }
  ```
- 
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
-
-### Find Product Variant by Ref
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+## Find Product Variant by Ref
 
 Returns a Product variant by its Ref from a specific Store while passing the respective Ref as a path param in the endpoint. The Tenant authentication maps to a Store.
 If the Product does not exist, this method returns a blank response.
@@ -4504,8 +4591,10 @@ Method Name: `getVariantProductByRef`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+
+ <summary>Request Headers :
+
+</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4513,10 +4602,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Request Parameters</summary>
+ <summary>Request Parameters :</summary>
  
 - Query Paramters
 	- {aggregateStock}	
@@ -4525,11 +4612,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 - Path variables
 
 	- {variantRef}
-	
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :
+</summary>
  
  ``` 
  {
@@ -4659,12 +4744,20 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ]
 }
  ```
- 
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
-### Delete Product variant by Ref
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+## Delete Product variant by Ref
 
 Deleting a Product variant by ref marks the Product variant as deleted and produces the HTTP response confirming the action.
 If the product variant does not exist, this method returns a empty response.
@@ -4677,33 +4770,39 @@ Method Name: `deleteVariantProductbyRef`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+ <summary>Request Headers :
+
+</summary>
 
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
- 
-</details>
 
-<details>
 
- <summary>Path Variable</summary>
+ <summary>Path Variable :
+
+</summary>
  
 	- {baseProductRef}
 	- {variantRef}
-	
-</details>
 
-<details>
- <summary>Response</summary> 
-</details> 
+ <summary>Response :
+</summary>
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
-
-### Find Product variants by productId
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+## Find Product variants by productId
 Returns a list of  Product variants  from a specific Store while passing the productId as a Path variable in the endpoint. The Tenant authentication maps to a Store.
 If the Product variants does not exist, this method returns a empty list.
 
@@ -4715,8 +4814,7 @@ Method Name: `getAllVariantProducts`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4724,22 +4822,27 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Path Variable</summary>
+ <summary>Path Variable :
+
+</summary>
  - {productId}
- 
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :</summary>
  OK
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
-
-### Find  Product variants by productId
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+## Find  Product variants by productId
 Returns Product variant from a specific Store while passing the productId as a Path variable in the endpoint. The Tenant authentication maps to a Store.
 If the Product variant does not exist, this method returns a empty list.
 
@@ -4751,8 +4854,9 @@ Method Name: `getVariantProducts`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+ <summary>Request Headers :
+
+</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4760,16 +4864,14 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Path Variable</summary>
+ <summary>Path Variable :
+
+</summary>
  - {productId}
- 
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :
+</summary>
  
  ```
  [
@@ -4901,12 +5003,20 @@ OAuth 2.0 Scopes: `Tenant authentication`
   }
 ]
  ```
- 
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
-### Delete Product variants by product Id/variantId
+## Delete Product variants by product Id/variantId
 
 Deleting a Product variants marks the Product variants as deleted and produces the HTTP response confirming the action.
 If the Product variants does not exist, this method returns a empty response.
@@ -4919,8 +5029,9 @@ Method Name: `deleteVariantProduct`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+ <summary>Request Headers :
+
+</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4928,26 +5039,33 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
  
-</details>
 
-<details>
- <summary>Path Variable</summary>
+ <summary>Path Variable :
+
+</summary>
  
 	- {productId}
 	- {variantId}
 	
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :
+</summary>
  OK
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
 
-
-### Upload Product Variants
+## Upload Product Variants
 Creates an array of new Product variants in the TWC system.
 
 Endpoint: ```/api/v2/uploadVariants```
@@ -4958,19 +5076,16 @@ Method Name: `uploadProducts`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
- 
-</details>
 
-<details>
- <summary>Payload</summary>
+ <summary>Request Payload :</summary>
  
  ```
  [
@@ -5102,12 +5217,18 @@ OAuth 2.0 Scopes: `Tenant authentication`
   }
 ]
   ```
-  
-</details>
 
-<details>
- <summary>Response</summary>
+ <summary>Response :</summary>
  OK
-</details> 
 
-HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
