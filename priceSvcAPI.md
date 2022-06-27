@@ -22,7 +22,7 @@ The Price resource stores information about price details of  particular product
 All representations are JSON objects submitted or received as payload to API requests or responses.
 
 
-<details>
+<!-- <details> -->
  <summary><font size="4">Price </font></summary>
 
 ```id``` - string -The unique ID of the price.It will auotmatically generate while creating the location.
@@ -47,7 +47,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```salePrice``` - number -item sale price
 
-</details>
+<!-- </details> -->
 
 
 ## Create A Price
@@ -58,8 +58,16 @@ Endpoint: ```/api/prices```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
 Sample Request :
-<details>
+<!-- <details> -->
+```json
 {
   "active": true,
   "currencyCode": "string",
@@ -73,10 +81,37 @@ Sample Request :
   "sale": true,
   "salePrice": 0
 }
-</details>
+```
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<!-- </details> -->
 
+Response : 
+```json
+{
+  "active": true,
+  "currencyCode": "string",
+  "deleted": true,
+  "id": "string",
+  "offlineDate": "2022-06-27T13:18:59.461Z",
+  "onlineDate": "2022-06-27T13:18:59.461Z",
+  "price": 0,
+  "priceRef": "string",
+  "productVariantId": "string",
+  "sale": true,
+  "salePrice": 0
+}
+```
+
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Update A Price
 
@@ -86,8 +121,16 @@ Endpoint: ```/api/prices```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
 Sample Request :
-<details>
+<!-- <details> -->
+```json
 {
   "active": true,
   "currencyCode": "string",
@@ -100,10 +143,35 @@ Sample Request :
   "sale": true,
   "salePrice": 0
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+```json
+{
+  "active": true,
+  "currencyCode": "string",
+  "deleted": true,
+  "id": "string",
+  "offlineDate": "2022-06-27T13:18:59.465Z",
+  "onlineDate": "2022-06-27T13:18:59.465Z",
+  "price": 0,
+  "priceRef": "string",
+  "productVariantId": "string",
+  "sale": true,
+  "salePrice": 0
+}
+```
 
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Delete A Price
 
@@ -113,11 +181,25 @@ Method: ``` DELETE ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
 Request Parameters: `id  : Price Id`
 
-Response : `200 OK ,204	No Content, 401 Unauthorized, 403 Forbidden`
 
 
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+
+```
 
 ### Find Price by id and priceRef
 
@@ -127,10 +209,41 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
 Request Parameters: `id  : Price Id, priceRef : Price reference`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "active": true,
+  "currencyCode": "string",
+  "deleted": true,
+  "id": "string",
+  "offlineDate": "2022-06-27T13:20:21.692Z",
+  "onlineDate": "2022-06-27T13:20:21.692Z",
+  "price": 0,
+  "priceRef": "string",
+  "productVariantId": "string",
+  "sale": true,
+  "salePrice": 0
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Validate an price
 
@@ -140,8 +253,16 @@ Endpoint: ```​/api/prices/validate```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
 Sample Request :
-<details>
+<!-- <details> -->
+```json
 {
   "active": true,
   "currencyCode": "string",
@@ -155,10 +276,18 @@ Sample Request :
   "sale": true,
   "salePrice": 0
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Find All Prices
 
@@ -168,6 +297,40 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Response : 
+
+```json
+[
+  {
+    "active": true,
+    "currencyCode": "string",
+    "deleted": true,
+    "id": "string",
+    "offlineDate": "2022-06-27T13:21:10.650Z",
+    "onlineDate": "2022-06-27T13:21:10.650Z",
+    "price": 0,
+    "priceRef": "string",
+    "productVariantId": "string",
+    "sale": true,
+    "salePrice": 0
+  }
+]
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ***[Back to Index](index.md)
