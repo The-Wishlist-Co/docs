@@ -28,6 +28,7 @@ For security reasons, the Customer resource doesn't store credit card informatio
 
 All representations are JSON objects submitted or received as payload to API requests or responses.
 Represents a customer. If a store field is defined in a store, then the customer account is specific to the store.
+
 <!-- 
 <details>
  <summary>Expand for details</summary> -->
