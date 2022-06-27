@@ -274,7 +274,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Payload :</summary>
  
- ```
+ ```json
  {
   "active": true,
   "additionalImageLink": "string",
@@ -388,7 +388,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Response :</summary>
 
-```
+```json
 	{
   "active": true,
   "additionalImageLink": "string",
@@ -666,7 +666,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Payload :</summary>
  
- ```
+ ```json
  {
   "active": true,
   "additionalImageLink": "string",
@@ -911,8 +911,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Response :</summary>
  
- ```
-	{
+ ```json
+ {
   "active": true,
   "additionalImageLink": "string",
   "attributeGroups": {
@@ -1195,7 +1195,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Response :</summary>
  
- ```
+ ```json
  {
   "products": [
     {
@@ -1603,7 +1603,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Payload : </summary>
 
-```
+```json
 {
   "active": true,
   "additionalImageLink": "string",
@@ -1886,7 +1886,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Response :</summary>
  
- ```
+ ```json
  {
   "product": {
     "active": true,
@@ -2296,7 +2296,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Response :</summary>
  
- ```
+ ```json
  {
   "product": {
     "active": true,
@@ -2711,7 +2711,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Response :
 </summary>
  
- ```
+ ```json
 {
   "active": true,
   "additionalImageLink": "string",
@@ -3034,7 +3034,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Response :
 </summary>
  
- ```
+ ```json
  {
   "active": true,
   "additionalImageLink": "string",
@@ -3363,7 +3363,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 </summary>
  
-  ```
+  ```json
   [
   {
     "active": true,
@@ -3652,7 +3652,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 </summary>
  
- ```
+ ```json
  
  {
   "active": true,
@@ -3785,7 +3785,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Response :
 </summary>
  
- ```
+ ```json
  {
   "active": true,
   "additionalImageLink": "string",
@@ -3956,7 +3956,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 </summary>
  
- ```
+ ```json
  {
   "active": true,
   "additionalImageLink": "string",
@@ -4088,7 +4088,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Response :
 </summary>
  
- ```
+ ```json
 {
   "active": true,
   "additionalImageLink": "string",
@@ -4257,7 +4257,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 </summary>
  
- ```
+ ```json
  {
   "active": true,
   "additionalImageLink": "string",
@@ -4438,7 +4438,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Response :
 </summary>
  
- ```
+ ```json
  {
   "active": true,
   "additionalImageLink": "string",
@@ -4616,7 +4616,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Response :
 </summary>
  
- ``` 
+ ```json
  {
   "active": true,
   "additionalImageLink": "string",
@@ -4873,7 +4873,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Response :
 </summary>
  
- ```
+ ```json
  [
   {
     "active": true,
@@ -5087,7 +5087,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Payload :</summary>
  
- ```
+ ```json
  [
   {
     "active": true,
