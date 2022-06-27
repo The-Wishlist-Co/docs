@@ -74,10 +74,10 @@ All representations are JSON objects submitted or received as payload to API req
 
 <!-- <details> -->
  <summary><font size="4">Merchant </font></summary>
+ 
+```activated_date``` -- Datetime
 
-```activated_date```--Datetime
-
-```active```-- boolean-- to indicate the merchant is active or not
+```active``` -- boolean-- to indicate the merchant is active or not
 
 ```admin_email```--string--admin email details
 
@@ -108,6 +108,7 @@ All representations are JSON objects submitted or received as payload to API req
 <!-- </details> -->
 
 <!-- <details> -->
+
  <summary><font size="4">Plan </font></summary>
 
 ```plan_name```--string
