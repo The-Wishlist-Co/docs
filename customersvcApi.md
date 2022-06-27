@@ -402,7 +402,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Request sample</summary>
  
- ```
+ ```json
   [
   {
     "accepts_marketing": true,
@@ -570,7 +570,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <details> -->
  <summary>Sample Request</summary>
 
-```
+```json
 {
   "accepts_marketing": true,
   "active": true,
@@ -735,7 +735,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Sample Request</summary>
 
-```
+```json
 {
   "accepts_marketing": true,
   "active": true,
@@ -861,7 +861,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Sample Response</summary>
 
-```
+```json
  {
   "accepts_marketing": true,
   "active": true,
@@ -1021,7 +1021,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
  <summary>Sample Request</summary>
 
-```
+```json
 {
   "address1": "string",
   "address2": "string",
@@ -1048,7 +1048,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Sample Response</summary>
 
-```
+```json
  {
   "accepts_marketing": true,
   "active": true,
@@ -1213,7 +1213,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Sample Response</summary>
 
-```
+```json
  {
   "accepts_marketing": true,
   "active": true,
@@ -1380,7 +1380,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Sample Response</summary>
 
-```
+```json
  {
   "accepts_marketing": true,
   "active": true,
@@ -1553,7 +1553,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
  <summary>Sample Response</summary>
 
-```
+```json
  [
   {
     "accepts_marketing": true,
