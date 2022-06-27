@@ -200,7 +200,7 @@ Response : `201	Created`
 
  
 HTTP Status Code: 
-``` json
+``` 
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -319,7 +319,7 @@ Response : `200 Created`
 
  
 HTTP Status Code: 
-``` json
+``` 
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -355,7 +355,7 @@ Response : `201	Created`
 
  
 HTTP Status Code: 
-``` json
+``` 
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -387,7 +387,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `          
 
 HTTP Status Code: 
-``` json
+``` 
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -417,7 +417,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 
 HTTP Status Code: 
-``` json
+``` 
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -447,7 +447,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 
 HTTP Status Code: 
-``` json
+``` 
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -527,7 +527,7 @@ Sample Request:
 <!-- </details> -->
 
 HTTP Status Code: 
-``` json
+``` 
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -604,7 +604,7 @@ Sample Request:
 <!-- </details> -->
 
 HTTP Status Code: 
-``` json
+``` 
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -634,7 +634,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 Request Parameters: `Id  : Wishlist item Id, wishlistId : Wishlist Id`
 
 HTTP Status Code: 
-``` json
+``` 
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -664,7 +664,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
 
 HTTP Status Code: 
-``` json
+``` 
 - 200 OK
 - 201 Created
 - 204 Deleted
