@@ -311,6 +311,14 @@ Method : ``` POST ```
 Endpoint : ```/api/locations```
 
 OAuth 2.0 Scopes : `Tenant authentication`
+
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
 <!-- <details> --> 
 <summary> Request Payload : </summary>
 
@@ -494,6 +502,13 @@ Endpoint : ```​/api​/location​/validate```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
 <!-- <details> --> 
 <summary> Request Payload : </summary>
 
@@ -594,6 +609,13 @@ Endpoint : ```/api/location```
 Method : ``` GET ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
+
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
 
 <!-- <details> --> 
  <summary> Request Parameters : </summary>
@@ -705,6 +727,13 @@ Method: ``` DELETE ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
 
 <!-- <details> --> 
  <summary> Request Parameters : </summary>
@@ -715,7 +744,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ```
 <!-- </details> --> 
 
-	HTTP Status Code: 
+HTTP Status Code: 
+
 ``` 
 - 200 OK
 - 201 Created
@@ -732,6 +762,13 @@ Method : ``` POST ```
 Endpoint : ```/api/stocklevel```
 
 OAuth 2.0 Scopes : `Tenant authentication`
+
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
 
 <!-- <details> --> 
 <summary> Request Payload : </summary>
@@ -902,6 +939,13 @@ Method : ``` POST ```
 Endpoint : ```/api/stocklevels```
 
 OAuth 2.0 Scopes : `Tenant authentication`
+
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
 
 <!-- <details> --> 
 <summary> Request Payload : </summary>
@@ -1075,6 +1119,13 @@ Endpoint: ```/api/stocklevel/validate```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
 <!-- <details> --> 
 <summary> Request Payload : </summary>
 
@@ -1169,6 +1220,13 @@ Method: ``` PUT ```
 Endpoint: ```/api/stocklevel```
 
 OAuth 2.0 Scopes: `Tenant authentication`
+
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
 
 <!-- <details> --> 
 <summary> Request Payload : </summary>
@@ -1340,6 +1398,13 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
 <!-- <details> --> 
  <summary> Request Parameters : </summary>
  
@@ -1366,6 +1431,13 @@ Endpoint: ```/api/product/stocklevels```
 Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
+
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
 
 Request Parameters: `locationId  : inventory location Id, locationRef : Inventory location reference,productId: unique Product Id,productRef: unique product reference`
 
@@ -1475,6 +1547,13 @@ Endpoint: ```/api/stocklevel/{id}```
 Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
+
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
 
 <!-- <details> --> 
  <summary> Request Parameters : </summary>
