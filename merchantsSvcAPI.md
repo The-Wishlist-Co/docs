@@ -166,7 +166,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```store_state``` - string
 
-```store_url```-string
+```store_url``` - string
 
 ```targeted_countries``` - string
 
