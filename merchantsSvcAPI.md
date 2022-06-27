@@ -72,7 +72,7 @@ The Merchants resource stores information about a merchant and their stores.
 All representations are JSON objects submitted or received as payload to API requests or responses.
 
 
-<details>
+<!-- <details> -->
  <summary><font size="4">Merchant </font></summary>
 
 ```activated_date```--Datetime
@@ -105,16 +105,16 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```updated_at```--Datetime
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary><font size="4">Plan </font></summary>
 
 ```plan_name```--string
 
 ```id```--string
 
-<details>
+<!-- <details> -->
  <summary><font size="4">plan_type </font></summary>
 
   ```name```--string
@@ -123,18 +123,18 @@ All representations are JSON objects submitted or received as payload to API req
 
   ```request_limit```--number--admin email details
 
- </details>
- <details>
+ <!-- </details> -->
+ <!-- <details> -->
  <summary><font size="4">subscription_price </font></summary>
 
   ```amount```--number
 
   ```currency_code```--string  
 
- </details>
-</details>
+ <!-- </details> -->
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary><font size="4">Store </font></summary>
 
 ```deactivated_at```--Datetime
@@ -171,7 +171,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```updated_at```--Datetime
 
-</details>
+<!-- </details> -->
 
 
 
@@ -183,8 +183,17 @@ Endpoint: ```​/api​/v1​/merchant```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
+
 Sample Request :
-<details>
+<!-- <details> -->
+
+```json
 {
   "activated_date": "2022-06-20T15:40:14.465Z",
   "active": true,
@@ -255,9 +264,95 @@ Sample Request :
   "trading_as": "string",
   "updated_at": "2022-06-20T15:40:14.465Z"
 }
-</details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+```
+<!-- </details> -->
+
+Response : 
+
+```json
+{
+  "activated_date": "2022-06-27T09:02:43.112Z",
+  "active": true,
+  "admin_email": "string",
+  "attributes": [
+    {
+      "attribute_group": "string",
+      "attributes": [
+        {
+          "attribute_name": "string",
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      ],
+      "is_obsolete": true
+    }
+  ],
+  "billing_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "email": "string",
+    "is_address": true,
+    "is_default_address": true,
+    "phone": "string",
+    "postal_code": "string",
+    "state_or_province_code": "string",
+    "state_or_province_name": "string",
+    "street": "string",
+    "street_number": "string",
+    "unit": "string"
+  },
+  "company_code": "string",
+  "contact_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "email": "string",
+    "is_address": true,
+    "is_default_address": true,
+    "phone": "string",
+    "postal_code": "string",
+    "state_or_province_code": "string",
+    "state_or_province_name": "string",
+    "street": "string",
+    "street_number": "string",
+    "unit": "string"
+  },
+  "contact_person": {
+    "additional_notes": "string",
+    "email": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "phone": "string"
+  },
+  "created_at": "2022-06-27T09:02:43.112Z",
+  "deleted": true,
+  "deleted_date": "2022-06-27T09:02:43.112Z",
+  "id": "string",
+  "merchant_name": "string",
+  "modified_by": "string",
+  "trading_as": "string",
+  "updated_at": "2022-06-27T09:02:43.112Z"
+}
+
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+
+```
 
 
 ## Update Merchant
@@ -268,8 +363,17 @@ Endpoint: ```​/api​/v1​/merchant```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
+
 Sample Request :
-<details>
+<!-- <details> -->
+
+```json
 {
   "activated_date": "2022-06-20T16:04:31.656Z",
   "active": true,
@@ -340,9 +444,95 @@ Sample Request :
   "trading_as": "string",
   "updated_at": "2022-06-20T16:04:31.656Z"
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "activated_date": "2022-06-27T09:15:10.775Z",
+  "active": true,
+  "admin_email": "string",
+  "attributes": [
+    {
+      "attribute_group": "string",
+      "attributes": [
+        {
+          "attribute_name": "string",
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      ],
+      "is_obsolete": true
+    }
+  ],
+  "billing_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "email": "string",
+    "is_address": true,
+    "is_default_address": true,
+    "phone": "string",
+    "postal_code": "string",
+    "state_or_province_code": "string",
+    "state_or_province_name": "string",
+    "street": "string",
+    "street_number": "string",
+    "unit": "string"
+  },
+  "company_code": "string",
+  "contact_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "email": "string",
+    "is_address": true,
+    "is_default_address": true,
+    "phone": "string",
+    "postal_code": "string",
+    "state_or_province_code": "string",
+    "state_or_province_name": "string",
+    "street": "string",
+    "street_number": "string",
+    "unit": "string"
+  },
+  "contact_person": {
+    "additional_notes": "string",
+    "email": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "phone": "string"
+  },
+  "created_at": "2022-06-27T09:15:10.775Z",
+  "deleted": true,
+  "deleted_date": "2022-06-27T09:15:10.775Z",
+  "id": "string",
+  "merchant_name": "string",
+  "modified_by": "string",
+  "trading_as": "string",
+  "updated_at": "2022-06-27T09:15:10.775Z"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
 
 
 ### Deactivate Merchant
@@ -353,10 +543,97 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `id  : Merchant Id`
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "activated_date": "2022-06-27T09:16:52.246Z",
+  "active": true,
+  "admin_email": "string",
+  "attributes": [
+    {
+      "attribute_group": "string",
+      "attributes": [
+        {
+          "attribute_name": "string",
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      ],
+      "is_obsolete": true
+    }
+  ],
+  "billing_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "email": "string",
+    "is_address": true,
+    "is_default_address": true,
+    "phone": "string",
+    "postal_code": "string",
+    "state_or_province_code": "string",
+    "state_or_province_name": "string",
+    "street": "string",
+    "street_number": "string",
+    "unit": "string"
+  },
+  "company_code": "string",
+  "contact_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "email": "string",
+    "is_address": true,
+    "is_default_address": true,
+    "phone": "string",
+    "postal_code": "string",
+    "state_or_province_code": "string",
+    "state_or_province_name": "string",
+    "street": "string",
+    "street_number": "string",
+    "unit": "string"
+  },
+  "contact_person": {
+    "additional_notes": "string",
+    "email": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "phone": "string"
+  },
+  "created_at": "2022-06-27T09:16:52.246Z",
+  "deleted": true,
+  "deleted_date": "2022-06-27T09:16:52.246Z",
+  "id": "string",
+  "merchant_name": "string",
+  "modified_by": "string",
+  "trading_as": "string",
+  "updated_at": "2022-06-27T09:16:52.246Z"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 
 ### Find Merchant
@@ -367,10 +644,98 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
+
 Request Parameters: `id  : Mechant Id`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "activated_date": "2022-06-27T09:18:12.280Z",
+  "active": true,
+  "admin_email": "string",
+  "attributes": [
+    {
+      "attribute_group": "string",
+      "attributes": [
+        {
+          "attribute_name": "string",
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      ],
+      "is_obsolete": true
+    }
+  ],
+  "billing_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "email": "string",
+    "is_address": true,
+    "is_default_address": true,
+    "phone": "string",
+    "postal_code": "string",
+    "state_or_province_code": "string",
+    "state_or_province_name": "string",
+    "street": "string",
+    "street_number": "string",
+    "unit": "string"
+  },
+  "company_code": "string",
+  "contact_address": {
+    "address1": "string",
+    "address2": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "country_code": "string",
+    "email": "string",
+    "is_address": true,
+    "is_default_address": true,
+    "phone": "string",
+    "postal_code": "string",
+    "state_or_province_code": "string",
+    "state_or_province_name": "string",
+    "street": "string",
+    "street_number": "string",
+    "unit": "string"
+  },
+  "contact_person": {
+    "additional_notes": "string",
+    "email": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "phone": "string"
+  },
+  "created_at": "2022-06-27T09:18:12.280Z",
+  "deleted": true,
+  "deleted_date": "2022-06-27T09:18:12.280Z",
+  "id": "string",
+  "merchant_name": "string",
+  "modified_by": "string",
+  "trading_as": "string",
+  "updated_at": "2022-06-27T09:18:12.280Z"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Create a Plan
 
@@ -380,8 +745,15 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Sample Request:
-<details>
+<!-- <details> -->
+```json
 {
   "id": "string",
   "plan_name": "string",
@@ -395,10 +767,36 @@ Sample Request:
     "currency_code": "string"
   }
 }
-</details>
+```
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<!-- </details> -->
 
+Response : 
+
+```json
+{
+  "id": "string",
+  "plan_name": "string",
+  "plan_type": {
+    "id": "string",
+    "name": "string",
+    "request_limit": 0
+  },
+  "subscription_price": {
+    "amount": 0,
+    "currency_code": "string"
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Update a Plan
 
@@ -408,8 +806,16 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "id": "string",
   "plan_name": "string",
@@ -423,9 +829,36 @@ Sample Request:
     "currency_code": "string"
   }
 }
-</details>
+```
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<!-- </details> -->
+
+Response : 
+
+```json
+{
+  "id": "string",
+  "plan_name": "string",
+  "plan_type": {
+    "id": "string",
+    "name": "string",
+    "request_limit": 0
+  },
+  "subscription_price": {
+    "amount": 0,
+    "currency_code": "string"
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 
 ### Delete a Plan
@@ -436,9 +869,40 @@ Method: ``` DELETE ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `planId  : unique Plan Id`
 
-Response : `200 OK ,204	No Content, 401 Unauthorized, 403 Forbidden`
+Response : 
+
+```json
+{
+  "id": "string",
+  "plan_name": "string",
+  "plan_type": {
+    "id": "string",
+    "name": "string",
+    "request_limit": 0
+  },
+  "subscription_price": {
+    "amount": 0,
+    "currency_code": "string"
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 
 ### Find Plan
@@ -449,10 +913,41 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `planId  : Unique plan Id`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+
+{
+  "id": "string",
+  "plan_name": "string",
+  "plan_type": {
+    "id": "string",
+    "name": "string",
+    "request_limit": 0
+  },
+  "subscription_price": {
+    "amount": 0,
+    "currency_code": "string"
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Find All Plans
 
@@ -462,8 +957,40 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: 
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<summary>Request Headers</summary>
 
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
+Response : 
+
+```json
+[
+  {
+    "id": "string",
+    "plan_name": "string",
+    "plan_type": {
+      "id": "string",
+      "name": "string",
+      "request_limit": 0
+    },
+    "subscription_price": {
+      "amount": 0,
+      "currency_code": "string"
+    }
+  }
+]
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Create a Store
 
@@ -473,8 +1000,16 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "created_at": "2022-06-20T15:55:58.309Z",
   "deactivated": true,
@@ -506,11 +1041,54 @@ Sample Request:
   ],
   "updated_at": "2022-06-20T15:55:58.309Z"
 }
-</details>
+```
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<!-- </details> -->
 
+Response : 
 
+```json
+{
+  "created_at": "2022-06-27T09:27:20.501Z",
+  "deactivated": true,
+  "deactivated_at": "2022-06-27T09:27:20.501Z",
+  "default_country": {
+    "code": "string",
+    "is_default_country": true,
+    "language_isocode": "string",
+    "name": "string"
+  },
+  "deleted": true,
+  "deleted_date": "2022-06-27T09:27:20.501Z",
+  "id": "string",
+  "media_url": "string",
+  "merchant_id": "string",
+  "modified_by": "string",
+  "plan_id": "string",
+  "store_key": "string",
+  "store_name": "string",
+  "store_state": "CREATED",
+  "store_url": "string",
+  "targeted_countries": [
+    {
+      "code": "string",
+      "is_default_country": true,
+      "language_isocode": "string",
+      "name": "string"
+    }
+  ],
+  "updated_at": "2022-06-27T09:27:20.501Z"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Update a Store
 
@@ -520,8 +1098,16 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "created_at": "2022-06-20T16:26:50.951Z",
   "deactivated": true,
@@ -553,9 +1139,56 @@ Sample Request:
   ],
   "updated_at": "2022-06-20T16:26:50.951Z"
 }
-</details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+```
+
+<!-- </details> -->
+
+Response : 
+
+```json
+{
+  "created_at": "2022-06-27T09:29:01.615Z",
+  "deactivated": true,
+  "deactivated_at": "2022-06-27T09:29:01.615Z",
+  "default_country": {
+    "code": "string",
+    "is_default_country": true,
+    "language_isocode": "string",
+    "name": "string"
+  },
+  "deleted": true,
+  "deleted_date": "2022-06-27T09:29:01.615Z",
+  "id": "string",
+  "media_url": "string",
+  "merchant_id": "string",
+  "modified_by": "string",
+  "plan_id": "string",
+  "store_key": "string",
+  "store_name": "string",
+  "store_state": "CREATED",
+  "store_url": "string",
+  "targeted_countries": [
+    {
+      "code": "string",
+      "is_default_country": true,
+      "language_isocode": "string",
+      "name": "string"
+    }
+  ],
+  "updated_at": "2022-06-27T09:29:01.615Z"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 
 ### Find a Store
@@ -566,9 +1199,59 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,storeKey: store key`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "created_at": "2022-06-27T09:29:40.889Z",
+  "deactivated": true,
+  "deactivated_at": "2022-06-27T09:29:40.889Z",
+  "default_country": {
+    "code": "string",
+    "is_default_country": true,
+    "language_isocode": "string",
+    "name": "string"
+  },
+  "deleted": true,
+  "deleted_date": "2022-06-27T09:29:40.889Z",
+  "id": "string",
+  "media_url": "string",
+  "merchant_id": "string",
+  "modified_by": "string",
+  "plan_id": "string",
+  "store_key": "string",
+  "store_name": "string",
+  "store_state": "CREATED",
+  "store_url": "string",
+  "targeted_countries": [
+    {
+      "code": "string",
+      "is_default_country": true,
+      "language_isocode": "string",
+      "name": "string"
+    }
+  ],
+  "updated_at": "2022-06-27T09:29:40.889Z"
+}
+```
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 
 ### Find a Store
@@ -579,10 +1262,58 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "created_at": "2022-06-27T09:30:48.827Z",
+  "deactivated": true,
+  "deactivated_at": "2022-06-27T09:30:48.827Z",
+  "default_country": {
+    "code": "string",
+    "is_default_country": true,
+    "language_isocode": "string",
+    "name": "string"
+  },
+  "deleted": true,
+  "deleted_date": "2022-06-27T09:30:48.827Z",
+  "id": "string",
+  "media_url": "string",
+  "merchant_id": "string",
+  "modified_by": "string",
+  "plan_id": "string",
+  "store_key": "string",
+  "store_name": "string",
+  "store_state": "CREATED",
+  "store_url": "string",
+  "targeted_countries": [
+    {
+      "code": "string",
+      "is_default_country": true,
+      "language_isocode": "string",
+      "name": "string"
+    }
+  ],
+  "updated_at": "2022-06-27T09:30:48.827Z"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Deactivate Store
 
@@ -592,10 +1323,58 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique Store Id`
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "created_at": "2022-06-27T09:31:20.371Z",
+  "deactivated": true,
+  "deactivated_at": "2022-06-27T09:31:20.371Z",
+  "default_country": {
+    "code": "string",
+    "is_default_country": true,
+    "language_isocode": "string",
+    "name": "string"
+  },
+  "deleted": true,
+  "deleted_date": "2022-06-27T09:31:20.371Z",
+  "id": "string",
+  "media_url": "string",
+  "merchant_id": "string",
+  "modified_by": "string",
+  "plan_id": "string",
+  "store_key": "string",
+  "store_name": "string",
+  "store_state": "CREATED",
+  "store_url": "string",
+  "targeted_countries": [
+    {
+      "code": "string",
+      "is_default_country": true,
+      "language_isocode": "string",
+      "name": "string"
+    }
+  ],
+  "updated_at": "2022-06-27T09:31:20.371Z"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Create Subscription plan
 
@@ -605,9 +1384,58 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `merchantId  : Unique Merchant Id,storeId: Unique store id,planId: Unique plan id `
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "created_at": "2022-06-27T09:32:18.709Z",
+  "deactivated": true,
+  "deactivated_at": "2022-06-27T09:32:18.709Z",
+  "default_country": {
+    "code": "string",
+    "is_default_country": true,
+    "language_isocode": "string",
+    "name": "string"
+  },
+  "deleted": true,
+  "deleted_date": "2022-06-27T09:32:18.709Z",
+  "id": "string",
+  "media_url": "string",
+  "merchant_id": "string",
+  "modified_by": "string",
+  "plan_id": "string",
+  "store_key": "string",
+  "store_name": "string",
+  "store_state": "CREATED",
+  "store_url": "string",
+  "targeted_countries": [
+    {
+      "code": "string",
+      "is_default_country": true,
+      "language_isocode": "string",
+      "name": "string"
+    }
+  ],
+  "updated_at": "2022-06-27T09:32:18.709Z"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Update Subscription plan
 
@@ -617,10 +1445,58 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `merchantId  : Unique Merchant Id,storeId: Unique store id,planId: Unique plan id `
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "created_at": "2022-06-27T09:33:59.429Z",
+  "deactivated": true,
+  "deactivated_at": "2022-06-27T09:33:59.429Z",
+  "default_country": {
+    "code": "string",
+    "is_default_country": true,
+    "language_isocode": "string",
+    "name": "string"
+  },
+  "deleted": true,
+  "deleted_date": "2022-06-27T09:33:59.429Z",
+  "id": "string",
+  "media_url": "string",
+  "merchant_id": "string",
+  "modified_by": "string",
+  "plan_id": "string",
+  "store_key": "string",
+  "store_name": "string",
+  "store_state": "CREATED",
+  "store_url": "string",
+  "targeted_countries": [
+    {
+      "code": "string",
+      "is_default_country": true,
+      "language_isocode": "string",
+      "name": "string"
+    }
+  ],
+  "updated_at": "2022-06-27T09:33:59.429Z"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Cancel Subscription plan
 
@@ -630,10 +1506,58 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `merchantId  : Unique Merchant Id,storeId: Unique store id `
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "created_at": "2022-06-27T09:34:38.716Z",
+  "deactivated": true,
+  "deactivated_at": "2022-06-27T09:34:38.716Z",
+  "default_country": {
+    "code": "string",
+    "is_default_country": true,
+    "language_isocode": "string",
+    "name": "string"
+  },
+  "deleted": true,
+  "deleted_date": "2022-06-27T09:34:38.716Z",
+  "id": "string",
+  "media_url": "string",
+  "merchant_id": "string",
+  "modified_by": "string",
+  "plan_id": "string",
+  "store_key": "string",
+  "store_name": "string",
+  "store_state": "CREATED",
+  "store_url": "string",
+  "targeted_countries": [
+    {
+      "code": "string",
+      "is_default_country": true,
+      "language_isocode": "string",
+      "name": "string"
+    }
+  ],
+  "updated_at": "2022-06-27T09:34:38.716Z"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Get Additional Config
 
@@ -643,10 +1567,38 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "attributes": {
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "wishlistConfigs": {
+    "allowMultipleWishlist": true,
+    "allowWishlistSharing": true
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Get All Config
 
@@ -656,10 +1608,142 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "additionalConfigs": {
+    "attributes": {
+      "additionalProp1": "string",
+      "additionalProp2": "string",
+      "additionalProp3": "string"
+    },
+    "wishlistConfigs": {
+      "allowMultipleWishlist": true,
+      "allowWishlistSharing": true
+    }
+  },
+  "entityConfigurations": {
+    "additionalProp1": {
+      "active": true,
+      "entityName": "string",
+      "topics": {
+        "additionalProp1": {
+          "limit": 0,
+          "topic": "string",
+          "type": 0,
+          "value": "string"
+        },
+        "additionalProp2": {
+          "limit": 0,
+          "topic": "string",
+          "type": 0,
+          "value": "string"
+        },
+        "additionalProp3": {
+          "limit": 0,
+          "topic": "string",
+          "type": 0,
+          "value": "string"
+        }
+      }
+    },
+    "additionalProp2": {
+      "active": true,
+      "entityName": "string",
+      "topics": {
+        "additionalProp1": {
+          "limit": 0,
+          "topic": "string",
+          "type": 0,
+          "value": "string"
+        },
+        "additionalProp2": {
+          "limit": 0,
+          "topic": "string",
+          "type": 0,
+          "value": "string"
+        },
+        "additionalProp3": {
+          "limit": 0,
+          "topic": "string",
+          "type": 0,
+          "value": "string"
+        }
+      }
+    },
+    "additionalProp3": {
+      "active": true,
+      "entityName": "string",
+      "topics": {
+        "additionalProp1": {
+          "limit": 0,
+          "topic": "string",
+          "type": 0,
+          "value": "string"
+        },
+        "additionalProp2": {
+          "limit": 0,
+          "topic": "string",
+          "type": 0,
+          "value": "string"
+        },
+        "additionalProp3": {
+          "limit": 0,
+          "topic": "string",
+          "type": 0,
+          "value": "string"
+        }
+      }
+    }
+  },
+  "id": "string",
+  "notificationConfig": {
+    "backInStock": {
+      "deActivated": true,
+      "emailTemplate": "string",
+      "frequency": "string",
+      "realtime": "string"
+    },
+    "lowInStock": {
+      "deActivated": true,
+      "emailTemplate": "string",
+      "frequency": "string",
+      "realtime": "string"
+    },
+    "priceDrop": {
+      "deActivated": true,
+      "emailTemplate": "string",
+      "frequency": "string",
+      "realtime": "string"
+    },
+    "reminderEmail": {
+      "deActivated": true,
+      "emailTemplate": "string",
+      "frequency": "string",
+      "realtime": "string"
+    }
+  },
+  "storeId": "string"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Get Entity Config
 
@@ -669,10 +1753,102 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "additionalProp1": {
+    "active": true,
+    "entityName": "string",
+    "topics": {
+      "additionalProp1": {
+        "limit": 0,
+        "topic": "string",
+        "type": 0,
+        "value": "string"
+      },
+      "additionalProp2": {
+        "limit": 0,
+        "topic": "string",
+        "type": 0,
+        "value": "string"
+      },
+      "additionalProp3": {
+        "limit": 0,
+        "topic": "string",
+        "type": 0,
+        "value": "string"
+      }
+    }
+  },
+  "additionalProp2": {
+    "active": true,
+    "entityName": "string",
+    "topics": {
+      "additionalProp1": {
+        "limit": 0,
+        "topic": "string",
+        "type": 0,
+        "value": "string"
+      },
+      "additionalProp2": {
+        "limit": 0,
+        "topic": "string",
+        "type": 0,
+        "value": "string"
+      },
+      "additionalProp3": {
+        "limit": 0,
+        "topic": "string",
+        "type": 0,
+        "value": "string"
+      }
+    }
+  },
+  "additionalProp3": {
+    "active": true,
+    "entityName": "string",
+    "topics": {
+      "additionalProp1": {
+        "limit": 0,
+        "topic": "string",
+        "type": 0,
+        "value": "string"
+      },
+      "additionalProp2": {
+        "limit": 0,
+        "topic": "string",
+        "type": 0,
+        "value": "string"
+      },
+      "additionalProp3": {
+        "limit": 0,
+        "topic": "string",
+        "type": 0,
+        "value": "string"
+      }
+    }
+  }
+}
+```
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Get Store Tenant Config
 
@@ -682,10 +1858,38 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
-Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "bucketName": "string",
+  "defaultClientGuid": "string",
+  "defaultClientId": "string",
+  "defaultClientSecret": "string",
+  "realmId": "string",
+  "realmName": "string",
+  "storeId": "string",
+  "tenantId": "string"
+}
+```
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Create Additional Config
 
@@ -695,10 +1899,18 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "attributes": {
     "additionalProp1": "string",
@@ -710,9 +1922,35 @@ Sample Request:
     "allowWishlistSharing": true
   }
 }
-</details>
+```
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<!-- </details> -->
+
+Response : 
+
+```json
+{
+  "attributes": {
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "wishlistConfigs": {
+    "allowMultipleWishlist": true,
+    "allowWishlistSharing": true
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ### Update Additional Config
 
@@ -722,10 +1960,17 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+```json
 {
   "attributes": {
     "additionalProp1": "string",
@@ -737,9 +1982,35 @@ Sample Request:
     "allowWishlistSharing": true
   }
 }
-</details>
+```
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+<!-- </details> -->
+
+Response : 
+
+```json
+{
+  "attributes": {
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "wishlistConfigs": {
+    "allowMultipleWishlist": true,
+    "allowWishlistSharing": true
+  }
+}
+```
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 
 ### Create App Config Entity Config
@@ -750,10 +2021,18 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "active": true,
   "entityName": "string",
@@ -778,9 +2057,50 @@ Sample Request:
     }
   }
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+
+```
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ### Update App Config Entity Config
 
@@ -790,10 +2110,18 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+
+```json
+<!-- <details> -->
 {
   "active": true,
   "entityName": "string",
@@ -818,9 +2146,47 @@ Sample Request:
     }
   }
 }
-</details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+```
+<!-- </details> -->
+
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 
 ### Create Customer Entity Config
@@ -831,10 +2197,17 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+```json
 {
   "active": true,
   "entityName": "string",
@@ -859,9 +2232,47 @@ Sample Request:
     }
   }
 }
-</details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+```
+<!-- </details> -->
+
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Update Customer Entity Config
 
@@ -871,10 +2282,18 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+
+```json
+<!-- <details> -->
 {
   "active": true,
   "entityName": "string",
@@ -899,10 +2318,46 @@ Sample Request:
     }
   }
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Create Email Template Entity Config
 
@@ -912,10 +2367,18 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "active": true,
   "entityName": "string",
@@ -940,9 +2403,46 @@ Sample Request:
     }
   }
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Update Email Template Entity Config
 
@@ -952,10 +2452,18 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "active": true,
   "entityName": "string",
@@ -980,10 +2488,47 @@ Sample Request:
     }
   }
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Create Inventory Entity Config
 
@@ -993,10 +2538,17 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+```json
 {
   "active": true,
   "entityName": "string",
@@ -1021,9 +2573,47 @@ Sample Request:
     }
   }
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ### Update Inventory Entity Config
 
@@ -1033,10 +2623,17 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+```json
 {
   "active": true,
   "entityName": "string",
@@ -1061,9 +2658,46 @@ Sample Request:
     }
   }
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 
 ### Create Location Entity Config
@@ -1074,10 +2708,17 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+```json
 {
   "active": true,
   "entityName": "string",
@@ -1102,9 +2743,48 @@ Sample Request:
     }
   }
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ### Update Location Entity Config
 
@@ -1114,10 +2794,17 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+```json
 {
   "active": true,
   "entityName": "string",
@@ -1142,9 +2829,46 @@ Sample Request:
     }
   }
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 
 ### Create Order Entity Config
@@ -1155,10 +2879,18 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "active": true,
   "entityName": "string",
@@ -1183,9 +2915,48 @@ Sample Request:
     }
   }
 }
-</details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+```
+<!-- </details> -->
+
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ### Update Order Entity Config
 
@@ -1195,10 +2966,17 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+```json
 {
   "active": true,
   "entityName": "string",
@@ -1223,9 +3001,46 @@ Sample Request:
     }
   }
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 
 ### Create Price Entity Config
@@ -1236,10 +3051,18 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+
+```json
+<!-- <details> -->
 {
   "active": true,
   "entityName": "string",
@@ -1264,9 +3087,46 @@ Sample Request:
     }
   }
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ### Update Price Entity Config
 
@@ -1276,10 +3136,17 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+```json
 {
   "active": true,
   "entityName": "string",
@@ -1304,9 +3171,46 @@ Sample Request:
     }
   }
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 
 ### Create Product Entity Config
@@ -1317,10 +3221,18 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "active": true,
   "entityName": "string",
@@ -1345,9 +3257,47 @@ Sample Request:
     }
   }
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ### Update Product Entity Config
 
@@ -1357,10 +3307,18 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "active": true,
   "entityName": "string",
@@ -1385,10 +3343,49 @@ Sample Request:
     }
   }
 }
-</details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+```
+<!-- </details> -->
 
+Response : 
+
+```json
+
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Create Store Entity Config
 
@@ -1398,10 +3395,18 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "active": true,
   "entityName": "string",
@@ -1426,9 +3431,46 @@ Sample Request:
     }
   }
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Update Store Entity Config
 
@@ -1438,10 +3480,17 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+```json
 {
   "active": true,
   "entityName": "string",
@@ -1466,10 +3515,46 @@ Sample Request:
     }
   }
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Create Wishlist Entity Config
 
@@ -1479,10 +3564,18 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "active": true,
   "entityName": "string",
@@ -1507,9 +3600,48 @@ Sample Request:
     }
   }
 }
-</details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+```
+
+<!-- </details> -->
+
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Update Wishlist Entity Config
 
@@ -1519,10 +3651,17 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+```json
 {
   "active": true,
   "entityName": "string",
@@ -1547,10 +3686,47 @@ Sample Request:
     }
   }
 }
-</details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+```
+<!-- </details> -->
 
+Response : 
+
+```json
+{
+  "active": true,
+  "entityName": "string",
+  "topics": {
+    "additionalProp1": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp2": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    },
+    "additionalProp3": {
+      "limit": 0,
+      "topic": "string",
+      "type": 0,
+      "value": "string"
+    }
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Get Notification Config
 
@@ -1560,9 +3736,24 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Response : `200 OK , 401 Unauthorized, 403 Forbidden, 404 Not Found`
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 
 ### Create Notification Config
@@ -1573,10 +3764,17 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+```json
 {
   "backInStock": {
     "deActivated": true,
@@ -1603,9 +3801,51 @@ Sample Request:
     "realtime": "string"
   }
 }
-</details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+```
+<!-- </details> -->
+
+Response : 
+
+```json
+
+{
+  "backInStock": {
+    "deActivated": true,
+    "emailTemplate": "string",
+    "frequency": "string",
+    "realtime": "string"
+  },
+  "lowInStock": {
+    "deActivated": true,
+    "emailTemplate": "string",
+    "frequency": "string",
+    "realtime": "string"
+  },
+  "priceDrop": {
+    "deActivated": true,
+    "emailTemplate": "string",
+    "frequency": "string",
+    "realtime": "string"
+  },
+  "reminderEmail": {
+    "deActivated": true,
+    "emailTemplate": "string",
+    "frequency": "string",
+    "realtime": "string"
+  }
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ### Create BackInStock Notification Settings
 
@@ -1615,19 +3855,48 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "deActivated": true,
   "emailTemplate": "string",
   "frequency": "string",
   "realtime": "string"
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "deActivated": true,
+  "emailTemplate": "string",
+  "frequency": "string",
+  "realtime": "string"
+}
+
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ### Update BackInStock Notification Settings
 
@@ -1637,19 +3906,47 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+```json
 {
   "deActivated": true,
   "emailTemplate": "string",
   "frequency": "string",
   "realtime": "string"
 }
-</details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+```
+<!-- </details> -->
+
+Response : 
+
+```json
+{
+  "deActivated": true,
+  "emailTemplate": "string",
+  "frequency": "string",
+  "realtime": "string"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ### Delete BackInStock Notification Settings
 
@@ -1659,9 +3956,22 @@ Method: ``` DELETE ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
-Response : `200 OK ,204	No Content, 401 Unauthorized, 403 Forbidden`
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+
+```
 
 
 ### Create LowInStock Notification Settings
@@ -1672,19 +3982,48 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "deActivated": true,
   "emailTemplate": "string",
   "frequency": "string",
   "realtime": "string"
 }
-</details>
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+```
+<!-- </details> -->
+
+Response : 
+
+```json
+{
+  "deActivated": true,
+  "emailTemplate": "string",
+  "frequency": "string",
+  "realtime": "string"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ### Update LowInStock Notification Settings
 
@@ -1694,19 +4033,47 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "deActivated": true,
   "emailTemplate": "string",
   "frequency": "string",
   "realtime": "string"
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "deActivated": true,
+  "emailTemplate": "string",
+  "frequency": "string",
+  "realtime": "string"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ### Delete LowInStock Notification Settings
 
@@ -1716,10 +4083,22 @@ Method: ``` DELETE ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
-Response : `200 OK ,204	No Content, 401 Unauthorized, 403 Forbidden`
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
 
+```
 
 ### Create PriceDrop Notification Settings
 
@@ -1729,19 +4108,47 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+
+```json
+<!-- <details> -->
 {
   "deActivated": true,
   "emailTemplate": "string",
   "frequency": "string",
   "realtime": "string"
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "deActivated": true,
+  "emailTemplate": "string",
+  "frequency": "string",
+  "realtime": "string"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ### Update PriceDrop Notification Settings
 
@@ -1751,19 +4158,45 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+```json
 {
   "deActivated": true,
   "emailTemplate": "string",
   "frequency": "string",
   "realtime": "string"
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "deActivated": true,
+  "emailTemplate": "string",
+  "frequency": "string",
+  "realtime": "string"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Delete PriceDrop Notification Settings
 
@@ -1773,9 +4206,22 @@ Method: ``` DELETE ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
-Response : `200 OK ,204	No Content, 401 Unauthorized, 403 Forbidden`
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden
+```
 
 
 ### Create ReminderEmail Notification Settings
@@ -1786,19 +4232,46 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "deActivated": true,
   "emailTemplate": "string",
   "frequency": "string",
   "realtime": "string"
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "deActivated": true,
+  "emailTemplate": "string",
+  "frequency": "string",
+  "realtime": "string"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Update ReminderEmail Notification Settings
 
@@ -1808,19 +4281,46 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 Sample Request:
-<details>
+<!-- <details> -->
+
+```json
 {
   "deActivated": true,
   "emailTemplate": "string",
   "frequency": "string",
   "realtime": "string"
 }
-</details>
+```
+<!-- </details> -->
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "deActivated": true,
+  "emailTemplate": "string",
+  "frequency": "string",
+  "realtime": "string"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ### Delete ReminderEmail Notification Settings
 
@@ -1830,9 +4330,23 @@ Method: ``` DELETE ```
 
 OAuth 2.0 Scopes: 
 
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
-Response : `200 OK ,204	No Content, 401 Unauthorized, 403 Forbidden`
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ***
 [Back to Index](index.md)
