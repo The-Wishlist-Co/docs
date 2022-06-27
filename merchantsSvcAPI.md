@@ -75,35 +75,35 @@ All representations are JSON objects submitted or received as payload to API req
 <!-- <details> -->
  <summary><font size="4">Merchant </font></summary>
  
-```activated_date``` -- Datetime
+```activated_date``` - Datetime
 
-```active``` -- boolean-- to indicate the merchant is active or not
+```active``` - boolean - to indicate the merchant is active or not
 
-```admin_email```--string--admin email details
+```admin_email``` - string - admin email details
 
-```company_code```--string
+```company_code``` - string
 
-```billing_address```--string
+```billing_address``` - string
 
-```contact_address```--string
+```contact_address``` - string
 
-```contact_person```--string
+```contact_person``` - string
 
-```created_at```--Datetime
+```created_at``` - Datetime
 
-```deleted```--boolean
+```deleted``` - boolean
 
-```deleted_date```--Datetime
+```deleted_date``` - Datetime
 
-```id```--string
+```id``` - string
 
-```merchant_name```--string
+```merchant_name``` - string
 
-```modified_by```--string
+```modified_by``` - string
 
-```trading_as```--string
+```trading_as``` - string
 
-```updated_at```--Datetime
+```updated_at``` - Datetime
 
 <!-- </details> -->
 
@@ -111,26 +111,26 @@ All representations are JSON objects submitted or received as payload to API req
 
  <summary><font size="4">Plan </font></summary>
 
-```plan_name```--string
+```plan_name``` - string
 
-```id```--string
+```id``` - string
 
 <!-- <details> -->
  <summary><font size="4">plan_type </font></summary>
 
-  ```name```--string
+  ```name``` - string
 
-  ```id```--string
+  ```id``` - string
 
-  ```request_limit```--number--admin email details
+  ```request_limit``` -number -admin email details
 
  <!-- </details> -->
  <!-- <details> -->
  <summary><font size="4">subscription_price </font></summary>
 
-  ```amount```--number
+  ```amount``` -number
 
-  ```currency_code```--string  
+  ```currency_code``` - string  
 
  <!-- </details> -->
 <!-- </details> -->
@@ -138,39 +138,39 @@ All representations are JSON objects submitted or received as payload to API req
 <!-- <details> -->
  <summary><font size="4">Store </font></summary>
 
-```deactivated_at```--Datetime
+```deactivated_at``` - Datetime
 
-```deactivated```-- boolean-- to indicate the merchant is active or not
+```deactivated``` - boolean - to indicate the merchant is active or not
 
-```default_country```--string--
+```default_country``` - string 
 
-```media_url```--string
+```media_url``` - string
 
-```merchant_id```--string
+```merchant_id``` - string
 
-```plan_id```--string
+```plan_id``` - string
 
-```store_key```--string
+```store_key``` - string
 
-```created_at```--Datetime
+```created_at``` - Datetime
 
-```deleted```--boolean
+```deleted``` - boolean
 
-```deleted_date```--Datetime
+```deleted_date``` - Datetime
 
-```id```--string
+```id``` - string
 
-```store_name```--string
+```store_name``` - string
 
-```modified_by```--string
+```modified_by``` - string
 
-```store_state```--string
+```store_state``` - string
 
 ```store_url```-string
 
 ```targeted_countries```-string
 
-```updated_at```--Datetime
+```updated_at``` - Datetime
 
 <!-- </details> -->
 
