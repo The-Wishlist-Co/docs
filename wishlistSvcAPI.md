@@ -113,7 +113,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Sample Request:
 <!-- <details> -->
-``` 
+```json 
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -196,7 +196,52 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Response : `201	Created`
+Response : 
+
+```json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "datePurchased": "2022-06-27T15:34:58.540Z",
+  "id": "string",
+  "product": {
+    "oldVariantId": "string",
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "wishlistId": "string",
+  "wishlistItemRef": "string",
+  "wishlistRef": "string"
+}
+
+```
 
  
 HTTP Status Code: 
@@ -232,7 +277,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 Sample Request:
 
 <!-- <details> -->
-``` 
+```json
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -315,7 +360,51 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Response : `200 Created`
+Response : 
+
+```json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "datePurchased": "2022-06-27T15:35:39.044Z",
+  "id": "string",
+  "product": {
+    "oldVariantId": "string",
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "wishlistId": "string",
+  "wishlistItemRef": "string",
+  "wishlistRef": "string"
+}
+```
 
  
 HTTP Status Code: 
@@ -351,7 +440,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
 
-Response : `201	Created`
+
 
  
 HTTP Status Code: 
@@ -384,7 +473,90 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
 
 
-Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `          
+Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `  
+
+Response:
+```json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "customerId": "string",
+  "customerRef": "string",
+  "deleted": true,
+  "description": "string",
+  "id": "string",
+  "isPrivate": true,
+  "name": "string",
+  "wishlistItems": [
+    {
+      "attributeGroups": {
+        "additionalProp1": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        },
+        "additionalProp2": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        },
+        "additionalProp3": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        }
+      },
+      "datePurchased": "2022-06-27T15:37:28.595Z",
+      "id": "string",
+      "product": {
+        "oldVariantId": "string",
+        "productId": "string",
+        "productRef": "string",
+        "selectedVariantId": "string",
+        "selectedVariantRef": "string"
+      },
+      "purchased": true,
+      "wishlistId": "string",
+      "wishlistItemRef": "string",
+      "wishlistRef": "string"
+    }
+  ],
+  "wishlistRef": "string"
+}
+```        
 
 HTTP Status Code: 
 ``` 
@@ -415,6 +587,93 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
+Path Variable: ` customerId - Unique Customer Id`
+
+Response:
+
+```json
+[
+  {
+    "attributeGroups": {
+      "additionalProp1": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      },
+      "additionalProp2": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      },
+      "additionalProp3": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      }
+    },
+    "customerId": "string",
+    "customerRef": "string",
+    "deleted": true,
+    "description": "string",
+    "id": "string",
+    "isPrivate": true,
+    "name": "string",
+    "wishlistItems": [
+      {
+        "attributeGroups": {
+          "additionalProp1": {
+            "attributes": {
+              "additionalProp1": "string",
+              "additionalProp2": "string",
+              "additionalProp3": "string"
+            },
+            "description": "string"
+          },
+          "additionalProp2": {
+            "attributes": {
+              "additionalProp1": "string",
+              "additionalProp2": "string",
+              "additionalProp3": "string"
+            },
+            "description": "string"
+          },
+          "additionalProp3": {
+            "attributes": {
+              "additionalProp1": "string",
+              "additionalProp2": "string",
+              "additionalProp3": "string"
+            },
+            "description": "string"
+          }
+        },
+        "datePurchased": "2022-06-27T15:38:01.546Z",
+        "id": "string",
+        "product": {
+          "oldVariantId": "string",
+          "productId": "string",
+          "productRef": "string",
+          "selectedVariantId": "string",
+          "selectedVariantRef": "string"
+        },
+        "purchased": true,
+        "wishlistId": "string",
+        "wishlistItemRef": "string",
+        "wishlistRef": "string"
+      }
+    ],
+    "wishlistRef": "string"
+  }
+]
+```
 
 HTTP Status Code: 
 ``` 
@@ -444,6 +703,94 @@ OAuth 2.0 Scopes: `Tenant authentication`
 |---------------|------------------|
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
+
+Path Variable: `customerRef - Unique Customer Ref`
+
+Sample Response:
+
+```json 
+[
+  {
+    "attributeGroups": {
+      "additionalProp1": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      },
+      "additionalProp2": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      },
+      "additionalProp3": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      }
+    },
+    "customerId": "string",
+    "customerRef": "string",
+    "deleted": true,
+    "description": "string",
+    "id": "string",
+    "isPrivate": true,
+    "name": "string",
+    "wishlistItems": [
+      {
+        "attributeGroups": {
+          "additionalProp1": {
+            "attributes": {
+              "additionalProp1": "string",
+              "additionalProp2": "string",
+              "additionalProp3": "string"
+            },
+            "description": "string"
+          },
+          "additionalProp2": {
+            "attributes": {
+              "additionalProp1": "string",
+              "additionalProp2": "string",
+              "additionalProp3": "string"
+            },
+            "description": "string"
+          },
+          "additionalProp3": {
+            "attributes": {
+              "additionalProp1": "string",
+              "additionalProp2": "string",
+              "additionalProp3": "string"
+            },
+            "description": "string"
+          }
+        },
+        "datePurchased": "2022-06-27T15:43:34.415Z",
+        "id": "string",
+        "product": {
+          "oldVariantId": "string",
+          "productId": "string",
+          "productRef": "string",
+          "selectedVariantId": "string",
+          "selectedVariantRef": "string"
+        },
+        "purchased": true,
+        "wishlistId": "string",
+        "wishlistItemRef": "string",
+        "wishlistRef": "string"
+      }
+    ],
+    "wishlistRef": "string"
+  }
+]
+```
 
 
 HTTP Status Code: 
@@ -479,7 +826,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 Sample Request:
 
 <!-- <details> -->
-``` 
+```json
 
 {
   "attributeGroups": {
@@ -526,6 +873,52 @@ Sample Request:
 
 <!-- </details> -->
 
+Sample Response:
+
+```json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "datePurchased": "2022-06-27T15:39:19.224Z",
+  "id": "string",
+  "product": {
+    "oldVariantId": "string",
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "wishlistId": "string",
+  "wishlistItemRef": "string",
+  "wishlistRef": "string"
+}
+```
+
 HTTP Status Code: 
 ``` 
 - 200 OK
@@ -558,7 +951,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 Sample Request:
 <!-- <details> -->
 
-```markdown 
+```json 
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -602,6 +995,52 @@ Sample Request:
 }
 ```
 <!-- </details> -->
+
+Sample Response
+
+```json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "datePurchased": "2022-06-27T15:40:09.518Z",
+  "id": "string",
+  "product": {
+    "oldVariantId": "string",
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "wishlistId": "string",
+  "wishlistItemRef": "string",
+  "wishlistRef": "string"
+}
+```
 
 HTTP Status Code: 
 ``` 
@@ -662,6 +1101,54 @@ OAuth 2.0 Scopes: `Tenant authentication`
 |---------------|------------------|
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
+
+Path Variable: `id - ID , wishlistId - Wishlist Id `
+
+Sample Response:
+
+```json 
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "datePurchased": "2022-06-27T15:40:39.119Z",
+  "id": "string",
+  "product": {
+    "oldVariantId": "string",
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "wishlistId": "string",
+  "wishlistItemRef": "string",
+  "wishlistRef": "string"
+}
+```
 
 HTTP Status Code: 
 ``` 
