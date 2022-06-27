@@ -9,7 +9,7 @@ For more detailed informaation, check out the collection and follow the service 
 
 ### Api Collection Index
 
-- [Customer Service API](customersvcApi.md)
+- [**Customer Service API**](customersvcApi.md)
   
   The Customer Service API stores information about a shop's customers, it also holds information on the status of a customer's account. You can create, retrieve, update, and delete customers using the Customer Service api.
   
@@ -28,12 +28,12 @@ For more detailed informaation, check out the collection and follow the service 
 
 
 
-- [Inventory Service API](inventorySvcAPI.md)
+
+- [**Inventory Service API**](inventorySvcAPI.md)
   
   An inventory item represents a physical good. It holds essential information about the physical good. You can create, retrieve, update, and delete inventory details such as its location and levels using the Customer Service api.
 
 
-  - [**Inventory API**](#inventory-api)
     - [**Representations**](#representations)
     - [**REST Endpoints**](#rest-endpoints)
       - [Create an inventory Location](#create-an-inventory-location)
@@ -50,11 +50,10 @@ For more detailed informaation, check out the collection and follow the service 
       - [Find Aggregated inventory level for a product variant](#find-aggregated-inventory-level-for-a-product-variant)
 
 
-- [Merchant Service API](merchantsSvcAPI.md)
+- [**Merchant Service API**](merchantsSvcAPI.md)
   
   The Merchants resource stores information about a merchant and their stores. You can create, retrieve, update, and delete merchants using the Merchant Service api.
 
-  - [**Merchants API**](#merchants-api)
     <!-- - [Index](#index) -->
   - [**Representations**](#representations)
     - [Register Merchant](#register-merchant)
@@ -116,11 +115,9 @@ For more detailed informaation, check out the collection and follow the service 
     - [Delete ReminderEmail Notification Settings](#delete-reminderemail-notification-settings)
 
   
-- [Price Service API](priceSvcAPI.md)
+- [**Price Service API**](priceSvcAPI.md)
   
   The Price resource stores information about price details of particular product variant. You can create, retrieve, update, and delete prices using the Price Service api.
-
-  - [**Price API**](#price-api)
       <!-- - [Index](#index) -->
     - [**Representations**](#representations)
       - [Create A Price](#create-a-price)
@@ -131,13 +128,12 @@ For more detailed informaation, check out the collection and follow the service 
       - [Find All Prices](#find-all-prices)
 
 
-- [Product Service API](productsvcAPI.md)
+- [**Product Service API**](productsvcAPI.md)
 
     The Product resource stores information about a product, its variants. You can create, retrieve, update, and delete orders using the Product Service api.
 
 
-  - [**Product API**](#product-api)
-      <!-- - [Index](#index) -->
+     <!-- - [Index](#index) -->
     - [**Representations**](#representations)
       - [Product](#product)
       - [Product Variant](#product-variant)
@@ -164,11 +160,10 @@ For more detailed informaation, check out the collection and follow the service 
       - [Delete Product variants by product Id/variantId](#delete-product-variants-by-product-idvariantid)
       - [Upload Product Variants](#upload-product-variants)
 
-- [Order Service API](ordersSvcApi.md)
+- [**Order Service API**](ordersSvcApi.md)
 
     An order is a customer's request to purchase one or more products from a shop. You can create, retrieve, update, and delete Product using the Order Service api.
 
-    - [**Order Svc API**](#order-svc-api)
     <!-- - [Index](#index) -->
     - [**Representations**](#representations)
     - [**REST Endpoints**](#rest-endpoints)
@@ -185,11 +180,10 @@ For more detailed informaation, check out the collection and follow the service 
       - [Delete entry](#delete-entry)
 
 
-- [Wishlist Service API](wishlistSvcAPI.md)
+- [**Wishlist Service API**](wishlistSvcAPI.md)
   
   The Wishlist resource stores information about a customer's wishlist, which includes the list products which the customer wish to buy. You can create, retrieve, update, and delete wishlists using the Wishlist Service api.
 
-  - [**Wishlist API**](#wishlist-api)
     <!-- - [Index](#index) -->
   - [**Representations**](#representations)
     - [Wishlist](#wishlist)
@@ -205,7 +199,7 @@ For more detailed informaation, check out the collection and follow the service 
       - [Find Wishlist Item by WishlistId and Item Id](#find-wishlist-item-by-wishlistid-and-item-id)
 
 
-- [Impex Service API](impexAPI.md)
+- [**Impex Service API**](impexAPI.md)
 
     The ImpEx API allows you to interact with all the core api's in the TWC system at a unified REST interface for the seemless interegration of bulk data in to the system. 
 
@@ -220,18 +214,15 @@ For more detailed informaation, check out the collection and follow the service 
     - [Get Resource By Id](impexAPI.md#get-resource-by-id)
     - [Query Resources](impexAPI.md#query-resources)
 
-- [Shopify Connector](ShopifyConnector.md)
+- [**Shopify Connector**](ShopifyConnector.md)
   
   Shopify Connector is used data integration from the Shopify system into the TWC system seamlessly.
 
-- [Event Collector](eventcollectorAPI.md)
+- [**Event Collector**](eventcollectorAPI.md)
 
     The event collector api is employed for enabling various events and campains that pertains to a customer.
     
-
-
-  - [**Event Collector API**](#event-collector-api)
-      <!-- - [Index](#index) -->
+     <!-- - [Index](#index) -->
     - [**Representations**](#representations)
       - [Order](#order)
     - [**REST Endpoints**](#rest-endpoints)

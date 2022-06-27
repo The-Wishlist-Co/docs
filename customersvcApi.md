@@ -28,9 +28,9 @@ For security reasons, the Customer resource doesn't store credit card informatio
 
 All representations are JSON objects submitted or received as payload to API requests or responses.
 Represents a customer. If a store field is defined in a store, then the customer account is specific to the store.
-
+<!-- 
 <details>
- <summary>Expand for details</summary>
+ <summary>Expand for details</summary> -->
 
 ```accepts_marketing``` - boolean - To enable marketing for a customer.
 
@@ -83,7 +83,7 @@ The customer's email address and the main identifier of uniqueness for a custome
 
 ```verified_email``` - boolean -Whether the customer has verified their email address.
 
-</details>
+<!-- </details> -->
 
 [Back to Index](#index)
 
@@ -102,20 +102,20 @@ Method Name: `createCustomer`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
- <summary>Request Headers</summary>
+<!-- <details> -->
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
- <summary>Payload</summary>
+<!-- <details> -->
+ <summary>Request Payload : </summary>
  
-```
+```json
 {
   "accepts_marketing": true,
   "active": true,
@@ -236,12 +236,12 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response</summary>
  
- ```
+ ```json
  {
   "accepts_marketing": true,
   "active": true,
@@ -362,7 +362,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
-</details> 
+<!-- </details>  -->
 
 HTTP Status Code: `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
