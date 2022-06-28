@@ -8,8 +8,8 @@ The Product resource lets you update and create products in a merchant's store. 
 All representations are JSON objects submitted or received as payload to API requests or responses.
 
 ### Product
-<details>
-<summary>Expand for details</summary>
+<!-- <details> -->
+<!-- <summary>Expand for details</summary> -->
 
 `body_html` - string - A description of the product. Supports HTML formatting.
 
@@ -50,7 +50,7 @@ page uses the default template "product.liquid". (default: null)
 
 `vendor` - string - The name of the product's vendor.
 
-</details>
+<!-- </details> -->
 
 ## **REST Endpoints**
 
@@ -63,7 +63,7 @@ Method: ``` POST ```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -71,9 +71,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -179,9 +179,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }      
 ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -288,9 +288,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
   
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 201 (product created)</summary>
  
  ```json
@@ -395,9 +395,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "vendor": "string"
 }
  ```
- </details> 
+ <!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Bad request)</summary>
  
  ```json
@@ -410,9 +410,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -425,9 +425,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 Product created
 - 400 Invalid status value
@@ -435,7 +436,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
-
+```
 
 ## Add products from shopify to TWC
 The shopify product data is translated and transformed according to the TWC system requiremennts through product section of the shopify connector api. This endpoint is for creating bulk entries at a time.
@@ -446,7 +447,7 @@ Method: ``` POST ```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -454,9 +455,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -566,9 +567,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }      
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Invalid status value)</summary>
  
  ```json
@@ -581,9 +582,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -596,9 +597,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 created
 - 400 Invalid status value
@@ -606,7 +608,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
-
+```
 
 ## Update an existing product
 Updates an already existing product. If the product does not exist, this method returns a ResourceNotFound error.
@@ -618,7 +620,7 @@ Method: ``` PUT ```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -626,9 +628,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -734,9 +736,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }      
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -842,9 +844,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }     
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Invalid ID supplied)</summary>
  
  ```json
@@ -857,9 +859,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -872,10 +874,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 404 (Product not found)</summary>
  
  ```json
@@ -888,9 +890,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Validation exception)</summary>
  
  ```json
@@ -903,9 +905,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 created
 - 400 Invalid ID supplied
@@ -913,7 +916,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Product not found
 - 405 Validation exception
-
+```
 
 ## Find product by ID
 Returns an products by its id from a specific Store while passing the respective id as a path param in the endpoint. 
@@ -926,7 +929,7 @@ Method: ``` GET ```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -934,16 +937,16 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Path Variable</summary>
  
   - {id}
   
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (successful operation)</summary>
 
 ```json
@@ -1049,9 +1052,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }    
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Invalid ID supplied)</summary>
  
  ```json
@@ -1064,9 +1067,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 404 (Product not found)</summary>
  
  ```json
@@ -1079,15 +1082,16 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 successful operation
 - 400 Invalid ID supplied
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Product not found
-
+```
 
 
 ## Deletes a product
@@ -1100,7 +1104,7 @@ Method: ``` DELETE ```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -1108,16 +1112,16 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Path Variable</summary>
  
   - {id}
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (Product deleted)</summary>
 
 ```json
@@ -1223,9 +1227,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }   
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Invalid ID supplied)</summary>
  
  ```json
@@ -1238,9 +1242,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 404 (Product not found)</summary>
  
  ```json
@@ -1253,17 +1257,18 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
  
 HTTP Status Code: 
+```
 - 200 Product deleted
 - 204 No Content
 - 400 Invalid ID supplied
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Product not found
-
+```
 
 ***
 [Back to Shopify connector](../ShopifyConnector.md)

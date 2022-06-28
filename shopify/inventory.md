@@ -15,8 +15,8 @@ An **inventory location** represents a geographical location where your stores, 
 
 All representations are JSON objects submitted or received as payload to API requests or responses.
 
-<details>
- <summary><font size="4">Inventory Item</font></summary>
+<!-- <details> -->
+ <!-- <summary><font size="4">Inventory Item</font></summary> -->
 
 ```admin_graphql_api_id``` - string
 
@@ -48,10 +48,10 @@ An array of country-specific Harmonized System (HS) codes for the item. Used to 
 
 ```updated_at``` - The date and time when the inventory item was last modified.
 
-</details>
+<!-- </details> -->
 
 
-<details>
+<!-- <details> -->
  <summary><font size="4">Location </font></summary>
 `active` - boolean - Whether the location is active. If true, then the location can be used to sell products, stock inventory, and fulfill orders. Deactivated locations don't contribute to the shop's location limit.
 
@@ -98,9 +98,9 @@ An array of country-specific Harmonized System (HS) codes for the item. Used to 
 
 ```zip``` - string - The zip or postal code.
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary><font size="4">Inventory Level </font></summary>
 ```admin_graphql_api_id``` - string
 
@@ -114,7 +114,7 @@ An array of country-specific Harmonized System (HS) codes for the item. Used to 
 
 ```updated_at``` - The date and time (ISO 8601 format) when the inventory level was last modified.
 
-</details>
+<!-- </details> -->
 
 ## **REST Endpoints**
 
@@ -126,7 +126,7 @@ Endpoint: ```​/api​/inventoryitem```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -134,9 +134,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -162,9 +162,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }     
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -190,9 +190,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }     
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 201 (OK inventory item created)</summary>
  
  ```json
@@ -217,9 +217,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "updated_at": "2022-06-22T12:27:57.640Z"
 }
  ```
- </details> 
+ <!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (NOK bad request)</summary>
  
  ```json
@@ -232,9 +232,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (NOK unauthorized)</summary>
  
  ```json
@@ -247,9 +247,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -262,9 +262,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 OK inventory item created
 - 400 NOK bad request
@@ -272,6 +273,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 NOK Invalid input
+```
 
 ## Updated an inventory level
 
@@ -281,7 +283,7 @@ Endpoint: ```/api​/inventoryitem​```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -289,9 +291,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -317,9 +319,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }     
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK inventory item created)</summary>
 
 ```json
@@ -345,10 +347,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }     
  ```
  
-</details> 
+<!-- </details> --> 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (NOK bad request)</summary>
  
  ```json
@@ -361,9 +363,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (NOK unauthorized)</summary>
  
  ```json
@@ -376,10 +378,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (NOK Invalid input)</summary>
  
  ```json
@@ -392,9 +394,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK inventory item created
 - 201 created
 - 400 NOK bad request
@@ -402,6 +405,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 NOK Invalid input
+```
 
 ## Find Inventory Item by Ref
 
@@ -411,7 +415,7 @@ Endpoint: ```/api​/inventoryitem​/{inventoryRef}```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -419,16 +423,16 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Path Variable</summary>
  
  - {inventoryRef}
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK Found InventoryItem)</summary>
 
 ```json
@@ -454,9 +458,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }      
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Bad request unable to create InventoryItem)</summary>
  
  ```json
@@ -469,9 +473,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -484,10 +488,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 404 (InventoryItem with provided id not found)</summary>
  
  ```json
@@ -500,9 +504,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -515,15 +519,17 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK Found InventoryItem
 - 400 Bad request unable to create InventoryItem
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 InventoryItem with provided id not found
 - 405 Invalid input
+```
 
 ## Upload many inventory levels
 
@@ -533,7 +539,7 @@ Endpoint: ```/api​/inventoryitem​s```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -541,9 +547,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -571,9 +577,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ]    
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -599,9 +605,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }     
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 201 (OK inventory item created)</summary>
  
  ```json
@@ -626,9 +632,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "updated_at": "2022-06-22T13:15:14.041Z"
 }
  ```
- </details> 
+ <!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (NOK bad request)</summary>
  
  ```json
@@ -641,9 +647,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (NOK unauthorized)</summary>
  
  ```json
@@ -656,10 +662,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 404 (not found)</summary>
  
  ```json
@@ -672,9 +678,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (NOK Invalid input)</summary>
  
  ```json
@@ -687,9 +693,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 created
 - 400 NOK bad request
@@ -697,6 +704,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 NOK Invalid input
+```
 
 ## Create an inventory level
 
@@ -707,7 +715,7 @@ Endpoint: ```/api​/inventorylevel```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -715,9 +723,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -730,9 +738,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "updated_at": "2022-06-22T13:18:43.469Z"
 }      
 ``` 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -746,9 +754,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }      
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 201 (OK inventory level item created)</summary>
  
  ```json
@@ -761,9 +769,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "updated_at": "2022-06-22T13:18:43.519Z"
 }
  ```
- </details> 
+ <!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (NOK bad request)</summary>
  
  ```json
@@ -776,9 +784,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (NOK unauthorized)</summary>
  
  ```json
@@ -791,9 +799,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (NOK Invalid input)</summary>
  
  ```json
@@ -806,9 +814,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 NOK inventory level item created
 - 400 NOK Invalid status value
@@ -816,7 +825,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 NOK Invalid input
-
+```
 
 ## Updated an inventory level
 
@@ -826,7 +835,7 @@ Endpoint: ```/api​/inventorylevel```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -834,9 +843,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -850,9 +859,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }      
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK inventory item created)</summary>
 
 ```json
@@ -866,9 +875,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }      
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (NOK bad request)</summary>
  
  ```json
@@ -881,9 +890,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (NOK Unauthorized)</summary>
  
  ```json
@@ -896,10 +905,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (NOK Invalid input)</summary>
  
  ```json
@@ -912,9 +921,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK inventory item created
 - 201 created
 - 400 NOK Invalid status value
@@ -922,6 +932,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 NOK Invalid input
+```
 
 ## Find InventoryLevel By Id
 
@@ -931,7 +942,7 @@ Endpoint: ```​/api​/inventorylevel​/inventoryitem​/{inventoryItemRef}​
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -939,16 +950,16 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Path Variables</summary>
   - {inventoryItemRef}
   - {locationRef}
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK Found InventoryLevel)</summary>
 
 ```json
@@ -974,9 +985,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }     
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details> 
+<!-- <details> --> 
  <summary>Response - 400 (Bad request unable to create InventoryLevel)</summary>
  
  ```json
@@ -989,9 +1000,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -1004,10 +1015,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 404 (InventoryLevel with provided id not found)</summary>
  
  ```json
@@ -1020,9 +1031,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -1035,15 +1046,17 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK Found InventoryLevel
 - 400 Bad request unable to create InventoryLevel
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 InventoryLevel with provided id not found
 - 405 Invalid input
+```
 
 ## Create an inventory level
 
@@ -1053,7 +1066,7 @@ Endpoint: ```/api​/inventorylevels```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -1061,9 +1074,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -1079,9 +1092,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ]      
 ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -1097,9 +1110,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ]      
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 201 (ok inventory level item created)</summary>
  
  ```json
@@ -1114,9 +1127,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
   }
 ]
  ```
- </details> 
+ <!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (NOK bad request)</summary>
  
  ```json
@@ -1129,9 +1142,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (NOK unauthorized)</summary>
  
  ```json
@@ -1144,9 +1157,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (NOK Invalid input)</summary>
  
  ```json
@@ -1159,9 +1172,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 OK inventory level item created
 - 400 NOK bad request
@@ -1169,6 +1183,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 NOK Invalid input
+```
 
 ## Create an inventory Location
 
@@ -1178,7 +1193,7 @@ Endpoint: ```/api​/inventorylocation```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -1186,9 +1201,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -1215,9 +1230,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }     
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -1244,9 +1259,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }     
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 201 (ok inventory location created)</summary>
  
  ```json
@@ -1272,9 +1287,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "zip": "string"
 }
  ```
- </details> 
+ <!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (NOK Invalid status value)</summary>
  
  ```json
@@ -1287,9 +1302,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (NOK Unauthorized)</summary>
  
  ```json
@@ -1302,11 +1317,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (NOK Invalid input)</summary>
  
  ```json
@@ -1319,9 +1334,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 OK inventory location created
 - 400 NOK bad request
@@ -1329,6 +1345,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 NOK Invalid input
+```
 
 ## Updated an inventory level
 
@@ -1338,7 +1355,7 @@ Endpoint: ```​/api​/inventorylocation```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -1346,9 +1363,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -1375,9 +1392,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }      
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK Location item created)</summary>
 
 ```json
@@ -1404,10 +1421,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }     
  ```
  
-</details> 
+<!-- </details> --> 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (NOK bad request)</summary>
  
  ```json
@@ -1420,9 +1437,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (NOK unauthorized)</summary>
  
  ```json
@@ -1435,9 +1452,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -1450,9 +1467,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK Location item created
 - 201 created
 - 400 NOK Invalid status value
@@ -1460,6 +1478,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 NOK Invalid input
+```
 
 ## Find Customer by ID
 
@@ -1469,7 +1488,7 @@ Endpoint: ```​/api​/inventorylocation​/{id}```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -1477,16 +1496,16 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Path Variable</summary>
  
 	- {id}
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -1513,9 +1532,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }     
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Bad request unable to create Location)</summary>
  
  ```json
@@ -1528,9 +1547,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -1543,10 +1562,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 404 (Location with provided id not found)</summary>
  
  ```json
@@ -1559,9 +1578,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -1574,15 +1593,17 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK Found location
 - 400 Bad request unable to create Location
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Location with provided id not found
 - 405 Invalid input
+```
 
 ## Create multiple inventory Locations
 
@@ -1592,7 +1613,7 @@ Endpoint: ```/api​/inventorylocations```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -1600,9 +1621,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -1631,9 +1652,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ]     
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -1662,9 +1683,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ]      
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 201 (OK inventory location created)</summary>
  
  ```json
@@ -1692,9 +1713,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
   }
 ]
  ```
- </details> 
+ <!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (NOK bad request)</summary>
  
  ```json
@@ -1707,9 +1728,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (NOK unauthorized)</summary>
  
  ```json
@@ -1722,10 +1743,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (NOK Invalid input)</summary>
  
  ```json
@@ -1738,9 +1759,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 OK inventory location created
 - 400 NOK Invalid status value
@@ -1748,7 +1770,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 NOK Invalid input
-
+```
 
 ***
 [Back to Shopify connector](../ShopifyConnector.md)

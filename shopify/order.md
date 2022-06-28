@@ -8,8 +8,8 @@ An order is a customer's request to purchase one or more products from a shop. Y
 All representations are JSON objects submitted or received as payload to API requests or responses.
 
 ### Order
-<details>
- <summary>Expand for details</summary>
+<!-- <details> -->
+ <!-- <summary>Expand for details</summary> -->
 
 `app_id` -integer -The ID of the app that created the order.
 
@@ -237,7 +237,7 @@ When creating an order through the API, tax lines can be specified on the order 
 
 `order_status_url` - string - The URL pointing to the order status web page, if applicable.
 
-</details>
+<!-- </details> -->
 
 ## **REST Endpoints**
 
@@ -250,7 +250,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -258,9 +258,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
  ```json
@@ -1234,9 +1234,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -2209,9 +2209,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Bad request)</summary>
  
  ```json
@@ -2224,9 +2224,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -2239,9 +2239,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -2254,9 +2254,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 created
 - 400 Bad request
@@ -2264,7 +2265,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
-
+```
 
 ## Update an order
 Updates an already existing order. the capabalities include addition and removal of items , discounts etc.
@@ -2277,7 +2278,7 @@ Method: ``` PUT ```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -2285,9 +2286,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
  ```json
@@ -3261,9 +3262,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK updated order)</summary>
 
 ```json
@@ -4236,9 +4237,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Bad request)</summary>
  
  ```json
@@ -4251,9 +4252,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -4266,9 +4267,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -4281,9 +4282,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK updated order
 - 201 created
 - 400 Bad request
@@ -4291,7 +4293,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
-
+```
 
 ## Finds Order by status
 Returns an order by its id from a specific Store while passing the respective id as a path param in the endpoint. 
@@ -4303,7 +4305,7 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -4311,16 +4313,16 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Path Variable</summary>
 	
 	- {id}
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -5293,9 +5295,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Invalid status value)</summary>
  
  ```json
@@ -5308,9 +5310,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -5323,9 +5325,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -5338,9 +5340,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 created
 - 400 Invalid status value
@@ -5348,7 +5351,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
-
+```
 
 ***
 [Back to Shopify connector](../ShopifyConnector.md)

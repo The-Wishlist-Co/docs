@@ -7,8 +7,8 @@ All representations are JSON objects submitted or received as payload to API req
 
 ### Product
 
-</details>
-<summary>Expand for details</summary>
+<!-- </details> -->
+<!-- <summary>Expand for details</summary> -->
 
 `barcode` - The barcode, UPC, or ISBN number for the product.
 
@@ -71,7 +71,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 `weight_unit` - The unit of measurement that applies to the product variant's weight. If you don't specify a value for weight_unit, then the shop's default unit of measurement is applied. Valid values: g, kg, oz, and lb.
 
-</details>
+<!-- </details> -->
 
 ## **REST Endpoints**
 
@@ -85,7 +85,7 @@ Method: ``` POST ```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -93,9 +93,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -140,9 +140,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
       
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -186,9 +186,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }      
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 201 (Variant  created)</summary>
  
  ```json
@@ -231,9 +231,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "weight_unit": "string"
 }
  ```
- </details> 
+ <!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Bad request)</summary>
  
  ```json
@@ -246,9 +246,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -261,9 +261,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
-HTTP Status Code: 
+HTTP Status Code:
+``` 
 - 200 OK
 - 201 Variant created
 - 400 Bad Request
@@ -271,7 +272,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
-
+```
 
 ## Add products from shopify to TWC
 Used for entering multiple variant data of a product to the TWC system from a bulk Shopify data. 
@@ -283,7 +284,7 @@ Method: ``` POST ```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -291,9 +292,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -341,10 +342,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }      
 ```
  
-</details>
+<!-- </details> -->
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Invalid ID supplied)</summary>
  
  ```json
@@ -357,9 +358,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -372,10 +373,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -388,9 +389,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 406 (Unacceptable Input)</summary>
  
  ```json
@@ -403,9 +404,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
-HTTP Status Code: 
+HTTP Status Code:
+``` 
 - 200 Variant updated
 - 201 created
 - 400 Invalid ID suppied
@@ -414,7 +416,7 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Validation exception
 - 406 Unacceptable Input
-
+```
 
 ## Update an existing variant
 Updates an already existing variant. If the product or the variant does not exist, this method returns a ResourceNotFound error.
@@ -426,7 +428,7 @@ Method: ``` PUT ```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -434,9 +436,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
 ```json
@@ -480,9 +482,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }      
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (Variant updated)</summary>
 
 ```json
@@ -526,10 +528,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }    
  ```
  
-</details> 
+<!-- </details> --> 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Invalid ID Supplied)</summary>
  
  ```json
@@ -542,9 +544,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -557,10 +559,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 404 (Product not found)</summary>
  
  ```json
@@ -573,9 +575,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Validation exception)</summary>
  
  ```json
@@ -588,9 +590,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
-HTTP Status Code: 
+HTTP Status Code:
+``` 
 - 200 Variant updated
 - 201 created
 - 400 Invalid ID Supplied
@@ -598,6 +601,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Product Not Found
 - 405 Validation exception
+```
 
 ## Find product by ID
 Returns an products by its id and variant id by passing the respective id's as a path params in the endpoint. 
@@ -610,7 +614,7 @@ Method: ``` GET ```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -618,17 +622,17 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Path Variables</summary>
  
 	- {id}
 	- {productId}
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (successful operation)</summary>
 
 ```json
@@ -672,9 +676,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }     
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Invalid Id supplied)</summary>
  
  ```json
@@ -687,9 +691,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 404 (Product not found)</summary>
  
  ```json
@@ -702,15 +706,16 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-HTTP Status Code: 
+HTTP Status Code:
+``` 
 - 200 successful created
 - 400 Invalid ID supplied
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Product Not Found
-
+```
 
 ## Deletes a product
 Product variant is marked as deleted by passing id as a path param of the endpoint.
@@ -722,7 +727,7 @@ Method: ``` DELETE ```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -730,18 +735,18 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Path Variables</summary>
  
  - {id}
  - {productId}
 	
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Invalid ID supplied)</summary>
  
  ```json
@@ -754,9 +759,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 404 (Product not found)</summary>
  
  ```json
@@ -769,16 +774,17 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
-HTTP Status Code: 
+HTTP Status Code:
+``` 
 - 200 Product deleted
 - 201 No Content
 - 400 Invalid Id Supplied
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Product Not Found
-
+```
 
 
 

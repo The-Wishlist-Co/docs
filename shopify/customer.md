@@ -12,8 +12,8 @@ All representations are JSON objects submitted or received as payload to API req
 ### customer
 Represents a customer. If a store field is defined in a store, then the customer account is specific to the store.
 
-<details>
- <summary>Expand for details</summary>
+<!-- <details> -->
+ <!-- <summary>Expand for details</summary> -->
 
 ```accepts_marketing``` - boolean - Optional -
 To enable marketing for a customer.
@@ -84,7 +84,7 @@ The unique ID of the customer.
 
 ```verified_email``` - boolean -Whether the customer has verified their email address.
 
-</details>
+<!-- </details> -->
 
 ## **REST Endpoints**
  
@@ -97,7 +97,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -105,9 +105,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
  ```json
@@ -187,9 +187,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK)</summary>
  
  ```json
@@ -270,9 +270,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 201 (OK Customer created)</summary>
 
 ```json
@@ -352,9 +352,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -367,9 +367,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -382,9 +382,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 OK Customer created
 - 400 Bad request unable to create customer
@@ -392,7 +393,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
-
+```
 
 ## Upload Customers
 Creates an array of new Customers in the TWC system.
@@ -403,7 +404,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -411,9 +412,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
  ```json
@@ -497,10 +498,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  
  ```
-</details> 
+<!-- </details> --> 
 
 
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Bad request)</summary>
  
  ```json
@@ -513,9 +514,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (Unauthorized) </summary>
  
  ```json
@@ -528,9 +529,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 403 (Forbidden) </summary>
  
  ```json
@@ -543,9 +544,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 404 (Customer not found) </summary>
  
  ```json
@@ -558,9 +559,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -573,10 +574,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 OK Customer created
 - 400 Bad request unable to create customer
@@ -584,6 +586,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
+```
 
 ## Update a Customer
 Updates Customer data set in the TWC system.
@@ -594,7 +597,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -602,9 +605,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Payload</summary>
  
  ```json
@@ -684,9 +687,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK Customer updated)</summary>
  
  ```json
@@ -766,10 +769,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ``` 
  
-</details>
+<!-- </details> -->
  
  
- <details>
+ <!-- <details> -->
  <summary>Response - 400 (Bad request)</summary>
  
  ```json
@@ -782,9 +785,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (Unauthorized) </summary>
  
  ```json
@@ -797,9 +800,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 403 (Forbidden) </summary>
  
  ```json
@@ -812,9 +815,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 404 (Customer not found) </summary>
  
  ```json
@@ -827,9 +830,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -842,10 +845,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 OK Customer created
 - 400 Bad request unable to create customer
@@ -853,7 +857,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Customer not found 
 - 405 Invalid input
- 
+ ```
 
 ## Find Customer by Ref
 Returns a customer by its Ref from a specific Store while passing the respective Ref as a path param in the endpoint. The Tenant authentication maps to a Store.
@@ -865,7 +869,7 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -873,16 +877,16 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Path Variable</summary>
  
  - {customerRef}
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (OK Found customer)</summary>
  
  ```json
@@ -962,11 +966,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
  
  
- <details>
+ <!-- <details> -->
  <summary>Response - 400 (Bad request)</summary>
  
  ```json
@@ -979,9 +983,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (Unauthorized) </summary>
  
  ```json
@@ -994,9 +998,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 403 (Forbidden) </summary>
  
  ```json
@@ -1009,9 +1013,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 404 (Customer not found) </summary>
  
  ```json
@@ -1024,9 +1028,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -1039,10 +1043,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 OK Customer created
 - 400 Bad request unable to create customer
@@ -1050,7 +1055,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Customer not found
 - 405 Invalid input 
-
+```
 
 ## Delete Customer by ID
 Deleting a Customer marks the customer as deleted and produces the HTTP response confirming the action.
@@ -1063,7 +1068,7 @@ Method: ``` DELETE ```
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
-<details>
+<!-- <details> -->
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -1071,16 +1076,16 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Path Variable</summary>
  
  - {id}
  
-</details> 
+<!-- </details> --> 
 
-<details>
+<!-- <details> -->
  <summary>Response - 200 (Customer deleted)</summary>
  
  ```json
@@ -1160,9 +1165,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
-<details>
+<!-- <details> -->
  <summary>Response - 400 (Bad request)</summary>
  
  ```json
@@ -1175,9 +1180,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 401 (Unauthorized) </summary>
  
  ```json
@@ -1190,9 +1195,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 403 (Forbidden) </summary>
  
  ```json
@@ -1205,9 +1210,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 404 (Customer not found) </summary>
  
  ```json
@@ -1220,9 +1225,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -1235,10 +1240,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-</details>
+<!-- </details> -->
  
  
 HTTP Status Code: 
+```
 - 200 OK
 - 201 OK Customer created
 - 400 Bad request unable to create customer
@@ -1246,7 +1252,7 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
- 
+```
 
 
 
