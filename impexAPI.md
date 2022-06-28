@@ -241,9 +241,16 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
 
 
-Request parameters : `batchId - batchId`
+Request parameters : `batchRef - batchRef`
 
-`batchRef - batchRef`
+`batchState - batchState`
+
+`id - id`
+`page : integer`
+
+`pageSize : pageSize`
+
+`withTotal : boolean`
 
 Response : 
 ```json
