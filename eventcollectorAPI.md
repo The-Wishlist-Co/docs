@@ -27,8 +27,8 @@ The event collector api is employed for enabling various events and campains tha
 All representations are JSON objects submitted or received as payload to API requests or responses.
 
 ### Order
-<details>
- <summary>Expand for details</summary>
+<!-- <details> -->
+<!-- <summary>Expand for details</summary> -->
 
 `active` - boolean - true for active event Subscription.
 
@@ -57,7 +57,7 @@ All representations are JSON objects submitted or received as payload to API req
 `subscribeDelete` - boolean - To mark current Subscription as deleted.
 
 
-</details>
+<!-- </details> -->
 
 
 ## **REST Endpoints**
@@ -73,8 +73,16 @@ Endpoint: ```​​/api​/api/v1/events```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Request : 
-``` 
+```json 
 {
   "entity_id": "string",
   "entity_name": "string",
@@ -106,6 +114,14 @@ Endpoint: ```​/api/v1/events/{eventId}```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Request Parameters: `eventId  : id`
 
 Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
@@ -121,8 +137,16 @@ Endpoint: ```​​​/api/v1/event-subscription```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Request : 
-``` 
+```json
 {
   "active": true,
   "destination": {
@@ -142,8 +166,36 @@ Request :
 }
 ```
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+```json
+{
+  "active": true,
+  "destination": {
+    "sqs": {
+      "accessKey": "string",
+      "accessSecret": "string",
+      "queueUrl": "string",
+      "region": "string"
+    },
+    "type": "SNS"
+  },
+  "entityType": "CUSTOMER",
+  "id": "string",
+  "subscribeChange": true,
+  "subscribeCreate": true,
+  "subscribeDelete": true
+}
+```
 
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Update  Event Subscriptions
 For the updation of an existing EventSubscriptions resource with unique id.
@@ -154,8 +206,16 @@ Endpoint: ```​​​/api/v1/event-subscription```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Request : 
-``` 
+```json
 {
   "active": true,
   "destination": {
@@ -174,7 +234,37 @@ Request :
   "subscribeDelete": true
 }
 ```
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "active": true,
+  "destination": {
+    "sqs": {
+      "accessKey": "string",
+      "accessSecret": "string",
+      "queueUrl": "string",
+      "region": "string"
+    },
+    "type": "SNS"
+  },
+  "entityType": "CUSTOMER",
+  "id": "string",
+  "subscribeChange": true,
+  "subscribeCreate": true,
+  "subscribeDelete": true
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Get All Event Subscriptions
 TO find all active event Subscription events.
@@ -185,9 +275,49 @@ Endpoint: ```​​​/api/v1/event-subscription```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Request Parameters : no parameters
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+[
+  {
+    "active": true,
+    "destination": {
+      "sqs": {
+        "accessKey": "string",
+        "accessSecret": "string",
+        "queueUrl": "string",
+        "region": "string"
+      },
+      "type": "SNS"
+    },
+    "entityType": "CUSTOMER",
+    "id": "string",
+    "subscribeChange": true,
+    "subscribeCreate": true,
+    "subscribeDelete": true
+  }
+]
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Get  Event Subscriptions
 TO find an active event Subscription event with id.
@@ -198,9 +328,47 @@ Endpoint: ```​​​/api/v1/event-subscription/{Id}```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Request Parameters: `id  :event id`
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "active": true,
+  "destination": {
+    "sqs": {
+      "accessKey": "string",
+      "accessSecret": "string",
+      "queueUrl": "string",
+      "region": "string"
+    },
+    "type": "SNS"
+  },
+  "entityType": "CUSTOMER",
+  "id": "string",
+  "subscribeChange": true,
+  "subscribeCreate": true,
+  "subscribeDelete": true
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Deactivate Event Subscriptions
 TO find an active event Subscription event with id.
@@ -211,10 +379,34 @@ Endpoint: ```​​​​/api​/v1​/event-subscription​/{Id}​/deactivate`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Request Parameters: `id  :event id`
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+```json
+{
+  "body": {},
+  "statusCode": "ACCEPTED",
+  "statusCodeValue": 0
+}
+```
 
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ***
 [Back to Index](index.md)
