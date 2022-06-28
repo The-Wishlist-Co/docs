@@ -238,5 +238,14 @@ For more detailed informaation, check out the collection and follow the service 
       - [Get All Event Subscriptions](#get-all-event-subscriptions)
       - [Get  Event Subscriptions](#get--event-subscriptions)
       - [Deactivate Event Subscriptions](#deactivate-event-subscriptions)
+	  
+- [**Authentication API**](authenticationsvcApi.md)	
+
+	API generates the bearer token , which will be used by clients in request header to interact with application.
+	
+	 <!-- - [Index](#index) -->
+  - [**Representations**](authenticationsvcApi.md#representations)
+  - [**REST Endpoints**](authenticationsvcApi.md#rest-endpoints)
+	- [Generate Token](authenticationsvcApi.md#generate-token)  
 
 
