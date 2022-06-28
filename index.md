@@ -244,8 +244,8 @@ For more detailed informaation, check out the collection and follow the service 
 	API generates the bearer token , which will be used by clients in request header to interact with application.
 	
 	 <!-- - [Index](#index) -->
-  - [**Representations**](authenticationsvcApi.md#representations)
-  - [**REST Endpoints**](authenticationsvcApi.md#rest-endpoints)
-	- [Generate Token](authenticationsvcApi.md#generate-token)  
+	- [**Representations**](authenticationsvcApi.md#representations)
+	- [**REST Endpoints**](authenticationsvcApi.md#rest-endpoints)
+		- [Generate Token](authenticationsvcApi.md#generate-token)  
 
 
