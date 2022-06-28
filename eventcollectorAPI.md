@@ -103,7 +103,37 @@ Request :
 } 
 ```
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+```json
+{
+  "entity_id": "string",
+  "entity_name": "string",
+  "event_payload": {
+    "base64_encoded_fault_json": "string",
+    "base64_encoded_payload_json": "string",
+    "entity_id": "string",
+    "key_attributes": {
+      "additionalProp1": "string",
+      "additionalProp2": "string",
+      "additionalProp3": "string"
+    },
+    "operation": "BULK_CREATE"
+  },
+  "event_source": "APPLICATION",
+  "event_type": "ENTITY_EVENT",
+  "id": "string"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Find Events
 To find event by id. Id is passed as a path param.
@@ -124,7 +154,39 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `eventId  : id`
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+```json
+{
+  "entity_id": "string",
+  "entity_name": "string",
+  "event_payload": {
+    "base64_encoded_fault_json": "string",
+    "base64_encoded_payload_json": "string",
+    "entity_id": "string",
+    "key_attributes": {
+      "additionalProp1": "string",
+      "additionalProp2": "string",
+      "additionalProp3": "string"
+    },
+    "operation": "BULK_CREATE"
+  },
+  "event_source": "APPLICATION",
+  "event_type": "ENTITY_EVENT",
+  "id": "string"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
+
 
 - ## **Event Subscription Resource**
 
