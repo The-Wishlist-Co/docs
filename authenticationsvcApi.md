@@ -30,7 +30,7 @@ This API generates the bearer token , which will be used by clients in request h
 
 Method: ``` POST ``` 
 
-Endpoint: ```​​auth/realms/{tenent id}/protocol/openid-connect/token```
+Endpoint: ```​​auth/realms/{tenentid}/protocol/openid-connect/token```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
@@ -40,6 +40,8 @@ Request Headers :
 |---------------|---------------------------------------|
 | Content-Type  | `application/x-www-form-urlencoded` 	|
 | Accept		| `*/*`			   						| 
+
+Request Parameter: `tenentid  - Tenent Id`
 
 Sample Request Form url encoded objects :
 
