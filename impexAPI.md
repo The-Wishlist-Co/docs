@@ -58,7 +58,7 @@ All representations are JSON objects submitted or received as payload to API req
 `expiresAt` -The date and time (ISO 8601 format) when the Batch expires or is aborted.
 
 `tenantId` - Unique to each tenant, authentication is based on this tenantId
-</details>
+<!--</details>-->
 
 
 <!-- <details> -->
@@ -127,7 +127,7 @@ withTotal Boolean Default FALSE
 `modifiedAt` - string - The date and time (ISO 8601 format) when the Batch was last modified.
 
 `tenantId` - Unique to each tenant, authentication is based on this tenantId.
-</details>
+<!--</details> -->
 
 ## **REST Endpoints**
 
@@ -142,8 +142,15 @@ Endpoint: ```​​/api​/import​/batch```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+<summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
 Request : 
-```
+```json
 {
   "batchRef": "string",
   "state": "ABORTED"
@@ -151,7 +158,26 @@ Request :
 
 ```
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+```json
+{
+  "batchRef": "string",
+  "createdAt": "2022-06-28T03:48:53.830Z",
+  "expiresAt": "2022-06-28T03:48:53.830Z",
+  "id": "string",
+  "modifiedAt": "2022-06-28T03:48:53.830Z",
+  "state": "ABORTED"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Change State
 To mark the resource as *READY* state after resource population. This in turn triggers the create resources in the system.
@@ -162,14 +188,41 @@ Endpoint: ```​/api​/import​/batch​/state-change```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+<summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Request parameters : `batchId - batchId`
 
 `batchRef - batchRef`
 
 `state : Available values : ABORTED, CREATED, ERROR, PROCESSING, READY`
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+```json
+{
+  "batchRef": "string",
+  "createdAt": "2022-06-28T03:49:29.094Z",
+  "expiresAt": "2022-06-28T03:49:29.094Z",
+  "id": "string",
+  "modifiedAt": "2022-06-28T03:49:29.094Z",
+  "state": "ABORTED"
+}
+```
 
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Get Batch
 To find batch by id. Id is passed as a path param.
@@ -180,11 +233,38 @@ Endpoint: ```​/api​/import​/batch​/{id}```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+<summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Request parameters : `batchId - batchId`
 
 `batchRef - batchRef`
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+```json
+{
+  "batchRef": "string",
+  "createdAt": "2022-06-28T03:50:15.330Z",
+  "expiresAt": "2022-06-28T03:50:15.330Z",
+  "id": "string",
+  "modifiedAt": "2022-06-28T03:50:15.330Z",
+  "state": "ABORTED"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Query Batch
 To conduct various batch query with various avaliable query parameters in the scope of the request.
@@ -195,7 +275,15 @@ Endpoint: ```​​/api​/import​/batch```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
-Request parameters : `batchId - batchId`
+<summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Query parameters : `batchId - batchId`
 
 `batchRef - batchRef`
 
@@ -212,7 +300,34 @@ Request parameters : `batchId - batchId`
 `withTotal : boolean`
 
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+
+```json
+{
+  "page": 0,
+  "pageSize": 0,
+  "results": [
+    {
+      "batchRef": "string",
+      "createdAt": "2022-06-28T03:51:52.057Z",
+      "expiresAt": "2022-06-28T03:51:52.057Z",
+      "id": "string",
+      "modifiedAt": "2022-06-28T03:51:52.057Z",
+      "state": "ABORTED"
+    }
+  ],
+  "total": 0
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 - ## **Impex Resource**
 
@@ -224,6 +339,14 @@ Method: ``` POST ```
 Endpoint: ```​​​/api​/import​/resource```
 
 OAuth 2.0 Scopes: `Tenant authentication`
+
+<summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
 
 Request :
 ```
@@ -1207,8 +1330,15 @@ Request :
 
 ```
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
 
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Update State
 To mark the resource as *READY* state after resource population. This in turn triggers the create resources in the system.
@@ -1219,14 +1349,46 @@ Endpoint: ```​/api​/import​/resource​/update-state```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+<summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Request Parameters : `importState : Available values : attempted, failed, imported, in_progress, marked_for_deletion, not_started ` 
 
 `resourceId : resourceId`
 
 `validationState : Available values : not_validated, rejected, validated, validation_not_needed`
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "batchId": "string",
+  "batchRef": "string",
+  "body": {},
+  "createdAt": "2022-06-28T03:54:01.895Z",
+  "entityType": "customer",
+  "id": "string",
+  "identifier": {},
+  "importState": "attempted",
+  "modifiedAt": "2022-06-28T03:54:01.895Z",
+  "operation": "create",
+  "validationState": "not_validated"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Get Resource By Id
 To find batch by id. Id is passed as a path param.
@@ -1237,9 +1399,41 @@ Endpoint: ```​/api​/import​/resource​/{id}```
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
+<summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
 Request Parameters : `Id : id`
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
+```json
+{
+  "batchId": "string",
+  "batchRef": "string",
+  "body": {},
+  "createdAt": "2022-06-28T03:54:49.267Z",
+  "entityType": "customer",
+  "id": "string",
+  "identifier": {},
+  "importState": "attempted",
+  "modifiedAt": "2022-06-28T03:54:49.267Z",
+  "operation": "create",
+  "validationState": "not_validated"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Query Resources
 To conduct various resource query with the avaliable query parameters in the scope of the request.
@@ -1249,6 +1443,13 @@ Method: ``` GET ```
 Endpoint: ```​​/api​/import​/resource```
 
 OAuth 2.0 Scopes: `Tenant authentication`
+
+<summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
 
 
 Request Parameters : `Id : id`
@@ -1270,8 +1471,39 @@ Request Parameters : `Id : id`
 
 `withTotal : boolean`
 
-Response : `200 OK ,201	Created, 401 Unauthorized, 403 Forbidden, 404 Not Found`
+Response : 
 
+```json
+{
+  "page": 0,
+  "pageSize": 0,
+  "results": [
+    {
+      "batchId": "string",
+      "batchRef": "string",
+      "body": {},
+      "createdAt": "2022-06-28T03:55:26.731Z",
+      "entityType": "customer",
+      "id": "string",
+      "identifier": {},
+      "importState": "attempted",
+      "modifiedAt": "2022-06-28T03:55:26.731Z",
+      "operation": "create",
+      "validationState": "not_validated"
+    }
+  ],
+  "total": 0
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ***
 [Back to Index](index.md)
