@@ -568,7 +568,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  ```
  
 <!-- </details> -->
-Response - 201 (Created)
+<summary>Response - 201 (Created)</summary>
 <!-- <details> 
  <summary>Response - 400 (Invalid status value)</summary>
  
