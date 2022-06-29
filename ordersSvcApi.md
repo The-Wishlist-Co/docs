@@ -220,7 +220,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-Request Payload : 
+Sample Request : 
 
 ```json
 {
@@ -301,7 +301,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-Request Payload : 
+Sample Request : 
 
 ```json
 {
@@ -577,7 +577,7 @@ Request Payload :
 }
 ```
 
-Response :
+Sample Response :
 
 ```json
 {
@@ -883,7 +883,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-Request Payload : 
+Sample Request : 
 
 ```json
 {
@@ -1159,7 +1159,7 @@ Request Payload :
 }
 ```
 
-Response :
+Sample Response :
 
 ```json
 {
@@ -1471,7 +1471,7 @@ Query Params:
 orderId - Order Id , orderRef - Order Ref
 ```
 
-Response :
+Sample Response :
 
 ```json
 {
@@ -1783,7 +1783,7 @@ Query Params:
 customerId - customer ID , customerRef - Customer ref , email - email , orderId - Order Id , orderRef - Order Ref
 ```
 
-Response :
+Sample Response :
 
 ```json
 {
@@ -2088,7 +2088,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-Request Payload : 
+Sample Request : 
 
 ```json
 {
@@ -2402,7 +2402,7 @@ orderId - Order Id , orderRef - Order Ref
 ```
 
 
-Response :
+Sample Response :
 
 ```json
 {
@@ -2707,7 +2707,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-Request Payload : 
+Sample Request : 
 
 ```json
 {
@@ -2757,7 +2757,7 @@ Request Payload :
 }
 ```
 
-Response :
+Sample Response :
 
 ```json
 {
@@ -2834,7 +2834,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-Request Payload : 
+Sample Request : 
 
 ```json
 {
@@ -2884,7 +2884,7 @@ Request Payload :
 }
 ```
 
-Response :
+Sample Response :
 
 ```json
 {
@@ -2968,7 +2968,7 @@ Query Params :
 entryId - Entry ID , entryRef - Entry Ref
 ```
 
-Response :
+Sample Response :
 
 ```json
 {
@@ -3282,7 +3282,7 @@ entryId - Entry ID , entryRef - Entry Ref
 ```
 
 
-Response :
+Sample Response :
 
 ```json
 {
