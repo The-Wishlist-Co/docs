@@ -1,6 +1,6 @@
 
-[Back to Index](index.md)
-***
+[Back to Home](index.md#welcome-to-the-wishlist)
+
 
 # **Wishlist API**
 The Wishlist resource stores information about a customer's wishlist, which includes the list products which the customer wish to buy.
@@ -1160,6 +1160,7 @@ HTTP Status Code:
 ```
 
 ***
-[Back to Home](index.md)
+[Back to Top](#wishlist-api)
 
-[Back to Index](index.md)
+[Back to Home](index.md#welcome-to-the-wishlist)
+
