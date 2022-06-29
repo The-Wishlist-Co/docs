@@ -128,7 +128,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 
 <!-- <details> --> 
-<summary> Request Payload : </summary>
+<summary> Sample Request : </summary>
 
 ```json
 {
@@ -211,7 +211,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> --> 
- <summary> Response : </summary>
+ <summary> Sample Response : </summary>
 
 ``` json
 {
@@ -320,7 +320,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
 
 <!-- <details> --> 
-<summary> Request Payload : </summary>
+<summary> Sample Request : </summary>
 
 ```json
 [
@@ -510,7 +510,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
 
 <!-- <details> --> 
-<summary> Request Payload : </summary>
+<summary> Sample Request : </summary>
 
 ```json
 {
@@ -627,7 +627,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 <!-- </details> --> 
 
 <!-- <details> --> 
- <summary> Response : </summary>
+ <summary> Sample Response : </summary>
  
 ``` json
 {
@@ -771,7 +771,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
 
 <!-- <details> --> 
-<summary> Request Payload : </summary>
+<summary> Sample Request : </summary>
 
 ```json
 {
@@ -847,7 +847,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> --> 
- <summary> Response : </summary>
+ <summary> Sample Response : </summary>
  
 ``` json
 {
@@ -948,7 +948,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
 
 <!-- <details> --> 
-<summary> Request Payload : </summary>
+<summary> Sample Request : </summary>
 
 ```json
 [
@@ -1026,7 +1026,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> --> 
- <summary> Response : </summary>
+ <summary> Sample Response : </summary>
  
 ``` json
 {
@@ -1127,7 +1127,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
 
 <!-- <details> --> 
-<summary> Request Payload : </summary>
+<summary> Sample Request : </summary>
 
 ```json
 {
@@ -1229,7 +1229,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
 
 <!-- <details> --> 
-<summary> Request Payload : </summary>
+<summary> Sample Request : </summary>
 
 ```json
 {
@@ -1303,7 +1303,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> --> 
- <summary> Response : </summary>
+ <summary> Sample Response : </summary>
  
 ``` json
 {
@@ -1453,7 +1453,7 @@ Request Parameters: `locationId  : inventory location Id, locationRef : Inventor
 <!-- </details> --> 
 
 <!-- <details> --> 
- <summary> Response : </summary>
+ <summary> Sample Response : </summary>
  
 ``` json
 [
@@ -1564,7 +1564,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> --> 
 
 <!-- <details> --> 
- <summary> Response : </summary>
+ <summary> Sample Response : </summary>
  
 ``` json
 {
