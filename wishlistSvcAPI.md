@@ -196,7 +196,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Response : 
+Sample Response : 
 
 ```json
 {
@@ -249,7 +249,6 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
@@ -360,7 +359,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Response : 
+Sample Response : 
 
 ```json
 {
@@ -412,7 +411,6 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
@@ -448,7 +446,6 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
@@ -475,7 +472,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `  
 
-Response:
+Sample Response:
 ```json
 {
   "attributeGroups": {
@@ -563,7 +560,6 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
@@ -589,7 +585,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Path Variable: `customerId - Unique Customer Id`
 
-Response:
+Sample Response:
 
 ```json
 [
@@ -680,7 +676,6 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
@@ -798,7 +793,6 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
@@ -924,7 +918,6 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
@@ -1047,7 +1040,6 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
@@ -1101,7 +1093,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-Path Variable: `id - ID , wishlistId - Wishlist Id `
+Path Variable: `id - Id , wishlistId - Wishlist Id `
 
 Sample Response:
 
@@ -1154,7 +1146,6 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
