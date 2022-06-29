@@ -138,7 +138,7 @@ Represents a product.
   
  `variantOptions` - [VariantOptions](Common_Fields/variantoptions.md) - Array of variant Options.
  
- `variants` - [productVariants](Common_Fields/productvariant.md) - Array of variant Options.
+ `variants` - [productVariants](Common_Fields/productVariant.md) - Array of variant Options.
  
  `variantsAvailable` - boolean -
 
@@ -259,8 +259,6 @@ Endpoint: ```/api/v2/products```
 
 Method: ``` POST ```
 
-Method Name: `createProduct`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Headers :</summary>
@@ -272,7 +270,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
  
 
- <summary>Request Payload :</summary>
+ <summary>Sample Request :</summary>
  
  ```json
  {
@@ -386,7 +384,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
 
- <summary>Response :</summary>
+ <summary>Sample Response :</summary>
 
 ```json
 	{
@@ -650,8 +648,6 @@ Endpoint: ```/api/v2/products```
 
 Method: ``` PUT ```
 
-Method Name: `updateProduct`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
@@ -664,7 +660,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
  
 
- <summary>Request Payload :</summary>
+ <summary>Sample Request :</summary>
  
  ```json
  {
@@ -909,7 +905,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  ```
  
 
- <summary>Response :</summary>
+ <summary>Sample Response :</summary>
  
  ```json
  {
@@ -1173,8 +1169,6 @@ Endpoint: ```/api/v2/products/lookup```
 
 Method: ``` GET ``` 
 
-Method Name: `lookupProduct`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
@@ -1193,7 +1187,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  - {gtin}
  - {productRef}
 
- <summary>Response :</summary>
+ <summary>Sample Response :</summary>
  
  ```json
  {
@@ -1588,8 +1582,6 @@ Endpoint: ```/api/v2/products/validate```
 
 Method: ``` POST ```
 
-Method Name: `validateRequest`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Headers :</summary>
@@ -1601,7 +1593,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
  
 
- <summary>Request Payload : </summary>
+ <summary>Sample Request : </summary>
 
 ```json
 {
@@ -1844,10 +1836,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
- <summary>Response :
-</summary>
- OK
-
 HTTP Status Code: 
 ``` 
 - 200 OK
@@ -1867,8 +1855,6 @@ Endpoint: ```/api/v2/products/validate/{id}```
 
 Method: ``` GET ```
 
-Method Name: `validateProduct`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
@@ -1884,7 +1870,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Path Variable : </summary>
  - {id}
 
- <summary>Response :</summary>
+ <summary>Sample Response :</summary>
  
  ```json
  {
@@ -2276,8 +2262,6 @@ Endpoint: ```/api/v2/products/validateRef/{ref}```
 
 Method: ``` GET ```
 
-Method Name: `validateProductRef`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Headers :</summary>
@@ -2294,7 +2278,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 </summary>
  - {ref}
 
- <summary>Response :</summary>
+ <summary>Sample Response :</summary>
  
  ```json
  {
@@ -2688,8 +2672,6 @@ Endpoint: ```/api/v2/products/{id}```
 
 Method: ``` GET ```
 
-Method Name: `getProduct`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
@@ -2708,7 +2690,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 </summary>
  - {id}
 
- <summary>Response :
+ <summary>Sample Response :
 </summary>
  
  ```json
@@ -2973,8 +2955,6 @@ Endpoint: ```/api/v2/products/{id}```
 
 Method: ``` DELETE ```
 
-Method Name: `deleteProduct`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Headers :</summary>
@@ -2989,8 +2969,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Path Variable :</summary>
 	- {id}
 
- <summary>Response :</summary>
- OK
 
 HTTP Status Code: 
 ``` 
@@ -3013,8 +2991,6 @@ Endpoint: ```/api/v2/products/{productRef}/byref```
 
 Method: ``` GET ``` 
 
-Method Name: `getProductByRef`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Headers :</summary>
@@ -3031,7 +3007,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 </summary>
 - {productRef}
 
- <summary>Response :
+ <summary>Sample Response :
 </summary>
  
  ```json
@@ -3296,8 +3272,6 @@ Endpoint: ```/api/v2/products/{productRef}/byref```
 
 Method: ``` DELETE ``` 
 
-Method Name: `deleteProductByExternalRef`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
@@ -3318,12 +3292,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
 	- {productRef}
 	
 
- <summary>Response :
-</summary>
- OK
-
-
-
 HTTP Status Code:
 ``` 
 - 200 OK
@@ -3343,8 +3311,6 @@ Endpoint: ```/api/v2/uploadProducts```
 
 Method: ``` POST ```
 
-Method Name: `/api/v2/uploadProducts`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
@@ -3359,7 +3325,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
  
 
- <summary>Request Payload :
+ <summary>Sample Request :
 
 </summary>
  
@@ -3607,10 +3573,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
   ```
   
 
- <summary>Response :
-</summary>
- OK 
-
 HTTP Status Code:
 ``` 
 - 200 OK
@@ -3633,8 +3595,6 @@ Endpoint: ```/api/v2/products/variants```
 
 Method: ``` POST ```
 
-Method Name: `createVariantProduct`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
@@ -3648,7 +3608,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
 
- <summary>Request Payload :
+ <summary>Sample Request :
 
 </summary>
  
@@ -3782,7 +3742,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
 
- <summary>Response :
+ <summary>Sample Response :
 </summary>
  
  ```json
@@ -3937,8 +3897,6 @@ Endpoint: ```/api/v2/products/variants```
 
 Method: ``` PUT ```
 
-Method Name: `updateVariantProduct`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Headers :
@@ -3952,7 +3910,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
  
 
- <summary>Request Payload :
+ <summary>Sample Request :
 
 </summary>
  
@@ -4237,8 +4195,6 @@ Endpoint: ```/api/v2/products/variants/validate```
 
 Method: ``` POST ```
 
-Method Name: `validateVariantProduct`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
@@ -4253,7 +4209,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
  
 
- <summary>Request Payload :
+ <summary>Sample Request :
 
 </summary>
  
@@ -4387,9 +4343,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ```
 
 
- <summary>Response :
-</summary>
- OK
 
 HTTP Status Code:
 ``` 
@@ -4410,8 +4363,6 @@ If the Product Variant does not exist, this method returns a Blank.
 Endpoint: ```/api/v2/products/variants/{id}```
 
 Method: ``` GET ```
-
-Method Name: `getVariantProduct`
 
 OAuth 2.0 Scopes: `Tenant authentication`
 
@@ -4435,7 +4386,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  - Path variables
 	- {id}
 
- <summary>Response :
+ <summary>Sample Response :
 </summary>
  
  ```json
@@ -4587,8 +4538,6 @@ Endpoint: ```/api/v2/products/variants/{variantRef}/byref```
 
 Method: ``` GET ``` 
 
-Method Name: `getVariantProductByRef`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
@@ -4613,7 +4562,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 	- {variantRef}
 
- <summary>Response :
+ <summary>Sample Response :
 </summary>
  
  ```json
@@ -4766,8 +4715,6 @@ Endpoint: ```/api/v2/products/{baseProductRef}/variants/{variantRef}/byref```
 
 Method: ``` DELETE ``` 
 
-Method Name: `deleteVariantProductbyRef`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Headers :
@@ -4788,8 +4735,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
 	- {baseProductRef}
 	- {variantRef}
 
- <summary>Response :
-</summary>
 
 HTTP Status Code:
 ``` 
@@ -4810,8 +4755,6 @@ Endpoint: ```/api/v2/products/{productId}/variants```
 
 Method: ``` GET ``` 
 
-Method Name: `getAllVariantProducts`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Headers :</summary>
@@ -4828,8 +4771,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
 </summary>
  - {productId}
 
- <summary>Response :</summary>
- OK
 
 HTTP Status Code:
 ``` 
@@ -4850,8 +4791,6 @@ Endpoint: ```/api/v2/products/{productId}/variants```
 
 Method: ``` GET ``` 
 
-Method Name: `getVariantProducts`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Headers :
@@ -4870,7 +4809,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 </summary>
  - {productId}
 
- <summary>Response :
+ <summary>Sample Response :
 </summary>
  
  ```json
@@ -5025,8 +4964,6 @@ Endpoint: ```/api/v2/products/{productId}/variants/{variantId}```
 
 Method: ``` DELETE ```
 
-Method Name: `deleteVariantProduct`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Headers :
@@ -5040,17 +4977,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
  
 
- <summary>Path Variable :
-
-</summary>
+Path Variable :
  
 	- {productId}
 	- {variantId}
 	
-
- <summary>Response :
-</summary>
- OK
 
 HTTP Status Code:
 ``` 
@@ -5072,8 +5003,6 @@ Endpoint: ```/api/v2/uploadVariants```
 
 Method: ``` POST ```
 
-Method Name: `uploadProducts`
-
 OAuth 2.0 Scopes: `Tenant authentication`
 
 
@@ -5085,7 +5014,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Authorization | {Bearer token}   |
 | X-TWC-Tenant  | {Tenant Name}    |
 
- <summary>Request Payload :</summary>
+ <summary>Sample Request :</summary>
  
  ```json
  [
@@ -5217,9 +5146,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
   }
 ]
   ```
-
- <summary>Response :</summary>
- OK
 
 HTTP Status Code:
 ``` 
