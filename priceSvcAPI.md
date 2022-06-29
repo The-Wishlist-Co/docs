@@ -1,6 +1,5 @@
 
 [Back to Home](index.md#welcome-to-the-wishlist)
-***
 
 # **Price API**
 The Price resource stores information about price details of  particular product variant.
@@ -106,15 +105,16 @@ Sample Request :
 }
 ```
 
-
-
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Update A Price
@@ -150,7 +150,7 @@ Sample Request :
 ```
 <!-- </details> -->
 
-<summary>Response - 200 (OK Updated)</summary> 
+<summary>Response - 200 (OK)</summary> 
 
 ```json
 {
@@ -168,14 +168,16 @@ Sample Request :
 }
 ```
 
-
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ### Delete A Price
@@ -201,9 +203,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
-
+- 404 Not Found
+- 405 Invalid input
 ```
 
 ### Find Price by id and priceRef
@@ -245,9 +250,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Validate an price
@@ -289,9 +297,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ### Find All Prices
@@ -333,15 +344,18 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
+
 ***
-[Back to Top](#price-api)
+[Back to Top](#order-svc-api)
 
 [Back to Home](index.md#welcome-to-the-wishlist)
-
 
 

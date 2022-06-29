@@ -1,6 +1,6 @@
 
-[Back to Index](index.md)
-***
+[Back to Home](index.md#welcome-to-the-wishlist)
+
 
 # **Product API**
 The Product resource stores information about a product, its variants.
@@ -9,36 +9,32 @@ The Product resource stores information about a product, its variants.
 
 ***
 
-[//]: # (- [**Product API**]&#40;#product-api&#41;)
-
-[//]: # (    - [Index]&#40;#index&#41;)
-  - [**Representations**](#representations)
-    - [Product](#product)
-    - [Product Variant](#product-variant)
-  - [**REST Endpoints**](#rest-endpoints)
-    - [**Product Service**](#product-service)
-      - [Create a Product](#create-a-product)
-      - [Update a Product](#update-a-product)
-      - [Look up Product by gtin/productRef](#look-up-product-by-gtinproductref)
-      - [Validate Request](#validate-request)
-      - [Validate Product](#validate-product)
-      - [Validate Product by Ref](#validate-product-by-ref)
-      - [Find Product by ID](#find-product-by-id)
-      - [Delete Product by ID](#delete-product-by-id)
-      - [Find Product by Ref](#find-product-by-ref)
-      - [Delete Product by Ref](#delete-product-by-ref)
-      - [Upload Products](#upload-products)
-    - [**Product Variant Service**](#product-variant-service)
-      - [Create a Product Variants](#create-a-product-variants)
-      - [Update a Product Variant](#update-a-product-variant)
-      - [Validate Product Variant](#validate-product-variant)
-      - [Find Product Variant by ID](#find-product-variant-by-id)
-      - [Find Product Variant by Ref](#find-product-variant-by-ref)
-      - [Delete Product variant by Ref](#delete-product-variant-by-ref)
-      - [Find Product variants by productId](#find-product-variants-by-productid)
-      - [Find  Product variants by productId](#find--product-variants-by-productid)
-      - [Delete Product variants by product Id/variantId](#delete-product-variants-by-product-idvariantid)
-      - [Upload Product Variants](#upload-product-variants)
+ - [**Price API**](#price-api)  
+    - [**Index**](#index)
+      - [**Representations**](#representations)
+        - [Product](#product)
+        - [Product Variant](#product-variant)
+      - [**REST Endpoints**](#rest-endpoints)
+      - [**Product Service**](#product-service)
+        - [Create a Product](#create-a-product)
+        - [Update a Product](#update-a-product)
+        - [Look up Product by gtin/productRef](#look-up-product-by-gtinproductref)
+        - [Validate Request](#validate-request)
+        - [Validate Product](#validate-product)
+        - [Validate Product by Ref](#validate-product-by-ref)
+        - [Find Product by ID](#find-product-by-id)
+        - [Delete Product by ID](#delete-product-by-id)
+        - [Find Product by Ref](#find-product-by-ref)
+        - [Delete Product by Ref](#delete-product-by-ref)
+        - [Upload Products](#upload-products)
+      - [**Product Variant Service**](#product-variant-service)
+        - [Create a Product Variants](#create-a-product-variants)
+        - [Update a Product Variant](#update-a-product-variant)
+        - [Validate Product Variant](#validate-product-variant)
+        - [Find Product Variant by ID](#find-product-variant-by-id)
+        - [Find Product Variant by Ref](#find-product-variant-by-ref)
+        - [Delete Product variant by Ref](#delete-product-variant-by-ref)
+      
 
 
 ## **Representations**
@@ -47,6 +43,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 
 ##  Product
+
 ***
 Represents a product. 
  
@@ -252,7 +249,7 @@ Represents a product Variant.
   
  `variantOptions` - [VariantOptions](Common_Fields/variantoptions.md) - Array of variant Options. 
 
- ## **REST Endpoints**
+## **REST Endpoints**
 
 ## **Product Service**
  
@@ -388,7 +385,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
 
-<summary>Response - 201 (created)</summary>
+<summary>Response - 201 (Created)</summary>
 
 ```json
 	{
@@ -909,7 +906,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  ```
  
 
-<summary>Response - 200 (OK Updated)</summary>
+<summary>Response - 200 (OK)</summary>
  
  ```json
  {
@@ -1152,8 +1149,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
-> 
-
 HTTP Status Code: 
 ``` 
 - 200 OK
@@ -1165,6 +1160,7 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
 ## Look up Product by gtin/productRef
 Returns a list of  products  from a specific Store while passing the gtin/productRef as a query params in the endpoint. The Tenant authentication maps to a Store.
 If the products does not exist, this method returns a empty list.
@@ -1188,8 +1184,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Query Parameters :</summary>
  
+ ```
  - {gtin}
  - {productRef}
+```
 
 <summary>Response - 200 (OK)</summary>
  
@@ -1566,6 +1564,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 
 ```
+
 HTTP Status Code: 
 ``` 
 - 200 OK
@@ -1842,6 +1841,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 <summary>Response - 200 (OK)</summary>
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
@@ -1874,7 +1874,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 
  <summary>Path Variable : </summary>
+
+```
  - {id}
+```
 
 <summary>Response - 200 (OK)</summary>
  
@@ -2282,8 +2285,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Path Variable :
 
 </summary>
- - {ref}
 
+```
+ - {ref}
+```
 <summary>Response - 200 (OK)</summary>
  
  ```json
@@ -2656,7 +2661,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
-
 HTTP Status Code: 
 ``` 
 - 200 OK
@@ -2694,7 +2698,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Path Variable :
 
 </summary>
+
+```
  - {id}
+```
 
 <summary>Response - 200 (OK)</summary>
  
@@ -2939,7 +2946,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
-
 HTTP Status Code: 
 ``` 
 - 200 OK
@@ -2972,7 +2978,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 
  <summary>Path Variable :</summary>
+ 
+ ```
 	- {id}
+ ```
+
 
 <summary>Response - 204 (Deleted)</summary> 
 
@@ -3011,7 +3021,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Path Variable :
 
 </summary>
+
+```
 - {productRef}
+```
 
 <summary>Response - 200 (OK)</summary>
  
@@ -3294,8 +3307,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Path Variable :
 
 </summary>
+
+```
 	- {productRef}
-	
+```	
 
 <summary>Response - 204 (Deleted)</summary> 
 
@@ -3579,7 +3594,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ]
   ```
 
-<summary>Response - 201 (created)</summary>  
+<summary>Response - 201 (Created)</summary>  
 
 HTTP Status Code:
 ``` 
@@ -3750,7 +3765,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
 
-<summary>Response - 201 (created)</summary>
+<summary>Response - 201 (Created)</summary>
  
  ```json
  {
@@ -3882,10 +3897,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 ```
 
-
-> 
-
 HTTP Status Code:
+
 ``` 
 - 200 OK
 - 201 Created
@@ -4050,7 +4063,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
-<summary>Response - 200 (OK Updated)</summary>
+<summary>Response - 200 (OK)</summary>
 
  ```json
 {
@@ -4385,12 +4398,19 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Parameters :</summary>
  
+
  - Query Paramters
+
+```
 	- {aggregateStock}
 	- {queryStock}
-	
+```	
+
  - Path variables
+
+```
 	- {id}
+```
 
 <summary>Response - 200 (OK)</summary>
  
@@ -4559,13 +4579,18 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
  <summary>Request Parameters :</summary>
  
+ 
 - Query Paramters
+  
+```
 	- {aggregateStock}	
 	- {queryStock}
-	
-- Path variables
+```
 
+- Path variables
+```
 	- {variantRef}
+```
 
 <summary>Response - 200 (OK)</summary>
  
@@ -4735,9 +4760,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Path Variable :
 
 </summary>
- 
+
+``` 
 	- {baseProductRef}
 	- {variantRef}
+```
 
 <summary>Response - 204 (Deleted)</summary> 
 
@@ -4774,11 +4801,15 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Path Variable :
 
 </summary>
+
+```
  - {productId}
+```
 
 <summary>Response - 200 (OK)</summary>
 
 HTTP Status Code:
+
 ``` 
 - 200 OK
 - 201 Created
@@ -4813,7 +4844,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Path Variable :
 
 </summary>
+
+```
  - {productId}
+```
 
 <summary>Response - 200 (OK)</summary>
  
@@ -4984,9 +5018,11 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Path Variable :
  
+ ```
 	- {productId}
 	- {variantId}
-	
+```
+
 <summary>Response - 204 (Deleted)</summary> 	
 
 HTTP Status Code:
@@ -5153,7 +5189,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ]
   ```
 
-<summary>Response - 201 (created)</summary>
+<summary>Response - 201 (Created)</summary>
 
 HTTP Status Code:
 ``` 
@@ -5166,5 +5202,8 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+***
 
-***[Back to Index](index.md)
+[Back to Top](#product-api)
+
+[Back to Home](index.md#welcome-to-the-wishlist)
