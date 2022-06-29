@@ -195,7 +195,7 @@ Endpoint: ```​/api​/v1​/merchant```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -380,7 +380,7 @@ Endpoint: ```​/api​/v1​/merchant```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -555,7 +555,7 @@ HTTP Status Code:
 
 
 
-### Deactivate Merchant
+## Deactivate Merchant
 
 Endpoint: ```/api/v1/merchant/{id}/deactivate```
 
@@ -563,7 +563,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -663,7 +663,7 @@ HTTP Status Code:
 
 
 
-### Find Merchant
+## Find Merchant
 
 Endpoint: ```/api/v1/merchant/{id}```
 
@@ -671,7 +671,7 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -773,7 +773,7 @@ HTTP Status Code:
 ## **Plan Resource**
 
 
-### Create a Plan
+## Create a Plan
 
 Endpoint: ```​/api​/v1​/plan​/```
 
@@ -781,7 +781,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -840,7 +840,7 @@ HTTP Status Code:
 ```
 
 
-### Update a Plan
+## Update a Plan
 
 Endpoint: ```​/api​/v1​/plan​/```
 
@@ -848,7 +848,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -907,7 +907,7 @@ HTTP Status Code:
 ```
 
 
-### Delete a Plan
+## Delete a Plan
 
 Endpoint: ```/api/v1/plan/{planId}/```
 
@@ -915,7 +915,7 @@ Method: ``` DELETE ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -958,7 +958,7 @@ HTTP Status Code:
 
 
 
-### Find Plan
+## Find Plan
 
 Endpoint: ```/api/v1/plan/{planId}/```
 
@@ -966,7 +966,7 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1008,7 +1008,7 @@ HTTP Status Code:
 ```
 
 
-### Find All Plans
+## Find All Plans
 
 Endpoint: ```/api/v1/plans/```
 
@@ -1016,7 +1016,7 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1066,7 +1066,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1162,7 +1162,7 @@ HTTP Status Code:
 ```
 
 
-### Update a Store
+## Update a Store
 
 Endpoint: ```/api/v1/store/{id}```
 
@@ -1170,7 +1170,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1269,7 +1269,7 @@ HTTP Status Code:
 
 
 
-### Find a Store
+## Find a Store
 
 Endpoint: ```/api/v1/store```
 
@@ -1277,7 +1277,7 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1338,7 +1338,7 @@ HTTP Status Code:
 
 
 
-### Find a Store
+## Find a Store
 
 Endpoint: ```/api/v1/store/{storeId}```
 
@@ -1346,7 +1346,7 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1405,7 +1405,7 @@ HTTP Status Code:
 ```
 
 
-### Deactivate Store
+## Deactivate Store
 
 Endpoint: ```/api/v1/stores/{storeId}/deactivate```
 
@@ -1413,7 +1413,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1472,7 +1472,7 @@ HTTP Status Code:
 ```
 
 
-### Create Subscription plan
+## Create Subscription plan
 
 Endpoint: ```/api/v1/merchant/{merchantId}/store/{storeId}/plan/{planId}/```
 
@@ -1480,7 +1480,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1538,7 +1538,7 @@ HTTP Status Code:
 ```
 
 
-### Update Subscription plan
+## Update Subscription plan
 
 Endpoint: ```/api/v1/merchant/{merchantId}/store/{storeId}/plan/{planId}```
 
@@ -1546,7 +1546,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1605,7 +1605,7 @@ HTTP Status Code:
 ```
 
 
-### Cancel Subscription plan
+## Cancel Subscription plan
 
 Endpoint: ```/api/v1/merchant/{merchantId}/store/{storeId}```
 
@@ -1613,7 +1613,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1681,7 +1681,7 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1720,7 +1720,7 @@ HTTP Status Code:
 ```
 
 
-### Get All Config
+## Get All Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/allConfig```
 
@@ -1728,7 +1728,7 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1871,7 +1871,7 @@ HTTP Status Code:
 ```
 
 
-### Get Entity Config
+## Get Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityConfig```
 
@@ -1879,7 +1879,7 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -1981,7 +1981,7 @@ HTTP Status Code:
 ```
 
 
-### Get Store Tenant Config
+## Get Store Tenant Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/tenantConfig```
 
@@ -1989,7 +1989,7 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2027,7 +2027,7 @@ HTTP Status Code:
 
 
 
-### Create Additional Config
+## Create Additional Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/additionalConfigs```
 
@@ -2035,7 +2035,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2094,7 +2094,7 @@ HTTP Status Code:
 
 
 
-### Update Additional Config
+## Update Additional Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/additionalConfigs```
 
@@ -2102,7 +2102,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2160,7 +2160,7 @@ HTTP Status Code:
 
 
 
-### Create App Config Entity Config
+## Create App Config Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/appconfig```
 
@@ -2168,7 +2168,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2255,7 +2255,7 @@ HTTP Status Code:
 
 
 
-### Update App Config Entity Config
+## Update App Config Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/appconfig```
 
@@ -2263,7 +2263,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2348,7 +2348,7 @@ HTTP Status Code:
 
 
 
-### Create Customer Entity Config
+## Create Customer Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/customer```
 
@@ -2356,7 +2356,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2439,7 +2439,7 @@ HTTP Status Code:
 ```
 
 
-### Update Customer Entity Config
+## Update Customer Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/customer```
 
@@ -2447,7 +2447,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2530,7 +2530,7 @@ HTTP Status Code:
 ```
 
 
-### Create Email Template Entity Config
+## Create Email Template Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/emailtemplate```
 
@@ -2538,7 +2538,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2621,7 +2621,7 @@ HTTP Status Code:
 ```
 
 
-### Update Email Template Entity Config
+## Update Email Template Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/emailtemplate```
 
@@ -2629,7 +2629,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2713,7 +2713,7 @@ HTTP Status Code:
 ```
 
 
-### Create Inventory Entity Config
+## Create Inventory Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/inventory```
 
@@ -2721,7 +2721,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2803,7 +2803,7 @@ HTTP Status Code:
 
 
 
-### Update Inventory Entity Config
+## Update Inventory Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/inventory```
 
@@ -2811,7 +2811,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2893,7 +2893,7 @@ HTTP Status Code:
 
 
 
-### Create Location Entity Config
+## Create Location Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/location```
 
@@ -2901,7 +2901,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -2985,7 +2985,7 @@ HTTP Status Code:
 
 
 
-### Update Location Entity Config
+## Update Location Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/location```
 
@@ -2993,7 +2993,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -3075,7 +3075,7 @@ HTTP Status Code:
 
 
 
-### Create Order Entity Config
+## Create Order Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/order```
 
@@ -3083,7 +3083,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -3167,7 +3167,7 @@ HTTP Status Code:
 
 
 
-### Update Order Entity Config
+## Update Order Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/order```
 
@@ -3175,7 +3175,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -3257,7 +3257,7 @@ HTTP Status Code:
 
 
 
-### Create Price Entity Config
+## Create Price Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/price```
 
@@ -3265,7 +3265,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -3348,7 +3348,7 @@ HTTP Status Code:
 
 
 
-### Update Price Entity Config
+## Update Price Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/price```
 
@@ -3356,7 +3356,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -3439,7 +3439,7 @@ HTTP Status Code:
 
 
 
-### Create Product Entity Config
+## Create Product Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/product```
 
@@ -3447,7 +3447,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -3530,7 +3530,7 @@ HTTP Status Code:
 ```
 
 
-### Update Product Entity Config
+## Update Product Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/product```
 
@@ -3538,7 +3538,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -3624,7 +3624,7 @@ HTTP Status Code:
 ```
 
 
-### Create Store Entity Config
+## Create Store Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/store```
 
@@ -3632,7 +3632,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -3715,7 +3715,7 @@ HTTP Status Code:
 ```
 
 
-### Update Store Entity Config
+## Update Store Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/store```
 
@@ -3723,7 +3723,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -3805,7 +3805,7 @@ HTTP Status Code:
 ```
 
 
-### Create Wishlist Entity Config
+## Create Wishlist Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/wishlist```
 
@@ -3813,7 +3813,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -3897,7 +3897,7 @@ HTTP Status Code:
 ```
 
 
-### Update Wishlist Entity Config
+## Update Wishlist Entity Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/wishlist```
 
@@ -3905,7 +3905,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -3987,7 +3987,7 @@ HTTP Status Code:
 ```
 
 
-### Get Notification Config
+## Get Notification Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification```
 
@@ -3995,7 +3995,7 @@ Method: ``` GET ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4021,7 +4021,7 @@ HTTP Status Code:
 
 
 
-### Create Notification Config
+## Create Notification Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification```
 
@@ -4029,7 +4029,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4118,7 +4118,7 @@ HTTP Status Code:
 
 
 
-### Create BackInStock Notification Settings
+## Create BackInStock Notification Settings
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/backInStock```
 
@@ -4126,7 +4126,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4175,7 +4175,7 @@ HTTP Status Code:
 
 
 
-### Update BackInStock Notification Settings
+## Update BackInStock Notification Settings
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/backInStock```
 
@@ -4183,7 +4183,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4231,7 +4231,7 @@ HTTP Status Code:
 
 
 
-### Delete BackInStock Notification Settings
+## Delete BackInStock Notification Settings
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/backInStock```
 
@@ -4239,7 +4239,7 @@ Method: ``` DELETE ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4265,7 +4265,7 @@ HTTP Status Code:
 
 
 
-### Create LowInStock Notification Settings
+## Create LowInStock Notification Settings
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/lowInStock```
 
@@ -4273,7 +4273,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4321,7 +4321,7 @@ HTTP Status Code:
 
 
 
-### Update LowInStock Notification Settings
+## Update LowInStock Notification Settings
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/lowInStock```
 
@@ -4329,7 +4329,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4377,7 +4377,7 @@ HTTP Status Code:
 
 
 
-### Delete LowInStock Notification Settings
+## Delete LowInStock Notification Settings
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/lowInStock```
 
@@ -4385,7 +4385,7 @@ Method: ``` DELETE ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4410,7 +4410,7 @@ HTTP Status Code:
 ```
 
 
-### Create PriceDrop Notification Settings
+## Create PriceDrop Notification Settings
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/priceDrop```
 
@@ -4418,7 +4418,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4466,7 +4466,7 @@ HTTP Status Code:
 
 
 
-### Update PriceDrop Notification Settings
+## Update PriceDrop Notification Settings
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/priceDrop```
 
@@ -4474,7 +4474,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4519,7 +4519,7 @@ HTTP Status Code:
 ```
 
 
-### Delete PriceDrop Notification Settings
+## Delete PriceDrop Notification Settings
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/priceDrop```
 
@@ -4527,7 +4527,7 @@ Method: ``` DELETE ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4552,7 +4552,7 @@ HTTP Status Code:
 
 
 
-### Create ReminderEmail Notification Settings
+## Create ReminderEmail Notification Settings
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/reminderEmail```
 
@@ -4560,7 +4560,7 @@ Method: ``` POST ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4607,7 +4607,7 @@ HTTP Status Code:
 ```
 
 
-### Update ReminderEmail Notification Settings
+## Update ReminderEmail Notification Settings
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/reminderEmail```
 
@@ -4615,7 +4615,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -4662,7 +4662,7 @@ HTTP Status Code:
 ```
 
 
-### Delete ReminderEmail Notification Settings
+## Delete ReminderEmail Notification Settings
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/reminderEmail```
 
@@ -4670,7 +4670,7 @@ Method: ``` DELETE ```
 
 OAuth 2.0 Scopes : `Tenant authentication`
 
-<summary>Request Headers</summary>
+<summary>Request Headers : </summary>
 
 | Key           | Value            |
 |---------------|------------------|
