@@ -273,7 +273,7 @@ Sample Request :
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary>
 
 ```json
 {
@@ -453,7 +453,7 @@ Sample Request :
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary> 
 
 ```json
 {
@@ -558,7 +558,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `id  : Merchant Id`
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
 {
@@ -632,6 +632,7 @@ Sample Response :
   "updated_at": "2022-06-27T09:16:52.246Z"
 }
 ```
+<summary>Response - 200 (OK Updated)</summary>
 
 HTTP Status Code: 
 ``` 
@@ -661,7 +662,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `id  : Mechant Id`
 
-Sample Response : 
+<summary>Response - 200 (OK)</summary> 
 
 ```json
 {
@@ -780,7 +781,7 @@ Sample Request:
 
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary> 
 
 ```json
 {
@@ -843,7 +844,7 @@ Sample Request:
 
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
 {
@@ -888,7 +889,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `planId  : unique Plan Id`
 
-Sample Response : 
+<summary>Response - 204 (Deleted)</summary>  
 
 ```json
 {
@@ -905,6 +906,7 @@ Sample Response :
   }
 }
 ```
+<summary>Response - 204 (Deleted)</summary> 
 
 HTTP Status Code: 
 ``` 
@@ -933,7 +935,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `planId  : Unique plan Id`
 
-Sample Response : 
+<summary>Response - 200 (OK)</summary> 
 
 ```json
 
@@ -976,7 +978,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-Sample Response : 
+<summary>Response - 200 (OK)</summary> 
 
 ```json
 [
@@ -1059,7 +1061,7 @@ Sample Request:
 
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary> 
 
 ```json
 {
@@ -1159,7 +1161,7 @@ Sample Request:
 
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
 {
@@ -1223,7 +1225,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `storeId  : Unique store Id,storeKey: store key`
 
-Sample Response : 
+<summary>Response - 200 (OK)</summary>
 
 ```json
 {
@@ -1287,7 +1289,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `storeId  : Unique store Id`
 
-Sample Response : 
+<summary>Response - 200 (OK)</summary> 
 
 ```json
 {
@@ -1349,7 +1351,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `storeId  : Unique Store Id`
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
 {
@@ -1411,7 +1413,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `merchantId  : Unique Merchant Id,storeId: Unique store id,planId: Unique plan id `
 
-Sample Response : 
+<summary>Response - 201 (created)</summary>
 
 ```json
 {
@@ -1473,7 +1475,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `merchantId  : Unique Merchant Id,storeId: Unique store id,planId: Unique plan id `
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
 {
@@ -1535,7 +1537,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `merchantId  : Unique Merchant Id,storeId: Unique store id `
 
-Sample Response : 
+<summary>Response - 201 (deleted)</summary> 
 
 ```json
 {
@@ -1597,7 +1599,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
-Sample Response : 
+<summary>Response - 200 (OK)</summary> 
 
 ```json
 {
@@ -1639,7 +1641,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
-Sample Response : 
+<summary>Response - 200 (OK)</summary>
 
 ```json
 {
@@ -1785,7 +1787,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
-Sample Response : 
+<summary>Response - 200 (OK)</summary>
 
 ```json
 {
@@ -1891,7 +1893,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
-Sample Response : 
+<summary>Response - 200 (OK)</summary>
 
 ```json
 {
@@ -1952,7 +1954,7 @@ Sample Request:
 
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary> 
 
 ```json
 {
@@ -2013,7 +2015,7 @@ Sample Request:
 
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
 {
@@ -2088,7 +2090,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary>
 
 ```json
 
@@ -2179,7 +2181,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
 {
@@ -2266,7 +2268,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary> 
 
 ```json
 {
@@ -2352,7 +2354,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary> 
 
 ```json
 {
@@ -2438,7 +2440,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary> 
 
 ```json
 {
@@ -2524,7 +2526,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary> 
 
 ```json
 {
@@ -2610,7 +2612,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary>
 
 ```json
 {
@@ -2696,7 +2698,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary>  
 
 ```json
 {
@@ -2782,7 +2784,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary>
 
 ```json
 {
@@ -2869,7 +2871,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary> 
 
 ```json
 {
@@ -2957,7 +2959,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary> 
 
 ```json
 {
@@ -3043,7 +3045,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary> 
 
 ```json
 {
@@ -3130,7 +3132,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary>
 
 ```json
 {
@@ -3215,7 +3217,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary>  
 
 ```json
 {
@@ -3302,7 +3304,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary>
 
 ```json
 {
@@ -3390,7 +3392,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary> 
 
 ```json
 
@@ -3478,7 +3480,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary>
 
 ```json
 {
@@ -3563,7 +3565,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary> 
 
 ```json
 {
@@ -3651,7 +3653,7 @@ Sample Request:
 
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary>
 
 ```json
 {
@@ -3737,7 +3739,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary> 
 
 ```json
 {
@@ -3792,7 +3794,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
-
+<summary>Response - 200 (OK)</summary>
 
 HTTP Status Code: 
 ``` 
@@ -3854,7 +3856,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Response : 
+<summary>Response - 201 (created)</summary> 
 
 ```json
 
@@ -3926,7 +3928,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Response : 
+<summary>Response - 201 (created)</summary> 
 
 ```json
 {
@@ -3978,7 +3980,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Response : 
+<summary>Response - 200 (OK Updated)</summary> 
 
 ```json
 {
@@ -4015,6 +4017,8 @@ OAuth 2.0 Scopes : `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
 
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
+
+<summary>Response - 204 (Deleted)</summary>
 
 HTTP Status Code: 
 ``` 
@@ -4057,7 +4061,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Response : 
+<summary>Response - 201 (created)</summary>
 
 ```json
 {
@@ -4108,7 +4112,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Response : 
+<summary>Response - 200 (OK Updated)</summary> 
 
 ```json
 {
@@ -4145,6 +4149,8 @@ OAuth 2.0 Scopes : `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
 
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
+
+<summary>Response - 204 (Deleted)</summary>
 
 HTTP Status Code: 
 ``` 
@@ -4185,7 +4191,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Response : 
+<summary>Response - 201 (created)</summary> 
 
 ```json
 {
@@ -4235,7 +4241,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Response : 
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
 {
@@ -4272,6 +4278,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
+<summary>Response - 204 (Deleted)</summary> 
 
 HTTP Status Code: 
 ``` 
@@ -4312,7 +4319,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Response : 
+<summary>Response - 201 (created)</summary>
 
 ```json
 {
@@ -4362,7 +4369,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Response : 
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
 {
@@ -4398,6 +4405,8 @@ OAuth 2.0 Scopes : `Tenant authentication`
 | X-TWC-Tenant  | {Tenant Name}    |
 
 Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
+
+<summary>Response - 204 (Deleted)</summary> 
 
 HTTP Status Code: 
 ``` 
