@@ -1,3 +1,7 @@
+
+[Back to Index](index.md)
+***
+
 # **Product API**
 The Product resource stores information about a product, its variants.
 

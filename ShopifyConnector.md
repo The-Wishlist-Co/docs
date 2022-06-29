@@ -1,3 +1,7 @@
+
+[Back to Index](index.md)
+***
+
 # Shopify Connect
 
 Shopify Connector is used data integration from the Shopify system into the TWC system seamlessly. The API Translates the information from the shopify data and trasforms it as per the requirements of the TWC system.

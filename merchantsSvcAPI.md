@@ -1,4 +1,7 @@
 
+[Back to Index](index.md)
+***
+
 # **Merchants API**
 The Merchants resource stores information about a merchant and their stores.
 

@@ -1,4 +1,7 @@
 
+[Back to Index](index.md)
+***
+
 # **Price API**
 The Price resource stores information about price details of  particular product variant.
 
