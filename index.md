@@ -93,6 +93,10 @@ For more detailed informaation, check out the collection and follow the service 
     
     - [*Representations*](eventcollectorAPI.md#representations)
     - [*REST Endpoints*](eventcollectorAPI.md#rest-endpoints)
+      - [*Events  Resource*](eventcollectorAPI.md#events--resource)
+      - [*Event Subscription Resource*](eventcollectorAPI.md#event-subscription-resource)
+
+
     
 
 - [**Authentication API**](authenticationsvcApi.md#authentication-api)	

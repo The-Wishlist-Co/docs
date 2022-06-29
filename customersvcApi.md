@@ -1,8 +1,6 @@
 
 [Back to Index](index.md)
 
-***
-
 # **Customer API**
 The Customer resource stores information about a shop's customers, such as their contact details, their order history, and whether they've agreed to receive email marketing.
 
@@ -375,7 +373,7 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
+- 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
@@ -539,7 +537,7 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
+- 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
@@ -702,7 +700,7 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
@@ -988,7 +986,7 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
+- 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
@@ -1175,7 +1173,7 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
+- 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
@@ -1341,7 +1339,7 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
+- 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
@@ -1507,7 +1505,7 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
+- 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
@@ -1682,7 +1680,7 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
+- 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
@@ -1726,7 +1724,7 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
+- 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
@@ -1770,7 +1768,7 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found

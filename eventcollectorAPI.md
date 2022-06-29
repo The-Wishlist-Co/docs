@@ -1,6 +1,6 @@
 
 [Back to Index](index.md)
-***
+
 
 # **Event Collector API**
 
@@ -15,13 +15,15 @@ The event collector api is employed for enabling various events and campains tha
   - [**Representations**](#representations)
     - [Order](#order)
   - [**REST Endpoints**](#rest-endpoints)
-    - [Create Event](#create-event)
-    - [Find Events](#find-events)
-    - [Create  Event Subscriptions](#create--event-subscriptions)
-    - [Update  Event Subscriptions](#update--event-subscriptions)
-    - [Get All Event Subscriptions](#get-all-event-subscriptions)
-    - [Get  Event Subscriptions](#get--event-subscriptions)
-    - [Deactivate Event Subscriptions](#deactivate-event-subscriptions)
+    - [**Events  Resource**](#events--resource)
+      - [Create Event](#create-event)
+      - [Find Events](#find-events)
+    - [**Event Subscription Resource**](#event-subscription-resource)
+      - [Create  Event Subscriptions](#create--event-subscriptions)
+      - [Update  Event Subscriptions](#update--event-subscriptions)
+      - [Get All Event Subscriptions](#get-all-event-subscriptions)
+      - [Get  Event Subscriptions](#get--event-subscriptions)
+      - [Deactivate Event Subscriptions](#deactivate-event-subscriptions)
   
 
 
@@ -66,7 +68,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 ## **REST Endpoints**
 
-- ## **Events  Resource**
+## **Events  Resource**
 
 ## Create Event
 For the creation of a new Event resource with unique id.
@@ -108,7 +110,8 @@ Request :
 ```
 
 <summary>Response - 201 (Created)</summary>
-```json
+
+``` json
 {
   "entity_id": "string",
   "entity_name": "string",
@@ -134,9 +137,11 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Find Events
@@ -159,6 +164,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 Request Parameters: `eventId  : id`
 
  <summary>Response - 200 (OK)</summary>
+
 ```json
 {
   "entity_id": "string",
@@ -185,12 +191,15 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
-- ## **Event Subscription Resource**
+
+## **Event Subscription Resource**
 
 ## Create  Event Subscriptions
 For the creation of a new EventSubscriptions resource with unique id, and active status.
@@ -231,6 +240,7 @@ Request :
 ```
 
  <summary>Response - 201 (Created)</summary>
+
 ```json
 {
   "active": true,
@@ -256,10 +266,13 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ## Update  Event Subscriptions
 For the updation of an existing EventSubscriptions resource with unique id.
@@ -326,10 +339,13 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ## Get All Event Subscriptions
 TO find all active event Subscription events.
@@ -379,10 +395,13 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ## Get  Event Subscriptions
 TO find an active event Subscription event with id.
@@ -430,10 +449,13 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ## Deactivate Event Subscriptions
 TO find an active event Subscription event with id.
@@ -454,7 +476,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `id  :event id`
 
- <summary>Response - 200 (OK update)</summary> 
+ <summary>Response - 200 (OK)</summary> 
 ```json
 {
   "body": {},
@@ -468,10 +490,13 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ***
 [Back to Index](index.md)
