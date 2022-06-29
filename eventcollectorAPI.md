@@ -499,4 +499,6 @@ HTTP Status Code:
 
 
 ***
-[Back to Index](index.md)
+[Back to Top](#event-collector-api)
+
+[Back to Home](index.md#welcome-to-the-wishlist)

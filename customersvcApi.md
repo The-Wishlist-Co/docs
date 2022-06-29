@@ -1778,6 +1778,6 @@ HTTP Status Code:
 
 
 ***
-[Back to Index](#index)
+[Back to Top](#customer-api)
   
-[Back to Home](index.md)
+[Back to Home](index.md#welcome-to-the-wishlist)

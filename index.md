@@ -81,6 +81,9 @@ For more detailed informaation, check out the collection and follow the service 
 
   - [*Representations*](impexAPI.md#representations)
   - [*REST Endpoints*](impexAPI.md#rest-endpoints)
+    - [*Impex Batch*](impexAPI.md#impex-resource)
+    - [*Impex Resource*](impexAPI.md#impex-resource)
+
 
 
 - [**Shopify Connector**](ShopifyConnector.md#shopify-connect)

@@ -1,7 +1,7 @@
 
 
 [Back to Index](index.md)
-***
+
 
 # **Impex API**
 
@@ -16,14 +16,16 @@ The ImpEx API allows you to interact with all the core api's in the TWC system a
     <!-- - [Index](#index) -->
   - [**Representations**](#representations)
   - [**REST Endpoints**](#rest-endpoints)
-    - [Create Batch](#create-batch)
-    - [Change State](#change-state)
-    - [Get Batch](#get-batch)
-    - [Query Batch](#query-batch)
-    - [Create Resources](#create-resources)
-    - [Update State](#update-state)
-    - [Get Resource By Id](#get-resource-by-id)
-    - [Query Resources](#query-resources)
+    - [**Impex Batch Resource**](#impex-batch-resource)
+      - [Create Batch](#create-batch)
+      - [Change State](#change-state)
+      - [Get Batch](#get-batch)
+      - [Query Batch](#query-batch)
+    - [**Impex Resource**](#impex-resource)
+      - [Create Resources](#create-resources)
+      - [Update State](#update-state)
+      - [Get Resource By Id](#get-resource-by-id)
+      - [Query Resources](#query-resources)
       
 
 
@@ -135,7 +137,7 @@ withTotal Boolean Default FALSE
 
 ## **REST Endpoints**
 
-- ## **Impex Batch Resource**
+## **Impex Batch Resource**
 
 ## Create Batch
 For the creation of a new batch resource with unique id and ref.
@@ -179,9 +181,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Change State
@@ -220,14 +225,16 @@ Request parameters : `batchId - batchId`
 }
 ```
 
-
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Get Batch
@@ -270,16 +277,17 @@ Request parameters : `batchRef - batchRef`
   "state": "ABORTED"
 }
 ```
-
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
-
 ## Query Batch
 To conduct various batch query with various avaliable query parameters in the scope of the request.
 
@@ -338,12 +346,15 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
-- ## **Impex Resource**
+## **Impex Resource**
 
 ## Create Resources
 For the creation of a new batch resource with unique id and ref.
@@ -363,7 +374,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 
 Request :
-```
+```json
 {
   "batchId": "string",
   "batchRef": "string",
@@ -1350,9 +1361,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Update State
@@ -1400,9 +1414,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Get Resource By Id
@@ -1446,9 +1463,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Query Resources
@@ -1516,10 +1536,15 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ***
-[Back to Index](index.md)
+[Back to Top](#impex-api)
+
+[Back to Home](index.md#welcome-to-the-wishlist)
