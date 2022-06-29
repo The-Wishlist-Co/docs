@@ -181,7 +181,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> -->
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -288,7 +288,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
   
  ```
  
-<!-- </details> --> 
+ </details> --> 
 
 <!-- <details> -->
  <summary>Response - 201 (product created)</summary>
@@ -397,7 +397,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  ```
  <!-- </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 400 (Bad request)</summary>
  
  ```json
@@ -410,9 +410,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
+ </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -425,7 +425,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
+ </details> -->
  
 HTTP Status Code: 
 ```
@@ -568,8 +568,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
  ```
  
 <!-- </details> -->
-
-<!-- <details> -->
+Response - 201 (Created)
+<!-- <details> 
  <summary>Response - 400 (Invalid status value)</summary>
  
  ```json
@@ -582,9 +582,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
+ </details> --> 
 
-<!-- <details> -->
+<!-- <details>
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -597,7 +597,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
+ </details> -->
  
 HTTP Status Code: 
 ```
@@ -846,7 +846,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 400 (Invalid ID supplied)</summary>
  
  ```json
@@ -859,9 +859,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
+ </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -874,10 +874,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
+ </details> --> 
 
 
-<!-- <details> -->
+<!-- <details>
  <summary>Response - 404 (Product not found)</summary>
  
  ```json
@@ -890,9 +890,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
+ </details> -->
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 405 (Validation exception)</summary>
  
  ```json
@@ -905,7 +905,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
+ </details> -->
  
 HTTP Status Code: 
 ```
@@ -1054,7 +1054,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 400 (Invalid ID supplied)</summary>
  
  ```json
@@ -1067,9 +1067,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
+</details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 404 (Product not found)</summary>
  
  ```json
@@ -1082,7 +1082,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
+ </details> -->
  
 HTTP Status Code: 
 ```
@@ -1122,7 +1122,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Response - 200 (Product deleted)</summary>
+ <summary>Response - 204 (Product deleted)</summary>
 
 ```json
    {
@@ -1227,9 +1227,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }   
  ```
  
-<!-- </details> --> 
+<!--</details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 400 (Invalid ID supplied)</summary>
  
  ```json
@@ -1242,9 +1242,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
+ </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 404 (Product not found)</summary>
  
  ```json
@@ -1257,7 +1257,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
+ </details> --> 
 
  
 HTTP Status Code: 
