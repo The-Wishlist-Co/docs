@@ -84,19 +84,19 @@ All representations are JSON objects submitted or received as payload to API req
 - product_variant
 - price
 
-`customer` -[inventory Level ](inventory.md) 
+`customer` -[Customer API](customersvcApi.md) 
 
-`products` - [products](inventory.md)
+`products` - [products](productsvcAPI.md)
 
-`variants` - [product variants](inventory.md)
+`variants` - [product variants](Common_Fields/productVariant.md)
 
-`orders` -
+`orders` -	[order API](ordersSvcApi.md)
 
-`stockLevels` - [inventory Level ](inventory.md) 
+`stockLevels` - [Stock Levels](Common_Fields/stocklevel.md) 
 
-`prices` - [price ](price.md) 
+`prices` - [price](priceSvcAPI.md) 
 
-`inventoryLocations` - [inventory Location ](inventory.md) 
+`inventoryLocations` - [inventory Location ](inventorySvcAPI.md) 
 
 `validationState` - enum - The various states of resource validation are as listed as follows: 
 
@@ -162,7 +162,8 @@ Request :
 
 ```
 
-Response : 
+<summary>Response - 201 (created)</summary>
+
 ```json
 {
   "batchRef": "string",
@@ -206,7 +207,8 @@ Request parameters : `batchId - batchId`
 
 `state : Available values : ABORTED, CREATED, ERROR, PROCESSING, READY`
 
-Response : 
+<summary>Response - 200 (OK Updated)</summary>
+ 
 ```json
 {
   "batchRef": "string",
@@ -256,7 +258,8 @@ Request parameters : `batchRef - batchRef`
 
 `withTotal : boolean`
 
-Response : 
+<summary>Response - 200 (OK)</summary>
+
 ```json
 {
   "batchRef": "string",
@@ -311,7 +314,7 @@ Query parameters : `batchId - batchId`
 `withTotal : boolean`
 
 
-Response : 
+<summary>Response - 200 (OK)</summary>
 
 ```json
 {
@@ -1341,6 +1344,7 @@ Request :
 
 ```
 
+<summary>Response - 201 (created)</summary>
 
 HTTP Status Code: 
 ``` 
@@ -1374,7 +1378,7 @@ Request Parameters : `importState : Available values : attempted, failed, import
 
 `validationState : Available values : not_validated, rejected, validated, validation_not_needed`
 
-Response : 
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
 {
@@ -1420,7 +1424,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters : `Id : id`
 
-Response : 
+<summary>Response - 200 (OK)</summary>
+
 ```json
 {
   "batchId": "string",
@@ -1482,7 +1487,7 @@ Request Parameters : `Id : id`
 
 `withTotal : boolean`
 
-Response : 
+<summary>Response - 200 (OK)</summary> 
 
 ```json
 {
