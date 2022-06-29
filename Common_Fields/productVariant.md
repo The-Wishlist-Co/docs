@@ -1,3 +1,5 @@
+ ## Product Variant
+ 
  `active` - boolean - To enable  a customer.
  
  `additionalImageLink` - string - Image link.

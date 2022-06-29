@@ -1,4 +1,4 @@
-## line_items properties
+## Line Items Properties
 
 
 `fulfillable_quantity` : The amount available to fulfill, calculated as follows:

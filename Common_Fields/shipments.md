@@ -1,5 +1,5 @@
 
-## Shipment
+## Shipments
 
 `created_at` -string($date-time)
 
