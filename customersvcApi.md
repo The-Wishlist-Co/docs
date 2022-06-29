@@ -1,5 +1,5 @@
 
-[Back to Index](index.md)
+[Back to Home](index.md#welcome-to-the-wishlist)
 
 # **Customer API**
 The Customer resource stores information about a shop's customers, such as their contact details, their order history, and whether they've agreed to receive email marketing.

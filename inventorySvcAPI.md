@@ -1,6 +1,6 @@
 
-[Back to Index](index.md)
-***
+[Back to Home](index.md#welcome-to-the-wishlist)
+
 
 # **Inventory API**
 An inventory item represents a physical good. It holds essential information about the physical good.

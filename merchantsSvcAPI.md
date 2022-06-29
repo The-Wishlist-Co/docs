@@ -1,6 +1,6 @@
 
-[Back to Index](index.md)
-***
+[Back to Home](index.md#welcome-to-the-wishlist)
+
 
 # **Merchants API**
 The Merchants resource stores information about a merchant and their stores.
@@ -4417,6 +4417,10 @@ HTTP Status Code:
 - 404 Not Found
 ```
 
-
 ***
-[Back to Index](index.md)
+[Back to Top](#merchants-api)
+
+[Back to Home](index.md#welcome-to-the-wishlist)
+
+
+

@@ -1,5 +1,5 @@
 
-[Back to Index](index.md)
+[Back to Home](index.md#welcome-to-the-wishlist)
 ***
 
 # **Price API**
@@ -338,4 +338,10 @@ HTTP Status Code:
 - 404 Not Found
 ```
 
-***[Back to Index](index.md)
+***
+[Back to Top](#price-api)
+
+[Back to Home](index.md#welcome-to-the-wishlist)
+
+
+

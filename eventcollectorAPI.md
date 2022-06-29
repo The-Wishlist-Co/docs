@@ -1,6 +1,5 @@
 
-[Back to Index](index.md)
-
+[Back to Home](index.md#welcome-to-the-wishlist)
 
 # **Event Collector API**
 

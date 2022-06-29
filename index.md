@@ -14,6 +14,7 @@ For more detailed informaation, check out the collection and follow the service 
   The Customer Service API stores information about a shop's customers, it also holds information on the status of a customer's account. You can create, retrieve, update, and delete customers using the Customer Service api.
   
     - [*Representations*](customersvcApi.md#representations)
+  
     - [*REST Endpoints*](customersvcApi.md#rest-endpoints)
   
 
@@ -24,32 +25,38 @@ For more detailed informaation, check out the collection and follow the service 
 
 
     - [*Representations*](inventorySvcAPI.md#representations)
+    
     - [*REST Endpoints*](inventorySvcAPI.md#rest-endpoints)
+    
       - [*Location Resource*](inventorySvcAPI.md#location-resource)
+
       - [*Stock Level Resource*](inventorySvcAPI.md#stock-level-resource)
+
 
 - [**Merchant Service API**](merchantsSvcAPI.md#merchants-api)
   
   The Merchants resource stores information about a merchant and their stores. You can create, retrieve, update, and delete merchants using the Merchant Service api.
 
   - [*Representations*](merchantsSvcAPI.md#representations)
+
   - [*REST Endpoints*](merchantsSvcAPI.md#rest-endpoints)
 
   
 - [**Price Service API**](priceSvcAPI.md#price-api)
   
   The Price resource stores information about price details of particular product variant. You can create, retrieve, update, and delete prices using the Price Service api.
+
     - [*Representations*](priceSvcAPI.md#representations)
+
     - [*REST Endpoints*](priceSvcAPI.md#rest-endpoints)
 
 
 - [**Product Service API**](productsvcAPI.md#product-api)
 
     The Product resource stores information about a product, its variants. You can create, retrieve, update, and delete orders using the Product Service api.
-
-
     
   - [*REST Endpoints*](productsvcAPI.md#rest-endpoints)
+
       - [*Product Service*](productsvcAPI.md#product-service)
          
       - [*Product Variant Service*](productsvcAPI.md#product-variant-service)
@@ -60,9 +67,13 @@ For more detailed informaation, check out the collection and follow the service 
     An order is a customer's request to purchase one or more products from a shop. You can create, retrieve, update, and delete Product using the Order Service api.
 
     - [*Representations*](ordersSvcApi.md#representations)
+
     - [*REST Endpoints*](ordersSvcApi.md#rest-endpoints)
+
       - [*Order Item Resource*](ordersSvcApi.md#order-item-resource)
+
       - [*Order Resource*](ordersSvcApi.md#order-resource)
+
       - [*Order Item*](ordersSvcApi.md#order-item)
 
 
@@ -73,6 +84,7 @@ For more detailed informaation, check out the collection and follow the service 
    - [*Representations*](wishlistSvcAPI.md#representations)
 
   - [*REST Endpoints*](wishlistSvcAPI.md#rest-endpoints)
+
     - [*Wishlist Resource*](wishlistSvcAPI.md#wishlist-resource)
 
     - [*Wishlist Item Resource*](wishlistSvcAPI.md#wishlist-item-resource)
@@ -84,8 +96,11 @@ For more detailed informaation, check out the collection and follow the service 
     The ImpEx API allows you to interact with all the core api's in the TWC system at a unified REST interface for the seemless interegration of bulk data in to the system. 
 
   - [*Representations*](impexAPI.md#representations)
+
   - [*REST Endpoints*](impexAPI.md#rest-endpoints)
+
     - [*Impex Batch*](impexAPI.md#impex-resource)
+
     - [*Impex Resource*](impexAPI.md#impex-resource)
 
 
@@ -99,8 +114,11 @@ For more detailed informaation, check out the collection and follow the service 
     The event collector api is employed for enabling various events and campains that pertains to a customer.
     
     - [*Representations*](eventcollectorAPI.md#representations)
+
     - [*REST Endpoints*](eventcollectorAPI.md#rest-endpoints)
+
       - [*Events  Resource*](eventcollectorAPI.md#events--resource)
+
       - [*Event Subscription Resource*](eventcollectorAPI.md#event-subscription-resource)
 
 
@@ -111,7 +129,9 @@ For more detailed informaation, check out the collection and follow the service 
 	API generates the bearer token , which will be used by clients in request header to interact with application.
 	
 	- [*Representations*](authenticationsvcApi.md#representations)
+
 	- [*REST Endpoints*](authenticationsvcApi.md#rest-endpoints)
+
 		- [Generate Token](authenticationsvcApi.md#generate-token)  
 
 
