@@ -273,6 +273,8 @@ Sample Request :
 }
 ```
 
+<summary>Response - 200 (OK)</summary>
+
 HTTP Status Code: 
 ``` 
 - 200 OK
@@ -579,7 +581,7 @@ Sample Request :
 }
 ```
 
-Sample Response :
+<summary>Response - 201 (created)</summary>
 
 ```json
 {
@@ -856,6 +858,8 @@ Sample Response :
   "wrappingCostIncTaxInCent": 0
 }
 ```
+
+
 
 HTTP Status Code: 
 ``` 
@@ -1160,7 +1164,7 @@ Sample Request :
 }
 ```
 
-Sample Response :
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
 {
@@ -1471,7 +1475,7 @@ Query Params:
 orderId - Order Id , orderRef - Order Ref
 ```
 
-Sample Response :
+<summary>Response - 200 (OK)</summary>
 
 ```json
 {
@@ -1782,7 +1786,7 @@ Query Params:
 customerId - customer ID , customerRef - Customer ref , email - email , orderId - Order Id , orderRef - Order Ref
 ```
 
-Sample Response :
+<summary>Response - 200 (OK)</summary>
 
 ```json
 {
@@ -2362,7 +2366,7 @@ Sample Request :
 }
 ```
 
-
+<summary>Response - 200 (Validated)</summary>
 
 HTTP Status Code: 
 ``` 
@@ -2399,7 +2403,7 @@ orderId - Order Id , orderRef - Order Ref
 ```
 
 
-Sample Response :
+<summary>Response - 200 (OK)</summary>
 
 ```json
 {
@@ -2753,7 +2757,7 @@ Sample Request :
 }
 ```
 
-Sample Response :
+<summary>Response - 201 (created)</summary>
 
 ```json
 {
@@ -2879,7 +2883,7 @@ Sample Request :
 }
 ```
 
-Sample Response :
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
 {
@@ -2962,7 +2966,7 @@ Query Params :
 entryId - Entry ID , entryRef - Entry Ref
 ```
 
-Sample Response :
+<summary>Response - 200 (OK)</summary>
 
 ```json
 {
@@ -3274,8 +3278,7 @@ Query Params :
 entryId - Entry ID , entryRef - Entry Ref
 ```
 
-
-Sample Response :
+<summary>Response - 204 (Deleted)</summary> 
 
 ```json
 {
