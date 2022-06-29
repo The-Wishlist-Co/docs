@@ -25,27 +25,27 @@ All representations are JSON objects submitted or received as payload to API req
 <!-- <details> -->
  <summary><font size="4">Price </font></summary>
 
-```id``` - string -The unique ID of the price.It will auotmatically generate while creating the location.
+```id``` - string - The unique ID of the price.It will auotmatically generate while creating the location.
 
-```priceRef``` - string -The unique reference of the price.
+```priceRef``` - string - The unique reference of the price.
 
-```active``` - boolean -to indicate the price is active or not
+```active``` - boolean - To indicate the price is active or not
 
-```deleted``` - boolean -to indicate the price is deleted or not
+```deleted``` - boolean - To indicate the price is deleted or not
 
-```currencyCode``` - string -currency code as per ISO 4217
+```currencyCode``` - string - Currency code as per ISO 4217
 
 ```offlineDate``` - Datetime 
 
 ```onlineDate``` - Datetime 
 
-```price``` - number -The price of the product variant
+```price``` - number - The price of the product variant
 
-```productVariantId``` - string -The unique id of the product variant
+```productVariantId``` - string - The unique id of the product variant
 
 ```sale``` - boolean 
 
-```salePrice``` - number -item sale price
+```salePrice``` - number - Item sale price
 
 <!-- </details> -->
 
@@ -85,7 +85,7 @@ Sample Request :
 
 <!-- </details> -->
 
-Response : 
+Sample Response : 
 ```json
 {
   "active": true,
@@ -146,7 +146,7 @@ Sample Request :
 ```
 <!-- </details> -->
 
-Response : 
+Sample Response : 
 ```json
 {
   "active": true,
@@ -218,7 +218,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `id  : Price Id, priceRef : Price reference`
 
-Response : 
+Sample Response : 
 
 ```json
 {
@@ -304,7 +304,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-Response : 
+Sample Response : 
 
 ```json
 [
