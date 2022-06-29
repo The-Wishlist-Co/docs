@@ -5,7 +5,7 @@ The Customer resource also holds information on the status of a customer's accou
 
 For security reasons, the Customer resource doesn't store credit card information. Customers always need to enter this information at checkout.
 
-  ### Index
+### Index
 
 ***
 
@@ -527,10 +527,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ```
 <!-- </details> -->
 
-<!-- <details> -->
- <summary>Sample Response</summary>
- OK
-<!-- </details> -->
+
 
 HTTP Status Code: 
 ``` 
@@ -692,11 +689,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 ```
 <!-- </details> -->
-
-<!-- <details> -->
- <summary>Sample Response</summary>
- OK
-<!-- <details> -->
 
 HTTP Status Code: 
 ``` 
