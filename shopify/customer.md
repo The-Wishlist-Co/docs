@@ -28,7 +28,7 @@ To enable marketing for a customer.
 
 ```currency``` - string - The three-letter code (ISO 4217 format) for the currency that the customer used when they paid for their last order. Defaults to the shop currency. Returns the shop currency for test orders.
 
-```default_address``` - [Address](Common_Fields/address.md) - The default address for the customer. The address is saved as an array. The defaultShippingAddress of the customer will be set to the ID of that address.
+```default_address``` - [Address](../Common_Fields/address.md) - The default address for the customer. The address is saved as an array. The defaultShippingAddress of the customer will be set to the ID of that address.
 
 ```email``` - string -
 The customer's email address and the main identifier of uniqueness for a customer account. Attempting to assign the same email address to multiple customers returns an error.
@@ -108,7 +108,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Request Payload :</summary>
+ <summary>Sample Request :</summary>
  
  ```json
  {
@@ -225,7 +225,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Request Payload :</summary>
+ <summary>Sample Request :</summary>
  
  ```json
  {
@@ -342,7 +342,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Request Payload :</summary>
+ <summary>Sample Request :</summary>
  
  ```json
  {
