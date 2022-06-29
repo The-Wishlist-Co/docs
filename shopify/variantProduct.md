@@ -142,7 +142,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> -->
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -186,7 +186,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }      
  ```
  
-<!-- </details> --> 
+ </details> --> 
 
 <!-- <details> -->
  <summary>Response - 201 (Variant  created)</summary>
@@ -233,7 +233,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
  ```
  <!-- </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
+
  <summary>Response - 400 (Bad request)</summary>
  
  ```json
@@ -246,9 +247,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
 
-<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -261,7 +260,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
+ </details> -->
  
 HTTP Status Code:
 ``` 
@@ -343,9 +342,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ```
  
 <!-- </details> -->
+ <summary>Response - 201 (Created)</summary>
 
-
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 400 (Invalid ID supplied)</summary>
  
  ```json
@@ -358,9 +357,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
 
-<!-- <details> -->
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -373,10 +370,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
 
-
-<!-- <details> -->
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -389,9 +383,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
 
-<!-- <details> -->
  <summary>Response - 406 (Unacceptable Input)</summary>
  
  ```json
@@ -404,7 +396,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
+ </details> -->
  
 HTTP Status Code:
 ``` 
@@ -531,7 +523,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> --> 
 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 400 (Invalid ID Supplied)</summary>
  
  ```json
@@ -544,9 +536,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
 
-<!-- <details> -->
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -559,10 +549,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
 
-
-<!-- <details> -->
  <summary>Response - 404 (Product not found)</summary>
  
  ```json
@@ -575,9 +562,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
 
-<!-- <details> -->
  <summary>Response - 405 (Validation exception)</summary>
  
  ```json
@@ -590,7 +575,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
+ </details> -->
  
 HTTP Status Code:
 ``` 
@@ -678,7 +663,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
+
  <summary>Response - 400 (Invalid Id supplied)</summary>
  
  ```json
@@ -691,9 +677,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
 
-<!-- <details> -->
  <summary>Response - 404 (Product not found)</summary>
  
  ```json
@@ -706,7 +690,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
+ </details> -->
 
 HTTP Status Code:
 ``` 
@@ -718,6 +702,7 @@ HTTP Status Code:
 ```
 
 ## Deletes a product
+
 Product variant is marked as deleted by passing id as a path param of the endpoint.
 
 Endpoint: ```/api/products/{productId}/variants/{id}```
@@ -746,7 +731,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> -->
 
-<!-- <details> -->
+<summary>Response - 204 (DELETED)</summary>
+
+<!-- <details> 
  <summary>Response - 400 (Invalid ID supplied)</summary>
  
  ```json
@@ -759,9 +746,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
 
-<!-- <details> -->
  <summary>Response - 404 (Product not found)</summary>
  
  ```json
@@ -774,7 +759,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
+ </details> -->
  
 HTTP Status Code:
 ``` 
