@@ -59,7 +59,7 @@ Sample Request Form url encoded objects :
 | client_id     | {Client Id}        |
 | client_secret | {client_secret}    |
 
-Sample Response:
+Response - 200 (OK):
 
 ```json
 {
