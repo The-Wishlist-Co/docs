@@ -103,7 +103,7 @@ Request :
 } 
 ```
 
-Response : 
+<summary>Response - 201 (Created)</summary>
 ```json
 {
   "entity_id": "string",
@@ -154,7 +154,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `eventId  : id`
 
-Response : 
+ <summary>Response - 200 (OK)</summary>
 ```json
 {
   "entity_id": "string",
@@ -185,8 +185,6 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 ```
-
-
 
 - ## **Event Subscription Resource**
 
@@ -228,7 +226,7 @@ Request :
 }
 ```
 
-Response : 
+ <summary>Response - 201 (Created)</summary>
 ```json
 {
   "active": true,
@@ -296,7 +294,8 @@ Request :
   "subscribeDelete": true
 }
 ```
-Response : 
+
+<summary>Response - 201 (Created)</summary> 
 
 ```json
 {
@@ -347,7 +346,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters : no parameters
 
-Response : 
+ <summary>Response - 200 (OK)</summary> 
 
 ```json
 [
@@ -400,7 +399,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `id  :event id`
 
-Response : 
+ <summary>Response - 200 (OK)</summary> 
 
 ```json
 {
@@ -451,7 +450,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `id  :event id`
 
-Response : 
+ <summary>Response - 200 (OK update)</summary> 
 ```json
 {
   "body": {},
