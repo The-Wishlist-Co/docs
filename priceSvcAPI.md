@@ -88,7 +88,8 @@ Sample Request :
 
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary>
+
 ```json
 {
   "active": true,
@@ -149,7 +150,8 @@ Sample Request :
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary> 
+
 ```json
 {
   "active": true,
@@ -193,7 +195,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `id  : Price Id`
 
-
+<summary>Response - 204 (Deleted)</summary> 
 
 HTTP Status Code: 
 ``` 
@@ -221,7 +223,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `id  : Price Id, priceRef : Price reference`
 
-Sample Response : 
+<summary>Response - 200 (OK)</summary> 
 
 ```json
 {
@@ -281,7 +283,7 @@ Sample Request :
 }
 ```
 <!-- </details> -->
-
+<summary>Response - 200 (OK)</summary>
 
 HTTP Status Code: 
 ``` 
@@ -307,7 +309,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-Sample Response : 
+<summary>Response - 200 (OK)</summary> 
 
 ```json
 [
