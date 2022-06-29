@@ -137,7 +137,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Payload</summary>
+ <summary>Request Payload :</summary>
  
 ```json
  {
@@ -164,36 +164,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> -->
 
-<!-- <details> -->
- <summary>Response - 200 (OK)</summary>
-
-```json
- {
-  "admin_graphql_api_id": "string",
-  "cost": 0,
-  "country_code_of_origin": "string",
-  "country_harmonized_system_codes": [
-    {
-      "country_code": "string",
-      "harmonized_system_code": "string"
-    }
-  ],
-  "created_at": "2022-06-22T12:27:57.639Z",
-  "deleted": true,
-  "harmonized_system_code": "string",
-  "id": "string",
-  "province_code_of_origin": "string",
-  "requires_shipping": true,
-  "sku": "string",
-  "tracked": true,
-  "updated_at": "2022-06-22T12:27:57.639Z"
-}     
- ```
- 
-<!-- </details> --> 
 
 <!-- <details> -->
- <summary>Response - 201 (OK inventory item created)</summary>
+ <summary>Response - 201 (Created)</summary>
  
  ```json
  {
@@ -218,63 +191,17 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  <!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 400 (NOK bad request)</summary>
  
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 401 (NOK unauthorized)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 405 (Invalid input)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
- 
-HTTP Status Code: 
+HTTP Status Code:
 ```
 - 200 OK
-- 201 OK inventory item created
-- 400 NOK bad request
-- 401 NOK Unauthorized
+- 201 Created
+- 400 Bad request 
+- 401 Unauthorized,
 - 403 Forbidden 
 - 404 Not Found
-- 405 NOK Invalid input
+- 405 Invalid input
 ```
-
 ## Updated an inventory level
 
 Method: ``` PUT ``` 
@@ -294,7 +221,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Payload</summary>
+ <summary>Request Payload :</summary>
  
 ```json
  {
@@ -349,62 +276,15 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> --> 
 
-
-<!-- <details> -->
- <summary>Response - 400 (NOK bad request)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 401 (NOK unauthorized)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-
-<!-- <details> -->
- <summary>Response - 405 (NOK Invalid input)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
- 
-HTTP Status Code: 
+HTTP Status Code:
 ```
-- 200 OK inventory item created
-- 201 created
-- 400 NOK bad request
-- 401 NOK unauthorized
+- 200 OK
+- 201 Created
+- 400 Bad request 
+- 401 Unauthorized,
 - 403 Forbidden 
 - 404 Not Found
-- 405 NOK Invalid input
+- 405 Invalid input
 ```
 
 ## Find Inventory Item by Ref
@@ -459,67 +339,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
  ```
  
 <!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 400 (Bad request unable to create InventoryItem)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 401 (Unauthorized)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-
-<!-- <details> -->
- <summary>Response - 404 (InventoryItem with provided id not found)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
-
-<!-- <details> -->
- <summary>Response - 405 (Invalid input)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
  
 HTTP Status Code: 
 ```
@@ -550,7 +369,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Payload</summary>
+ <summary>Request Payload :</summary>
  
 ```json
   [
@@ -579,36 +398,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> -->
 
-<!-- <details> -->
- <summary>Response - 200 (OK)</summary>
-
-```json
- {
-  "admin_graphql_api_id": "string",
-  "cost": 0,
-  "country_code_of_origin": "string",
-  "country_harmonized_system_codes": [
-    {
-      "country_code": "string",
-      "harmonized_system_code": "string"
-    }
-  ],
-  "created_at": "2022-06-22T13:15:14.041Z",
-  "deleted": true,
-  "harmonized_system_code": "string",
-  "id": "string",
-  "province_code_of_origin": "string",
-  "requires_shipping": true,
-  "sku": "string",
-  "tracked": true,
-  "updated_at": "2022-06-22T13:15:14.041Z"
-}     
- ```
- 
-<!-- </details> --> 
 
 <!-- <details> -->
- <summary>Response - 201 (OK inventory item created)</summary>
+ <summary>Response - 201 (Created)</summary>
  
  ```json
  {
@@ -634,67 +426,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
  ```
  <!-- </details> --> 
 
-<!-- <details> -->
- <summary>Response - 400 (NOK bad request)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 401 (NOK unauthorized)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-
-<!-- <details> -->
- <summary>Response - 404 (not found)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
-
-<!-- <details> -->
- <summary>Response - 405 (NOK Invalid input)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
- 
 HTTP Status Code: 
 ```
 - 200 OK
@@ -726,37 +457,19 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Payload</summary>
+ <summary>Request Payload :</summary>
  
 ```json
 {
   "admin_graphql_api_id": "string",
   "available": 0,
-  "created_at": "2022-06-22T13:18:43.469Z",
   "inventory_item_id": "string",
-  "location_id": "string",
-  "updated_at": "2022-06-22T13:18:43.469Z"
+  "location_id": "string"
 }      
 ``` 
 <!-- </details> -->
 
-<!-- <details> -->
- <summary>Response - 200 (OK)</summary>
 
-```json
-{
-  "admin_graphql_api_id": "string",
-  "available": 0,
-  "created_at": "2022-06-22T13:18:43.519Z",
-  "inventory_item_id": "string",
-  "location_id": "string",
-  "updated_at": "2022-06-22T13:18:43.519Z"
-}      
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
  <summary>Response - 201 (OK inventory level item created)</summary>
  
  ```json
@@ -771,50 +484,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
  ```
  <!-- </details> --> 
 
-<!-- <details> -->
- <summary>Response - 400 (NOK bad request)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 401 (NOK unauthorized)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 405 (NOK Invalid input)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
  
 HTTP Status Code: 
 ```
@@ -846,7 +515,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Payload</summary>
+ <summary>Request Payload :</summary>
  
 ```json
 {
@@ -877,51 +546,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> --> 
 
-<!-- <details> -->
- <summary>Response - 400 (NOK bad request)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
 
-<!-- <details> -->
- <summary>Response - 401 (NOK Unauthorized)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-
-<!-- <details> -->
- <summary>Response - 405 (NOK Invalid input)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
  
 HTTP Status Code: 
 ```
@@ -960,7 +585,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Response - 200 (OK Found InventoryLevel)</summary>
+ <summary>Response - 200 (OK)</summary>
 
 ```json
  {
@@ -1002,51 +627,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> --> 
 
-<!-- <details> -->
- <summary>Response - 401 (Unauthorized)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-
-<!-- <details> -->
- <summary>Response - 404 (InventoryLevel with provided id not found)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
-
-<!-- <details> -->
- <summary>Response - 405 (Invalid input)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
  
 HTTP Status Code: 
 ```
@@ -1077,7 +657,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Payload</summary>
+ <summary>Request Payload :</summary>
  
 ```json
 [
@@ -1095,25 +675,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Response - 200 (OK)</summary>
-
-```json
-[
-  {
-    "admin_graphql_api_id": "string",
-    "available": 0,
-    "created_at": "2022-06-22T13:31:10.253Z",
-    "inventory_item_id": "string",
-    "location_id": "string",
-    "updated_at": "2022-06-22T13:31:10.253Z"
-  }
-]      
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 201 (ok inventory level item created)</summary>
+ <summary>Response - 201 (Created)</summary>
  
  ```json
  [
@@ -1129,48 +691,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
  ```
  <!-- </details> --> 
 
-<!-- <details> -->
- <summary>Response - 400 (NOK bad request)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 401 (NOK unauthorized)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 405 (NOK Invalid input)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
  
 <!-- </details> -->
  
@@ -1204,7 +724,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Payload</summary>
+ <summary>Request Payload :</summary>
  
 ```json
  {
@@ -1229,37 +749,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
   "zip": "string"
 }     
  ```
- 
 <!-- </details> -->
-
-<!-- <details> -->
- <summary>Response - 200 (OK)</summary>
-
-```json
- {
-  "active": true,
-  "address1": "string",
-  "address2": "string",
-  "admin_graphql_api_id": "string",
-  "city": "string",
-  "country": "string",
-  "country_code": "string",
-  "country_name": "string",
-  "created_at": "2022-06-22T13:35:40.215Z",
-  "id": "string",
-  "legacy": true,
-  "localized_country_name": "string",
-  "localized_province_name": "string",
-  "name": "string",
-  "phone": "string",
-  "province": "string",
-  "province_code": "string",
-  "updated_at": "2022-06-22T13:35:40.215Z",
-  "zip": "string"
-}     
- ```
- 
-<!-- </details> --> 
 
 <!-- <details> -->
  <summary>Response - 201 (ok inventory location created)</summary>
@@ -1289,53 +779,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
  ```
  <!-- </details> --> 
 
-<!-- <details> -->
- <summary>Response - 400 (NOK Invalid status value)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 401 (NOK Unauthorized)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-
-
-<!-- <details> -->
- <summary>Response - 405 (NOK Invalid input)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
- 
 HTTP Status Code: 
 ```
 - 200 OK
@@ -1366,7 +809,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Payload</summary>
+ <summary>Request Payload :</summary>
  
 ```json
 {
@@ -1395,79 +838,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Response - 200 (OK Location item created)</summary>
+ <summary>Response - 200 (OK)</summary>
 
-```json
- {
-  "active": true,
-  "address1": "string",
-  "address2": "string",
-  "admin_graphql_api_id": "string",
-  "city": "string",
-  "country": "string",
-  "country_code": "string",
-  "country_name": "string",
-  "created_at": "2022-06-22T13:39:39.382Z",
-  "id": "string",
-  "legacy": true,
-  "localized_country_name": "string",
-  "localized_province_name": "string",
-  "name": "string",
-  "phone": "string",
-  "province": "string",
-  "province_code": "string",
-  "updated_at": "2022-06-22T13:39:39.382Z",
-  "zip": "string"
-}     
- ```
- 
-<!-- </details> --> 
-
-
-<!-- <details> -->
- <summary>Response - 400 (NOK bad request)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 401 (NOK unauthorized)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 405 (Invalid input)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
  
 HTTP Status Code: 
 ```
@@ -1534,67 +906,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> --> 
 
-<!-- <details> -->
- <summary>Response - 400 (Bad request unable to create Location)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
 
-<!-- <details> -->
- <summary>Response - 401 (Unauthorized)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-
-<!-- <details> -->
- <summary>Response - 404 (Location with provided id not found)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
-
-<!-- <details> -->
- <summary>Response - 405 (Invalid input)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
- 
 HTTP Status Code: 
 ```
 - 200 OK Found location
@@ -1624,7 +936,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Payload</summary>
+ <summary>Request Payload :</summary>
  
 ```json
  [
@@ -1655,111 +967,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Response - 200 (OK)</summary>
-
-```json
-[
-  {
-    "active": true,
-    "address1": "string",
-    "address2": "string",
-    "admin_graphql_api_id": "string",
-    "city": "string",
-    "country": "string",
-    "country_code": "string",
-    "country_name": "string",
-    "created_at": "2022-06-22T13:47:30.858Z",
-    "id": "string",
-    "legacy": true,
-    "localized_country_name": "string",
-    "localized_province_name": "string",
-    "name": "string",
-    "phone": "string",
-    "province": "string",
-    "province_code": "string",
-    "updated_at": "2022-06-22T13:47:30.858Z",
-    "zip": "string"
-  }
-]      
- ```
+ <summary>Response - 201 (Created)</summary>
  
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 201 (OK inventory location created)</summary>
- 
- ```json
- [
-  {
-    "active": true,
-    "address1": "string",
-    "address2": "string",
-    "admin_graphql_api_id": "string",
-    "city": "string",
-    "country": "string",
-    "country_code": "string",
-    "country_name": "string",
-    "created_at": "2022-06-22T13:47:30.858Z",
-    "id": "string",
-    "legacy": true,
-    "localized_country_name": "string",
-    "localized_province_name": "string",
-    "name": "string",
-    "phone": "string",
-    "province": "string",
-    "province_code": "string",
-    "updated_at": "2022-06-22T13:47:30.858Z",
-    "zip": "string"
-  }
-]
- ```
- <!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 400 (NOK bad request)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-<!-- <details> -->
- <summary>Response - 401 (NOK unauthorized)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
-
-<!-- <details> -->
- <summary>Response - 405 (NOK Invalid input)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> -->
  
 HTTP Status Code: 
 ```
