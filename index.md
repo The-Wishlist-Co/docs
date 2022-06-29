@@ -32,13 +32,15 @@ For more detailed informaation, check out the collection and follow the service 
   The Merchants resource stores information about a merchant and their stores. You can create, retrieve, update, and delete merchants using the Merchant Service api.
 
   - [*Representations*](merchantsSvcAPI.md#representations)
- 
+  - [*REST Endpoints*](merchantsSvcAPI.md#rest-endpoints)
+
   
 - [**Price Service API**](priceSvcAPI.md#price-api)
   
   The Price resource stores information about price details of particular product variant. You can create, retrieve, update, and delete prices using the Price Service api.
     - [*Representations*](priceSvcAPI.md#representations)
- 
+    - [*REST Endpoints*](priceSvcAPI.md#rest-endpoints)
+
 
 - [**Product Service API**](productsvcAPI.md#product-api)
 
