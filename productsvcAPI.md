@@ -388,7 +388,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
 
- <summary>Sample Response :</summary>
+<summary>Response - 201 (created)</summary>
 
 ```json
 	{
@@ -909,7 +909,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  ```
  
 
- <summary>Sample Response :</summary>
+<summary>Response - 200 (OK Updated)</summary>
  
  ```json
  {
@@ -1191,7 +1191,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  - {gtin}
  - {productRef}
 
- <summary>Sample Response :</summary>
+<summary>Response - 200 (OK)</summary>
  
  ```json
  {
@@ -1840,6 +1840,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
+<summary>Response - 200 (OK)</summary>
+
 HTTP Status Code: 
 ``` 
 - 200 OK
@@ -1874,7 +1876,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Path Variable : </summary>
  - {id}
 
- <summary>Sample Response :</summary>
+<summary>Response - 200 (OK)</summary>
  
  ```json
  {
@@ -2282,7 +2284,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 </summary>
  - {ref}
 
- <summary>Sample Response :</summary>
+<summary>Response - 200 (OK)</summary>
  
  ```json
  {
@@ -2694,8 +2696,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 </summary>
  - {id}
 
- <summary>Sample Response :
-</summary>
+<summary>Response - 200 (OK)</summary>
  
  ```json
 {
@@ -2973,6 +2974,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  <summary>Path Variable :</summary>
 	- {id}
 
+<summary>Response - 204 (Deleted)</summary> 
 
 HTTP Status Code: 
 ``` 
@@ -3011,8 +3013,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 </summary>
 - {productRef}
 
- <summary>Sample Response :
-</summary>
+<summary>Response - 200 (OK)</summary>
  
  ```json
  {
@@ -3296,6 +3297,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 	- {productRef}
 	
 
+<summary>Response - 204 (Deleted)</summary> 
+
 HTTP Status Code:
 ``` 
 - 200 OK
@@ -3575,7 +3578,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
   }
 ]
   ```
-  
+
+<summary>Response - 201 (created)</summary>  
 
 HTTP Status Code:
 ``` 
@@ -3746,8 +3750,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
 
- <summary>Sample Response :
-</summary>
+<summary>Response - 201 (created)</summary>
  
  ```json
  {
@@ -4047,9 +4050,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
- <summary>Response :
-</summary>
- 
+<summary>Response - 200 (OK Updated)</summary>
+
  ```json
 {
   "active": true,
@@ -4346,7 +4348,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
 ```
 
-
+<summary>Response - 200 (OK)</summary>
 
 HTTP Status Code:
 ``` 
@@ -4390,8 +4392,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  - Path variables
 	- {id}
 
- <summary>Sample Response :
-</summary>
+<summary>Response - 200 (OK)</summary>
  
  ```json
  {
@@ -4566,8 +4567,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 	- {variantRef}
 
- <summary>Sample Response :
-</summary>
+<summary>Response - 200 (OK)</summary>
  
  ```json
  {
@@ -4739,6 +4739,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 	- {baseProductRef}
 	- {variantRef}
 
+<summary>Response - 204 (Deleted)</summary> 
 
 HTTP Status Code:
 ``` 
@@ -4775,6 +4776,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 </summary>
  - {productId}
 
+<summary>Response - 200 (OK)</summary>
 
 HTTP Status Code:
 ``` 
@@ -4813,8 +4815,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 </summary>
  - {productId}
 
- <summary>Sample Response :
-</summary>
+<summary>Response - 200 (OK)</summary>
  
  ```json
  [
@@ -4986,6 +4987,7 @@ Path Variable :
 	- {productId}
 	- {variantId}
 	
+<summary>Response - 204 (Deleted)</summary> 	
 
 HTTP Status Code:
 ``` 
@@ -5151,6 +5153,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ]
   ```
 
+<summary>Response - 201 (created)</summary>
+
 HTTP Status Code:
 ``` 
 - 200 OK
@@ -5162,3 +5166,5 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
+***[Back to Index](index.md)
