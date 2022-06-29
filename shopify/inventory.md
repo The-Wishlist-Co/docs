@@ -611,22 +611,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
  ```
  
 <!-- </details> --> 
-
-<!-- <details> --> 
- <summary>Response - 400 (Bad request unable to create InventoryLevel)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
-<!-- </details> --> 
-
  
 HTTP Status Code: 
 ```
