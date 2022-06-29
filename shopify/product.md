@@ -569,35 +569,6 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> -->
 <summary>Response - 201 (Created)</summary>
-<!-- <details> 
- <summary>Response - 400 (Invalid status value)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
- </details> --> 
-
-<!-- <details>
- <summary>Response - 405 (Invalid input)</summary>
- 
- ```json
- {
-  "error": "string",
-  "message": "string",
-  "path": "string",
-  "status": 0,
-  "timestamp": "2022-06-22T09:29:16.269Z"
-}
- ```
- 
- </details> -->
  
 HTTP Status Code: 
 ```
