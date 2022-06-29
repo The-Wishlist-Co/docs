@@ -61,6 +61,9 @@ For more detailed informaation, check out the collection and follow the service 
 
     - [*Representations*](ordersSvcApi.md#representations)
     - [*REST Endpoints*](ordersSvcApi.md#rest-endpoints)
+      - [*Order Item Resource*](ordersSvcApi.md#order-item-resource)
+      - [*Order Resource*](ordersSvcApi.md#order-resource)
+      - [*Order Item*](ordersSvcApi.md#order-item)
 
 
 - [**Wishlist Service API**](wishlistSvcAPI.md#wishlist-api)

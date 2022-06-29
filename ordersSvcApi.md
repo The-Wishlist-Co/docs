@@ -10,20 +10,23 @@ An order is a customer's request to purchase one or more products from a shop. Y
 ***
 
 - [**Order Svc API**](#order-svc-api)
-    - [Index](#index)
+    <!-- - [Index](#index) -->
   - [**Representations**](#representations)
   - [**REST Endpoints**](#rest-endpoints)
-  - [Validate Order Entry](#validate-order-entry)
-  - [Create an order](#create-an-order)
-  - [Updates an order](#updates-an-order)
-  - [FInd an orders](#find-an-orders)
-  - [Search orders](#search-orders)
-  - [Validate Order](#validate-order)
-  - [Search entries for an order](#search-entries-for-an-order)
-  - [Create an order entry](#create-an-order-entry)
-  - [Update an order entry](#update-an-order-entry)
-  - [Search an order entry](#search-an-order-entry)
-  - [Delete entry](#delete-entry)
+    - [**Order Item Resource**](#order-item-resource)
+      - [Validate Order Entry](#validate-order-entry)
+    - [**Order Resource**](#order-resource)
+      - [Create an order](#create-an-order)
+      - [Updates an order](#updates-an-order)
+      - [FInd an orders](#find-an-orders)
+      - [Search orders](#search-orders)
+      - [Validate Order](#validate-order)
+    - [**Order Item**](#order-item)
+      - [Search entries for an order](#search-entries-for-an-order)
+      - [Create an order entry](#create-an-order-entry)
+      - [Update an order entry](#update-an-order-entry)
+      - [Search an order entry](#search-an-order-entry)
+      - [Delete entry](#delete-entry)
 
 ## **Representations**
 
@@ -204,8 +207,9 @@ All representations are JSON objects submitted or received as payload to API req
 <!-- </details> -->
 
 ## **REST Endpoints**
+***
 
-- ## **Order Item Resource**
+## **Order Item Resource**
 
 ## Validate Order Entry
 
@@ -280,14 +284,15 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized,
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-
+- 405 Invalid input
 ```
 
 
-- ## **Order Resource**
+## **Order Resource**
 
 ## Create an order
 
@@ -859,18 +864,18 @@ Sample Request :
 }
 ```
 
-
-
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized,
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-
+- 405 Invalid input
 ```
+
 
 ## Updates an order
 
@@ -1164,7 +1169,7 @@ Sample Request :
 }
 ```
 
-<summary>Response - 200 (OK Updated)</summary>
+<summary>Response - 200 (OK)</summary>
 
 ```json
 {
@@ -1440,6 +1445,7 @@ Sample Request :
   "wrappingCostIncTax": 0,
   "wrappingCostIncTaxInCent": 0
 }
+
 ```
 
 HTTP Status Code: 
@@ -1447,11 +1453,13 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized,
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-
+- 405 Invalid input
 ```
+
 
 ## FInd an orders
 
@@ -1758,11 +1766,13 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized,
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-
+- 405 Invalid input
 ```
+
 
 ## Search orders
 
@@ -2069,11 +2079,13 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized,
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-
+- 405 Invalid input
 ```
+
 ## Validate Order
 
 Endpoint: ```​​/api​/v1​/orders​/validate```
@@ -2373,13 +2385,15 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized,
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-
+- 405 Invalid input
 ```
 
-- ## **Order Item**
+
+## **Order Item**
 
 ## Search entries for an order
 Endpoint: ```​​/api​/v1​/orders​/entries```
@@ -2686,11 +2700,13 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized,
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-
+- 405 Invalid input
 ```
+
 
 ## Create an order entry
 Endpoint: ```​​/api​/v1​/orders​/entries```
@@ -2812,11 +2828,13 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized,
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-
+- 405 Invalid input
 ```
+
 
 ## Update an order entry
 Endpoint: ```​​/api​/v1​/orders​/entries```
@@ -2883,7 +2901,7 @@ Sample Request :
 }
 ```
 
-<summary>Response - 200 (OK Updated)</summary>
+<summary>Response - 200 (OK)</summary>
 
 ```json
 {
@@ -2938,11 +2956,13 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized,
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-
+- 405 Invalid input
 ```
+
 
 ## Search an order entry
 
@@ -3249,11 +3269,13 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized,
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-
+- 405 Invalid input
 ```
+
 
 ## Delete entry
 
@@ -3561,16 +3583,18 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 401 Unauthorized,
+- 400 Bad request 
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
-
 ```
 
-***
-[Back to Index](index.md)
 
+***
+[Back to Top](#order-svc-api)
+
+[Back to Home](index.md#welcome-to-the-wishlist)
 
 
 
