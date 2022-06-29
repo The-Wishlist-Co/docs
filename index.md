@@ -25,7 +25,8 @@ For more detailed informaation, check out the collection and follow the service 
 
     - [*Representations*](inventorySvcAPI.md#representations)
     - [*REST Endpoints*](inventorySvcAPI.md#rest-endpoints)
-   
+      - [*Location Resource*](inventorySvcAPI.md#location-resource)
+      - [*Stock Level Resource*](inventorySvcAPI.md#stock-level-resource)
 
 - [**Merchant Service API**](merchantsSvcAPI.md#merchants-api)
   

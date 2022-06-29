@@ -20,19 +20,21 @@ An **inventory location** represents a geographical location where your stores, 
     <!-- - [Index](#index) -->
   - [**Representations**](#representations)
   - [**REST Endpoints**](#rest-endpoints)
-    - [Create an inventory Location](#create-an-inventory-location)
-    - [Create multiple inventory Locations](#create-multiple-inventory-locations)
-    - [Validate an inventory Location](#validate-an-inventory-location)
-    - [Find Inventory Location by id and locationRef](#find-inventory-location-by-id-and-locationref)
-    - [Delete Inventory Location](#delete-inventory-location)
-    - [Create an inventory level](#create-an-inventory-level)
-    - [Create Multiple inventory level](#create-multiple-inventory-level)
-    - [Validate inventory level](#validate-inventory-level)
-    - [Update an inventory level](#update-an-inventory-level)
-    - [Find Inventory level by id and stockRef](#find-inventory-level-by-id-and-stockref)
-    - [Find Inventory level for product and location](#find-inventory-level-for-product-and-location)
-    - [Find Aggregated inventory level for a product variant](#find-aggregated-inventory-level-for-a-product-variant)
-    
+    - [**Location Resource**](#location-resource)
+      - [Create an inventory Location](#create-an-inventory-location)
+      - [Create multiple inventory Locations](#create-multiple-inventory-locations)
+      - [Validate an inventory Location](#validate-an-inventory-location)
+      - [Find Inventory Location by id and locationRef](#find-inventory-location-by-id-and-locationref)
+      - [Delete Inventory Location](#delete-inventory-location)
+    - [**Stock Level Resource**](#stock-level-resource)
+      - [Create an inventory level](#create-an-inventory-level)
+      - [Create Multiple inventory level](#create-multiple-inventory-level)
+      - [Validate inventory level](#validate-inventory-level)
+      - [Update an inventory level](#update-an-inventory-level)
+      - [Find Inventory level by id and stockRef](#find-inventory-level-by-id-and-stockref)
+      - [Find Inventory level for product and location](#find-inventory-level-for-product-and-location)
+      - [Find Aggregated inventory level for a product variant](#find-aggregated-inventory-level-for-a-product-variant)
+      
 
 ## **Representations**
 
@@ -109,7 +111,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 ## **REST Endpoints**
 
-- ## **Location Resource**
+## **Location Resource**
 
 ## Create an inventory Location
 
@@ -214,7 +216,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> --> 
-<summary>Response - 201 (created)</summary>
+<summary>Response - 201 (Created)</summary>
 
 ``` json
 {
@@ -302,9 +304,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Create multiple inventory Locations
@@ -322,7 +327,8 @@ OAuth 2.0 Scopes : `Tenant authentication`
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-<!-- <details> --> 
+<!-- <details>  -->
+
 <summary> Sample Request : </summary>
 
 ```json
@@ -405,9 +411,11 @@ OAuth 2.0 Scopes : `Tenant authentication`
   }
 ]
 ```
+
 <!-- </details> -->
 
-<summary>Response - 201 (created)</summary>
+<summary>Response - 201 (Created)</summary>
+
 ```json
 {
   "address": {
@@ -491,9 +499,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 
@@ -601,9 +612,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Find Inventory Location by id and locationRef
@@ -719,9 +733,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Delete Inventory Location
@@ -752,15 +769,18 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <summary>Response - 204 (Deleted)</summary> 
 
 HTTP Status Code: 
-
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
 ```
 
-- ## **Stock Level Resource**
+## **Stock Level Resource**
 
 ## Create an inventory level
 
@@ -854,7 +874,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> --> 
-<summary>Response - 201 (created)</summary>
+<summary>Response - 201 (Created)</summary>
  
 ``` json
 {
@@ -934,9 +954,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Create Multiple inventory level
@@ -1033,7 +1056,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> --> 
-<summary>Response - 201 (created)</summary>
+<summary>Response - 201 (Created)</summary>
  
 ``` json
 {
@@ -1113,9 +1136,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Validate inventory level
@@ -1215,9 +1241,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Update an inventory level
@@ -1391,9 +1420,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 
@@ -1427,9 +1459,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 
@@ -1544,9 +1579,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 ## Find Aggregated inventory level for a product variant
@@ -1596,11 +1634,16 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 
 ***
-[Back to Index](index.md)
+[Back to Top](#inventory-api)
+
+[Back to Home](index.md#welcome-to-the-wishlist)
