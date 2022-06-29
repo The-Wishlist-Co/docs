@@ -244,7 +244,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Sample Response</summary>
+ <summary>Sample Response  - 201 (created)</summary>
  
  ```json
  {
@@ -531,7 +531,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ```
 <!-- </details> -->
 
-
+<summary>Response - 200 (OK Updated)</summary>
 
 HTTP Status Code: 
 ``` 
@@ -694,6 +694,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ```
 <!-- </details> -->
 
+<summary>Response - 200 (OK)</summary>
+
 HTTP Status Code: 
 ``` 
 - 200 OK
@@ -855,7 +857,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Sample Response</summary>
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
  {
@@ -1042,7 +1044,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Sample Response</summary>
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
  {
@@ -1207,7 +1209,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Sample Response</summary>
+<summary>Response - 200 (OK)</summary>
 
 ```json
  {
@@ -1374,7 +1376,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Sample Response</summary>
+<summary>Response - 200 (OK)</summary>
 
 ```json
  {
@@ -1547,7 +1549,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Sample Response</summary>
+<summary>Response - 200 (OK)</summary>
 
 ```json
  [
@@ -1714,8 +1716,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Sample Response</summary>
- OK
+<summary>Response - 204 (Deleted)</summary>
+
 <!-- </details> -->
 
 HTTP Status Code: 
@@ -1759,8 +1761,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Sample Response</summary>
- OK
+<summary>Response - 204 (Deleted)</summary>
 <!-- </details> -->
 
 HTTP Status Code: 
