@@ -13,6 +13,7 @@ The Authentication API provides Bearer authentication details.Bearer authenticat
   - [**Representations**](#representations)
   - [**REST Endpoints**](#rest-endpoints)
 	- [Generate Token](#generate-token)
+	
 	 <!-- - [Index](#index)
   - [**Representations**](#representations)
   - [**REST Endpoints**](#rest-endpoints)
