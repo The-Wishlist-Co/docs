@@ -1237,7 +1237,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Response - 200 (OK)</summary>
+ <summary>Response - 201 (OK)</summary>
 
 ```json
 {
@@ -2211,7 +2211,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 400 (Bad request)</summary>
  
  ```json
@@ -2224,9 +2224,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
+ </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -2239,9 +2239,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
+ </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -2254,7 +2254,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
+ </details> -->
  
 HTTP Status Code: 
 ```
@@ -4239,7 +4239,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 400 (Bad request)</summary>
  
  ```json
@@ -4252,9 +4252,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
+</details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -4267,9 +4267,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
+ </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -4282,7 +4282,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
+ </details> -->
  
 HTTP Status Code: 
 ```
@@ -5297,7 +5297,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
  
 <!-- </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 400 (Invalid status value)</summary>
  
  ```json
@@ -5310,9 +5310,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
+ </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 401 (Unauthorized)</summary>
  
  ```json
@@ -5325,9 +5325,9 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> --> 
+ </details> --> 
 
-<!-- <details> -->
+<!-- <details> 
  <summary>Response - 405 (Invalid input)</summary>
  
  ```json
@@ -5340,7 +5340,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 }
  ```
  
-<!-- </details> -->
+ </details> -->
  
 HTTP Status Code: 
 ```
