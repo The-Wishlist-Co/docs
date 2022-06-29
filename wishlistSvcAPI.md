@@ -1,3 +1,7 @@
+
+[Back to Index](index.md)
+***
+
 # **Wishlist API**
 The Wishlist resource stores information about a customer's wishlist, which includes the list products which the customer wish to buy.
 
