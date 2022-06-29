@@ -9,6 +9,19 @@ For more detailed informaation, check out the collection and follow the service 
 
 ### Api Collection Index
 
+
+- [**Authentication API**](authenticationsvcApi.md#authentication-api)	
+
+	API generates the bearer token , which will be used by clients in request header to interact with application.
+	
+	- [*Representations*](authenticationsvcApi.md#representations)
+
+	- [*REST Endpoints*](authenticationsvcApi.md#rest-endpoints)
+
+		- [Generate Token](authenticationsvcApi.md#generate-token)
+		
+      
+
 - [**Customer Service API**](customersvcApi.md#customer-api)
   
   The Customer Service API stores information about a shop's customers, it also holds information on the status of a customer's account. You can create, retrieve, update, and delete customers using the Customer Service api.
@@ -60,6 +73,10 @@ For more detailed informaation, check out the collection and follow the service 
       - [*Product Service*](productsvcAPI.md#product-service)
          
       - [*Product Variant Service*](productsvcAPI.md#product-variant-service)
+     
+       - [*Product Service*](productsvcAPI.md#product-service)
+     
+       - [*Product Variant Service*](productsvcAPI.md#product-variant-service)
      
 
 - [**Order Service API**](ordersSvcApi.md#order-svc-api)
@@ -123,15 +140,3 @@ For more detailed informaation, check out the collection and follow the service 
 
 
     
-
-- [**Authentication API**](authenticationsvcApi.md#authentication-api)	
-
-	API generates the bearer token , which will be used by clients in request header to interact with application.
-	
-	- [*Representations*](authenticationsvcApi.md#representations)
-
-	- [*REST Endpoints*](authenticationsvcApi.md#rest-endpoints)
-
-		- [Generate Token](authenticationsvcApi.md#generate-token)  
-
-
