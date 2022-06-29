@@ -214,7 +214,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> --> 
- <summary> Sample Response : </summary>
+<summary>Response - 201 (created)</summary>
 
 ``` json
 {
@@ -407,7 +407,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 ```
 <!-- </details> -->
 
-<summary> Sample Response : </summary>
+<summary>Response - 201 (created)</summary>
 ```json
 {
   "address": {
@@ -595,6 +595,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 ```
 <!-- </details> -->
 
+<summary>Response - 200 (OK)</summary>
 
 HTTP Status Code: 
 ``` 
@@ -712,6 +713,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 
 ```
 <!-- </details> --> 
+<summary>Response - 200 (OK)</summary>
 
 HTTP Status Code: 
 ``` 
@@ -746,6 +748,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 "locationRef":"{{Location reference}}"
 ```
 <!-- </details> --> 
+
+<summary>Response - 204 (Deleted)</summary> 
 
 HTTP Status Code: 
 
@@ -850,7 +854,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> --> 
- <summary> Sample Response : </summary>
+<summary>Response - 201 (created)</summary>
  
 ``` json
 {
@@ -1029,7 +1033,7 @@ OAuth 2.0 Scopes : `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> --> 
- <summary> Sample Response : </summary>
+<summary>Response - 201 (created)</summary>
  
 ``` json
 {
@@ -1205,7 +1209,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ```
 <!-- </details> -->
 
-
+<summary>Response - 200 (OK)</summary>
 
 HTTP Status Code: 
 ``` 
@@ -1306,7 +1310,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> --> 
- <summary> Sample Response : </summary>
+<summary>Response - 200 (OK Updated)</summary>
  
 ``` json
 {
@@ -1417,6 +1421,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ```
 <!-- </details> --> 
 
+<summary>Response - 200 (OK)</summary>
+
 HTTP Status Code: 
 ``` 
 - 200 OK
@@ -1456,7 +1462,7 @@ Request Parameters: `locationId  : inventory location Id, locationRef : Inventor
 <!-- </details> --> 
 
 <!-- <details> --> 
- <summary> Sample Response : </summary>
+<summary>Response - 200 (OK)</summary>
  
 ``` json
 [
@@ -1567,7 +1573,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> --> 
 
 <!-- <details> --> 
- <summary> Sample Response : </summary>
+<summary>Response - 200 (OK)</summary>
  
 ``` json
 {
