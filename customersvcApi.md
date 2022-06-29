@@ -244,7 +244,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Sample Response  - 201 (created)</summary>
+ <summary>Sample Response  - 201 (Created)</summary>
  
  ```json
  {
@@ -370,7 +370,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details>  -->
 
 HTTP Status Code: 
-``` 
+```json 
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -531,10 +531,10 @@ OAuth 2.0 Scopes: `Tenant authentication`
 ```
 <!-- </details> -->
 
-<summary>Response - 200 (OK Updated)</summary>
+<summary>Response - 200 (OK)</summary>
 
 HTTP Status Code: 
-``` 
+``` json
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -697,7 +697,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <summary>Response - 200 (OK)</summary>
 
 HTTP Status Code: 
-``` 
+``` json
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -857,7 +857,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
-<summary>Response - 200 (OK Updated)</summary>
+<summary>Response - 200 (OK)</summary>
 
 ```json
  {
@@ -983,7 +983,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 HTTP Status Code: 
-``` 
+``` json
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -1044,7 +1044,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 <!-- <details> -->
-<summary>Response - 200 (OK Updated)</summary>
+<summary>Response - 200 (OK)</summary>
 
 ```json
  {
@@ -1170,7 +1170,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
 
 HTTP Status Code: 
-``` 
+``` json
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -1336,7 +1336,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 HTTP Status Code: 
-``` 
+``` json
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -1502,7 +1502,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- <details> -->
 
 HTTP Status Code: 
-``` 
+``` json
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -1677,7 +1677,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 HTTP Status Code: 
-``` 
+``` json
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -1721,7 +1721,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 HTTP Status Code: 
-``` 
+``` json
 - 200 OK
 - 201 Created
 - 204 Deleted
@@ -1765,7 +1765,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 <!-- </details> -->
 
 HTTP Status Code: 
-``` 
+``` json
 - 200 OK
 - 201 Created
 - 204 Deleted
