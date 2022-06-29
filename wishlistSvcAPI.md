@@ -200,7 +200,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 201 (created)</summary>
 
 ```json
 {
@@ -363,7 +363,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response : 
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
 {
@@ -442,7 +442,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
 
-
+<summary>Response - 204 (Deleted)</summary> 
 
  
 HTTP Status Code: 
@@ -476,7 +476,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `  
 
-Sample Response:
+<summary>Response - 200 (OK)</summary>
+
 ```json
 {
   "attributeGroups": {
@@ -589,7 +590,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Path Variable: `customerId - Unique Customer Id`
 
-Sample Response:
+<summary>Response - 200 (OK)</summary>
 
 ```json
 [
@@ -705,7 +706,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Path Variable: `customerRef - Unique Customer Ref`
 
-Sample Response:
+<summary>Response - 200 (OK)</summary>
 
 ```json 
 [
@@ -871,7 +872,7 @@ Sample Request:
 
 <!-- </details> -->
 
-Sample Response:
+<summary>Response - 201 (created)</summary>
 
 ```json
 {
@@ -993,7 +994,7 @@ Sample Request:
 ```
 <!-- </details> -->
 
-Sample Response
+<summary>Response - 200 (OK Updated)</summary>
 
 ```json
 {
@@ -1068,6 +1069,8 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Request Parameters: `Id  : Wishlist item Id, wishlistId : Wishlist Id`
 
+<summary>Response - 204 (Deleted)</summary> 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
@@ -1099,7 +1102,7 @@ OAuth 2.0 Scopes: `Tenant authentication`
 
 Path Variable: `id - Id , wishlistId - Wishlist Id `
 
-Sample Response:
+<summary>Response - 200 (OK)</summary>
 
 ```json 
 {
