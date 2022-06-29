@@ -12,63 +12,68 @@ The Merchants resource stores information about a merchant and their stores.
 - [**Merchants API**](#merchants-api)
     <!-- - [Index](#index) -->
   - [**Representations**](#representations)
-    - [Register Merchant](#register-merchant)
-    - [Update Merchant](#update-merchant)
-    - [Deactivate Merchant](#deactivate-merchant)
-    - [Find Merchant](#find-merchant)
-    - [Create a Plan](#create-a-plan)
-    - [Update a Plan](#update-a-plan)
-    - [Delete a Plan](#delete-a-plan)
-    - [Find Plan](#find-plan)
-    - [Find All Plans](#find-all-plans)
-    - [Create a Store](#create-a-store)
-    - [Update a Store](#update-a-store)
-    - [Find a Store](#find-a-store)
-    - [Find a Store](#find-a-store-1)
-    - [Deactivate Store](#deactivate-store)
-    - [Create Subscription plan](#create-subscription-plan)
-    - [Update Subscription plan](#update-subscription-plan)
-    - [Cancel Subscription plan](#cancel-subscription-plan)
-    - [Get Additional Config](#get-additional-config)
-    - [Get All Config](#get-all-config)
-    - [Get Entity Config](#get-entity-config)
-    - [Get Store Tenant Config](#get-store-tenant-config)
-    - [Create Additional Config](#create-additional-config)
-    - [Update Additional Config](#update-additional-config)
-    - [Create App Config Entity Config](#create-app-config-entity-config)
-    - [Update App Config Entity Config](#update-app-config-entity-config)
-    - [Create Customer Entity Config](#create-customer-entity-config)
-    - [Update Customer Entity Config](#update-customer-entity-config)
-    - [Create Email Template Entity Config](#create-email-template-entity-config)
-    - [Update Email Template Entity Config](#update-email-template-entity-config)
-    - [Create Inventory Entity Config](#create-inventory-entity-config)
-    - [Update Inventory Entity Config](#update-inventory-entity-config)
-    - [Create Location Entity Config](#create-location-entity-config)
-    - [Update Location Entity Config](#update-location-entity-config)
-    - [Create Order Entity Config](#create-order-entity-config)
-    - [Update Order Entity Config](#update-order-entity-config)
-    - [Create Price Entity Config](#create-price-entity-config)
-    - [Update Price Entity Config](#update-price-entity-config)
-    - [Create Product Entity Config](#create-product-entity-config)
-    - [Update Product Entity Config](#update-product-entity-config)
-    - [Create Store Entity Config](#create-store-entity-config)
-    - [Update Store Entity Config](#update-store-entity-config)
-    - [Create Wishlist Entity Config](#create-wishlist-entity-config)
-    - [Update Wishlist Entity Config](#update-wishlist-entity-config)
-    - [Get Notification Config](#get-notification-config)
-    - [Create Notification Config](#create-notification-config)
-    - [Create BackInStock Notification Settings](#create-backinstock-notification-settings)
-    - [Update BackInStock Notification Settings](#update-backinstock-notification-settings)
-    - [Delete BackInStock Notification Settings](#delete-backinstock-notification-settings)
-    - [Create LowInStock Notification Settings](#create-lowinstock-notification-settings)
-    - [Update LowInStock Notification Settings](#update-lowinstock-notification-settings)
-    - [Delete LowInStock Notification Settings](#delete-lowinstock-notification-settings)
-    - [Create PriceDrop Notification Settings](#create-pricedrop-notification-settings)
-    - [Update PriceDrop Notification Settings](#update-pricedrop-notification-settings)
-    - [Delete PriceDrop Notification Settings](#delete-pricedrop-notification-settings)
-    - [Create ReminderEmail Notification Settings](#create-reminderemail-notification-settings)
-    - [Update ReminderEmail Notification Settings](#update-reminderemail-notification-settings)
-    - [Delete ReminderEmail Notification Settings](#delete-reminderemail-notification-settings)
+  - [**REST Endpoints**](#rest-endpoints)
+    - [**Merchant Resource**](#merchant-resource)
+      - [Register Merchant](#register-merchant)
+      - [Update Merchant](#update-merchant)
+      - [Deactivate Merchant](#deactivate-merchant)
+      - [Find Merchant](#find-merchant)
+    - [**Plan Resource**](#plan-resource)
+      - [Create a Plan](#create-a-plan)
+      - [Update a Plan](#update-a-plan)
+      - [Delete a Plan](#delete-a-plan)
+      - [Find Plan](#find-plan)
+      - [Find All Plans](#find-all-plans)
+    - [**Store Resource**](#store-resource)
+      - [Create a Store](#create-a-store)
+      - [Update a Store](#update-a-store)
+      - [Find a Store](#find-a-store)
+      - [Find a Store](#find-a-store-1)
+      - [Deactivate Store](#deactivate-store)
+      - [Create Subscription plan](#create-subscription-plan)
+      - [Update Subscription plan](#update-subscription-plan)
+      - [Cancel Subscription plan](#cancel-subscription-plan)
+    - [**Store Config Resource**](#store-config-resource)
+      - [Get Additional Config](#get-additional-config)
+      - [Get All Config](#get-all-config)
+      - [Get Entity Config](#get-entity-config)
+      - [Get Store Tenant Config](#get-store-tenant-config)
+      - [Create Additional Config](#create-additional-config)
+      - [Update Additional Config](#update-additional-config)
+      - [Create App Config Entity Config](#create-app-config-entity-config)
+      - [Update App Config Entity Config](#update-app-config-entity-config)
+      - [Create Customer Entity Config](#create-customer-entity-config)
+      - [Update Customer Entity Config](#update-customer-entity-config)
+      - [Create Email Template Entity Config](#create-email-template-entity-config)
+      - [Update Email Template Entity Config](#update-email-template-entity-config)
+      - [Create Inventory Entity Config](#create-inventory-entity-config)
+      - [Update Inventory Entity Config](#update-inventory-entity-config)
+      - [Create Location Entity Config](#create-location-entity-config)
+      - [Update Location Entity Config](#update-location-entity-config)
+      - [Create Order Entity Config](#create-order-entity-config)
+      - [Update Order Entity Config](#update-order-entity-config)
+      - [Create Price Entity Config](#create-price-entity-config)
+      - [Update Price Entity Config](#update-price-entity-config)
+      - [Create Product Entity Config](#create-product-entity-config)
+      - [Update Product Entity Config](#update-product-entity-config)
+      - [Create Store Entity Config](#create-store-entity-config)
+      - [Update Store Entity Config](#update-store-entity-config)
+      - [Create Wishlist Entity Config](#create-wishlist-entity-config)
+      - [Update Wishlist Entity Config](#update-wishlist-entity-config)
+      - [Get Notification Config](#get-notification-config)
+      - [Create Notification Config](#create-notification-config)
+      - [Create BackInStock Notification Settings](#create-backinstock-notification-settings)
+      - [Update BackInStock Notification Settings](#update-backinstock-notification-settings)
+      - [Delete BackInStock Notification Settings](#delete-backinstock-notification-settings)
+      - [Create LowInStock Notification Settings](#create-lowinstock-notification-settings)
+      - [Update LowInStock Notification Settings](#update-lowinstock-notification-settings)
+      - [Delete LowInStock Notification Settings](#delete-lowinstock-notification-settings)
+      - [Create PriceDrop Notification Settings](#create-pricedrop-notification-settings)
+      - [Update PriceDrop Notification Settings](#update-pricedrop-notification-settings)
+      - [Delete PriceDrop Notification Settings](#delete-pricedrop-notification-settings)
+      - [Create ReminderEmail Notification Settings](#create-reminderemail-notification-settings)
+      - [Update ReminderEmail Notification Settings](#update-reminderemail-notification-settings)
+      - [Delete ReminderEmail Notification Settings](#delete-reminderemail-notification-settings)
 
 ## **Representations**
 
@@ -178,6 +183,9 @@ All representations are JSON objects submitted or received as payload to API req
 <!-- </details> -->
 
 
+## **REST Endpoints**
+
+## **Merchant Resource**
 
 ## Register Merchant
 
@@ -273,7 +281,7 @@ Sample Request :
 ```
 <!-- </details> -->
 
-<summary>Response - 201 (created)</summary>
+<summary>Response - 201 (Created)</summary>
 
 ```json
 {
@@ -349,15 +357,19 @@ Sample Request :
 
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-
+- 405 Invalid input
 ```
+
 
 
 ## Update Merchant
@@ -528,17 +540,19 @@ Sample Request :
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
 - 204 Deleted
-- 400 Bad request unable to create customer
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
 ```
+
 
 
 ### Deactivate Merchant
@@ -634,14 +648,19 @@ Request Parameters: `id  : Merchant Id`
 ```
 <summary>Response - 200 (OK Updated)</summary>
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Find Merchant
@@ -737,14 +756,22 @@ Request Parameters: `id  : Mechant Id`
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
+
+## **Plan Resource**
+
 
 ### Create a Plan
 
@@ -799,14 +826,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Update a Plan
 
@@ -866,9 +898,12 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 
@@ -908,14 +943,19 @@ Request Parameters: `planId  : unique Plan Id`
 ```
 <summary>Response - 204 (Deleted)</summary> 
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Find Plan
@@ -954,14 +994,19 @@ Request Parameters: `planId  : Unique plan Id`
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Find All Plans
 
@@ -998,16 +1043,22 @@ OAuth 2.0 Scopes : `Tenant authentication`
 ]
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
-### Create a Store
+
+## **Store Resource**
+## Create a Store
 
 Endpoint: ```​/api/v1/store```
 
@@ -1097,14 +1148,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Update a Store
 
@@ -1197,14 +1253,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 
@@ -1262,14 +1323,19 @@ Request Parameters: `storeId  : Unique store Id,storeKey: store key`
 ```
 
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Find a Store
@@ -1325,14 +1391,19 @@ Request Parameters: `storeId  : Unique store Id`
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Deactivate Store
 
@@ -1387,14 +1458,19 @@ Request Parameters: `storeId  : Unique Store Id`
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Create Subscription plan
 
@@ -1453,10 +1529,14 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Update Subscription plan
 
@@ -1511,14 +1591,19 @@ Request Parameters: `merchantId  : Unique Merchant Id,storeId: Unique store id,p
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Cancel Subscription plan
 
@@ -1573,16 +1658,22 @@ Request Parameters: `merchantId  : Unique Merchant Id,storeId: Unique store id `
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
-### Get Additional Config
+## **Store Config Resource**
+
+## Get Additional Config
 
 Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/additionalConfigs```
 
@@ -1615,14 +1706,19 @@ Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Get All Config
 
@@ -1761,14 +1857,19 @@ Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Get Entity Config
 
@@ -1871,10 +1972,14 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Get Store Tenant Config
 
@@ -1908,15 +2013,19 @@ Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 }
 ```
 
-
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
+
 
 ### Create Additional Config
 
@@ -1970,14 +2079,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Update Additional Config
@@ -2036,10 +2150,14 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Create App Config Entity Config
@@ -2122,14 +2240,19 @@ Sample Request:
 ```
 
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Update App Config Entity Config
@@ -2210,14 +2333,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Create Customer Entity Config
@@ -2297,14 +2425,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Update Customer Entity Config
 
@@ -2383,14 +2516,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Create Email Template Entity Config
 
@@ -2469,14 +2607,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Update Email Template Entity Config
 
@@ -2556,14 +2699,19 @@ Sample Request:
 ```
 
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
+- 204 Deleted
+- 400 Bad request
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Create Inventory Entity Config
 
@@ -2645,10 +2793,14 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Update Inventory Entity Config
@@ -2731,10 +2883,14 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Create Location Entity Config
@@ -2814,14 +2970,19 @@ Sample Request:
 ```
 
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Update Location Entity Config
@@ -2904,10 +3065,14 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Create Order Entity Config
@@ -2992,10 +3157,14 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Update Order Entity Config
@@ -3078,10 +3247,14 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Create Price Entity Config
@@ -3160,14 +3333,19 @@ Sample Request:
   }
 }
 ```
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Update Price Entity Config
@@ -3246,14 +3424,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Create Product Entity Config
@@ -3333,13 +3516,17 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
 
 
@@ -3423,14 +3610,19 @@ Sample Request:
 
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Create Store Entity Config
 
@@ -3509,14 +3701,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Update Store Entity Config
 
@@ -3594,14 +3791,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Create Wishlist Entity Config
 
@@ -3686,10 +3888,14 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Update Wishlist Entity Config
 
@@ -3772,10 +3978,14 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Get Notification Config
 
@@ -3796,14 +4006,19 @@ Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 <summary>Response - 200 (OK)</summary>
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Create Notification Config
@@ -3888,14 +4103,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Create BackInStock Notification Settings
@@ -3940,14 +4160,19 @@ Sample Request:
 
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Update BackInStock Notification Settings
@@ -3991,14 +4216,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Delete BackInStock Notification Settings
@@ -4020,14 +4250,19 @@ Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 <summary>Response - 204 (Deleted)</summary>
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
-
+- 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Create LowInStock Notification Settings
@@ -4076,10 +4311,14 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Update LowInStock Notification Settings
@@ -4123,14 +4362,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Delete LowInStock Notification Settings
@@ -4152,14 +4396,19 @@ Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 <summary>Response - 204 (Deleted)</summary>
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
-
+- 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Create PriceDrop Notification Settings
 
@@ -4202,14 +4451,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Update PriceDrop Notification Settings
@@ -4256,10 +4510,14 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Delete PriceDrop Notification Settings
 
@@ -4284,9 +4542,14 @@ HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
-- 403 Forbidden
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
 ```
+
 
 
 ### Create ReminderEmail Notification Settings
@@ -4330,14 +4593,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Update ReminderEmail Notification Settings
 
@@ -4380,14 +4648,19 @@ Sample Request:
 }
 ```
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ### Delete ReminderEmail Notification Settings
 
@@ -4408,14 +4681,19 @@ Request Parameters: `storeId  : Unique store Id,merchId: Unique merchant Id`
 
 <summary>Response - 204 (Deleted)</summary> 
 
+
 HTTP Status Code: 
 ``` 
 - 200 OK
 - 201 Created
-- 401 Unauthorized
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
+- 405 Invalid input
 ```
+
 
 ***
 [Back to Top](#merchants-api)

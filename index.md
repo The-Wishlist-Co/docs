@@ -53,6 +53,14 @@ For more detailed informaation, check out the collection and follow the service 
   - [*Representations*](merchantsSvcAPI.md#representations)
 
   - [*REST Endpoints*](merchantsSvcAPI.md#rest-endpoints)
+    
+    - [*Merchant Resource*](merchantsSvcAPI.md#merchant-resource)
+    
+    - [*Plan Resource*](merchantsSvcAPI.md#plan-resource)
+    
+    - [*Store Resource*](merchantsSvcAPI.md#store-resource)
+    
+    - [*Store Config Resource*](merchantsSvcAPI.md#store-config-resource)
 
   
 - [**Price Service API**](priceSvcAPI.md#price-api)
