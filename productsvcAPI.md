@@ -260,7 +260,7 @@ Endpoint: ```/api/v2/products```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -649,7 +649,7 @@ Endpoint: ```/api/v2/products```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 
  <summary>Request Headers :</summary>
@@ -1169,7 +1169,7 @@ Endpoint: ```/api/v2/products/lookup```
 
 Method: ``` GET ``` 
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 
 
@@ -1585,7 +1585,7 @@ Endpoint: ```/api/v2/products/validate```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -1861,7 +1861,7 @@ Endpoint: ```/api/v2/products/validate/{id}```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 
  <summary>Request Headers :</summary>
@@ -2271,7 +2271,7 @@ Endpoint: ```/api/v2/products/validateRef/{ref}```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -2682,7 +2682,7 @@ Endpoint: ```/api/v2/products/{id}```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 
  <summary>Request Headers :
@@ -2966,7 +2966,7 @@ Endpoint: ```/api/v2/products/{id}```
 
 Method: ``` DELETE ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -3007,7 +3007,7 @@ Endpoint: ```/api/v2/products/{productRef}/byref```
 
 Method: ``` GET ``` 
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -3290,7 +3290,7 @@ Endpoint: ```/api/v2/products/{productRef}/byref```
 
 Method: ``` DELETE ``` 
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 
  <summary>Request Headers :
@@ -3333,7 +3333,7 @@ Endpoint: ```/api/v2/uploadProducts```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 
  <summary>Request Headers :
@@ -3618,7 +3618,7 @@ Endpoint: ```/api/v2/products/variants```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 
  <summary>Request Headers :
@@ -3917,7 +3917,7 @@ Endpoint: ```/api/v2/products/variants```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :
 
@@ -4214,7 +4214,7 @@ Endpoint: ```/api/v2/products/variants/validate```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 
  <summary>Request Headers :
@@ -4383,7 +4383,7 @@ Endpoint: ```/api/v2/products/variants/{id}```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :
 
@@ -4563,7 +4563,7 @@ Endpoint: ```/api/v2/products/variants/{variantRef}/byref```
 
 Method: ``` GET ``` 
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 
  <summary>Request Headers :
@@ -4744,7 +4744,7 @@ Endpoint: ```/api/v2/products/{baseProductRef}/variants/{variantRef}/byref```
 
 Method: ``` DELETE ``` 
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :
 
@@ -4787,7 +4787,7 @@ Endpoint: ```/api/v2/products/{productId}/variants```
 
 Method: ``` GET ``` 
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -4828,7 +4828,7 @@ Endpoint: ```/api/v2/products/{productId}/variants```
 
 Method: ``` GET ``` 
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :
 
@@ -5003,7 +5003,7 @@ Endpoint: ```/api/v2/products/{productId}/variants/{variantId}```
 
 Method: ``` DELETE ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :
 
@@ -5045,7 +5045,7 @@ Endpoint: ```/api/v2/uploadVariants```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 
  <summary>Request Headers :</summary>

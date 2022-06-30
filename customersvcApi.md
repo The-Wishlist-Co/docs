@@ -104,7 +104,7 @@ Method: ``` POST ```
 
 Method Name: `createCustomer`
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <!-- <details> -->
  <summary>Request Headers :</summary>
@@ -389,7 +389,7 @@ Method: ``` POST ```
 
 Method Name: `createCustomer`
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <!-- <details>-->
  <summary>Request Headers</summary>
@@ -554,7 +554,7 @@ Method: ``` POST ```
 
 Method Name: `validateCustomerRequest`
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <!--<details> -->
  <summary>Request Headers</summary>
@@ -716,7 +716,7 @@ Method: ``` PUT ```
 
 Method Name: `updateCustomer`
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <!-- <details> -->
  <summary>Request Headers</summary>
@@ -1002,7 +1002,7 @@ Method: ``` POST ```
 
 Method Name: `addCustomerAddress`
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <!--<details> -->
  <summary>Request Headers</summary>
@@ -1190,7 +1190,7 @@ Method: ``` GET ```
 
 Method Name: `getCustomer`
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <!--<details> -->
  <summary>Request Headers</summary>
@@ -1356,7 +1356,7 @@ Method: ``` GET ```
 
 Method Name: `getCustomerByRef`
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <!-- <details> -->
  <summary>Request Headers</summary>
@@ -1523,7 +1523,7 @@ Method: ``` GET ```
 
 Method Name: `lookupCustomer`
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <!-- <details> -->
  <summary>Request Headers</summary>
@@ -1697,7 +1697,7 @@ Method: ``` DELETE ```
 
 Method Name: `deleteCustomer`
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <!-- <details> -->
  <summary>Request Headers</summary>
@@ -1741,7 +1741,7 @@ Method: ``` DELETE ```
 
 Method Name: `deleteCustomerByRef`
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <!-- <details> -->
  <summary>Request Headers</summary>

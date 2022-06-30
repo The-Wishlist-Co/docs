@@ -105,7 +105,7 @@ Endpoint: ```/api/wishlists```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -267,7 +267,7 @@ Endpoint: ```/api/wishlists```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -430,7 +430,7 @@ Endpoint: ```/api/wishlist```
 
 Method: ``` DELETE ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -464,7 +464,7 @@ Endpoint: ```/api/wishlists/```
 
 Method: ``` GET ``` 
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -579,7 +579,7 @@ Endpoint: ```/api/wishlists/customer/{customerId}```
 
 Method: ``` GET ``` 
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -695,7 +695,7 @@ Endpoint: ```/api/wishlists/customer/{customerRef}/byref```
 
 Method: ``` GET ``` 
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -812,7 +812,7 @@ Endpoint: ```/api/wishlist/items```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -936,7 +936,7 @@ Endpoint: ```/api/wishlist/items```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -1058,7 +1058,7 @@ Endpoint: ```/api/wishlist/{wishlistId}/items/{id}```
 
 Method: ``` DELETE ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -1091,7 +1091,7 @@ Endpoint: ```​/api​/wishlist​/{wishlistId}​/items​/{id}```
 
 Method: ``` GET ``` 
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 

@@ -193,7 +193,7 @@ Method: ``` POST ```
 
 Endpoint: ```​/api​/v1​/merchant```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -378,7 +378,7 @@ Method: ``` PUT ```
 
 Endpoint: ```​/api​/v1​/merchant```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -561,7 +561,7 @@ Endpoint: ```/api/v1/merchant/{id}/deactivate```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -669,7 +669,7 @@ Endpoint: ```/api/v1/merchant/{id}```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -779,7 +779,7 @@ Endpoint: ```​/api​/v1​/plan​/```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -846,7 +846,7 @@ Endpoint: ```​/api​/v1​/plan​/```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -913,7 +913,7 @@ Endpoint: ```/api/v1/plan/{planId}/```
 
 Method: ``` DELETE ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -964,7 +964,7 @@ Endpoint: ```/api/v1/plan/{planId}/```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -1014,7 +1014,7 @@ Endpoint: ```/api/v1/plans/```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -1064,7 +1064,7 @@ Endpoint: ```​/api/v1/store```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -1168,7 +1168,7 @@ Endpoint: ```/api/v1/store/{id}```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -1275,7 +1275,7 @@ Endpoint: ```/api/v1/store```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -1344,7 +1344,7 @@ Endpoint: ```/api/v1/store/{storeId}```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -1411,7 +1411,7 @@ Endpoint: ```/api/v1/stores/{storeId}/deactivate```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -1478,7 +1478,7 @@ Endpoint: ```/api/v1/merchant/{merchantId}/store/{storeId}/plan/{planId}/```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -1544,7 +1544,7 @@ Endpoint: ```/api/v1/merchant/{merchantId}/store/{storeId}/plan/{planId}```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -1611,7 +1611,7 @@ Endpoint: ```/api/v1/merchant/{merchantId}/store/{storeId}```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -1679,7 +1679,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/additionalConfigs```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -1726,7 +1726,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/allConfig```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -1877,7 +1877,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityConfig```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -1987,7 +1987,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/tenantConfig```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -2033,7 +2033,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/additionalConfigs```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -2100,7 +2100,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/additionalConfigs```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -2166,7 +2166,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/appconfig``
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -2261,7 +2261,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/appconfig``
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -2354,7 +2354,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/customer```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -2445,7 +2445,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/customer```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -2536,7 +2536,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/emailtempla
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -2627,7 +2627,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/emailtempla
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -2719,7 +2719,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/inventory``
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -2809,7 +2809,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/inventory``
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -2899,7 +2899,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/location```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -2991,7 +2991,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/location```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -3081,7 +3081,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/order```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -3173,7 +3173,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/order```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -3263,7 +3263,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/price```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -3354,7 +3354,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/price```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -3445,7 +3445,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/product```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -3536,7 +3536,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/product```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -3630,7 +3630,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/store```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -3721,7 +3721,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/store```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -3811,7 +3811,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/wishlist```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -3903,7 +3903,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/entityconfig/wishlist```
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -3993,7 +3993,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -4027,7 +4027,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification```
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -4124,7 +4124,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/backInStock
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -4181,7 +4181,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/backInStock
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -4237,7 +4237,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/backInStock
 
 Method: ``` DELETE ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -4271,7 +4271,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/lowInStock`
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -4327,7 +4327,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/lowInStock`
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -4383,7 +4383,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/lowInStock`
 
 Method: ``` DELETE ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -4416,7 +4416,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/priceDrop``
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -4472,7 +4472,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/priceDrop``
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -4525,7 +4525,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/priceDrop``
 
 Method: ``` DELETE ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -4558,7 +4558,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/reminderEma
 
 Method: ``` POST ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -4613,7 +4613,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/reminderEma
 
 Method: ``` PUT ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 
@@ -4668,7 +4668,7 @@ Endpoint: ```/api/v1/merchant/{merchId}/store/{storeId}/notification/reminderEma
 
 Method: ``` DELETE ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers : </summary>
 

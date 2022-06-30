@@ -217,7 +217,7 @@ Endpoint: ```​/api​/v1​/orders​/entries​/validate```
 
 Method: ```POST ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -300,7 +300,7 @@ Endpoint: ```​/api​/v1​/orders​```
 
 Method: ```POST ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -883,7 +883,7 @@ Endpoint: ```​/api​/v1​/orders​```
 
 Method: ```PUT ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -1467,7 +1467,7 @@ Endpoint: ```​/api​/v1​/orders```
 
 Method: ```GET ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -1780,7 +1780,7 @@ Endpoint: ```​​/api​/v1​/orders​/search```
 
 Method: ```GET ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -2092,7 +2092,7 @@ Endpoint: ```​​/api​/v1​/orders​/validate```
 
 Method: ```POST ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -2400,7 +2400,7 @@ Endpoint: ```​​/api​/v1​/orders​/entries```
 
 Method: ```GET ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -2713,7 +2713,7 @@ Endpoint: ```​​/api​/v1​/orders​/entries```
 
 Method: ```POST ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -2841,7 +2841,7 @@ Endpoint: ```​​/api​/v1​/orders​/entries```
 
 Method: ```PUT ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -2970,7 +2970,7 @@ Endpoint: ```​​/api​/v1​/orders​/entry```
 
 Method: ```GET ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -3283,7 +3283,7 @@ Endpoint: ```​​/api​/v1​/orders​/entry```
 
 Method: ```DELETE ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 
 <summary>Request Headers :</summary>

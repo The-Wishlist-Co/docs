@@ -58,7 +58,7 @@ Method: ``` POST ```
 
 Endpoint: ```/api/prices```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers</summary>
 
@@ -123,7 +123,7 @@ Method: ``` PUT ```
 
 Endpoint: ```/api/prices```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers</summary>
 
@@ -186,7 +186,7 @@ Endpoint: ```/api/prices/{id}```
 
 Method: ``` DELETE ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers</summary>
 
@@ -217,7 +217,7 @@ Endpoint: ```/api/prices```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers</summary>
 
@@ -264,7 +264,7 @@ Method: ``` POST ```
 
 Endpoint: ```​/api/prices/validate```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers</summary>
 
@@ -311,7 +311,7 @@ Endpoint: ```/api/prices/all```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers</summary>
 

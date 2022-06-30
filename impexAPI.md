@@ -145,7 +145,7 @@ Method: ``` POST ```
 
 Endpoint: ```​​/api​/import​/batch```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md) 
 
 <summary>Request Headers :</summary>
 
@@ -195,7 +195,7 @@ Method: ``` PUT ```
 
 Endpoint: ```​/api​/import​/batch​/state-change```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -243,7 +243,7 @@ Method: ``` GET ```
 
 Endpoint: ```​/api​/import​/batch​/{id}```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -294,7 +294,7 @@ Method: ``` GET ```
 
 Endpoint: ```​​/api​/import​/batch```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -362,7 +362,7 @@ Method: ``` POST ```
 
 Endpoint: ```​​​/api​/import​/resource```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -1375,7 +1375,7 @@ Method: ``` PUT ```
 
 Endpoint: ```​/api​/import​/resource​/update-state```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -1428,7 +1428,7 @@ Method: ``` GET ```
 
 Endpoint: ```​/api​/import​/resource​/{id}```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 
@@ -1477,7 +1477,7 @@ Method: ``` GET ```
 
 Endpoint: ```​​/api​/import​/resource```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers :</summary>
 

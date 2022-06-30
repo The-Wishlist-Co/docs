@@ -76,7 +76,7 @@ Method: ``` POST ```
 
 Endpoint: ```​​/api​/api/v1/events```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -150,7 +150,7 @@ Method: ``` GET ```
 
 Endpoint: ```​/api/v1/events/{eventId}```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -207,7 +207,7 @@ Method: ``` POST ```
 
 Endpoint: ```​​​/api/v1/event-subscription```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -280,7 +280,7 @@ Method: ``` PUT ```
 
 Endpoint: ```​​​/api/v1/event-subscription```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -353,7 +353,7 @@ Method: ``` GET ```
 
 Endpoint: ```​​​/api/v1/event-subscription```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -409,7 +409,7 @@ Method: ``` GET ```
 
 Endpoint: ```​​​/api/v1/event-subscription/{Id}```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 
@@ -463,7 +463,7 @@ Method: ``` PUT ```
 
 Endpoint: ```​​​​/api​/v1​/event-subscription​/{Id}​/deactivate```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
  <summary>Request Headers :</summary>
 

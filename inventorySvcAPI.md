@@ -119,7 +119,7 @@ Method : ``` POST ```
 
 Endpoint : ```/api/location```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <!-- <details> -->
  <summary>Request Headers</summary>
@@ -318,7 +318,7 @@ Method : ``` POST ```
 
 Endpoint : ```/api/locations```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers</summary>
 
@@ -514,7 +514,7 @@ Method : ``` POST ```
 
 Endpoint : ```​/api​/location​/validate```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers</summary>
 
@@ -626,7 +626,7 @@ Endpoint : ```/api/location```
 
 Method : ``` GET ```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers</summary>
 
@@ -747,7 +747,7 @@ Endpoint: ```/api/location```
 
 Method: ``` DELETE ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers</summary>
 
@@ -788,7 +788,7 @@ Method : ``` POST ```
 
 Endpoint : ```/api/stocklevel```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers</summary>
 
@@ -968,7 +968,7 @@ Method : ``` POST ```
 
 Endpoint : ```/api/stocklevels```
 
-OAuth 2.0 Scopes : `Tenant authentication`
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers</summary>
 
@@ -1150,7 +1150,7 @@ Method: ``` POST ```
 
 Endpoint: ```/api/stocklevel/validate```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers</summary>
 
@@ -1255,7 +1255,7 @@ Method: ``` PUT ```
 
 Endpoint: ```/api/stocklevel```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers</summary>
 
@@ -1435,7 +1435,7 @@ Endpoint: ```/api/stocklevel```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers</summary>
 
@@ -1474,7 +1474,7 @@ Endpoint: ```/api/product/stocklevels```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers</summary>
 
@@ -1593,7 +1593,7 @@ Endpoint: ```/api/stocklevel/{id}```
 
 Method: ``` GET ```
 
-OAuth 2.0 Scopes: `Tenant authentication`
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <summary>Request Headers</summary>
 
