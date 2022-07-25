@@ -23,6 +23,7 @@ For more detailed informaation, check out the collection and follow the service 
 		
       
 
+
 - [**Customer Service API**](customersvcApi.md#customer-api)
   
   The Customer Service API stores information about a shop's customers, it also holds information on the status of a customer's account. You can create, retrieve, update, and delete customers using the Customer Service api.
