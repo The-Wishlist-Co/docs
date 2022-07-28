@@ -20,7 +20,10 @@ For security reasons, the Customer resource doesn't store credit card informatio
     - [Upload Customers](#upload-customers)
     - [Validate Customer Input](#validate-customer-input)
     - [Update a Customer](#update-a-customer)
+	- [Update a Customer By Customer Id](#update-a-customer-by-customer-id)
+	- [Update a Customer By Customer Ref](#update-a-customer-by-customer-ref)
     - [Add address to Existing Customer](#add-address-to-existing-customer)
+	- [Delete Customer Address](#delete-customer-address)
     - [Find Customer by Id](#find-customer-by-id)
     - [Find Customer by Ref](#find-customer-by-ref)
     - [Look up  Customers by email/mobile/phone/firstName/lastName](#look-up--customers-by-emailmobilephonefirstnamelastname)
@@ -993,6 +996,578 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
+## Update a Customer By Customer Id
+Updates Customer data set in the TWC system based on Customer ID.
+
+Endpoint: ```/api/v2/customers/id={id:.*}"```
+
+Method: ``` PUT ```
+
+Method Name: `updateCustomer`
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<!-- <details> -->
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+<!-- </details> -->
+
+ Path Variable: `id: customer Id`
+ 
+<!-- <details> -->
+ <summary>Sample Request</summary>
+
+```json
+{
+  "accepts_marketing": true,
+  "active": true,
+  "addresses": [
+    {
+      "address1": "string",
+      "address2": "string",
+      "addressName": "string",
+      "city": "string",
+      "company": "string",
+      "country": "string",
+      "countryCode": "string",
+      "customerId": "string",
+      "defaultAddress": true,
+      "email": "string",
+      "firstName": "string",
+      "id": "string",
+      "lastName": "string",
+      "phone": "string",
+      "postcode": "string",
+      "province": "string",
+      "provinceCode": "string"
+    }
+  ],
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "createdDate": "2022-06-20T09:26:58.918Z",
+  "customer_state": "disabled",
+  "defaultAddress": {
+    "address1": "string",
+    "address2": "string",
+    "addressName": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "customerId": "string",
+    "defaultAddress": true,
+    "email": "string",
+    "firstName": "string",
+    "id": "string",
+    "lastName": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
+  "dob": "2022-06-20T09:26:58.919Z",
+  "email": "string",
+  "firstName": "string",
+  "lastModifiedDate": "2022-06-20T09:26:58.919Z",
+  "lastName": "string",
+  "marketing_optin_level": "single_opt_in",
+  "marketing_preferences_updated_at": "2022-06-20T09:26:58.919Z",
+  "mobile": "string",
+  "phone": "string",
+  "taxExempt": true,
+  "taxExemptions": [
+    "string"
+  ],
+  "verified_email": true
+}
+
+```
+<!-- </details> -->
+
+<!-- <details> -->
+<summary>Response - 200 (OK)</summary>
+
+```json
+ {
+  "accepts_marketing": true,
+  "active": true,
+  "addresses": [
+    {
+      "address1": "string",
+      "address2": "string",
+      "addressName": "string",
+      "city": "string",
+      "company": "string",
+      "country": "string",
+      "countryCode": "string",
+      "customerId": "string",
+      "defaultAddress": true,
+      "email": "string",
+      "firstName": "string",
+      "id": "string",
+      "lastName": "string",
+      "phone": "string",
+      "postcode": "string",
+      "province": "string",
+      "provinceCode": "string"
+    }
+  ],
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "createdDate": "2022-06-20T09:26:58.956Z",
+  "customerRef": "string",
+  "customer_state": "disabled",
+  "defaultAddress": {
+    "address1": "string",
+    "address2": "string",
+    "addressName": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "customerId": "string",
+    "defaultAddress": true,
+    "email": "string",
+    "firstName": "string",
+    "id": "string",
+    "lastName": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
+  "dob": "2022-06-20T09:26:58.956Z",
+  "email": "string",
+  "firstName": "string",
+  "id": "string",
+  "lastModifiedDate": "2022-06-20T09:26:58.956Z",
+  "lastName": "string",
+  "marketing_optin_level": "single_opt_in",
+  "marketing_preferences_updated_at": "2022-06-20T09:26:58.956Z",
+  "mobile": "string",
+  "phone": "string",
+  "taxExempt": true,
+  "taxExemptions": [
+    "string"
+  ],
+  "verified_email": true
+}
+
+```
+<!-- </details> -->
+
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Update a Customer By Customer Ref
+Updates Customer data set in the TWC system  based on Customer Ref.
+
+Endpoint: ```/api/v2/customers/customerRef={customerRef:.*}```
+
+Method: ``` PUT ```
+
+Method Name: `updateCustomer`
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<!-- <details> -->
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+<!-- </details> -->
+
+ Path Variable: `customerRef : customer Ref`
+
+<!-- <details> -->
+ <summary>Sample Request</summary>
+
+```json
+{
+  "accepts_marketing": true,
+  "active": true,
+  "addresses": [
+    {
+      "address1": "string",
+      "address2": "string",
+      "addressName": "string",
+      "city": "string",
+      "company": "string",
+      "country": "string",
+      "countryCode": "string",
+      "customerId": "string",
+      "defaultAddress": true,
+      "email": "string",
+      "firstName": "string",
+      "id": "string",
+      "lastName": "string",
+      "phone": "string",
+      "postcode": "string",
+      "province": "string",
+      "provinceCode": "string"
+    }
+  ],
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "createdDate": "2022-06-20T09:26:58.918Z",  
+  "customer_state": "disabled",
+  "defaultAddress": {
+    "address1": "string",
+    "address2": "string",
+    "addressName": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "customerId": "string",
+    "defaultAddress": true,
+    "email": "string",
+    "firstName": "string",
+    "id": "string",
+    "lastName": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
+  "dob": "2022-06-20T09:26:58.919Z",
+  "email": "string",
+  "firstName": "string",  
+  "lastModifiedDate": "2022-06-20T09:26:58.919Z",
+  "lastName": "string",
+  "marketing_optin_level": "single_opt_in",
+  "marketing_preferences_updated_at": "2022-06-20T09:26:58.919Z",
+  "mobile": "string",
+  "phone": "string",
+  "taxExempt": true,
+  "taxExemptions": [
+    "string"
+  ],
+  "verified_email": true
+}
+
+```
+<!-- </details> -->
+
+<!-- <details> -->
+<summary>Response - 200 (OK)</summary>
+
+```json
+ {
+  "accepts_marketing": true,
+  "active": true,
+  "addresses": [
+    {
+      "address1": "string",
+      "address2": "string",
+      "addressName": "string",
+      "city": "string",
+      "company": "string",
+      "country": "string",
+      "countryCode": "string",
+      "customerId": "string",
+      "defaultAddress": true,
+      "email": "string",
+      "firstName": "string",
+      "id": "string",
+      "lastName": "string",
+      "phone": "string",
+      "postcode": "string",
+      "province": "string",
+      "provinceCode": "string"
+    }
+  ],
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "createdDate": "2022-06-20T09:26:58.956Z",
+  "customerRef": "string",
+  "customer_state": "disabled",
+  "defaultAddress": {
+    "address1": "string",
+    "address2": "string",
+    "addressName": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "customerId": "string",
+    "defaultAddress": true,
+    "email": "string",
+    "firstName": "string",
+    "id": "string",
+    "lastName": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
+  "dob": "2022-06-20T09:26:58.956Z",
+  "email": "string",
+  "firstName": "string",
+  "id": "string",
+  "lastModifiedDate": "2022-06-20T09:26:58.956Z",
+  "lastName": "string",
+  "marketing_optin_level": "single_opt_in",
+  "marketing_preferences_updated_at": "2022-06-20T09:26:58.956Z",
+  "mobile": "string",
+  "phone": "string",
+  "taxExempt": true,
+  "taxExemptions": [
+    "string"
+  ],
+  "verified_email": true
+}
+
+```
+<!-- </details> -->
+
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+
 ## Add address to Existing Customer
 Update the Customer data by adding the new address details.
 
@@ -1041,6 +1616,173 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 
 ```
 <!-- </details> -->
+
+<!-- <details> -->
+<summary>Response - 200 (OK)</summary>
+
+```json
+ {
+  "accepts_marketing": true,
+  "active": true,
+  "addresses": [
+    {
+      "address1": "string",
+      "address2": "string",
+      "addressName": "string",
+      "city": "string",
+      "company": "string",
+      "country": "string",
+      "countryCode": "string",
+      "customerId": "string",
+      "defaultAddress": true,
+      "email": "string",
+      "firstName": "string",
+      "id": "string",
+      "lastName": "string",
+      "phone": "string",
+      "postcode": "string",
+      "province": "string",
+      "provinceCode": "string"
+    }
+  ],
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "createdDate": "2022-06-20T09:27:37.333Z",
+  "customerRef": "string",
+  "customer_state": "disabled",
+  "defaultAddress": {
+    "address1": "string",
+    "address2": "string",
+    "addressName": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "customerId": "string",
+    "defaultAddress": true,
+    "email": "string",
+    "firstName": "string",
+    "id": "string",
+    "lastName": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
+  "dob": "2022-06-20T09:27:37.333Z",
+  "email": "string",
+  "firstName": "string",
+  "id": "string",
+  "lastModifiedDate": "2022-06-20T09:27:37.333Z",
+  "lastName": "string",
+  "marketing_optin_level": "single_opt_in",
+  "marketing_preferences_updated_at": "2022-06-20T09:27:37.333Z",
+  "mobile": "string",
+  "phone": "string",
+  "taxExempt": true,
+  "taxExemptions": [
+    "string"
+  ],
+  "verified_email": true
+}
+
+```
+<!-- <details> -->
+
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+## Delete Customer Address
+
+Delete the customer's address based on  customer id and address Id
+
+Endpoint: ```/api/v2/customers/{id}/address/{addressId}```
+
+Method: ``` DELETE ```
+
+Method Name: `deleteCustomerAddress`
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<!--<details> -->
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Path Variable: 
+
+```
+id - customer id
+addressId - Customer Address Id
+```
 
 <!-- <details> -->
 <summary>Response - 200 (OK)</summary>

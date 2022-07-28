@@ -13,6 +13,8 @@ The Price resource stores information about price details of  particular product
   - [**Representations**](#representations)
     - [Create A Price](#create-a-price)
     - [Update A Price](#update-a-price)
+	- [Update A Price By ID](#update-a-price-by-id)
+	- [Update A Price By Ref](#update-a-price-by-ref)
     - [Delete A Price](#delete-a-price)
     - [Find Price by id and priceRef](#find-price-by-id-and-priceref)
     - [Validate an price](#validate-an-price)
@@ -179,6 +181,143 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
+
+## Update A Price By ID
+
+Method: ``` PUT ``` 
+
+Endpoint: ```/api/prices/id={id}```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Path Variable
+
+```
+id - price ID
+```
+
+Sample Request :
+<!-- <details> -->
+```json
+{
+  "active": true,
+  "currencyCode": "string",
+  "deleted": true,
+  "offlineDate": "2022-06-20T11:58:06.885Z",
+  "onlineDate": "2022-06-20T11:58:06.885Z",
+  "price": 0,
+  "sale": true,
+  "salePrice": 0
+}
+```
+<!-- </details> -->
+
+<summary>Response - 200 (OK)</summary> 
+
+```json
+{
+  "active": true,
+  "currencyCode": "string",
+  "deleted": true,
+  "id": "string",
+  "offlineDate": "2022-06-27T13:18:59.465Z",
+  "onlineDate": "2022-06-27T13:18:59.465Z",
+  "price": 0,
+  "priceRef": "string",
+  "productVariantId": "string",
+  "sale": true,
+  "salePrice": 0
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+## Update A Price By Ref
+
+Method: ``` PUT ``` 
+
+Endpoint: ```/api/prices/ref={ref}```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Path Variable:
+
+```
+ref - Price Ref
+```
+
+Sample Request :
+<!-- <details> -->
+```json
+{
+  "active": true,
+  "currencyCode": "string",
+  "deleted": true,  
+  "offlineDate": "2022-06-20T11:58:06.885Z",
+  "onlineDate": "2022-06-20T11:58:06.885Z",
+  "price": 0,  
+  "sale": true,
+  "salePrice": 0
+}
+```
+<!-- </details> -->
+
+<summary>Response - 200 (OK)</summary> 
+
+```json
+{
+  "active": true,
+  "currencyCode": "string",
+  "deleted": true,
+  "id": "string",
+  "offlineDate": "2022-06-27T13:18:59.465Z",
+  "onlineDate": "2022-06-27T13:18:59.465Z",
+  "price": 0,
+  "priceRef": "string",
+  "productVariantId": "string",
+  "sale": true,
+  "salePrice": 0
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
 
 ### Delete A Price
 

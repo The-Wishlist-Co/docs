@@ -18,6 +18,8 @@ An order is a customer's request to purchase one or more products from a shop. Y
     - [**Order Resource**](#order-resource)
       - [Create an order](#create-an-order)
       - [Updates an order](#updates-an-order)
+	  - [Updates an order By Order Id](#updates-an-order-by-order-id)
+	  - [Updates an order By Order Ref](#updates-an-order-by-order-ref)
       - [FInd an orders](#find-an-orders)
       - [Search orders](#search-orders)
       - [Validate Order](#validate-order)
@@ -25,6 +27,8 @@ An order is a customer's request to purchase one or more products from a shop. Y
       - [Search entries for an order](#search-entries-for-an-order)
       - [Create an order entry](#create-an-order-entry)
       - [Update an order entry](#update-an-order-entry)
+	  - [Update an order entry By Order Entry Id](#update-an-order-entry-by-order-entry-id)
+	  - [Update an order entry By Order Entry Ref](#update-an-order-entry-by-order-entry-ref)
       - [Search an order entry](#search-an-order-entry)
       - [Delete entry](#delete-entry)
 
@@ -1069,6 +1073,1185 @@ Sample Request :
     }
   ],
   "orderRef": "string",
+  "orderStatus": "AWAITING_PAYMENT",
+  "paymentMethod": "string",
+  "paymentProvider": "string",
+  "paymentStatus": "AUTHORIZED",
+  "processedAt": "2022-06-27T14:39:44.684Z",
+  "promotionalDiscounts": 0,
+  "promotionalDiscountsInCent": 0,
+  "refundedAmount": 0,
+  "refundedAmountInCent": 0,
+  "returnReason": "string",
+  "returned": true,
+  "returnedAt": "2022-06-27T14:39:44.684Z",
+  "shipmentMode": {
+    "created_at": "2022-06-27T14:39:44.684Z",
+    "id": "string",
+    "name": "string",
+    "shipmentCost": 0,
+    "shipmentCostInCent": 0,
+    "updated_at": "2022-06-27T14:39:44.684Z"
+  },
+  "shipments": [
+    {
+      "created_at": "2022-06-27T14:39:44.684Z",
+      "deliveryDate": "2022-06-27T14:39:44.684Z",
+      "id": "string",
+      "orderId": "string",
+      "orderRef": "string",
+      "shipmentLines": [
+        {
+          "created_at": "2022-06-27T14:39:44.684Z",
+          "entryId": "string",
+          "entryRef": "string",
+          "id": "string",
+          "orderId": "string",
+          "orderRef": "string",
+          "quantityShipped": "string",
+          "shipmentId": "string",
+          "shipmentLineRef": "string",
+          "shipmentRef": "string",
+          "updated_at": "2022-06-27T14:39:44.684Z"
+        }
+      ],
+      "shipmentProvider": "string",
+      "shipmentRef": "string",
+      "shipmentStatus": "DELIVERED",
+      "shippedDate": "2022-06-27T14:39:44.684Z",
+      "trackingNumber": "string",
+      "trackingUrl": "string",
+      "updated_at": "2022-06-27T14:39:44.684Z"
+    }
+  ],
+  "shippingAddress": {
+    "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "countryName": "string",
+    "email": "string",
+    "name": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
+  "shippingCost": 0,
+  "shippingCostBeforeDiscount": 0,
+  "shippingCostBeforeDiscountInCent": 0,
+  "shippingCostExTax": 0,
+  "shippingCostExTaxInCent": 0,
+  "shippingCostInCent": 0,
+  "shippingCostIncTax": 0,
+  "shippingCostIncTaxCent": 0,
+  "shippingState": "CREATED",
+  "taxCategoryCode": "string",
+  "taxIncluded": true,
+  "totalAmount": 0,
+  "totalAmountBeforeDiscount": 0,
+  "totalAmountBeforeDiscountInCent": 0,
+  "totalAmountExTax": 0,
+  "totalAmountExTaxInCent": 0,
+  "totalAmountInCent": 0,
+  "totalAmountIncTax": 0,
+  "totalAmountIncTaxInCent": 0,
+  "totalDiscounts": 0,
+  "totalDiscountsInCent": 0,
+  "totalItems": 0,
+  "updated_at": "2022-06-27T14:39:44.684Z",
+  "wrappingCost": 0,
+  "wrappingCostExTax": 0,
+  "wrappingCostExTaxInCent": 0,
+  "wrappingCostInCent": 0,
+  "wrappingCostIncTax": 0,
+  "wrappingCostIncTaxInCent": 0
+}
+```
+
+<summary>Response - 200 (OK)</summary>
+
+```json
+{
+  "acceptsMarketing": true,
+  "appliedDiscounts": [
+    {
+      "amount": 0,
+      "amountInCent": 0,
+      "couponCode": "string",
+      "discountRef": "string",
+      "discountType": "string",
+      "headerLevel": true,
+      "id": "string",
+      "name": "string"
+    }
+  ],
+  "appliedTaxes": [
+    {
+      "amount": 0,
+      "amountInCent": 0,
+      "id": "string",
+      "name": "string",
+      "taxCode": "string",
+      "taxRate": 0
+    }
+  ],
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "billingAddress": {
+    "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "countryName": "string",
+    "email": "string",
+    "id": "string",
+    "name": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
+  "cancelReason": "string",
+  "cancelled": true,
+  "cancelledAt": "2022-06-27T14:39:44.698Z",
+  "cartId": "string",
+  "channel": "MOBILE",
+  "confirmed": true,
+  "couponDiscounts": 0,
+  "couponDiscountsInCent": 0,
+  "created_at": "2022-06-27T14:39:44.698Z",
+  "currencyCode": "string",
+  "customerId": "string",
+  "customerLocale": "string",
+  "customerRef": "string",
+  "deliveryStatus": "DELIVERED",
+  "email": "string",
+  "handlingCost": 0,
+  "handlingCostExTax": 0,
+  "handlingCostExTaxInCent": 0,
+  "handlingCostInCent": 0,
+  "handlingCostIncTax": 0,
+  "handlingCostIncTaxInCent": 0,
+  "id": "string",
+  "ipAddress": "string",
+  "ipAddressCountry": "string",
+  "ipAddressCountryIsocode": "string",
+  "itemsCancelled": 0,
+  "itemsReturned": 0,
+  "itemsShipped": 0,
+  "orderLines": [
+    {
+      "appliedDiscounts": [
+        {
+          "amount": 0,
+          "amountInCent": 0,
+          "couponCode": "string",
+          "discountRef": "string",
+          "discountType": "string",
+          "headerLevel": true,
+          "id": "string",
+          "name": "string"
+        }
+      ],
+      "basePrice": 0,
+      "basePriceExTax": 0,
+      "basePriceExTaxInCent": 0,
+      "basePriceInCent": 0,
+      "basePriceIncTax": 0,
+      "basePriceIncTaxInCent": 0,
+      "cancelledAt": "2022-06-27T14:39:44.698Z",
+      "created_at": "2022-06-27T14:39:44.698Z",
+      "entryRef": "string",
+      "gtin": "string",
+      "id": "string",
+      "orderId": "string",
+      "orderRef": "string",
+      "processedAt": "2022-06-27T14:39:44.698Z",
+      "productId": "string",
+      "productRef": "string",
+      "quantity": 0,
+      "refundAmount": 0,
+      "refundAmountInCent": 0,
+      "returnId": 0,
+      "returnedAt": "2022-06-27T14:39:44.698Z",
+      "returnedQuantity": 0,
+      "shippedQuantity": 0,
+      "totalAmount": 0,
+      "totalAmountBeforeDiscount": 0,
+      "totalAmountBeforeDiscountInCent": 0,
+      "totalAmountExTax": 0,
+      "totalAmountInCent": 0,
+      "totalAmountIncTax": 0,
+      "totalAmountIncTaxInCent": 0,
+      "updated_at": "2022-06-27T14:39:44.698Z"
+    }
+  ],
+  "orderRef": "string",
+  "orderStatus": "AWAITING_PAYMENT",
+  "paymentMethod": "string",
+  "paymentProvider": "string",
+  "paymentStatus": "AUTHORIZED",
+  "processedAt": "2022-06-27T14:39:44.698Z",
+  "promotionalDiscounts": 0,
+  "promotionalDiscountsInCent": 0,
+  "refundedAmount": 0,
+  "refundedAmountInCent": 0,
+  "returnReason": "string",
+  "returned": true,
+  "returnedAt": "2022-06-27T14:39:44.698Z",
+  "shipmentMode": {
+    "created_at": "2022-06-27T14:39:44.698Z",
+    "id": "string",
+    "name": "string",
+    "shipmentCost": 0,
+    "shipmentCostInCent": 0,
+    "updated_at": "2022-06-27T14:39:44.698Z"
+  },
+  "shipments": [
+    {
+      "created_at": "2022-06-27T14:39:44.698Z",
+      "deliveryDate": "2022-06-27T14:39:44.698Z",
+      "id": "string",
+      "orderId": "string",
+      "orderRef": "string",
+      "shipmentLines": [
+        {
+          "created_at": "2022-06-27T14:39:44.698Z",
+          "entryId": "string",
+          "entryRef": "string",
+          "id": "string",
+          "orderId": "string",
+          "orderRef": "string",
+          "quantityShipped": "string",
+          "shipmentId": "string",
+          "shipmentLineRef": "string",
+          "shipmentRef": "string",
+          "updated_at": "2022-06-27T14:39:44.698Z"
+        }
+      ],
+      "shipmentProvider": "string",
+      "shipmentRef": "string",
+      "shipmentStatus": "DELIVERED",
+      "shippedDate": "2022-06-27T14:39:44.698Z",
+      "trackingNumber": "string",
+      "trackingUrl": "string",
+      "updated_at": "2022-06-27T14:39:44.698Z"
+    }
+  ],
+  "shippingAddress": {
+    "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "countryName": "string",
+    "email": "string",
+    "id": "string",
+    "name": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
+  "shippingCost": 0,
+  "shippingCostBeforeDiscount": 0,
+  "shippingCostBeforeDiscountInCent": 0,
+  "shippingCostExTax": 0,
+  "shippingCostExTaxInCent": 0,
+  "shippingCostInCent": 0,
+  "shippingCostIncTax": 0,
+  "shippingCostIncTaxCent": 0,
+  "shippingState": "CREATED",
+  "taxCategoryCode": "string",
+  "taxIncluded": true,
+  "totalAmount": 0,
+  "totalAmountBeforeDiscount": 0,
+  "totalAmountBeforeDiscountInCent": 0,
+  "totalAmountExTax": 0,
+  "totalAmountExTaxInCent": 0,
+  "totalAmountInCent": 0,
+  "totalAmountIncTax": 0,
+  "totalAmountIncTaxInCent": 0,
+  "totalDiscounts": 0,
+  "totalDiscountsInCent": 0,
+  "totalItems": 0,
+  "updated_at": "2022-06-27T14:39:44.698Z",
+  "wrappingCost": 0,
+  "wrappingCostExTax": 0,
+  "wrappingCostExTaxInCent": 0,
+  "wrappingCostInCent": 0,
+  "wrappingCostIncTax": 0,
+  "wrappingCostIncTaxInCent": 0
+}
+
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+## Updates an order By Order Id
+
+Endpoint: ```​/api​/v1​/orders​/id={id:.*}```
+
+Method: ```PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Path Variable: 
+
+```
+id - Order id
+```
+
+Sample Request : 
+
+```json
+{
+  "acceptsMarketing": true,
+  "appliedDiscounts": [
+    {
+      "amount": 0,
+      "amountInCent": 0,
+      "couponCode": "string",
+      "discountRef": "string",
+      "discountType": "string",
+      "headerLevel": true,
+      "id": "string",
+      "name": "string"
+    }
+  ],
+  "appliedTaxes": [
+    {
+      "amount": 0,
+      "amountInCent": 0,
+      "id": "string",
+      "name": "string",
+      "taxCode": "string",
+      "taxRate": 0
+    }
+  ],
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "billingAddress": {
+    "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "countryName": "string",
+    "email": "string",
+    "name": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
+  "cancelReason": "string",
+  "cancelled": true,
+  "cancelledAt": "2022-06-27T14:39:44.684Z",
+  "cartId": "string",
+  "channel": "MOBILE",
+  "confirmed": true,
+  "couponDiscounts": 0,
+  "couponDiscountsInCent": 0,
+  "created_at": "2022-06-27T14:39:44.684Z",
+  "currencyCode": "string",
+  "customerId": "string",
+  "customerLocale": "string",
+  "customerRef": "string",
+  "deliveryStatus": "DELIVERED",
+  "email": "string",
+  "handlingCost": 0,
+  "handlingCostExTax": 0,
+  "handlingCostExTaxInCent": 0,
+  "handlingCostInCent": 0,
+  "handlingCostIncTax": 0,
+  "handlingCostIncTaxInCent": 0,  
+  "ipAddress": "string",
+  "ipAddressCountry": "string",
+  "ipAddressCountryIsocode": "string",
+  "itemsCancelled": 0,
+  "itemsReturned": 0,
+  "itemsShipped": 0,
+  "orderLines": [
+    {
+      "appliedDiscounts": [
+        {
+          "amount": 0,
+          "amountInCent": 0,
+          "couponCode": "string",
+          "discountRef": "string",
+          "discountType": "string",
+          "headerLevel": true,
+          "id": "string",
+          "name": "string"
+        }
+      ],
+      "basePrice": 0,
+      "basePriceExTax": 0,
+      "basePriceExTaxInCent": 0,
+      "basePriceInCent": 0,
+      "basePriceIncTax": 0,
+      "basePriceIncTaxInCent": 0,
+      "cancelledAt": "2022-06-27T14:39:44.684Z",
+      "created_at": "2022-06-27T14:39:44.684Z",
+      "entryRef": "string",
+      "gtin": "string",
+      "id": "string",
+      "orderId": "string",
+      "orderRef": "string",
+      "processedAt": "2022-06-27T14:39:44.684Z",
+      "productId": "string",
+      "productRef": "string",
+      "quantity": 0,
+      "refundAmount": 0,
+      "refundAmountInCent": 0,
+      "returnId": 0,
+      "returnedAt": "2022-06-27T14:39:44.684Z",
+      "returnedQuantity": 0,
+      "shippedQuantity": 0,
+      "totalAmount": 0,
+      "totalAmountBeforeDiscount": 0,
+      "totalAmountBeforeDiscountInCent": 0,
+      "totalAmountExTax": 0,
+      "totalAmountInCent": 0,
+      "totalAmountIncTax": 0,
+      "totalAmountIncTaxInCent": 0,
+      "updated_at": "2022-06-27T14:39:44.684Z"
+    }
+  ],  
+  "orderStatus": "AWAITING_PAYMENT",
+  "paymentMethod": "string",
+  "paymentProvider": "string",
+  "paymentStatus": "AUTHORIZED",
+  "processedAt": "2022-06-27T14:39:44.684Z",
+  "promotionalDiscounts": 0,
+  "promotionalDiscountsInCent": 0,
+  "refundedAmount": 0,
+  "refundedAmountInCent": 0,
+  "returnReason": "string",
+  "returned": true,
+  "returnedAt": "2022-06-27T14:39:44.684Z",
+  "shipmentMode": {
+    "created_at": "2022-06-27T14:39:44.684Z",
+    "id": "string",
+    "name": "string",
+    "shipmentCost": 0,
+    "shipmentCostInCent": 0,
+    "updated_at": "2022-06-27T14:39:44.684Z"
+  },
+  "shipments": [
+    {
+      "created_at": "2022-06-27T14:39:44.684Z",
+      "deliveryDate": "2022-06-27T14:39:44.684Z",
+      "id": "string",
+      "orderId": "string",
+      "orderRef": "string",
+      "shipmentLines": [
+        {
+          "created_at": "2022-06-27T14:39:44.684Z",
+          "entryId": "string",
+          "entryRef": "string",
+          "id": "string",
+          "orderId": "string",
+          "orderRef": "string",
+          "quantityShipped": "string",
+          "shipmentId": "string",
+          "shipmentLineRef": "string",
+          "shipmentRef": "string",
+          "updated_at": "2022-06-27T14:39:44.684Z"
+        }
+      ],
+      "shipmentProvider": "string",
+      "shipmentRef": "string",
+      "shipmentStatus": "DELIVERED",
+      "shippedDate": "2022-06-27T14:39:44.684Z",
+      "trackingNumber": "string",
+      "trackingUrl": "string",
+      "updated_at": "2022-06-27T14:39:44.684Z"
+    }
+  ],
+  "shippingAddress": {
+    "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "countryName": "string",
+    "email": "string",
+    "name": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
+  "shippingCost": 0,
+  "shippingCostBeforeDiscount": 0,
+  "shippingCostBeforeDiscountInCent": 0,
+  "shippingCostExTax": 0,
+  "shippingCostExTaxInCent": 0,
+  "shippingCostInCent": 0,
+  "shippingCostIncTax": 0,
+  "shippingCostIncTaxCent": 0,
+  "shippingState": "CREATED",
+  "taxCategoryCode": "string",
+  "taxIncluded": true,
+  "totalAmount": 0,
+  "totalAmountBeforeDiscount": 0,
+  "totalAmountBeforeDiscountInCent": 0,
+  "totalAmountExTax": 0,
+  "totalAmountExTaxInCent": 0,
+  "totalAmountInCent": 0,
+  "totalAmountIncTax": 0,
+  "totalAmountIncTaxInCent": 0,
+  "totalDiscounts": 0,
+  "totalDiscountsInCent": 0,
+  "totalItems": 0,
+  "updated_at": "2022-06-27T14:39:44.684Z",
+  "wrappingCost": 0,
+  "wrappingCostExTax": 0,
+  "wrappingCostExTaxInCent": 0,
+  "wrappingCostInCent": 0,
+  "wrappingCostIncTax": 0,
+  "wrappingCostIncTaxInCent": 0
+}
+```
+
+<summary>Response - 200 (OK)</summary>
+
+```json
+{
+  "acceptsMarketing": true,
+  "appliedDiscounts": [
+    {
+      "amount": 0,
+      "amountInCent": 0,
+      "couponCode": "string",
+      "discountRef": "string",
+      "discountType": "string",
+      "headerLevel": true,
+      "id": "string",
+      "name": "string"
+    }
+  ],
+  "appliedTaxes": [
+    {
+      "amount": 0,
+      "amountInCent": 0,
+      "id": "string",
+      "name": "string",
+      "taxCode": "string",
+      "taxRate": 0
+    }
+  ],
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "billingAddress": {
+    "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "countryName": "string",
+    "email": "string",
+    "id": "string",
+    "name": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
+  "cancelReason": "string",
+  "cancelled": true,
+  "cancelledAt": "2022-06-27T14:39:44.698Z",
+  "cartId": "string",
+  "channel": "MOBILE",
+  "confirmed": true,
+  "couponDiscounts": 0,
+  "couponDiscountsInCent": 0,
+  "created_at": "2022-06-27T14:39:44.698Z",
+  "currencyCode": "string",
+  "customerId": "string",
+  "customerLocale": "string",
+  "customerRef": "string",
+  "deliveryStatus": "DELIVERED",
+  "email": "string",
+  "handlingCost": 0,
+  "handlingCostExTax": 0,
+  "handlingCostExTaxInCent": 0,
+  "handlingCostInCent": 0,
+  "handlingCostIncTax": 0,
+  "handlingCostIncTaxInCent": 0,
+  "id": "string",
+  "ipAddress": "string",
+  "ipAddressCountry": "string",
+  "ipAddressCountryIsocode": "string",
+  "itemsCancelled": 0,
+  "itemsReturned": 0,
+  "itemsShipped": 0,
+  "orderLines": [
+    {
+      "appliedDiscounts": [
+        {
+          "amount": 0,
+          "amountInCent": 0,
+          "couponCode": "string",
+          "discountRef": "string",
+          "discountType": "string",
+          "headerLevel": true,
+          "id": "string",
+          "name": "string"
+        }
+      ],
+      "basePrice": 0,
+      "basePriceExTax": 0,
+      "basePriceExTaxInCent": 0,
+      "basePriceInCent": 0,
+      "basePriceIncTax": 0,
+      "basePriceIncTaxInCent": 0,
+      "cancelledAt": "2022-06-27T14:39:44.698Z",
+      "created_at": "2022-06-27T14:39:44.698Z",
+      "entryRef": "string",
+      "gtin": "string",
+      "id": "string",
+      "orderId": "string",
+      "orderRef": "string",
+      "processedAt": "2022-06-27T14:39:44.698Z",
+      "productId": "string",
+      "productRef": "string",
+      "quantity": 0,
+      "refundAmount": 0,
+      "refundAmountInCent": 0,
+      "returnId": 0,
+      "returnedAt": "2022-06-27T14:39:44.698Z",
+      "returnedQuantity": 0,
+      "shippedQuantity": 0,
+      "totalAmount": 0,
+      "totalAmountBeforeDiscount": 0,
+      "totalAmountBeforeDiscountInCent": 0,
+      "totalAmountExTax": 0,
+      "totalAmountInCent": 0,
+      "totalAmountIncTax": 0,
+      "totalAmountIncTaxInCent": 0,
+      "updated_at": "2022-06-27T14:39:44.698Z"
+    }
+  ],
+  "orderRef": "string",
+  "orderStatus": "AWAITING_PAYMENT",
+  "paymentMethod": "string",
+  "paymentProvider": "string",
+  "paymentStatus": "AUTHORIZED",
+  "processedAt": "2022-06-27T14:39:44.698Z",
+  "promotionalDiscounts": 0,
+  "promotionalDiscountsInCent": 0,
+  "refundedAmount": 0,
+  "refundedAmountInCent": 0,
+  "returnReason": "string",
+  "returned": true,
+  "returnedAt": "2022-06-27T14:39:44.698Z",
+  "shipmentMode": {
+    "created_at": "2022-06-27T14:39:44.698Z",
+    "id": "string",
+    "name": "string",
+    "shipmentCost": 0,
+    "shipmentCostInCent": 0,
+    "updated_at": "2022-06-27T14:39:44.698Z"
+  },
+  "shipments": [
+    {
+      "created_at": "2022-06-27T14:39:44.698Z",
+      "deliveryDate": "2022-06-27T14:39:44.698Z",
+      "id": "string",
+      "orderId": "string",
+      "orderRef": "string",
+      "shipmentLines": [
+        {
+          "created_at": "2022-06-27T14:39:44.698Z",
+          "entryId": "string",
+          "entryRef": "string",
+          "id": "string",
+          "orderId": "string",
+          "orderRef": "string",
+          "quantityShipped": "string",
+          "shipmentId": "string",
+          "shipmentLineRef": "string",
+          "shipmentRef": "string",
+          "updated_at": "2022-06-27T14:39:44.698Z"
+        }
+      ],
+      "shipmentProvider": "string",
+      "shipmentRef": "string",
+      "shipmentStatus": "DELIVERED",
+      "shippedDate": "2022-06-27T14:39:44.698Z",
+      "trackingNumber": "string",
+      "trackingUrl": "string",
+      "updated_at": "2022-06-27T14:39:44.698Z"
+    }
+  ],
+  "shippingAddress": {
+    "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "countryName": "string",
+    "email": "string",
+    "id": "string",
+    "name": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
+  "shippingCost": 0,
+  "shippingCostBeforeDiscount": 0,
+  "shippingCostBeforeDiscountInCent": 0,
+  "shippingCostExTax": 0,
+  "shippingCostExTaxInCent": 0,
+  "shippingCostInCent": 0,
+  "shippingCostIncTax": 0,
+  "shippingCostIncTaxCent": 0,
+  "shippingState": "CREATED",
+  "taxCategoryCode": "string",
+  "taxIncluded": true,
+  "totalAmount": 0,
+  "totalAmountBeforeDiscount": 0,
+  "totalAmountBeforeDiscountInCent": 0,
+  "totalAmountExTax": 0,
+  "totalAmountExTaxInCent": 0,
+  "totalAmountInCent": 0,
+  "totalAmountIncTax": 0,
+  "totalAmountIncTaxInCent": 0,
+  "totalDiscounts": 0,
+  "totalDiscountsInCent": 0,
+  "totalItems": 0,
+  "updated_at": "2022-06-27T14:39:44.698Z",
+  "wrappingCost": 0,
+  "wrappingCostExTax": 0,
+  "wrappingCostExTaxInCent": 0,
+  "wrappingCostInCent": 0,
+  "wrappingCostIncTax": 0,
+  "wrappingCostIncTaxInCent": 0
+}
+
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+
+## Updates an order By Order Ref
+
+Endpoint: ```​/api​/v1​/orders/ref={ref:.*}​```
+
+Method: ```PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Path Variable: 
+
+```
+ref - Order Ref
+```
+
+Sample Request : 
+
+```json
+{
+  "acceptsMarketing": true,
+  "appliedDiscounts": [
+    {
+      "amount": 0,
+      "amountInCent": 0,
+      "couponCode": "string",
+      "discountRef": "string",
+      "discountType": "string",
+      "headerLevel": true,
+      "id": "string",
+      "name": "string"
+    }
+  ],
+  "appliedTaxes": [
+    {
+      "amount": 0,
+      "amountInCent": 0,
+      "id": "string",
+      "name": "string",
+      "taxCode": "string",
+      "taxRate": 0
+    }
+  ],
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "billingAddress": {
+    "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "countryName": "string",
+    "email": "string",
+    "name": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
+  "cancelReason": "string",
+  "cancelled": true,
+  "cancelledAt": "2022-06-27T14:39:44.684Z",
+  "cartId": "string",
+  "channel": "MOBILE",
+  "confirmed": true,
+  "couponDiscounts": 0,
+  "couponDiscountsInCent": 0,
+  "created_at": "2022-06-27T14:39:44.684Z",
+  "currencyCode": "string",
+  "customerId": "string",
+  "customerLocale": "string",
+  "customerRef": "string",
+  "deliveryStatus": "DELIVERED",
+  "email": "string",
+  "handlingCost": 0,
+  "handlingCostExTax": 0,
+  "handlingCostExTaxInCent": 0,
+  "handlingCostInCent": 0,
+  "handlingCostIncTax": 0,
+  "handlingCostIncTaxInCent": 0,  
+  "ipAddress": "string",
+  "ipAddressCountry": "string",
+  "ipAddressCountryIsocode": "string",
+  "itemsCancelled": 0,
+  "itemsReturned": 0,
+  "itemsShipped": 0,
+  "orderLines": [
+    {
+      "appliedDiscounts": [
+        {
+          "amount": 0,
+          "amountInCent": 0,
+          "couponCode": "string",
+          "discountRef": "string",
+          "discountType": "string",
+          "headerLevel": true,
+          "id": "string",
+          "name": "string"
+        }
+      ],
+      "basePrice": 0,
+      "basePriceExTax": 0,
+      "basePriceExTaxInCent": 0,
+      "basePriceInCent": 0,
+      "basePriceIncTax": 0,
+      "basePriceIncTaxInCent": 0,
+      "cancelledAt": "2022-06-27T14:39:44.684Z",
+      "created_at": "2022-06-27T14:39:44.684Z",
+      "entryRef": "string",
+      "gtin": "string",
+      "id": "string",
+      "orderId": "string",
+      "orderRef": "string",
+      "processedAt": "2022-06-27T14:39:44.684Z",
+      "productId": "string",
+      "productRef": "string",
+      "quantity": 0,
+      "refundAmount": 0,
+      "refundAmountInCent": 0,
+      "returnId": 0,
+      "returnedAt": "2022-06-27T14:39:44.684Z",
+      "returnedQuantity": 0,
+      "shippedQuantity": 0,
+      "totalAmount": 0,
+      "totalAmountBeforeDiscount": 0,
+      "totalAmountBeforeDiscountInCent": 0,
+      "totalAmountExTax": 0,
+      "totalAmountInCent": 0,
+      "totalAmountIncTax": 0,
+      "totalAmountIncTaxInCent": 0,
+      "updated_at": "2022-06-27T14:39:44.684Z"
+    }
+  ],
+  
   "orderStatus": "AWAITING_PAYMENT",
   "paymentMethod": "string",
   "paymentProvider": "string",
@@ -2878,6 +4061,272 @@ Sample Request :
   "entryRef": "string",
   "gtin": "string",
   "id": "string",
+  "orderId": "string",
+  "orderRef": "string",
+  "processedAt": "2022-06-27T14:45:09.327Z",
+  "productId": "string",
+  "productRef": "string",
+  "quantity": 0,
+  "refundAmount": 0,
+  "refundAmountInCent": 0,
+  "returnId": 0,
+  "returnedAt": "2022-06-27T14:45:09.327Z",
+  "returnedQuantity": 0,
+  "shippedQuantity": 0,
+  "totalAmount": 0,
+  "totalAmountBeforeDiscount": 0,
+  "totalAmountBeforeDiscountInCent": 0,
+  "totalAmountExTax": 0,
+  "totalAmountInCent": 0,
+  "totalAmountIncTax": 0,
+  "totalAmountIncTaxInCent": 0,
+  "updated_at": "2022-06-27T14:45:09.327Z"
+}
+```
+
+<summary>Response - 200 (OK)</summary>
+
+```json
+{
+  "appliedDiscounts": [
+    {
+      "amount": 0,
+      "amountInCent": 0,
+      "couponCode": "string",
+      "discountRef": "string",
+      "discountType": "string",
+      "headerLevel": true,
+      "id": "string",
+      "name": "string"
+    }
+  ],
+  "basePrice": 0,
+  "basePriceExTax": 0,
+  "basePriceExTaxInCent": 0,
+  "basePriceInCent": 0,
+  "basePriceIncTax": 0,
+  "basePriceIncTaxInCent": 0,
+  "cancelledAt": "2022-06-27T14:45:09.367Z",
+  "created_at": "2022-06-27T14:45:09.367Z",
+  "entryRef": "string",
+  "gtin": "string",
+  "id": "string",
+  "orderId": "string",
+  "orderRef": "string",
+  "processedAt": "2022-06-27T14:45:09.367Z",
+  "productId": "string",
+  "productRef": "string",
+  "quantity": 0,
+  "refundAmount": 0,
+  "refundAmountInCent": 0,
+  "returnId": 0,
+  "returnedAt": "2022-06-27T14:45:09.367Z",
+  "returnedQuantity": 0,
+  "shippedQuantity": 0,
+  "totalAmount": 0,
+  "totalAmountBeforeDiscount": 0,
+  "totalAmountBeforeDiscountInCent": 0,
+  "totalAmountExTax": 0,
+  "totalAmountInCent": 0,
+  "totalAmountIncTax": 0,
+  "totalAmountIncTaxInCent": 0,
+  "updated_at": "2022-06-27T14:45:09.367Z"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+## Update an order entry By Order Entry Id
+
+Endpoint: ```​​/api​/v1​/orders​/entries/id={id:.*}```
+
+Method: ```PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Path Variable: 
+
+``` 
+id - Order Entry id 
+```
+
+Sample Request : 
+
+```json
+{
+  "appliedDiscounts": [
+    {
+      "amount": 0,
+      "amountInCent": 0,
+      "couponCode": "string",
+      "discountRef": "string",
+      "discountType": "string",
+      "headerLevel": true,
+      "id": "string",
+      "name": "string"
+    }
+  ],
+  "basePrice": 0,
+  "basePriceExTax": 0,
+  "basePriceExTaxInCent": 0,
+  "basePriceInCent": 0,
+  "basePriceIncTax": 0,
+  "basePriceIncTaxInCent": 0,
+  "cancelledAt": "2022-06-27T14:45:09.327Z",
+  "created_at": "2022-06-27T14:45:09.327Z",  
+  "gtin": "string",  
+  "orderId": "string",
+  "orderRef": "string",
+  "processedAt": "2022-06-27T14:45:09.327Z",
+  "productId": "string",
+  "productRef": "string",
+  "quantity": 0,
+  "refundAmount": 0,
+  "refundAmountInCent": 0,
+  "returnId": 0,
+  "returnedAt": "2022-06-27T14:45:09.327Z",
+  "returnedQuantity": 0,
+  "shippedQuantity": 0,
+  "totalAmount": 0,
+  "totalAmountBeforeDiscount": 0,
+  "totalAmountBeforeDiscountInCent": 0,
+  "totalAmountExTax": 0,
+  "totalAmountInCent": 0,
+  "totalAmountIncTax": 0,
+  "totalAmountIncTaxInCent": 0,
+  "updated_at": "2022-06-27T14:45:09.327Z"
+}
+```
+
+<summary>Response - 200 (OK)</summary>
+
+```json
+{
+  "appliedDiscounts": [
+    {
+      "amount": 0,
+      "amountInCent": 0,
+      "couponCode": "string",
+      "discountRef": "string",
+      "discountType": "string",
+      "headerLevel": true,
+      "id": "string",
+      "name": "string"
+    }
+  ],
+  "basePrice": 0,
+  "basePriceExTax": 0,
+  "basePriceExTaxInCent": 0,
+  "basePriceInCent": 0,
+  "basePriceIncTax": 0,
+  "basePriceIncTaxInCent": 0,
+  "cancelledAt": "2022-06-27T14:45:09.367Z",
+  "created_at": "2022-06-27T14:45:09.367Z",
+  "entryRef": "string",
+  "gtin": "string",
+  "id": "string",
+  "orderId": "string",
+  "orderRef": "string",
+  "processedAt": "2022-06-27T14:45:09.367Z",
+  "productId": "string",
+  "productRef": "string",
+  "quantity": 0,
+  "refundAmount": 0,
+  "refundAmountInCent": 0,
+  "returnId": 0,
+  "returnedAt": "2022-06-27T14:45:09.367Z",
+  "returnedQuantity": 0,
+  "shippedQuantity": 0,
+  "totalAmount": 0,
+  "totalAmountBeforeDiscount": 0,
+  "totalAmountBeforeDiscountInCent": 0,
+  "totalAmountExTax": 0,
+  "totalAmountInCent": 0,
+  "totalAmountIncTax": 0,
+  "totalAmountIncTaxInCent": 0,
+  "updated_at": "2022-06-27T14:45:09.367Z"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+## Update an order entry By Order Entry Ref
+
+Endpoint: ```​​/api​/v1​/orders​/entries/{orderref}/ref={ref:.*}```
+
+Method: ```PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Path Variable: 
+
+```
+orderref - Order ref , ref - Order Entry Ref 
+```
+
+Sample Request : 
+
+```json
+{
+  "appliedDiscounts": [
+    {
+      "amount": 0,
+      "amountInCent": 0,
+      "couponCode": "string",
+      "discountRef": "string",
+      "discountType": "string",
+      "headerLevel": true,
+      "id": "string",
+      "name": "string"
+    }
+  ],
+  "basePrice": 0,
+  "basePriceExTax": 0,
+  "basePriceExTaxInCent": 0,
+  "basePriceInCent": 0,
+  "basePriceIncTax": 0,
+  "basePriceIncTaxInCent": 0,
+  "cancelledAt": "2022-06-27T14:45:09.327Z",
+  "created_at": "2022-06-27T14:45:09.327Z",  
+  "gtin": "string",  
   "orderId": "string",
   "orderRef": "string",
   "processedAt": "2022-06-27T14:45:09.327Z",

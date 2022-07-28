@@ -74,7 +74,7 @@ For the creation of a new Event resource with unique id.
 
 Method: ``` POST ``` 
 
-Endpoint: ```​​/api​/api/v1/events```
+Endpoint: ```​​​/api/v1/events```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 

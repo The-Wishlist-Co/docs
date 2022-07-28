@@ -26,15 +26,18 @@ An **inventory location** represents a geographical location where your stores, 
       - [Validate an inventory Location](#validate-an-inventory-location)
       - [Find Inventory Location by id and locationRef](#find-inventory-location-by-id-and-locationref)
       - [Delete Inventory Location](#delete-inventory-location)
+	  - [Update an inventory Location By Id](#update-an-inventory-location-by-id)
+	  - [Update an inventory Location By Ref](#update-an-inventory-location-by-ref)
     - [**Stock Level Resource**](#stock-level-resource)
       - [Create an inventory level](#create-an-inventory-level)
       - [Create Multiple inventory level](#create-multiple-inventory-level)
       - [Validate inventory level](#validate-inventory-level)
       - [Update an inventory level](#update-an-inventory-level)
+	  - [Update Stock By Id](#update-stock-by-id)
+	  - [Update Stock By Ref](#update-stock-by-ref)
       - [Find Inventory level by id and stockRef](#find-inventory-level-by-id-and-stockref)
       - [Find Inventory level for product and location](#find-inventory-level-for-product-and-location)
-      - [Find Aggregated inventory level for a product variant](#find-aggregated-inventory-level-for-a-product-variant)
-      
+      - [Find Aggregated inventory level for a product variant](#find-aggregated-inventory-level-for-a-product-variant)     
 
 ## **Representations**
 
@@ -780,6 +783,416 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
+## Update an inventory Location By Id
+
+Update an inventory Location data set in the TWC system based on ID.
+
+Endpoint: ```/api/location/id={id}"```
+
+Method: ``` PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<!-- <details> -->
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+<!-- </details> -->
+
+ Path Variable: 
+ 
+ ```
+ id - inventory Location Id
+ 
+ ```
+ 
+<!-- <details> -->
+ <summary>Sample Request</summary>
+
+```json
+
+ {
+  "address": {
+    "building": "string",
+    "city": "string",
+    "contactPerson": "string",
+    "countryIsocode": "string",
+    "countryName": "string",
+    "county": "string",
+    "fax": "string",
+    "level": "string",
+    "phone": "string",
+    "postcode": "string",
+    "state": "string",
+    "street": "string",
+    "streetNumber": "string"
+  },
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "locationType": "STORE"
+}
+
+```
+<!-- </details> -->
+
+<!-- <details> -->
+<summary>Response - 200 (OK)</summary>
+
+```json
+
+{
+  "address": {
+    "building": "string",
+    "city": "string",
+    "contactPerson": "string",
+    "countryIsocode": "string",
+    "countryName": "string",
+    "county": "string",
+    "fax": "string",
+    "level": "string",
+    "phone": "string",
+    "postcode": "string",
+    "state": "string",
+    "street": "string",
+    "streetNumber": "string"
+  },
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "id": "string",
+  "locationRef": "string",
+  "locationType": "STORE"
+} 
+
+```
+<!-- </details> -->
+
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Update an inventory Location By Ref
+Update an inventory Location data set in the TWC system based on locationRef.
+
+Endpoint: ```/api/location/locationRef={locationRef}"```
+
+Method: ``` PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<!-- <details> -->
+ <summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+<!-- </details> -->
+
+ Path Variable: 
+ 
+ ```
+ locationRef - inventory Location Ref
+ 
+ ```
+ 
+<!-- <details> -->
+ <summary>Sample Request</summary>
+
+```json
+{
+  "address": {
+    "building": "string",
+    "city": "string",
+    "contactPerson": "string",
+    "countryIsocode": "string",
+    "countryName": "string",
+    "county": "string",
+    "fax": "string",
+    "level": "string",
+    "phone": "string",
+    "postcode": "string",
+    "state": "string",
+    "street": "string",
+    "streetNumber": "string"
+  },
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "locationType": "STORE"
+}
+```
+<!-- </details> -->
+
+<!-- <details> -->
+<summary>Response - 200 (OK)</summary>
+
+```json
+{
+  "address": {
+    "building": "string",
+    "city": "string",
+    "contactPerson": "string",
+    "countryIsocode": "string",
+    "countryName": "string",
+    "county": "string",
+    "fax": "string",
+    "level": "string",
+    "phone": "string",
+    "postcode": "string",
+    "state": "string",
+    "street": "string",
+    "streetNumber": "string"
+  },
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "id": "string",
+  "locationRef": "string",
+  "locationType": "STORE"
+}
+```
+<!-- </details> -->
+
+HTTP Status Code: 
+``` json
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
 ## **Stock Level Resource**
 
 ## Create an inventory level
@@ -1427,6 +1840,380 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
+
+## Update Stock By Id
+
+Method: ``` PUT ``` 
+
+Endpoint: ```/api/stocklevel/id={id}```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Path Variable:
+
+```
+id - Stock Id
+```
+
+<!-- <details> --> 
+<summary> Sample Request : </summary>
+
+```json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "deleted": true,
+  "excludedQuantity": 0,
+  "futureStock": true,
+  "id": "string",
+  "reserved": 0,
+  "status": "IN_STOCK",
+  "stockDate": "2022-06-20T09:51:02.857Z",
+  "stockOnHand": 0,
+  "stockRef": "string"
+}
+```
+<!-- </details> -->
+
+<!-- <details> --> 
+<summary>Response - 200 (OK Updated)</summary>
+ 
+``` json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "deleted": true,
+  "excludedQuantity": 0,
+  "futureStock": true,
+  "id": "string",
+  "locationId": "string",
+  "productVariantId": "string",
+  "reserved": 0,
+  "status": "IN_STOCK",
+  "stockDate": "2022-06-27T06:39:30.214Z",
+  "stockOnHand": 0,
+  "stockRef": "string"
+}
+
+```
+<!-- </details> --> 
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+## Update Stock By Ref
+
+Method: ``` PUT ``` 
+
+Endpoint: ```/api/stocklevel/ref={ref}```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Path Variable:
+
+```
+ref - Stock ref
+```
+
+<!-- <details> --> 
+<summary> Sample Request : </summary>
+
+```json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "deleted": true,
+  "excludedQuantity": 0,
+  "futureStock": true,
+  "reserved": 0,
+  "status": "IN_STOCK",
+  "stockDate": "2022-07-27T10:53:23.113Z",
+  "stockOnHand": 0
+}
+```
+<!-- </details> -->
+
+<!-- <details> --> 
+<summary>Response - 200 (OK Updated)</summary>
+ 
+``` json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "deleted": true,
+  "excludedQuantity": 0,
+  "futureStock": true,
+  "id": "string",
+  "locationId": "string",
+  "locationRef": "string",
+  "productVariantId": "string",
+  "productVariantRef": "string",
+  "reserved": 0,
+  "status": "IN_STOCK",
+  "stockDate": "2022-07-27T10:55:12.604Z",
+  "stockOnHand": 0,
+  "stockRef": "string"
+}
+
+```
+<!-- </details> --> 
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
 
 
 ## Find Inventory level by id and stockRef

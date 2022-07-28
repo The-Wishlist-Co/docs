@@ -18,6 +18,8 @@ The Product resource stores information about a product, its variants.
         - [**Product Service**](#product-service)
           - [Create a Product](#create-a-product)
           - [Update a Product](#update-a-product)
+		  - [Update a Product By ID](#update-a-product-by-id)
+		  - [Update a Product By Prodref](#update-a-product-by-prodref)
           - [Look up Product by gtin/productRef](#look-up-product-by-gtinproductref)
           - [Validate Request](#validate-request)
           - [Validate Product](#validate-product)
@@ -30,6 +32,8 @@ The Product resource stores information about a product, its variants.
         - [**Product Variant Service**](#product-variant-service)
           - [Create a Product Variants](#create-a-product-variants)
           - [Update a Product Variant](#update-a-product-variant)
+		  - [Update a Product Variant By ID](#update-a-product-variant-by-id)
+		  - [Update a Product Variant By Variant Ref](#update-a-product-variant-by-variant-ref)
           - [Validate Product Variant](#validate-product-variant)
           - [Find Product Variant by ID](#find-product-variant-by-id)
           - [Find Product Variant by Ref](#find-product-variant-by-ref)
@@ -1160,6 +1164,1056 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
+
+## Update a Product By ID
+Update Product data set in the TWC system.
+
+Endpoint: ```/api/v2/products/variants/id={id}```
+
+Method: ``` PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Path Variable:
+
+```
+id= Product id
+
+```
+ 
+
+ <summary>Sample Request :</summary>
+ 
+ ```json
+ {
+  "active": true,
+  "additionalImageLink": "string",
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "availability": "available",
+  "availabilityDescription": "string",
+  "brandId": "string",
+  "brandName": "string",
+  "calculatedPrice": 0,
+  "color": "string",
+  "condition": "New",
+  "cost": 0,
+  "defaultVariant": "string",
+  "deleted": true,
+  "description": "string",
+  "digitalProduct": true,
+  "disabled": true,
+  "expirationDate": "2022-06-20T14:22:00.119Z",
+  "featured": true,
+  "gtin": "string",
+  "gtinType": "GTIN8",
+  "imageLink": "string",
+  "inventoryLevel": 0,
+  "inventoryTracking": "none",
+  "isbn": "string",
+  "link": "string",
+  "maxOrderQuantity": 0,
+  "minOrderQuantity": 0,
+  "mobileLink": "string",
+  "physicalSpecs": {
+    "dimensionUnitCode": "string",
+    "dimensionUnitName": "string",
+    "maxDepth": 0,
+    "maxHeight": 0,
+    "maxWeight": 0,
+    "maxWidth": 0,
+    "minWeight": 0,
+    "weightUnitCode": "string",
+    "weightUnitName": "string"
+  },
+  "status": "APPROVED",
+  "title": "string",
+  "variance": [
+    "string"
+  ],
+  "variantOptions": [
+    {
+      "optionId": "string",
+      "optionName": "string"
+    }
+  ],
+  "variants": [
+    {
+      "active": true,
+      "additionalImageLink": "string",
+      "attributeGroups": {
+        "additionalProp1": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            }
+          },
+          "is_obsolete": true
+        },
+        "additionalProp2": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            }
+          },
+          "is_obsolete": true
+        },
+        "additionalProp3": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            }
+          },
+          "is_obsolete": true
+        }
+      },
+      "availability": "available",
+      "availabilityDescription": "string",
+      "baseProductId": "string",
+      "baseProductRef": "string",
+      "brandId": "string",
+      "brandName": "string",
+      "calculatedPrice": 0,
+      "color": "string",
+      "condition": "New",
+      "cost": 0,
+      "defaultVariant": "string",
+      "deleted": true,
+      "description": "string",
+      "digitalProduct": true,
+      "disabled": true,
+      "expirationDate": "2022-06-20T14:22:00.119Z",
+      "featured": true,
+      "gtin": "string",
+      "gtinType": "GTIN8",
+      "imageLink": "string",
+      "inventoryLevel": 0,
+      "inventoryTracking": "none",
+      "isbn": "string",
+      "link": "string",
+      "maxOrderQuantity": 0,
+      "minOrderQuantity": 0,
+      "mobileLink": "string",
+      "physicalSpecs": {
+        "dimensionUnitCode": "string",
+        "dimensionUnitName": "string",
+        "maxDepth": 0,
+        "maxHeight": 0,
+        "maxWeight": 0,
+        "maxWidth": 0,
+        "minWeight": 0,
+        "weightUnitCode": "string",
+        "weightUnitName": "string"
+      },
+      "status": "APPROVED",
+      "stock": {
+        "stockLevels": [
+          {
+            "locationRef": "string",
+            "locationid": "string",
+            "stock": "string"
+          }
+        ],
+        "totalStock": "string"
+      },
+      "title": "string",
+      "variance": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "variantOptions": [
+        {
+          "optionDefaultImage": "string",
+          "optionId": "string",
+          "optionLabel": "string",
+          "optionValue": "string",
+          "optionsImageId": "string"
+        }
+      ]
+    }
+  ],
+  "variantsAvailable": true
+}
+
+ ```
+ 
+
+<summary>Response - 200 (OK)</summary>
+ 
+ ```json
+ {
+  "active": true,
+  "additionalImageLink": "string",
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "availability": "available",
+  "availabilityDescription": "string",
+  "brandId": "string",
+  "brandName": "string",
+  "calculatedPrice": 0,
+  "color": "string",
+  "condition": "New",
+  "cost": 0,
+  "defaultVariant": "string",
+  "deleted": true,
+  "description": "string",
+  "digitalProduct": true,
+  "disabled": true,
+  "expirationDate": "2022-06-22T07:32:52.279Z",
+  "featured": true,
+  "gtin": "string",
+  "gtinType": "GTIN8",
+  "id": "string",
+  "imageLink": "string",
+  "inventoryLevel": 0,
+  "inventoryTracking": "none",
+  "isbn": "string",
+  "link": "string",
+  "maxOrderQuantity": 0,
+  "minOrderQuantity": 0,
+  "mobileLink": "string",
+  "physicalSpecs": {
+    "dimensionUnitCode": "string",
+    "dimensionUnitName": "string",
+    "maxDepth": 0,
+    "maxHeight": 0,
+    "maxWeight": 0,
+    "maxWidth": 0,
+    "minWeight": 0,
+    "weightUnitCode": "string",
+    "weightUnitName": "string"
+  },
+  "productRef": "string",
+  "status": "APPROVED",
+  "title": "string",
+  "variance": [
+    "string"
+  ],
+  "variantOptions": [
+    {
+      "optionId": "string",
+      "optionName": "string"
+    }
+  ],
+  "variants": [
+    {
+      "active": true,
+      "additionalImageLink": "string",
+      "attributeGroups": {
+        "additionalProp1": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            }
+          },
+          "is_obsolete": true
+        },
+        "additionalProp2": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            }
+          },
+          "is_obsolete": true
+        },
+        "additionalProp3": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            }
+          },
+          "is_obsolete": true
+        }
+      },
+      "availability": "available",
+      "availabilityDescription": "string",
+      "baseProductId": "string",
+      "baseProductRef": "string",
+      "brandId": "string",
+      "brandName": "string",
+      "calculatedPrice": 0,
+      "color": "string",
+      "condition": "New",
+      "cost": 0,
+      "defaultVariant": "string",
+      "deleted": true,
+      "description": "string",
+      "digitalProduct": true,
+      "disabled": true,
+      "expirationDate": "2022-06-22T07:32:52.279Z",
+      "featured": true,
+      "gtin": "string",
+      "gtinType": "GTIN8",
+      "id": "string",
+      "imageLink": "string",
+      "inventoryLevel": 0,
+      "inventoryTracking": "none",
+      "isbn": "string",
+      "link": "string",
+      "maxOrderQuantity": 0,
+      "minOrderQuantity": 0,
+      "mobileLink": "string",
+      "physicalSpecs": {
+        "dimensionUnitCode": "string",
+        "dimensionUnitName": "string",
+        "maxDepth": 0,
+        "maxHeight": 0,
+        "maxWeight": 0,
+        "maxWidth": 0,
+        "minWeight": 0,
+        "weightUnitCode": "string",
+        "weightUnitName": "string"
+      },
+      "productRef": "string",
+      "status": "APPROVED",
+      "stock": {
+        "stockLevels": [
+          {
+            "locationRef": "string",
+            "locationid": "string",
+            "stock": "string"
+          }
+        ],
+        "totalStock": "string"
+      },
+      "title": "string",
+      "variance": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "variantOptions": [
+        {
+          "optionDefaultImage": "string",
+          "optionId": "string",
+          "optionLabel": "string",
+          "optionValue": "string",
+          "optionsImageId": "string"
+        }
+      ]
+    }
+  ],
+  "variantsAvailable": true
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+## Update a Product By Prodref
+
+Update Product data set in the TWC system based on Prodref.
+
+Endpoint: ```/api/v2/products/ref={productRef}```
+
+Method: ``` PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Path Variable:
+
+```
+ref - variantRef
+```
+ 
+
+ <summary>Sample Request :</summary>
+ 
+ ```json
+ {
+  "active": true,
+  "additionalImageLink": "string",
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "availability": "available",
+  "availabilityDescription": "string",
+  "brandId": "string",
+  "brandName": "string",
+  "calculatedPrice": 0,
+  "color": "string",
+  "condition": "New",
+  "cost": 0,
+  "defaultVariant": "string",
+  "deleted": true,
+  "description": "string",
+  "digitalProduct": true,
+  "disabled": true,
+  "expirationDate": "2022-06-20T14:22:00.119Z",
+  "featured": true,
+  "gtin": "string",
+  "gtinType": "GTIN8",
+  "imageLink": "string",
+  "inventoryLevel": 0,
+  "inventoryTracking": "none",
+  "isbn": "string",
+  "link": "string",
+  "maxOrderQuantity": 0,
+  "minOrderQuantity": 0,
+  "mobileLink": "string",
+  "physicalSpecs": {
+    "dimensionUnitCode": "string",
+    "dimensionUnitName": "string",
+    "maxDepth": 0,
+    "maxHeight": 0,
+    "maxWeight": 0,
+    "maxWidth": 0,
+    "minWeight": 0,
+    "weightUnitCode": "string",
+    "weightUnitName": "string"
+  },
+  "status": "APPROVED",
+  "title": "string",
+  "variance": [
+    "string"
+  ],
+  "variantOptions": [
+    {
+      "optionId": "string",
+      "optionName": "string"
+    }
+  ],
+  "variants": [
+    {
+      "active": true,
+      "additionalImageLink": "string",
+      "attributeGroups": {
+        "additionalProp1": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            }
+          },
+          "is_obsolete": true
+        },
+        "additionalProp2": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            }
+          },
+          "is_obsolete": true
+        },
+        "additionalProp3": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            }
+          },
+          "is_obsolete": true
+        }
+      },
+      "availability": "available",
+      "availabilityDescription": "string",
+      "baseProductId": "string",
+      "baseProductRef": "string",
+      "brandId": "string",
+      "brandName": "string",
+      "calculatedPrice": 0,
+      "color": "string",
+      "condition": "New",
+      "cost": 0,
+      "defaultVariant": "string",
+      "deleted": true,
+      "description": "string",
+      "digitalProduct": true,
+      "disabled": true,
+      "expirationDate": "2022-06-20T14:22:00.119Z",
+      "featured": true,
+      "gtin": "string",
+      "gtinType": "GTIN8",
+      "id": "string",
+      "imageLink": "string",
+      "inventoryLevel": 0,
+      "inventoryTracking": "none",
+      "isbn": "string",
+      "link": "string",
+      "maxOrderQuantity": 0,
+      "minOrderQuantity": 0,
+      "mobileLink": "string",
+      "physicalSpecs": {
+        "dimensionUnitCode": "string",
+        "dimensionUnitName": "string",
+        "maxDepth": 0,
+        "maxHeight": 0,
+        "maxWeight": 0,
+        "maxWidth": 0,
+        "minWeight": 0,
+        "weightUnitCode": "string",
+        "weightUnitName": "string"
+      },
+      "productRef": "string",
+      "status": "APPROVED",
+      "stock": {
+        "stockLevels": [
+          {
+            "locationRef": "string",
+            "locationid": "string",
+            "stock": "string"
+          }
+        ],
+        "totalStock": "string"
+      },
+      "title": "string",
+      "variance": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "variantOptions": [
+        {
+          "optionDefaultImage": "string",
+          "optionId": "string",
+          "optionLabel": "string",
+          "optionValue": "string",
+          "optionsImageId": "string"
+        }
+      ]
+    }
+  ],
+  "variantsAvailable": true
+}
+
+ ```
+ 
+
+<summary>Response - 200 (OK)</summary>
+ 
+ ```json
+ {
+  "active": true,
+  "additionalImageLink": "string",
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "availability": "available",
+  "availabilityDescription": "string",
+  "brandId": "string",
+  "brandName": "string",
+  "calculatedPrice": 0,
+  "color": "string",
+  "condition": "New",
+  "cost": 0,
+  "defaultVariant": "string",
+  "deleted": true,
+  "description": "string",
+  "digitalProduct": true,
+  "disabled": true,
+  "expirationDate": "2022-06-22T07:32:52.279Z",
+  "featured": true,
+  "gtin": "string",
+  "gtinType": "GTIN8",
+  "id": "string",
+  "imageLink": "string",
+  "inventoryLevel": 0,
+  "inventoryTracking": "none",
+  "isbn": "string",
+  "link": "string",
+  "maxOrderQuantity": 0,
+  "minOrderQuantity": 0,
+  "mobileLink": "string",
+  "physicalSpecs": {
+    "dimensionUnitCode": "string",
+    "dimensionUnitName": "string",
+    "maxDepth": 0,
+    "maxHeight": 0,
+    "maxWeight": 0,
+    "maxWidth": 0,
+    "minWeight": 0,
+    "weightUnitCode": "string",
+    "weightUnitName": "string"
+  },
+  "productRef": "string",
+  "status": "APPROVED",
+  "title": "string",
+  "variance": [
+    "string"
+  ],
+  "variantOptions": [
+    {
+      "optionId": "string",
+      "optionName": "string"
+    }
+  ],
+  "variants": [
+    {
+      "active": true,
+      "additionalImageLink": "string",
+      "attributeGroups": {
+        "additionalProp1": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            }
+          },
+          "is_obsolete": true
+        },
+        "additionalProp2": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            }
+          },
+          "is_obsolete": true
+        },
+        "additionalProp3": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "INTEGER"
+            }
+          },
+          "is_obsolete": true
+        }
+      },
+      "availability": "available",
+      "availabilityDescription": "string",
+      "baseProductId": "string",
+      "baseProductRef": "string",
+      "brandId": "string",
+      "brandName": "string",
+      "calculatedPrice": 0,
+      "color": "string",
+      "condition": "New",
+      "cost": 0,
+      "defaultVariant": "string",
+      "deleted": true,
+      "description": "string",
+      "digitalProduct": true,
+      "disabled": true,
+      "expirationDate": "2022-06-22T07:32:52.279Z",
+      "featured": true,
+      "gtin": "string",
+      "gtinType": "GTIN8",
+      "id": "string",
+      "imageLink": "string",
+      "inventoryLevel": 0,
+      "inventoryTracking": "none",
+      "isbn": "string",
+      "link": "string",
+      "maxOrderQuantity": 0,
+      "minOrderQuantity": 0,
+      "mobileLink": "string",
+      "physicalSpecs": {
+        "dimensionUnitCode": "string",
+        "dimensionUnitName": "string",
+        "maxDepth": 0,
+        "maxHeight": 0,
+        "maxWeight": 0,
+        "maxWidth": 0,
+        "minWeight": 0,
+        "weightUnitCode": "string",
+        "weightUnitName": "string"
+      },
+      "productRef": "string",
+      "status": "APPROVED",
+      "stock": {
+        "stockLevels": [
+          {
+            "locationRef": "string",
+            "locationid": "string",
+            "stock": "string"
+          }
+        ],
+        "totalStock": "string"
+      },
+      "title": "string",
+      "variance": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "variantOptions": [
+        {
+          "optionDefaultImage": "string",
+          "optionId": "string",
+          "optionLabel": "string",
+          "optionValue": "string",
+          "optionsImageId": "string"
+        }
+      ]
+    }
+  ],
+  "variantsAvailable": true
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
 
 ## Look up Product by gtin/productRef
 Returns a list of  products  from a specific Store while passing the gtin/productRef as a query params in the endpoint. The Tenant authentication maps to a Store.
@@ -4205,6 +5259,610 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
+
+## Update a Product Variant By ID
+Update Product Variant data set in the TWC system.
+
+Endpoint: ```/api/v2/products/variants/id={id}```
+
+Method: ``` PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :
+
+</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Path Variable:
+
+```
+id - Product vatiant ID
+```
+ 
+
+ <summary>Sample Request :
+
+</summary>
+ 
+ ```json
+ {
+  "active": true,
+  "additionalImageLink": "string",
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "availability": "available",
+  "availabilityDescription": "string",
+  "baseProductId": "string",
+  "baseProductRef": "string",
+  "brandId": "string",
+  "brandName": "string",
+  "calculatedPrice": 0,
+  "color": "string",
+  "condition": "New",
+  "cost": 0,
+  "defaultVariant": "string",
+  "deleted": true,
+  "description": "string",
+  "digitalProduct": true,
+  "disabled": true,
+  "expirationDate": "2022-06-21T06:12:22.906Z",
+  "featured": true,
+  "gtin": "string",
+  "gtinType": "GTIN8",  
+  "imageLink": "string",
+  "inventoryLevel": 0,
+  "inventoryTracking": "none",
+  "isbn": "string",
+  "link": "string",
+  "maxOrderQuantity": 0,
+  "minOrderQuantity": 0,
+  "mobileLink": "string",
+  "physicalSpecs": {
+    "dimensionUnitCode": "string",
+    "dimensionUnitName": "string",
+    "maxDepth": 0,
+    "maxHeight": 0,
+    "maxWeight": 0,
+    "maxWidth": 0,
+    "minWeight": 0,
+    "weightUnitCode": "string",
+    "weightUnitName": "string"
+  },
+  "productRef": "string",
+  "status": "APPROVED",
+  "stock": {
+    "stockLevels": [
+      {
+        "locationRef": "string",
+        "locationid": "string",
+        "stock": "string"
+      }
+    ],
+    "totalStock": "string"
+  },
+  "title": "string",
+  "variance": {
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "variantOptions": [
+    {
+      "optionDefaultImage": "string",
+      "optionId": "string",
+      "optionLabel": "string",
+      "optionValue": "string",
+      "optionsImageId": "string"
+    }
+  ]
+}
+```
+
+<summary>Response - 200 (OK)</summary>
+
+ ```json
+{
+  "active": true,
+  "additionalImageLink": "string",
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "availability": "available",
+  "availabilityDescription": "string",
+  "baseProductId": "string",
+  "baseProductRef": "string",
+  "brandId": "string",
+  "brandName": "string",
+  "calculatedPrice": 0,
+  "color": "string",
+  "condition": "New",
+  "cost": 0,
+  "defaultVariant": "string",
+  "deleted": true,
+  "description": "string",
+  "digitalProduct": true,
+  "disabled": true,
+  "expirationDate": "2022-06-21T06:12:22.925Z",
+  "featured": true,
+  "gtin": "string",
+  "gtinType": "GTIN8",
+  "id": "string",
+  "imageLink": "string",
+  "inventoryLevel": 0,
+  "inventoryTracking": "none",
+  "isbn": "string",
+  "link": "string",
+  "maxOrderQuantity": 0,
+  "minOrderQuantity": 0,
+  "mobileLink": "string",
+  "physicalSpecs": {
+    "dimensionUnitCode": "string",
+    "dimensionUnitName": "string",
+    "maxDepth": 0,
+    "maxHeight": 0,
+    "maxWeight": 0,
+    "maxWidth": 0,
+    "minWeight": 0,
+    "weightUnitCode": "string",
+    "weightUnitName": "string"
+  },
+  "productRef": "string",
+  "status": "APPROVED",
+  "stock": {
+    "stockLevels": [
+      {
+        "locationRef": "string",
+        "locationid": "string",
+        "stock": "string"
+      }
+    ],
+    "totalStock": "string"
+  },
+  "title": "string",
+  "variance": {
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "variantOptions": [
+    {
+      "optionDefaultImage": "string",
+      "optionId": "string",
+      "optionLabel": "string",
+      "optionValue": "string",
+      "optionsImageId": "string"
+    }
+  ]
+}
+```
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+
+## Update a Product Variant By Variant Ref
+
+Update Product Variant data set in the TWC system based on Variant Ref.
+
+Endpoint: ```/api/v2/products/variants/ref={variantRef}```
+
+Method: ``` PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :
+
+</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+Path Variable:
+
+```
+ref - variantRef
+``` 
+
+ <summary>Sample Request :
+
+</summary>
+ 
+ ```json
+ {
+  "active": true,
+  "additionalImageLink": "string",
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "availability": "available",
+  "availabilityDescription": "string",
+  "brandId": "string",
+  "brandName": "string",
+  "calculatedPrice": 0,
+  "color": "string",
+  "condition": "USED",
+  "cost": 0,
+  "defaultVariant": "string",
+  "deleted": true,
+  "description": "string",
+  "digitalProduct": true,
+  "disabled": true,
+  "expirationDate": "2022-07-27T12:12:59.505Z",
+  "featured": true,
+  "gtin": "string",
+  "gtinType": "GTIN8",
+  "imageLink": "string",
+  "inventoryLevel": 0,
+  "inventoryTracking": "none",
+  "isbn": "string",
+  "link": "string",
+  "maxOrderQuantity": 0,
+  "minOrderQuantity": 0,
+  "mobileLink": "string",
+  "physicalSpecs": {
+    "dimensionUnitCode": "string",
+    "dimensionUnitName": "string",
+    "maxDepth": 0,
+    "maxHeight": 0,
+    "maxWeight": 0,
+    "maxWidth": 0,
+    "minWeight": 0,
+    "weightUnitCode": "string",
+    "weightUnitName": "string"
+  },
+  "status": "APPROVED",
+  "stock": {
+    "stockLevels": [
+      {
+        "locationRef": "string",
+        "locationid": "string",
+        "stock": "string"
+      }
+    ],
+    "totalStock": "string"
+  },
+  "title": "string",
+  "variance": {
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "variantOptions": [
+    {
+      "optionDefaultImage": "string",
+      "optionId": "string",
+      "optionLabel": "string",
+      "optionValue": "string",
+      "optionsImageId": "string"
+    }
+  ]
+}
+```
+
+<summary>Response - 200 (OK)</summary>
+
+ ```json
+{
+  "active": true,
+  "additionalImageLink": "string",
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "availability": "available",
+  "availabilityDescription": "string",
+  "baseProductId": "string",
+  "baseProductRef": "string",
+  "brandId": "string",
+  "brandName": "string",
+  "calculatedPrice": 0,
+  "color": "string",
+  "condition": "New",
+  "cost": 0,
+  "defaultVariant": "string",
+  "deleted": true,
+  "description": "string",
+  "digitalProduct": true,
+  "disabled": true,
+  "expirationDate": "2022-06-21T06:12:22.925Z",
+  "featured": true,
+  "gtin": "string",
+  "gtinType": "GTIN8",
+  "id": "string",
+  "imageLink": "string",
+  "inventoryLevel": 0,
+  "inventoryTracking": "none",
+  "isbn": "string",
+  "link": "string",
+  "maxOrderQuantity": 0,
+  "minOrderQuantity": 0,
+  "mobileLink": "string",
+  "physicalSpecs": {
+    "dimensionUnitCode": "string",
+    "dimensionUnitName": "string",
+    "maxDepth": 0,
+    "maxHeight": 0,
+    "maxWeight": 0,
+    "maxWidth": 0,
+    "minWeight": 0,
+    "weightUnitCode": "string",
+    "weightUnitName": "string"
+  },
+  "productRef": "string",
+  "status": "APPROVED",
+  "stock": {
+    "stockLevels": [
+      {
+        "locationRef": "string",
+        "locationid": "string",
+        "stock": "string"
+      }
+    ],
+    "totalStock": "string"
+  },
+  "title": "string",
+  "variance": {
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "variantOptions": [
+    {
+      "optionDefaultImage": "string",
+      "optionId": "string",
+      "optionLabel": "string",
+      "optionValue": "string",
+      "optionsImageId": "string"
+    }
+  ]
+}
+```
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request unable to create customer
+- 401 Unauthorized,
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
 
 ## Validate Product Variant
 
