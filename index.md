@@ -149,4 +149,7 @@ For more detailed informaation, check out the collection and follow the service 
       - [*Event Subscription Resource*](eventcollectorAPI.md#event-subscription-resource)
 
 
-    
+- [**Platform Generated Events**](platformgeneratedevents.md#platform-generated-messages)
+
+
+- [**Emarsys Integration**](emarsysIntegration.md#emarsys-integration)

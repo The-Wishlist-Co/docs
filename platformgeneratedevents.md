@@ -3,13 +3,12 @@
 
 
 # **Platform Generated Messages**
-The system providing some platform generated messages such as wishlist, price drop, low stock notifications. 
 
-### Index
+The TWC Platform is capable of providing some platform generated messaging services  such as wishlists, price drop and low stock notifications based on subscription.
+
 
 ***
 - [**Platform Generated Messages**](#platform-generated-messages)
-    - [Index](#index)
   - [**Customer Interaction**](#customer-interaction)
   - [**Price Drop**](#price-drop)
   - [**Low Stock**](#low-stock)
@@ -17,19 +16,18 @@ The system providing some platform generated messages such as wishlist, price dr
 
 ## **Customer Interaction**
 
-System generating message based on the interactions made by the customer in their wishlist. such as 
-Wishlist and items Created, Updated and Deleted. Each notification is preparing based on the event subscription
-that defined by the store using this API - [*Event Subscription Resource*](eventcollectorAPI.md#event-subscription-resource)
+The TWC system is capable of capturing all wishlist and wishlist item interactions such as creations, updations and deletions made by the customer.
+Each notification is then prepared based on the status of the event subscription
+that is defined by the store using this [*Event Subscription Resource*](eventcollectorAPI.md#event-subscription-resource) API.
 
 
 ## **Price Drop**
 
-System generating messages on  price drop for each products in the customer wishlist and notifing the customer that the
-selected product price got droped
+The TWC system generates notifications based on  price drop for each product in the customer wishlist.
 
 ## **Low Stock**
-System generating messages on  low stock for each products in the customer wishlist and notifing the customer that the
-selected product stock is getting low and it will be outstock in next few hours
+The TWC system generates notifications based on low stock level for each product in the customer wishlist.
+The freaquency of this notifications is based on the depleating amount of stock.
 
 
 [Back to Top](#platform-generated-messages)  
