@@ -102,6 +102,14 @@ The response body is then utilised to prepare the payload required by the Emarsy
 
 A successful request is represented by the HTTP status code 200.
 
+[Sample Payload](Emarsys/emarsysSampleRequest.md#example-applicationjson)
+
+[Payload Schema](Emarsys/emarsysPayloadSchema.md#emarsysPayloadSchema.md)
+
+
+****
+
+
 [Back to Top](#emarsys-integration)
 
 [Back to Home](index.md#welcome-to-the-wishlist)

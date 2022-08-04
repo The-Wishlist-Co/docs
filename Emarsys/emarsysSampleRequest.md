@@ -1,6 +1,6 @@
 [Back to Emarsys Integration](/emarsysIntegration.md)
 
-## Example application/json
+## Example (application/json)
 ```json
 {
   "key_id": 3,

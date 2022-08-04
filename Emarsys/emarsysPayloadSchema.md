@@ -6,9 +6,7 @@
 
 - **`events`** - `array[`object`]` - The update event(s) in the batch.
 
-  - **`external_id`**
-string or integer
-The external identifier of the field specified in the key_id parameter. Tip: Get the contact identifier at the  endpoint. - `required`
+  - **`external_id`** - string or integer - The external identifier of the field specified in the key_id parameter. Tip: The customer email is set as external Id. - `required`
 
   - **`trigger_id`** - `string` - The unique identifier of the wishlist update event. This field is used for deduplication, so if an event is sent multiple times with the same trigger_id, only the first one will be processed. If these IDs differ or are missing, the triggers are considered different, and all of them will be processed. - `optional`
 
