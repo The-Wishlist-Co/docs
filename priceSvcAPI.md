@@ -54,7 +54,6 @@ All representations are JSON objects submitted or received as payload to API req
 ```createdDate``` - The date and time (ISO 8601 format) when the customer was created.
 
 ```lastModifiedDate``` - The date and time (ISO 8601 format) when the customer information was last updated.
-
 <!-- </details> -->
 
 
