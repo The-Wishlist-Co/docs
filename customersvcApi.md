@@ -239,6 +239,19 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "taxExemptions": [
     "string"
   ],
+  "optin_preferences": {
+    "sms": {
+      "opt_in_active": false,
+      "opted_in_at": "2022-32-09 07:32:51",
+      "opted_in_updated_at": "2022-32-09 07:32:51"
+    },
+    "email": {
+      "opt_in_active": true,
+      "opted_in_at": "2022-32-09 07:32:59",
+      "opted_in_updated_at": "2022-32-09 07:32:59"
+
+    }
+  },  
   "verified_email": true
 }
 
@@ -365,6 +378,19 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "taxExemptions": [
     "string"
   ],
+  "optin_preferences": {
+    "sms": {
+      "opt_in_active": false,
+      "opted_in_at": "2022-32-09 07:32:51",
+      "opted_in_updated_at": "2022-32-09 07:32:51"
+    },
+    "email": {
+      "opt_in_active": true,
+      "opted_in_at": "2022-32-09 07:32:59",
+      "opted_in_updated_at": "2022-32-09 07:32:59"
+
+    }
+  },
   "verified_email": true
 }
 
@@ -526,6 +552,19 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "taxExemptions": [
       "string"
     ],
+    "optin_preferences": {
+      "sms": {
+        "opt_in_active": false,
+        "opted_in_at": "2022-32-09 07:32:51",
+        "opted_in_updated_at": "2022-32-09 07:32:51"
+      },
+      "email": {
+        "opt_in_active": true,
+        "opted_in_at": "2022-32-09 07:32:59",
+        "opted_in_updated_at": "2022-32-09 07:32:59"
+
+      }
+    },
     "verified_email": true
   }
 ]
@@ -690,6 +729,19 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "taxExemptions": [
     "string"
   ],
+  "optin_preferences": {
+    "sms": {
+      "opt_in_active": false,
+      "opted_in_at": "2022-32-09 07:32:51",
+      "opted_in_updated_at": "2022-32-09 07:32:51"
+    },
+    "email": {
+      "opt_in_active": true,
+      "opted_in_at": "2022-32-09 07:32:59",
+      "opted_in_updated_at": "2022-32-09 07:32:59"
+
+    }
+  },
   "verified_email": true
 }
 
@@ -852,6 +904,19 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "taxExemptions": [
     "string"
   ],
+  "optin_preferences": {
+    "sms": {
+      "opt_in_active": false,
+      "opted_in_at": "2022-32-09 07:32:51",
+      "opted_in_updated_at": "2022-32-09 07:32:51"
+    },
+    "email": {
+      "opt_in_active": true,
+      "opted_in_at": "2022-32-09 07:32:59",
+      "opted_in_updated_at": "2022-32-09 07:32:59"
+
+    }
+  },
   "verified_email": true
 }
 
@@ -978,6 +1043,19 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "taxExemptions": [
     "string"
   ],
+  "optin_preferences": {
+    "sms": {
+      "opt_in_active": false,
+      "opted_in_at": "2022-32-09 07:32:51",
+      "opted_in_updated_at": "2022-32-09 07:32:51"
+    },
+    "email": {
+      "opt_in_active": true,
+      "opted_in_at": "2022-32-09 07:32:59",
+      "opted_in_updated_at": "2022-32-09 07:32:59"
+
+    }
+  },
   "verified_email": true
 }
 
@@ -1137,6 +1215,19 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "taxExemptions": [
     "string"
   ],
+  "optin_preferences": {
+    "sms": {
+      "opt_in_active": false,
+      "opted_in_at": "2022-32-09 07:32:51",
+      "opted_in_updated_at": "2022-32-09 07:32:51"
+    },
+    "email": {
+      "opt_in_active": true,
+      "opted_in_at": "2022-32-09 07:32:59",
+      "opted_in_updated_at": "2022-32-09 07:32:59"
+
+    }
+  },
   "verified_email": true
 }
 
@@ -1263,6 +1354,19 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "taxExemptions": [
     "string"
   ],
+  "optin_preferences": {
+    "sms": {
+      "opt_in_active": false,
+      "opted_in_at": "2022-32-09 07:32:51",
+      "opted_in_updated_at": "2022-32-09 07:32:51"
+    },
+    "email": {
+      "opt_in_active": true,
+      "opted_in_at": "2022-32-09 07:32:59",
+      "opted_in_updated_at": "2022-32-09 07:32:59"
+
+    }
+  },
   "verified_email": true
 }
 
@@ -1422,6 +1526,19 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "taxExemptions": [
     "string"
   ],
+  "optin_preferences": {
+    "sms": {
+      "opt_in_active": false,
+      "opted_in_at": "2022-32-09 07:32:51",
+      "opted_in_updated_at": "2022-32-09 07:32:51"
+    },
+    "email": {
+      "opt_in_active": true,
+      "opted_in_at": "2022-32-09 07:32:59",
+      "opted_in_updated_at": "2022-32-09 07:32:59"
+
+    }
+  },
   "verified_email": true
 }
 
@@ -1548,6 +1665,19 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "taxExemptions": [
     "string"
   ],
+  "optin_preferences": {
+    "sms": {
+      "opt_in_active": false,
+      "opted_in_at": "2022-32-09 07:32:51",
+      "opted_in_updated_at": "2022-32-09 07:32:51"
+    },
+    "email": {
+      "opt_in_active": true,
+      "opted_in_at": "2022-32-09 07:32:59",
+      "opted_in_updated_at": "2022-32-09 07:32:59"
+
+    }
+  },
   "verified_email": true
 }
 
@@ -1737,6 +1867,19 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "taxExemptions": [
     "string"
   ],
+  "optin_preferences": {
+    "sms": {
+      "opt_in_active": false,
+      "opted_in_at": "2022-32-09 07:32:51",
+      "opted_in_updated_at": "2022-32-09 07:32:51"
+    },
+    "email": {
+      "opt_in_active": true,
+      "opted_in_at": "2022-32-09 07:32:59",
+      "opted_in_updated_at": "2022-32-09 07:32:59"
+
+    }
+  },
   "verified_email": true
 }
 
@@ -1904,6 +2047,20 @@ addressId - Customer Address Id
   "taxExemptions": [
     "string"
   ],
+
+  "optin_preferences": {
+    "sms": {
+      "opt_in_active": false,
+      "opted_in_at": "2022-32-09 07:32:51",
+      "opted_in_updated_at": "2022-32-09 07:32:51"
+    },
+    "email": {
+      "opt_in_active": true,
+      "opted_in_at": "2022-32-09 07:32:59",
+      "opted_in_updated_at": "2022-32-09 07:32:59"
+
+    }
+  },
   "verified_email": true
 }
 
@@ -2069,6 +2226,19 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "taxExemptions": [
     "string"
   ],
+  "optin_preferences": {
+    "sms": {
+      "opt_in_active": false,
+      "opted_in_at": "2022-32-09 07:32:51",
+      "opted_in_updated_at": "2022-32-09 07:32:51"
+    },
+    "email": {
+      "opt_in_active": true,
+      "opted_in_at": "2022-32-09 07:32:59",
+      "opted_in_updated_at": "2022-32-09 07:32:59"
+
+    }
+  },
   "verified_email": true
 }
 
@@ -2236,6 +2406,19 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "taxExemptions": [
     "string"
   ],
+  "optin_preferences": {
+    "sms": {
+      "opt_in_active": false,
+      "opted_in_at": "2022-32-09 07:32:51",
+      "opted_in_updated_at": "2022-32-09 07:32:51"
+    },
+    "email": {
+      "opt_in_active": true,
+      "opted_in_at": "2022-32-09 07:32:59",
+      "opted_in_updated_at": "2022-32-09 07:32:59"
+
+    }
+  },
   "verified_email": true
 }
 
@@ -2410,6 +2593,19 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "taxExemptions": [
       "string"
     ],
+    "optin_preferences": {
+      "sms": {
+        "opt_in_active": false,
+        "opted_in_at": "2022-32-09 07:32:51",
+        "opted_in_updated_at": "2022-32-09 07:32:51"
+      },
+      "email": {
+        "opt_in_active": true,
+        "opted_in_at": "2022-32-09 07:32:59",
+        "opted_in_updated_at": "2022-32-09 07:32:59"
+
+      }
+    },
     "verified_email": true
   }
 ]
