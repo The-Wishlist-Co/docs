@@ -54,21 +54,25 @@ system generates notification messages at once for all wishlist items of custome
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 ## **Low Stock**
-The TWC system generates notifications based on low stock level for each product in the customer wishlist.
-The freaquency of this notifications is based on the depleating amount of stock.
+The TWC system generates Low Stock notification for each customer's product wishlist 
+
+Notification generates for customer whos accepts marketing promotions
+
+Currenltly Low stock is defined as a schduler and runs every 10 min and reads the from low-stock-details where notification sent flag false.
+
+system generates notification messages at once for all wishlist items of customer after that updates below data low-stock-details table and sends the notification message to queue
+
+`notification_sent` - boolean - notfication sent flag.
+
+
+[Sample Payload](LowStock/lowStockEventNotificationMessage.md#example-applicationjson)
+
+[Payload Schema](LowStock/lowStockEventPayloadSchema.md)
+
+
+
+
 
 
 [Back to Top](#platform-generated-messages)  
