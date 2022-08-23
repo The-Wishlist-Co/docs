@@ -51,6 +51,10 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```salePrice``` - number - Item sale price
 
+```createdDate``` - The date and time (ISO 8601 format) when the customer was created.
+
+```lastModifiedDate``` - The date and time (ISO 8601 format) when the customer information was last updated.
+
 <!-- </details> -->
 
 
@@ -103,7 +107,9 @@ Sample Request :
   "priceRef": "string",
   "productVariantId": "string",
   "sale": true,
-  "salePrice": 0
+  "salePrice": 0,
+  "createdDate": "2022-08-23T13:15:43.732Z",
+  "lastModifiedDate": "2022-08-23T13:15:43.732Z"
 }
 ```
 
@@ -147,7 +153,9 @@ Sample Request :
   "price": 0,
   "priceRef": "string",
   "sale": true,
-  "salePrice": 0
+  "salePrice": 0,
+  "createdDate": "2022-08-23T13:15:43.732Z",
+  "lastModifiedDate": "2022-08-23T13:15:43.732Z"
 }
 ```
 <!-- </details> -->
@@ -234,7 +242,9 @@ Sample Request :
   "priceRef": "string",
   "productVariantId": "string",
   "sale": true,
-  "salePrice": 0
+  "salePrice": 0,
+  "createdDate": "2022-08-23T13:15:43.732Z",
+  "lastModifiedDate": "2022-08-23T13:15:43.732Z"  
 }
 ```
 
@@ -302,7 +312,9 @@ Sample Request :
   "priceRef": "string",
   "productVariantId": "string",
   "sale": true,
-  "salePrice": 0
+  "salePrice": 0,
+  "createdDate": "2022-08-23T13:15:43.732Z",
+  "lastModifiedDate": "2022-08-23T13:15:43.732Z"  
 }
 ```
 
@@ -381,7 +393,9 @@ Request Parameters: `id  : Price Id, priceRef : Price reference`
   "priceRef": "string",
   "productVariantId": "string",
   "sale": true,
-  "salePrice": 0
+  "salePrice": 0,
+  "createdDate": "2022-08-23T13:15:43.732Z",
+  "lastModifiedDate": "2022-08-23T13:15:43.732Z"  
 }
 ```
 
@@ -474,7 +488,9 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "priceRef": "string",
     "productVariantId": "string",
     "sale": true,
-    "salePrice": 0
+    "salePrice": 0,
+    "createdDate": "2022-08-23T13:15:43.732Z",
+    "lastModifiedDate": "2022-08-23T13:15:43.732Z"    
   }
 ]
 ```
