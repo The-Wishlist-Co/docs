@@ -87,7 +87,7 @@
         }
 [Sample (application/json)](priceDropEventNotificationMessage.md#example-applicationjson)
 
-[Back to price drop ](/platformgeneratedevents.md)
+[Back to price drop ](../platformgeneratedevents.md#price-drop)
 
     
 
