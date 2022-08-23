@@ -1,4 +1,4 @@
-[Back to Price Drop Messages](/platformgeneratedevents.md)
+[Back to Price Drop Messages](/platformgeneratedevents.md#price-drop)
 
 ## Example (application/json)
 ```json
@@ -89,7 +89,8 @@
 }
 
 ```
-[Schema](priceDropEventNotificationMessage.md#Price Drop Payload Schema)
+[Schema](priceDropEventPayloadSchema.md#price-drop-payload-schema)
 
-[Back to Price Drod](/platformgeneratedevents.md#Price Drop Payload Schema)
+[Back to platform generated messages](/platformgeneratedevents.md#price-drop)
+
 
