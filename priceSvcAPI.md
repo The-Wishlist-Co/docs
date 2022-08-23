@@ -152,9 +152,7 @@ Sample Request :
   "price": 0,
   "priceRef": "string",
   "sale": true,
-  "salePrice": 0,
-  "createdDate": "2022-08-23T13:15:43.732Z",
-  "lastModifiedDate": "2022-08-23T13:15:43.732Z"
+  "salePrice": 0
 }
 ```
 <!-- </details> -->
@@ -173,7 +171,9 @@ Sample Request :
   "priceRef": "string",
   "productVariantId": "string",
   "sale": true,
-  "salePrice": 0
+  "salePrice": 0,
+  "createdDate": "2022-08-23T13:15:43.732Z",
+  "lastModifiedDate": "2022-08-23T13:15:43.732Z"  
 }
 ```
 
