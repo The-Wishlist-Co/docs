@@ -21,16 +21,20 @@ one customer may have mulitple wishlist and also need a valid customer to create
     - [**Wishlist Resource**](#wishlist-resource)
       - [Create a Wishlist](#create-a-wishlist)
       - [Update a Wishlist](#update-a-wishlist)
-	  - [Update a Wishlist By ID](#update-a-wishlist-by-id)
-	  - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
-      - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
+      - [Update a Wishlist By ID](#update-a-wishlist-by-id)
+      - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
       - [Find Wishlist by id/wishlistRef](#find-wishlist-by-idwishlistref)
+      - [Find Wishlist by Id](#find-wishlist-by-id)
+      - [Find Wishlist by Wishlist Reference](#find-wishlist-by-wishlist-reference)
       - [Find Wishlist by CustomerId](#find-wishlist-by-customerid)
       - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
+      - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
+      - [Delete Wishlist by ID](#delete-wishlist-by-id)
+      - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
     - [**Wishlist Item Resource**](#wishlist-item-resource)
       - [Create a Wishlist Item](#create-a-wishlist-item)
-	  - [Update a Wishlist Item](#update-a-wishlist-item)
-	  - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
+      - [Update a Wishlist Item](#update-a-wishlist-item)
+      - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
       - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
       - [Find Wishlist Item by WishlistId and Item Id](#find-wishlist-item-by-wishlistid-and-item-id)
 
@@ -757,42 +761,9 @@ HTTP Status Code:
 
 
 
-## Delete Wishlist by ID/Ref
-Deleting a Wishlist marks the wishlist as deleted and produces the HTTP response confirming the action.
-If the wishlist does not exist, this method returns a ResourceNotFound error.
-
-Endpoint: ```/api/wishlist```
-
-Method: ``` DELETE ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-
-Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
-
-<summary>Response - 204 (Deleted)</summary> 
-
- 
-HTTP Status Code: 
-``` 
-- 200 OK
-- 201 Created
-- 204 Deleted
-- 401 Unauthorized
-- 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
-```
 
 ## Find Wishlist by id/wishlistRef
-Returns the  wishlist belongs to the given  Id and Ref.
+Returns the  wishlist belongs to the given  Id and/or Ref.
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/```
@@ -810,6 +781,237 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 
 
 Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `  
+
+<summary>Response - 200 (OK)</summary>
+
+```json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "customerId": "string",
+  "customerRef": "string",
+  "deleted": true,
+  "description": "string",
+  "id": "string",
+  "isPrivate": true,
+  "name": "string",
+  "wishlistItems": [
+    {
+      "attributeGroups": {
+        "additionalProp1": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        },
+        "additionalProp2": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        },
+        "additionalProp3": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        }
+      },
+      "datePurchased": "2022-06-27T15:37:28.595Z",
+      "id": "string",
+      "product": {
+        "oldVariantId": "string",
+        "productId": "string",
+        "productRef": "string",
+        "selectedVariantId": "string",
+        "selectedVariantRef": "string"
+      },
+      "purchased": true,
+      "wishlistId": "string",
+      "wishlistItemRef": "string",
+      "wishlistRef": "string"
+    }
+  ],
+  "wishlistRef": "string"
+}
+```        
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Find Wishlist by Id
+
+Returns the  wishlist belongs to the given  Id.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlists/{id}```
+
+Method: ``` GET ``` 
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Path Parameter: `Id  : Wishlist Id `  
+
+<summary>Response - 200 (OK)</summary>
+
+```json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "customerId": "string",
+  "customerRef": "string",
+  "deleted": true,
+  "description": "string",
+  "id": "string",
+  "isPrivate": true,
+  "name": "string",
+  "wishlistItems": [
+    {
+      "attributeGroups": {
+        "additionalProp1": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        },
+        "additionalProp2": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        },
+        "additionalProp3": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        }
+      },
+      "datePurchased": "2022-06-27T15:37:28.595Z",
+      "id": "string",
+      "product": {
+        "oldVariantId": "string",
+        "productId": "string",
+        "productRef": "string",
+        "selectedVariantId": "string",
+        "selectedVariantRef": "string"
+      },
+      "purchased": true,
+      "wishlistId": "string",
+      "wishlistItemRef": "string",
+      "wishlistRef": "string"
+    }
+  ],
+  "wishlistRef": "string"
+}
+```        
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Find Wishlist by Wishlist Reference
+Returns the  wishlist belongs to the given Ref.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlists/{wishlistRef}/byref```
+
+Method: ``` GET ``` 
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Path Parameter: `wishlistRef : Wishlist Reference `  
 
 <summary>Response - 200 (OK)</summary>
 
@@ -1138,6 +1340,110 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+## Delete Wishlist by ID/Ref
+Deleting a Wishlist marks the wishlist as deleted and produces the HTTP response confirming the action.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlists```
+
+Method: ``` DELETE ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
+
+<summary>Response - 204 (Deleted)</summary> 
+
+ 
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Delete Wishlist by ID
+Deleting a Wishlist marks the wishlist as deleted and produces the HTTP response confirming the action.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlists/{id}```
+
+Method: ``` DELETE ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Path Parameter: `Id  : Wishlist Id `
+
+<summary>Response - 204 (Deleted)</summary> 
+
+ 
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Delete Wishlist by Ref
+Deleting a Wishlist marks the wishlist as deleted and produces the HTTP response confirming the action.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlists/{wishlistRef}/byref```
+
+Method: ``` DELETE ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Path Parameter: `wishlistRef : Wishlist Reference `
+
+<summary>Response - 204 (Deleted)</summary> 
+
+ 
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+
 ## **Wishlist Item Resource**
 
 ## Create a Wishlist Item
@@ -1264,7 +1570,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-### Update a Wishlist Item
+## Update a Wishlist Item
 Updates Wishlist item data set in the TWC system.
 
 Endpoint: ```/api/wishlist/items```
@@ -1386,8 +1692,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-
-### Update a Wishlist Item By Ref
+## Update a Wishlist Item By Ref
 
 Updates Wishlist item data set in the TWC system based on Wish list Item Ref.
 
@@ -1515,7 +1820,7 @@ HTTP Status Code:
 
 
 
-### Delete Wishlist Item by wishlist Id and item Id
+## Delete Wishlist Item by wishlist Id and item Id
 Deleting a Wishlist item marks the item as deleted and produces the HTTP response confirming the action.
 If the wishlist/item does not exist, this method returns a ResourceNotFound error.
 
@@ -1548,7 +1853,7 @@ HTTP Status Code:
 ```
 
 
-### Find Wishlist Item by WishlistId and Item Id
+## Find Wishlist Item by WishlistId and Item Id
 Returns the  wishlist item belongs to the given wishlist id and item id
 If the item does not exist, this method returns a ResourceNotFound error.
 
@@ -1623,6 +1928,8 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
+
 
 ***
 [Back to Top](#wishlist-api)
