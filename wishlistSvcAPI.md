@@ -1792,8 +1792,6 @@ HTTP Status Code:
 - 409 Conflict
 ```
 
-
-
 ## Update a Wishlist Item
 Updates Wishlist item data set in the TWC system.
 
