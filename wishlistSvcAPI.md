@@ -29,8 +29,9 @@ one customer may have mulitple wishlist and also need a valid customer to create
       - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
     - [**Wishlist Item Resource**](#wishlist-item-resource)
       - [Create a Wishlist Item](#create-a-wishlist-item)
-	  - [Update a Wishlist Item](#update-a-wishlist-item)
-	  - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
+      - [Upload multiple Wishlist Items](#upload-multiple-wishlist-items)
+      - [Update a Wishlist Item](#update-a-wishlist-item)
+      - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
       - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
       - [Find Wishlist Item by WishlistId and Item Id](#find-wishlist-item-by-wishlistid-and-item-id)
 
@@ -77,6 +78,8 @@ All representations are JSON objects submitted or received as payload to API req
 ```id``` - string - the unique id of the wishlist item. it will automatically generate at the time of wishlist item creation.
 
 ```wishlistRef``` - string- reference of the respective wishlist
+
+```addedFromCart``` - boolean - to indicate whether added from Cart or not.
 
 <!-- </details>
 
@@ -155,6 +158,7 @@ Sample Request:
   "id": "string",
   "isPrivate": true,
   "name": "string",
+  "addedFromCart": true,
   "wishlistItems": [
     {
       "attributeGroups": {
@@ -243,6 +247,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "wishlistRef": "string"
@@ -318,6 +323,7 @@ Sample Request:
   "id": "string",
   "isPrivate": true,
   "name": "string",
+  "addedFromCart": true,
   "wishlistItems": [
     {
       "attributeGroups": {
@@ -406,6 +412,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "wishlistRef": "string"
@@ -484,6 +491,7 @@ Sample Request:
   "description": "string",
   "isPrivate": true,
   "name": "string",
+  "addedFromCart": true,
   "wishlistItems": [
     {
       "attributeGroups": {
@@ -572,6 +580,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "wishlistRef": "string"
@@ -649,6 +658,7 @@ Sample Request:
   "description": "string",
   "isPrivate": true,
   "name": "string",
+  "addedFromCart": true,
   "wishlistItems": [
     {
       "attributeGroups": {
@@ -737,6 +747,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "wishlistRef": "string"
@@ -848,6 +859,7 @@ Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
   "id": "string",
   "isPrivate": true,
   "name": "string",
+  "addedFromCart": true,
   "wishlistItems": [
     {
       "attributeGroups": {
@@ -963,6 +975,7 @@ Path Variable: `customerId - Unique Customer Id`
     "id": "string",
     "isPrivate": true,
     "name": "string",
+    "addedFromCart": true,
     "wishlistItems": [
       {
         "attributeGroups": {
@@ -1079,6 +1092,7 @@ Path Variable: `customerRef - Unique Customer Ref`
     "id": "string",
     "isPrivate": true,
     "name": "string",
+    "addedFromCart": true,
     "wishlistItems": [
       {
         "attributeGroups": {
@@ -1199,6 +1213,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "wishlistRef": "string"
@@ -1247,6 +1262,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "wishlistRef": "string"
@@ -1263,6 +1279,215 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
+## Upload multiple Wishlist Items
+Uploading new multiple wishlist items into an existing wishlist in the TWC system.
+
+Endpoint: ```/api/wishlist/upload-items```
+
+Method: ``` POST ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Sample Request:
+
+<!-- <details> -->
+```json
+[
+  {
+    "attributeGroups": {
+      "additionalProp1": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      },
+      "additionalProp2": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      },
+      "additionalProp3": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      }
+    },
+
+    "product": {
+      "oldVariantId": "oldvar3",
+      "productId": "prod3",
+      "productRef": "prodRef3",
+      "selectedVariantId": "selVar3",
+      "selectedVariantRef": "selVarRef3"
+    },
+    "purchased": true,
+    "addedFromCart": true,
+    "wishlistItemRef": "string4",
+    "wishlistRef": "string1"
+  },
+  {
+    "attributeGroups": {
+      "additionalProp1": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      },
+      "additionalProp2": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      },
+      "additionalProp3": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      }
+    },
+
+
+    "product": {
+      "oldVariantId": "oldvar24",
+      "productId": "prod4",
+      "productRef": "prodRef4",
+      "selectedVariantId": "selVar4",
+      "selectedVariantRef": "selVarRef4"
+    },
+    "purchased": true,
+    "addedFromCart": true,
+    "wishlistItemRef": "string5",
+    "wishlistRef": "string1"
+  }
+]
+
+```
+
+<!-- </details> -->
+
+<summary>Response - 201 (created)</summary>
+
+```json
+[
+  {
+    "id": "d1198b27-5047-4793-9b43-8429fec342eb",
+    "wishlistItemRef": "string4",
+    "purchased": true,
+    "product": {
+      "productId": "prod3",
+      "productRef": "prodRef3",
+      "selectedVariantId": "selVar3",
+      "selectedVariantRef": "selVarRef3"
+    },
+    "createdTime": "2022-08-23T09:59:27.746+0000",
+    "modifiedTime": "2022-08-23T09:59:27.746+0000",
+    "addedFromCart": true,
+    "attributeGroups": {
+      "additionalProp1": {
+        "description": "string",
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
+      },
+      "additionalProp3": {
+        "description": "string",
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
+      },
+      "additionalProp2": {
+        "description": "string",
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
+      }
+    }
+  },
+  {
+    "id": "fe9e98d0-7b6b-4889-89c2-e473e80c6876",
+    "wishlistItemRef": "string5",
+    "purchased": true,
+    "product": {
+      "productId": "prod4",
+      "productRef": "prodRef4",
+      "selectedVariantId": "selVar4",
+      "selectedVariantRef": "selVarRef4"
+    },
+    "createdTime": "2022-08-23T09:59:27.747+0000",
+    "modifiedTime": "2022-08-23T09:59:27.747+0000",
+    "addedFromCart": true,
+    "attributeGroups": {
+      "additionalProp1": {
+        "description": "string",
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
+      },
+      "additionalProp3": {
+        "description": "string",
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
+      },
+      "additionalProp2": {
+        "description": "string",
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
+      }
+    }
+  }
+]
+```
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+- 409 Conflict
+```
+
 
 ### Update a Wishlist Item
 Updates Wishlist item data set in the TWC system.
@@ -1322,6 +1547,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "wishlistRef": "string"
@@ -1369,6 +1595,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "wishlistRef": "string"
@@ -1450,6 +1677,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistRef": "string"
 }
@@ -1496,6 +1724,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "wishlistRef": "string"
@@ -1607,6 +1836,7 @@ Path Variable: `id - Id , wishlistId - Wishlist Id `
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "wishlistRef": "string"
