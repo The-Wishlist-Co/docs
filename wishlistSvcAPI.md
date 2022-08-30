@@ -1,5 +1,5 @@
 
-[Back to Home](index.md#welcome-to-the-wishlist)
+**[Back to Home](index.md#welcome-to-the-wishlist)
 
 
 # **Wishlist API**
@@ -13,27 +13,37 @@ one customer may have mulitple wishlist and also need a valid customer to create
 
 - [**Wishlist API**](#wishlist-api)
     <!-- - [Index](#index) -->
-  - [**Representations**](#representations)
-    - [Wishlist](#wishlist)
-    - [Wishlist Item](#wishlist-item)
-    - [Product](#product)
-  - [**REST Endpoints**](#rest-endpoints)
-    - [**Wishlist Resource**](#wishlist-resource)
-      - [Create a Wishlist](#create-a-wishlist)
-      - [Update a Wishlist](#update-a-wishlist)
-	  - [Update a Wishlist By ID](#update-a-wishlist-by-id)
-	  - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
-      - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
-      - [Find Wishlist by id/wishlistRef](#find-wishlist-by-idwishlistref)
-      - [Find Wishlist by CustomerId](#find-wishlist-by-customerid)
-      - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
-    - [**Wishlist Item Resource**](#wishlist-item-resource)
-      - [Create a Wishlist Item](#create-a-wishlist-item)
-      - [Upload multiple Wishlist Items](#upload-multiple-wishlist-items)
-      - [Update a Wishlist Item](#update-a-wishlist-item)
-      - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
-      - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
-      - [Find Wishlist Item by WishlistId and Item Id](#find-wishlist-item-by-wishlistid-and-item-id)
+    - [**Representations**](#representations)
+        - [Wishlist](#wishlist)
+        - [Wishlist Item](#wishlist-item)
+        - [Product](#product)
+    - [**REST Endpoints**](#rest-endpoints)
+        - [**Wishlist Resource**](#wishlist-resource)
+            - [Create a Wishlist](#create-a-wishlist)
+            - [Update a Wishlist](#update-a-wishlist)
+            - [Update a Wishlist By ID](#update-a-wishlist-by-id)
+            - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
+            - [Find Wishlist by id/wishlistRef](#find-wishlist-by-idwishlistref)
+            - [Find Wishlist by Id](#find-wishlist-by-id)
+            - [Find Wishlist by Wishlist Reference](#find-wishlist-by-wishlist-reference)
+            - [Find Wishlist by CustomerId](#find-wishlist-by-customerid)
+            - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
+            - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
+            - [Delete Wishlist by ID](#delete-wishlist-by-id)
+            - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
+        - [**Wishlist Item Resource**](#wishlist-item-resource)
+            - [Create a Wishlist Item](#create-a-wishlist-item)
+            - [Upload multiple Wishlist Items](#upload-multiple-wishlist-items)
+            - [Update a Wishlist Item](#update-a-wishlist-item)
+            - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
+            - [Update a Wishlist Item By Id](#update-a-wishlist-item-by-id)
+            - [Find all Items in a Wishlist by Wishlist Id](#find-all-items-in-a-wishlist-by-wishlist-id)            
+            - [Find Wishlist Item by Item Id](#find-wishlist-item-by-item-id)
+            - [Find Wishlist Item by Item Ref](#find-wishlist-item-by-item-ref)
+            - [Find Wishlist Item by WishlistId and Item Id](#find-wishlist-item-by-wishlistid-and-item-id)
+            - [Delete Wishlist Item by Id](#delete-wishlist-item-by-id)
+            - [Delete Wishlist Item by WishlistItemRef](#delete-wishlist-item-by-wishlistitemref)
+            - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
 
 ## **Representations**
 
@@ -43,7 +53,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 <!-- <details> -->
  <!-- <summary>WishList</summary> -->
- 
+
 ```customerId``` - string - the unique id of the customer
 
 ```customerRef``` - string - the reference of the customer
@@ -54,7 +64,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```id``` - string - the unique id of the wishlist. it will automatically generate at the time of wishlist creation.
 
-```isPrivate``` - boolean 
+```isPrivate``` - boolean
 
 ```name``` - string - name of the wishlist
 
@@ -85,8 +95,8 @@ All representations are JSON objects submitted or received as payload to API req
 
 <details> -->
  <!-- <summary>Product</summary> -->
- ## Product
- 
+## Product
+
 
 ```oldVariantId``` - string - the existing product variant id. this needs only incase of updating an existing variant in a wishlist item.
 
@@ -197,6 +207,7 @@ Sample Request:
         "selectedVariantRef": "string"
       },
       "purchased": true,
+      "addedFromCart": true,
       "wishlistId": "string",
       "wishlistItemRef": "string",
       "wishlistRef": "string"
@@ -250,13 +261,15 @@ Sample Request:
   "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "wishlistRef": "string"
 }
 
 ```
 
- 
-HTTP Status Code: 
+
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -362,6 +375,7 @@ Sample Request:
         "selectedVariantRef": "string"
       },
       "purchased": true,
+      "addedFromCart": true,
       "wishlistId": "string",
       "wishlistItemRef": "string",
       "wishlistRef": "string"
@@ -412,15 +426,16 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
-  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "wishlistRef": "string"
 }
 ```
 
- 
-HTTP Status Code: 
+
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -530,6 +545,7 @@ Sample Request:
         "selectedVariantRef": "string"
       },
       "purchased": true,
+      "addedFromCart": true,
       "wishlistId": "string",
       "wishlistItemRef": "string",
       "wishlistRef": "string"
@@ -580,15 +596,16 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
-  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "wishlistRef": "string"
 }
 ```
 
- 
-HTTP Status Code: 
+
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -654,54 +671,16 @@ Sample Request:
       "description": "string"
     }
   },
+  "product": {
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
   "deleted": true,
   "description": "string",
   "isPrivate": true,
-  "name": "string",
-  "addedFromCart": true,
-  "wishlistItems": [
-    {
-      "attributeGroups": {
-        "additionalProp1": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp2": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp3": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        }
-      },
-      "datePurchased": "2022-07-27T12:46:59.074Z",
-      "id": "string",
-      "product": {
-        "oldVariantId": "string",
-        "productId": "string",
-        "productRef": "string",
-        "selectedVariantId": "string",
-        "selectedVariantRef": "string"
-      },
-      "purchased": true,
-      "wishlistId": "string",
-      "wishlistItemRef": "string",
-      "wishlistRef": "string"
-    }
-  ],
+  "name": "string",  
   "wishlistRef": "string"
 }
 ```
@@ -739,23 +718,23 @@ Sample Request:
   },
   "datePurchased": "2022-06-27T15:35:39.044Z",
   "id": "string",
-  "product": {
-    "oldVariantId": "string",
+  "product": {    
     "productId": "string",
     "productRef": "string",
     "selectedVariantId": "string",
     "selectedVariantRef": "string"
   },
   "purchased": true,
-  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "wishlistRef": "string"
 }
 ```
 
- 
-HTTP Status Code: 
+
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -768,13 +747,14 @@ HTTP Status Code:
 
 
 
-## Delete Wishlist by ID/Ref
-Deleting a Wishlist marks the wishlist as deleted and produces the HTTP response confirming the action.
+
+## Find Wishlist by id/wishlistRef
+Returns the  wishlist belongs to the given  Id and/or Ref.
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
-Endpoint: ```/api/wishlist```
+Endpoint: ```/api/wishlists/```
 
-Method: ``` DELETE ```
+Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -787,40 +767,6 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 
 
 Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
-
-<summary>Response - 204 (Deleted)</summary> 
-
- 
-HTTP Status Code: 
-``` 
-- 200 OK
-- 201 Created
-- 204 Deleted
-- 401 Unauthorized
-- 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
-```
-
-## Find Wishlist by id/wishlistRef
-Returns the  wishlist belongs to the given  Id and Ref.
-If the wishlist does not exist, this method returns a ResourceNotFound error.
-
-Endpoint: ```/api/wishlists/```
-
-Method: ``` GET ``` 
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-
-Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `  
 
 <summary>Response - 200 (OK)</summary>
 
@@ -898,8 +844,11 @@ Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
         "selectedVariantRef": "string"
       },
       "purchased": true,
+      "addedFromCart": true,
       "wishlistId": "string",
       "wishlistItemRef": "string",
+      "createdTime": "2022-08-24T07:28:12.000+0000",
+      "modifiedTime": "2022-08-24T07:30:52.051+0000",
       "wishlistRef": "string"
     }
   ],
@@ -907,7 +856,245 @@ Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
 }
 ```        
 
-HTTP Status Code: 
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Find Wishlist by Id
+
+Returns the  wishlist belongs to the given  Id.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlists/{id}```
+
+Method: ``` GET ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Path Parameter: `Id  : Wishlist Id `
+
+<summary>Response - 200 (OK)</summary>
+
+```json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "customerId": "string",
+  "customerRef": "string",
+  "deleted": true,
+  "description": "string",
+  "id": "string",
+  "isPrivate": true,
+  "name": "string",
+  "wishlistItems": [
+    {
+      "attributeGroups": {
+        "additionalProp1": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        },
+        "additionalProp2": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        },
+        "additionalProp3": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        }
+      },
+      "datePurchased": "2022-06-27T15:37:28.595Z",
+      "id": "string",
+      "product": {
+        "oldVariantId": "string",
+        "productId": "string",
+        "productRef": "string",
+        "selectedVariantId": "string",
+        "selectedVariantRef": "string"
+      },
+      "purchased": true,
+      "addedFromCart": true,
+      "wishlistId": "string",
+      "wishlistItemRef": "string",
+      "createdTime": "2022-08-24T07:28:12.000+0000",
+      "modifiedTime": "2022-08-24T07:30:52.051+0000",
+  
+      "wishlistRef": "string"
+    }
+  ],
+  "wishlistRef": "string"
+}
+```        
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Find Wishlist by Wishlist Reference
+Returns the  wishlist belongs to the given Ref.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlists/{wishlistRef}/byref```
+
+Method: ``` GET ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Path Parameter: `wishlistRef : Wishlist Reference `
+
+<summary>Response - 200 (OK)</summary>
+
+```json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "customerId": "string",
+  "customerRef": "string",
+  "deleted": true,
+  "description": "string",
+  "id": "string",
+  "isPrivate": true,
+  "name": "string",
+  "wishlistItems": [
+    {
+      "attributeGroups": {
+        "additionalProp1": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        },
+        "additionalProp2": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        },
+        "additionalProp3": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        }
+      },
+      "datePurchased": "2022-06-27T15:37:28.595Z",
+      "id": "string",
+      "product": {
+        "oldVariantId": "string",
+        "productId": "string",
+        "productRef": "string",
+        "selectedVariantId": "string",
+        "selectedVariantRef": "string"
+      },
+      "purchased": true,
+      "addedFromCart": true,
+      "wishlistId": "string",
+      "wishlistItemRef": "string",
+      "createdTime": "2022-08-24T07:28:12.000+0000",
+      "modifiedTime": "2022-08-24T07:30:52.051+0000",
+      "wishlistRef": "string"
+    }
+  ],
+  "wishlistRef": "string"
+}
+```        
+
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -924,7 +1111,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/customer/{customerId}```
 
-Method: ``` GET ``` 
+Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -1014,17 +1201,23 @@ Path Variable: `customerId - Unique Customer Id`
           "selectedVariantRef": "string"
         },
         "purchased": true,
+        "addedFromCart": true,
         "wishlistId": "string",
         "wishlistItemRef": "string",
+        "createdTime": "2022-08-24T07:28:12.000+0000",
+        "modifiedTime": "2022-08-24T07:30:52.051+0000",
+  
         "wishlistRef": "string"
       }
     ],
+    "createdTime": "2022-08-24T07:28:12.000+0000",
+    "modifiedTime": "2022-08-24T07:30:52.051+0000",
     "wishlistRef": "string"
   }
 ]
 ```
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1041,7 +1234,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/customer/{customerRef}/byref```
 
-Method: ``` GET ``` 
+Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -1091,8 +1284,7 @@ Path Variable: `customerRef - Unique Customer Ref`
     "description": "string",
     "id": "string",
     "isPrivate": true,
-    "name": "string",
-    "addedFromCart": true,
+    "name": "string",    
     "wishlistItems": [
       {
         "attributeGroups": {
@@ -1131,18 +1323,23 @@ Path Variable: `customerRef - Unique Customer Ref`
           "selectedVariantRef": "string"
         },
         "purchased": true,
+        "addedFromCart": true,
         "wishlistId": "string",
         "wishlistItemRef": "string",
+        "createdTime": "2022-08-24T07:28:12.000+0000",
+        "modifiedTime": "2022-08-24T07:30:52.051+0000",  
         "wishlistRef": "string"
       }
     ],
+    "createdTime": "2022-08-24T07:28:12.000+0000",
+    "modifiedTime": "2022-08-24T07:30:52.051+0000",
     "wishlistRef": "string"
   }
 ]
 ```
 
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1152,6 +1349,110 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+## Delete Wishlist by ID/Ref
+Deleting a Wishlist marks the wishlist as deleted and produces the HTTP response confirming the action.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlists```
+
+Method: ``` DELETE ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
+
+<summary>Response - 204 (Deleted)</summary> 
+
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Delete Wishlist by ID
+Deleting a Wishlist marks the wishlist as deleted and produces the HTTP response confirming the action.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlists/{id}```
+
+Method: ``` DELETE ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Path Parameter: `Id  : Wishlist Id `
+
+<summary>Response - 204 (Deleted)</summary> 
+
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Delete Wishlist by Ref
+Deleting a Wishlist marks the wishlist as deleted and produces the HTTP response confirming the action.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlists/{wishlistRef}/byref```
+
+Method: ``` DELETE ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Path Parameter: `wishlistRef : Wishlist Reference `
+
+<summary>Response - 204 (Deleted)</summary> 
+
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+
 ## **Wishlist Item Resource**
 
 ## Create a Wishlist Item
@@ -1265,11 +1566,13 @@ Sample Request:
   "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "wishlistRef": "string"
 }
 ```
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1279,6 +1582,7 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
 
 ## Upload multiple Wishlist Items
 Uploading new multiple wishlist items into an existing wishlist in the TWC system.
@@ -1489,7 +1793,8 @@ HTTP Status Code:
 ```
 
 
-### Update a Wishlist Item
+
+## Update a Wishlist Item
 Updates Wishlist item data set in the TWC system.
 
 Endpoint: ```/api/wishlist/items```
@@ -1598,11 +1903,13 @@ Sample Request:
   "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "wishlistRef": "string"
 }
 ```
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1613,8 +1920,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-
-### Update a Wishlist Item By Ref
+## Update a Wishlist Item By Ref
 
 Updates Wishlist item data set in the TWC system based on Wish list Item Ref.
 
@@ -1727,11 +2033,13 @@ Sample Request:
   "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "wishlistRef": "string"
 }
 ```
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1740,17 +2048,15 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 - 405 Invalid input
+
 ```
+## Update a Wishlist Item By Id
 
+Updates Wishlist item data set in the TWC system based on Wish list Item Ref.
 
+Endpoint: ```/api/wishlist/items/id={id}```
 
-### Delete Wishlist Item by wishlist Id and item Id
-Deleting a Wishlist item marks the item as deleted and produces the HTTP response confirming the action.
-If the wishlist/item does not exist, this method returns a ResourceNotFound error.
-
-Endpoint: ```/api/wishlist/{wishlistId}/items/{id}```
-
-Method: ``` DELETE ```
+Method: ``` PUT ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -1761,11 +2067,336 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-Request Parameters: `Id  : Wishlist item Id, wishlistId : Wishlist Id`
+Path Variable:
 
-<summary>Response - 204 (Deleted)</summary> 
+```
+id - wishlist Item id
+```
 
-HTTP Status Code: 
+Sample Request:
+<!-- <details> -->
+
+```json 
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "datePurchased": "2022-07-27T12:51:40.193Z",
+  "product": {
+    "oldVariantId": "string",
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "wishlistId": "string",
+  "wishlistRef": "string"
+}
+```
+<!-- </details> -->
+
+<summary>Response - 200 (OK Updated)</summary>
+
+```json
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "datePurchased": "2022-06-27T15:40:09.518Z",
+  "id": "string",
+  "product": {
+    "oldVariantId": "string",
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "addedFromCart": true,
+  "wishlistId": "string",
+  "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
+  "wishlistRef": "string"
+}
+```
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Find all Items in a Wishlist by Wishlist Id
+Returns a list of all wishlist items belonging to the given wishlist id.
+If item does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```​/api​/wishlist​​/items​```
+
+Method: ``` GET ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Request Param:  ` id - Wishlist Id `
+
+<summary>Response - 200 (OK)</summary>
+
+```json
+[
+    {
+        "attributeGroups": {
+            "additionalProp1": {
+                "attributes": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                },
+                "description": "string"
+            },
+            "additionalProp2": {
+                "attributes": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                },
+                "description": "string"
+            },
+            "additionalProp3": {
+                "attributes": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                },
+                "description": "string"
+            }
+        },
+        "datePurchased": "2022-06-27T15:40:39.119Z",
+        "id": "string",
+        "product": {
+            "oldVariantId": "string",
+            "productId": "string",
+            "productRef": "string",
+            "selectedVariantId": "string",
+            "selectedVariantRef": "string"
+        },
+        "purchased": true,
+        "addedFromCart": true,
+        "wishlistId": "string",
+        "wishlistItemRef": "string",
+        "createdTime": "2022-08-24T07:28:12.000+0000",
+        "modifiedTime": "2022-08-24T07:30:52.051+0000",
+        "wishlistRef": "string"
+    }
+]
+```
+
+
+
+## Find Wishlist Item by Item Id
+Returns the  wishlist item belonging to the given wishlist item id
+If the item does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```​/api​/wishlist​​/items​/{id}```
+
+Method: ``` GET ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Path Variable: `, id - Wishlist Item Id `
+
+<summary>Response - 200 (OK)</summary>
+
+```json 
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "datePurchased": "2022-06-27T15:40:39.119Z",
+  "id": "string",
+  "product": {
+    "oldVariantId": "string",
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "addedFromCart": true,
+  "wishlistId": "string",
+  "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
+  "wishlistRef": "string"
+}
+```
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Find Wishlist Item by Item Ref
+Returns the  wishlist item belonging to the given wishlist item Ref
+If the item does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```​/api​/wishlist​​/items​/ref/{wishlistItemRef}```
+Method: ``` GET ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Path Variable: `, wishlistItemRef - Wishlist Item Ref `
+
+<summary>Response - 200 (OK)</summary>
+
+```json 
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
+  "datePurchased": "2022-06-27T15:40:39.119Z",
+  "id": "string",
+  "product": {
+    "oldVariantId": "string",
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "wishlistId": "string",
+  "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
+  "wishlistRef": "string"
+}
+```
+
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1777,13 +2408,13 @@ HTTP Status Code:
 ```
 
 
-### Find Wishlist Item by WishlistId and Item Id
-Returns the  wishlist item belongs to the given wishlist id and item id
+## Find Wishlist Item by WishlistId and Item Id
+Returns the  wishlist item belonging to the given wishlist id and item id
 If the item does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```​/api​/wishlist​/{wishlistId}​/items​/{id}```
 
-Method: ``` GET ``` 
+Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -1839,11 +2470,107 @@ Path Variable: `id - Id , wishlistId - Wishlist Id `
   "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "wishlistRef": "string"
 }
 ```
 
-HTTP Status Code: 
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+## Delete Wishlist Item by Id
+Deleting a Wishlist item marks the item as deleted and produces the HTTP response confirming the action.
+If the wishlist/item does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlist/items/{id}```
+
+Method: ``` DELETE ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Path Parameters: `Id  : Wishlist item Id`
+
+<summary>Response - 204 (Deleted)</summary> 
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Delete Wishlist Item by WishlistItemRef
+Deleting a Wishlist item marks the item as deleted and produces the HTTP response confirming the action.
+If the wishlist/item does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlist/items/{wishlistItemRef}/ref```
+
+Method: ``` DELETE ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Request Parameters: `wishlistItemRef  : Wishlist item Reference`
+
+<summary>Response - 204 (Deleted)</summary> 
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+## Delete Wishlist Item by wishlist Id and item Id
+Deleting a Wishlist item marks the item as deleted and produces the HTTP response confirming the action.
+If the wishlist/item does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlist/{wishlistId}/items/{id}```
+
+Method: ``` DELETE ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Request Parameters: `Id  : Wishlist item Id, wishlistId : Wishlist Id`
+
+<summary>Response - 204 (Deleted)</summary> 
+
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1857,5 +2584,5 @@ HTTP Status Code:
 ***
 [Back to Top](#wishlist-api)
 
-[Back to Home](index.md#welcome-to-the-wishlist)
+[Back to Home](index.md#welcome-to-the-wishlist)**
 
