@@ -13,37 +13,38 @@ one customer may have mulitple wishlist and also need a valid customer to create
 
 - [**Wishlist API**](#wishlist-api)
     <!-- - [Index](#index) -->
-  - [**Representations**](#representations)
-    - [Wishlist](#wishlist)
-    - [Wishlist Item](#wishlist-item)
-    - [Product](#product)
-  - [**REST Endpoints**](#rest-endpoints)
-    - [**Wishlist Resource**](#wishlist-resource)
-      - [Create a Wishlist](#create-a-wishlist)
-      - [Update a Wishlist](#update-a-wishlist)
-      - [Update a Wishlist By ID](#update-a-wishlist-by-id)
-      - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
-      - [Find Wishlist by id/wishlistRef](#find-wishlist-by-idwishlistref)
-      - [Find Wishlist by Id](#find-wishlist-by-id)
-      - [Find Wishlist by Wishlist Reference](#find-wishlist-by-wishlist-reference)
-      - [Find Wishlist by CustomerId](#find-wishlist-by-customerid)
-      - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
-      - [Lookup Wishlist By CustomerId](#lookup-wishlist-by-customer)
-      - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
-      - [Delete Wishlist by ID](#delete-wishlist-by-id)
-      - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
-    - [**Wishlist Item Resource**](#wishlist-item-resource)
-      - [Create a Wishlist Item](#create-a-wishlist-item)
-      - [Update a Wishlist Item](#update-a-wishlist-item)
-      - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
-      - [Update a Wishlist Item By Id](#update-a-wishlist-item-by-id)
-      - [Find all Items in a Wishlist](#find-all-items-in-a-wishlist)
-      - [Find Wishlist Item by Item Id](#find-wishlist-item-by-item-id)
-      - [Find Wishlist Item by Item Ref](#find-wishlist-item-by-item-ref)
-      - [Find Wishlist Item by WishlistId and Item Id](#find-wishlist-item-by-wishlistid-and-item-id)
-      - [Delete Wishlist Item by Id](#delete-wishlist-item-by-id)
-      - [Delete Wishlist Item by WishlistItemRef](#delete-wishlist-item-by-wishlistitemref)
-      - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
+    - [**Representations**](#representations)
+        - [Wishlist](#wishlist)
+        - [Wishlist Item](#wishlist-item)
+        - [Product](#product)
+    - [**REST Endpoints**](#rest-endpoints)
+        - [**Wishlist Resource**](#wishlist-resource)
+            - [Create a Wishlist](#create-a-wishlist)
+            - [Update a Wishlist](#update-a-wishlist)
+            - [Update a Wishlist By ID](#update-a-wishlist-by-id)
+            - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
+            - [Find Wishlist by id/wishlistRef](#find-wishlist-by-idwishlistref)
+            - [Find Wishlist by Id](#find-wishlist-by-id)
+            - [Find Wishlist by Wishlist Reference](#find-wishlist-by-wishlist-reference)
+            - [Find Wishlist by CustomerId](#find-wishlist-by-customerid)
+            - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
+            - [Lookup Wishlist By CustomerId](#lookup-wishlist-by-customer)
+            - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
+            - [Delete Wishlist by ID](#delete-wishlist-by-id)
+            - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
+        - [**Wishlist Item Resource**](#wishlist-item-resource)
+            - [Create a Wishlist Item](#create-a-wishlist-item)
+            - [Upload multiple Wishlist Items](#upload-multiple-wishlist-items)
+            - [Update a Wishlist Item](#update-a-wishlist-item)
+            - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
+            - [Update a Wishlist Item By Id](#update-a-wishlist-item-by-id)
+            - [Find all Items in a Wishlist by Wishlist Id](#find-all-items-in-a-wishlist-by-wishlist-id)
+            - [Find Wishlist Item by Item Id](#find-wishlist-item-by-item-id)
+            - [Find Wishlist Item by Item Ref](#find-wishlist-item-by-item-ref)
+            - [Find Wishlist Item by WishlistId and Item Id](#find-wishlist-item-by-wishlistid-and-item-id)
+            - [Delete Wishlist Item by Id](#delete-wishlist-item-by-id)
+            - [Delete Wishlist Item by WishlistItemRef](#delete-wishlist-item-by-wishlistitemref)
+            - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
 
 ## **Representations**
 
@@ -53,7 +54,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 <!-- <details> -->
  <!-- <summary>WishList</summary> -->
- 
+
 ```customerId``` - string - the unique id of the customer
 
 ```customerRef``` - string - the reference of the customer
@@ -64,7 +65,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```id``` - string - the unique id of the wishlist. it will automatically generate at the time of wishlist creation.
 
-```isPrivate``` - boolean 
+```isPrivate``` - boolean
 
 ```name``` - string - name of the wishlist
 
@@ -93,12 +94,14 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```wishlistRef``` - string- reference of the respective wishlist
 
+```addedFromCart``` - boolean - to indicate whether added from Cart or not.
+
 <!-- </details>
 
 <details> -->
  <!-- <summary>Product</summary> -->
- ## Product
- 
+## Product
+
 
 ```oldVariantId``` - string - the existing product variant id. this needs only incase of updating an existing variant in a wishlist item.
 
@@ -135,7 +138,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 
 Sample Request:
 <!-- <details> -->
-```json 
+
+```json
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -224,8 +228,8 @@ Sample Request:
 
 ```
 
- 
-HTTP Status Code: 
+
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -345,8 +349,8 @@ Sample Request:
 }
 ```
 
- 
-HTTP Status Code: 
+
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -471,8 +475,8 @@ Sample Request:
 }
 ```
 
- 
-HTTP Status Code: 
+
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -595,8 +599,8 @@ Sample Request:
 }
 ```
 
- 
-HTTP Status Code: 
+
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -616,7 +620,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/```
 
-Method: ``` GET ``` 
+Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -628,7 +632,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 | X-TWC-Tenant  | {Tenant Name}    |
 
 
-Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference , pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request  `  
+Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference , pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request  `
 
 <summary>Response - 200 (OK)</summary>
 
@@ -706,6 +710,7 @@ Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference , pageS
         "selectedVariantRef": "string"
       },
       "purchased": true,
+      "addedFromCart": true,
       "wishlistId": "string",
       "wishlistItemRef": "string",
       "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -717,7 +722,7 @@ Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference , pageS
 }
 ```        
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -735,7 +740,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/{id}```
 
-Method: ``` GET ``` 
+Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -747,7 +752,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 | X-TWC-Tenant  | {Tenant Name}    |
 
 
-Path Parameter: `Id  : Wishlist Id , pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request`  
+Path Parameter: `Id  : Wishlist Id , pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request`
 
 <summary>Response - 200 (OK)</summary>
 
@@ -825,6 +830,7 @@ Path Parameter: `Id  : Wishlist Id , pageSize: Number of items in the page ,last
         "selectedVariantRef": "string"
       },
       "purchased": true,
+      "addedFromCart": true,
       "wishlistId": "string",
       "wishlistItemRef": "string",
       "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -837,7 +843,7 @@ Path Parameter: `Id  : Wishlist Id , pageSize: Number of items in the page ,last
 }
 ```        
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -854,7 +860,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/{wishlistRef}/byref```
 
-Method: ``` GET ``` 
+Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -866,7 +872,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 | X-TWC-Tenant  | {Tenant Name}    |
 
 
-Path Parameter: `wishlistRef : Wishlist Reference , pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request`  
+Path Parameter: `wishlistRef : Wishlist Reference , pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request`
 
 <summary>Response - 200 (OK)</summary>
 
@@ -944,6 +950,7 @@ Path Parameter: `wishlistRef : Wishlist Reference , pageSize: Number of items in
         "selectedVariantRef": "string"
       },
       "purchased": true,
+      "addedFromCart": true,
       "wishlistId": "string",
       "wishlistItemRef": "string",
       "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -955,7 +962,7 @@ Path Parameter: `wishlistRef : Wishlist Reference , pageSize: Number of items in
 }
 ```        
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -972,7 +979,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/customer/{customerId}```
 
-Method: ``` GET ``` 
+Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -1062,6 +1069,7 @@ Path Variable: `customerId - Unique Customer Id, pageSize: Number of items in th
           "selectedVariantRef": "string"
         },
         "purchased": true,
+        "addedFromCart": true,
         "wishlistId": "string",
         "wishlistItemRef": "string",
         "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -1077,7 +1085,7 @@ Path Variable: `customerId - Unique Customer Id, pageSize: Number of items in th
 ]
 ```
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1094,7 +1102,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/customer/{customerRef}/byref```
 
-Method: ``` GET ``` 
+Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -1109,7 +1117,7 @@ Path Variable: `customerRef - Unique Customer Ref , pageSize: Number of items in
 
 <summary>Response - 200 (OK)</summary>
 
-```json 
+```json
 [
   {
     "attributeGroups": {
@@ -1184,6 +1192,7 @@ Path Variable: `customerRef - Unique Customer Ref , pageSize: Number of items in
           "selectedVariantRef": "string"
         },
         "purchased": true,
+        "addedFromCart": true,
         "wishlistId": "string",
         "wishlistItemRef": "string",
         "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -1200,7 +1209,7 @@ Path Variable: `customerRef - Unique Customer Ref , pageSize: Number of items in
 ```
 
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1218,7 +1227,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/lookup```
 
-Method: ``` GET ``` 
+Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -1233,7 +1242,7 @@ Path Variable: `customerId - Unique Customer Id,customerRef: Unique Customer Ref
 
 <summary>Response - 200 (OK)</summary>
 
-```json 
+```json
 {
     "resultCount": 4,
     "lastEvaluatedId": "string",
@@ -1311,6 +1320,7 @@ Path Variable: `customerId - Unique Customer Id,customerRef: Unique Customer Ref
                         "selectedVariantRef": "string"
                     },
                     "purchased": true,
+                    "addedFromCart": true,
                     "wishlistId": "string",
                     "wishlistItemRef": "string",
                     "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -1327,7 +1337,7 @@ Path Variable: `customerId - Unique Customer Id,customerRef: Unique Customer Ref
 ```
 
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1361,8 +1371,8 @@ Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
 
 <summary>Response - 204 (Deleted)</summary> 
 
- 
-HTTP Status Code: 
+
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1395,8 +1405,8 @@ Path Parameter: `Id  : Wishlist Id `
 
 <summary>Response - 204 (Deleted)</summary> 
 
- 
-HTTP Status Code: 
+
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1429,8 +1439,8 @@ Path Parameter: `wishlistRef : Wishlist Reference `
 
 <summary>Response - 204 (Deleted)</summary> 
 
- 
-HTTP Status Code: 
+
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1504,6 +1514,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "wishlistRef": "string"
@@ -1552,6 +1563,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -1560,7 +1572,7 @@ Sample Request:
 }
 ```
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1570,6 +1582,217 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
+
+## Upload multiple Wishlist Items
+Uploading new multiple wishlist items into an existing wishlist in the TWC system.
+
+Endpoint: ```/api/wishlist/upload-items```
+
+Method: ``` POST ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Sample Request:
+
+<!-- <details> -->
+```json
+[
+  {
+    "attributeGroups": {
+      "additionalProp1": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      },
+      "additionalProp2": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      },
+      "additionalProp3": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      }
+    },
+
+    "product": {
+      "oldVariantId": "oldvar3",
+      "productId": "prod3",
+      "productRef": "prodRef3",
+      "selectedVariantId": "selVar3",
+      "selectedVariantRef": "selVarRef3"
+    },
+    "purchased": true,
+    "addedFromCart": true,
+    "wishlistItemRef": "string4",
+    "wishlistRef": "string1"
+  },
+  {
+    "attributeGroups": {
+      "additionalProp1": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      },
+      "additionalProp2": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      },
+      "additionalProp3": {
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        },
+        "description": "string"
+      }
+    },
+
+
+    "product": {
+      "oldVariantId": "oldvar24",
+      "productId": "prod4",
+      "productRef": "prodRef4",
+      "selectedVariantId": "selVar4",
+      "selectedVariantRef": "selVarRef4"
+    },
+    "purchased": true,
+    "addedFromCart": true,
+    "wishlistItemRef": "string5",
+    "wishlistRef": "string1"
+  }
+]
+
+```
+
+<!-- </details> -->
+
+<summary>Response - 201 (created)</summary>
+
+```json
+[
+  {
+    "id": "d1198b27-5047-4793-9b43-8429fec342eb",
+    "wishlistItemRef": "string4",
+    "purchased": true,
+    "product": {
+      "productId": "prod3",
+      "productRef": "prodRef3",
+      "selectedVariantId": "selVar3",
+      "selectedVariantRef": "selVarRef3"
+    },
+    "createdTime": "2022-08-23T09:59:27.746+0000",
+    "modifiedTime": "2022-08-23T09:59:27.746+0000",
+    "addedFromCart": true,
+    "attributeGroups": {
+      "additionalProp1": {
+        "description": "string",
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
+      },
+      "additionalProp3": {
+        "description": "string",
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
+      },
+      "additionalProp2": {
+        "description": "string",
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
+      }
+    }
+  },
+  {
+    "id": "fe9e98d0-7b6b-4889-89c2-e473e80c6876",
+    "wishlistItemRef": "string5",
+    "purchased": true,
+    "product": {
+      "productId": "prod4",
+      "productRef": "prodRef4",
+      "selectedVariantId": "selVar4",
+      "selectedVariantRef": "selVarRef4"
+    },
+    "createdTime": "2022-08-23T09:59:27.747+0000",
+    "modifiedTime": "2022-08-23T09:59:27.747+0000",
+    "addedFromCart": true,
+    "attributeGroups": {
+      "additionalProp1": {
+        "description": "string",
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
+      },
+      "additionalProp3": {
+        "description": "string",
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
+      },
+      "additionalProp2": {
+        "description": "string",
+        "attributes": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
+      }
+    }
+  }
+]
+```
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+- 409 Conflict
+```
+
+
 
 ## Update a Wishlist Item
 Updates Wishlist item data set in the TWC system.
@@ -1591,7 +1814,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 Sample Request:
 <!-- <details> -->
 
-```json 
+```json
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -1629,6 +1852,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "wishlistRef": "string"
@@ -1676,6 +1900,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -1684,7 +1909,7 @@ Sample Request:
 }
 ```
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1721,7 +1946,7 @@ ref - wishlist Item Ref
 Sample Request:
 <!-- <details> -->
 
-```json 
+```json
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -1758,6 +1983,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistRef": "string"
 }
@@ -1804,6 +2030,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -1812,7 +2039,7 @@ Sample Request:
 }
 ```
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1849,7 +2076,7 @@ id - wishlist Item id
 Sample Request:
 <!-- <details> -->
 
-```json 
+```json
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -1886,6 +2113,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistRef": "string"
 }
@@ -1932,6 +2160,7 @@ Sample Request:
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -1940,7 +2169,7 @@ Sample Request:
 }
 ```
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -1957,7 +2186,7 @@ If item does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```​/api​/wishlist​​/items​```
 
-Method: ``` GET ``` 
+Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -2011,6 +2240,7 @@ Request Param:  ` id - Wishlist Id `
             "selectedVariantRef": "string"
         },
         "purchased": true,
+        "addedFromCart": true,
         "wishlistId": "string",
         "wishlistItemRef": "string",
         "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -2028,7 +2258,7 @@ If the item does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```​/api​/wishlist​​/items​/{id}```
 
-Method: ``` GET ``` 
+Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -2043,7 +2273,7 @@ Path Variable: `, id - Wishlist Item Id `
 
 <summary>Response - 200 (OK)</summary>
 
-```json 
+```json
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -2081,6 +2311,7 @@ Path Variable: `, id - Wishlist Item Id `
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -2089,7 +2320,7 @@ Path Variable: `, id - Wishlist Item Id `
 }
 ```
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -2105,7 +2336,7 @@ Returns the  wishlist item belonging to the given wishlist item Ref
 If the item does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```​/api​/wishlist​​/items​/ref/{wishlistItemRef}```
-Method: ``` GET ``` 
+Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -2120,7 +2351,7 @@ Path Variable: `, wishlistItemRef - Wishlist Item Ref `
 
 <summary>Response - 200 (OK)</summary>
 
-```json 
+```json
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -2158,6 +2389,7 @@ Path Variable: `, wishlistItemRef - Wishlist Item Ref `
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -2166,7 +2398,7 @@ Path Variable: `, wishlistItemRef - Wishlist Item Ref `
 }
 ```
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -2184,7 +2416,7 @@ If the item does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```​/api​/wishlist​/{wishlistId}​/items​/{id}```
 
-Method: ``` GET ``` 
+Method: ``` GET ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -2199,7 +2431,7 @@ Path Variable: `id - Id , wishlistId - Wishlist Id `
 
 <summary>Response - 200 (OK)</summary>
 
-```json 
+```json
 {
   "attributeGroups": {
     "additionalProp1": {
@@ -2237,6 +2469,7 @@ Path Variable: `id - Id , wishlistId - Wishlist Id `
     "selectedVariantRef": "string"
   },
   "purchased": true,
+  "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -2245,7 +2478,7 @@ Path Variable: `id - Id , wishlistId - Wishlist Id `
 }
 ```
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -2276,7 +2509,7 @@ Path Parameters: `Id  : Wishlist item Id`
 
 <summary>Response - 204 (Deleted)</summary> 
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -2308,7 +2541,7 @@ Request Parameters: `wishlistItemRef  : Wishlist item Reference`
 
 <summary>Response - 204 (Deleted)</summary> 
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
@@ -2339,7 +2572,7 @@ Request Parameters: `Id  : Wishlist item Id, wishlistId : Wishlist Id`
 
 <summary>Response - 204 (Deleted)</summary> 
 
-HTTP Status Code: 
+HTTP Status Code:
 ``` 
 - 200 OK
 - 201 Created
