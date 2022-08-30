@@ -28,6 +28,7 @@ one customer may have mulitple wishlist and also need a valid customer to create
       - [Find Wishlist by Wishlist Reference](#find-wishlist-by-wishlist-reference)
       - [Find Wishlist by CustomerId](#find-wishlist-by-customerid)
       - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
+      - [Lookup Wishlist By CustomerId](#lookup-wishlist-by-customer)
       - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
       - [Delete Wishlist by ID](#delete-wishlist-by-id)
       - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
@@ -70,6 +71,10 @@ All representations are JSON objects submitted or received as payload to API req
 ```wishlistRef``` - string- reference of the wishlist
 
 ```attributeGroups```- to add any additional information
+
+```lastEvaluatedId```- Last ealuated UID of the list of Wishlists or wishlist items in a wishlist depending on api.
+
+```resultCount``` Count of items present in in the response.
 
 <!-- </details>
 <details> -->
@@ -160,54 +165,12 @@ Sample Request:
   },
   "customerId": "string",
   "customerRef": "string",
-  "deleted": true,
+  "deleted": "true",
   "description": "string",
   "id": "string",
-  "isPrivate": true,
-  "name": "string",
-  "wishlistItems": [
-    {
-      "attributeGroups": {
-        "additionalProp1": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp2": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp3": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        }
-      },
-      "datePurchased": "2022-06-20T05:55:48.831Z",
-      "id": "string",
-      "product": {
-        "oldVariantId": "string",
-        "productId": "string",
-        "productRef": "string",
-        "selectedVariantId": "string",
-        "selectedVariantRef": "string"
-      },
-      "purchased": true,
-      "wishlistId": "string",
-      "wishlistItemRef": "string",
-      "wishlistRef": "string"
-    }
-  ],
+  "isPrivate": "true",
+  "name": "string"
+  ,
   "wishlistRef": "string"
 }
 ```
@@ -246,7 +209,6 @@ Sample Request:
   "datePurchased": "2022-06-27T15:34:58.540Z",
   "id": "string",
   "product": {
-    "oldVariantId": "string",
     "productId": "string",
     "productRef": "string",
     "selectedVariantId": "string",
@@ -330,49 +292,6 @@ Sample Request:
   "id": "string",
   "isPrivate": true,
   "name": "string",
-  "wishlistItems": [
-    {
-      "attributeGroups": {
-        "additionalProp1": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp2": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp3": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        }
-      },
-      "datePurchased": "2022-06-20T06:29:49.032Z",
-      "id": "string",
-      "product": {
-        "oldVariantId": "string",
-        "productId": "string",
-        "productRef": "string",
-        "selectedVariantId": "string",
-        "selectedVariantRef": "string"
-      },
-      "purchased": true,
-      "wishlistId": "string",
-      "wishlistItemRef": "string",
-      "wishlistRef": "string"
-    }
-  ],
   "wishlistRef": "string"
 }
 ```
@@ -498,49 +417,7 @@ Sample Request:
   "description": "string",
   "isPrivate": true,
   "name": "string",
-  "wishlistItems": [
-    {
-      "attributeGroups": {
-        "additionalProp1": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp2": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp3": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        }
-      },
-      "datePurchased": "2022-07-27T12:48:36.615Z",
-      "id": "string",
-      "product": {
-        "oldVariantId": "string",
-        "productId": "string",
-        "productRef": "string",
-        "selectedVariantId": "string",
-        "selectedVariantRef": "string"
-      },
-      "purchased": true,
-      "wishlistId": "string",
-      "wishlistItemRef": "string",
-      "wishlistRef": "string"
-    }
-  ],
+  
   "wishlistRef": "string"
 }
 ```
@@ -665,49 +542,6 @@ Sample Request:
   "description": "string",
   "isPrivate": true,
   "name": "string",
-  "wishlistItems": [
-    {
-      "attributeGroups": {
-        "additionalProp1": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp2": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp3": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        }
-      },
-      "datePurchased": "2022-07-27T12:46:59.074Z",
-      "id": "string",
-      "product": {
-        "oldVariantId": "string",
-        "productId": "string",
-        "productRef": "string",
-        "selectedVariantId": "string",
-        "selectedVariantRef": "string"
-      },
-      "purchased": true,
-      "wishlistId": "string",
-      "wishlistItemRef": "string",
-      "wishlistRef": "string"
-    }
-  ],
   "wishlistRef": "string"
 }
 ```
@@ -794,7 +628,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 | X-TWC-Tenant  | {Tenant Name}    |
 
 
-Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `  
+Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference , pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request  `  
 
 <summary>Response - 200 (OK)</summary>
 
@@ -828,6 +662,8 @@ Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
   },
   "customerId": "string",
   "customerRef": "string",
+  "resultCount": 4,
+  "lastEvaluatedId": "string",
   "deleted": true,
   "description": "string",
   "id": "string",
@@ -864,7 +700,6 @@ Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
       "datePurchased": "2022-06-27T15:37:28.595Z",
       "id": "string",
       "product": {
-        "oldVariantId": "string",
         "productId": "string",
         "productRef": "string",
         "selectedVariantId": "string",
@@ -912,7 +747,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 | X-TWC-Tenant  | {Tenant Name}    |
 
 
-Path Parameter: `Id  : Wishlist Id `  
+Path Parameter: `Id  : Wishlist Id , pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request`  
 
 <summary>Response - 200 (OK)</summary>
 
@@ -946,6 +781,8 @@ Path Parameter: `Id  : Wishlist Id `
   },
   "customerId": "string",
   "customerRef": "string",
+  "resultCount": 4,
+  "lastEvaluatedId": "string",
   "deleted": true,
   "description": "string",
   "id": "string",
@@ -982,7 +819,6 @@ Path Parameter: `Id  : Wishlist Id `
       "datePurchased": "2022-06-27T15:37:28.595Z",
       "id": "string",
       "product": {
-        "oldVariantId": "string",
         "productId": "string",
         "productRef": "string",
         "selectedVariantId": "string",
@@ -1030,7 +866,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 | X-TWC-Tenant  | {Tenant Name}    |
 
 
-Path Parameter: `wishlistRef : Wishlist Reference `  
+Path Parameter: `wishlistRef : Wishlist Reference , pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request`  
 
 <summary>Response - 200 (OK)</summary>
 
@@ -1064,6 +900,8 @@ Path Parameter: `wishlistRef : Wishlist Reference `
   },
   "customerId": "string",
   "customerRef": "string",
+  "resultCount": 4,
+  "lastEvaluatedId": "string",
   "deleted": true,
   "description": "string",
   "id": "string",
@@ -1100,7 +938,6 @@ Path Parameter: `wishlistRef : Wishlist Reference `
       "datePurchased": "2022-06-27T15:37:28.595Z",
       "id": "string",
       "product": {
-        "oldVariantId": "string",
         "productId": "string",
         "productRef": "string",
         "selectedVariantId": "string",
@@ -1146,7 +983,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-Path Variable: `customerId - Unique Customer Id`
+Path Variable: `customerId - Unique Customer Id, pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request`
 
 <summary>Response - 200 (OK)</summary>
 
@@ -1186,6 +1023,8 @@ Path Variable: `customerId - Unique Customer Id`
     "id": "string",
     "isPrivate": true,
     "name": "string",
+    "resultCount": 4,
+    "lastEvaluatedId": "string",
     "wishlistItems": [
       {
         "attributeGroups": {
@@ -1217,7 +1056,6 @@ Path Variable: `customerId - Unique Customer Id`
         "datePurchased": "2022-06-27T15:38:01.546Z",
         "id": "string",
         "product": {
-          "oldVariantId": "string",
           "productId": "string",
           "productRef": "string",
           "selectedVariantId": "string",
@@ -1267,7 +1105,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-Path Variable: `customerRef - Unique Customer Ref`
+Path Variable: `customerRef - Unique Customer Ref , pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request`
 
 <summary>Response - 200 (OK)</summary>
 
@@ -1307,6 +1145,8 @@ Path Variable: `customerRef - Unique Customer Ref`
     "id": "string",
     "isPrivate": true,
     "name": "string",
+    "resultCount": 4,
+    "lastEvaluatedId": "string",
     "wishlistItems": [
       {
         "attributeGroups": {
@@ -1338,7 +1178,6 @@ Path Variable: `customerRef - Unique Customer Ref`
         "datePurchased": "2022-06-27T15:43:34.415Z",
         "id": "string",
         "product": {
-          "oldVariantId": "string",
           "productId": "string",
           "productRef": "string",
           "selectedVariantId": "string",
@@ -1371,6 +1210,135 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
+## Lookup Wishlist By Customer
+
+Returns the list of wishlists belongs to the given customer reference.
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+Endpoint: ```/api/wishlists/lookup```
+
+Method: ``` GET ``` 
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Path Variable: `customerId - Unique Customer Id,customerRef: Unique Customer Ref, pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request`
+
+<summary>Response - 200 (OK)</summary>
+
+```json 
+{
+    "resultCount": 4,
+    "lastEvaluatedId": "string",
+    "wishlist": [
+        {
+            "attributeGroups": {
+                "additionalProp1": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                },
+                "additionalProp2": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                },
+                "additionalProp3": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                }
+            },
+            "customerId": "string",
+            "customerRef": "string",
+            "deleted": true,
+            "description": "string",
+            "id": "string",
+            "isPrivate": true,
+            "name": "string",
+            "resultCount": 4,
+            "lastEvaluatedId": "string",
+            "wishlistItems": [
+                {
+                    "attributeGroups": {
+                        "additionalProp1": {
+                            "attributes": {
+                                "additionalProp1": "string",
+                                "additionalProp2": "string",
+                                "additionalProp3": "string"
+                            },
+                            "description": "string"
+                        },
+                        "additionalProp2": {
+                            "attributes": {
+                                "additionalProp1": "string",
+                                "additionalProp2": "string",
+                                "additionalProp3": "string"
+                            },
+                            "description": "string"
+                        },
+                        "additionalProp3": {
+                            "attributes": {
+                                "additionalProp1": "string",
+                                "additionalProp2": "string",
+                                "additionalProp3": "string"
+                            },
+                            "description": "string"
+                        }
+                    },
+                    "datePurchased": "2022-06-27T15:43:34.415Z",
+                    "id": "string",
+                    "product": {
+                        "productId": "string",
+                        "productRef": "string",
+                        "selectedVariantId": "string",
+                        "selectedVariantRef": "string"
+                    },
+                    "purchased": true,
+                    "wishlistId": "string",
+                    "wishlistItemRef": "string",
+                    "createdTime": "2022-08-24T07:28:12.000+0000",
+                    "modifiedTime": "2022-08-24T07:30:52.051+0000",
+                    "wishlistRef": "string"
+                }
+            ],
+            "createdTime": "2022-08-24T07:28:12.000+0000",
+            "modifiedTime": "2022-08-24T07:30:52.051+0000",
+            "wishlistRef": "string"
+        }
+    ]
+}
+```
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
 ## Delete Wishlist by ID/Ref
 Deleting a Wishlist marks the wishlist as deleted and produces the HTTP response confirming the action.
 If the wishlist does not exist, this method returns a ResourceNotFound error.
