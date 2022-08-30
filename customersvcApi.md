@@ -88,9 +88,6 @@ The customer's email address and the main identifier of uniqueness for a custome
 
 ```taxExemptions``` string - Whether the customer is exempt from paying specific taxes on their order. Canadian taxes only.
 
-```optin_preferences``` -  [OptinPreferences](Common_Fields/optin_preferences.md)  -  Whether preferences are opt in or not
-
-
 ```verified_email``` - boolean -Whether the customer has verified their email address.
 
 <!-- </details> -->
