@@ -18,7 +18,7 @@ The Quote resource stores information about a quote, such as their store details
     - [Delete Quote by ID](#delete-quote-by-id)
     - [Delete Quote by Ref](#delete-quote-by-ref)
     - [Find Quotes](#find-quotes)
-    - [Create a Quote Lines](#create-a-quote-line)
+    - [Create a Quote Line](#create-a-quote-line)
     - [Update a Quote Line](#update-a-quote-line)	    
     - [Delete Quote Line](#delete-quote-line)    
 
@@ -109,7 +109,7 @@ All representations are JSON objects submitted or received as payload to API req
 ## Create a Quote
 Creates a new Quote data set in the TWC system.
 
-Endpoint: ```/api/v1/quotes```
+Endpoint: ```/api/v1/quote```
 
 Method: ``` POST ```
 
@@ -245,11 +245,11 @@ HTTP Status Code:
 ## Update a Quote
 Updates Quote data set in the TWC system.
 
-Endpoint: ```/api/v1/quotes```
+Endpoint: ```/api/v1/quote```
 
 Method: ``` PUT ```
 
-Method Name: `updateQuotes`
+Method Name: `updateQuote`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -366,15 +366,15 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Find Quotes
+## Find Quote
 Returns a quote by its ID from a specific Store while passing the respective ID as a path param in the endpoint. The Tenant authentication maps to a Store.
-If the quote does not exist, this method returns a Blank.
+If the quote does not exist, this method returns a 404.
 
-Endpoint: ```/api/v1/quotes```
+Endpoint: ```/api/v1/quote```
 
 Method: ``` GET ``` 
 
-Method Name: `getquotes`
+Method Name: `getquote`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -465,9 +465,9 @@ HTTP Status Code:
 
 ## Delete Quote by ID
 Deleting a Quote marks the quote as deleted and produces the HTTP response confirming the action.
-If the quote does not exist, this method returns a empty response.
+If the quote does not exist, this method returns 404 response.
 
-Endpoint: ```/api/v1/quotes/{id}```
+Endpoint: ```/api/v1/quote/{id}```
 
 Method: ``` DELETE ```
 
@@ -509,13 +509,13 @@ HTTP Status Code:
 
 ## Delete Quote by Ref
 Deleting a Quote by ref marks the quote as deleted and produces the HTTP response confirming the action.
-If the quote does not exist, this method returns a empty response.
+If the quote does not exist, this method returns 404 response.
 
-Endpoint: ```/api/v2/quotes/{Ref}/byref```
+Endpoint: ```/api/v2/quote/{Ref}/byref```
 
 Method: ``` DELETE ``` 
 
-Method Name: `deleteQuotesByRef`
+Method Name: `deleteQuoteByRef`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -556,7 +556,7 @@ HTTP Status Code:
 ## Create a Quote Line
 Creates a new Quote line data set in the TWC system.
 
-Endpoint: ```/api/v1/quote/lines```
+Endpoint: ```/api/v1/quote/line```
 
 Method: ``` POST ```
 
@@ -629,7 +629,7 @@ HTTP Status Code:
 ## Update a Quote Line
 Updates Quote line data set in the TWC system.
 
-Endpoint: ```/api/v1/quote/lines```
+Endpoint: ```/api/v1/quote/line```
 
 Method: ``` PUT ```
 
@@ -701,9 +701,9 @@ HTTP Status Code:
 
 ## Delete Quote Line
 Deleting a Quote line marks the quote line as deleted and produces the HTTP response confirming the action.
-If the quote line does not exist, this method returns a empty response.
+If the quote line does not exist, this method returns 404 response.
 
-Endpoint: ```/api/v1/quote/lines/{id}```
+Endpoint: ```/api/v1/quote/line/{id}```
 
 Method: ``` DELETE ```
 
