@@ -147,6 +147,10 @@ Represents a product.
  
  `variantsAvailable` - boolean -
 
+ `createdDate` - The date and time (ISO 8601 format) when the customer was created.
+
+ `lastModifiedDate` - The date and time (ISO 8601 format) when the customer information was last updated.
+
 
 
 ##  Product Variant
@@ -252,6 +256,11 @@ Represents a product Variant.
  `variance` - The array for vaiants.
   
  `variantOptions` - [VariantOptions](Common_Fields/variantoptions.md) - Array of variant Options. 
+
+`createdDate` - The date and time (ISO 8601 format) when the customer was created.
+
+`lastModifiedDate` - The date and time (ISO 8601 format) when the customer information was last updated.
+
 
 ## **REST Endpoints**
 
@@ -625,10 +634,14 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
           "optionValue": "string",
           "optionsImageId": "string"
         }
-      ]
+      ],
+      "createdDate": "2022-08-31T04:46:13.275Z",
+      "lastModifiedDate": "2022-08-31T04:48:33.731Z"
     }
   ],
-  "variantsAvailable": true
+  "variantsAvailable": true,
+  "createdDate": "2022-08-31T04:46:13.275Z",
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
 }
 
 ```
@@ -1146,10 +1159,15 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
           "optionValue": "string",
           "optionsImageId": "string"
         }
-      ]
+      ],
+      
+      "createdDate": "2022-08-31T04:46:13.275Z",
+      "lastModifiedDate": "2022-08-31T04:48:33.731Z"
     }
   ],
-  "variantsAvailable": true
+  "variantsAvailable": true,
+  "createdDate": "2022-08-31T04:46:13.275Z",
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
 }
 ```
 
@@ -1669,10 +1687,14 @@ id= Product id
           "optionValue": "string",
           "optionsImageId": "string"
         }
-      ]
+      ],
+      "createdDate": "2022-08-31T04:46:13.275Z",
+      "lastModifiedDate": "2022-08-31T04:48:33.731Z"
     }
   ],
-  "variantsAvailable": true
+  "variantsAvailable": true,
+  "createdDate": "2022-08-31T04:46:13.275Z",
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
 }
 ```
 
@@ -2195,10 +2217,14 @@ ref - variantRef
           "optionValue": "string",
           "optionsImageId": "string"
         }
-      ]
+      ],
+      "createdDate": "2022-08-31T04:46:13.275Z",
+      "lastModifiedDate": "2022-08-31T04:48:33.731Z"
     }
   ],
-  "variantsAvailable": true
+  "variantsAvailable": true,
+  "createdDate": "2022-08-31T04:46:13.275Z",
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
 }
 ```
 
@@ -2481,10 +2507,14 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
               "optionValue": "string",
               "optionsImageId": "string"
             }
-          ]
+          ],
+          "createdDate": "2022-08-31T04:46:13.275Z",
+          "lastModifiedDate": "2022-08-31T04:48:33.731Z"
         }
       ],
-      "variantsAvailable": true
+      "variantsAvailable": true,
+      "createdDate": "2022-08-31T04:46:13.275Z",
+      "lastModifiedDate": "2022-08-31T04:48:33.731Z"
     }
   ],
   "variants": [
@@ -2612,7 +2642,9 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
           "optionValue": "string",
           "optionsImageId": "string"
         }
-      ]
+      ],
+      "createdDate": "2022-08-31T04:46:13.275Z",
+      "lastModifiedDate": "2022-08-31T04:48:33.731Z"
     }
   ]
 }
@@ -3170,10 +3202,14 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
             "optionValue": "string",
             "optionsImageId": "string"
           }
-        ]
+        ],
+        "createdDate": "2022-08-31T04:46:13.275Z",
+        "lastModifiedDate": "2022-08-31T04:48:33.731Z"
       }
     ],
-    "variantsAvailable": true
+    "variantsAvailable": true,
+    "createdDate": "2022-08-31T04:46:13.275Z",
+    "lastModifiedDate": "2022-08-31T04:48:33.731Z"
   },
   "variant": true,
   "variantProduct": {
@@ -3300,7 +3336,9 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
         "optionValue": "string",
         "optionsImageId": "string"
       }
-    ]
+    ],
+    "createdDate": "2022-08-31T04:46:13.275Z",
+    "lastModifiedDate": "2022-08-31T04:48:33.731Z"
   }
 }
 ```
@@ -3580,10 +3618,14 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
             "optionValue": "string",
             "optionsImageId": "string"
           }
-        ]
+        ],
+        "createdDate": "2022-08-31T04:46:13.275Z",
+        "lastModifiedDate": "2022-08-31T04:48:33.731Z"
       }
     ],
-    "variantsAvailable": true
+    "variantsAvailable": true,
+    "createdDate": "2022-08-31T04:46:13.275Z",
+    "lastModifiedDate": "2022-08-31T04:48:33.731Z"
   },
   "variant": true,
   "variantProduct": {
@@ -3710,7 +3752,9 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
         "optionValue": "string",
         "optionsImageId": "string"
       }
-    ]
+    ],
+    "createdDate": "2022-08-31T04:46:13.275Z",
+    "lastModifiedDate": "2022-08-31T04:48:33.731Z"
   }
 }
 ```
@@ -3993,10 +4037,14 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
           "optionValue": "string",
           "optionsImageId": "string"
         }
-      ]
+      ],
+      "createdDate": "2022-08-31T04:46:13.275Z",
+      "lastModifiedDate": "2022-08-31T04:48:33.731Z"
     }
   ],
-  "variantsAvailable": true
+  "variantsAvailable": true,
+  "createdDate": "2022-08-31T04:46:13.275Z",
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
 }
 ```
 
@@ -4316,10 +4364,14 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
           "optionValue": "string",
           "optionsImageId": "string"
         }
-      ]
+      ],
+      "createdDate": "2022-08-31T04:46:13.275Z",
+      "lastModifiedDate": "2022-08-31T04:48:33.731Z"
     }
   ],
-  "variantsAvailable": true
+  "variantsAvailable": true,
+  "createdDate": "2022-08-31T04:46:13.275Z",
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
 }
 ```
 
@@ -4946,7 +4998,9 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "optionValue": "string",
       "optionsImageId": "string"
     }
-  ]
+  ],
+  "createdDate": "2022-08-31T04:46:13.275Z",
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
 }
 
 ```
@@ -5244,7 +5298,9 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "optionValue": "string",
       "optionsImageId": "string"
     }
-  ]
+  ],
+  "createdDate": "2022-08-31T04:46:13.275Z",
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
 }
 ```
 
@@ -5546,7 +5602,9 @@ id - Product vatiant ID
       "optionValue": "string",
       "optionsImageId": "string"
     }
-  ]
+  ],
+  "createdDate": "2022-08-31T04:46:13.275Z",
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
 }
 ```
 
@@ -5846,7 +5904,9 @@ ref - variantRef
       "optionValue": "string",
       "optionsImageId": "string"
     }
-  ]
+  ],
+  "createdDate": "2022-08-31T04:46:13.275Z",
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
 }
 ```
 
@@ -6197,7 +6257,9 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "optionValue": "string",
       "optionsImageId": "string"
     }
-  ]
+  ],
+      "createdDate": "2022-08-31T04:46:13.275Z",
+      "lastModifiedDate": "2022-08-31T04:48:33.731Z"
 }
  ```
 
@@ -6377,7 +6439,9 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "optionValue": "string",
       "optionsImageId": "string"
     }
-  ]
+  ],
+  "createdDate": "2022-08-31T04:46:13.275Z",
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
 }
  ```
 
@@ -6635,7 +6699,9 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
         "optionValue": "string",
         "optionsImageId": "string"
       }
-    ]
+    ],
+    "createdDate": "2022-08-31T04:46:13.275Z",
+    "lastModifiedDate": "2022-08-31T04:48:33.731Z"
   }
 ]
  ```
