@@ -18,26 +18,26 @@ An **inventory location** represents a geographical location where your stores, 
 
 - [**Inventory API**](#inventory-api)
     <!-- - [Index](#index) -->
-  - [**Representations**](#representations)
-  - [**REST Endpoints**](#rest-endpoints)
-    - [**Location Resource**](#location-resource)
-      - [Create an inventory Location](#create-an-inventory-location)
-      - [Create multiple inventory Locations](#create-multiple-inventory-locations)
-      - [Validate an inventory Location](#validate-an-inventory-location)
-      - [Find Inventory Location by id and locationRef](#find-inventory-location-by-id-and-locationref)
-      - [Delete Inventory Location](#delete-inventory-location)
-	  - [Update an inventory Location By Id](#update-an-inventory-location-by-id)
-	  - [Update an inventory Location By Ref](#update-an-inventory-location-by-ref)
-    - [**Stock Level Resource**](#stock-level-resource)
-      - [Create an inventory level](#create-an-inventory-level)
-      - [Create Multiple inventory level](#create-multiple-inventory-level)
-      - [Validate inventory level](#validate-inventory-level)
-      - [Update an inventory level](#update-an-inventory-level)
-	  - [Update Stock By Id](#update-stock-by-id)
-	  - [Update Stock By Ref](#update-stock-by-ref)
-      - [Find Inventory level by id and stockRef](#find-inventory-level-by-id-and-stockref)
-      - [Find Inventory level for product and location](#find-inventory-level-for-product-and-location)
-      - [Find Aggregated inventory level for a product variant](#find-aggregated-inventory-level-for-a-product-variant)     
+    - [**Representations**](#representations)
+    - [**REST Endpoints**](#rest-endpoints)
+      - [**Location Resource**](#location-resource)
+        - [Create an inventory Location](#create-an-inventory-location)
+        - [Create multiple inventory Locations](#create-multiple-inventory-locations)
+        - [Validate an inventory Location](#validate-an-inventory-location)
+        - [Update an inventory Location By Id](#update-an-inventory-location-by-id)
+        - [Update an inventory Location By Ref](#update-an-inventory-location-by-ref)
+        - [Find Inventory Location by id and locationRef](#find-inventory-location-by-id-and-locationref)
+        - [Delete Inventory Location](#delete-inventory-location)
+      - [**Stock Level Resource**](#stock-level-resource)
+        - [Create an inventory level](#create-an-inventory-level)
+        - [Create Multiple inventory level](#create-multiple-inventory-level)
+        - [Validate inventory level](#validate-inventory-level)
+        - [Update an inventory level](#update-an-inventory-level)
+        - [Update Stock By Id](#update-stock-by-id)
+        - [Update Stock By Ref](#update-stock-by-ref)
+        - [Find Inventory level by id and stockRef](#find-inventory-level-by-id-and-stockref)
+        - [Find Inventory level for product and location](#find-inventory-level-for-product-and-location)
+        - [Find Aggregated inventory level for a product variant](#find-aggregated-inventory-level-for-a-product-variant)
 
 ## **Representations**
 
@@ -81,6 +81,10 @@ All representations are JSON objects submitted or received as payload to API req
 ```street``` - string - The location's street address.
 
 ```streetNumber``` - string - The location's street number.
+
+```createdTime``` - Date - ISo date format for the resource creation time.
+
+```modifiedTime``` -  Date - ISo date format for the resource Updation time.
 
  <!-- </details> -->
 <!-- </details> -->
@@ -295,6 +299,8 @@ OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcA
     }
   },
   "id": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "locationRef": "string",
   "locationType": "STORE"
 }
@@ -623,166 +629,6 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Find Inventory Location by id and locationRef
-
-Endpoint : ```/api/location```
-
-Method : ``` GET ```
-
-OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
-<summary>Request Headers</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-<!-- <details> --> 
- <summary> Request Parameters : </summary>
- 
-``` json
-"id": "{{Location Id}}",
-"locationRef":"{{Location reference}}"
-```
-<!-- </details> --> 
-
-<!-- <details> --> 
- <summary> Sample Response : </summary>
- 
-``` json
-{
-  "address": {
-    "building": "string",
-    "city": "string",
-    "contactPerson": "string",
-    "countryIsocode": "string",
-    "countryName": "string",
-    "county": "string",
-    "fax": "string",
-    "level": "string",
-    "phone": "string",
-    "postcode": "string",
-    "state": "string",
-    "street": "string",
-    "streetNumber": "string"
-  },
-  "attributeGroups": {
-    "additionalProp1": {
-      "attribute_group": "string",
-      "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
-      },
-      "is_obsolete": true
-    },
-    "additionalProp2": {
-      "attribute_group": "string",
-      "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
-      },
-      "is_obsolete": true
-    },
-    "additionalProp3": {
-      "attribute_group": "string",
-      "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
-      },
-      "is_obsolete": true
-    }
-  },
-  "id": "string",
-  "locationRef": "string",
-  "locationType": "STORE"
-}
-
-```
-<!-- </details> --> 
-<summary>Response - 200 (OK)</summary>
-
-HTTP Status Code: 
-``` 
-- 200 OK
-- 201 Created
-- 204 Deleted
-- 400 Bad request
-- 401 Unauthorised
-- 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
-```
-
-## Delete Inventory Location
-
-Endpoint: ```/api/location```
-
-Method: ``` DELETE ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
-<summary>Request Headers</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-
-<!-- <details> --> 
- <summary> Request Parameters : </summary>
- 
-``` json
-"id": "{{Location Id}}",
-"locationRef":"{{Location reference}}"
-```
-<!-- </details> --> 
-
-<summary>Response - 204 (Deleted)</summary> 
-
-HTTP Status Code: 
-``` 
-- 200 OK
-- 201 Created
-- 204 Deleted
-- 400 Bad request
-- 401 Unauthorised
-- 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
-```
-
 ## Update an inventory Location By Id
 
 Update an inventory Location data set in the TWC system based on ID.
@@ -972,6 +818,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   },
   "id": "string",
   "locationRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "locationType": "STORE"
 } 
 
@@ -1175,6 +1023,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   },
   "id": "string",
   "locationRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "locationType": "STORE"
 }
 ```
@@ -1191,6 +1041,170 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
+## Find Inventory Location by id and locationRef
+
+Endpoint : ```/api/location```
+
+Method : ``` GET ```
+
+OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+<!-- <details> --> 
+ <summary> Request Parameters : </summary>
+ 
+``` json
+"id": "{{Location Id}}",
+"locationRef":"{{Location reference}}"
+```
+<!-- </details> --> 
+
+<!-- <details> --> 
+ <summary> Sample Response : </summary>
+ 
+``` json
+{
+  "address": {
+    "building": "string",
+    "city": "string",
+    "contactPerson": "string",
+    "countryIsocode": "string",
+    "countryName": "string",
+    "county": "string",
+    "fax": "string",
+    "level": "string",
+    "phone": "string",
+    "postcode": "string",
+    "state": "string",
+    "street": "string",
+    "streetNumber": "string"
+  },
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp2": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    },
+    "additionalProp3": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "INTEGER"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "id": "string",
+  "locationRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
+  "locationType": "STORE"
+}
+
+```
+<!-- </details> --> 
+<summary>Response - 200 (OK)</summary>
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## Delete Inventory Location
+
+Endpoint: ```/api/location```
+
+Method: ``` DELETE ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<summary>Request Headers</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+<!-- <details> --> 
+ <summary> Request Parameters : </summary>
+ 
+``` json
+"id": "{{Location Id}}",
+"locationRef":"{{Location reference}}"
+```
+<!-- </details> --> 
+
+<summary>Response - 204 (Deleted)</summary> 
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
 
 
 ## **Stock Level Resource**
@@ -1356,6 +1370,8 @@ OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcA
   "reserved": 0,
   "status": "IN_STOCK",
   "stockDate": "2022-06-27T06:37:59.881Z",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "stockOnHand": 0,
   "stockRef": "string"
 }
@@ -1538,6 +1554,8 @@ OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcA
   "reserved": 0,
   "status": "IN_STOCK",
   "stockDate": "2022-06-27T06:38:28.943Z",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "stockOnHand": 0,
   "stockRef": "string"
 }
@@ -1642,6 +1660,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "reserved": 0,
   "status": "IN_STOCK",
   "stockDate": "2022-06-20T09:54:12.586Z",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "stockOnHand": 0,
   "stockRef": "string"
 }
@@ -1821,6 +1841,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "reserved": 0,
   "status": "IN_STOCK",
   "stockDate": "2022-06-27T06:39:30.214Z",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "stockOnHand": 0,
   "stockRef": "string"
 }
@@ -2007,6 +2029,8 @@ id - Stock Id
   "reserved": 0,
   "status": "IN_STOCK",
   "stockDate": "2022-06-27T06:39:30.214Z",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "stockOnHand": 0,
   "stockRef": "string"
 }
@@ -2194,6 +2218,8 @@ ref - Stock ref
   "reserved": 0,
   "status": "IN_STOCK",
   "stockDate": "2022-07-27T10:55:12.604Z",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "stockOnHand": 0,
   "stockRef": "string"
 }
@@ -2354,6 +2380,8 @@ Request Parameters: `locationId  : inventory location Id, locationRef : Inventor
     "reserved": 0,
     "status": "IN_STOCK",
     "stockDate": "2022-06-27T06:40:40.732Z",
+    "createdTime": "2022-08-24T07:28:12.000+0000",
+    "modifiedTime": "2022-08-24T07:30:52.051+0000",
     "stockOnHand": 0,
     "stockRef": "string"
   }
