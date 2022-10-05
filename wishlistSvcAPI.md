@@ -96,6 +96,10 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```addedFromCart``` - boolean - to indicate whether added from Cart or not.
 
+```prerelease``` - boolean- product prerelease notification enabled
+
+```disableNotification``` - boolean- disable notification 
+
 <!-- </details>
 
 <details> -->
@@ -223,7 +227,9 @@ Sample Request:
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+  "prerelease": "boolean",
+  "disableNotification" : "boolean"
 }
 
 ```
@@ -345,7 +351,9 @@ Sample Request:
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+  "prerelease": "boolean",
+  "disableNotification" : "boolean"
 }
 ```
 
@@ -471,7 +479,9 @@ Sample Request:
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+  "prerelease": "boolean",
+  "disableNotification" : "boolean"
 }
 ```
 
@@ -595,7 +605,9 @@ Sample Request:
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+  "prerelease": "boolean",
+  "disableNotification" : "boolean"
 }
 ```
 
@@ -715,7 +727,9 @@ Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference , pageS
       "wishlistItemRef": "string",
       "createdTime": "2022-08-24T07:28:12.000+0000",
       "modifiedTime": "2022-08-24T07:30:52.051+0000",
-      "wishlistRef": "string"
+      "wishlistRef": "string",
+      "prerelease": "boolean",
+      "disableNotification" : "boolean"
     }
   ],
   "wishlistRef": "string"
@@ -836,7 +850,9 @@ Path Parameter: `Id  : Wishlist Id , pageSize: Number of items in the page ,last
       "createdTime": "2022-08-24T07:28:12.000+0000",
       "modifiedTime": "2022-08-24T07:30:52.051+0000",
   
-      "wishlistRef": "string"
+      "wishlistRef": "string",
+      "prerelease": "boolean",
+      "disableNotification" : "boolean"
     }
   ],
   "wishlistRef": "string"
@@ -955,7 +971,9 @@ Path Parameter: `wishlistRef : Wishlist Reference , pageSize: Number of items in
       "wishlistItemRef": "string",
       "createdTime": "2022-08-24T07:28:12.000+0000",
       "modifiedTime": "2022-08-24T07:30:52.051+0000",
-      "wishlistRef": "string"
+      "wishlistRef": "string",
+      "prerelease": "boolean",
+      "disableNotification" : "boolean"
     }
   ],
   "wishlistRef": "string"
@@ -1075,7 +1093,9 @@ Path Variable: `customerId - Unique Customer Id, pageSize: Number of items in th
         "createdTime": "2022-08-24T07:28:12.000+0000",
         "modifiedTime": "2022-08-24T07:30:52.051+0000",
   
-        "wishlistRef": "string"
+        "wishlistRef": "string",
+        "prerelease": "boolean",
+        "disableNotification" : "boolean"
       }
     ],
     "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -1198,7 +1218,9 @@ Path Variable: `customerRef - Unique Customer Ref , pageSize: Number of items in
         "createdTime": "2022-08-24T07:28:12.000+0000",
         "modifiedTime": "2022-08-24T07:30:52.051+0000",
   
-        "wishlistRef": "string"
+        "wishlistRef": "string",
+        "prerelease": "boolean",
+        "disableNotification" : "boolean"
       }
     ],
     "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -1325,7 +1347,9 @@ Path Variable: `customerId - Unique Customer Id,customerRef: Unique Customer Ref
                     "wishlistItemRef": "string",
                     "createdTime": "2022-08-24T07:28:12.000+0000",
                     "modifiedTime": "2022-08-24T07:30:52.051+0000",
-                    "wishlistRef": "string"
+                    "wishlistRef": "string",
+                    "prerelease": "boolean",
+                    "disableNotification" : "boolean"
                 }
             ],
             "createdTime": "2022-08-24T07:28:12.000+0000",
@@ -1517,7 +1541,9 @@ Sample Request:
   "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+  "prerelease": "boolean",
+  "disableNotification" : "boolean"
 }
 ```
 
@@ -1568,7 +1594,9 @@ Sample Request:
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+  "prerelease": "boolean",
+  "disableNotification" : "boolean"
 }
 ```
 
@@ -1644,7 +1672,9 @@ Sample Request:
     "purchased": true,
     "addedFromCart": true,
     "wishlistItemRef": "string4",
-    "wishlistRef": "string1"
+    "wishlistRef": "string1",
+    "prerelease": "false",
+    "disableNotification" : "false"
   },
   {
     "attributeGroups": {
@@ -1685,7 +1715,9 @@ Sample Request:
     "purchased": true,
     "addedFromCart": true,
     "wishlistItemRef": "string5",
-    "wishlistRef": "string1"
+    "wishlistRef": "string1",
+    "prerelease": "false",
+    "disableNotification" : "false"
   }
 ]
 
@@ -1854,7 +1886,9 @@ Sample Request:
   "addedFromCart": true,
   "wishlistId": "string",
   "wishlistItemRef": "string",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+  "prerelease": false,
+  "disableNotification" : false
 }
 ```
 <!-- </details> -->
@@ -1904,7 +1938,9 @@ Sample Request:
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+  "prerelease": false,
+  "disableNotification" : false
 }
 ```
 
@@ -1984,7 +2020,9 @@ Sample Request:
   "purchased": true,
   "addedFromCart": true,
   "wishlistId": "string",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+  "prerelease": false,
+  "disableNotification" : false
 }
 ```
 <!-- </details> -->
@@ -2034,7 +2072,9 @@ Sample Request:
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+  "prerelease": false,
+  "disableNotification" : false
 }
 ```
 
@@ -2114,7 +2154,9 @@ Sample Request:
   "purchased": true,
   "addedFromCart": true,
   "wishlistId": "string",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+  "prerelease": false,
+  "disableNotification" : false
 }
 ```
 <!-- </details> -->
@@ -2164,7 +2206,9 @@ Sample Request:
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+   "prerelease": false,
+  "disableNotification" : false
 }
 ```
 
@@ -2244,7 +2288,9 @@ Request Param:  ` id - Wishlist Id `
         "wishlistItemRef": "string",
         "createdTime": "2022-08-24T07:28:12.000+0000",
         "modifiedTime": "2022-08-24T07:30:52.051+0000",
-        "wishlistRef": "string"
+        "wishlistRef": "string",
+         "prerelease": false,
+         "disableNotification" : false
     }
 ]
 ```
@@ -2315,7 +2361,9 @@ Path Variable: `, id - Wishlist Item Id `
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+   "prerelease": false,
+  "disableNotification" : false
 }
 ```
 
@@ -2393,7 +2441,9 @@ Path Variable: `, wishlistItemRef - Wishlist Item Ref `
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+   "prerelease": false,
+  "disableNotification" : false
 }
 ```
 
@@ -2473,7 +2523,9 @@ Path Variable: `id - Id , wishlistId - Wishlist Id `
   "wishlistItemRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string"
+  "wishlistRef": "string",
+  "prerelease": false,
+  "disableNotification" : false
 }
 ```
 

@@ -16,7 +16,7 @@ The TWC Platform is capable of providing some platform generated messaging servi
 
 ## **Customer Interaction**
 
-The TWC system is capable of capturing all wishlist and wishlist item interactions such as creations, updations and deletions made by the customer.
+The TWC system is capable of capturing all wishlist and wishlist item interactions such as creations, updations and deletions and purchses made by the customer.
 Each notification is then prepared based on the status of the event subscription
 that is defined by the store using this [*Event Subscription Resource*](eventcollectorAPI.md#event-subscription-resource) API.
 
