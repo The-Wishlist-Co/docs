@@ -28,7 +28,9 @@
         "branch_name":"string",
         "branch_id":"string",
         "staff_name":"string",
-        "staff_id":"string"
+        "staff_id":"string",
+        "store_id":"string",
+        "store_name":"string"
       }
     }
   ]
