@@ -10,7 +10,7 @@ The TWC Platform is capable of providing some platform generated messaging servi
 ***
 - [**Platform Generated Messages**](#platform-generated-messages)
   - [**Customer Interaction**](#customer-interaction)
-    - - [**Representations**](#representations)
+    -  [**Representations**](#representations)
   - [**Price Drop**](#price-drop)
   - [**Low Stock**](#low-stock)
   
@@ -21,7 +21,7 @@ The TWC system is capable of capturing all wishlist and wishlist item interactio
 Each notification is then prepared based on the status of the event subscription
 that is defined by the store using this [*Event Subscription Resource*](eventcollectorAPI.md#event-subscription-resource) API.
 
-## ***Representations***
+## <font size="3">Representations</font>
  All representations are JSON objects submitted or received as payload to API requests or responses.
 
  ```id``` - string - A unique identifier for the customer interaction.
