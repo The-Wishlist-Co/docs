@@ -21,7 +21,7 @@ The TWC system is capable of capturing all wishlist and wishlist item interactio
 Each notification is then prepared based on the status of the event subscription
 that is defined by the store using this [*Event Subscription Resource*](eventcollectorAPI.md#event-subscription-resource) API.
 
-## ***Representations***
+## Representations
  All representations are JSON objects submitted or received as payload to API requests or responses.
 
  ```id``` - string - A unique identifier for the customer interaction.
