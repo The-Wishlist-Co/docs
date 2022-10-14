@@ -73,6 +73,7 @@ that is defined by the store using this [*Event Subscription Resource*](eventcol
 ```wishlistId``` - string - the unique id of the respective wishlist.
 
 
+
 ## **Price Drop**
 
 The TWC system generates notifications based on  price drop for each product in the customer wishlist.
