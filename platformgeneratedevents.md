@@ -10,7 +10,7 @@ The TWC Platform is capable of providing some platform generated messaging servi
 ***
 - [**Platform Generated Messages**](#platform-generated-messages)
   - [**Customer Interaction**](#customer-interaction)
-    - - [**Representations**](#representations)
+    - [**Representations**](#representations)
   - [**Price Drop**](#price-drop)
   - [**Low Stock**](#low-stock)
   
