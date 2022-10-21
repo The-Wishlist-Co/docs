@@ -59,7 +59,9 @@ Represents a customer. If a store field is defined in a store, then the customer
 
 ```default_address``` - [Address](Common_Fields/address.md) - The default address for the customer. The address is saved as an array. The defaultShippingAddress of the customer will be set to the ID of that address.
 
-```dob``` - string - The Customer's Date of Birth .
+```dob``` - string - The Customer's Date of Birth.
+
+- `DateFormat` - dd-MM-yyyy
 
 ```email``` - string -
 The customer's email address and the main identifier of uniqueness for a customer account. Attempting to assign the same email address to multiple customers returns an error.
@@ -225,7 +227,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "province": "string",
     "provinceCode": "string"
   },
-  "dob": "2022-06-20T06:21:32.358Z",
+  "dob": "25-10-1985",
   "email": "string",
   "firstName": "string",
   "id": "string",
@@ -364,7 +366,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "province": "string",
     "provinceCode": "string"
   },
-  "dob": "2022-06-20T09:00:48.098Z",
+  "dob": "25-10-1985",
   "email": "string",
   "firstName": "string",
   "id": "string",
@@ -538,7 +540,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "province": "string",
       "provinceCode": "string"
     },
-    "dob": "2022-06-20T09:21:47.710Z",
+    "dob": "25-10-1985",
     "email": "string",
     "firstName": "string",
     "id": "string",
@@ -715,7 +717,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "province": "string",
     "provinceCode": "string"
   },
-  "dob": "2022-06-20T09:26:27.726Z",
+  "dob": "25-10-1985",
   "email": "string",
   "firstName": "string",
   "id": "string",
@@ -890,7 +892,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "province": "string",
     "provinceCode": "string"
   },
-  "dob": "2022-06-20T09:26:58.919Z",
+  "dob": "25-10-1985",
   "email": "string",
   "firstName": "string",
   "id": "string",
@@ -1029,7 +1031,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "province": "string",
     "provinceCode": "string"
   },
-  "dob": "2022-06-20T09:26:58.956Z",
+  "dob": "25-10-1985",
   "email": "string",
   "firstName": "string",
   "id": "string",
@@ -1202,7 +1204,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "province": "string",
     "provinceCode": "string"
   },
-  "dob": "2022-06-20T09:26:58.919Z",
+  "dob": "25-10-1985",
   "email": "string",
   "firstName": "string",
   "lastModifiedDate": "2022-06-20T09:26:58.919Z",
@@ -1340,7 +1342,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "province": "string",
     "provinceCode": "string"
   },
-  "dob": "2022-06-20T09:26:58.956Z",
+  "dob": "25-10-1985",
   "email": "string",
   "firstName": "string",
   "id": "string",
@@ -1513,7 +1515,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "province": "string",
     "provinceCode": "string"
   },
-  "dob": "2022-06-20T09:26:58.919Z",
+  "dob": "25-10-1985",
   "email": "string",
   "firstName": "string",  
   "lastModifiedDate": "2022-06-20T09:26:58.919Z",
@@ -1651,7 +1653,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "province": "string",
     "provinceCode": "string"
   },
-  "dob": "2022-06-20T09:26:58.956Z",
+  "dob": "25-10-1985",
   "email": "string",
   "firstName": "string",
   "id": "string",
@@ -1853,7 +1855,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "province": "string",
     "provinceCode": "string"
   },
-  "dob": "2022-06-20T09:27:37.333Z",
+  "dob": "25-10-1985",
   "email": "string",
   "firstName": "string",
   "id": "string",
@@ -2033,7 +2035,7 @@ addressId - Customer Address Id
     "province": "string",
     "provinceCode": "string"
   },
-  "dob": "2022-06-20T09:27:37.333Z",
+  "dob": "25-10-1985",
   "email": "string",
   "firstName": "string",
   "id": "string",
@@ -2212,7 +2214,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "province": "string",
     "provinceCode": "string"
   },
-  "dob": "2022-06-20T09:28:14.926Z",
+  "dob": "25-10-1985",
   "email": "string",
   "firstName": "string",
   "id": "string",
@@ -2392,7 +2394,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "province": "string",
     "provinceCode": "string"
   },
-  "dob": "2022-06-20T09:29:37.721Z",
+  "dob": "25-10-1985",
   "email": "string",
   "firstName": "string",
   "id": "string",
@@ -2579,7 +2581,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "province": "string",
       "provinceCode": "string"
     },
-    "dob": "2022-06-20T09:30:38.997Z",
+    "dob": "25-10-1985",
     "email": "string",
     "firstName": "string",
     "id": "string",
