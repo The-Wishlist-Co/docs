@@ -151,58 +151,28 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   ],
   "attributeGroups": {
     "additionalProp1": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp2": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp3": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     }
   },
   "createdDate": "2022-06-20T06:21:32.358Z",
@@ -290,58 +260,28 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   ],
   "attributeGroups": {
     "additionalProp1": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp2": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp3": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     }
   },
   "createdDate": "2022-06-20T09:00:48.098Z",
@@ -462,62 +402,32 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
         "provinceCode": "string"
       }
     ],
-    "attributeGroups": {
-      "additionalProp1": {
-        "attribute_group": "string",
-        "attributes": {
-          "additionalProp1": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          },
-          "additionalProp2": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          },
-          "additionalProp3": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          }
-        },
-        "is_obsolete": true
+   "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "additionalProp2": {
-        "attribute_group": "string",
-        "attributes": {
-          "additionalProp1": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          },
-          "additionalProp2": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          },
-          "additionalProp3": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          }
-        },
-        "is_obsolete": true
-      },
-      "additionalProp3": {
-        "attribute_group": "string",
-        "attributes": {
-          "additionalProp1": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          },
-          "additionalProp2": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          },
-          "additionalProp3": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          }
-        },
-        "is_obsolete": true
-      }
+      "description": "string"
     },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
     "createdDate": "2022-06-20T09:21:47.710Z",
     "customerRef": "string",
     "customer_state": "disabled",
@@ -639,60 +549,30 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "provinceCode": "string"
     }
   ],
-  "attributeGroups": {
+ "attributeGroups": {
     "additionalProp1": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp2": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp3": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     }
   },
   "createdDate": "2022-06-20T09:26:27.726Z",
@@ -814,60 +694,30 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "provinceCode": "string"
     }
   ],
-  "attributeGroups": {
+"attributeGroups": {
     "additionalProp1": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp2": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp3": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     }
   },
   "createdDate": "2022-06-20T09:26:58.918Z",
@@ -953,60 +803,30 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "provinceCode": "string"
     }
   ],
-  "attributeGroups": {
+ "attributeGroups": {
     "additionalProp1": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp2": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp3": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     }
   },
   "createdDate": "2022-06-20T09:26:58.956Z",
@@ -1129,58 +949,28 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   ],
   "attributeGroups": {
     "additionalProp1": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp2": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp3": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     }
   },
   "createdDate": "2022-06-20T09:26:58.918Z",
@@ -1266,58 +1056,28 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   ],
   "attributeGroups": {
     "additionalProp1": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp2": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp3": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     }
   },
   "createdDate": "2022-06-20T09:26:58.956Z",
@@ -1440,58 +1200,28 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   ],
   "attributeGroups": {
     "additionalProp1": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp2": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp3": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     }
   },
   "createdDate": "2022-06-20T09:26:58.918Z",  
@@ -1575,60 +1305,30 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "provinceCode": "string"
     }
   ],
-  "attributeGroups": {
+ "attributeGroups": {
     "additionalProp1": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp2": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp3": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     }
   },
   "createdDate": "2022-06-20T09:26:58.956Z",
@@ -1777,60 +1477,30 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "provinceCode": "string"
     }
   ],
-  "attributeGroups": {
+ "attributeGroups": {
     "additionalProp1": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp2": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp3": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     }
   },
   "createdDate": "2022-06-20T09:27:37.333Z",
@@ -1957,60 +1627,30 @@ addressId - Customer Address Id
       "provinceCode": "string"
     }
   ],
-  "attributeGroups": {
+ "attributeGroups": {
     "additionalProp1": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp2": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp3": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     }
   },
   "createdDate": "2022-06-20T09:27:37.333Z",
@@ -2136,60 +1776,30 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "provinceCode": "string"
     }
   ],
-  "attributeGroups": {
+"attributeGroups": {
     "additionalProp1": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp2": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp3": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     }
   },
   "createdDate": "2022-06-20T09:28:14.926Z",
@@ -2316,60 +1926,30 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "provinceCode": "string"
     }
   ],
-  "attributeGroups": {
+ "attributeGroups": {
     "additionalProp1": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp2": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     },
     "additionalProp3": {
-      "attribute_group": "string",
       "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "is_obsolete": true
+      "description": "string"
     }
   },
   "createdDate": "2022-06-20T09:29:37.721Z",
@@ -2503,62 +2083,32 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
         "provinceCode": "string"
       }
     ],
-    "attributeGroups": {
-      "additionalProp1": {
-        "attribute_group": "string",
-        "attributes": {
-          "additionalProp1": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          },
-          "additionalProp2": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          },
-          "additionalProp3": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          }
-        },
-        "is_obsolete": true
+   "attributeGroups": {
+    "additionalProp1": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       },
-      "additionalProp2": {
-        "attribute_group": "string",
-        "attributes": {
-          "additionalProp1": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          },
-          "additionalProp2": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          },
-          "additionalProp3": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          }
-        },
-        "is_obsolete": true
-      },
-      "additionalProp3": {
-        "attribute_group": "string",
-        "attributes": {
-          "additionalProp1": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          },
-          "additionalProp2": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          },
-          "additionalProp3": {
-            "attribute_value": "string",
-            "value_type": "INTEGER"
-          }
-        },
-        "is_obsolete": true
-      }
+      "description": "string"
     },
+    "additionalProp2": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    },
+    "additionalProp3": {
+      "attributes": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      },
+      "description": "string"
+    }
+  },
     "createdDate": "2022-06-20T09:30:38.997Z",
     "customerRef": "string",
     "customer_state": "disabled",
