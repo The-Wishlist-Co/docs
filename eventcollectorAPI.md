@@ -12,7 +12,8 @@ The event collector api is employed for enabling various events and campains tha
 - [**Event Collector API**](#event-collector-api)
     - [Index](#index)
   - [**Representations**](#representations)
-    - [Order](#order)
+    - [Event](#event)
+    - [Event Subscriptions](#event-subscriptions)
     - [Jobs](#jobs)
   - [**REST Endpoints**](#rest-endpoints)
   - [**Events  Resource**](#events--resource)
@@ -35,7 +36,62 @@ The event collector api is employed for enabling various events and campains tha
 
 All representations are JSON objects submitted or received as payload to API requests or responses.
 
-### Order
+### Event 
+
+`entity_id` - string - Id of the entity.
+
+`entity_name` - string - Name of the entity.
+
+`event_payload` - Object 
+
+- `base64_encoded_fault_json` - string - encrypted fault json. 
+
+- `base64_encoded_payload_json` - string - encrypted fault json. 
+
+- `entity_id` - string -
+-   `key_attributes` - Object
+    -  `additionalProp1` - string - customer defined additional property.
+  
+    -  `additionalProp2` - string - customer defined additional property.
+  
+    -  `additionalProp3` - string - customer defined additional property.
+
+    
+  - `operation` - enum - to chose between various avaliable entity operations provided.
+    - CREATE
+    - BULK_UPDATE
+    - BULK_CREATE
+    - READ
+    - DELETE
+    - UPDATE
+
+
+`event_source` - - enum - to chose between various avaliable event sources provided.
+  - SYSTEM
+  - CONNECTOR
+  - APPLICATION
+  - SERVERLESS
+
+`event_type` - enum - to chose between various avaliable entity types provided.
+ - ORDER
+ - ORDER_ENTRY
+ - CUSTOMER
+ - ADDRESS
+ - PRODUCT
+ - VARIANT_PRODUCT
+ - INVENTORY_LEVEL
+ - INVENTORY_LOCATION
+ - INVENTORY_ITEM
+ - STORE
+ - MERCHANT
+ - WISHLIST
+ - WISHLIST_ITEM
+ - OTHER
+ - EVENT
+
+`id` - string - unique id of the event.
+
+### Event Subscriptions
 <!-- <details> -->
 <!-- <summary>Expand for details</summary> -->
 
