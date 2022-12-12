@@ -10,20 +10,23 @@ The event collector api is employed for enabling various events and campains tha
 ***
 
 - [**Event Collector API**](#event-collector-api)
-    <!-- - [Index](#index) -->
+    - [Index](#index)
   - [**Representations**](#representations)
     - [Order](#order)
   - [**REST Endpoints**](#rest-endpoints)
-    - [**Events  Resource**](#events--resource)
-      - [Create Event](#create-event)
-      - [Find Events](#find-events)
-    - [**Event Subscription Resource**](#event-subscription-resource)
-      - [Create  Event Subscriptions](#create--event-subscriptions)
-      - [Update  Event Subscriptions](#update--event-subscriptions)
-      - [Get All Event Subscriptions](#get-all-event-subscriptions)
-      - [Get  Event Subscriptions](#get--event-subscriptions)
-      - [Deactivate Event Subscriptions](#deactivate-event-subscriptions)
-  
+  - [**Events  Resource**](#events--resource)
+  - [Create Event](#create-event)
+  - [Find Events](#find-events)
+  - [**Event Subscription Resource**](#event-subscription-resource)
+  - [Create  Event Subscriptions](#create--event-subscriptions)
+  - [Update  Event Subscriptions](#update--event-subscriptions)
+  - [Get All Event Subscriptions](#get-all-event-subscriptions)
+  - [Get  Event Subscriptions](#get--event-subscriptions)
+  - [Deactivate Event Subscriptions](#deactivate-event-subscriptions)
+  - [**Jobs API**](#jobs-api)
+  - [Create Notification Job](#create-notification-job)
+  - [Update Notification Job](#update-notification-job)
+  - [Delete  Notification Job](#delete--notification-job)
 
 
 
@@ -495,6 +498,221 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
+## **Jobs API**
+
+## Create Notification Job
+For the creation of a new Jotification Service Job resource with unique id,active status, notification type, cron schedule etc..
+
+Method: ``` POST ``` 
+
+Endpoint: ```​​​/api/v1/jobs```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Request : 
+```json
+{
+  "deleted": true,
+  "id": "string",
+  "is_active": true,
+  "is_scheduled": true,
+  "job_parameters": {
+    "campaign_id": "string",
+    "utm_medium": "string"
+  },
+  "notification": "BACK_IN_STOCK",
+  "number_of_items_in_email": 0,
+  "schedule": "string",
+  "scheduleExpression": "string",
+  "template_id": "string"
+}
+```
+
+<summary>Response - 201 (Created)</summary> 
+
+```json
+{
+  "deleted": true,
+  "id": "string",
+  "is_active": true,
+  "is_scheduled": true,
+  "job_parameters": {
+    "campaign_id": "string",
+    "utm_medium": "string"
+  },
+  "notification": "BACK_IN_STOCK",
+  "number_of_items_in_email": 0,
+  "schedule": "string",
+  "scheduleExpression": "string",
+  "template_id": "string"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+## Update Notification Job
+For UPdating an already existing job by adding parameters or changind existing ones.Job id cannot be updated.
+
+Method: ``` PUT ``` 
+
+Endpoint: ```​​​/api/v1/jobs/{{jobId}}```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Request : 
+```json
+{
+  "deleted": true,
+  "is_active": true,
+  "is_scheduled": true,
+  "job_parameters": {
+    "campaign_id": "string",
+    "utm_medium": "string"
+  },
+  "notification": "BACK_IN_STOCK",
+  "number_of_items_in_email": 0,
+  "schedule": "string",
+  "scheduleExpression": "string",
+  "template_id": "string"
+}
+```
+<summary>Response - 200 (Ok)</summary> 
+
+```json
+{
+  "deleted": true,
+  "id": "string",
+  "is_active": true,
+  "is_scheduled": true,
+  "job_parameters": {
+    "campaign_id": "string",
+    "utm_medium": "string"
+  },
+  "notification": "BACK_IN_STOCK",
+  "number_of_items_in_email": 0,
+  "schedule": "string",
+  "scheduleExpression": "string",
+  "template_id": "string"
+}
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+<!-- ## Activate Or Deactivate Job
+For only ypdatind is_active status of the job easily with jobId.
+
+Method: ``` PUT ``` 
+
+Endpoint: ```​​​/api/v1/jobs/active/{{jobID}}```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Request Parameters:
+
+ `PATH parameter -   "JobId" : id`
+
+ `Request Param - "is_active": true/false`
+
+ <summary>Response - 200 (Ok)</summary> 
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+ -->
+
+## Delete  Notification Job
+For the creation of a new EventSubscriptions resource with unique id, and active status.
+
+Method: ``` POST ``` 
+
+Endpoint: ```​​​/api/v1/event-subscription```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Request Parameters:
+
+ `PATH parameter -   "JobId" : id`
+
+ <summary>Response - 204 (No Content)</summary> 
+
+
+HTTP Status Code: 
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
 
 
 ***
