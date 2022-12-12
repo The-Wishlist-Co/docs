@@ -13,6 +13,7 @@ The event collector api is employed for enabling various events and campains tha
     - [Index](#index)
   - [**Representations**](#representations)
     - [Order](#order)
+    - [Jobs](#jobs)
   - [**REST Endpoints**](#rest-endpoints)
   - [**Events  Resource**](#events--resource)
   - [Create Event](#create-event)
@@ -63,6 +64,37 @@ All representations are JSON objects submitted or received as payload to API req
 `subscribeChange` - boolean - For changes in active Subscription.
 
 `subscribeDelete` - boolean - To mark current Subscription as deleted.
+
+### Jobs
+
+`deleted` - boolean - To mark current job as deleted.
+
+`id` - unique id of the event.
+
+`is_active` - boolean - To mark current job template as active or not.
+
+`is_scheduled` - boolean - To mark if the current job is scheduled for notifications.
+
+`job_parameters` - object - contains various job parameters.
+
+  - `campaign_id` - string - Customer defined campain id of the job. Comes under job parameters.
+
+  -`utm_medium` - customer defined utm medium. Comes under job parameters"
+
+`notification` - enum - To select different type of avaliable notification types.
+- REMINDER
+- PRICE_DROP
+- LOW_STOCK
+- BACK_IN_STOCK;
+
+`number_of_items_in_email` - integer - Number of items in email, set -1 to send the entire wishlist.
+
+`schedule` - string - as per cron expression",
+  any cron schedule with frequency.
+
+`scheduleExpression` - string -- string - as per cron expression", any cron schedule with frequency expressed as a string. Optional.
+  
+`template_id` - string - Template ID from sendgrid
 
 
 <!-- </details> -->
@@ -502,7 +534,7 @@ HTTP Status Code:
 ## **Jobs API**
 
 ## Create Notification Job
-For the creation of a new Jotification Service Job resource with unique id,active status, notification type, cron schedule etc..
+For the creation of a new Job notification.A Job resource with unique id,active status, notification type, cron schedule etc..
 
 Method: ``` POST ``` 
 
@@ -571,7 +603,7 @@ HTTP Status Code:
 
 
 ## Update Notification Job
-For UPdating an already existing job by adding parameters or changind existing ones.Job id cannot be updated.
+For UPdating an existing job by adding parameters or changing existing ones. Job id cannot be updated.
 
 Method: ``` PUT ``` 
 
@@ -677,11 +709,11 @@ HTTP Status Code:
  -->
 
 ## Delete  Notification Job
-For the creation of a new EventSubscriptions resource with unique id, and active status.
+For the Deleting  a Job. Delete status will be marked as true.
 
 Method: ``` POST ``` 
 
-Endpoint: ```​​​/api/v1/event-subscription```
+Endpoint: ```​​​/api/v1/```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
