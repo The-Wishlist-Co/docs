@@ -534,7 +534,7 @@ HTTP Status Code:
 ## **Jobs API**
 
 ## Create Notification Job
-For the creation of a new Job notification.A Job resource with unique id,active status, notification type, cron schedule etc..
+For the creation of a new Job notification. A Job resource with unique id,active status, notification type, cron schedule etc..
 
 Method: ``` POST ``` 
 
@@ -603,7 +603,7 @@ HTTP Status Code:
 
 
 ## Update Notification Job
-For UPdating an existing job by adding parameters or changing existing ones. Job id cannot be updated.
+For Updating an existing job by adding parameters or changing existing ones. Job id cannot be updated.
 
 Method: ``` PUT ``` 
 
@@ -620,6 +620,9 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 
 
 Request : 
+
+ `PATH parameter -   "JobId" : id`
+
 ```json
 {
   "deleted": true,
@@ -713,7 +716,7 @@ For the Deleting  a Job. Delete status will be marked as true.
 
 Method: ``` POST ``` 
 
-Endpoint: ```​​​/api/v1/```
+Endpoint: ```​​​/api/v1/jobs/{{jobId}}```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
