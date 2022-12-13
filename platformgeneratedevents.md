@@ -72,6 +72,17 @@ that is defined by the store using this [*Event Subscription Resource*](eventcol
 
 ```wishlistId``` - string - the unique id of the respective wishlist.
 
+```salePrice``` - BigDicemal - variant sales price.
+
+```price``` - BigDicemal - variant  price.
+
+```storeId``` - String - storeId .
+
+```customerEmail``` - String - customeremail .
+
+
+
+
 ## **Price Drop**
 
 The TWC system generates notifications based on  price drop for each product in the customer wishlist.
