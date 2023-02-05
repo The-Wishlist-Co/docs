@@ -103,6 +103,7 @@ For more detailed informaation, check out the collection and follow the service 
 
       - [*Order Item*](ordersSvcApi.md#order-item)
 
+    - [**Quote API**](quotesvcApi.md#Quote-api)
 
 - [**Wishlist Service API**](wishlistSvcAPI.md#wishlist-api)
   
@@ -158,4 +159,3 @@ For more detailed informaation, check out the collection and follow the service 
 
      If the API fails after reasonable number of times, a fault should be reported into event collector.
 
-- [**Quote Service**](quotesvcApi.md#Quote-api)
