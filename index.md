@@ -158,4 +158,4 @@ For more detailed informaation, check out the collection and follow the service 
 
      If the API fails after reasonable number of times, a fault should be reported into event collector.
 
-
+- [**QUOTE Service**](quotesvcApi.md#Quote-api)
