@@ -3,7 +3,7 @@
 
 
 # **Inventory API**
-An inventory item represents a physical good. It holds essential information about the physical good.
+An inventory item represents a physical good.
 
 There is a 1:1 relationship between a product variant and an inventory level. Each product variant includes the ID of its related inventory level. You can use the product variant ID to query the InventoryLevel resource to retrieve the location and quantity for an inventory item.
 
@@ -47,11 +47,11 @@ All representations are JSON objects submitted or received as payload to API req
 <!-- <details> -->
  <summary><font size="4">Location </font></summary>
 
-```id``` - string -The unique ID of the location.It will auotmatically generate while creating the location.
+```id``` - string -The unique ID of the location. It will autmatically generate while creating the location.
 
 ```locationRef``` - string -The unique reference of the location.
 
-```locationType``` - string -The location type  of the location. whether its STORE OR PICKUP_POINT
+```locationType``` - string -The location type  of the location: STORE OR PICKUP_POINT
 
 <!-- <details> -->
  <summary><font size="4">Address </font></summary>
@@ -84,7 +84,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```createdTime``` - Date - ISo date format for the resource creation time.
 
-```modifiedTime``` -  Date - ISo date format for the resource Updation time.
+```modifiedTime``` -  Date - ISo date format for the resource update time.
 
  <!-- </details> -->
 <!-- </details> -->
@@ -839,7 +839,7 @@ HTTP Status Code:
 ```
 
 ## Update an inventory Location By Ref
-Update an inventory Location data set in the TWC system based on locationRef.
+Update an inventory Location data set in the The Wishlist system based on locationRef.
 
 Endpoint: ```/api/location/locationRef={locationRef}"```
 
