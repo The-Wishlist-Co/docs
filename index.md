@@ -3,7 +3,7 @@
 
 ## **Wishlist HTTP Rest API Documentation**
 
-**The wishlist** API's are designed to provide a comprehensive range of integration options for data entities including Wishlists, Customers, Products, Inventory, Orders and Pricing, which when combined enables The Wishlist to act as a data hub for all of a retailer's systems: ecommerce, POS, marketing platform, CDP, etc.  The Wishlist  employs automation to deliver results with minimum intervention or assistance.  
+**The Wishlist** API's are designed to provide a comprehensive range of integration options for data entities including Wishlists, Customers, Products, Inventory, Orders and Pricing, which when combined enables The Wishlist to act as a data hub for all of a retailer's systems: ecommerce, POS, marketing platform, CDP, etc.  The Wishlist  employs automation to deliver results with minimum intervention or assistance.  
 
 For more detailed informaation, check out the collection and follow the service documentation.
 
