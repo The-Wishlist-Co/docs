@@ -3,9 +3,9 @@
 
 
 # **Wishlist API**
-The Wishlist resource stores information about a customer's wishlist, which includes the list products which the customer wish to buy.
+The Wishlist resource stores information about a customer's wishlist.
 
-one customer may have mulitple wishlist and also need a valid customer to create a wishlist.
+One customer may have mulitple wishlists.  You can only create a wishlist for a valid customer.
 
 ### Index
 
@@ -627,8 +627,7 @@ HTTP Status Code:
 
 
 ## Find Wishlist by id/wishlistRef
-Returns the  wishlist belongs to the given  Id and/or Ref.
-If the wishlist does not exist, this method returns a ResourceNotFound error.
+Returns the wishlist that belongs to the given Id and/or Ref.  If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/```
 
@@ -871,7 +870,7 @@ HTTP Status Code:
 ```
 
 ## Find Wishlist by Wishlist Reference
-Returns the  wishlist belongs to the given Ref.
+Returns the wishlist that belongs to the given Ref.
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/{wishlistRef}/byref```
@@ -992,8 +991,7 @@ HTTP Status Code:
 ```
 
 ## Find Wishlist by CustomerId
-Returns the list of wishlists belongs to the given customer id.
-If the wishlist does not exist, this method returns a ResourceNotFound error.
+Returns the list of wishlists that belong to the given customer id.  If no wishlists exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/customer/{customerId}```
 
@@ -1117,8 +1115,8 @@ HTTP Status Code:
 ```
 
 ## Find Wishlist by CustomerRef
-Returns the list of wishlists belongs to the given customer reference.
-If the wishlist does not exist, this method returns a ResourceNotFound error.
+Returns the list of wishlists that belong to the given customer reference.
+If no wishlists exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/customer/{customerRef}/byref```
 
@@ -1244,8 +1242,8 @@ HTTP Status Code:
 
 ## Lookup Wishlist By Customer
 
-Returns the list of wishlists belongs to the given customer reference.
-If the wishlist does not exist, this method returns a ResourceNotFound error.
+Returns the list of wishlists belonging to the given customer reference.
+If no wishlists exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/lookup```
 
@@ -1374,7 +1372,7 @@ HTTP Status Code:
 
 
 ## Delete Wishlist by ID/Ref
-Deleting a Wishlist marks the wishlist as deleted and produces the HTTP response confirming the action.
+Deleting a Wishlist marks the wishlist as deleted and produces an HTTP response confirming the action.
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists```
@@ -1408,7 +1406,7 @@ HTTP Status Code:
 ```
 
 ## Delete Wishlist by ID
-Deleting a Wishlist marks the wishlist as deleted and produces the HTTP response confirming the action.
+Deleting a Wishlist marks the wishlist as deleted and produces an HTTP response confirming the action.
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/{id}```
@@ -1442,7 +1440,7 @@ HTTP Status Code:
 ```
 
 ## Delete Wishlist by Ref
-Deleting a Wishlist marks the wishlist as deleted and produces the HTTP response confirming the action.
+Deleting a Wishlist marks the wishlist as deleted and produces an HTTP response confirming the action.
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/{wishlistRef}/byref```
@@ -1480,7 +1478,7 @@ HTTP Status Code:
 ## **Wishlist Item Resource**
 
 ## Create a Wishlist Item
-Creates a new wishlist item data set  into an existing wishlist in the TWC system.
+Creates a new wishlist item data set into an existing wishlist in the TWC system.
 
 Endpoint: ```/api/wishlist/items```
 
@@ -1613,7 +1611,7 @@ HTTP Status Code:
 
 
 ## Upload multiple Wishlist Items
-Uploading new multiple wishlist items into an existing wishlist in the TWC system.
+Upload (add) multiple wishlist items into an existing wishlist in the TWC system.
 
 Endpoint: ```/api/wishlist/upload-items```
 
@@ -1826,7 +1824,7 @@ HTTP Status Code:
 
 
 ## Update a Wishlist Item
-Updates Wishlist item data set in the TWC system.
+Updates the Wishlist item data set in the TWC system.
 
 Endpoint: ```/api/wishlist/items```
 
@@ -2540,7 +2538,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 ## Delete Wishlist Item by Id
-Deleting a Wishlist item marks the item as deleted and produces the HTTP response confirming the action.
+Deleting a Wishlist item marks the item as deleted and produces an HTTP response confirming the action.
 If the wishlist/item does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlist/items/{id}```
@@ -2572,7 +2570,7 @@ HTTP Status Code:
 ```
 
 ## Delete Wishlist Item by WishlistItemRef
-Deleting a Wishlist item marks the item as deleted and produces the HTTP response confirming the action.
+Deleting a Wishlist item marks the item as deleted and produces an HTTP response confirming the action.
 If the wishlist/item does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlist/items/{wishlistItemRef}/ref```
@@ -2603,7 +2601,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 ## Delete Wishlist Item by wishlist Id and item Id
-Deleting a Wishlist item marks the item as deleted and produces the HTTP response confirming the action.
+Deleting a Wishlist item marks the item as deleted and produces an HTTP response confirming the action.
 If the wishlist/item does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlist/{wishlistId}/items/{id}```
