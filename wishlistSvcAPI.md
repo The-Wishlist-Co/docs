@@ -12,39 +12,39 @@ One customer may have mulitple wishlists.  You can only create a wishlist for a 
 ***
 
 - [**Wishlist API**](#wishlist-api)
-    <!-- - [Index](#index) -->
-    - [**Representations**](#representations)
-        - [Wishlist](#wishlist)
-        - [Wishlist Item](#wishlist-item)
-        - [Product](#product)
-    - [**REST Endpoints**](#rest-endpoints)
-        - [**Wishlist Resource**](#wishlist-resource)
-            - [Create a Wishlist](#create-a-wishlist)
-            - [Update a Wishlist](#update-a-wishlist)
-            - [Update a Wishlist By ID](#update-a-wishlist-by-id)
-            - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
-            - [Find Wishlist by id/wishlistRef](#find-wishlist-by-idwishlistref)
-            - [Find Wishlist by Id](#find-wishlist-by-id)
-            - [Find Wishlist by Wishlist Reference](#find-wishlist-by-wishlist-reference)
-            - [Find Wishlist by CustomerId](#find-wishlist-by-customerid)
-            - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
-            - [Lookup Wishlist By CustomerId](#lookup-wishlist-by-customer)
-            - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
-            - [Delete Wishlist by ID](#delete-wishlist-by-id)
-            - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
-        - [**Wishlist Item Resource**](#wishlist-item-resource)
-            - [Create a Wishlist Item](#create-a-wishlist-item)
-            - [Upload multiple Wishlist Items](#upload-multiple-wishlist-items)
-            - [Update a Wishlist Item](#update-a-wishlist-item)
-            - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
-            - [Update a Wishlist Item By Id](#update-a-wishlist-item-by-id)
-            - [Find all Items in a Wishlist by Wishlist Id](#find-all-items-in-a-wishlist-by-wishlist-id)
-            - [Find Wishlist Item by Item Id](#find-wishlist-item-by-item-id)
-            - [Find Wishlist Item by Item Ref](#find-wishlist-item-by-item-ref)
-            - [Find Wishlist Item by WishlistId and Item Id](#find-wishlist-item-by-wishlistid-and-item-id)
-            - [Delete Wishlist Item by Id](#delete-wishlist-item-by-id)
-            - [Delete Wishlist Item by WishlistItemRef](#delete-wishlist-item-by-wishlistitemref)
-            - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
+    - [Index](#index)
+  - [**Representations**](#representations)
+  - [Wishlist](#wishlist)
+  - [Wishlist Item](#wishlist-item)
+  - [Product](#product)
+  - [**REST Endpoints**](#rest-endpoints)
+  - [**Wishlist Resource**](#wishlist-resource)
+  - [Create a Wishlist](#create-a-wishlist)
+  - [Update a Wishlist](#update-a-wishlist)
+  - [Update a Wishlist By ID](#update-a-wishlist-by-id)
+  - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
+  - [Find Wishlist by id/wishlistRef](#find-wishlist-by-idwishlistref)
+  - [Find Wishlist by Id](#find-wishlist-by-id)
+  - [Find Wishlist by Wishlist Reference](#find-wishlist-by-wishlist-reference)
+  - [Find Wishlist by CustomerId](#find-wishlist-by-customerid)
+  - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
+  - [Lookup Wishlist By Customer](#lookup-wishlist-by-customer)
+  - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
+  - [Delete Wishlist by ID](#delete-wishlist-by-id)
+  - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
+  - [**Wishlist Item Resource**](#wishlist-item-resource)
+  - [Create a Wishlist Item](#create-a-wishlist-item)
+  - [Upload multiple Wishlist Items](#upload-multiple-wishlist-items)
+  - [Update a Wishlist Item](#update-a-wishlist-item)
+  - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
+  - [Update a Wishlist Item By Id](#update-a-wishlist-item-by-id)
+  - [Find all Items in a Wishlist by Wishlist Id](#find-all-items-in-a-wishlist-by-wishlist-id)
+  - [Find Wishlist Item by Item Id](#find-wishlist-item-by-item-id)
+  - [Find Wishlist Item by Item Ref](#find-wishlist-item-by-item-ref)
+  - [Find Wishlist Item by WishlistId and Item Id](#find-wishlist-item-by-wishlistid-and-item-id)
+  - [Delete Wishlist Item by Id](#delete-wishlist-item-by-id)
+  - [Delete Wishlist Item by WishlistItemRef](#delete-wishlist-item-by-wishlistitemref)
+  - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
 
 ## **Representations**
 
@@ -214,24 +214,16 @@ Sample Request:
       "description": "string"
     }
   },
-  "datePurchased": "2022-06-27T15:34:58.540Z",
+  "customerId": "string",
+  "customerRef": "string",
+  "deleted": "true",
+  "description": "string",
   "id": "string",
-  "product": {
-    "productId": "string",
-    "productRef": "string",
-    "selectedVariantId": "string",
-    "selectedVariantRef": "string"
-  },
-  "purchased": true,
-  "wishlistId": "string",
-  "wishlistItemRef": "string",
-  "createdTime": "2022-08-24T07:28:12.000+0000",
-  "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string",
-  "prerelease": "boolean",
-  "disableNotification" : "boolean"
+  "isPrivate": "true",
+  "name": "string",
+  "id":"string",
+  "wishlistRef": "string"
 }
-
 ```
 
 
@@ -309,6 +301,7 @@ Sample Request:
 
 <summary>Response - 200 (OK Updated)</summary>
 
+
 ```json
 {
   "attributeGroups": {
@@ -337,23 +330,15 @@ Sample Request:
       "description": "string"
     }
   },
-  "datePurchased": "2022-06-27T15:35:39.044Z",
+  "customerId": "string",
+  "customerRef": "string",
+  "deleted": "true",
+  "description": "string",
   "id": "string",
-  "product": {
-    "oldVariantId": "string",
-    "productId": "string",
-    "productRef": "string",
-    "selectedVariantId": "string",
-    "selectedVariantRef": "string"
-  },
-  "purchased": true,
-  "wishlistId": "string",
-  "wishlistItemRef": "string",
-  "createdTime": "2022-08-24T07:28:12.000+0000",
-  "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string",
-  "prerelease": "boolean",
-  "disableNotification" : "boolean"
+  "isPrivate": "true",
+  "name": "string",
+  "id":"string",
+  "wishlistRef": "string"
 }
 ```
 
@@ -437,6 +422,7 @@ Sample Request:
 
 <summary>Response - 200 (OK Updated)</summary>
 
+
 ```json
 {
   "attributeGroups": {
@@ -465,23 +451,15 @@ Sample Request:
       "description": "string"
     }
   },
-  "datePurchased": "2022-06-27T15:35:39.044Z",
+  "customerId": "string",
+  "customerRef": "string",
+  "deleted": "true",
+  "description": "string",
   "id": "string",
-  "product": {
-    "oldVariantId": "string",
-    "productId": "string",
-    "productRef": "string",
-    "selectedVariantId": "string",
-    "selectedVariantRef": "string"
-  },
-  "purchased": true,
-  "wishlistId": "string",
-  "wishlistItemRef": "string",
-  "createdTime": "2022-08-24T07:28:12.000+0000",
-  "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string",
-  "prerelease": "boolean",
-  "disableNotification" : "boolean"
+  "isPrivate": "true",
+  "name": "string",
+  "id":"string",
+  "wishlistRef": "string"
 }
 ```
 
@@ -591,23 +569,15 @@ Sample Request:
       "description": "string"
     }
   },
-  "datePurchased": "2022-06-27T15:35:39.044Z",
+  "customerId": "string",
+  "customerRef": "string",
+  "deleted": "true",
+  "description": "string",
   "id": "string",
-  "product": {
-    "oldVariantId": "string",
-    "productId": "string",
-    "productRef": "string",
-    "selectedVariantId": "string",
-    "selectedVariantRef": "string"
-  },
-  "purchased": true,
-  "wishlistId": "string",
-  "wishlistItemRef": "string",
-  "createdTime": "2022-08-24T07:28:12.000+0000",
-  "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string",
-  "prerelease": "boolean",
-  "disableNotification" : "boolean"
+  "isPrivate": "true",
+  "name": "string",
+  "id":"string",
+  "wishlistRef": "string"
 }
 ```
 
