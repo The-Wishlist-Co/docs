@@ -32,12 +32,13 @@ The Product resource stores information about a product, its variants.
         - [**Product Variant Service**](#product-variant-service)
           - [Create a Product Variants](#create-a-product-variants)
           - [Update a Product Variant](#update-a-product-variant)
-		  - [Update a Product Variant By ID](#update-a-product-variant-by-id)
-		  - [Update a Product Variant By Variant Ref](#update-a-product-variant-by-variant-ref)
+		      - [Update a Product Variant By ID](#update-a-product-variant-by-id)
+		      - [Update a Product Variant By Variant Ref](#update-a-product-variant-by-variant-ref)
           - [Validate Product Variant](#validate-product-variant)
           - [Find Product Variant by ID](#find-product-variant-by-id)
           - [Find Product Variant by Ref](#find-product-variant-by-ref)
           - [Delete Product variant by Ref](#delete-product-variant-by-ref)
+          - [Update a Price By Variant id](#update-a-price-variant-by-variant-id)
       
 
 
@@ -260,6 +261,9 @@ Represents a product Variant.
 `createdDate` - The date and time (ISO 8601 format) when the customer was created.
 
 `lastModifiedDate` - The date and time (ISO 8601 format) when the customer information was last updated.
+
+ 
+ `price` - [price](Common_Fields/price.md) - Object of price. 
 
 
 ## **REST Endpoints**
@@ -4830,6 +4834,11 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
   "mobileLink": "string",
+  "price": {
+    "currencyCode": "string",
+    "price": "BigDecimal",
+    "salePrice" :"BigDecimal"
+  },
   "physicalSpecs": {
     "dimensionUnitCode": "string",
     "dimensionUnitName": "string",
@@ -5000,7 +5009,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     }
   ],
   "createdDate": "2022-08-31T04:46:13.275Z",
-  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z",
+   "price": {
+    "currencyCode": "string",
+    "price": "BigDecimal",
+    "salePrice" :"BigDecimal"
+  }
 }
 
 ```
@@ -5159,6 +5173,11 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "additionalProp2": "string",
     "additionalProp3": "string"
   },
+   "price": {
+    "currencyCode": "string",
+    "price": "BigDecimal",
+    "salePrice" :"BigDecimal"
+  },
   "variantOptions": [
     {
       "optionDefaultImage": "string",
@@ -5300,7 +5319,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     }
   ],
   "createdDate": "2022-08-31T04:46:13.275Z",
-  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z",
+   "price": {
+    "currencyCode": "string",
+    "price": "BigDecimal",
+    "salePrice" :"BigDecimal"
+  },
 }
 ```
 
@@ -5471,7 +5495,12 @@ id - Product vatiant ID
       "optionValue": "string",
       "optionsImageId": "string"
     }
-  ]
+  ],
+   "price": {
+    "currencyCode": "string",
+    "price": "BigDecimal",
+    "salePrice" :"BigDecimal"
+  },
 }
 ```
 
@@ -5604,7 +5633,12 @@ id - Product vatiant ID
     }
   ],
   "createdDate": "2022-08-31T04:46:13.275Z",
-  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z",
+   "price": {
+    "currencyCode": "string",
+    "price": "BigDecimal",
+    "salePrice" :"BigDecimal"
+  },
 }
 ```
 
@@ -5651,129 +5685,44 @@ ref - variantRef
  <summary>Sample Request :
 
 </summary>
+
+## Update a Price Variant By Variant id
+
+Update Product Variant data set in the TWC system based on Variant Ref.
+
+Endpoint: ```/api/v2/products/variants/{{variantId}}```
+
+Method: ``` PUT ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :
+
+</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+ 
+Path Variable:
+
+```
+variantid - variantid
+``` 
+
+ <summary>Sample Request :
+
+</summary>
  
  ```json
  {
-  "active": true,
-  "additionalImageLink": "string",
-  "attributeGroups": {
-    "additionalProp1": {
-      "attribute_group": "string",
-      "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
-      },
-      "is_obsolete": true
-    },
-    "additionalProp2": {
-      "attribute_group": "string",
-      "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
-      },
-      "is_obsolete": true
-    },
-    "additionalProp3": {
-      "attribute_group": "string",
-      "attributes": {
-        "additionalProp1": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp2": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        },
-        "additionalProp3": {
-          "attribute_value": "string",
-          "value_type": "INTEGER"
-        }
-      },
-      "is_obsolete": true
-    }
-  },
-  "availability": "available",
-  "availabilityDescription": "string",
-  "brandId": "string",
-  "brandName": "string",
-  "calculatedPrice": 0,
-  "color": "string",
-  "condition": "USED",
-  "cost": 0,
-  "defaultVariant": "string",
-  "deleted": true,
-  "description": "string",
-  "digitalProduct": true,
-  "disabled": true,
-  "expirationDate": "2022-07-27T12:12:59.505Z",
-  "featured": true,
-  "gtin": "string",
-  "gtinType": "GTIN8",
-  "imageLink": "string",
-  "inventoryLevel": 0,
-  "inventoryTracking": "none",
-  "isbn": "string",
-  "link": "string",
-  "maxOrderQuantity": 0,
-  "minOrderQuantity": 0,
-  "mobileLink": "string",
-  "physicalSpecs": {
-    "dimensionUnitCode": "string",
-    "dimensionUnitName": "string",
-    "maxDepth": 0,
-    "maxHeight": 0,
-    "maxWeight": 0,
-    "maxWidth": 0,
-    "minWeight": 0,
-    "weightUnitCode": "string",
-    "weightUnitName": "string"
-  },
-  "status": "APPROVED",
-  "stock": {
-    "stockLevels": [
-      {
-        "locationRef": "string",
-        "locationid": "string",
-        "stock": "string"
-      }
-    ],
-    "totalStock": "string"
-  },
-  "title": "string",
-  "variance": {
-    "additionalProp1": "string",
-    "additionalProp2": "string",
-    "additionalProp3": "string"
-  },
-  "variantOptions": [
-    {
-      "optionDefaultImage": "string",
-      "optionId": "string",
-      "optionLabel": "string",
-      "optionValue": "string",
-      "optionsImageId": "string"
-    }
-  ]
+  
+    "currencyCode": "string",
+    "price": "BigDecimal",
+    "salePrice" :"BigDecimal"
+  
 }
 ```
 
@@ -5906,7 +5855,12 @@ ref - variantRef
     }
   ],
   "createdDate": "2022-08-31T04:46:13.275Z",
-  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z",
+   "price": {
+    "currencyCode": "string",
+    "price": "BigDecimal",
+    "salePrice" :"BigDecimal"
+  },
 }
 ```
 
@@ -6259,7 +6213,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     }
   ],
       "createdDate": "2022-08-31T04:46:13.275Z",
-      "lastModifiedDate": "2022-08-31T04:48:33.731Z"
+      "lastModifiedDate": "2022-08-31T04:48:33.731Z",
+  "price": {
+    "currencyCode": "string",
+    "price": "BigDecimal",
+    "salePrice" :"BigDecimal"
+  },
 }
  ```
 
@@ -6441,7 +6400,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     }
   ],
   "createdDate": "2022-08-31T04:46:13.275Z",
-  "lastModifiedDate": "2022-08-31T04:48:33.731Z"
+  "lastModifiedDate": "2022-08-31T04:48:33.731Z",
+   "price": {
+    "currencyCode": "string",
+    "price": "BigDecimal",
+    "salePrice" :"BigDecimal"
+  },
 }
  ```
 
@@ -6662,6 +6626,11 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "maxOrderQuantity": 0,
     "minOrderQuantity": 0,
     "mobileLink": "string",
+    "price": {
+    "currencyCode": "string",
+    "price": "BigDecimal",
+    "salePrice" :"BigDecimal"
+     }
     "physicalSpecs": {
       "dimensionUnitCode": "string",
       "dimensionUnitName": "string",
@@ -6702,7 +6671,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     ],
     "createdDate": "2022-08-31T04:46:13.275Z",
     "lastModifiedDate": "2022-08-31T04:48:33.731Z"
-  }
+  },
+ 
 ]
  ```
 
@@ -6871,6 +6841,11 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "maxOrderQuantity": 0,
     "minOrderQuantity": 0,
     "mobileLink": "string",
+    "price": {
+    "currencyCode": "string",
+    "price": "BigDecimal",
+    "salePrice" :"BigDecimal"
+    },
     "physicalSpecs": {
       "dimensionUnitCode": "string",
       "dimensionUnitName": "string",

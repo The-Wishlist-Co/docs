@@ -97,5 +97,8 @@
  `variance` - The array for vaiants.
   
  `variantOptions` - [VariantOptions](variantoptions.md) - Array of variant Options.
+
+  `price` - - [price](price.md) - Price Object.
+
  
  
