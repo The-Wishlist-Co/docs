@@ -45,6 +45,7 @@ One customer may have mulitple wishlists.  You can only create a wishlist for a 
   - [Delete Wishlist Item by Id](#delete-wishlist-item-by-id)
   - [Delete Wishlist Item by WishlistItemRef](#delete-wishlist-item-by-wishlistitemref)
   - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
+  - [Add multiple Items to a Wishlist](#add-multiple-wishlist-items)
 
 ## **Representations**
 
@@ -117,7 +118,29 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```selectedVariantRef``` - string- the unique ref of the product variant which the customer need to add.
 
+<!-- </details>
+
+<details> -->
+##  Add Multiple Wishlist Item
+ <!-- <summary>WishList Item</summary> -->
+
+
+```wishlistId``` - string - the unique id of the respective wishlist. please provide either id or ref
+
+```wishlistRef``` - string- reference of the respective wishlist. please provide either id or ref
+
+```itemId``` - List- the list of items with id value like product id ,variant id. Please provide either itemId or itemRef
+
+```itemRef``` - List- the list of items with id value like product ref ,variant ref. Please provide  either itemId or itemRef 
+
+
+
+<!-- </details>
+
+
 <!-- </details> -->
+
+
 
 ## **REST Endpoints**
 
@@ -2601,6 +2624,131 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
+## Add multiple Wishlist Items
+Add  multiple items to an existing wishlist in the TWC system.
+
+Endpoint: ```/api/wishlist/add-multiple-items```
+
+Method: ``` POST ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Sample Request:
+
+<!-- <details> -->
+```json
+{
+    "wishlistId": "string",
+    "wishlistRef": "string",
+    "itemId": [
+        {
+            "addedFromCart": true,
+            "attributeGroups": {
+                "additionalProp1": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                },
+                "additionalProp2": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                },
+                "additionalProp3": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                }
+            },
+            "datePurchased": "2023-03-31T10:00:17.889Z",
+            "disableNotification": true,
+            "id": "string",
+            "prerelease": true,
+            "productId": "string",
+            "purchased": true,
+            "selectedVariantId": "string",
+            "wishlistItemRef": "string"
+        }
+    ],
+    "itemRef": [
+        {
+            "addedFromCart": true,
+            "attributeGroups": {
+                "additionalProp1": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                },
+                "additionalProp2": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                },
+                "additionalProp3": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                }
+            },
+            "datePurchased": "2023-03-31T10:00:17.889Z",
+            "disableNotification": true,
+            "id": "string",
+            "prerelease": true,
+            "productRef": "string",
+            "purchased": true,
+            "selectedVariantRef": "string",
+            "wishlistItemRef": "string"
+        }
+    ]
+}
+
+```
+
+<!-- </details> -->
+
+<summary>Response - 202 (Accepted)</summary>
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 202 Accepted
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+- 409 Conflict
+```
+
+
 
 ***
 [Back to Top](#wishlist-api)
