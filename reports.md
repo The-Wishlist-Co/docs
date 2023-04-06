@@ -18,6 +18,8 @@ Reporting APIs  is a guide for customers on how to use an API to generate and de
     - [Wishlist Report](#wishlist-report)
     - [Product Conversion Report](#product-conversion-report)
 	- [Product Conversion Summary Report](#product-conversion-summary-report)
+    - [Customer Conversion  Report](#customer-conversion-report)
+    - [Interaction Report](#interaction-report)
 
 ## **Representations**
 
@@ -320,7 +322,7 @@ HTTP Status Code:
 ```
 
 ## Product Conversion Summary Report
-This report will generate the list of products and the number of times they have been added to wishlists. 
+This report will generate the list of products and the number of times they have been converted into order. 
 
 
 Endpoint: ```/api/analytics```
@@ -367,6 +369,137 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "productTitle": "string",
       "variantColor": "string",
       "variantSize": "string"
+    }
+  ],
+  "pageNumber": "string",
+  "pageSize": "string"
+}
+```
+<!-- </details>  -->
+
+HTTP Status Code: 
+```json 
+- 200 OK
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
+
+## Customer Conversion  Report
+This report will generate the list of customers and the number of times they have been converted an item to order 
+
+
+Endpoint: ```/api/analytics```
+
+Method: ``` GET ```
+
+Method Name: `customerconversion`
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<!-- <details> -->
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+<!-- </details> -->
+
+<<!-- <details> -->
+ Query Parameters : 
+ ```
+ - startDate
+ - endDate
+ - pageNumber
+ - pageSize
+```
+<!-- </details> -->
+
+<!-- <details> -->
+ <summary>Sample Response  - 200 (OK)</summary>
+ 
+ ```json
+ {
+  "data": [
+    {
+      "customerName": "string",
+      "email": "string",
+      "numberOfconversion": "string",
+      "phone": "string",
+      "totalRevenue": "string"
+    }
+  ],
+  "pageNumber": "string",
+  "pageSize": "string"
+}
+```
+<!-- </details>  -->
+
+HTTP Status Code: 
+```json 
+- 200 OK
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
+
+## Interaction Report
+This report will generate the list of all the interactions made on the given period
+
+
+Endpoint: ```/api/analytics```
+
+Method: ``` GET ```
+
+Method Name: `interaction`
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<!-- <details> -->
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+<!-- </details> -->
+
+<<!-- <details> -->
+ Query Parameters : 
+ ```
+ - startDate
+ - endDate
+ - pageNumber
+ - pageSize
+```
+<!-- </details> -->
+
+<!-- <details> -->
+ <summary>Sample Response  - 200 (OK)</summary>
+ 
+ ```json
+ {
+  "data": [
+    {
+      "createdAt": "string",
+      "customerEmail": "string",
+      "customerId": "string",
+      "customerRef": "string",
+      "entityType": "string",
+      "interactionType": "string",
+      "itemId": "string",
+      "productId": "string",
+      "productRef": "string",
+      "salePrice": "string",
+      "source": "string",
+      "staffName": "string",
+      "storeId": "string",
+      "variantAttributes": "string",
+      "variantId": "string",
+      "wishlistId": "string"
     }
   ],
   "pageNumber": "string",
