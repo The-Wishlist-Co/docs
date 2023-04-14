@@ -2,11 +2,7 @@
 [Back to Home](index.md#welcome-to-the-wishlist)
 
 # **Customer API**
-The Customer resource stores information about a shop's customers, such as their contact details, their order history, and whether they've agreed to receive email marketing.
-
-The Customer resource also holds information on the status of a customer's account. Customers with accounts save time at checkout when they're logged in because they don't need to enter their contact information. You can use the Customer API to check whether a customer has an active account, and then invite them to create one if they don't.
-
-For security reasons, the Customer resource doesn't store credit card information. Customers always need to enter this information at checkout.
+The Customer API is used to create and manage information about a retailer's customers, such as their contact details, and whether they've agreed to receive email marketing.  The Customer resource doesn't store any credit card information. 
 
 ### Index
 
@@ -32,8 +28,7 @@ For security reasons, the Customer resource doesn't store credit card informatio
 
 ## **Representations**
 
-All representations are JSON objects submitted or received as payload to API requests or responses.
-Represents a customer. If a store field is defined in a store, then the customer account is specific to the store.
+All requests or responses are JSON objects.
 
 <!-- 
 <details>
@@ -82,9 +77,9 @@ The customer's email address and the main identifier of uniqueness for a custome
 
 ```marketing_preferences_updated_at``` - DateTime - The date and time (ISO 8601 format) when customer preferences updated at.
 
-```mobile``` - string -The unique phone number (E.164 format) for this customer. Attempting to assign the same phone number to multiple customers returns an error. The property can be set using different formats, but each format must represent a number that can be dialed from anywhere in the world.
+```mobile``` - string -The phone number for this customer. Any format is accepted - the assumption is that the upstream application does phone number validation.
 
-```phone``` - string -The unique phone number (E.164 format) for this customer. Attempting to assign the same phone number to multiple customers returns an error. The property can be set using different formats, but each format must represent a number that can be dialed from anywhere in the world.
+```phone``` - string -The unique phone number (E.164 format) for this customer. Any format is accepted - the assumption is that the upstream application does phone number validation.
 
 ```taxExempt``` - boolean -Whether the customer is exempt from paying taxes on their order. If true, then taxes won't be applied to an order at checkout. If false, then taxes will be applied at checkout.
 
@@ -101,7 +96,9 @@ The customer's email address and the main identifier of uniqueness for a custome
 - ##  **Customer**
 
 ## Create a Customer
-Creates a new Customer data set in the TWC system, then the wishlist is assigned to the created customer. All wishlists and orders will be assigned to the created customer.
+Creates a new Customer in the Wishlist platform.  Email and referenceID must be unique or the post will fail.  
+
+CustomerRef is the retailer's own unique customer identifier.  The Wishlist also generates a unique internal system identifier (id).  Either can be used for retrieving customer data.
 
 Endpoint: ```/api/v2/customers```
 
@@ -352,13 +349,15 @@ HTTP Status Code:
 ```
 
 ## Upload Customers
-Creates an array of new Customers in the TWC system.
+This API is used to create an array of customers.
+
+*THIS API IS NOW DEPRICATED.  FOR UPLOADING MULTIPLE RECORDS PLEASE USE THE IMPEX API* 
 
 Endpoint: ```/api/v2/upload-customers```
 
 Method: ``` POST ```
 
-Method Name: `createCustomer`
+Method Name: `uploadCustomer`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -499,8 +498,8 @@ HTTP Status Code:
 ```
 
 
-## Validate Customer Input
-Validates the customer input
+## Validate Customer Payload
+This API is used to validate a payload format.  It is primarily an internal API and typically not required/used by customers, but we do make it available to developers if required.
 
 Endpoint: ```/api/v2/customers/validate```
 
@@ -645,7 +644,9 @@ HTTP Status Code:
 ```
 
 ## Update a Customer
-Updates Customer data set in the TWC system.
+Updates Customer fields.  
+
+The updateCustomer API determines which customer to update by comparing the unique customer identifiers, in the priorithy of id, CustomerRef, then email.  There are two additional APIs to update customer using specifically the id or CustomerRef, which will work more efficiently.
 
 Endpoint: ```/api/v2/customers```
 
@@ -897,7 +898,7 @@ HTTP Status Code:
 ```
 
 ## Update a Customer By Customer Id
-Updates Customer data set in the TWC system based on Customer ID.
+Updates Customer based on The Wishlist system generated unique ID.
 
 Endpoint: ```/api/v2/customers/id={id:.*}"```
 
@@ -1148,7 +1149,7 @@ HTTP Status Code:
 ```
 
 ## Update a Customer By Customer Ref
-Updates Customer data set in the TWC system  based on Customer Ref.
+Updates Customer using the retailer's own unique identifier- CustomerRef.
 
 Endpoint: ```/api/v2/customers/customerRef={customerRef:.*}```
 
@@ -1401,7 +1402,10 @@ HTTP Status Code:
 
 
 ## Add address to Existing Customer
-Update the Customer data by adding the new address details.
+Add a customer address using The Wishlist generated customer ID.
+
+*NOTE THIS CAN ALSO BE DONE DIRECTLY USING THE UPDATE CUSTOMER APIs*
+
 
 Endpoint: ```/api/v2/customers/{id}/address```
 
@@ -1573,7 +1577,7 @@ HTTP Status Code:
 
 ## Delete Customer Address
 
-Delete the customer's address based on  customer id and address Id
+Delete a customer address using either The Wishlist generated customer id and The Wishlist generated address id
 
 Endpoint: ```/api/v2/customers/{id}/address/{addressId}```
 
@@ -1721,9 +1725,8 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Find Customer by Id
-Returns a customer by its ID from a specific Store while passing the respective ID as a path param in the endpoint. The Tenant authentication maps to a Store.
-If the customer does not exist, this method returns a Blank.
+## Get Customer by Id
+Returns a customer using The Wishlist platform system generated customer ID. 
 
 Endpoint: ```/api/v2/customers/{id}```
 
@@ -1870,9 +1873,8 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Find Customer by Ref
-Returns a customer by its Ref from a specific Store while passing the respective Ref as a path param in the endpoint. The Tenant authentication maps to a Store.
-If the customer does not exist, this method returns a ResourceNotFound error.
+## Get Customer by CustomerRef
+Returns a customer using the retailers's own unique customer identifier CustomerRef.
 
 Endpoint: ```/api/v2/customers/{customerRef}/ref```
 
@@ -2020,9 +2022,10 @@ HTTP Status Code:
 ```
 
 
-## Look up  Customers by email/mobile/phone/firstName/lastName
-Returns a list of  customers  from a specific Store while passing the email/mobile/phone/firstName/lastName as a Query params in the endpoint. The Tenant authentication maps to a Store.
-If the customers does not exist, this method returns a empty list.
+## Retrieve Customers by email/mobile/phone/firstName/lastName
+Returns a list of customers based on email/mobile/phone/firstName/lastName.  A record is returned only if all of the given criteria are matched.  
+
+If no customers exist, this method returns a empty list.
 
 Endpoint: ```/api/v2/customers/search```
 
@@ -2178,8 +2181,9 @@ HTTP Status Code:
 ```
 
 ## Delete Customer by ID
-Deleting a Customer marks the customer as deleted and produces the HTTP response confirming the action.
-If the customer does not exist, this method returns a empty response.
+Deletes a customer.  
+
+*NOTE, A CUSTOMERS'S WISHLISTS ARE NOT DELETED.  (A CUSTOMER CANNOT BE IDENTIFIED FROM A WISHLIST RECORD).*
 
 Endpoint: ```/api/v2/customers/{id}```
 
@@ -2221,9 +2225,8 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Delete Customer by Ref
-Deleting a Customer by ref marks the customer as deleted and produces the HTTP response confirming the action.
-If the customer does not exist, this method returns a empty response.
+## Delete Customer by CustomerRef
+Deletes a customer based on the retailer's unique customer identifier CustomerRef.
 
 Endpoint: ```/api/v2/customers/{customerRef}/ref```
 

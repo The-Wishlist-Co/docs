@@ -3,7 +3,7 @@
 
 # **Event Collector API**
 
-The event collector api is employed for enabling various events and campains that pertains to a customer. Various event suscriptions such as notification services, loyality services etc can be enabled by the customer and the information related to these events are also stored here.
+The event collector API is employed for enabling various events and campains that pertain to a customer. Various event suscriptions such as notification services, loyalty services etc can be enabled by the retailer and the information related to these events are also stored here.
 
 ### Index
 
@@ -34,7 +34,7 @@ The event collector api is employed for enabling various events and campains tha
 
 ## **Representations**
 
-All representations are JSON objects submitted or received as payload to API requests or responses.
+All requests and responses are JSON objects.
 
 ### Event 
 
@@ -365,7 +365,7 @@ HTTP Status Code:
 
 
 ## Update  Event Subscriptions
-For the updation of an existing EventSubscriptions resource with unique id.
+For updating an existing EventSubscriptions resource with unique id.
 
 Method: ``` PUT ``` 
 
@@ -590,7 +590,7 @@ HTTP Status Code:
 ## **Jobs API**
 
 ## Create Notification Job
-For the creation of a new Job notification. A Job resource with unique id,active status, notification type, cron schedule etc..
+For the creation of a new Job notification. A Job resource with unique id,active status, notification type, cron schedule etc.
 
 Method: ``` POST ``` 
 
@@ -768,7 +768,7 @@ HTTP Status Code:
  -->
 
 ## Delete  Notification Job
-For the Deleting  a Job. Delete status will be marked as true.
+For the deletion of a Job. Delete status will be marked as true.
 
 Method: ``` POST ``` 
 

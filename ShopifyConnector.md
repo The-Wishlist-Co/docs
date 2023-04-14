@@ -2,9 +2,9 @@
 [Back to Home](index.md#welcome-to-the-wishlist)
 
 
-# Shopify Connect
+# Shopify Connector
 
-Shopify Connector is used data integration from the Shopify system into the TWC system seamlessly. The API Translates the information from the shopify data and trasforms it as per the requirements of the TWC system.
+Shopify Connector is used to integrate data from  Shopify seamlessly into The Wishlist. The API translates the information from Shopify as per the requirements of The Wishlist.
 
 The system is designed to work with multiple entity types being used as depicted by the list below.
 - [Customer Api](shopify/customer.md)

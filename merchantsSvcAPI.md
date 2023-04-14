@@ -77,7 +77,7 @@ The Merchants resource stores information about a merchant and their stores.
 
 ## **Representations**
 
-All representations are JSON objects submitted or received as payload to API requests or responses.
+All requests or responses are JSON objects.
 
 
 <!-- <details> -->

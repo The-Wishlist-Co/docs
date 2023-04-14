@@ -2,7 +2,7 @@
 [Back to Home](index.md#welcome-to-the-wishlist)
 
 # **Price API**
-The Price resource stores information about price details of  particular product variant.
+The Price resource stores information about price details of particular product variant.
 
 ### Index
 
@@ -18,12 +18,12 @@ The Price resource stores information about price details of  particular product
     - [Delete A Price](#delete-a-price)
     - [Find Price by id and priceRef](#find-price-by-id-and-priceref)
     - [Validate an price](#validate-an-price)
-    - [Find All Prices](#find-all-prices)
+    <!-- - [Find All Prices](#find-all-prices) -->
 
 
 ## **Representations**
 
-All representations are JSON objects submitted or received as payload to API requests or responses.
+All requests or responses are JSON objects.
 
 
 <!-- <details> -->

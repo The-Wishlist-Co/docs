@@ -3,7 +3,7 @@
 
 
 # **Product API**
-The Product resource stores information about a product, its variants.
+The Product resource stores information about a product and its variants.
 
 ### Index
 
@@ -43,7 +43,7 @@ The Product resource stores information about a product, its variants.
 
 ## **Representations**
 
-All representations are JSON objects submitted or received as payload to API requests or responses.
+All requests or responses are JSON objects.
 
 
 ##  Product
@@ -62,7 +62,7 @@ Represents a product.
  - preorder
  - disabled 
  
- `availabilityDescription` - String- In detail of the product availability.
+ `availabilityDescription` - String- detail of the product availability.
  
  `brandId` - string - Product brand Id.
  
@@ -72,7 +72,7 @@ Represents a product.
  
  `color` - string  - Product Color.
  
- `condition` - String - Product Condition and it can be either of the below values.
+ `condition` - String - Product Condition - can be any of the below values.
  - New
  - Used
  - Refurbished 
@@ -162,7 +162,7 @@ Represents a product Variant.
  
  `additionalImageLink` - string - Image link.
  
- `attributeGroups` - [AttributeGroup](Common_Fields/attributeGroup.md) - The group of attibute values stored under as a object in group of atributeGroups.
+ `attributeGroups` - [AttributeGroup](Common_Fields/attributeGroup.md) - The group of attibute values stored as an object in group of atributeGroups.
  
  `availability` - string - Product Availablity and value should be one of the below values.
  - available
@@ -184,7 +184,7 @@ Represents a product Variant.
  
  `color` - string  - Product Color.
  
- `condition` - String - Product Condition and it can be either of the below values.
+ `condition` - String - Product Condition.  Should be any of the below values.
  - New
  - Used
  - Refurbished 
@@ -6502,7 +6502,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 ## Find Product variants by productId
-Returns a list of  Product variants  from a specific Store while passing the productId as a Path variable in the endpoint. The Tenant authentication maps to a Store.
+Returns a list of Product variants from a specific Store while passing the productId as a Path variable in the endpoint. The Tenant authentication maps to a Store.
 If the Product variants does not exist, this method returns a empty list.
 
 Endpoint: ```/api/v2/products/{productId}/variants```

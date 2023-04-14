@@ -1,15 +1,20 @@
 
 [Back to Home](index.md#welcome-to-the-wishlist)
 
-# **Event Collector API**
+# **Events API**
+The Events API is used to post events into The Wishlist such as an error so that our internal development team can analyse the issue.  An example of an event is a failed API call after a number of attempts (determined by the developer).  
 
-When an API fails with HTTP 503, 502, customer must retry. If the API fails after reasonable number of times, a fault should be reported into event collector.
+The types of events are Entity (e.g. failed to post a customer), System (This is typically only used by TWC's internal development team), Fault (any API faulure e.g. HTTP 502, 503) and Warning.  
+
+The Event typically includes the payload along with the event type/fault, and some key attributes like internal ID, or email.   
+
+THe Events API also has subscriptions, so the you can subscribe to certain events.  This currently supports AWS SQS.   The Wishlist will post to the configured destination when a change is made to the entity.
 
 ### Index
 
 ***
 
-- [**Event Collector API**](#event-collector-api)
+- [**Events API**](#events-api)
     <!-- - [Index](#index) -->
   - [**Representations**](#representations)
     - [Order](#order)
@@ -23,7 +28,7 @@ When an API fails with HTTP 503, 502, customer must retry. If the API fails afte
 
 ## **Representations**
 
-All representations are JSON objects submitted or received as payload to API requests or responses.
+All request and responses are JSON objects.
 
 ### Order
 <!-- <details> -->

@@ -41,7 +41,7 @@ An **inventory location** represents a geographical location where your stores, 
 
 ## **Representations**
 
-All representations are JSON objects submitted or received as payload to API requests or responses.
+All requests or responses are JSON objects.
 
 
 <!-- <details> -->

@@ -3,53 +3,56 @@
 
 
 # **Wishlist API**
-The Wishlist resource stores information about a customer's wishlist.
+The Wishlist API enables the management of customer wishlists.  
+
+In most situations, The Wishlist platform will be the master data source for Wishlists, as it is able to manage wishlist information from multiple sources (e.g. website or physical stores), and then trigger events based on saved wishlist items and send wishlist information to 3rd party systems such as marketing automation platforms like Emarsys, Klaviyo and DotDigital.  
 
 One customer may have mulitple wishlists.  You can only create a wishlist for a valid customer.
+
+A wishlist may be created 'empty' and items added later, or a single API is avaialble to create the wishlist and add items at the same time.
 
 ### Index
 
 ***
 
 - [**Wishlist API**](#wishlist-api)
-    - [Index](#index)
-  - [**Representations**](#representations)
-  - [Wishlist](#wishlist)
-  - [Wishlist Item](#wishlist-item)
-  - [Product](#product)
-  - [**REST Endpoints**](#rest-endpoints)
-  - [**Wishlist Resource**](#wishlist-resource)
-  - [Create a Wishlist](#create-a-wishlist)
-  - [Update a Wishlist](#update-a-wishlist)
-  - [Update a Wishlist By ID](#update-a-wishlist-by-id)
-  - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
-  - [Find Wishlist by id/wishlistRef](#find-wishlist-by-idwishlistref)
-  - [Find Wishlist by Id](#find-wishlist-by-id)
-  - [Find Wishlist by Wishlist Reference](#find-wishlist-by-wishlist-reference)
-  - [Find Wishlist by CustomerId](#find-wishlist-by-customerid)
-  - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
-  - [Lookup Wishlist By Customer](#lookup-wishlist-by-customer)
-  - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
-  - [Delete Wishlist by ID](#delete-wishlist-by-id)
-  - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
-  - [**Wishlist Item Resource**](#wishlist-item-resource)
-  - [Create a Wishlist Item](#create-a-wishlist-item)
-  - [Upload multiple Wishlist Items](#upload-multiple-wishlist-items)
-  - [Update a Wishlist Item](#update-a-wishlist-item)
-  - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
-  - [Update a Wishlist Item By Id](#update-a-wishlist-item-by-id)
-  - [Find all Items in a Wishlist by Wishlist Id](#find-all-items-in-a-wishlist-by-wishlist-id)
-  - [Find Wishlist Item by Item Id](#find-wishlist-item-by-item-id)
-  - [Find Wishlist Item by Item Ref](#find-wishlist-item-by-item-ref)
-  - [Find Wishlist Item by WishlistId and Item Id](#find-wishlist-item-by-wishlistid-and-item-id)
-  - [Delete Wishlist Item by Id](#delete-wishlist-item-by-id)
-  - [Delete Wishlist Item by WishlistItemRef](#delete-wishlist-item-by-wishlistitemref)
-  - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
-  - [Add multiple Items to a Wishlist](#add-multiple-wishlist-items)
+    <!-- - [Index](#index) -->
+    - [**Representations**](#representations)
+        - [Wishlist](#wishlist)
+        - [Wishlist Item](#wishlist-item)
+        - [Product](#product)
+    - [**REST Endpoints**](#rest-endpoints)
+        - [**Wishlist Resource**](#wishlist-resource)
+            - [Create a Wishlist](#create-a-wishlist)
+            - [Update a Wishlist](#update-a-wishlist)
+            - [Update a Wishlist By ID](#update-a-wishlist-by-id)
+            - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
+            - [Find Wishlist by id/wishlistRef](#find-wishlist-by-idwishlistref)
+            - [Find Wishlist by Id](#find-wishlist-by-id)
+            - [Find Wishlist by Wishlist Reference](#find-wishlist-by-wishlist-reference)
+            - [Find Wishlist by CustomerId](#find-wishlist-by-customerid)
+            - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
+            - [Lookup Wishlist By CustomerId](#lookup-wishlist-by-customer)
+            - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
+            - [Delete Wishlist by ID](#delete-wishlist-by-id)
+            - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
+        - [**Wishlist Item Resource**](#wishlist-item-resource)
+            - [Create a Wishlist Item](#create-a-wishlist-item)
+            - [Upload multiple Wishlist Items](#upload-multiple-wishlist-items)
+            - [Update a Wishlist Item](#update-a-wishlist-item)
+            - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
+            - [Update a Wishlist Item By Id](#update-a-wishlist-item-by-id)
+            - [Find all Items in a Wishlist by Wishlist Id](#find-all-items-in-a-wishlist-by-wishlist-id)
+            - [Find Wishlist Item by Item Id](#find-wishlist-item-by-item-id)
+            - [Find Wishlist Item by Item Ref](#find-wishlist-item-by-item-ref)
+            - [Find Wishlist Item by WishlistId and Item Id](#find-wishlist-item-by-wishlistid-and-item-id)
+            - [Delete Wishlist Item by Id](#delete-wishlist-item-by-id)
+            - [Delete Wishlist Item by WishlistItemRef](#delete-wishlist-item-by-wishlistitemref)
+            - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
 
 ## **Representations**
 
-All representations are JSON objects submitted or received as payload to API requests or responses.
+All requests or responses are JSON objects
 
 ##  Wishlist
 
@@ -118,36 +121,14 @@ All representations are JSON objects submitted or received as payload to API req
 
 ```selectedVariantRef``` - string- the unique ref of the product variant which the customer need to add.
 
-<!-- </details>
-
-<details> -->
-##  Add Multiple Wishlist Item
- <!-- <summary>WishList Item</summary> -->
-
-
-```wishlistId``` - string - the unique id of the respective wishlist. please provide either id or ref
-
-```wishlistRef``` - string- reference of the respective wishlist. please provide either id or ref
-
-```itemId``` - List- the list of items with id value like product id ,variant id. Please provide either itemId or itemRef
-
-```itemRef``` - List- the list of items with id value like product ref ,variant ref. Please provide  either itemId or itemRef 
-
-
-
-<!-- </details>
-
-
 <!-- </details> -->
-
-
 
 ## **REST Endpoints**
 
 ## **Wishlist Resource**
 
 ## Create a Wishlist
-Creates a new wishlist data set in the TWC system, then the wishlist is assigned to the respective customer.
+Creates a new wishlist, then the wishlist is assigned to the respective customer.
 
 Endpoint: ```/api/wishlists```
 
@@ -237,16 +218,24 @@ Sample Request:
       "description": "string"
     }
   },
-  "customerId": "string",
-  "customerRef": "string",
-  "deleted": "true",
-  "description": "string",
+  "datePurchased": "2022-06-27T15:34:58.540Z",
   "id": "string",
-  "isPrivate": "true",
-  "name": "string",
-  "id":"string",
-  "wishlistRef": "string"
+  "product": {
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "wishlistId": "string",
+  "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
+  "wishlistRef": "string",
+  "prerelease": "boolean",
+  "disableNotification" : "boolean"
 }
+
 ```
 
 
@@ -324,7 +313,6 @@ Sample Request:
 
 <summary>Response - 200 (OK Updated)</summary>
 
-
 ```json
 {
   "attributeGroups": {
@@ -353,15 +341,23 @@ Sample Request:
       "description": "string"
     }
   },
-  "customerId": "string",
-  "customerRef": "string",
-  "deleted": "true",
-  "description": "string",
+  "datePurchased": "2022-06-27T15:35:39.044Z",
   "id": "string",
-  "isPrivate": "true",
-  "name": "string",
-  "id":"string",
-  "wishlistRef": "string"
+  "product": {
+    "oldVariantId": "string",
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "wishlistId": "string",
+  "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
+  "wishlistRef": "string",
+  "prerelease": "boolean",
+  "disableNotification" : "boolean"
 }
 ```
 
@@ -380,7 +376,7 @@ HTTP Status Code:
 
 
 ## Update a Wishlist By ID
-Updates Wishlist data set in the TWC system.
+Updates macro information about a wishlist (such as the wishlist name), using The Wishlist system generated id.
 
 Endpoint: ```/api/wishlists/id={id}```
 
@@ -445,7 +441,6 @@ Sample Request:
 
 <summary>Response - 200 (OK Updated)</summary>
 
-
 ```json
 {
   "attributeGroups": {
@@ -474,15 +469,23 @@ Sample Request:
       "description": "string"
     }
   },
-  "customerId": "string",
-  "customerRef": "string",
-  "deleted": "true",
-  "description": "string",
+  "datePurchased": "2022-06-27T15:35:39.044Z",
   "id": "string",
-  "isPrivate": "true",
-  "name": "string",
-  "id":"string",
-  "wishlistRef": "string"
+  "product": {
+    "oldVariantId": "string",
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "wishlistId": "string",
+  "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
+  "wishlistRef": "string",
+  "prerelease": "boolean",
+  "disableNotification" : "boolean"
 }
 ```
 
@@ -500,7 +503,7 @@ HTTP Status Code:
 
 
 ## Update a Wishlist By Ref
-Updates Wishlist data set in the TWC system.
+Updates Wishlist data (such as the wishlist name) by Ref
 
 Endpoint: ```/api/wishlists/ref={ref}```
 
@@ -592,15 +595,23 @@ Sample Request:
       "description": "string"
     }
   },
-  "customerId": "string",
-  "customerRef": "string",
-  "deleted": "true",
-  "description": "string",
+  "datePurchased": "2022-06-27T15:35:39.044Z",
   "id": "string",
-  "isPrivate": "true",
-  "name": "string",
-  "id":"string",
-  "wishlistRef": "string"
+  "product": {
+    "oldVariantId": "string",
+    "productId": "string",
+    "productRef": "string",
+    "selectedVariantId": "string",
+    "selectedVariantRef": "string"
+  },
+  "purchased": true,
+  "wishlistId": "string",
+  "wishlistItemRef": "string",
+  "createdTime": "2022-08-24T07:28:12.000+0000",
+  "modifiedTime": "2022-08-24T07:30:52.051+0000",
+  "wishlistRef": "string",
+  "prerelease": "boolean",
+  "disableNotification" : "boolean"
 }
 ```
 
@@ -619,8 +630,8 @@ HTTP Status Code:
 
 
 
-## Find Wishlist by id/wishlistRef
-Returns the wishlist that belongs to the given Id and/or Ref.  If the wishlist does not exist, this method returns a ResourceNotFound error.
+## Get Wishlist by id/wishlistRef
+Retrieves the wishlist that belongs to the given Id and/or Ref.  If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/```
 
@@ -2624,130 +2635,6 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-
-## Add multiple Wishlist Items
-Add  multiple items to an existing wishlist in the TWC system.
-
-Endpoint: ```/api/wishlist/add-multiple-items```
-
-Method: ``` POST ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-
-Sample Request:
-
-<!-- <details> -->
-```json
-{
-    "wishlistId": "string",
-    "wishlistRef": "string",
-    "itemId": [
-        {
-            "addedFromCart": true,
-            "attributeGroups": {
-                "additionalProp1": {
-                    "attributes": {
-                        "additionalProp1": "string",
-                        "additionalProp2": "string",
-                        "additionalProp3": "string"
-                    },
-                    "description": "string"
-                },
-                "additionalProp2": {
-                    "attributes": {
-                        "additionalProp1": "string",
-                        "additionalProp2": "string",
-                        "additionalProp3": "string"
-                    },
-                    "description": "string"
-                },
-                "additionalProp3": {
-                    "attributes": {
-                        "additionalProp1": "string",
-                        "additionalProp2": "string",
-                        "additionalProp3": "string"
-                    },
-                    "description": "string"
-                }
-            },
-            "datePurchased": "2023-03-31T10:00:17.889Z",
-            "disableNotification": true,
-            "id": "string",
-            "prerelease": true,
-            "productId": "string",
-            "purchased": true,
-            "selectedVariantId": "string",
-            "wishlistItemRef": "string"
-        }
-    ],
-    "itemRef": [
-        {
-            "addedFromCart": true,
-            "attributeGroups": {
-                "additionalProp1": {
-                    "attributes": {
-                        "additionalProp1": "string",
-                        "additionalProp2": "string",
-                        "additionalProp3": "string"
-                    },
-                    "description": "string"
-                },
-                "additionalProp2": {
-                    "attributes": {
-                        "additionalProp1": "string",
-                        "additionalProp2": "string",
-                        "additionalProp3": "string"
-                    },
-                    "description": "string"
-                },
-                "additionalProp3": {
-                    "attributes": {
-                        "additionalProp1": "string",
-                        "additionalProp2": "string",
-                        "additionalProp3": "string"
-                    },
-                    "description": "string"
-                }
-            },
-            "datePurchased": "2023-03-31T10:00:17.889Z",
-            "disableNotification": true,
-            "id": "string",
-            "prerelease": true,
-            "productRef": "string",
-            "purchased": true,
-            "selectedVariantRef": "string",
-            "wishlistItemRef": "string"
-        }
-    ]
-}
-
-```
-
-<!-- </details> -->
-
-<summary>Response - 202 (Accepted)</summary>
-
-HTTP Status Code:
-``` 
-- 200 OK
-- 201 Created
-- 202 Accepted
-- 204 Deleted
-- 401 Unauthorized
-- 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
-- 409 Conflict
-```
-
 
 ***
 [Back to Top](#wishlist-api)

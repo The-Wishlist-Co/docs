@@ -2,7 +2,7 @@
 [Back to Home](index.md#welcome-to-the-wishlist)
 
 # **Quote API**
-The Quote resource stores information about a quote, such as their store details, their line items, and amount details
+The Quote resource stores information about a quote, such as the store details, the quote line items, and price amounts
 
 
 ### Index
@@ -10,25 +10,22 @@ The Quote resource stores information about a quote, such as their store details
 ***
 
 - [**Quote API**](#quote-api)
-    - [Index](#index)
+    <!-- - [Index](#index) -->
   - [**Representations**](#representations)
-  - [Quote](#quote)
-  - [Quote line](#quote-line)
   - [**REST Endpoints**](#rest-endpoints)
-  - [Create a Quote](#create-a-quote)
-  - [Update a Quote](#update-a-quote)
-  - [Find Quote](#find-quote)
-  - [Find Customer Quote](#find-customer-quote)
-  - [Delete Quote by ID](#delete-quote-by-id)
-  - [Delete Quote by Ref](#delete-quote-by-ref)
-  - [Create a Quote Line](#create-a-quote-line)
-  - [Update a Quote Line](#update-a-quote-line)
-  - [Delete Quote Line](#delete-quote-line)
+    - [Create a Quote](#create-a-quote)
+    - [Update a Quote](#update-a-quote)	    
+    - [Delete Quote by ID](#delete-quote-by-id)
+    - [Delete Quote by Ref](#delete-quote-by-ref)
+    - [Find Quotes](#find-quotes)
+    - [Create a Quote Line](#create-a-quote-line)
+    - [Update a Quote Line](#update-a-quote-line)	    
+    - [Delete Quote Line](#delete-quote-line)    
 
 
 ## **Representations**
 
-All representations are JSON objects submitted or received as payload to API requests or responses.
+All requests or responses are JSON objects.
 
 ## Quote
 <!-- 
@@ -466,106 +463,6 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-
-## Find Customer Quote
-Returns a quote by its customer_ref or email from a specific Store while passing the respective values as a path param in the endpoint. The Tenant authentication maps to a Store.
-If the quote does not exist, this method returns a 404.
-
-Endpoint: ```/api/v1/quote/customer```
-
-Method: ``` GET ``` 
-
-Method Name: `findCustomerQuotes`
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
-<!--<details> -->
- <summary>Request Headers</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-<!-- </details> -->
-
-
-<!-- <details> -->
- Request Parameters: `customer_ref  : Customer Reference ,customer_email : Customer Email `  
-
-<!-- </details> -->
-
-<!-- <details> -->
-<summary>Response - 200 (OK)</summary>
-
-```json
- [
-  {
-  "address": {
-    "address": "string",
-    "address1": "string",
-    "city": "string",
-    "contactPerson": "string",
-    "countryIsocode": "string",
-    "countryName": "string",
-    "county": "string",
-    "fax": "string",
-    "phone": "string",
-    "postcode": "string",
-    "state": "string",
-    "street": "string",
-    "streetNumber": "string"
-  },
-  "customerId": "string",
-  "customerRef": "string",
-  "firstName": "string",
-  "lastName": "string",
-  "email": "string",
-  "expiryDate": "2022-08-30T10:04:35.660Z",
-  "externalNotes": "string",
-  "id": "string",
-  "lineItems": [
-    {
-      "id": "string",
-      "discountAmount": 0,
-      "finalAmount": 0,
-      "id": "string",
-      "productCode": "string",
-      "productDescription": "string",
-      "promotion": true,
-      "quantity": 0,
-      "unitPrice": 0,
-      "created_at": "2022-08-30T10:07:35.710334200Z",
-      "updated_at": "2022-08-30T10:07:35.710334200Z"
-    }
-  ],
-  "referenceNo": "string",
-  "salesPerson": "string",
-  "storeName": "string",
-  "totalDiscount": 0,
-  "totalQuoteAmount": 0,
-  "deleted": false,
-  "created_at": "2022-08-30T10:07:35.710334200Z",
-  "updated_at": "2022-08-30T10:07:35.710334200Z"
-}
-]
-
-```
-
-<!-- </details> -->
-
-HTTP Status Code: 
-``` json
-- 200 OK
-- 201 Created
-- 204 Deleted
-- 400 Bad request 
-- 401 Unauthorised
-- 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
-```
-
 ## Delete Quote by ID
 Deleting a Quote marks the quote as deleted and produces the HTTP response confirming the action.
 If the quote does not exist, this method returns 404 response.
@@ -611,7 +508,7 @@ HTTP Status Code:
 ```
 
 ## Delete Quote by Ref
-Deleting a Quote by ref marks the quote as deleted and produces the HTTP response confirming the action.
+Deleting a Quote by ref marks the quote as deleted and produces an HTTP response confirming the action.
 If the quote does not exist, this method returns 404 response.
 
 Endpoint: ```/api/v2/quote/{Ref}/byref```
@@ -803,7 +700,7 @@ HTTP Status Code:
 ```
 
 ## Delete Quote Line
-Deleting a Quote line marks the quote line as deleted and produces the HTTP response confirming the action.
+Deleting a Quote line marks the quote line as deleted and produces an HTTP response confirming the action.
 If the quote line does not exist, this method returns 404 response.
 
 Endpoint: ```/api/v1/quote/line/{id}```

@@ -38,7 +38,7 @@ An order is a customer's request to purchase one or more products from a shop. Y
 
 ## **Representations**
 
-All representations are JSON objects submitted or received as payload to API requests or responses.
+All requests or responses are JSON objects.
 
 <!-- <details> -->
  <!-- <summary><font size="4">Expand for details</font></summary> -->
@@ -56,7 +56,7 @@ All representations are JSON objects submitted or received as payload to API req
 - `id` - string
 - `name` - string
 
-`attributeGroups` - array -additional required properties hat are not present by default are enabled here. Refer swagger documentation for detailed more information on internal structure.
+`attributeGroups` - array -additional required properties that are not present by default are enabled here. Refer swagger documentation for more detailed  information on internal structure.
 
 `billingAddress` - [address](Common_Fields/address.md) 
 

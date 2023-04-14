@@ -2,17 +2,17 @@
 
 # **Emarsys Integration**
 
-Emarsys Platform empowers marketers to execute simple, single-channel campaigns, or create sophisticated, cross-channel journeys at scale.
+The Emarsys marketing platform empowers marketers to execute simple, single-channel campaigns, or create sophisticated, cross-channel journeys at scale.
 
- The Emarsys platform makes it easy to integrate data, set up messaging across channels, and deploy personalized campaigns at scale. From personalized campaigns to triggering events in real-time, easily deploy marketing automation across every channel.
+ The Emarsys platform makes it easy to integrate data, set up messaging across channels, and deploy personalized campaigns at scale. 
 
- The **Emarsys Integration Lambda** enables the seamless integration of the platforms Trigger a Wishlist Update event with the TWC System for the customers who are subscribed to the event from Emarsys.
+ The Wishlist's **Emarsys Integration Lambda** enables the seamless integration to Emarsys, and triggers a Wishlist Update event from The Wishlist to Emarsys  for every wishlist interaction in The Wishlist platform.
 
  ***
 
 ## Enabling Emarsys
 
-Enabling the service is done using the TWC [*Event Subscription Resource*](eventcollectorAPI.md#event-subscription-resource) API. Once enabled, all the wishlist interactions flow to Emarsys from the [Customer Interactions](platformgeneratedevents.md#customer-interaction)
+Enable the service using The Wishlist [*Event Subscription Resource*](eventsAPI.md#event-subscription-resource) API.  Once enabled, all the wishlist interactions flow to Emarsys from The Wishlist [Customer Interactions](platformgeneratedevents.md#customer-interaction)
 
 ## Configuring System Parameters
 
@@ -43,7 +43,7 @@ The response body of the request contains the generated bearer token - "access_t
 
 ## Configure Authentication for Emarsys API
 
-Emarsys API uses WSSE authentication over SSL to keep your data secure. WSSE authentication is not a standard HTTP feature and requires a custom X-WSSE header for each request, generated from your user name and secret. For details, see.
+Emarsys API uses WSSE authentication over SSL to keep your data secure. WSSE authentication is not a standard HTTP feature and requires a custom X-WSSE header for each request, generated from your user name and secret. 
 
 **`WSSE Format`** - The X-WSSE header is generated from your user name and secret, and consists of the following mandatory elements:
 
