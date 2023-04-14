@@ -2685,8 +2685,7 @@ Sample Request:
             "productId": "string",
             "purchased": true,
             "selectedVariantId": "string",
-            "wishlistItemRef": "string",
-            "oldVariantId": "string"
+            "wishlistItemRef": "string"
         }
     ],
     "itemRef": [
@@ -2725,8 +2724,7 @@ Sample Request:
             "productRef": "string",
             "purchased": true,
             "selectedVariantRef": "string",
-            "wishlistItemRef": "string",
-            "oldVariantRef": "string"
+            "wishlistItemRef": "string"
         }
     ]
 }
