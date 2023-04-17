@@ -5,11 +5,11 @@
 # **Wishlist API**
 The Wishlist API enables the management of customer wishlists.  
 
-In most situations, The Wishlist platform will be the master data source for Wishlists, as it is able to manage wishlist information from multiple sources (e.g. website or physical stores), and then trigger events based on saved wishlist items and send wishlist information to 3rd party systems such as marketing automation platforms like Emarsys, Klaviyo and DotDigital.  
+In most situations, The Wishlist platform will be the master data source for Wishlists, as it is able to manage wishlist information from multiple sources (e.g. website or physical stores); then trigger events based on saved wishlist items; and send wishlist information to 3rd party systems such as marketing automation platforms like Emarsys, Klaviyo and DotDigital.  
 
 One customer may have mulitple wishlists.  You can only create a wishlist for a valid customer.
 
-A wishlist may be created 'empty' and items added later, or a single API is avaialble to create the wishlist and add items at the same time.
+A wishlist is created 'empty' and items added later, either one by one, or multiple items can be added at the same time.
 
 ### Index
 
@@ -128,7 +128,7 @@ All requests or responses are JSON objects
 ## **Wishlist Resource**
 
 ## Create a Wishlist
-Creates a new wishlist, then the wishlist is assigned to the respective customer.
+Creates a new wishlist.  Requires the customer to be created first.  
 
 Endpoint: ```/api/wishlists```
 
@@ -252,7 +252,11 @@ HTTP Status Code:
 
 
 ## Update a Wishlist
-Updates Wishlist data set in the TWC system.
+Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  **Note this API is NOT used to update items on the wishlist.**
+
+You can update by internal Wishlist ID or wishlistRef, which is the retailer's own ID (which, for example may be assigned in the ecommerce system)
+
+**THIS API IS DEPRECIATED.  PLEASE USE UDATE WISHLIST BY ID OR WISHLISTREF BELOW**
 
 Endpoint: ```/api/wishlists```
 
@@ -376,7 +380,9 @@ HTTP Status Code:
 
 
 ## Update a Wishlist By ID
-Updates macro information about a wishlist (such as the wishlist name), using The Wishlist system generated id.
+Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  **Note this API is NOT used to update items on the wishlist.**
+
+As this API uses Wishlist ID, then you can use it to update wishlistRef, which is the retailer's own wishlit ID (which, for example may be assigned in the ecommerce system)
 
 Endpoint: ```/api/wishlists/id={id}```
 
@@ -503,7 +509,9 @@ HTTP Status Code:
 
 
 ## Update a Wishlist By Ref
-Updates Wishlist data (such as the wishlist name) by Ref
+Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  **Note this API is NOT used to update items on the wishlist.**
+
+As this API uses wishlistRef, which is the retailer's own wishlit ID (which, for example may be assigned in the ecommerce system)
 
 Endpoint: ```/api/wishlists/ref={ref}```
 
@@ -631,7 +639,9 @@ HTTP Status Code:
 
 
 ## Get Wishlist by id/wishlistRef
-Retrieves the wishlist that belongs to the given Id and/or Ref.  If the wishlist does not exist, this method returns a ResourceNotFound error.
+Retrieves the wishlist that belongs to the given Id and/or wishlistRef.  If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+**THIS API IS DEPRECIATED.  PLEASE USE GET WISHLIST BY ID OR GET WISHLIST BY WISHLISTREF**
 
 Endpoint: ```/api/wishlists/```
 
@@ -750,9 +760,10 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Find Wishlist by Id
+## Get Wishlist by Id
 
-Returns the  wishlist belongs to the given  Id.
+Returns the wishlist that matches the given internal TWC Platform identifier.
+
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/{id}```
@@ -874,7 +885,8 @@ HTTP Status Code:
 ```
 
 ## Find Wishlist by Wishlist Reference
-Returns the wishlist that belongs to the given Ref.
+Returns the wishlist that matches the provided wishlistRef (which is the retailer's own wishlist identifier).
+
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/{wishlistRef}/byref```
@@ -994,8 +1006,10 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Find Wishlist by CustomerId
-Returns the list of wishlists that belong to the given customer id.  If no wishlists exist, this method returns a ResourceNotFound error.
+## Get Wishlist by CustomerId
+Returns the list of wishlists that belong to the given customer id (Customer ID is the TWC internal identifier).  
+
+If no wishlists exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/customer/{customerId}```
 
@@ -1118,8 +1132,9 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Find Wishlist by CustomerRef
-Returns the list of wishlists that belong to the given customer reference.
+## Get Wishlist by CustomerRef
+Returns the list of wishlists that belong to the given customer reference (which is the retailer's own customer identifier)
+
 If no wishlists exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/customer/{customerRef}/byref```
@@ -1244,9 +1259,12 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Lookup Wishlist By Customer
+## Get Wishlist By Customer
 
-Returns the list of wishlists belonging to the given customer reference.
+Returns the list of wishlists that belong to either the internal TWC customer Id, or the retailer's own customerRef.
+
+Results are paginated.  Maximum page size is 50, with the default being 20.
+
 If no wishlists exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/lookup```
@@ -1376,7 +1394,8 @@ HTTP Status Code:
 
 
 ## Delete Wishlist by ID/Ref
-Deleting a Wishlist marks the wishlist as deleted and produces an HTTP response confirming the action.
+Delete Wishlist marks the wishlist as deleted and produces an HTTP response confirming the action.  The Wishlist is identified either by the TWC Internal wishlist Id or the retailers own wishlistRef
+
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists```
@@ -1410,7 +1429,8 @@ HTTP Status Code:
 ```
 
 ## Delete Wishlist by ID
-Deleting a Wishlist marks the wishlist as deleted and produces an HTTP response confirming the action.
+Delete Wishlist marks the matching wishlist as deleted and produces an HTTP response confirming the action.  In this case the Wishlist is identified by the TWC Internal wishlist Id.
+
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/{id}```
@@ -1444,7 +1464,8 @@ HTTP Status Code:
 ```
 
 ## Delete Wishlist by Ref
-Deleting a Wishlist marks the wishlist as deleted and produces an HTTP response confirming the action.
+Delete Wishlist marks the matching wishlist as deleted and produces an HTTP response confirming the action.  In this case the Wishlist is identified by the retailer's wishlist identifer - wishlistRef.
+
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlists/{wishlistRef}/byref```
@@ -1482,7 +1503,7 @@ HTTP Status Code:
 ## **Wishlist Item Resource**
 
 ## Create a Wishlist Item
-Creates a new wishlist item data set into an existing wishlist in the TWC system.
+Adds a wishlist item into an existing wishlist.  The wishlist can be identified by either the TWC internal ID, or the wishlistRef, which is the retailer's own wishlist identifier.  
 
 Endpoint: ```/api/wishlist/items```
 
@@ -1615,7 +1636,9 @@ HTTP Status Code:
 
 
 ## Upload multiple Wishlist Items
-Upload (add) multiple wishlist items into an existing wishlist in the TWC system.
+Adds multiple wishlist items into an existing wishlist.
+
+**THIS API IS DEPRECIATED.  USE ADD-ITEMS**
 
 Endpoint: ```/api/wishlist/upload-items```
 
@@ -1828,7 +1851,9 @@ HTTP Status Code:
 
 
 ## Update a Wishlist Item
-Updates the Wishlist item data set in the TWC system.
+Update a wishlist item, for example to change the selected variant.  Developer must supply either the wishlist ID and item ID (both internal TWC values) or the wishlistRef and itemRef (both retailer's own identifiers).
+
+If the variant is being changed, then the original variant ID (TWC internal ID) must also be provided.
 
 Endpoint: ```/api/wishlist/items```
 
@@ -1959,7 +1984,9 @@ HTTP Status Code:
 
 ## Update a Wishlist Item By Ref
 
-Updates Wishlist item data set in the TWC system based on Wish list Item Ref.
+Update a wishlist item, for example to change the selected variant.  Developer must supply the wishlistRef and itemRef (both retailer's own identifiers).
+
+If the variant is being changed, then the original variant ID (TWC internal ID) must also be provided.
 
 Endpoint: ```/api/wishlist/items/ref={ref}```
 
@@ -2093,7 +2120,9 @@ HTTP Status Code:
 ```
 ## Update a Wishlist Item By Id
 
-Updates Wishlist item data set in the TWC system based on Wish list Item Ref.
+Update a wishlist item, for example to change the selected variant.  Developer must supply the wishlist ID and item ID (both TWC internal identifiers).
+
+If the variant is being changed, then the original variant ID (TWC internal ID) must also be provided.
 
 Endpoint: ```/api/wishlist/items/id={id}```
 
@@ -2225,8 +2254,11 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Find all Items in a Wishlist by Wishlist Id
-Returns a list of all wishlist items belonging to the given wishlist id.
+## Get all Items in a Wishlist by Wishlist Id
+Returns a list of all wishlist items belonging to the given wishlist Id (TWC internal identifier).
+
+Results are paginated, page size is 20, maximum 50.
+
 If item does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```​/api​/wishlist​​/items​```
@@ -2299,8 +2331,9 @@ Request Param:  ` id - Wishlist Id `
 
 
 
-## Find Wishlist Item by Item Id
-Returns the  wishlist item belonging to the given wishlist item id
+## Get Wishlist Item by Item Id
+Returns the wishlist item belonging to the given item Id (TWC internal item ID)
+
 If the item does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```​/api​/wishlist​​/items​/{id}```
@@ -2380,8 +2413,9 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Find Wishlist Item by Item Ref
-Returns the  wishlist item belonging to the given wishlist item Ref
+## Get Wishlist Item by Item Ref
+Returns the wishlist item belonging to the given itemRef (retailer's own item identifier).
+
 If the item does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```​/api​/wishlist​​/items​/ref/{wishlistItemRef}```
@@ -2464,6 +2498,8 @@ HTTP Status Code:
 ## Find Wishlist Item by WishlistId and Item Id
 Returns the  wishlist item belonging to the given wishlist id and item id
 If the item does not exist, this method returns a ResourceNotFound error.
+
+**THIS API IS DEPRECIATED**
 
 Endpoint: ```​/api​/wishlist​/{wishlistId}​/items​/{id}```
 
