@@ -2328,8 +2328,7 @@ Request Param:  ` id - Wishlist Id `
     }
 ]
 ```
-
-
+git
 
 ## Get Wishlist Item by Item Id
 Returns the wishlist item belonging to the given item Id (TWC internal item ID)
@@ -2578,7 +2577,8 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 ## Delete Wishlist Item by Id
-Deleting a Wishlist item marks the item as deleted and produces an HTTP response confirming the action.
+Delete Wishlist item marks the item matching the given item ID (TWC internal platform ID) as deleted and produces an HTTP response confirming the action. 
+
 If the wishlist/item does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlist/items/{id}```
@@ -2609,8 +2609,9 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Delete Wishlist Item by WishlistItemRef
-Deleting a Wishlist item marks the item as deleted and produces an HTTP response confirming the action.
+## Delete Wishlist Item by itemRef
+Delete Wishlist Item by itemRef marks the item matching the given itemRef (retailer's own identifier) as deleted and produces an HTTP response confirming the action. 
+
 If the wishlist/item does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/wishlist/items/{wishlistItemRef}/ref```
@@ -2640,9 +2641,12 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-## Delete Wishlist Item by wishlist Id and item Id
-Deleting a Wishlist item marks the item as deleted and produces an HTTP response confirming the action.
+## Delete Wishlist Item by wishlist ID and item Id
+Delete Wishlist item marks the item matching the given wishlist ID and item ID (TWC internal platform IDs) as deleted and produces an HTTP response confirming the action. 
+
 If the wishlist/item does not exist, this method returns a ResourceNotFound error.
+
+**THIS API IS DEPRECIATED**
 
 Endpoint: ```/api/wishlist/{wishlistId}/items/{id}```
 
