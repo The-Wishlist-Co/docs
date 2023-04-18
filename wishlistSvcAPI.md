@@ -639,9 +639,10 @@ HTTP Status Code:
 
 
 ## Get Wishlist by id/wishlistRef
-Retrieves the wishlist that belongs to the given Id and/or wishlistRef.  If the wishlist does not exist, this method returns a ResourceNotFound error.
+Retrieves the wishlist and the wishlist items that belongs to the given Id and/or wishlistRef.  If the wishlist does not exist, this method returns a ResourceNotFound error.
 
-**THIS API IS DEPRECIATED.  PLEASE USE GET WISHLIST BY ID OR GET WISHLIST BY WISHLISTREF**
+The returned item array is paginated - 20 default (50 maximum).  The API will respond with the item count in the page, and the itemID the for the last item (lastitemID) returned for that response, which should then be used for the  subsequent API call to retrieve the next page.  
+
 
 Endpoint: ```/api/wishlists/```
 
@@ -762,7 +763,9 @@ HTTP Status Code:
 
 ## Get Wishlist by Id
 
-Returns the wishlist that matches the given internal TWC Platform identifier.
+Returns the wishlist that matches the given internal TWC Platform identifier, along with the wishlist items.
+
+The returned item array is paginated - 20 default (50 maximum).  The API will respond with the item count in the page, and the itemID the for the last item (lastitemID) returned for that response, which should then be used for the  subsequent API call to retrieve the next page.  
 
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
@@ -885,7 +888,9 @@ HTTP Status Code:
 ```
 
 ## Get Wishlist by Wishlist Reference
-Returns the wishlist that matches the provided wishlistRef (which is the retailer's own wishlist identifier).
+Returns the wishlist that matches the provided wishlistRef (which is the retailer's own wishlist identifier), along with the wishlist items.
+
+The returned item array is paginated - 20 default (50 maximum).  The API will respond with the item count in the page, and the itemID the for the last item (lastitemID) returned for that response, which should then be used for the  subsequent API call to retrieve the next page.  
 
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
@@ -1007,7 +1012,9 @@ HTTP Status Code:
 ```
 
 ## Get Wishlist by CustomerId
-Returns the list of wishlists that belong to the given customer id (Customer ID is the TWC internal identifier).  
+Returns the collection of wishlists that belong to the given customer id (Customer ID is the TWC internal identifier).  
+
+The returned list is paginated - 20 default (50 maximum).  The API will respond with the number of wishlists returned in the page, and the wishlistID for the for the last wishlist returned for that response, which should then be used for the  subsequent API call to retrieve the next page.  
 
 If no wishlists exist, this method returns a ResourceNotFound error.
 
@@ -1133,7 +1140,9 @@ HTTP Status Code:
 ```
 
 ## Get Wishlist by CustomerRef
-Returns the list of wishlists that belong to the given customer reference (which is the retailer's own customer identifier)
+Returns the collection of wishlists that belong to the given customer reference (which is the retailer's own customer identifier)
+
+The returned list is paginated - 20 default (50 maximum).  The API will respond with the number of wishlists returned in the page, and the wishlistID for the for the last wishlist returned for that response, which should then be used for the  subsequent API call to retrieve the next page.  
 
 If no wishlists exist, this method returns a ResourceNotFound error.
 
@@ -1261,9 +1270,9 @@ HTTP Status Code:
 
 ## Get Wishlist By Customer ID or Ref
 
-Returns the list of wishlists that belong to either the internal TWC customer Id, or the retailer's own customerRef.
+Returns the collection of wishlists that belong to either the internal TWC customer Id, or the retailer's own customerRef.
 
-Results are paginated.  Maximum page size is 50, with the default being 20.
+The returned list is paginated - 20 default (50 maximum).  The API will respond with the number of wishlists returned in the page, and the wishlistID for the for the last wishlist returned for that response, which should then be used for the  subsequent API call to retrieve the next page.  
 
 If no wishlists exist, this method returns a ResourceNotFound error.
 
