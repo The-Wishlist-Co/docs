@@ -646,7 +646,9 @@ HTTP Status Code:
 ## Update a Customer
 Updates Customer fields.  
 
-The updateCustomer API determines which customer to update by comparing the unique customer identifiers, in the priorithy of id, CustomerRef, then email.  There are two additional APIs to update customer using specifically the id or CustomerRef, which will work more efficiently.
+The updateCustomer API determines which customer to update by comparing the unique customer identifiers, in the priorithy of id, CustomerRef, then email. 
+
+*Note: There are two additional APIs to update customer using specifically the id or CustomerRef, which will work more efficiently than this API.*
 
 Endpoint: ```/api/v2/customers```
 
@@ -1149,7 +1151,7 @@ HTTP Status Code:
 ```
 
 ## Update a Customer By Customer Ref
-Updates Customer using the retailer's own unique identifier- CustomerRef.
+Updates Customer matching the retailer's own unique identifier- CustomerRef.
 
 Endpoint: ```/api/v2/customers/customerRef={customerRef:.*}```
 

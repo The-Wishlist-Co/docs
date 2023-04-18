@@ -252,7 +252,7 @@ HTTP Status Code:
 
 
 ## Update a Wishlist
-Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  **Note this API is NOT used to update items on the wishlist.**
+Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *This API is NOT used to update items on the wishlist*
 
 You can update by internal Wishlist ID or wishlistRef, which is the retailer's own ID (which, for example may be assigned in the ecommerce system)
 
@@ -380,7 +380,7 @@ HTTP Status Code:
 
 
 ## Update a Wishlist By ID
-Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  **Note this API is NOT used to update items on the wishlist.**
+Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *Note this API is NOT used to update items on the wishlist.*
 
 As this API uses Wishlist ID, then you can use it to update wishlistRef, which is the retailer's own wishlit ID (which, for example may be assigned in the ecommerce system)
 
@@ -509,7 +509,7 @@ HTTP Status Code:
 
 
 ## Update a Wishlist By Ref
-Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  **Note this API is NOT used to update items on the wishlist.**
+Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *Note this API is NOT used to update items on the wishlist.*
 
 As this API uses wishlistRef, which is the retailer's own wishlit ID (which, for example may be assigned in the ecommerce system)
 
@@ -884,7 +884,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Find Wishlist by Wishlist Reference
+## Get Wishlist by Wishlist Reference
 Returns the wishlist that matches the provided wishlistRef (which is the retailer's own wishlist identifier).
 
 If the wishlist does not exist, this method returns a ResourceNotFound error.
@@ -1259,7 +1259,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Get Wishlist By Customer
+## Get Wishlist By Customer ID or Ref
 
 Returns the list of wishlists that belong to either the internal TWC customer Id, or the retailer's own customerRef.
 
@@ -1638,7 +1638,7 @@ HTTP Status Code:
 ## Upload multiple Wishlist Items
 Adds multiple wishlist items into an existing wishlist.
 
-**THIS API IS DEPRECIATED.  USE ADD-ITEMS**
+**THIS API IS DEPRECIATED.  USE ADD-MULTIPLE-ITEMS**
 
 Endpoint: ```/api/wishlist/upload-items```
 
@@ -1853,6 +1853,8 @@ HTTP Status Code:
 ## Update a Wishlist Item
 Update a wishlist item, for example to change the selected variant.  Developer must supply either the wishlist ID and item ID (both internal TWC values) or the wishlistRef and itemRef (both retailer's own identifiers).
 
+Note that itemRef is the client's unique identifier for a wishlist item associated with a single wishlist.  It is NOT the productRef, which typically could be the retailer's product SKU.
+
 If the variant is being changed, then the original variant ID (TWC internal ID) must also be provided.
 
 Endpoint: ```/api/wishlist/items```
@@ -1985,6 +1987,8 @@ HTTP Status Code:
 ## Update a Wishlist Item By Ref
 
 Update a wishlist item, for example to change the selected variant.  Developer must supply the wishlistRef and itemRef (both retailer's own identifiers).
+
+Note that itemRef is the client's unique identifier for a wishlist item associated with a single wishlist.  It is NOT the productRef, which typically could be the retailer's product SKU.
 
 If the variant is being changed, then the original variant ID (TWC internal ID) must also be provided.
 
@@ -2415,6 +2419,8 @@ HTTP Status Code:
 ## Get Wishlist Item by Item Ref
 Returns the wishlist item belonging to the given itemRef (retailer's own item identifier).
 
+Note that itemRef is the client's unique identifier for a wishlist item associated with a single wishlist.  It is NOT the productRef, which typically could be the retailer's product SKU.
+
 If the item does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```​/api​/wishlist​​/items​/ref/{wishlistItemRef}```
@@ -2494,8 +2500,9 @@ HTTP Status Code:
 ```
 
 
-## Find Wishlist Item by WishlistId and Item Id
-Returns the  wishlist item belonging to the given wishlist id and item id
+## Get Wishlist Item by WishlistId and Item Id
+Returns the  wishlist item belonging to the given wishlist id and item id.
+
 If the item does not exist, this method returns a ResourceNotFound error.
 
 **THIS API IS DEPRECIATED**
@@ -2611,6 +2618,8 @@ HTTP Status Code:
 
 ## Delete Wishlist Item by itemRef
 Delete Wishlist Item by itemRef marks the item matching the given itemRef (retailer's own identifier) as deleted and produces an HTTP response confirming the action. 
+
+Note that itemRef is the client's unique identifier for a wishlist item associated with a single wishlist.  It is NOT the productRef, which typically could be the retailer's product SKU.
 
 If the wishlist/item does not exist, this method returns a ResourceNotFound error.
 
