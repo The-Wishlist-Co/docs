@@ -10,70 +10,70 @@ The Merchants resource stores information about a merchant and their stores.
 ***
 
 - [**Merchants API**](#merchants-api)
-    <!-- - [Index](#index) -->
+    - [Index](#index)
   - [**Representations**](#representations)
   - [**REST Endpoints**](#rest-endpoints)
-    - [**Merchant Resource**](#merchant-resource)
-      - [Register Merchant](#register-merchant)
-      - [Update Merchant](#update-merchant)
-      - [Deactivate Merchant](#deactivate-merchant)
-      - [Find Merchant](#find-merchant)
-    - [**Plan Resource**](#plan-resource)
-      - [Create a Plan](#create-a-plan)
-      - [Update a Plan](#update-a-plan)
-      - [Delete a Plan](#delete-a-plan)
-      - [Find Plan](#find-plan)
-      - [Find All Plans](#find-all-plans)
-    - [**Store Resource**](#store-resource)
-      - [Create a Store](#create-a-store)
-      - [Update a Store](#update-a-store)
-      - [Find a Store](#find-a-store)
-      - [Find a Store](#find-a-store-1)
-      - [Deactivate Store](#deactivate-store)
-      - [Create Subscription plan](#create-subscription-plan)
-      - [Update Subscription plan](#update-subscription-plan)
-      - [Cancel Subscription plan](#cancel-subscription-plan)
-    - [**Store Config Resource**](#store-config-resource)
-      - [Get Additional Config](#get-additional-config)
-      - [Get All Config](#get-all-config)
-      - [Get Entity Config](#get-entity-config)
-      - [Get Store Tenant Config](#get-store-tenant-config)
-      - [Create Additional Config](#create-additional-config)
-      - [Update Additional Config](#update-additional-config)
-      - [Create App Config Entity Config](#create-app-config-entity-config)
-      - [Update App Config Entity Config](#update-app-config-entity-config)
-      - [Create Customer Entity Config](#create-customer-entity-config)
-      - [Update Customer Entity Config](#update-customer-entity-config)
-      - [Create Email Template Entity Config](#create-email-template-entity-config)
-      - [Update Email Template Entity Config](#update-email-template-entity-config)
-      - [Create Inventory Entity Config](#create-inventory-entity-config)
-      - [Update Inventory Entity Config](#update-inventory-entity-config)
-      - [Create Location Entity Config](#create-location-entity-config)
-      - [Update Location Entity Config](#update-location-entity-config)
-      - [Create Order Entity Config](#create-order-entity-config)
-      - [Update Order Entity Config](#update-order-entity-config)
-      - [Create Price Entity Config](#create-price-entity-config)
-      - [Update Price Entity Config](#update-price-entity-config)
-      - [Create Product Entity Config](#create-product-entity-config)
-      - [Update Product Entity Config](#update-product-entity-config)
-      - [Create Store Entity Config](#create-store-entity-config)
-      - [Update Store Entity Config](#update-store-entity-config)
-      - [Create Wishlist Entity Config](#create-wishlist-entity-config)
-      - [Update Wishlist Entity Config](#update-wishlist-entity-config)
-      - [Get Notification Config](#get-notification-config)
-      - [Create Notification Config](#create-notification-config)
-      - [Create BackInStock Notification Settings](#create-backinstock-notification-settings)
-      - [Update BackInStock Notification Settings](#update-backinstock-notification-settings)
-      - [Delete BackInStock Notification Settings](#delete-backinstock-notification-settings)
-      - [Create LowInStock Notification Settings](#create-lowinstock-notification-settings)
-      - [Update LowInStock Notification Settings](#update-lowinstock-notification-settings)
-      - [Delete LowInStock Notification Settings](#delete-lowinstock-notification-settings)
-      - [Create PriceDrop Notification Settings](#create-pricedrop-notification-settings)
-      - [Update PriceDrop Notification Settings](#update-pricedrop-notification-settings)
-      - [Delete PriceDrop Notification Settings](#delete-pricedrop-notification-settings)
-      - [Create ReminderEmail Notification Settings](#create-reminderemail-notification-settings)
-      - [Update ReminderEmail Notification Settings](#update-reminderemail-notification-settings)
-      - [Delete ReminderEmail Notification Settings](#delete-reminderemail-notification-settings)
+  - [**Merchant Resource**](#merchant-resource)
+  - [Register Merchant](#register-merchant)
+  - [Update Merchant](#update-merchant)
+  - [Deactivate Merchant](#deactivate-merchant)
+  - [Find Merchant](#find-merchant)
+  - [**Plan Resource**](#plan-resource)
+  - [Create a Plan](#create-a-plan)
+  - [Update a Plan](#update-a-plan)
+  - [Delete a Plan](#delete-a-plan)
+  - [Find Plan](#find-plan)
+  - [Find All Plans](#find-all-plans)
+  - [**Store Resource**](#store-resource)
+  - [Create a Store](#create-a-store)
+  - [Update a Store](#update-a-store)
+  - [Find a Store](#find-a-store)
+  - [Find a Store](#find-a-store-1)
+  - [Deactivate Store](#deactivate-store)
+  - [Create Subscription plan](#create-subscription-plan)
+  - [Update Subscription plan](#update-subscription-plan)
+  - [Cancel Subscription plan](#cancel-subscription-plan)
+  - [**Store Config Resource**](#store-config-resource)
+  - [Get Additional Config](#get-additional-config)
+  - [Get All Config](#get-all-config)
+  - [Get Entity Config](#get-entity-config)
+  - [Get Store Tenant Config](#get-store-tenant-config)
+  - [Create Additional Config](#create-additional-config)
+  - [Update Additional Config](#update-additional-config)
+  - [Create App Config Entity Config](#create-app-config-entity-config)
+  - [Update App Config Entity Config](#update-app-config-entity-config)
+  - [Create Customer Entity Config](#create-customer-entity-config)
+  - [Update Customer Entity Config](#update-customer-entity-config)
+  - [Create Email Template Entity Config](#create-email-template-entity-config)
+  - [Update Email Template Entity Config](#update-email-template-entity-config)
+  - [Create Inventory Entity Config](#create-inventory-entity-config)
+  - [Update Inventory Entity Config](#update-inventory-entity-config)
+  - [Create Location Entity Config](#create-location-entity-config)
+  - [Update Location Entity Config](#update-location-entity-config)
+  - [Create Order Entity Config](#create-order-entity-config)
+  - [Update Order Entity Config](#update-order-entity-config)
+  - [Create Price Entity Config](#create-price-entity-config)
+  - [Update Price Entity Config](#update-price-entity-config)
+  - [Create Product Entity Config](#create-product-entity-config)
+  - [Update Product Entity Config](#update-product-entity-config)
+  - [Create Store Entity Config](#create-store-entity-config)
+  - [Update Store Entity Config](#update-store-entity-config)
+  - [Create Wishlist Entity Config](#create-wishlist-entity-config)
+  - [Update Wishlist Entity Config](#update-wishlist-entity-config)
+  - [Get Notification Config](#get-notification-config)
+  - [Create Notification Config](#create-notification-config)
+  - [Create BackInStock Notification Settings](#create-backinstock-notification-settings)
+  - [Update BackInStock Notification Settings](#update-backinstock-notification-settings)
+  - [Delete BackInStock Notification Settings](#delete-backinstock-notification-settings)
+  - [Create LowInStock Notification Settings](#create-lowinstock-notification-settings)
+  - [Update LowInStock Notification Settings](#update-lowinstock-notification-settings)
+  - [Delete LowInStock Notification Settings](#delete-lowinstock-notification-settings)
+  - [Create PriceDrop Notification Settings](#create-pricedrop-notification-settings)
+  - [Update PriceDrop Notification Settings](#update-pricedrop-notification-settings)
+  - [Delete PriceDrop Notification Settings](#delete-pricedrop-notification-settings)
+  - [Create ReminderEmail Notification Settings](#create-reminderemail-notification-settings)
+  - [Update ReminderEmail Notification Settings](#update-reminderemail-notification-settings)
+  - [Delete ReminderEmail Notification Settings](#delete-reminderemail-notification-settings)
 
 ## **Representations**
 
@@ -179,6 +179,10 @@ All requests or responses are JSON objects.
 ```targeted_countries``` - string
 
 ```updated_at``` - Datetime
+
+`backInStockThreshold` - Minimum stock level valve where a product or variant is considered to be back in stock at store level.
+
+`lowStockThreshold` - Minimum stock level valve where a product or variant is considered to be in low stock at store level.
 
 <!-- </details> -->
 
@@ -1096,6 +1100,8 @@ Sample Request:
   "plan_id": "string",
   "store_key": "string",
   "store_name": "string",
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "store_state": "CREATED",
   "store_url": "string",
   "targeted_countries": [
@@ -1134,6 +1140,8 @@ Sample Request:
   "plan_id": "string",
   "store_key": "string",
   "store_name": "string",
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "store_state": "CREATED",
   "store_url": "string",
   "targeted_countries": [
@@ -1200,6 +1208,8 @@ Sample Request:
   "plan_id": "string",
   "store_key": "string",
   "store_name": "string",
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "store_state": "CREATED",
   "store_url": "string",
   "targeted_countries": [
@@ -1239,6 +1249,8 @@ Sample Request:
   "plan_id": "string",
   "store_key": "string",
   "store_name": "string",
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "store_state": "CREATED",
   "store_url": "string",
   "targeted_countries": [
@@ -1308,6 +1320,8 @@ Request Parameters: `storeId  : Unique store Id,storeKey: store key`
   "plan_id": "string",
   "store_key": "string",
   "store_name": "string",
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "store_state": "CREATED",
   "store_url": "string",
   "targeted_countries": [
@@ -1377,6 +1391,8 @@ Request Parameters: `storeId  : Unique store Id`
   "plan_id": "string",
   "store_key": "string",
   "store_name": "string",
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "store_state": "CREATED",
   "store_url": "string",
   "targeted_countries": [
@@ -1444,6 +1460,8 @@ Request Parameters: `storeId  : Unique Store Id`
   "plan_id": "string",
   "store_key": "string",
   "store_name": "string",
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "store_state": "CREATED",
   "store_url": "string",
   "targeted_countries": [
@@ -1511,6 +1529,8 @@ Request Parameters: `merchantId  : Unique Merchant Id,storeId: Unique store id,p
   "plan_id": "string",
   "store_key": "string",
   "store_name": "string",
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "store_state": "CREATED",
   "store_url": "string",
   "targeted_countries": [
@@ -1577,6 +1597,8 @@ Request Parameters: `merchantId  : Unique Merchant Id,storeId: Unique store id,p
   "plan_id": "string",
   "store_key": "string",
   "store_name": "string",
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "store_state": "CREATED",
   "store_url": "string",
   "targeted_countries": [
@@ -1644,6 +1666,8 @@ Request Parameters: `merchantId  : Unique Merchant Id,storeId: Unique store id `
   "plan_id": "string",
   "store_key": "string",
   "store_name": "string",
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "store_state": "CREATED",
   "store_url": "string",
   "targeted_countries": [
