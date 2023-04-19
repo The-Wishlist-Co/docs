@@ -3,7 +3,7 @@
 
 
 # **Merchants API**
-The Merchants resource stores information about a merchant and their stores.
+The Merchants API is used to store information about a merchant (retailer), their stores and their staff.  This functionality is useful for defining inventory locations and for when The Wishlist Platform is extended into the stores, as retailers can attribute actions to particular stores and staff and analyse performance of stores and staff.
 
 ### Index
 
@@ -188,6 +188,8 @@ All requests or responses are JSON objects.
 ## **Merchant Resource**
 
 ## Register Merchant
+
+Register a merchant (retailer)
 
 Method: ``` POST ``` 
 
@@ -374,6 +376,8 @@ HTTP Status Code:
 
 ## Update Merchant
 
+Update the meta fileds for a Merchant (retailer)
+
 Method: ``` PUT ``` 
 
 Endpoint: ```​/api​/v1​/merchant```
@@ -557,6 +561,8 @@ HTTP Status Code:
 
 ## Deactivate Merchant
 
+Deactivate a merchant (retailer)
+
 Endpoint: ```/api/v1/merchant/{id}/deactivate```
 
 Method: ``` PUT ```
@@ -663,7 +669,9 @@ HTTP Status Code:
 
 
 
-## Find Merchant
+## Get Merchant
+
+Find a merchant (retailer)
 
 Endpoint: ```/api/v1/merchant/{id}```
 
@@ -772,8 +780,9 @@ HTTP Status Code:
 
 ## **Plan Resource**
 
-
 ## Create a Plan
+
+Create a subscription plan for The Wishlist platform
 
 Endpoint: ```​/api​/v1​/plan​/```
 
@@ -842,6 +851,8 @@ HTTP Status Code:
 
 ## Update a Plan
 
+Update the subscription plan for The Wishlist platform
+
 Endpoint: ```​/api​/v1​/plan​/```
 
 Method: ``` PUT ```
@@ -909,6 +920,8 @@ HTTP Status Code:
 
 ## Delete a Plan
 
+Delete a subscription plan 
+
 Endpoint: ```/api/v1/plan/{planId}/```
 
 Method: ``` DELETE ```
@@ -958,7 +971,9 @@ HTTP Status Code:
 
 
 
-## Find Plan
+## Get Plan
+
+Find a subscription plan in The Wishlist platform
 
 Endpoint: ```/api/v1/plan/{planId}/```
 
@@ -1010,6 +1025,8 @@ HTTP Status Code:
 
 ## Find All Plans
 
+Returns an array of all subscription plans in the TWC platform.
+
 Endpoint: ```/api/v1/plans/```
 
 Method: ``` GET ```
@@ -1059,6 +1076,8 @@ HTTP Status Code:
 
 ## **Store Resource**
 ## Create a Store
+
+Use this API to create a store.  A store belongs to a merchant.
 
 Endpoint: ```​/api/v1/store```
 
@@ -1163,6 +1182,8 @@ HTTP Status Code:
 
 
 ## Update a Store
+
+Update a store belonging to a merchant.
 
 Endpoint: ```/api/v1/store/{id}```
 
@@ -1269,7 +1290,9 @@ HTTP Status Code:
 
 
 
-## Find a Store
+## Get Store
+
+Find a store belonging to a merchant.
 
 Endpoint: ```/api/v1/store```
 
@@ -1338,7 +1361,7 @@ HTTP Status Code:
 
 
 
-## Find a Store
+## Get a Store
 
 Endpoint: ```/api/v1/store/{storeId}```
 
@@ -1407,6 +1430,8 @@ HTTP Status Code:
 
 ## Deactivate Store
 
+Deactivate a store belonging to a merchant.
+
 Endpoint: ```/api/v1/stores/{storeId}/deactivate```
 
 Method: ``` PUT ```
@@ -1474,6 +1499,8 @@ HTTP Status Code:
 
 ## Create Subscription plan
 
+Create a subscription plan for a given merchant.
+
 Endpoint: ```/api/v1/merchant/{merchantId}/store/{storeId}/plan/{planId}/```
 
 Method: ``` POST ```
@@ -1539,6 +1566,8 @@ HTTP Status Code:
 
 
 ## Update Subscription plan
+
+Update a subscription plan for a given merchant in the TWC platform.
 
 Endpoint: ```/api/v1/merchant/{merchantId}/store/{storeId}/plan/{planId}```
 
@@ -1606,6 +1635,8 @@ HTTP Status Code:
 
 
 ## Cancel Subscription plan
+
+Cancel a subscription plan for a given merchant.
 
 Endpoint: ```/api/v1/merchant/{merchantId}/store/{storeId}```
 

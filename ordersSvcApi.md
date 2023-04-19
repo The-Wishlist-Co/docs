@@ -3,7 +3,7 @@
 
 
 # **Order Svc API**
-An order is a customer's request to purchase one or more products from a shop. You can create, retrieve, update, and delete orders using the Order resource.
+An order is a customer's request to purchase one or more products from a shop. You can create, retrieve, update, and delete orders using the Order APIs.  The Wishlist Platform uses orders to determine if a wishlist item is purchased (a "conversion").
 
 
 [**Quote Service API**](quotesvcApi.md#quote-api)
