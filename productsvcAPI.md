@@ -9,35 +9,38 @@ The Product resource stores information about a product and its variants.
 
 ***
 
- - [**Price API**](#price-api)  
-    - [**Index**](#index)
-      - [**Representations**](#representations)
-        - [Product](#product)
-        - [Product Variant](#product-variant)
-      - [**REST Endpoints**](#rest-endpoints)
-        - [**Product Service**](#product-service)
-          - [Create a Product](#create-a-product)
-          - [Update a Product](#update-a-product)
-		  - [Update a Product By ID](#update-a-product-by-id)
-		  - [Update a Product By Prodref](#update-a-product-by-prodref)
-          - [Look up Product by gtin/productRef](#look-up-product-by-gtinproductref)
-          - [Validate Request](#validate-request)
-          - [Validate Product](#validate-product)
-          - [Validate Product by Ref](#validate-product-by-ref)
-          - [Find Product by ID](#find-product-by-id)
-          - [Delete Product by ID](#delete-product-by-id)
-          - [Find Product by Ref](#find-product-by-ref)
-          - [Delete Product by Ref](#delete-product-by-ref)
-          - [Upload Products](#upload-products)
-        - [**Product Variant Service**](#product-variant-service)
-          - [Create a Product Variants](#create-a-product-variants)
-          - [Update a Product Variant](#update-a-product-variant)
-		  - [Update a Product Variant By ID](#update-a-product-variant-by-id)
-		  - [Update a Product Variant By Variant Ref](#update-a-product-variant-by-variant-ref)
-          - [Validate Product Variant](#validate-product-variant)
-          - [Find Product Variant by ID](#find-product-variant-by-id)
-          - [Find Product Variant by Ref](#find-product-variant-by-ref)
-          - [Delete Product variant by Ref](#delete-product-variant-by-ref)
+- [**Product API**](#product-api)
+    - [Index](#index)
+  - [**Representations**](#representations)
+  - [Product](#product)
+  - [Product Variant](#product-variant)
+  - [**REST Endpoints**](#rest-endpoints)
+  - [**Product Service**](#product-service)
+  - [Create a Product](#create-a-product)
+  - [Update a Product](#update-a-product)
+  - [Update a Product By ID](#update-a-product-by-id)
+  - [Update a Product By Prodref](#update-a-product-by-prodref)
+  - [Look up Product by gtin/productRef](#look-up-product-by-gtinproductref)
+  - [Validate Request](#validate-request)
+  - [Validate Product](#validate-product)
+  - [Validate Product by Ref](#validate-product-by-ref)
+  - [Find Product by ID](#find-product-by-id)
+  - [Delete Product by ID](#delete-product-by-id)
+  - [Find Product by Ref](#find-product-by-ref)
+  - [Delete Product by Ref](#delete-product-by-ref)
+  - [**Product Variant Service**](#product-variant-service)
+  - [Create a Product Variant](#create-a-product-variant)
+  - [Update a Product Variant](#update-a-product-variant)
+  - [Update a Product Variant By ID](#update-a-product-variant-by-id)
+  - [Update a Product Variant By Variant Ref](#update-a-product-variant-by-variant-ref)
+  - [Validate Product Variant](#validate-product-variant)
+  - [Find Product Variant by ID](#find-product-variant-by-id)
+  - [Find Product Variant by Ref](#find-product-variant-by-ref)
+  - [Delete Product variant by Ref](#delete-product-variant-by-ref)
+  - [Find Product variants by productId](#find-product-variants-by-productid)
+  - [Find  Product variants by productId](#find--product-variants-by-productid)
+  - [Delete Product variants by product Id/variantId](#delete-product-variants-by-product-idvariantid)
+  - [Upload Product Variants](#upload-product-variants)
       
 
 
@@ -124,6 +127,10 @@ Represents a product.
  `maxOrderQuantity` - 
  
  `minOrderQuantity` - 
+
+ `backInStockThreshold` - Minimum stock level valve where a product or variant is considered to be back in stock.
+
+ `lowStockThreshold` - Minimum stock level valve where a product or variant is considered to be in low stock.
  
  `mobileLink` - 
  
@@ -370,6 +377,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -485,6 +494,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -596,6 +607,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "link": "string",
       "maxOrderQuantity": 0,
       "minOrderQuantity": 0,
+      "backInStockThreshold":0,
+      "lowStockThreshold": 0,
       "mobileLink": "string",
       "physicalSpecs": {
         "dimensionUnitCode": "string",
@@ -765,6 +778,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -876,6 +891,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "link": "string",
       "maxOrderQuantity": 0,
       "minOrderQuantity": 0,
+      "backInStockThreshold":0,
+     "lowStockThreshold": 0,
       "mobileLink": "string",
       "physicalSpecs": {
         "dimensionUnitCode": "string",
@@ -1010,6 +1027,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -1121,6 +1140,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "link": "string",
       "maxOrderQuantity": 0,
       "minOrderQuantity": 0,
+      "backInStockThreshold":0,
+      "lowStockThreshold": 0,
       "mobileLink": "string",
       "physicalSpecs": {
         "dimensionUnitCode": "string",
@@ -1296,6 +1317,8 @@ id= Product id
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -1405,6 +1428,8 @@ id= Product id
       "link": "string",
       "maxOrderQuantity": 0,
       "minOrderQuantity": 0,
+      "backInStockThreshold":0,
+      "lowStockThreshold": 0,
       "mobileLink": "string",
       "physicalSpecs": {
         "dimensionUnitCode": "string",
@@ -1538,6 +1563,8 @@ id= Product id
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -1649,6 +1676,8 @@ id= Product id
       "link": "string",
       "maxOrderQuantity": 0,
       "minOrderQuantity": 0,
+      "backInStockThreshold":0,
+     "lowStockThreshold": 0,
       "mobileLink": "string",
       "physicalSpecs": {
         "dimensionUnitCode": "string",
@@ -1824,6 +1853,8 @@ ref - variantRef
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -1934,6 +1965,8 @@ ref - variantRef
       "link": "string",
       "maxOrderQuantity": 0,
       "minOrderQuantity": 0,
+      "backInStockThreshold":0,
+      "lowStockThreshold": 0,
       "mobileLink": "string",
       "physicalSpecs": {
         "dimensionUnitCode": "string",
@@ -2068,6 +2101,8 @@ ref - variantRef
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -2179,6 +2214,8 @@ ref - variantRef
       "link": "string",
       "maxOrderQuantity": 0,
       "minOrderQuantity": 0,
+      "backInStockThreshold":0,
+      "lowStockThreshold": 0,
       "mobileLink": "string",
       "physicalSpecs": {
         "dimensionUnitCode": "string",
@@ -2358,6 +2395,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "link": "string",
       "maxOrderQuantity": 0,
       "minOrderQuantity": 0,
+      "backInStockThreshold":0,
+      "lowStockThreshold": 0,
       "mobileLink": "string",
       "physicalSpecs": {
         "dimensionUnitCode": "string",
@@ -2469,6 +2508,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
           "link": "string",
           "maxOrderQuantity": 0,
           "minOrderQuantity": 0,
+          "backInStockThreshold":0,
+          "lowStockThreshold": 0,
           "mobileLink": "string",
           "physicalSpecs": {
             "dimensionUnitCode": "string",
@@ -2604,6 +2645,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "link": "string",
       "maxOrderQuantity": 0,
       "minOrderQuantity": 0,
+      "backInStockThreshold":0,
+      "lowStockThreshold": 0,
       "mobileLink": "string",
       "physicalSpecs": {
         "dimensionUnitCode": "string",
@@ -2769,6 +2812,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -2880,6 +2925,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "link": "string",
       "maxOrderQuantity": 0,
       "minOrderQuantity": 0,
+      "backInStockThreshold":0,
+      "lowStockThreshold": 0,
       "mobileLink": "string",
       "physicalSpecs": {
         "dimensionUnitCode": "string",
@@ -3053,6 +3100,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "link": "string",
     "maxOrderQuantity": 0,
     "minOrderQuantity": 0,
+    "backInStockThreshold":0,
+    "lowStockThreshold": 0,
     "mobileLink": "string",
     "physicalSpecs": {
       "dimensionUnitCode": "string",
@@ -3164,6 +3213,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
         "link": "string",
         "maxOrderQuantity": 0,
         "minOrderQuantity": 0,
+        "backInStockThreshold":0,
+        "lowStockThreshold": 0,
         "mobileLink": "string",
         "physicalSpecs": {
           "dimensionUnitCode": "string",
@@ -3298,6 +3349,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "link": "string",
     "maxOrderQuantity": 0,
     "minOrderQuantity": 0,
+    "backInStockThreshold":0,
+    "lowStockThreshold": 0,
     "mobileLink": "string",
     "physicalSpecs": {
       "dimensionUnitCode": "string",
@@ -3469,6 +3522,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "link": "string",
     "maxOrderQuantity": 0,
     "minOrderQuantity": 0,
+    "backInStockThreshold":0,
+    "lowStockThreshold": 0,
     "mobileLink": "string",
     "physicalSpecs": {
       "dimensionUnitCode": "string",
@@ -3580,6 +3635,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
         "link": "string",
         "maxOrderQuantity": 0,
         "minOrderQuantity": 0,
+        "backInStockThreshold":0,
+        "lowStockThreshold": 0,
         "mobileLink": "string",
         "physicalSpecs": {
           "dimensionUnitCode": "string",
@@ -3714,6 +3771,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "link": "string",
     "maxOrderQuantity": 0,
     "minOrderQuantity": 0,
+    "backInStockThreshold":0,
+    "lowStockThreshold": 0,
     "mobileLink": "string",
     "physicalSpecs": {
       "dimensionUnitCode": "string",
@@ -3888,6 +3947,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -3999,6 +4060,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "link": "string",
       "maxOrderQuantity": 0,
       "minOrderQuantity": 0,
+      "backInStockThreshold":0,
+      "lowStockThreshold": 0,
       "mobileLink": "string",
       "physicalSpecs": {
         "dimensionUnitCode": "string",
@@ -4215,6 +4278,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -4326,6 +4391,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "link": "string",
       "maxOrderQuantity": 0,
       "minOrderQuantity": 0,
+      "backInStockThreshold":0,
+      "lowStockThreshold": 0,
       "mobileLink": "string",
       "physicalSpecs": {
         "dimensionUnitCode": "string",
@@ -4543,6 +4610,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "link": "string",
     "maxOrderQuantity": 0,
     "minOrderQuantity": 0,
+    "backInStockThreshold":0,
+    "lowStockThreshold": 0,
     "mobileLink": "string",
     "physicalSpecs": {
       "dimensionUnitCode": "string",
@@ -4654,6 +4723,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
         "link": "string",
         "maxOrderQuantity": 0,
         "minOrderQuantity": 0,
+        "backInStockThreshold":0,
+        "lowStockThreshold": 0,
         "mobileLink": "string",
         "physicalSpecs": {
           "dimensionUnitCode": "string",
@@ -4829,6 +4900,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -4960,6 +5033,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -5129,6 +5204,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -5260,6 +5337,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -5433,6 +5512,8 @@ id - Product vatiant ID
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -5564,6 +5645,8 @@ id - Product vatiant ID
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -5736,6 +5819,8 @@ ref - variantRef
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -5866,6 +5951,8 @@ ref - variantRef
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -6037,6 +6124,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -6219,6 +6308,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -6401,6 +6492,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "link": "string",
   "maxOrderQuantity": 0,
   "minOrderQuantity": 0,
+  "backInStockThreshold":0,
+  "lowStockThreshold": 0,
   "mobileLink": "string",
   "physicalSpecs": {
     "dimensionUnitCode": "string",
@@ -6661,6 +6754,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "link": "string",
     "maxOrderQuantity": 0,
     "minOrderQuantity": 0,
+    "backInStockThreshold":0,
+    "lowStockThreshold": 0,
     "mobileLink": "string",
     "physicalSpecs": {
       "dimensionUnitCode": "string",
@@ -6870,6 +6965,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "link": "string",
     "maxOrderQuantity": 0,
     "minOrderQuantity": 0,
+    "backInStockThreshold":0,
+    "lowStockThreshold": 0,
     "mobileLink": "string",
     "physicalSpecs": {
       "dimensionUnitCode": "string",
