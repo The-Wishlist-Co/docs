@@ -11,44 +11,43 @@ One customer may have mulitple wishlists.  You can only create a wishlist for a 
 
 A wishlist is created 'empty' and items added later, either one by one, or multiple items can be added at the same time.
 
-### Index
 
 ***
 
 - [**Wishlist API**](#wishlist-api)
-    <!-- - [Index](#index) -->
-    - [**Representations**](#representations)
-        - [Wishlist](#wishlist)
-        - [Wishlist Item](#wishlist-item)
-        - [Product](#product)
-    - [**REST Endpoints**](#rest-endpoints)
-        - [**Wishlist Resource**](#wishlist-resource)
-            - [Create a Wishlist](#create-a-wishlist)
-            - [Update a Wishlist](#update-a-wishlist)
-            - [Update a Wishlist By ID](#update-a-wishlist-by-id)
-            - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
-            - [Find Wishlist by id/wishlistRef](#find-wishlist-by-idwishlistref)
-            - [Find Wishlist by Id](#find-wishlist-by-id)
-            - [Find Wishlist by Wishlist Reference](#find-wishlist-by-wishlist-reference)
-            - [Find Wishlist by CustomerId](#find-wishlist-by-customerid)
-            - [Find Wishlist by CustomerRef](#find-wishlist-by-customerref)
-            - [Lookup Wishlist By CustomerId](#lookup-wishlist-by-customer)
-            - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
-            - [Delete Wishlist by ID](#delete-wishlist-by-id)
-            - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
-        - [**Wishlist Item Resource**](#wishlist-item-resource)
-            - [Create a Wishlist Item](#create-a-wishlist-item)
-            - [Upload multiple Wishlist Items](#upload-multiple-wishlist-items)
-            - [Update a Wishlist Item](#update-a-wishlist-item)
-            - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
-            - [Update a Wishlist Item By Id](#update-a-wishlist-item-by-id)
-            - [Find all Items in a Wishlist by Wishlist Id](#find-all-items-in-a-wishlist-by-wishlist-id)
-            - [Find Wishlist Item by Item Id](#find-wishlist-item-by-item-id)
-            - [Find Wishlist Item by Item Ref](#find-wishlist-item-by-item-ref)
-            - [Find Wishlist Item by WishlistId and Item Id](#find-wishlist-item-by-wishlistid-and-item-id)
-            - [Delete Wishlist Item by Id](#delete-wishlist-item-by-id)
-            - [Delete Wishlist Item by WishlistItemRef](#delete-wishlist-item-by-wishlistitemref)
-            - [Delete Wishlist Item by wishlist Id and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
+  - [**Representations**](#representations)
+  - [Wishlist](#wishlist)
+  - [Wishlist Item](#wishlist-item)
+  - [Product](#product)
+  - [**REST Endpoints**](#rest-endpoints)
+  - [**Wishlist Resource**](#wishlist-resource)
+  - [Create a Wishlist](#create-a-wishlist)
+  - [Update a Wishlist](#update-a-wishlist)
+  - [Update a Wishlist By ID](#update-a-wishlist-by-id)
+  - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
+  - [Get Wishlist by id/wishlistRef](#get-wishlist-by-idwishlistref)
+  - [Get Wishlist by Id](#get-wishlist-by-id)
+  - [Get Wishlist by Wishlist Reference](#get-wishlist-by-wishlist-reference)
+  - [Get Wishlist by CustomerId](#get-wishlist-by-customerid)
+  - [Get Wishlist by CustomerRef](#get-wishlist-by-customerref)
+  - [Get Wishlist By Customer ID or Ref](#get-wishlist-by-customer-id-or-ref)
+  - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
+  - [Delete Wishlist by ID](#delete-wishlist-by-id)
+  - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
+  - [**Wishlist Item Resource**](#wishlist-item-resource)
+  - [Create a Wishlist Item](#create-a-wishlist-item)
+- [Add  Wishlist Items](#add--wishlist-items)
+  - [Upload multiple Wishlist Items](#upload-multiple-wishlist-items)
+  - [Update a Wishlist Item](#update-a-wishlist-item)
+  - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
+  - [Update a Wishlist Item By Id](#update-a-wishlist-item-by-id)
+  - [Get all Items in a Wishlist by Wishlist Id](#get-all-items-in-a-wishlist-by-wishlist-id)
+  - [Get Wishlist Item by Item Id](#get-wishlist-item-by-item-id)
+  - [Get Wishlist Item by Item Ref](#get-wishlist-item-by-item-ref)
+  - [Get Wishlist Item by WishlistId and Item Id](#get-wishlist-item-by-wishlistid-and-item-id)
+  - [Delete Wishlist Item by Id](#delete-wishlist-item-by-id)
+  - [Delete Wishlist Item by itemRef](#delete-wishlist-item-by-itemref)
+  - [Delete Wishlist Item by wishlist ID and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
 
 ## **Representations**
 
@@ -1642,12 +1641,132 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+# Add  Wishlist Items
+Add items to an existing wishlist in the TWC system.
 
+Endpoint: ```/api/wishlist/add-items```
+
+Method: ``` POST ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+Sample Request:
+
+<!-- <details> -->
+```json
+{
+    "wishlistId": "string",
+    "wishlistRef": "string",
+    "itemId": [
+        {
+            "addedFromCart": true,
+            "attributeGroups": {
+                "additionalProp1": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                },
+                "additionalProp2": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                },
+                "additionalProp3": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                }
+            },
+            "datePurchased": "2023-03-31T10:00:17.889Z",
+            "disableNotification": true,
+            "id": "string",
+            "prerelease": true,
+            "productId": "string",
+            "purchased": true,
+            "selectedVariantId": "string",
+            "wishlistItemRef": "string"
+        }
+    ],
+    "itemRef": [
+        {
+            "addedFromCart": true,
+            "attributeGroups": {
+                "additionalProp1": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                },
+                "additionalProp2": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                },
+                "additionalProp3": {
+                    "attributes": {
+                        "additionalProp1": "string",
+                        "additionalProp2": "string",
+                        "additionalProp3": "string"
+                    },
+                    "description": "string"
+                }
+            },
+            "datePurchased": "2023-03-31T10:00:17.889Z",
+            "disableNotification": true,
+            "id": "string",
+            "prerelease": true,
+            "productRef": "string",
+            "purchased": true,
+            "selectedVariantRef": "string",
+            "wishlistItemRef": "string"
+        }
+    ]
+}
+```
+
+<!-- </details> -->
+
+<summary>Response - 202 (Accepted)</summary>
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 202 Accepted
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+- 409 Conflict
+```
 
 ## Upload multiple Wishlist Items
 Adds multiple wishlist items into an existing wishlist.
 
-**THIS API IS DEPRECIATED.  USE ADD-MULTIPLE-ITEMS**
+**THIS API IS DEPRECIATED.  USE ADD-ITEMS**
 
 Endpoint: ```/api/wishlist/upload-items```
 
