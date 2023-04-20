@@ -1511,7 +1511,7 @@ HTTP Status Code:
 ## **Wishlist Item Resource**
 
 ## Create a Wishlist Item
-Adds a wishlist item into an existing wishlist.  The wishlist can be identified by either the TWC internal ID, or the wishlistRef, which is the retailer's own wishlist identifier.  
+Adds a sinble wishlist item into an existing wishlist.  The wishlist can be identified by either the TWC internal ID, or the wishlistRef, which is the retailer's own wishlist identifier.  
 
 Endpoint: ```/api/wishlist/items```
 
@@ -1641,8 +1641,8 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-# Add  Wishlist Items
-Add items to an existing wishlist in the TWC system.
+# Add multple Wishlist Items
+Add multiple items to an existing wishlist in the TWC system.
 
 Endpoint: ```/api/wishlist/add-items```
 
