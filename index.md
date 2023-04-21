@@ -49,7 +49,7 @@ For more detailed informaation, check out the collection and follow the service 
       - [*Stock Level Resource*](inventorySvcAPI.md#stock-level-resource)
 
 
-- [**Merchant Service API**](merchantsSvcAPI.md#merchants-api)
+<!-- - [**Merchant Service API**](merchantsSvcAPI.md#merchants-api)
   
   The Merchants Service enables the management of information about a merchant and their stores. You can create, retrieve, update, and delete merchants using the Merchant Service API.
 
@@ -63,7 +63,7 @@ For more detailed informaation, check out the collection and follow the service 
     
     - [*Store Resource*](merchantsSvcAPI.md#store-resource)
     
-    - [*Store Config Resource*](merchantsSvcAPI.md#store-config-resource)
+    - [*Store Config Resource*](merchantsSvcAPI.md#store-config-resource) -->
 
   
 - [**Price Service API**](priceSvcAPI.md#price-api)
@@ -138,7 +138,7 @@ For more detailed informaation, check out the collection and follow the service 
   
   Shopify Connector is used to integrate data from  Shopify system into the The Wishlist platform.
 
-- [**Event Collector**](eventcollectorAPI.md#event-collector-api)
+<!-- - [**Event Collector**](eventcollectorAPI.md#event-collector-api)
 
     The event collector API is employed for enabling various events and campains that pertain to a customer.
     
@@ -148,11 +148,11 @@ For more detailed informaation, check out the collection and follow the service 
 
       - [*Events  Resource*](eventcollectorAPI.md#events--resource)
 
-      - [*Event Subscription Resource*](eventcollectorAPI.md#event-subscription-resource)
+      - [*Event Subscription Resource*](eventcollectorAPI.md#event-subscription-resource) -->
 
-
+<!-- 
 - [**Platform Generated Events**](platformgeneratedevents.md#platform-generated-messages)
-
+ -->
 
 - [**Emarsys Integration**](emarsysIntegration.md#emarsys-integration)
 
