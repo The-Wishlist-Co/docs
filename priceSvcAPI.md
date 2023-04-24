@@ -2,7 +2,7 @@
 [Back to Home](index.md#welcome-to-the-wishlist)
 
 # **Price API**
-The Price resource stores information about price details of particular product variant.
+The price APIs allow developers to manage information about product and variant prices.  
 
 ### Index
 
