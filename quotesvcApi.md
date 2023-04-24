@@ -2,8 +2,7 @@
 [Back to Home](index.md#welcome-to-the-wishlist)
 
 # **Quote API**
-The Quote resource stores information about a quote, such as the store details, the quote line items, and price amounts
-
+The Quote APIs allow the developer to manage information about a quote, such as the store details, the quote line items, and price amounts
 
 ### Index
 

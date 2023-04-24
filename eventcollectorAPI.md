@@ -3,7 +3,7 @@
 
 # **Event Collector API**
 
-The event collector API is employed for enabling various events and campains that pertain to a customer. Various event suscriptions such as notification services, loyalty services etc can be enabled by the retailer and the information related to these events are also stored here.
+The event collector API is employed for enabling various events and campaigns that pertain to a customer. Various event suscriptions such as notification services, loyalty services etc can be enabled by the retailer and the information related to these events are also stored here.
 
 ### Index
 
