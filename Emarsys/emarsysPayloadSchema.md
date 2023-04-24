@@ -2,7 +2,7 @@
 
 ## Emarsys Payload Schema  
 
-- **`key_id`** - ` string or integer` - Identifies the contact by their id, uid, or the name/integer id of a custom field, such as email. When id or uid is used as identifier, provide value in this parameter and specify the the actual id or uid in the external_id parameter. - `required`
+- **`key_id`** - ` string or integer` - Identifies the contact by their id, uid, or the name/integer id of a custom field, such as email. When id or uid is used as identifier, provide value in this parameter and specify the actual id or uid in the external_id parameter. - `required`
 
 - **`events`** - `array[`object`]` - The update event(s) in the batch.
 
