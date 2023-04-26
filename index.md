@@ -156,6 +156,8 @@ For more detailed informaation, check out the collection and follow the service 
 
 - [**Emarsys Integration**](emarsysIntegration.md#emarsys-integration)
 
+- [**Klaviyo Integration**](klaviyoIntegration.md#klaviyo-integration)
+
 - [**Event Failure Reporting**](apiFails.md#event-collector-api)
 
      If an API fails after a reasonable number of times, a fault should be reported into event collector.
