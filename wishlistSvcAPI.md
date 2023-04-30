@@ -22,21 +22,21 @@ A wishlist is created 'empty' and items added later, either one by one, or multi
 - [**Endpoints**](#rest-endpoints)
   - [**Wishlist**](#wishlist-resource)
     - [Create](#create-a-wishlist)
-  - [Create a Wishlist](#create-a-wishlist)
-  - [Update a Wishlist](#update-a-wishlist)
-  - [Update a Wishlist By ID](#update-a-wishlist-by-id)
-  - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
-  - [Get Wishlist by id/wishlistRef](#get-wishlist-by-idwishlistref)
-  - [Get Wishlist by Id](#get-wishlist-by-id)
-  - [Get Wishlist by Wishlist Reference](#get-wishlist-by-wishlist-reference)
-  - [Get Wishlist by CustomerId](#get-wishlist-by-customerid)
-  - [Get Wishlist by CustomerRef](#get-wishlist-by-customerref)
-  - [Get Wishlist By Customer ID or Ref](#get-wishlist-by-customer-id-or-ref)
-  - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
-  - [Delete Wishlist by ID](#delete-wishlist-by-id)
-  - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
-  - [**Wishlist Item Resource**](#wishlist-item-resource)
-  - [Create a Wishlist Item](#create-a-wishlist-item)
+    - [Create a Wishlist](#create-a-wishlist)
+    - [Update a Wishlist](#update-a-wishlist)
+    - [Update a Wishlist By ID](#update-a-wishlist-by-id)
+    - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
+    - [Get Wishlist by id/wishlistRef](#get-wishlist-by-idwishlistref)
+    - [Get Wishlist by Id](#get-wishlist-by-id)
+    - [Get Wishlist by Wishlist Reference](#get-wishlist-by-wishlist-reference)
+    - [Get Wishlist by CustomerId](#get-wishlist-by-customerid)
+    - [Get Wishlist by CustomerRef](#get-wishlist-by-customerref)
+    - [Get Wishlist By Customer ID or Ref](#get-wishlist-by-customer-id-or-ref)
+    - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
+    - [Delete Wishlist by ID](#delete-wishlist-by-id)
+    - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
+  - [**WishlistItem**](#wishlist-item-resource)
+    - [Create a Wishlist Item](#create-a-wishlist-item)
 - [Add  Wishlist Items](#add--wishlist-items)
   - [Upload multiple Wishlist Items](#upload-multiple-wishlist-items)
   - [Update a Wishlist Item](#update-a-wishlist-item)
@@ -55,6 +55,7 @@ A wishlist is created 'empty' and items added later, either one by one, or multi
 All requests or responses are JSON objects
 
 ### Wishlist Request
+
 |Field|Type|Description|
 |-----|----|-----------|
 |customerId|string| TWC generated unique ID of customer. Either customerId or customerRef is mandatory when creating wishlist|
@@ -67,6 +68,7 @@ All requests or responses are JSON objects
 
 
 ### Wishlist Response
+
 |Field|Type|Description|
 |-----|----|-----------|
 |id|string| TWC generated unique ID of the wishlist.|
@@ -92,6 +94,7 @@ All requests or responses are JSON objects
 |attributeGroups|object| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_item_origin":&nbsp;"mobile_app",<br>&emsp;&emsp;"ecommerce_wishlist_item_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
 
 ###  WishlistItem Product
+
 |Field|Type|Description|
 |-----|----|-----------|
 |productId|string| This is the TWC generated product id. Either productId or productRef is mandatory when creating a wishlist item.|
@@ -101,6 +104,7 @@ All requests or responses are JSON objects
 |oldVariantId|string| When updating a wishlist item to another variant oldVariantId field is mandatory, to switch to another variant. This is TWC generated unique ID.|
 
 ###  WishlistItem Response
+
 |Field|Type|Description|
 |-----|----|-----------|
 |id|string| This is the TWC generted unique ID of wishlist item.|
