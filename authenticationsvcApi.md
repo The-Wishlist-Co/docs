@@ -37,11 +37,14 @@ Any API call must contain the access token in the authorization header. (Field n
   - [**REST Endpoints**](#rest-endpoints)
 	- [Generate Token](#generate-token)
 
+
+## **Servers**
+| Environment | Server  |
+|-------------|---------|
+|Production|`https://auth.au-aws.thewishlist.io/`|
+|Sandbox|`https://auth.au-sandbox.thewishlist.io/`|
+
 ## **Representations**
-
-
-
-
 | Key           | Value              | Description                                    				  |
 |---------------|--------------------|----------------------------------------------------------------|
 | grant_type    | client_credentials | constant: client_credentials                                   |

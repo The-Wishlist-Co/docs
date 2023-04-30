@@ -14,13 +14,14 @@ A wishlist is created 'empty' and items added later, either one by one, or multi
 
 ***
 
-- [**Wishlist API**](#wishlist-api)
-  - [**Representations**](#representations)
+[**Wishlist API**](#wishlist-api)
+- [**Representations**](#representations)
   - [Wishlist](#wishlist)
   - [Wishlist Item](#wishlist-item)
   - [Product](#product)
-  - [**REST Endpoints**](#rest-endpoints)
-  - [**Wishlist Resource**](#wishlist-resource)
+- [**Endpoints**](#rest-endpoints)
+  - [**Wishlist**](#wishlist-resource)
+    - [Create](#create-a-wishlist)
   - [Create a Wishlist](#create-a-wishlist)
   - [Update a Wishlist](#update-a-wishlist)
   - [Update a Wishlist By ID](#update-a-wishlist-by-id)
@@ -53,190 +54,136 @@ A wishlist is created 'empty' and items added later, either one by one, or multi
 
 All requests or responses are JSON objects
 
-##  Wishlist
-
-<!-- <details> -->
- <!-- <summary>WishList</summary> -->
-
-```customerId``` - string - the unique id of the customer
-
-```customerRef``` - string - the reference of the customer
-
-```deleted``` - boolean - to indicate the wishlist is deleted to not
-
-```description``` - string - description of the wishlist
-
-```id``` - string - the unique id of the wishlist. it will automatically generate at the time of wishlist creation.
-
-```isPrivate``` - boolean
-
-```name``` - string - name of the wishlist
-
-```wishlistRef``` - string- reference of the wishlist
-
-```attributeGroups```- to add any additional information
-
-```lastEvaluatedId```- Last ealuated UID of the list of Wishlists or wishlist items in a wishlist depending on api.
-
-```resultCount``` Count of items present in in the response.
-
-<!-- </details>
-<details> -->
-##  Wishlist Item
- <!-- <summary>WishList Item</summary> -->
-
-```datePurchased``` - DateTime - the Date of purchase if the wishlist items is purchased.
-
-```wishlistId``` - string - the unique id of the respective wishlist.
-
-```purchased``` - boolean - to indicate the wishlist item is purchased to not
-
-```wishlistItemRef``` - string - the unique reference of the wishlist item
-
-```id``` - string - the unique id of the wishlist item. it will automatically generate at the time of wishlist item creation.
-
-```wishlistRef``` - string- reference of the respective wishlist
-
-```addedFromCart``` - boolean - to indicate whether added from Cart or not.
-
-```prerelease``` - boolean- product prerelease notification enabled
-
-```disableNotification``` - boolean- disable notification 
-
-<!-- </details>
-
-<details> -->
- <!-- <summary>Product</summary> -->
-## Product
+###  Wishlist Request
+|Field|Type|Description|
+|-----|----|-----------|
+|customerId|string| TWC generated unique ID of customer. Either customerId or customerRef is mandatory when creating wishlist|
+|customerRef|string| TWC generated unique ID of customer. Either customerId or customerRef is mandatory when creating wishlist|
+|description|string| Wishlist description, this field may not always be used by retailers. This field could be useful in case of social shopping scenarios|
+|name|string| Wishlists name given by customer|
+|wishlistRef|string| This is a reference Id given to wishlist by retailer. This field may be used to GET/UPDATE/DELETE wishlist|
+|isPrivate|boolean| making the wishlist private to customer|
+|attributeGroups|object| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_origin":&nbsp;"app",<br>&emsp;&emsp;"ecommerce_wishlist_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
 
 
-```oldVariantId``` - string - the existing product variant id. this needs only incase of updating an existing variant in a wishlist item.
+###  Wishlist Response
+|Field|Type|Description|
+|-----|----|-----------|
+|id|string| TWC generated unique ID of the wishlist.|
+|customerId|string| TWC generated unique ID of customer.|
+|customerRef|string| TWC generated unique ID of customer.|
+|description|string| Wishlist description.|
+|name|string| Wishlists name given by customer|
+|wishlistRef|string| This is a reference Id given to wishlist by retailer. This field may be used to GET/UPDATE/DELETE wishlist|
+|isPrivate|boolean| making the wishlist private to customer|
+|attributeGroups|object| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_origin":&nbsp;"app",<br>&emsp;&emsp;"ecommerce_wishlist_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
 
-```productId``` - string - the unique id of the product
+###  WishlistItem Request
+|Field|Type|Description|
+|-----|----|-----------|
+|addedFromCart|boolean| This field is to mark that it was added from cart.|
+|disableNotification|boolean| This field will disable notifications on the wishlist item.|
+|wishlistId|string| TWC generated unique ID of wishlist, to which the item is being added. Either wishlistId or wishlistRef is mandatory when creating a wishlist item.|
+|wishlistRef|string| reatailer assigned unique  reference ID of wishlist. Either wishlistId or wishlistRef is mandatory when creating a wishlist item.|
+|wishlistItemRef|string| reatailer assigned unique  reference ID of wishlist item.|
+|prerelease|boolean| This field indicates that customer is registering interest to a pre release item.|
+|purchased|boolean| This field indicates that the item has been purchased.|
+|product|object| This field represents the field being added to item [product](#wishlistitem-product). This is a mandatory field.|
+|attributeGroups|object| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_item_origin":&nbsp;"mobile_app",<br>&emsp;&emsp;"ecommerce_wishlist_item_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
 
-```productRef``` - string - the unique ref of the product
+###  WishlistItem Product
+|Field|Type|Description|
+|-----|----|-----------|
+|productId|string| This is the TWC generated product id. Either productId or productRef is mandatory when creating a wishlist item.|
+|productRef|string| This is the retailer assigned product reference id. Either productId or productRef is mandatory when creating a wishlist item.|
+|selectedVariantId|string| This is the retailer assigned product reference id. Either selectedVariantId or selectedVariantRef is mandatory when creating a wishlist item.|
+|selectedVariantRef|string| This is the retailer assigned product reference id. Either selectedVariantId or selectedVariantRef is mandatory when creating a wishlist item.|
+|oldVariantId|string| When updating a wishlist item to another variant oldVariantId field is mandatory, to switch to another variant. This is TWC generated unique ID.|
 
-```selectedVariantId``` - string- the unique id of the product variant which the customer need to add.
+###  WishlistItem Response
+|Field|Type|Description|
+|-----|----|-----------|
+|id|string| This is the TWC generted unique ID of wishlist item.|
+|addedFromCart|boolean| This field is to mark that it was added from cart.|
+|disableNotification|boolean| This field will disable notifications on the wishlist item.|
+|wishlistId|string| TWC generated unique ID of wishlist, to which the item is being added. Either wishlistId or wishlistRef is mandatory when creating a wishlist item.|
+|wishlistRef|string| reatailer assigned unique  reference ID of wishlist. Either wishlistId or wishlistRef is mandatory when creating a wishlist item.|
+|wishlistItemRef|string| reatailer assigned unique  reference ID of wishlist item.|
+|prerelease|boolean| This field indicates that customer is registering interest to a pre release item.|
+|purchased|boolean| this field indicates that the item has been purchased.|
+|purchasedDate|boolean| The date on which item was purchased. If orders are pushed to TWC, TWC will mark the item as purchased.|
+|product|object| This field represents the field being added to item [product](#wishlistitem-product)|
+|attributeGroups|object| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_item_origin":&nbsp;"mobile_app",<br>&emsp;&emsp;"ecommerce_wishlist_item_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
 
-```selectedVariantRef``` - string- the unique ref of the product variant which the customer need to add.
-
-<!-- </details> -->
-
-## **REST Endpoints**
-
-## **Wishlist Resource**
-
-## Create a Wishlist
+## **Endpoints**
+### **Wishlist**
+#### CREATE
 Creates a new wishlist.  Requires the customer to be created first.  
 
-Endpoint: ```/api/wishlists```
-
-Method: ``` POST ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
+| Endpoint| ```/api/wishlists```|
+|-----------|---------------|
+| Method    | POST          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+|How to get access token| [Tenant Authentication](authenticationsvcApi.md)|
 
 
 Sample Request:
-<!-- <details> -->
-
 ```json
 {
   "attributeGroups": {
-    "additionalProp1": {
+    "extra_attribute_group1": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "wishlist_origin": "app",
+        "ecommerce_wishlist_id": "ecommerce system generated id",        
       },
-      "description": "string"
+      "description": "any additional attribute you want to add to wishlist"
     },
-    "additionalProp2": {
+    "retailer_defined_name_of_group": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "retailer_defined_attribute1": "user defined attribute value",
+        "another_attribute": "another value"
       },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
+      "description": "retailer defined properties and its values, flexible data model to add additional properties."
     }
   },
-  "customerId": "string",
-  "customerRef": "string",
-  "deleted": "true",
-  "description": "string",
-  "id": "string",
-  "isPrivate": "true",
-  "name": "string"
-  ,
-  "wishlistRef": "string"
+  "customerId": "twc-generated-customer-id", //either customerId or customerRef is mandatory
+  "customerRef": "retailers_customer_id",
+  "description": "wishlists description", // This field may not be used for private wishlist scenario. This field however may be key in a social shopping scenario.
+  "isPrivate": "true", //marking the wishlist private. not a mandatory field.
+  "name": "wishlist name",
+  "wishlistRef": "retailers wishlist id" // this is not a mandatory field. However, if set could be used to GET/UDPATE/DELETE wishlist using this reference Id.
 }
 ```
-<!-- </details> -->
 
 <summary>Response - 201 (created)</summary>
 
 ```json
 {
+  "id":"twc-generated-wishlist-id",
   "attributeGroups": {
-    "additionalProp1": {
+    "extra_attribute_group1": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "wishlist_origin": "app",
+        "ecommerce_wishlist_id": "ecommerce system generated id",        
       },
-      "description": "string"
+      "description": "any additional attribute you want to add to wishlist"
     },
-    "additionalProp2": {
+    "retailer_defined_name_of_group": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "retailer_defined_attribute1": "user defined attribute value",
+        "another_attribute": "another value"
       },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
+      "description": "retailer defined properties and its values, flexible data model to add additional properties."
     }
   },
-  "datePurchased": "2022-06-27T15:34:58.540Z",
-  "id": "string",
-  "product": {
-    "productId": "string",
-    "productRef": "string",
-    "selectedVariantId": "string",
-    "selectedVariantRef": "string"
-  },
-  "purchased": true,
-  "wishlistId": "string",
-  "wishlistItemRef": "string",
-  "createdTime": "2022-08-24T07:28:12.000+0000",
-  "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string",
-  "prerelease": "boolean",
-  "disableNotification" : "boolean"
+  "customerId": "twc-generated-customer-id",
+  "customerRef": "retailers_customer_id",
+  "description": "wishlists description",
+  "isPrivate": "true",
+  "name": "wishlist name",
+  "wishlistRef": "retailers wishlist id" 
 }
-
 ```
-
 
 HTTP Status Code:
 ``` 
@@ -250,18 +197,19 @@ HTTP Status Code:
 ```
 
 
-## Update a Wishlist
+#### UPDATE
+
 Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *This API is NOT used to update items on the wishlist*
 
 You can update by internal Wishlist ID or wishlistRef, which is the retailer's own ID (which, for example may be assigned in the ecommerce system)
 
 **THIS API IS DEPRECIATED.  PLEASE USE UDATE WISHLIST BY ID OR WISHLISTREF BELOW**
 
-Endpoint: ```/api/wishlists```
-
-Method: ``` PUT ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+| Endpoint| ```/api/wishlists```|
+|-----------|---------------|
+| Method    | PUT          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+|How to get access token| [Tenant Authentication](authenticationsvcApi.md)|
 
  <summary>Request Headers :</summary>
 
@@ -276,40 +224,29 @@ Sample Request:
 <!-- <details> -->
 ```json
 {
+  "id":"twc-generated-wishlist-id", // Either id or wishlistRef is mandatory to update a wishlist using this service.
   "attributeGroups": {
-    "additionalProp1": {
+    "extra_attribute_group1": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "wishlist_origin": "app",
+        "ecommerce_wishlist_id": "ecommerce system generated id",        
       },
-      "description": "string"
+      "description": "any additional attribute you want to add to wishlist"
     },
-    "additionalProp2": {
+    "retailer_defined_name_of_group": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "retailer_defined_attribute1": "user defined attribute value",
+        "another_attribute": "another value"
       },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
+      "description": "retailer defined properties and its values, flexible data model to add additional properties."
     }
   },
-  "customerId": "string",
-  "customerRef": "string",
-  "deleted": true,
-  "description": "string",
-  "id": "string",
-  "isPrivate": true,
-  "name": "string",
-  "wishlistRef": "string"
+  "customerId": "twc-generated-customer-id", //either customerId or customerRef is mandatory
+  "customerRef": "retailers_customer_id",
+  "description": "wishlists description", // This field may not be used for private wishlist scenario. This field however may be key in a social shopping scenario.
+  "isPrivate": "true", //marking the wishlist private. not a mandatory field.
+  "name": "wishlist name",
+  "wishlistRef": "retailers wishlist id" // Either id or wishlistRef is mandatory to update a wishlist using this service.
 }
 ```
 <!-- </details> -->
