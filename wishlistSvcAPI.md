@@ -16,9 +16,9 @@ A wishlist is created 'empty' and items added later, either one by one, or multi
 
 [**Wishlist API**](#wishlist-api)
 - [**Representations**](#representations)
-  - [Wishlist](#wishlist)
-  - [Wishlist Item](#wishlist-item)
-  - [Product](#product)
+  - [Wishlist](#wishlist-request)
+  - [Wishlist Item](#wishlistitem-request)
+  - [Product](#wishlistitem-product)
 - [**Endpoints**](#rest-endpoints)
   - [**Wishlist**](#wishlist-resource)
     - [Create](#create-a-wishlist)
@@ -54,7 +54,7 @@ A wishlist is created 'empty' and items added later, either one by one, or multi
 
 All requests or responses are JSON objects
 
-###  Wishlist Request
+### Wishlist Request
 |Field|Type|Description|
 |-----|----|-----------|
 |customerId|string| TWC generated unique ID of customer. Either customerId or customerRef is mandatory when creating wishlist|
@@ -66,7 +66,7 @@ All requests or responses are JSON objects
 |attributeGroups|object| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_origin":&nbsp;"app",<br>&emsp;&emsp;"ecommerce_wishlist_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
 
 
-###  Wishlist Response
+### Wishlist Response
 |Field|Type|Description|
 |-----|----|-----------|
 |id|string| TWC generated unique ID of the wishlist.|
