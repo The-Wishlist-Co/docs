@@ -970,10 +970,10 @@ Adds a sinble wishlist item into an existing wishlist.  The wishlist can be iden
 
 
 <details>
+ 
 <summary>Sample Request:</summary>
-
+ 
 ```json
-
 {
     "wishlistId": "67ccc612-0f1b-4d9d-b69e-d43511c6782d",
     "wishlistItemRef": "WISHITEM1111",
@@ -995,7 +995,7 @@ Adds a sinble wishlist item into an existing wishlist.  The wishlist can be iden
     }
 }
 ```
-
+ 
 </details>
 
 
