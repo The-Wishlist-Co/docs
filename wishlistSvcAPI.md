@@ -64,7 +64,7 @@ All requests or responses are JSON objects
 |name|string| Wishlists name given by customer|
 |wishlistRef|string| This is a reference Id given to wishlist by retailer. This field may be used to GET/UPDATE/DELETE wishlist|
 |isPrivate|boolean| making the wishlist private to customer|
-|attributeGroups|object| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_origin":&nbsp;"app",<br>&emsp;&emsp;"ecommerce_wishlist_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
+|attributeGroups|[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_origin":&nbsp;"app",<br>&emsp;&emsp;"ecommerce_wishlist_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
 
 
 ### Wishlist Response
@@ -78,9 +78,10 @@ All requests or responses are JSON objects
 |name|string| Wishlists name given by customer|
 |wishlistRef|string| This is a reference Id given to wishlist by retailer. This field may be used to GET/UPDATE/DELETE wishlist|
 |isPrivate|boolean| making the wishlist private to customer|
-|attributeGroups|object| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_origin":&nbsp;"app",<br>&emsp;&emsp;"ecommerce_wishlist_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
+|attributeGroups|[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_origin":&nbsp;"app",<br>&emsp;&emsp;"ecommerce_wishlist_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
 
 ###  WishlistItem Request
+
 | Field | Type | Description |
 |-----|----|-----------|
 |*addedFromCart*|boolean| This field is to mark that it was added from cart.|
@@ -91,7 +92,7 @@ All requests or responses are JSON objects
 |*prerelease*|boolean| This field indicates that customer is registering interest to a pre release item.|
 |*purchased*|boolean| This field indicates that the item has been purchased.|
 |*product*|[Product](#wishlistitem-product)| This field represents the field being added to item [product](#wishlistitem-product). This is a mandatory field.|
-|*attributeGroups*|[AttributeGroup](#attributegroups)| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_item_origin":&nbsp;"mobile_app",<br>&emsp;&emsp;"ecommerce_wishlist_item_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
+|*attributeGroups*|[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_item_origin":&nbsp;"mobile_app",<br>&emsp;&emsp;"ecommerce_wishlist_item_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
 
 ###  WishlistItem Product
 
@@ -272,49 +273,29 @@ Sample Request:
 
 ```json
 {
+  "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
   "attributeGroups": {
-    "additionalProp1": {
+    "extra_attribute_group1": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "wishlist_origin": "app",
+        "ecommerce_wishlist_id": "ecommerce system generated id",        
       },
-      "description": "string"
+      "description": "any additional attribute you want to add to wishlist"
     },
-    "additionalProp2": {
+    "retailer_defined_name_of_group": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "retailer_defined_attribute1": "user defined attribute value",
+        "another_attribute": "another value"
       },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
+      "description": "retailer defined properties and its values, flexible data model to add additional properties."
     }
   },
-  "datePurchased": "2022-06-27T15:35:39.044Z",
-  "id": "string",
-  "product": {
-    "oldVariantId": "string",
-    "productId": "string",
-    "productRef": "string",
-    "selectedVariantId": "string",
-    "selectedVariantRef": "string"
-  },
-  "purchased": true,
-  "wishlistId": "string",
-  "wishlistItemRef": "string",
-  "createdTime": "2022-08-24T07:28:12.000+0000",
-  "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string",
-  "prerelease": "boolean",
-  "disableNotification" : "boolean"
+  "wishlistRef": "17949",
+  "name": "Test wishlist 17949 creation",
+  "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+  "customerRef": "CUST16003",
+  "deleted": false,
+  "createdTime": "2023-05-01T00:02:38.048171Z",
 }
 ```
 
@@ -362,38 +343,29 @@ Sample Request:
 <!-- <details> -->
 ```json
 {
+  "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
   "attributeGroups": {
-    "additionalProp1": {
+    "extra_attribute_group1": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "wishlist_origin": "app",
+        "ecommerce_wishlist_id": "ecommerce system generated id",        
       },
-      "description": "string"
+      "description": "any additional attribute you want to add to wishlist"
     },
-    "additionalProp2": {
+    "retailer_defined_name_of_group": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "retailer_defined_attribute1": "user defined attribute value",
+        "another_attribute": "another value"
       },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
+      "description": "retailer defined properties and its values, flexible data model to add additional properties."
     }
   },
-  "deleted": true,
-  "description": "string",
-  "isPrivate": true,
-  "name": "string",
-  
-  "wishlistRef": "string"
+  "wishlistRef": "17949",
+  "name": "Test wishlist 17949 creation",
+  "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+  "customerRef": "CUST16003",
+  "deleted": false,
+  "createdTime": "2023-05-01T00:02:38.048171Z",
 }
 ```
 <!-- </details> -->
@@ -402,49 +374,29 @@ Sample Request:
 
 ```json
 {
+  "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
   "attributeGroups": {
-    "additionalProp1": {
+    "extra_attribute_group1": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "wishlist_origin": "app",
+        "ecommerce_wishlist_id": "ecommerce system generated id",        
       },
-      "description": "string"
+      "description": "any additional attribute you want to add to wishlist"
     },
-    "additionalProp2": {
+    "retailer_defined_name_of_group": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "retailer_defined_attribute1": "user defined attribute value",
+        "another_attribute": "another value"
       },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
+      "description": "retailer defined properties and its values, flexible data model to add additional properties."
     }
   },
-  "datePurchased": "2022-06-27T15:35:39.044Z",
-  "id": "string",
-  "product": {
-    "oldVariantId": "string",
-    "productId": "string",
-    "productRef": "string",
-    "selectedVariantId": "string",
-    "selectedVariantRef": "string"
-  },
-  "purchased": true,
-  "wishlistId": "string",
-  "wishlistItemRef": "string",
-  "createdTime": "2022-08-24T07:28:12.000+0000",
-  "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string",
-  "prerelease": "boolean",
-  "disableNotification" : "boolean"
+  "wishlistRef": "17949",
+  "name": "Test wishlist 17949 creation",
+  "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+  "customerRef": "CUST16003",
+  "deleted": false,
+  "createdTime": "2023-05-01T00:02:38.048171Z",
 }
 ```
 
@@ -491,37 +443,29 @@ Sample Request:
 <!-- <details> -->
 ```json
 {
+  "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
   "attributeGroups": {
-    "additionalProp1": {
+    "extra_attribute_group1": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "wishlist_origin": "app",
+        "ecommerce_wishlist_id": "ecommerce system generated id",        
       },
-      "description": "string"
+      "description": "any additional attribute you want to add to wishlist"
     },
-    "additionalProp2": {
+    "retailer_defined_name_of_group": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "retailer_defined_attribute1": "user defined attribute value",
+        "another_attribute": "another value"
       },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
+      "description": "retailer defined properties and its values, flexible data model to add additional properties."
     }
   },
-  "deleted": true,
-  "description": "string",
-  "isPrivate": true,
-  "name": "string",
-  "wishlistRef": "string"
+  "wishlistRef": "17949",
+  "name": "Test wishlist 17949 creation",
+  "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+  "customerRef": "CUST16003",
+  "deleted": false,
+  "createdTime": "2023-05-01T00:02:38.048171Z",
 }
 ```
 <!-- </details> -->
@@ -530,49 +474,29 @@ Sample Request:
 
 ```json
 {
+  "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
   "attributeGroups": {
-    "additionalProp1": {
+    "extra_attribute_group1": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "wishlist_origin": "app",
+        "ecommerce_wishlist_id": "ecommerce system generated id",        
       },
-      "description": "string"
+      "description": "any additional attribute you want to add to wishlist"
     },
-    "additionalProp2": {
+    "retailer_defined_name_of_group": {
       "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "retailer_defined_attribute1": "user defined attribute value",
+        "another_attribute": "another value"
       },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
+      "description": "retailer defined properties and its values, flexible data model to add additional properties."
     }
   },
-  "datePurchased": "2022-06-27T15:35:39.044Z",
-  "id": "string",
-  "product": {
-    "oldVariantId": "string",
-    "productId": "string",
-    "productRef": "string",
-    "selectedVariantId": "string",
-    "selectedVariantRef": "string"
-  },
-  "purchased": true,
-  "wishlistId": "string",
-  "wishlistItemRef": "string",
-  "createdTime": "2022-08-24T07:28:12.000+0000",
-  "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "wishlistRef": "string",
-  "prerelease": "boolean",
-  "disableNotification" : "boolean"
+  "wishlistRef": "17949",
+  "name": "Test wishlist 17949 creation",
+  "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+  "customerRef": "CUST16003",
+  "deleted": false,
+  "createdTime": "2023-05-01T00:02:38.048171Z",
 }
 ```
 
@@ -587,9 +511,6 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-
-
-
 
 ## Get Wishlist by id/wishlistRef
 Retrieves the wishlist and the wishlist items that belongs to the given Id and/or wishlistRef.  If the wishlist does not exist, this method returns a ResourceNotFound error.
