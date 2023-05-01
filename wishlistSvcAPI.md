@@ -23,21 +23,12 @@ A wishlist is created 'empty' and items added later, either one by one, or multi
   - [AttributeGroup](#attributegroup)
 - [**Endpoints**](#rest-endpoints)
   - [**Wishlist**](#wishlist-resource)
-    - [Create](#create-a-wishlist)
-    - [Create a Wishlist](#create-a-wishlist)
+    - [Create a wishlist](#ceate-a-wishlist)
     - [Update a Wishlist](#update-a-wishlist)
-    - [Update a Wishlist By ID](#update-a-wishlist-by-id)
-    - [Update a Wishlist By Ref](#update-a-wishlist-by-ref)
-    - [Get Wishlist by id/wishlistRef](#get-wishlist-by-idwishlistref)
-    - [Get Wishlist by Id](#get-wishlist-by-id)
-    - [Get Wishlist by Wishlist Reference](#get-wishlist-by-wishlist-reference)
-    - [Get Wishlist by CustomerId](#get-wishlist-by-customerid)
-    - [Get Wishlist by CustomerRef](#get-wishlist-by-customerref)
-    - [Get Wishlist By Customer ID or Ref](#get-wishlist-by-customer-id-or-ref)
-    - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
-    - [Delete Wishlist by ID](#delete-wishlist-by-id)
-    - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
-  - [**WishlistItem**](#wishlist-item-resource)
+    - [Get a Wishlist](#get-wishlist-for-customer)
+    - [Get customer wishlists](#get-customer-wishlists)
+    - [Delete Wishlist](#delete-wishlist)
+  - [**WishlistItem**](#wishlistitem)
     - [Create a Wishlist Item](#create-a-wishlist-item)
 - [Add  Wishlist Items](#add--wishlist-items)
   - [Upload multiple Wishlist Items](#upload-multiple-wishlist-items)
@@ -137,14 +128,14 @@ All requests or responses are JSON objects
 
 ## **Endpoints**
 ### **Wishlist**
-#### CREATE
-Creates a new wishlist.  Requires the customer to be created first.  
+#### Ceate a wishlist
+Creates a new wishlist. This API requires wishlist request to be passed to API. Customer must be created before creating a wishlist.
 
 | Endpoint| ```/api/wishlists```|
 |-----------|---------------|
 | Method    | POST          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
-|How to get access token| [Tenant Authentication](authenticationsvcApi.md)|
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 
 Sample Request:
@@ -179,7 +170,64 @@ Sample Request:
 
 ```json
 {
-  "id":"twc-generated-wishlist-id",
+    "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
+    "wishlistRef": "1111111",
+    "name": "An awesome wishlist",
+    "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+    "customerRef": "CUSTOMER1234",
+    "deleted": false,
+    "createdTime": "2023-05-01T00:02:38.048171Z",
+    "modifiedTime": "2023-05-01T00:02:38.048174Z",
+    "attributeGroups": {
+        "pos_attributes": {
+            "description": "POS related wishlist information",
+            "attributes": {
+                "created_in": "POS",
+                "staff_id": "STAFF111",
+                "POS_ref": "POS12341234",
+                "store_id": "STORE111"
+            }
+        }
+    }
+}
+```
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 201 Created
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+## Update a wishlist
+
+### Update Wishlist By ID
+Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *Note this API is NOT used to update items on the wishlist.*
+
+As this API uses Wishlist ID, then you can use it to update wishlistRef, which is the retailer's own wishlit ID (which, for example may be assigned in the ecommerce system)
+
+Endpoint: ```/api/wishlists/id={id}```
+
+
+| Endpoint| ```/api/wishlists/id={id}``` |
+|-----------|---------------|
+| Method    | PUT          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| url path variable |```id``` This is the TWC generated unique ID of the wishlist being updated. |
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
+
+
+Sample Request:
+
+<!-- <details> -->
+```json
+{
+  "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
   "attributeGroups": {
     "extra_attribute_group1": {
       "attributes": {
@@ -196,28 +244,140 @@ Sample Request:
       "description": "retailer defined properties and its values, flexible data model to add additional properties."
     }
   },
-  "customerId": "twc-generated-customer-id",
-  "customerRef": "retailers_customer_id",
-  "description": "wishlists description",
-  "isPrivate": "true",
-  "name": "wishlist name",
-  "wishlistRef": "retailers wishlist id" 
+  "wishlistRef": "17949",
+  "name": "Test wishlist 17949 creation",
+  "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+  "customerRef": "CUST16003",
+  "deleted": false,
+  "createdTime": "2023-05-01T00:02:38.048171Z",
+}
+```
+<!-- </details> -->
+
+<summary>Response - 200 (OK Updated)</summary>
+
+```json
+{
+  "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
+  "attributeGroups": {
+    "extra_attribute_group1": {
+      "attributes": {
+        "wishlist_origin": "app",
+        "ecommerce_wishlist_id": "ecommerce system generated id",        
+      },
+      "description": "any additional attribute you want to add to wishlist"
+    },
+    "retailer_defined_name_of_group": {
+      "attributes": {
+        "retailer_defined_attribute1": "user defined attribute value",
+        "another_attribute": "another value"
+      },
+      "description": "retailer defined properties and its values, flexible data model to add additional properties."
+    }
+  },
+  "wishlistRef": "17949",
+  "name": "Test wishlist 17949 creation",
+  "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+  "customerRef": "CUST16003",
+  "deleted": false,
+  "createdTime": "2023-05-01T00:02:38.048171Z",
 }
 ```
 
 HTTP Status Code:
 ``` 
 - 200 OK
-- 201 Created
-- 204 Deleted
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
-- 405 Invalid input
+- 400 Invalid input
 ```
 
+### Update Wishlist By Ref
+Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *Note this API is NOT used to update items on the wishlist.*
 
-#### UPDATE
+As this API uses wishlistRef, which is the retailer's own wishlit ID (which, for example may be assigned in the ecommerce system)
+
+| Endpoint| ```/api/wishlists/ref={ref}``` |
+|-----------|---------------|
+| Method    | PUT          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| url path variable |```ref``` This is the retailers reference ID of the wishlist being updated |
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
+
+
+Sample Request:
+
+<!-- <details> -->
+```json
+{
+  "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
+  "attributeGroups": {
+    "extra_attribute_group1": {
+      "attributes": {
+        "wishlist_origin": "app",
+        "ecommerce_wishlist_id": "ecommerce system generated id",        
+      },
+      "description": "any additional attribute you want to add to wishlist"
+    },
+    "retailer_defined_name_of_group": {
+      "attributes": {
+        "retailer_defined_attribute1": "user defined attribute value",
+        "another_attribute": "another value"
+      },
+      "description": "retailer defined properties and its values, flexible data model to add additional properties."
+    }
+  },
+  "wishlistRef": "17949",
+  "name": "Test wishlist 17949 creation",
+  "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+  "customerRef": "CUST16003",
+  "deleted": false,
+  "createdTime": "2023-05-01T00:02:38.048171Z",
+}
+```
+<!-- </details> -->
+
+<summary>Response - 200 (OK Updated)</summary>
+
+```json
+{
+  "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
+  "attributeGroups": {
+    "extra_attribute_group1": {
+      "attributes": {
+        "wishlist_origin": "app",
+        "ecommerce_wishlist_id": "ecommerce system generated id",        
+      },
+      "description": "any additional attribute you want to add to wishlist"
+    },
+    "retailer_defined_name_of_group": {
+      "attributes": {
+        "retailer_defined_attribute1": "user defined attribute value",
+        "another_attribute": "another value"
+      },
+      "description": "retailer defined properties and its values, flexible data model to add additional properties."
+    }
+  },
+  "wishlistRef": "17949",
+  "name": "Test wishlist 17949 creation",
+  "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+  "customerRef": "CUST16003",
+  "deleted": false,
+  "createdTime": "2023-05-01T00:02:38.048171Z",
+}
+```
+
+HTTP Status Code:
+``` 
+- 200 OK
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 400 Invalid input
+```
+
+### Update wishlist with either ID/Ref
 
 Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *This API is NOT used to update items on the wishlist*
 
@@ -230,13 +390,6 @@ You can update by internal Wishlist ID or wishlistRef, which is the retailer's o
 | Method    | PUT          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 |How to get access token| [Tenant Authentication](authenticationsvcApi.md)|
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
 
 
 Sample Request:
@@ -305,339 +458,14 @@ Sample Request:
 HTTP Status Code:
 ``` 
 - 200 OK
-- 201 Created
-- 204 Deleted
+- 400 Invalid input
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
-- 405 Invalid input
 ```
 
-
-
-## Update a Wishlist By ID
-Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *Note this API is NOT used to update items on the wishlist.*
-
-As this API uses Wishlist ID, then you can use it to update wishlistRef, which is the retailer's own wishlit ID (which, for example may be assigned in the ecommerce system)
-
-Endpoint: ```/api/wishlists/id={id}```
-
-Method: ``` PUT ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-Path Variable:
-
-```
-id - Wishlist ID
-```
-
-
-Sample Request:
-
-<!-- <details> -->
-```json
-{
-  "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
-  "attributeGroups": {
-    "extra_attribute_group1": {
-      "attributes": {
-        "wishlist_origin": "app",
-        "ecommerce_wishlist_id": "ecommerce system generated id",        
-      },
-      "description": "any additional attribute you want to add to wishlist"
-    },
-    "retailer_defined_name_of_group": {
-      "attributes": {
-        "retailer_defined_attribute1": "user defined attribute value",
-        "another_attribute": "another value"
-      },
-      "description": "retailer defined properties and its values, flexible data model to add additional properties."
-    }
-  },
-  "wishlistRef": "17949",
-  "name": "Test wishlist 17949 creation",
-  "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
-  "customerRef": "CUST16003",
-  "deleted": false,
-  "createdTime": "2023-05-01T00:02:38.048171Z",
-}
-```
-<!-- </details> -->
-
-<summary>Response - 200 (OK Updated)</summary>
-
-```json
-{
-  "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
-  "attributeGroups": {
-    "extra_attribute_group1": {
-      "attributes": {
-        "wishlist_origin": "app",
-        "ecommerce_wishlist_id": "ecommerce system generated id",        
-      },
-      "description": "any additional attribute you want to add to wishlist"
-    },
-    "retailer_defined_name_of_group": {
-      "attributes": {
-        "retailer_defined_attribute1": "user defined attribute value",
-        "another_attribute": "another value"
-      },
-      "description": "retailer defined properties and its values, flexible data model to add additional properties."
-    }
-  },
-  "wishlistRef": "17949",
-  "name": "Test wishlist 17949 creation",
-  "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
-  "customerRef": "CUST16003",
-  "deleted": false,
-  "createdTime": "2023-05-01T00:02:38.048171Z",
-}
-```
-
-
-HTTP Status Code:
-``` 
-- 200 OK
-- 201 Created
-- 204 Deleted
-- 401 Unauthorized
-- 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
-```
-
-
-## Update a Wishlist By Ref
-Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *Note this API is NOT used to update items on the wishlist.*
-
-As this API uses wishlistRef, which is the retailer's own wishlit ID (which, for example may be assigned in the ecommerce system)
-
-Endpoint: ```/api/wishlists/ref={ref}```
-
-Method: ``` PUT ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-Path Variable:
-
-```
-ref - Wishlist Ref
-```
-
-
-Sample Request:
-
-<!-- <details> -->
-```json
-{
-  "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
-  "attributeGroups": {
-    "extra_attribute_group1": {
-      "attributes": {
-        "wishlist_origin": "app",
-        "ecommerce_wishlist_id": "ecommerce system generated id",        
-      },
-      "description": "any additional attribute you want to add to wishlist"
-    },
-    "retailer_defined_name_of_group": {
-      "attributes": {
-        "retailer_defined_attribute1": "user defined attribute value",
-        "another_attribute": "another value"
-      },
-      "description": "retailer defined properties and its values, flexible data model to add additional properties."
-    }
-  },
-  "wishlistRef": "17949",
-  "name": "Test wishlist 17949 creation",
-  "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
-  "customerRef": "CUST16003",
-  "deleted": false,
-  "createdTime": "2023-05-01T00:02:38.048171Z",
-}
-```
-<!-- </details> -->
-
-<summary>Response - 200 (OK Updated)</summary>
-
-```json
-{
-  "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
-  "attributeGroups": {
-    "extra_attribute_group1": {
-      "attributes": {
-        "wishlist_origin": "app",
-        "ecommerce_wishlist_id": "ecommerce system generated id",        
-      },
-      "description": "any additional attribute you want to add to wishlist"
-    },
-    "retailer_defined_name_of_group": {
-      "attributes": {
-        "retailer_defined_attribute1": "user defined attribute value",
-        "another_attribute": "another value"
-      },
-      "description": "retailer defined properties and its values, flexible data model to add additional properties."
-    }
-  },
-  "wishlistRef": "17949",
-  "name": "Test wishlist 17949 creation",
-  "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
-  "customerRef": "CUST16003",
-  "deleted": false,
-  "createdTime": "2023-05-01T00:02:38.048171Z",
-}
-```
-
-
-HTTP Status Code:
-``` 
-- 200 OK
-- 201 Created
-- 204 Deleted
-- 401 Unauthorized
-- 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
-```
-
-## Get Wishlist by id/wishlistRef
-Retrieves the wishlist and the wishlist items that belongs to the given Id and/or wishlistRef.  If the wishlist does not exist, this method returns a ResourceNotFound error.
-
-The returned item array is paginated - 20 default (50 maximum).  The API will respond with the item count in the page, and the itemID the for the last item (lastitemID) returned for that response, which should then be used for the  subsequent API call to retrieve the next page.  
-
-
-Endpoint: ```/api/wishlists/```
-
-Method: ``` GET ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-
-Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference , pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request  `
-
-<summary>Response - 200 (OK)</summary>
-
-```json
-{
-  "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
-  },
-  "customerId": "string",
-  "customerRef": "string",
-  "resultCount": 4,
-  "lastEvaluatedId": "string",
-  "deleted": true,
-  "description": "string",
-  "id": "string",
-  "isPrivate": true,
-  "name": "string",
-  "wishlistItems": [
-    {
-      "attributeGroups": {
-        "additionalProp1": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp2": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp3": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        }
-      },
-      "datePurchased": "2022-06-27T15:37:28.595Z",
-      "id": "string",
-      "product": {
-        "productId": "string",
-        "productRef": "string",
-        "selectedVariantId": "string",
-        "selectedVariantRef": "string"
-      },
-      "purchased": true,
-      "addedFromCart": true,
-      "wishlistId": "string",
-      "wishlistItemRef": "string",
-      "createdTime": "2022-08-24T07:28:12.000+0000",
-      "modifiedTime": "2022-08-24T07:30:52.051+0000",
-      "wishlistRef": "string",
-      "prerelease": "boolean",
-      "disableNotification" : "boolean"
-    }
-  ],
-  "wishlistRef": "string"
-}
-```        
-
-HTTP Status Code:
-``` 
-- 200 OK
-- 201 Created
-- 204 Deleted
-- 401 Unauthorized
-- 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
-```
-
-## Get Wishlist by Id
+## Update a wishlist
+### Get Wishlist by Id
 
 Returns the wishlist that matches the given internal TWC Platform identifier, along with the wishlist items.
 
@@ -645,506 +473,247 @@ The returned item array is paginated - 20 default (50 maximum).  The API will re
 
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
-Endpoint: ```/api/wishlists/{id}```
-
-Method: ``` GET ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
+| Endpoint| ```/api/wishlists/{id}```|
+|-----------|---------------|
+| Method    | GET          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| Path variable | ```id``` TWC generated unique ID of the wishlist |
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 
-Path Parameter: `Id  : Wishlist Id , pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request`
+| Query Parameters | What is it for ? |
+|---|---|
+| ```pageSize``` | This parameter will determine the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
+| ```lastItemId``` | This parameter will determine which items to return. API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform API to respond items with ID greater than, but excluding the provided value. |
 
 <summary>Response - 200 (OK)</summary>
 
 ```json
 {
-  "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
-  },
-  "customerId": "string",
-  "customerRef": "string",
-  "resultCount": 4,
-  "lastEvaluatedId": "string",
-  "deleted": true,
-  "description": "string",
-  "id": "string",
-  "isPrivate": true,
-  "name": "string",
-  "wishlistItems": [
-    {
-      "attributeGroups": {
-        "additionalProp1": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp2": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp3": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
+    "id": "67ccc612-0f1b-4d9d-b69e-d43511c6782d",
+    "wishlistRef": "24639",
+    "name": "Test wishlist 24639 creation",
+    "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+    "customerRef": "CUST16003",
+    "deleted": false,
+    "createdTime": "2023-05-01T02:37:00.543594Z",
+    "modifiedTime": "2023-05-01T02:37:00.543597Z",
+    "lastEvaluatedItemId": "9a5aee4a-f20a-4478-ab4e-02d8bf8c2837",
+    "itemCount": 1,
+    "wishlistItems": [
+        {
+            "id": "9a5aee4a-f20a-4478-ab4e-02d8bf8c2837",
+            "wishlistItemRef": "WI200013716",
+            "purchased": false,
+            "wishlistId": "67ccc612-0f1b-4d9d-b69e-d43511c6782d",
+            "product": {
+                "productId": "ede20e6c-88c8-41d9-b0a5-a631871b23d2",
+                "productRef": "100019951",
+                "selectedVariantId": "5396d084-4346-44d2-9d87-b2015c1d7b42",
+                "selectedVariantRef": "4690"
+            },
+            "createdTime": "2023-05-01T02:37:22.407387Z",
+            "modifiedTime": "2023-05-01T02:37:22.407390Z",
+            "attributeGroups": {
+                "POS_attributes": {
+                    "description": "POS related attidional information",
+                    "attributes": {
+                        "POS_ref": "POS001",
+                        "store_id": "STORE001"
+                    }
+                }
+            },
+            "addedFromCart": false,
+            "prerelease": false,
+            "disableNotification": false
         }
-      },
-      "datePurchased": "2022-06-27T15:37:28.595Z",
-      "id": "string",
-      "product": {
-        "productId": "string",
-        "productRef": "string",
-        "selectedVariantId": "string",
-        "selectedVariantRef": "string"
-      },
-      "purchased": true,
-      "addedFromCart": true,
-      "wishlistId": "string",
-      "wishlistItemRef": "string",
-      "createdTime": "2022-08-24T07:28:12.000+0000",
-      "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  
-      "wishlistRef": "string",
-      "prerelease": "boolean",
-      "disableNotification" : "boolean"
+    ],
+    "attributeGroups": {
+        "POS_attributes": {
+            "description": "POS related attidional information",
+            "attributes": {
+                "STAFF_ID": "STAFF001",
+                "POS_ref": "POS001",
+                "store_id": "STORE001"
+            }
+        }
     }
-  ],
-  "wishlistRef": "string"
 }
 ```        
 
 HTTP Status Code:
 ``` 
 - 200 OK
-- 201 Created
-- 204 Deleted
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
-- 405 Invalid input
 ```
 
-## Get Wishlist by Wishlist Reference
+### Get Wishlist by Wishlist Reference
 Returns the wishlist that matches the provided wishlistRef (which is the retailer's own wishlist identifier), along with the wishlist items.
 
 The returned item array is paginated - 20 default (50 maximum).  The API will respond with the item count in the page, and the itemID the for the last item (lastitemID) returned for that response, which should then be used for the  subsequent API call to retrieve the next page.  
 
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
-Endpoint: ```/api/wishlists/{wishlistRef}/byref```
-
-Method: ``` GET ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
+| Endpoint| ```/api/wishlists/{wishlistRef}/byref``` |
+|-----------|---------------|
+| Method    | GET          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| Path variable | ```wishlistRef``` retailer assigned reference id of wishlist |
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 
-Path Parameter: `wishlistRef : Wishlist Reference , pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request`
+| Query Parameters | What is it for ? |
+|---|---|
+| ```pageSize``` | This parameter will determine the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
+| ```lastItemId``` | This parameter will determine which items to return. API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform API to respond items with ID greater than, but excluding the provided value. |
 
 <summary>Response - 200 (OK)</summary>
 
 ```json
 {
-  "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
-  },
-  "customerId": "string",
-  "customerRef": "string",
-  "resultCount": 4,
-  "lastEvaluatedId": "string",
-  "deleted": true,
-  "description": "string",
-  "id": "string",
-  "isPrivate": true,
-  "name": "string",
-  "wishlistItems": [
-    {
-      "attributeGroups": {
-        "additionalProp1": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp2": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
-        },
-        "additionalProp3": {
-          "attributes": {
-            "additionalProp1": "string",
-            "additionalProp2": "string",
-            "additionalProp3": "string"
-          },
-          "description": "string"
+    "id": "67ccc612-0f1b-4d9d-b69e-d43511c6782d",
+    "wishlistRef": "24639",
+    "name": "Test wishlist 24639 creation",
+    "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+    "customerRef": "CUST16003",
+    "deleted": false,
+    "createdTime": "2023-05-01T02:37:00.543594Z",
+    "modifiedTime": "2023-05-01T02:37:00.543597Z",
+    "lastEvaluatedItemId": "9a5aee4a-f20a-4478-ab4e-02d8bf8c2837",
+    "itemCount": 1,
+    "wishlistItems": [
+        {
+            "id": "9a5aee4a-f20a-4478-ab4e-02d8bf8c2837",
+            "wishlistItemRef": "WI200013716",
+            "purchased": false,
+            "wishlistId": "67ccc612-0f1b-4d9d-b69e-d43511c6782d",
+            "product": {
+                "productId": "ede20e6c-88c8-41d9-b0a5-a631871b23d2",
+                "productRef": "100019951",
+                "selectedVariantId": "5396d084-4346-44d2-9d87-b2015c1d7b42",
+                "selectedVariantRef": "4690"
+            },
+            "createdTime": "2023-05-01T02:37:22.407387Z",
+            "modifiedTime": "2023-05-01T02:37:22.407390Z",
+            "attributeGroups": {
+                "POS_attributes": {
+                    "description": "POS related attidional information",
+                    "attributes": {
+                        "POS_ref": "POS001",
+                        "store_id": "STORE001"
+                    }
+                }
+            },
+            "addedFromCart": false,
+            "prerelease": false,
+            "disableNotification": false
         }
-      },
-      "datePurchased": "2022-06-27T15:37:28.595Z",
-      "id": "string",
-      "product": {
-        "productId": "string",
-        "productRef": "string",
-        "selectedVariantId": "string",
-        "selectedVariantRef": "string"
-      },
-      "purchased": true,
-      "addedFromCart": true,
-      "wishlistId": "string",
-      "wishlistItemRef": "string",
-      "createdTime": "2022-08-24T07:28:12.000+0000",
-      "modifiedTime": "2022-08-24T07:30:52.051+0000",
-      "wishlistRef": "string",
-      "prerelease": "boolean",
-      "disableNotification" : "boolean"
+    ],
+    "attributeGroups": {
+        "POS_attributes": {
+            "description": "POS related attidional information",
+            "attributes": {
+                "STAFF_ID": "STAFF001",
+                "POS_ref": "POS001",
+                "store_id": "STORE001"
+            }
+        }
     }
-  ],
-  "wishlistRef": "string"
 }
 ```        
 
 HTTP Status Code:
 ``` 
 - 200 OK
-- 201 Created
-- 204 Deleted
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
-- 405 Invalid input
 ```
 
-## Get Wishlist by CustomerId
-Returns the collection of wishlists that belong to the given customer id (Customer ID is the TWC internal identifier).  
+### Get Wishlist by id/wishlistRef
+Retrieves the wishlist and the wishlist items that belongs to the given Id and/or wishlistRef.  If the wishlist does not exist, this method returns a ResourceNotFound error.
 
-The returned list is paginated - 20 default (50 maximum).  The API will respond with the number of wishlists returned in the page, and the wishlistID for the for the last wishlist returned for that response, which should then be used for the  subsequent API call to retrieve the next page.  
+The returned item array is paginated - 20 default (50 maximum).  The API will respond with the item count in the page, and the itemID the for the last item (lastitemID) returned for that response, which should then be used for the  subsequent API call to retrieve the next page.  
 
-If no wishlists exist, this method returns a ResourceNotFound error.
+| Endpoint| ```/api/wishlists/```|
+|-----------|---------------|
+| Method    | GET          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-Endpoint: ```/api/wishlists/customer/{customerId}```
-
-Method: ``` GET ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-Path Variable: `customerId - Unique Customer Id, pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request`
+| Query Parameters | What is it for ? |
+|---|---|
+| ```id``` | This is the TWC system generated unique wishlist ID. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will query database to for wishlists by ID. |
+| ```wishlistRef``` | This is the retailer assigned unique wishlist reference ID. e.g: ```WISH0001```. API will query database to for wishlists by reference ID. |
+| ```pageSize``` | This parameter will determine the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
+| ```lastItemId``` | This parameter will determine which items to return. API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform API to respond items with ID greater than, but excluding the provided value. |
 
 <summary>Response - 200 (OK)</summary>
 
 ```json
-[
-  {
-    "attributeGroups": {
-      "additionalProp1": {
-        "attributes": {
-          "additionalProp1": "string",
-          "additionalProp2": "string",
-          "additionalProp3": "string"
-        },
-        "description": "string"
-      },
-      "additionalProp2": {
-        "attributes": {
-          "additionalProp1": "string",
-          "additionalProp2": "string",
-          "additionalProp3": "string"
-        },
-        "description": "string"
-      },
-      "additionalProp3": {
-        "attributes": {
-          "additionalProp1": "string",
-          "additionalProp2": "string",
-          "additionalProp3": "string"
-        },
-        "description": "string"
-      }
-    },
-    "customerId": "string",
-    "customerRef": "string",
-    "deleted": true,
-    "description": "string",
-    "id": "string",
-    "isPrivate": true,
-    "name": "string",
-    "resultCount": 4,
-    "lastEvaluatedId": "string",
+{
+    "id": "67ccc612-0f1b-4d9d-b69e-d43511c6782d",
+    "wishlistRef": "24639",
+    "name": "Test wishlist 24639 creation",
+    "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+    "customerRef": "CUST16003",
+    "deleted": false,
+    "createdTime": "2023-05-01T02:37:00.543594Z",
+    "modifiedTime": "2023-05-01T02:37:00.543597Z",
+    "lastEvaluatedItemId": "9a5aee4a-f20a-4478-ab4e-02d8bf8c2837",
+    "itemCount": 1,
     "wishlistItems": [
-      {
-        "attributeGroups": {
-          "additionalProp1": {
-            "attributes": {
-              "additionalProp1": "string",
-              "additionalProp2": "string",
-              "additionalProp3": "string"
+        {
+            "id": "9a5aee4a-f20a-4478-ab4e-02d8bf8c2837",
+            "wishlistItemRef": "WI200013716",
+            "purchased": false,
+            "wishlistId": "67ccc612-0f1b-4d9d-b69e-d43511c6782d",
+            "product": {
+                "productId": "ede20e6c-88c8-41d9-b0a5-a631871b23d2",
+                "productRef": "100019951",
+                "selectedVariantId": "5396d084-4346-44d2-9d87-b2015c1d7b42",
+                "selectedVariantRef": "4690"
             },
-            "description": "string"
-          },
-          "additionalProp2": {
-            "attributes": {
-              "additionalProp1": "string",
-              "additionalProp2": "string",
-              "additionalProp3": "string"
+            "createdTime": "2023-05-01T02:37:22.407387Z",
+            "modifiedTime": "2023-05-01T02:37:22.407390Z",
+            "attributeGroups": {
+                "POS_attributes": {
+                    "description": "POS related attidional information",
+                    "attributes": {
+                        "POS_ref": "POS001",
+                        "store_id": "STORE001"
+                    }
+                }
             },
-            "description": "string"
-          },
-          "additionalProp3": {
-            "attributes": {
-              "additionalProp1": "string",
-              "additionalProp2": "string",
-              "additionalProp3": "string"
-            },
-            "description": "string"
-          }
-        },
-        "datePurchased": "2022-06-27T15:38:01.546Z",
-        "id": "string",
-        "product": {
-          "productId": "string",
-          "productRef": "string",
-          "selectedVariantId": "string",
-          "selectedVariantRef": "string"
-        },
-        "purchased": true,
-        "addedFromCart": true,
-        "wishlistId": "string",
-        "wishlistItemRef": "string",
-        "createdTime": "2022-08-24T07:28:12.000+0000",
-        "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  
-        "wishlistRef": "string",
-        "prerelease": "boolean",
-        "disableNotification" : "boolean"
-      }
+            "addedFromCart": false,
+            "prerelease": false,
+            "disableNotification": false
+        }
     ],
-    "createdTime": "2022-08-24T07:28:12.000+0000",
-    "modifiedTime": "2022-08-24T07:30:52.051+0000",
-    "wishlistRef": "string"
-  }
-]
-```
+    "attributeGroups": {
+        "POS_attributes": {
+            "description": "POS related attidional information",
+            "attributes": {
+                "STAFF_ID": "STAFF001",
+                "POS_ref": "POS001",
+                "store_id": "STORE001"
+            }
+        }
+    }
+}
+```        
 
 HTTP Status Code:
 ``` 
 - 200 OK
-- 201 Created
-- 204 Deleted
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
-- 405 Invalid input
 ```
 
-## Get Wishlist by CustomerRef
-Returns the collection of wishlists that belong to the given customer reference (which is the retailer's own customer identifier)
-
-The returned list is paginated - 20 default (50 maximum).  The API will respond with the number of wishlists returned in the page, and the wishlistID for the for the last wishlist returned for that response, which should then be used for the  subsequent API call to retrieve the next page.  
-
-If no wishlists exist, this method returns a ResourceNotFound error.
-
-Endpoint: ```/api/wishlists/customer/{customerRef}/byref```
-
-Method: ``` GET ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-Path Variable: `customerRef - Unique Customer Ref , pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request`
-
-<summary>Response - 200 (OK)</summary>
-
-```json
-[
-  {
-    "attributeGroups": {
-      "additionalProp1": {
-        "attributes": {
-          "additionalProp1": "string",
-          "additionalProp2": "string",
-          "additionalProp3": "string"
-        },
-        "description": "string"
-      },
-      "additionalProp2": {
-        "attributes": {
-          "additionalProp1": "string",
-          "additionalProp2": "string",
-          "additionalProp3": "string"
-        },
-        "description": "string"
-      },
-      "additionalProp3": {
-        "attributes": {
-          "additionalProp1": "string",
-          "additionalProp2": "string",
-          "additionalProp3": "string"
-        },
-        "description": "string"
-      }
-    },
-    "customerId": "string",
-    "customerRef": "string",
-    "deleted": true,
-    "description": "string",
-    "id": "string",
-    "isPrivate": true,
-    "name": "string",
-    "resultCount": 4,
-    "lastEvaluatedId": "string",
-    "wishlistItems": [
-      {
-        "attributeGroups": {
-          "additionalProp1": {
-            "attributes": {
-              "additionalProp1": "string",
-              "additionalProp2": "string",
-              "additionalProp3": "string"
-            },
-            "description": "string"
-          },
-          "additionalProp2": {
-            "attributes": {
-              "additionalProp1": "string",
-              "additionalProp2": "string",
-              "additionalProp3": "string"
-            },
-            "description": "string"
-          },
-          "additionalProp3": {
-            "attributes": {
-              "additionalProp1": "string",
-              "additionalProp2": "string",
-              "additionalProp3": "string"
-            },
-            "description": "string"
-          }
-        },
-        "datePurchased": "2022-06-27T15:43:34.415Z",
-        "id": "string",
-        "product": {
-          "productId": "string",
-          "productRef": "string",
-          "selectedVariantId": "string",
-          "selectedVariantRef": "string"
-        },
-        "purchased": true,
-        "addedFromCart": true,
-        "wishlistId": "string",
-        "wishlistItemRef": "string",
-        "createdTime": "2022-08-24T07:28:12.000+0000",
-        "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  
-        "wishlistRef": "string",
-        "prerelease": "boolean",
-        "disableNotification" : "boolean"
-      }
-    ],
-    "createdTime": "2022-08-24T07:28:12.000+0000",
-    "modifiedTime": "2022-08-24T07:30:52.051+0000",
-    "wishlistRef": "string"
-  }
-]
-```
-
-
-HTTP Status Code:
-``` 
-- 200 OK
-- 201 Created
-- 204 Deleted
-- 401 Unauthorized
-- 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
-```
-
-## Get Wishlist By Customer ID or Ref
+## Get customer wishlists
 
 Returns the collection of wishlists that belong to either the internal TWC customer Id, or the retailer's own customerRef.
 
@@ -1152,114 +721,97 @@ The returned list is paginated - 20 default (50 maximum).  The API will respond 
 
 If no wishlists exist, this method returns a ResourceNotFound error.
 
-Endpoint: ```/api/wishlists/lookup```
 
-Method: ``` GET ```
+| Endpoint| ```/api/wishlists/lookup```|
+|-----------|---------------|
+| Method    | GET          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-Path Variable: `customerId - Unique Customer Id,customerRef: Unique Customer Ref, pageSize: Number of items in the page ,lastItemId: Last evaluated id from the previous request`
+| Query Parameters | What is it for ? |
+|---|---|
+| ```customerId``` | This is the TWC generated unique customer ID. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will query database to for wishlists that belong to customer with the given ID. |
+| ```customerRef``` | This is the retailer assigned unique customer reference ID. e.g: ```CUST1111```. API will query database to for wishlists that belong to customer with the given reference ID. |
+| ```pageSize``` | This parameter will determine the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
+| ```lastItemId``` | This parameter will determine which items to return. API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform API to respond items with ID greater than, but excluding the provided value. |
 
 <summary>Response - 200 (OK)</summary>
 
 ```json
 {
-    "resultCount": 4,
-    "lastEvaluatedId": "string",
+    "wishlistCount": 2,
+    "lastEvaluatedWishlistId": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
     "wishlist": [
         {
-            "attributeGroups": {
-                "additionalProp1": {
-                    "attributes": {
-                        "additionalProp1": "string",
-                        "additionalProp2": "string",
-                        "additionalProp3": "string"
-                    },
-                    "description": "string"
-                },
-                "additionalProp2": {
-                    "attributes": {
-                        "additionalProp1": "string",
-                        "additionalProp2": "string",
-                        "additionalProp3": "string"
-                    },
-                    "description": "string"
-                },
-                "additionalProp3": {
-                    "attributes": {
-                        "additionalProp1": "string",
-                        "additionalProp2": "string",
-                        "additionalProp3": "string"
-                    },
-                    "description": "string"
-                }
-            },
-            "customerId": "string",
-            "customerRef": "string",
-            "deleted": true,
-            "description": "string",
-            "id": "string",
-            "isPrivate": true,
-            "name": "string",
-            "resultCount": 4,
-            "lastEvaluatedId": "string",
+            "id": "67ccc612-0f1b-4d9d-b69e-d43511c6782d",
+            "wishlistRef": "24639",
+            "name": "Test wishlist 24639 creation",
+            "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+            "customerRef": "CUST16003",
+            "deleted": false,
+            "createdTime": "2023-05-01T02:37:00.543594Z",
+            "modifiedTime": "2023-05-01T02:37:00.543597Z",
+            "lastEvaluatedItemId": "9a5aee4a-f20a-4478-ab4e-02d8bf8c2837",
+            "itemCount": 1,
             "wishlistItems": [
                 {
+                    "id": "9a5aee4a-f20a-4478-ab4e-02d8bf8c2837",
+                    "wishlistItemRef": "WI200013716",
+                    "purchased": false,
+                    "wishlistId": "67ccc612-0f1b-4d9d-b69e-d43511c6782d",
+                    "product": {
+                        "productId": "ede20e6c-88c8-41d9-b0a5-a631871b23d2",
+                        "productRef": "100019951",
+                        "selectedVariantId": "5396d084-4346-44d2-9d87-b2015c1d7b42",
+                        "selectedVariantRef": "4690"
+                    },
+                    "createdTime": "2023-05-01T02:37:22.407387Z",
+                    "modifiedTime": "2023-05-01T02:37:22.407390Z",
                     "attributeGroups": {
-                        "additionalProp1": {
+                        "POS_attributes": {
+                            "description": "POS related attidional information",
                             "attributes": {
-                                "additionalProp1": "string",
-                                "additionalProp2": "string",
-                                "additionalProp3": "string"
-                            },
-                            "description": "string"
-                        },
-                        "additionalProp2": {
-                            "attributes": {
-                                "additionalProp1": "string",
-                                "additionalProp2": "string",
-                                "additionalProp3": "string"
-                            },
-                            "description": "string"
-                        },
-                        "additionalProp3": {
-                            "attributes": {
-                                "additionalProp1": "string",
-                                "additionalProp2": "string",
-                                "additionalProp3": "string"
-                            },
-                            "description": "string"
+                                "POS_ref": "POS001",
+                                "store_id": "STORE001"
+                            }
                         }
                     },
-                    "datePurchased": "2022-06-27T15:43:34.415Z",
-                    "id": "string",
-                    "product": {
-                        "productId": "string",
-                        "productRef": "string",
-                        "selectedVariantId": "string",
-                        "selectedVariantRef": "string"
-                    },
-                    "purchased": true,
-                    "addedFromCart": true,
-                    "wishlistId": "string",
-                    "wishlistItemRef": "string",
-                    "createdTime": "2022-08-24T07:28:12.000+0000",
-                    "modifiedTime": "2022-08-24T07:30:52.051+0000",
-                    "wishlistRef": "string",
-                    "prerelease": "boolean",
-                    "disableNotification" : "boolean"
+                    "addedFromCart": false,
+                    "prerelease": false,
+                    "disableNotification": false
                 }
             ],
-            "createdTime": "2022-08-24T07:28:12.000+0000",
-            "modifiedTime": "2022-08-24T07:30:52.051+0000",
-            "wishlistRef": "string"
+            "attributeGroups": {
+                "POS_attributes": {
+                    "description": "POS related attidional information",
+                    "attributes": {
+                        "STAFF_ID": "STAFF001",
+                        "POS_ref": "POS001",
+                        "store_id": "STORE001"
+                    }
+                }
+            }
+        },
+        {
+            "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
+            "wishlistRef": "17949",
+            "name": "Test wishlist 17949 creation",
+            "customerId": "93847020-4c74-4239-9310-58d1c91cc1a7",
+            "customerRef": "CUST16003",
+            "deleted": false,
+            "createdTime": "2023-05-01T00:02:38.048171Z",
+            "modifiedTime": "2023-05-01T00:02:38.048174Z",
+            "wishlistItems": [],
+            "attributeGroups": {
+                "POS_attributes": {
+                    "description": "POS related attidional information",
+                    "attributes": {
+                        "STAFF_ID": "STAFF001",
+                        "POS_ref": "POS001",
+                        "store_id": "STORE001"
+                    }
+                }
+            }
         }
     ]
 }
@@ -1269,48 +821,37 @@ Path Variable: `customerId - Unique Customer Id,customerRef: Unique Customer Ref
 HTTP Status Code:
 ``` 
 - 200 OK
-- 201 Created
-- 204 Deleted
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
-- 405 Invalid input
 ```
 
-
-## Delete Wishlist by ID/Ref
+## Delete Wishlist
+### Delete Wishlist by ID/Ref
 Delete Wishlist marks the wishlist as deleted and produces an HTTP response confirming the action.  The Wishlist is identified either by the TWC Internal wishlist Id or the retailers own wishlistRef
 
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
-Endpoint: ```/api/wishlists```
+| Endpoint| ```/api/wishlists/```|
+|-----------|---------------|
+| Method    | DELETE          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-Method: ``` DELETE ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-
-Request Parameters: `Id  : Wishlist Id ,wishlistRef : Wishlist Reference `
+| Query Parameters | What is it for ? |
+|---|---|
+| ```id``` | This is the TWC system generated unique wishlist ID. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will remove the wishlists for the given ID. Either ```id``` or ```wishlistRef``` must be provided with this API call.|
+| ```wishlistRef``` | This is the retailer assigned unique wishlist reference ID. e.g: ```WISH0001```. API will remove the wishlists for the given retailer wishlist reference ID. Either ```id``` or ```wishlistRef``` must be provided with this API call.|
 
 <summary>Response - 204 (Deleted)</summary> 
 
 
 HTTP Status Code:
 ``` 
-- 200 OK
-- 201 Created
 - 204 Deleted
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
-- 405 Invalid input
 ```
 
 ## Delete Wishlist by ID
@@ -1318,76 +859,56 @@ Delete Wishlist marks the matching wishlist as deleted and produces an HTTP resp
 
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
-Endpoint: ```/api/wishlists/{id}```
+| Endpoint| ```/api/wishlists/{id}```|
+|-----------|---------------|
+| Method    | DELETE          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-Method: ``` DELETE ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-
-Path Parameter: `Id  : Wishlist Id `
+| Path Parameters | What is it for ? |
+|---|---|
+| ```id``` | This is the TWC system generated unique wishlist ID. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will remove the wishlists for the given ID.|
 
 <summary>Response - 204 (Deleted)</summary> 
 
 
 HTTP Status Code:
 ``` 
-- 200 OK
-- 201 Created
 - 204 Deleted
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
-- 405 Invalid input
 ```
 
-## Delete Wishlist by Ref
+### Delete Wishlist by Ref
 Delete Wishlist marks the matching wishlist as deleted and produces an HTTP response confirming the action.  In this case the Wishlist is identified by the retailer's wishlist identifer - wishlistRef.
 
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
-Endpoint: ```/api/wishlists/{wishlistRef}/byref```
+| Endpoint| ```/api/wishlists/{wishlistRef}/byref```|
+|-----------|---------------|
+| Method    | DELETE          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-Method: ``` DELETE ```
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-
-Path Parameter: `wishlistRef : Wishlist Reference `
+| Path Parameters | What is it for ? |
+|---|---|
+| ```wishlistRef``` | This is the retailer generated wishlist reference ID. e.g: ```WISH1111```. API will remove the wishlists for the given reference ID, if exists. |
 
 <summary>Response - 204 (Deleted)</summary> 
 
 
 HTTP Status Code:
 ``` 
-- 200 OK
-- 201 Created
 - 204 Deleted
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
-- 405 Invalid input
 ```
 
+# **WishlistItem**
 
-
-## **Wishlist Item Resource**
-
-## Create a Wishlist Item
+### Create a Wishlist Item
 Adds a sinble wishlist item into an existing wishlist.  The wishlist can be identified by either the TWC internal ID, or the wishlistRef, which is the retailer's own wishlist identifier.  
 
 Endpoint: ```/api/wishlist/items```
