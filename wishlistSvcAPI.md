@@ -83,7 +83,7 @@ All requests or responses are JSON objects
 ###  WishlistItem Request
 
 | Field | Type | Description |
-|-----|----|-----------|
+|---|---|---|
 |*addedFromCart*|boolean| This field is to mark that it was added from cart.|
 |*disableNotification*|boolean| This field will disable notifications on the wishlist item.|
 |*wishlistId*|string| TWC generated unique ID of wishlist, to which the item is being added. Either wishlistId or wishlistRef is mandatory when creating a wishlist item.|
