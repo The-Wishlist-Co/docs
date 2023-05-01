@@ -30,18 +30,11 @@ A wishlist is created 'empty' and items added later, either one by one, or multi
     - [Delete Wishlist](#delete-wishlist)
   - [**WishlistItem**](#wishlistitem)
     - [Create a Wishlist Item](#create-a-wishlist-item)
-- [Add  Wishlist Items](#add--wishlist-items)
-  - [Upload multiple Wishlist Items](#upload-multiple-wishlist-items)
-  - [Update a Wishlist Item](#update-a-wishlist-item)
-  - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
-  - [Update a Wishlist Item By Id](#update-a-wishlist-item-by-id)
-  - [Get all Items in a Wishlist by Wishlist Id](#get-all-items-in-a-wishlist-by-wishlist-id)
-  - [Get Wishlist Item by Item Id](#get-wishlist-item-by-item-id)
-  - [Get Wishlist Item by Item Ref](#get-wishlist-item-by-item-ref)
-  - [Get Wishlist Item by WishlistId and Item Id](#get-wishlist-item-by-wishlistid-and-item-id)
-  - [Delete Wishlist Item by Id](#delete-wishlist-item-by-id)
-  - [Delete Wishlist Item by itemRef](#delete-wishlist-item-by-itemref)
-  - [Delete Wishlist Item by wishlist ID and item Id](#delete-wishlist-item-by-wishlist-id-and-item-id)
+    - [Add  Wishlist Item](#create-a-wishlist-item)
+    - [Add multiple items to wishlist](#add-multple-wishlist-items)
+    - [Update Wishlist Item](#update-wishlistitems)
+    - [Get Wishlist Items](#get-wishlist-items)
+    - [Delete Wishlist Item](#delete-wishlist-item)
 
 ## **Representations**
 
@@ -1105,7 +1098,12 @@ Add multiple items to an existing wishlist in the TWC system.
 
 </details>
 
-## Update a Wishlist Item
+## Update WishlistItems
+
+Below APIs provide mechanisms to update wishlist items. Retailer may choose the most appropriate API that suite their circumstance.
+
+### Update a Wishlist Item
+
 Update a wishlist item, for example to change the selected variant.  Developer must supply either the wishlist ID and item ID (both internal TWC values) or the wishlistRef and itemRef (both retailer's own identifiers).
 
 Note that itemRef is the client's unique identifier for a wishlist item associated with a single wishlist.  It is NOT the productRef, which typically could be the retailer's product SKU.
@@ -1201,7 +1199,7 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 </details>
 
 
-## Update a Wishlist Item By Ref
+### Update a Wishlist Item By Ref
 
 Update a wishlist item, for example to change the selected variant.  Developer must supply the wishlistRef and itemRef (both retailer's own identifiers).
 
@@ -1297,7 +1295,7 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 
 </details>
 
-## Update a Wishlist Item By Id
+### Update a Wishlist Item By Id
 
 Update a wishlist item, for example to change the selected variant.  Developer must supply the wishlist ID and item ID (both TWC internal identifiers).
 
@@ -1391,7 +1389,11 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 
 </details>
 
-## Get all Items in a Wishlist by Wishlist Id
+## Get Wishlist Items
+
+Below APIs provide mechanisms to get all items in a single wishlist or a single wishlist item.
+
+### Get all Items in a Wishlist by Wishlist Id
 Returns a list of all wishlist items belonging to the given wishlist Id (TWC internal identifier).
 
 Results are paginated, page size is 20, maximum 50.
@@ -1486,7 +1488,7 @@ If item does not exist, this method returns a ResourceNotFound error.
 </details>
 
 
-## Get Wishlist Item by Item Id
+### Get Wishlist Item by Item Id
 Returns the wishlist item belonging to the given item Id (TWC internal item ID)
 
 If the item does not exist, this method returns a ResourceNotFound error.
@@ -1550,7 +1552,7 @@ If the item does not exist, this method returns a ResourceNotFound error.
 ```
 </details>
 
-## Get Wishlist Item by Item Ref
+### Get Wishlist Item by Item Ref
 Returns the wishlist item belonging to the given itemRef (retailer's own item identifier).
 
 Note that itemRef is the client's unique identifier for a wishlist item associated with a single wishlist.  It is NOT the productRef, which typically could be the retailer's product SKU.
@@ -1617,7 +1619,9 @@ If the item does not exist, this method returns a ResourceNotFound error.
 </details>
 
 
-## Delete Wishlist Item by Id
+## Delete Wishlist Item
+
+### Delete Wishlist Item by Id
 Delete Wishlist item marks the item matching the given item ID (TWC internal platform ID) as deleted and produces an HTTP response confirming the action. 
 
 If the wishlist/item does not exist, this method returns a ResourceNotFound error.
@@ -1643,7 +1647,7 @@ If the wishlist/item does not exist, this method returns a ResourceNotFound erro
 </details>
 
 
-## Delete Wishlist Item by itemRef
+### Delete Wishlist Item by itemRef
 Delete Wishlist Item by itemRef marks the item matching the given itemRef (retailer's own identifier) as deleted and produces an HTTP response confirming the action. 
 
 Note that itemRef is the client's unique identifier for a wishlist item associated with a single wishlist.  It is NOT the productRef, which typically could be the retailer's product SKU.
