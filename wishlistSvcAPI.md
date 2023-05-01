@@ -126,9 +126,9 @@ All requests or responses are JSON objects
 | *product* |[Product](#wishlistitem-product)| This field represents the field being added to item [product](#wishlistitem-product)|
 | *attributeGroups* | object | This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_item_origin":&nbsp;"mobile_app",<br>&emsp;&emsp;"ecommerce_wishlist_item_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
 
-## **Endpoints**
-### **Wishlist**
-#### Ceate a wishlist
+# **Endpoints**
+## **Wishlist**
+### Ceate a wishlist
 Creates a new wishlist. This API requires wishlist request to be passed to API. Customer must be created before creating a wishlist.
 
 | Endpoint| ```/api/wishlists```|
@@ -464,7 +464,9 @@ HTTP Status Code:
 - 404 Not Found
 ```
 
-## Update a wishlist
+## Find Wishlist
+Below APIs provide mechanism to get wishlists by ID, reference ID or customer. 
+
 ### Get Wishlist by Id
 
 Returns the wishlist that matches the given internal TWC Platform identifier, along with the wishlist items.
@@ -481,12 +483,15 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 
+
 | Query Parameters | What is it for ? |
 |---|---|
 | ```pageSize``` | This parameter will determine the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
 | ```lastItemId``` | This parameter will determine which items to return. API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform API to respond items with ID greater than, but excluding the provided value. |
 
-<summary>Response - 200 (OK)</summary>
+
+<details>
+<summary>sample response - 200 (OK)</summary>
 
 ```json
 {
@@ -540,7 +545,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
     }
 }
 ```        
-
+</details>
 HTTP Status Code:
 ``` 
 - 200 OK
