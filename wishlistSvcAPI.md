@@ -217,7 +217,7 @@ Endpoint: ```/api/wishlists/id={id}```
 
 Sample Request:
 
-<!-- <details> -->
+<!--  -->
 ```json
 {
   "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
@@ -245,7 +245,7 @@ Sample Request:
   "createdTime": "2023-05-01T00:02:38.048171Z",
 }
 ```
-<!-- </details> -->
+<!--  -->
 
 <summary>Response - 200 (OK Updated)</summary>
 
@@ -301,7 +301,7 @@ As this API uses wishlistRef, which is the retailer's own wishlit ID (which, for
 
 Sample Request:
 
-<!-- <details> -->
+<!--  -->
 ```json
 {
   "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
@@ -329,7 +329,7 @@ Sample Request:
   "createdTime": "2023-05-01T00:02:38.048171Z",
 }
 ```
-<!-- </details> -->
+<!--  -->
 
 <summary>Response - 200 (OK Updated)</summary>
 
@@ -387,7 +387,7 @@ You can update by internal Wishlist ID or wishlistRef, which is the retailer's o
 
 Sample Request:
 
-<!-- <details> -->
+<!--  -->
 ```json
 {
   "id":"twc-generated-wishlist-id", // Either id or wishlistRef is mandatory to update a wishlist using this service.
@@ -415,8 +415,8 @@ Sample Request:
   "wishlistRef": "retailers wishlist id" // Either id or wishlistRef is mandatory to update a wishlist using this service.
 }
 ```
-<!-- </details> -->
-<details>
+<!--  -->
+
 <summary>Response - 200 (OK Updated)</summary>
 
 ```json
@@ -446,9 +446,9 @@ Sample Request:
   "createdTime": "2023-05-01T00:02:38.048171Z",
 }
 ```
-</details>
 
-<details>
+
+
 <summary>HTTP Status Codes </summary>
 
 ``` 
@@ -458,7 +458,7 @@ Sample Request:
 - 403 Forbidden 
 - 404 Not Found
 ```
-</details>
+
 
 ## GET Wishlist
 Below APIs provide mechanism to get wishlists by ID, reference ID or customer. 
@@ -487,7 +487,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 
 When provided with valid inputs, API responds with a ```application/json``` type content.
-<details>
+
 <summary>sample response - 200 (OK)</summary>
 
 ```json
@@ -542,11 +542,11 @@ When provided with valid inputs, API responds with a ```application/json``` type
     }
 }
 ```        
-</details>
+
 
 
 The API responds with below statuses. HTTP status differ depending on the input, access token etc.
-<details>
+
 <summary>HTTP Status Codes </summary>
 
 ``` 
@@ -555,7 +555,7 @@ The API responds with below statuses. HTTP status differ depending on the input,
 - 403 Forbidden 
 - 404 Not Found
 ```
-</details>
+
 
 
 ### Get Wishlist by Wishlist Reference
@@ -583,7 +583,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 When provided with valid inputs, API responds with a ```application/json``` type content.
 
-<details>
+
 <summary>sample response - 200 (OK)</summary>
 
 ```json
@@ -638,12 +638,12 @@ When provided with valid inputs, API responds with a ```application/json``` type
     }
 }
 ```        
-</details>
+
 
 
 The API responds with below statuses. HTTP status differ depending on the input, access token etc.
 
-<details>
+
 <summary>HTTP Status Codes </summary>
 
 ``` 
@@ -652,7 +652,7 @@ The API responds with below statuses. HTTP status differ depending on the input,
 - 403 Forbidden 
 - 404 Not Found
 ```
-</details>
+
 
 
 
@@ -680,7 +680,7 @@ The returned item array is paginated - 20 default (50 maximum).  The API will re
 
 When provided with valid inputs, API responds with a ```application/json``` type content.
 
-<details>
+
 <summary>sample response - 200 (OK)</summary>
 
 ```json
@@ -735,9 +735,9 @@ When provided with valid inputs, API responds with a ```application/json``` type
     }
 }
 ```        
-</details>        
+        
 
-<details>
+
 <summary>HTTP Status Code:</summary>
 
 ``` 
@@ -747,7 +747,7 @@ When provided with valid inputs, API responds with a ```application/json``` type
 - 404 Not Found
 ```
 
-</details>
+
 
 ## Get customer wishlists
 
@@ -771,7 +771,7 @@ If no wishlists exist, this method returns a ResourceNotFound error.
 | ```pageSize``` | This parameter will determine the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
 | ```lastItemId``` | This parameter will determine which items to return. API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform API to respond items with ID greater than, but excluding the provided value. |
 
-<details>
+
 <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -853,10 +853,10 @@ If no wishlists exist, this method returns a ResourceNotFound error.
     ]
 }
 ```
-</details>
 
 
-<details>
+
+
 <summary>HTTP Status Codes</summary>
 
 ``` 
@@ -865,7 +865,7 @@ If no wishlists exist, this method returns a ResourceNotFound error.
 - 403 Forbidden 
 - 404 Not Found
 ```
-</details>
+
 
 
 ## Delete Wishlist
@@ -887,7 +887,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 <summary>Response - 204 (Deleted)</summary> 
 
-<details>
+
 <summary>HTTP Status Code</summary> 
 
 ``` 
@@ -896,7 +896,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 - 403 Forbidden 
 - 404 Not Found
 ```
-</details>
+
 
 ## Delete Wishlist by ID
 Delete Wishlist marks the matching wishlist as deleted and produces an HTTP response confirming the action.  In this case the Wishlist is identified by the TWC Internal wishlist Id.
@@ -916,7 +916,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 <summary>Response - 204 (Deleted)</summary> 
 
-<details>
+
 <summary>HTTP Status Code</summary> 
 
 ``` 
@@ -925,7 +925,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 - 403 Forbidden 
 - 404 Not Found
 ```
-</details>
+
 
 ### Delete Wishlist by Ref
 Delete Wishlist marks the matching wishlist as deleted and produces an HTTP response confirming the action.  In this case the Wishlist is identified by the retailer's wishlist identifer - wishlistRef.
@@ -945,7 +945,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 <summary>Response - 204 (Deleted)</summary> 
 
-<details>
+
 <summary>HTTP Status Code</summary> 
 
 ``` 
@@ -954,7 +954,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 - 403 Forbidden 
 - 404 Not Found
 ```
-</details>
+
 
 # **WishlistItem**
 
@@ -969,7 +969,7 @@ Adds a sinble wishlist item into an existing wishlist.  The wishlist can be iden
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 
-<details>
+
  
 <summary>Sample Request:</summary>
  
@@ -995,11 +995,8 @@ Adds a sinble wishlist item into an existing wishlist.  The wishlist can be iden
     }
 }
 ```
- 
-</details>
 
 
-<details>
 <summary>Response - 201 (created)</summary>
 
 ```json
@@ -1031,9 +1028,9 @@ Adds a sinble wishlist item into an existing wishlist.  The wishlist can be iden
     "disableNotification": false
 }
 ```
-</details>
 
-<details>
+
+
 <summary>HTTP Status Code: </summary>
 
 
@@ -1045,7 +1042,7 @@ Adds a sinble wishlist item into an existing wishlist.  The wishlist can be iden
 - 404 Not Found
 - 405 Invalid input
 ```
-</details>
+
 
 ## Add multple Wishlist Items
 Add multiple items to an existing wishlist in the TWC system.
@@ -1058,7 +1055,7 @@ Add multiple items to an existing wishlist in the TWC system.
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 
-<details>
+
 <summary>Sample Request</summary>
 
 ```json
@@ -1083,9 +1080,9 @@ Add multiple items to an existing wishlist in the TWC system.
     ]
 }
 ```
-</details>
 
-<details>
+
+
 <summary>Status Codes</summary>
 
 ``` 
@@ -1096,7 +1093,7 @@ Add multiple items to an existing wishlist in the TWC system.
 - 409 Conflict
 ```
 
-</details>
+
 
 ## Update WishlistItems
 
@@ -1118,7 +1115,7 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 
-<details>
+
 <summary>Sample Request:</summary>
 
 ```json
@@ -1142,10 +1139,10 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     }
 }
 ```
-</details>
 
 
-<details>
+
+
 <summary>Response - 200 (OK Updated)</summary>
 
 ```json
@@ -1183,9 +1180,9 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     "disableNotification": false
 }
 ```
-</details>
 
-<details>
+
+
 <summary>HTTP Status Code:</summary>
 
 ``` 
@@ -1196,7 +1193,7 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 - 404 Not Found
 ```
 
-</details>
+
 
 
 ### Update a Wishlist Item By Ref
@@ -1215,7 +1212,7 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 
-<details>
+
 <summary>Sample Request:</summary>
 
 ```json
@@ -1239,10 +1236,10 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     }
 }
 ```
-</details>
 
 
-<details>
+
+
 <summary>Response - 200 (OK Updated)</summary>
 
 ```json
@@ -1280,9 +1277,9 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     "disableNotification": false
 }
 ```
-</details>
 
-<details>
+
+
 <summary>HTTP Status Code:</summary>
 
 ``` 
@@ -1293,7 +1290,7 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 - 404 Not Found
 ```
 
-</details>
+
 
 ### Update a Wishlist Item By Id
 
@@ -1309,7 +1306,7 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 
-<details>
+
 <summary>Sample Request:</summary>
 
 ```json
@@ -1333,10 +1330,10 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     }
 }
 ```
-</details>
 
 
-<details>
+
+
 <summary>Response - 200 (OK Updated)</summary>
 
 ```json
@@ -1374,9 +1371,9 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     "disableNotification": false
 }
 ```
-</details>
 
-<details>
+
+
 <summary>HTTP Status Code:</summary>
 
 ``` 
@@ -1387,7 +1384,7 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 - 404 Not Found
 ```
 
-</details>
+
 
 ## Get Wishlist Items
 
@@ -1415,7 +1412,7 @@ If item does not exist, this method returns a ResourceNotFound error.
 | ```lastItemId``` | This parameter will determine which items to return. API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform API to respond items with ID greater than, but excluding the provided value. |
 
 
-<details>
+
 <summary>Sample Response - 200 (OK)</summary>
 
 ```json
@@ -1485,7 +1482,7 @@ If item does not exist, this method returns a ResourceNotFound error.
     ]
 }
 ```
-</details>
+
 
 
 ### Get Wishlist Item by Item Id
@@ -1500,7 +1497,7 @@ If the item does not exist, this method returns a ResourceNotFound error.
 | path variable | ```id``` id is the TWC generated unique ID of the wishlist item. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-<details>
+
 <summary>Sample Response - 200 (OK)</summary>
 
 ```json
@@ -1539,9 +1536,9 @@ If the item does not exist, this method returns a ResourceNotFound error.
 }
 ```
 
-</details>
 
-</details>
+
+
 <summary>HTTP Status Code: </summary>
 
 ``` 
@@ -1550,7 +1547,7 @@ If the item does not exist, this method returns a ResourceNotFound error.
 - 403 Forbidden 
 - 404 Not Found
 ```
-</details>
+
 
 ### Get Wishlist Item by Item Ref
 Returns the wishlist item belonging to the given itemRef (retailer's own item identifier).
@@ -1566,7 +1563,7 @@ If the item does not exist, this method returns a ResourceNotFound error.
 | path variable | ```wishlistItemRef``` is the retailer assigned unique wishlist reference ID. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-<details>
+
 <summary>Sample Response - 200 (OK)</summary>
 
 ```json
@@ -1605,9 +1602,9 @@ If the item does not exist, this method returns a ResourceNotFound error.
 }
 ```
 
-</details>
 
-</details>
+
+
 <summary>HTTP Status Code: </summary>
 
 ``` 
@@ -1616,7 +1613,7 @@ If the item does not exist, this method returns a ResourceNotFound error.
 - 403 Forbidden 
 - 404 Not Found
 ```
-</details>
+
 
 
 ## Delete Wishlist Item
@@ -1635,7 +1632,7 @@ If the wishlist/item does not exist, this method returns a ResourceNotFound erro
 
 <summary>Response - 204 (Deleted)</summary> 
 
-<details>
+
 <summary>HTTP Status Code</summary> 
 
 ``` 
@@ -1644,7 +1641,7 @@ If the wishlist/item does not exist, this method returns a ResourceNotFound erro
 - 403 Forbidden 
 - 404 Not Found
 ```
-</details>
+
 
 
 ### Delete Wishlist Item by itemRef
@@ -1663,7 +1660,7 @@ If the wishlist/item does not exist, this method returns a ResourceNotFound erro
 
 <summary>Response - 204 (Deleted)</summary> 
 
-<details>
+
 <summary>HTTP Status Code</summary> 
 
 ``` 
@@ -1672,7 +1669,7 @@ If the wishlist/item does not exist, this method returns a ResourceNotFound erro
 - 403 Forbidden 
 - 404 Not Found
 ```
-</details>
+
 
 
 
