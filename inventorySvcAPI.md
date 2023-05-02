@@ -53,6 +53,16 @@ All requests or responses are JSON objects.
 
 ```locationType``` - string -The location type  of the location: STORE OR PICKUP_POINT
 
+```email``` - string -The email  of the store
+
+```url``` - string -The url   of the store location
+
+```name``` - string -The name   of the store
+
+```longitude``` - string -The longitude  of the location
+
+```latitude``` - string -The latitude  of the location
+
 <!-- <details> -->
  <summary><font size="4">Address </font></summary>
 
@@ -217,7 +227,12 @@ OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcA
   },
   "id": "string",
   "locationRef": "string",
-  "locationType": "STORE"
+  "locationType": "STORE",
+  "email": "string",
+  "latitude": 0,
+  "longitude": 0,
+  "name": "string",
+  "url": "string"
 }   
 ```
 <!-- </details> -->
@@ -302,7 +317,12 @@ OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcA
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
   "locationRef": "string",
-  "locationType": "STORE"
+  "locationType": "STORE",
+  "email": "string",
+  "latitude": 0,
+  "longitude": 0,
+  "name": "string",
+  "url": "string"
 }
 
 ```
@@ -416,7 +436,12 @@ OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcA
     },
     "id": "string",
     "locationRef": "string",
-    "locationType": "STORE"
+    "locationType": "STORE",
+    "email": "string",
+    "latitude": 0,
+    "longitude": 0,
+    "name": "string",
+    "url": "string"
   }
 ]
 ```
@@ -500,7 +525,12 @@ OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcA
   },
   "id": "string",
   "locationRef": "string",
-  "locationType": "STORE"
+  "locationType": "STORE",
+  "email": "string",
+  "latitude": 0,
+  "longitude": 0,
+  "name": "string",
+  "url": "string"
 }
 ```
 
@@ -610,7 +640,12 @@ OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcA
   },
   "id": "string",
   "locationRef": "string",
-  "locationType": "STORE"
+  "locationType": "STORE",
+  "email": "string",
+  "latitude": 0,
+  "longitude": 0,
+  "name": "string",
+  "url": "string"
 }
 ```
 <!-- </details> -->
@@ -733,7 +768,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "is_obsolete": true
     }
   },
-  "locationType": "STORE"
+  "locationType": "STORE",
+  "email": "string",
+  "latitude": 0,
+  "longitude": 0,
+  "name": "string",
+  "url": "string"
 }
 
 ```
@@ -820,7 +860,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "locationRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "locationType": "STORE"
+  "locationType": "STORE",
+  "email": "string",
+  "latitude": 0,
+  "longitude": 0,
+  "name": "string",
+  "url": "string"
 } 
 
 ```
@@ -940,7 +985,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "is_obsolete": true
     }
   },
-  "locationType": "STORE"
+  "locationType": "STORE",
+  "email": "string",
+  "latitude": 0,
+  "longitude": 0,
+  "name": "string",
+  "url": "string"
 }
 ```
 <!-- </details> -->
@@ -1025,7 +1075,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "locationRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "locationType": "STORE"
+  "locationType": "STORE",
+  "email": "string",
+  "latitude": 0,
+  "longitude": 0,
+  "name": "string",
+  "url": "string"
 }
 ```
 <!-- </details> -->
@@ -1146,7 +1201,12 @@ OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcA
   "locationRef": "string",
   "createdTime": "2022-08-24T07:28:12.000+0000",
   "modifiedTime": "2022-08-24T07:30:52.051+0000",
-  "locationType": "STORE"
+  "locationType": "STORE",
+  "email": "string",
+  "latitude": 0,
+  "longitude": 0,
+  "name": "string",
+  "url": "string"
 }
 
 ```

@@ -68,6 +68,10 @@ All requests or responses are JSON objects.
 
 ```deleted``` - boolean - The quote is deleted or not
 
+```locationId``` - string - The store location id 
+
+```quoteTax``` - decimal - The quote tax amount
+
 <!-- </details> -->
 
 ## Quote line
@@ -169,7 +173,9 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "salesPerson": "string",
   "storeName": "string",
   "totalDiscount": 0,
-  "totalQuoteAmount": 0
+  "totalQuoteAmount": 0,
+  "locationId": "string",
+  "quoteTax": 0,
 }
 
 ```
@@ -218,6 +224,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "updated_at": "2022-08-30T10:07:35.710334200Z"      
     }
   ],
+  "locationId": "string",
+  "quoteTax": 0,
   "referenceNo": "string",
   "salesPerson": "string",
   "storeName": "string",
@@ -295,7 +303,9 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "salesPerson": "string",
   "storeName": "string",
   "totalDiscount": 0,
-  "totalQuoteAmount": 0
+  "totalQuoteAmount": 0,
+  "locationId": "string",
+  "quoteTax": 0,
 }
 
 ```
@@ -344,6 +354,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "updated_at": "2022-08-30T10:07:35.710334200Z"      
     }
   ],
+  "locationId": "string",
+  "quoteTax": 0,
   "referenceNo": "string",
   "salesPerson": "string",
   "storeName": "string",
@@ -439,6 +451,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "updated_at": "2022-08-30T10:07:35.710334200Z"
     }
   ],
+  "locationId": "string",
+  "quoteTax": 0,
   "referenceNo": "string",
   "salesPerson": "string",
   "storeName": "string",
@@ -538,6 +552,8 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "updated_at": "2022-08-30T10:07:35.710334200Z"
     }
   ],
+  "locationId": "string",
+  "quoteTax": 0,
   "referenceNo": "string",
   "salesPerson": "string",
   "storeName": "string",
