@@ -58,7 +58,7 @@ All requests or responses are JSON objects.
 
 ```totalDiscount``` - decimal - total discount amount.
 
-```externalNotes``` - string - external notes
+```externalNotes``` - string - external notes with time stamp
 
 ```createdAt``` - The date and time (ISO 8601 format) when the customer was created.
 
@@ -69,6 +69,8 @@ All requests or responses are JSON objects.
 ```deleted``` - boolean - The quote is deleted or not
 
 ```locationId``` - string - The store location id 
+
+```locationRef``` - string - The store location ref
 
 ```quoteTax``` - decimal - The quote tax amount
 
@@ -156,7 +158,11 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "customerId": "string",
   "customerRef": "string",
   "expiryDate": "2022-08-31T10:04:35.660Z",
-  "externalNotes": "string",  
+  "externalNotes": {
+    "Date": "notes",
+    "Date": "notes",
+    "Date": "notes"
+  },  
   "lineItems": [
     {
       "discountAmount": 0,
@@ -175,6 +181,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "totalDiscount": 0,
   "totalQuoteAmount": 0,
   "locationId": "string",
+  "locationRef": "string",
   "quoteTax": 0,
 }
 
@@ -207,7 +214,11 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "lastName": "string",
   "email": "string",
   "expiryDate": "2022-08-30T10:04:35.660Z",
-  "externalNotes": "string",
+  "externalNotes": {
+    "Date": "notes",
+    "Date": "notes",
+    "Date": "notes"
+  }, 
   "id": "string",
   "lineItems": [
     {
@@ -225,6 +236,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     }
   ],
   "locationId": "string",
+  "locationRef": "string",
   "quoteTax": 0,
   "referenceNo": "string",
   "salesPerson": "string",
@@ -297,7 +309,11 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "customerId": "string",
   "customerRef": "string",
   "expiryDate": "2022-08-30T10:04:35.660Z",
-  "externalNotes": "string",  
+  "externalNotes": {
+    "Date": "notes",
+    "Date": "notes",
+    "Date": "notes"
+  },  
   "id":"string",  
   "referenceNo": "string",
   "salesPerson": "string",
@@ -305,6 +321,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "totalDiscount": 0,
   "totalQuoteAmount": 0,
   "locationId": "string",
+  "locationRef": "string",
   "quoteTax": 0,
 }
 
@@ -337,7 +354,11 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "lastName": "string",
   "email": "string",
   "expiryDate": "2022-08-30T10:04:35.660Z",
-  "externalNotes": "string",
+  "externalNotes": {
+    "Date": "notes",
+    "Date": "notes",
+    "Date": "notes"
+  }, 
   "id": "string",
   "lineItems": [
     {
@@ -355,6 +376,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     }
   ],
   "locationId": "string",
+  "locationRef": "string",
   "quoteTax": 0,
   "referenceNo": "string",
   "salesPerson": "string",
@@ -434,7 +456,11 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "lastName": "string",
   "email": "string",
   "expiryDate": "2022-08-30T10:04:35.660Z",
-  "externalNotes": "string",
+  "externalNotes": {
+    "Date": "notes",
+    "Date": "notes",
+    "Date": "notes"
+  }, 
   "id": "string",
   "lineItems": [
     {
@@ -452,6 +478,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     }
   ],
   "locationId": "string",
+  "locationRef": "string",
   "quoteTax": 0,
   "referenceNo": "string",
   "salesPerson": "string",
@@ -535,7 +562,11 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "lastName": "string",
   "email": "string",
   "expiryDate": "2022-08-30T10:04:35.660Z",
-  "externalNotes": "string",
+  "externalNotes": {
+    "Date": "notes",
+    "Date": "notes",
+    "Date": "notes"
+  }, 
   "id": "string",
   "lineItems": [
     {
@@ -553,6 +584,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     }
   ],
   "locationId": "string",
+  "locationRef": "string",
   "quoteTax": 0,
   "referenceNo": "string",
   "salesPerson": "string",
