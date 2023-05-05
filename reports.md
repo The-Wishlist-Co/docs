@@ -17,10 +17,17 @@ Reporting APIs  is a guide for customers on how to use an API to generate and de
     - [Customer Report](#customer-report)
     - [Wishlist Report](#wishlist-report)
     - [Product Conversion Report](#product-conversion-report)
-	  - [Product Conversion Summary Report](#product-conversion-summary-report)
+    - [Product Conversion Summary Report](#product-conversion-summary-report)
     - [Customer Conversion  Report](#customer-conversion-report)
     - [Interaction Report](#interaction-report)
     - [Get Wishlist Item Count](#get-wishlist-item-count)
+    - [Get Entity Count](#get-entity-count)
+    - [Get Dashboard Info](#get-dashboard-info)
+    - [Get Customer Dashboard Chart](#get-customer-dashboard-chart)
+    - [Get Product Dashboard Chart](#get-products-dashboard-chart)
+    - [Get Revenue Dashboard Chart](#get-revenue-dashboard-chart)
+    - [Get Interaction Dashboard Chart](#get-interaction-dashboard-chart)
+    
 
 ## **Representations**
 
@@ -386,7 +393,7 @@ HTTP Status Code:
 - 404 Not Found
 ```
 
-+## Customer Conversion  Report
+## Customer Conversion  Report
 This report will generate the list of customers and the number of times they have been converted an item to order 
 
 
@@ -561,6 +568,347 @@ HTTP Status Code:
 - 403 Forbidden 
 - 404 Not Found
 ```
+
+## Get Entity Count
+This API will return the total number of records available in the twc system for the given entity
+
+Entity name should be like this InventoryLevel,Customer,Products,Variants,Wishlist,Order
+
+
+Endpoint: ```/api/analytics/entityCounts```
+
+Method: ``` GET ```
+
+Method Name: `getTwcEntityCounts`
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<!-- <details> -->
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+<!-- </details> -->
+
+<<!-- <details> -->
+ Path Parameters : 
+ ```
+ - entityName
+```
+<!-- </details> -->
+
+<!-- <details> -->
+ <summary>Sample Response  - 200 (OK)</summary>
+ 
+ ```
+ return the count as integer
+```
+<!-- </details>  -->
+
+HTTP Status Code: 
+```json 
+- 200 OK
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
+
+## Get Dashboard Info
+This API will return the details required for the dashboard such as total customer , wishlist , revenue etc
+
+
+Endpoint: ```/api/analytics/dashboard```
+
+Method: ``` GET ```
+
+Method Name: `getDashboardinfo`
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<!-- <details> -->
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+<!-- </details> -->
+
+<<!-- <details> -->
+<!-- </details> -->
+
+<!-- <details> -->
+ <summary>Sample Response  - 200 (OK)</summary>
+ 
+ ```json
+ {
+  "avgInteractionsOrCustomer": "string",
+  "avgOrderValue": "string",
+  "avgProductsPerWL": "string",
+  "avgWLPerCustomer": "string",
+  "avgWLValue": "string",
+  "totalCustomers": "string",
+  "totalProducts": "string",
+  "totalRevenue": "string",
+  "totalWishlists": "string"
+}
+```
+<!-- </details>  -->
+
+HTTP Status Code: 
+```json 
+- 200 OK
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
+
+## Get Customer Dashboard Chart
+This report will generate the list of customers count for each date for the given period to display in the dashboard chart.
+
+
+Endpoint: ```/api/analytics/customersChart```
+
+Method: ``` GET ```
+
+Method Name: `getDashboardCustomerChart`
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<!-- <details> -->
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+<!-- </details> -->
+
+<<!-- <details> -->
+ Query Parameters : 
+ ```
+ - startDate
+ - endDate
+```
+<!-- </details> -->
+
+<!-- <details> -->
+ <summary>Sample Response  - 200 (OK)</summary>
+ 
+ ```json
+ {
+  "data": [
+    {
+      "xValue": "string",
+      "yValue": {
+        "label": "string",
+        "value": 0
+      }
+    }
+  ],
+  "horizontalTitle": "string",
+  "totalValue": "string",
+  "verticalTitle": "string"
+}
+```
+<!-- </details>  -->
+
+HTTP Status Code: 
+```json 
+- 200 OK
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
+
+
+
+## Get Products Dashboard Chart
+This report will generate the list of products counts for each date for the given period to display in the dashboard chart.
+
+
+Endpoint: ```/api/analytics/productChart```
+
+Method: ``` GET ```
+
+Method Name: `getDashboardProductChart`
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<!-- <details> -->
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+<!-- </details> -->
+
+<<!-- <details> -->
+ Query Parameters : 
+ ```
+ - startDate
+ - endDate
+```
+<!-- </details> -->
+
+<!-- <details> -->
+ <summary>Sample Response  - 200 (OK)</summary>
+ 
+ ```json
+ {
+  "data": [
+    {
+      "xValue": "string",
+      "yValue": {
+        "label": "string",
+        "value": 0
+      }
+    }
+  ],
+  "horizontalTitle": "string",
+  "totalValue": "string",
+  "verticalTitle": "string"
+}
+```
+<!-- </details>  -->
+
+HTTP Status Code: 
+```json 
+- 200 OK
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
+
+
+
+## Get Revenue Dashboard Chart
+This report will generate the list of sum of revenue for each date for the given period to display in the dashboard chart.
+
+
+Endpoint: ```/api/analytics/revenueChart```
+
+Method: ``` GET ```
+
+Method Name: `getDashboardRevenueChart`
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<!-- <details> -->
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+<!-- </details> -->
+
+<<!-- <details> -->
+ Query Parameters : 
+ ```
+ - startDate
+ - endDate
+```
+<!-- </details> -->
+
+<!-- <details> -->
+ <summary>Sample Response  - 200 (OK)</summary>
+ 
+ ```json
+ {
+  "data": [
+    {
+      "xValue": "string",
+      "yValue": {
+        "label": "string",
+        "value": 0
+      }
+    }
+  ],
+  "horizontalTitle": "string",
+  "totalValue": "string",
+  "verticalTitle": "string"
+}
+```
+<!-- </details>  -->
+
+HTTP Status Code: 
+```json 
+- 200 OK
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
+
+
+
+## Get Interaction Dashboard Chart
+This report will generate the list of interaction count for each date for the given period to display in the dashboard chart.
+
+
+Endpoint: ```/api/analytics/interactionChart```
+
+Method: ``` GET ```
+
+Method Name: `getDashboardInteractionChart`
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<!-- <details> -->
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+<!-- </details> -->
+
+<<!-- <details> -->
+ Query Parameters : 
+ ```
+ - startDate
+ - endDate
+```
+<!-- </details> -->
+
+<!-- <details> -->
+ <summary>Sample Response  - 200 (OK)</summary>
+ 
+ ```json
+ {
+  "data": [
+    {
+      "xValue": "string",
+      "yValue": {
+        "label": "string",
+        "value": 0
+      }
+    }
+  ],
+  "horizontalTitle": "string",
+  "totalValue": "string",
+  "verticalTitle": "string"
+}
+```
+<!-- </details>  -->
+
+HTTP Status Code: 
+```json 
+- 200 OK
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
+
 
 ***
 [Back to Top](#reports-api)
