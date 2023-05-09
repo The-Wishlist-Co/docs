@@ -13,7 +13,7 @@ Reporting APIs  is a guide for customers on how to use an API to generate and de
     <!-- - [Index](#index) -->
   - [**Representations**](#representations)
   - [**REST Endpoints**](#rest-endpoints)
-    - [Top Products Report](#top-wishlisted-product)
+    - [Top Wishlist Product](#top-wishlisted-product)
     - [Customer Report](#customer-report)
     - [Wishlist Report](#wishlist-report)
     - [Product Conversion Report](#product-conversion-report)
@@ -21,12 +21,12 @@ Reporting APIs  is a guide for customers on how to use an API to generate and de
     - [Customer Conversion  Report](#customer-conversion-report)
     - [Interaction Report](#interaction-report)
     - [Get Wishlist Item Count](#get-wishlist-item-count)
-    - [Get Entity Count](#get-entity-count)
-    - [Get Dashboard Info](#get-dashboard-info)
-    - [Get Customer Dashboard Chart](#get-customer-dashboard-chart)
-    - [Get Product Dashboard Chart](#get-products-dashboard-chart)
-    - [Get Revenue Dashboard Chart](#get-revenue-dashboard-chart)
-    - [Get Interaction Dashboard Chart](#get-interaction-dashboard-chart)
+    - [Get Raw Entity Counts](#get-raw-entity-counts)
+    - [Key Wishlist Metrics](#key-wishlist-metrics)
+    - [Get Daily WL Customer Counts](#get-daily-wl-customer-counts)
+    - [Get Daily WL Products Counts](#get-daily-wl-products-counts)
+    - [Get Daily Wishlist Conversion Revenue](#get-daily-wl-conversion-revenue)
+    - [Get Daily WL Interaction Count](#get-daily-wl-interaction-count)
     
 
 ## **Representations**
@@ -62,11 +62,11 @@ All representations are JSON objects submitted or received as payload to API req
 This report will generate the list of products and the number of times they have been added to wishlists. 
 
 
-Endpoint: ```/api/analytics```
+Endpoint: ```/api/analytics/top-wishlist-product```
 
 Method: ``` GET ```
 
-Method Name: `topwishlistproduct`
+Method Name: `getTopWishlistProduct`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -126,11 +126,11 @@ HTTP Status Code:
 This report will generate the list of  of all customers with wishlists.    
 
 
-Endpoint: ```/api/analytics```
+Endpoint: ```/api/analytics/customer-report```
 
 Method: ``` GET ```
 
-Method Name: `customerreport`
+Method Name: `getCustomerReport`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -201,11 +201,11 @@ HTTP Status Code:
 This report will generate the list  all wishlists created between certain given dates.
 
 
-Endpoint: ```/api/analytics```
+Endpoint: ```/api/analytics/wishlist-report```
 
 Method: ``` GET ```
 
-Method Name: `wishlistreport`
+Method Name: `getWishlistReport`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -266,11 +266,11 @@ HTTP Status Code:
 ## Product Conversion Report
 This report will generate the list  of all conversions over a given time period.
 
-Endpoint: ```/api/analytics```
+Endpoint: ```/api/analytics/product-conversion-report```
 
 Method: ``` GET ```
 
-Method Name: `product-conversion`
+Method Name: `getProductConversionReport`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -333,11 +333,11 @@ HTTP Status Code:
 This report will generate the list of products and the number of times they have been converted into order. 
 
 
-Endpoint: ```/api/analytics```
+Endpoint: ```/api/analytics/product-conversion-summary-report```
 
 Method: ``` GET ```
 
-Method Name: `product-conversion-summary`
+Method Name: `getProductConversionSummaryReport`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -397,11 +397,11 @@ HTTP Status Code:
 This report will generate the list of customers and the number of times they have been converted an item to order 
 
 
-Endpoint: ```/api/analytics```
+Endpoint: ```/api/analytics/customer-conversion-report```
 
 Method: ``` GET ```
 
-Method Name: `customerconversion`
+Method Name: `getCustomerConversionReport`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -457,11 +457,11 @@ HTTP Status Code:
 This report will generate the list of all the interactions made on the given period
 
 
-Endpoint: ```/api/analytics```
+Endpoint: ```/api/analytics/interaction-report```
 
 Method: ``` GET ```
 
-Method Name: `interaction`
+Method Name: `getInteractionReport`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -528,11 +528,11 @@ HTTP Status Code:
 This API will return the number of items which are added by the customer into their wishlist
 
 
-Endpoint: ```/api/analytics/wishlistItemCount/{customerId}```
+Endpoint: ```/api/analytics/wishlist-item-count/{customerId}```
 
 Method: ``` GET ```
 
-Method Name: `wishlistItemCount`
+Method Name: `getWishlistItemCount`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -569,17 +569,17 @@ HTTP Status Code:
 - 404 Not Found
 ```
 
-## Get Entity Count
+## Get Raw Entity Counts
 This API will return the total number of records available in the twc system for the given entity
 
 Entity name should be like this InventoryLevel,Customer,Products,Variants,Wishlist,Order
 
 
-Endpoint: ```/api/analytics/entityCounts```
+Endpoint: ```/api/analytics/raw-entity-counts```
 
 Method: ``` GET ```
 
-Method Name: `getTwcEntityCounts`
+Method Name: `getRawEntityCounts`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -616,15 +616,15 @@ HTTP Status Code:
 - 404 Not Found
 ```
 
-## Get Dashboard Info
+## Key Wishlist Metrics
 This API will return the details required for the dashboard such as total customer , wishlist , revenue etc
 
 
-Endpoint: ```/api/analytics/dashboard```
+Endpoint: ```/api/analytics/key-wl-metrics```
 
 Method: ``` GET ```
 
-Method Name: `getDashboardinfo`
+Method Name: `getKeyWLMetrics`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -667,15 +667,15 @@ HTTP Status Code:
 - 404 Not Found
 ```
 
-## Get Customer Dashboard Chart
+## Get Daily WL Customer Counts
 This report will generate the list of customers count for each date for the given period to display in the dashboard chart.
 
 
-Endpoint: ```/api/analytics/customersChart```
+Endpoint: ```/api/analytics/daily-wl-customer-counts```
 
 Method: ``` GET ```
 
-Method Name: `getDashboardCustomerChart`
+Method Name: `getDailyWLCustomerCounts`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -728,15 +728,15 @@ HTTP Status Code:
 
 
 
-## Get Products Dashboard Chart
+## Get Daily WL Products Counts
 This report will generate the list of products counts for each date for the given period to display in the dashboard chart.
 
 
-Endpoint: ```/api/analytics/productChart```
+Endpoint: ```/api/analytics/daily-wl-products-counts```
 
 Method: ``` GET ```
 
-Method Name: `getDashboardProductChart`
+Method Name: `getDailyWLProductCounts`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -789,15 +789,15 @@ HTTP Status Code:
 
 
 
-## Get Revenue Dashboard Chart
+## Get Daily WL Conversion Revenue
 This report will generate the list of sum of revenue for each date for the given period to display in the dashboard chart.
 
 
-Endpoint: ```/api/analytics/revenueChart```
+Endpoint: ```/api/analytics/daily-wl-conversion-revenue```
 
 Method: ``` GET ```
 
-Method Name: `getDashboardRevenueChart`
+Method Name: `getDailyWLConversionRevenue`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
@@ -850,15 +850,15 @@ HTTP Status Code:
 
 
 
-## Get Interaction Dashboard Chart
+## Get Daily WL Interaction Count
 This report will generate the list of interaction count for each date for the given period to display in the dashboard chart.
 
 
-Endpoint: ```/api/analytics/interactionChart```
+Endpoint: ```/api/analytics/daily-wl-interaction-counts```
 
 Method: ``` GET ```
 
-Method Name: `getDashboardInteractionChart`
+Method Name: `getDailyWLInteractionCounts`
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
