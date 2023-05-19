@@ -39,6 +39,7 @@ The Customer API is used to create and manage information about a retailer's cus
 All requests or responses are JSON objects
 
 ### Customer Request
+
 | Field | Type | Description |
 |---|---|---|
 | *customerRef* | string | Retailed assigned customer reference ID. This is not a mandatory field. If provided must be unique across tenant. |
@@ -61,6 +62,7 @@ All requests or responses are JSON objects
 
 
 ### Customer Response
+
 | Field | Type | Description |
 |---|---|---|
 | *id* | string | TWC generated ID of customer entity. for e.g: *47235561-a5fe-43d1-a0ff-00b635208abe* |
@@ -85,6 +87,7 @@ All requests or responses are JSON objects
 
 
 ### Customer Address
+
 | Field | Type | Description |
 |---|---|---|
 | *address1* | string | Address line 1. |
@@ -101,6 +104,7 @@ All requests or responses are JSON objects
 
 
 ### Optin Preferences
+
 | Field | Type | Description |
 |---|---|---|
 | *email* | [Optin Preference](#optin-preference) | Address line 1. |
@@ -108,6 +112,7 @@ All requests or responses are JSON objects
 
 
 ### Optin Preference
+
 | Field | Type | Description |
 |---|---|---|
 | *opt_in_active* | boolean | if customer has opted in |
