@@ -11,83 +11,124 @@ The Customer API is used to create and manage information about a retailer's cus
 - [**Customer API**](#customer-api)
     <!-- - [Index](#index) -->
   - [**Representations**](#representations)
-  - [**REST Endpoints**](#rest-endpoints)
+    - [Customer Request](#customer-request)
+    - [Customer Response](#customer-response)
+    - [Customer Address](#customer-address)
+    - [Optin Preferences](#optin-preferences)
+    - [Optin Preference](#optin-preference)
+    - [Attribute Groups](#attributegroups)
+    - [Attribute Group](#attributegroup)
+  - [**Endpoints**](#rest-endpoints)
     - [Create a Customer](#create-a-customer)
     - [Upload Customers](#upload-customers)
     - [Validate Customer Input](#validate-customer-input)
     - [Update a Customer](#update-a-customer)
-	- [Update a Customer By Customer Id](#update-a-customer-by-customer-id)
-	- [Update a Customer By Customer Ref](#update-a-customer-by-customer-ref)
+    - [Update a Customer By Customer Id](#update-a-customer-by-customer-id)
+    - [Update a Customer By Customer Ref](#update-a-customer-by-customer-ref)
     - [Add address to Existing Customer](#add-address-to-existing-customer)
-	- [Delete Customer Address](#delete-customer-address)
+    - [Delete Customer Address](#delete-customer-address)
     - [Find Customer by Id](#find-customer-by-id)
     - [Find Customer by Ref](#find-customer-by-ref)
     - [Look up  Customers by email/mobile/phone/firstName/lastName](#look-up--customers-by-emailmobilephonefirstnamelastname)
     - [Delete Customer by ID](#delete-customer-by-id)
     - [Delete Customer by Ref](#delete-customer-by-ref)
 
+
 ## **Representations**
 
-All requests or responses are JSON objects.
+All requests or responses are JSON objects
 
-<!-- 
-<details>
- <summary>Expand for details</summary> -->
-
-```accepts_marketing``` - boolean - To enable marketing for a customer.
-
-```active``` - boolean - To enable  a customer.
-
-```addresses``` - [Address](Common_Fields/address.md) - The address is saved as an array. The Address of the customer will be set to the ID of that address.
-
-```attributeGroups``` - [AttributeGroup](Common_Fields/attributeGroup.md) - The grup of attibute values stored under as a object in group of atributeGroups.
-
-```createdDate``` - The date and time (ISO 8601 format) when the customer was created.
-
-```customerRef``` - string - User generated refernce number.
-
-```customerState``` - string - Represents the customer current active status.
-- disabled
-- invited
-- enabled
-- declined 
-
-```default_address``` - [Address](Common_Fields/address.md) - The default address for the customer. The address is saved as an array. The defaultShippingAddress of the customer will be set to the ID of that address.
-
-```dob``` - string - The Customer's Date of Birth.
-
-- `DateFormat` - dd-MM-yyyy
-
-```email``` - string -
-The customer's email address and the main identifier of uniqueness for a customer account. Attempting to assign the same email address to multiple customers returns an error.
+### Customer Request
+| Field | Type | Description |
+|---|---|---|
+| *customerRef* | string | Retailed assigned customer reference ID. This is not a mandatory field. If provided must be unique across tenant. |
+| *customer_state* | list | One of the following values in customer state. Allowed values are *disabled*, *invited*, *enabled* OR *declined* |
+| *dob* | string | Date of birth |
+| *firstName* | string | first name |
+| *lastName* | string | last name |
+| *email* | string | customers email. Email is a unique across tenant |
+| *verified_email* | boolean | field indicating customer email is verified by retailer. TWC does not verify customer email. |
+| *mobile* | boolean | mobile phone number |
+| *phone* | boolean | phone number |
+| *taxExempt* | boolean | field indicating if a customer is tax excempt. |
+| *taxExemptions* | List<string> | List of tax exemptions. This is only info only field. |
+| *location* | string | TWC generated location id, this field indicates default store customer is associated with. |
+| *accepts_marketing* | boolean | This field is used by when retailers only require simple marketing acceptance. |
+| *marketing_preferences_updated_at* | date | date at which marketing optin levels are updated. |
+| *addresses* | array of [Address](#customeraddress) | Customers addresses go here. A customer can have more than one address. |
+| *optin_preferences* | [OptinPreferences](#optinpreferences) | This field indicates marketing preferences for email and sms. When using TWC native marketing, this field will decide if a customer be notified. |
+| *attributeGroups* |[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to entities in TWC. This field is in general available on most entities in The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"customer_origin":&nbsp;"social_media",<br>&emsp;&emsp;"category_affinity":&nbsp;"electronics,&nbsp;cameras,&nbsp;gaming",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;entities"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
 
 
-```firstName``` - string -The customer's first name.
+### Customer Response
+| Field | Type | Description |
+|---|---|---|
+| *id* | string | TWC generated ID of customer entity. for e.g: *47235561-a5fe-43d1-a0ff-00b635208abe* |
+| *customerRef* | string | Retailed assigned customer reference ID. This is not a mandatory field. If provided must be unique across tenant. |
+| *customer_state* | list | One of the following values in customer state. Allowed values are *disabled*, *invited*, *enabled* OR *declined* |
+| *dob* | string | Date of birth |
+| *firstName* | string | first name |
+| *lastName* | string | last name |
+| *email* | string | customers email. Email is a unique across tenant |
+| *verified_email* | boolean | field indicating customer email is verified by retailer. TWC does not verify customer email. |
+| *mobile* | boolean | mobile phone number |
+| *phone* | boolean | phone number |
+| *taxExempt* | boolean | field indicating if a customer is tax excempt. |
+| *taxExemptions* | List<string> | List of tax exemptions. This is only info only field. |
+| *location* | string | TWC generated location id, this field indicates default store customer is associated with. |
+| *accepts_marketing* | boolean | This field is used by when retailers only require simple marketing acceptance. |
+| *marketing_preferences_updated_at* | date | date at which marketing optin levels are updated. |
+| *defaultAddress* | [Address](#customer-address) | Customer's default address. |
+| *addresses* | array of [Address](#customer-address) | Customers addresses go here. A customer can have more than one address. |
+| *optin_preferences* | [OptinPreferences](#optin-preferences) | This field indicates marketing preferences for email and sms. When using TWC native marketing, this field will decide if a customer be notified. |
+| *attributeGroups* |[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to entities in TWC. This field is in general available on most entities in The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"customer_origin":&nbsp;"social_media",<br>&emsp;&emsp;"category_affinity":&nbsp;"electronics,&nbsp;cameras,&nbsp;gaming",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;entities"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
 
-```id``` - string -A unique identifier for the customer.
 
-```lastModifiedDate``` - The date and time (ISO 8601 format) when the customer information was last updated.
+### Customer Address
+| Field | Type | Description |
+|---|---|---|
+| *address1* | string | Address line 1. |
+| *address2* | string | Address line 2. |
+| *city* | list | One of the following values in customer state. Allowed values are *disabled*, *invited*, *enabled* OR *declined* |
+| *province* | string | Date of birth |
+| *country* | string | country for e.g: *Australia* |
+| *postcode* | string | postal code |
+| *phone* | string | address phone number |
+| *email* | string | customer email. |
+| *provinceCode* | boolean | mobile phone number |
+| *countryCode* | string | country codes as per [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1). for e.g: *AU* for australia |
+| *defaultAddress* | boolean | indicating if its the default address of customer. Default address will appear as a separate filed under customer |
 
-```lastName``` - string - The customer's last name.
 
-```marketing_optin_level``` - string  - Optional - The marketing subscription opt-in level, as described in the Sender Best Common Practices, that the customer gave when they consented to receive marketing material by email. If the customer does not accept email marketing, then this property will be set to null. Valid values:
-- single_opt_in
-- confirmed_opt_in
-- unknown
+### Optin Preferences
+| Field | Type | Description |
+|---|---|---|
+| *email* | [Optin Preference](#optin-preference) | Address line 1. |
+| *sms* | [Optin Preference](#optin-preference) | Address line 2. |
 
-```marketing_preferences_updated_at``` - DateTime - The date and time (ISO 8601 format) when customer preferences updated at.
 
-```mobile``` - string -The phone number for this customer. Any format is accepted - the assumption is that the upstream application does phone number validation.
+### Optin Preference
+| Field | Type | Description |
+|---|---|---|
+| *opt_in_active* | boolean | if customer has opted in |
+| *opt_in_updated_at* | date | Date at which optin preferences were updated. |
+| *opted_in_at* | date | Date at which optin preferences were first set. |
 
-```phone``` - string -The unique phone number (E.164 format) for this customer. Any format is accepted - the assumption is that the upstream application does phone number validation.
 
-```taxExempt``` - boolean -Whether the customer is exempt from paying taxes on their order. If true, then taxes won't be applied to an order at checkout. If false, then taxes will be applied at checkout.
+###  AttributeGroups
 
-```taxExemptions``` string - Whether the customer is exempt from paying specific taxes on their order. Canadian taxes only.
+| Field | Type| Description |
+|---|---|---|
+| *attributeGroup* | [AttributeGroup](#attributegroup) | This field holds the groups of attributes as a map of <String, [AttributeGroup](#attributegroup)>. <br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"customer_origin":&nbsp;"social_media",<br>&emsp;&emsp;"category_affinity":&nbsp;"electronics,&nbsp;cameras,&nbsp;gaming",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;entities"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
 
-```verified_email``` - boolean -Whether the customer has verified their email address.
 
-<!-- </details> -->
+###  AttributeGroup
+
+| Field | Type| Description |
+|---|---|---|
+| *attributes* | map | This field holds map of attributes as a map of <string, string> <br> e.g.: &nbsp;{<br>&emsp;&emsp;"customer_origin":&nbsp;"social_media",<br>&emsp;&emsp;"category_affinity":&nbsp;"electronics,&nbsp;cameras,&nbsp;gaming",&emsp;&emsp;<br>&emsp;&ensp;}<br> |
+| *description* | string | This field is a short description about the attributes captured under field *attributes*. This will only be used in the backoffice tools. |
+
 
 [Back to Index](#index)
 
