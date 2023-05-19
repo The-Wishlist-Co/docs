@@ -44,13 +44,13 @@ All requests or responses are JSON objects
 |---|---|---|
 | *customerRef* | string | Retailed assigned customer reference ID. This is not a mandatory field. If provided must be unique across tenant. |
 | *customer_state* | list | One of the following values in customer state. Allowed values are *disabled*, *invited*, *enabled* OR *declined* |
-| *dob* | string | Date of birth |
+| *dob* | date | Date of birth of customer in *dd-mm-yyy* format. for eg: 28-11-1999.|
 | *firstName* | string | first name |
 | *lastName* | string | last name |
-| *email* | string | customers email. Email is a unique across tenant |
+| *email* | string | customers email. Email is a mandatory field and must be unique within a tenant. |
 | *verified_email* | boolean | field indicating customer email is verified by retailer. TWC does not verify customer email. |
-| *mobile* | boolean | mobile phone number |
-| *phone* | boolean | phone number |
+| *mobile* | string | mobile phone number |
+| *phone* | string | phone number |
 | *taxExempt* | boolean | field indicating if a customer is tax excempt. |
 | *taxExemptions* | List<string> | List of tax exemptions. This is only info only field. |
 | *location* | string | TWC generated location id, this field indicates default store customer is associated with. |
@@ -73,8 +73,8 @@ All requests or responses are JSON objects
 | *lastName* | string | last name |
 | *email* | string | customers email. Email is a unique across tenant |
 | *verified_email* | boolean | field indicating customer email is verified by retailer. TWC does not verify customer email. |
-| *mobile* | boolean | mobile phone number |
-| *phone* | boolean | phone number |
+| *mobile* | string | mobile phone number |
+| *phone* | string | phone number |
 | *taxExempt* | boolean | field indicating if a customer is tax excempt. |
 | *taxExemptions* | List<string> | List of tax exemptions. This is only info only field. |
 | *location* | string | TWC generated location id, this field indicates default store customer is associated with. |
@@ -137,22 +137,17 @@ All requests or responses are JSON objects
 
 [Back to Index](#index)
 
-## **REST Endpoints**
+# **Endpoints**
+## **Customer**
+### CREATE
+Creates a new Customer in the Wishlist platform. Fields 'email' and customerRef are unique fields. 
 
-- ##  **Customer**
+| Endpoint| ```/api/v2/customers```|
+|-----------|---------------|
+| Method    | POST          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-## Create a Customer
-Creates a new Customer in the Wishlist platform.  Email and referenceID must be unique or the post will fail.  
-
-CustomerRef is the retailer's own unique customer identifier.  The Wishlist also generates a unique internal system identifier (id).  Either can be used for retrieving customer data.
-
-Endpoint: ```/api/v2/customers```
-
-Method: ``` POST ```
-
-Method Name: `createCustomer`
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <!-- <details> -->
  <summary>Request Headers :</summary>
@@ -165,218 +160,100 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 <!-- </details> -->
 
 <!-- <details> -->
- <summary>Sample Request: </summary>
- 
+ <summary>Sample Customer Request: </summary>
+
 ```json
 {
-  "accepts_marketing": true,
-  "active": true,
+  "email": "test@customer.com",
+  "customerRef": "CUST11959",
+  "firstName": "FirstName",
+  "lastName": "LastName",
+  "mobile": "623362386238",
+  "phone": "623362386238",
+  "dob": "25-10-1900",
   "addresses": [
     {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
+      "address1": "Wish Street 3",
+      "address2": "Corner of Wish Street and List Crescent",
+      "city": "Wishlist City",
+      "country": "Australia",
+      "countryCode": "AU",
+      "email": "cust@email.com",
+      "firstName": "Cust",
+      "lastName": "Test",
+      "phone": "0151 7445 6927",
+      "postcode": "10000",
+      "province": "New South Wales",
+      "provinceCode": "NSW",
+      "defaultAddress": true
     }
   ],
   "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
+      "retailer_additional_info": {
+          "attributes": {
+              "crm_default_account_id": "1234",
+              "triquestra_person_code": "TQ1234"
+          },
+          "description": "CRM and Triquestra extra attributes"
+      }
   },
-  "createdDate": "2022-06-20T06:21:32.358Z",
-  "customerRef": "string",
-  "customer_state": "disabled",
-  "defaultAddress": {
-    "address1": "string",
-    "address2": "string",
-    "addressName": "string",
-    "city": "string",
-    "company": "string",
-    "country": "string",
-    "countryCode": "string",
-    "customerId": "string",
-    "defaultAddress": true,
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastName": "string",
-    "phone": "string",
-    "postcode": "string",
-    "province": "string",
-    "provinceCode": "string"
-  },
-  "dob": "25-10-1985",
-  "email": "string",
-  "firstName": "string",
-  "id": "string",
-  "lastModifiedDate": "2022-06-20T06:21:32.358Z",
-  "lastName": "string",
-  "marketing_optin_level": "single_opt_in",
-  "marketing_preferences_updated_at": "2022-06-20T06:21:32.358Z",
-  "mobile": "string",
-  "phone": "string",
-  "taxExempt": true,
-  "taxExemptions": [
-    "string"
-  ],
-  "optin_preferences": {
-    "sms": {
-      "opt_in_active": false,
-      "opted_in_at": "2022-32-09 07:32:51",
-      "opt_in_updated_at": "2022-32-09 07:32:51"
-    },
-    "email": {
-      "opt_in_active": true,
-      "opted_in_at": "2022-32-09 07:32:59",
-      "opt_in_updated_at": "2022-32-09 07:32:59"
-
-    }
-  },  
-  "verified_email": true
+  "optin_preferences" : {
+      "email": {
+          "opted_in": true
+      }
+  }
 }
-
 ```
-<!-- </details> -->
 
-<!-- <details> -->
- <summary>Sample Response  - 201 (Created)</summary>
- 
+Sample HTTP 201 response
+
+
  ```json
  {
-  "accepts_marketing": true,
-  "active": true,
+  "id": "7c14445d-c9fb-457d-90ec-114a04e57bc3",
+  "email": "test@customer.com",
+  "customerRef": "CUST11959",
+  "firstName": "FirstName",
+  "lastName": "LastName",
+  "mobile": "623362386238",
+  "phone": "623362386238",
+  "dob": "25-10-1900",
   "addresses": [
     {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
+      "address1": "Wish Street 3",
+      "address2": "Corner of Wish Street and List Crescent",
+      "city": "Wishlist City",
+      "country": "Australia",
+      "countryCode": "AU",
+      "email": "cust@email.com",
+      "firstName": "Cust",
+      "lastName": "Test",
+      "phone": "0151 7445 6927",
+      "postcode": "10000",
+      "province": "New South Wales",
+      "provinceCode": "NSW",
+      "defaultAddress": true
     }
   ],
   "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
+      "retailer_additional_info": {
+          "attributes": {
+              "crm_default_account_id": "1234",
+              "triquestra_person_code": "TQ1234"
+          },
+          "description": "CRM and Triquestra extra attributes"
+      }
   },
-  "createdDate": "2022-06-20T09:00:48.098Z",
-  "customerRef": "string",
-  "customer_state": "disabled",
-  "defaultAddress": {
-    "address1": "string",
-    "address2": "string",
-    "addressName": "string",
-    "city": "string",
-    "company": "string",
-    "country": "string",
-    "countryCode": "string",
-    "customerId": "string",
-    "defaultAddress": true,
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastName": "string",
-    "phone": "string",
-    "postcode": "string",
-    "province": "string",
-    "provinceCode": "string"
-  },
-  "dob": "25-10-1985",
-  "email": "string",
-  "firstName": "string",
-  "id": "string",
-  "lastModifiedDate": "2022-06-20T09:00:48.098Z",
-  "lastName": "string",
-  "marketing_optin_level": "single_opt_in",
-  "marketing_preferences_updated_at": "2022-06-20T09:00:48.098Z",
-  "mobile": "string",
-  "phone": "string",
-  "taxExempt": true,
-  "taxExemptions": [
-    "string"
-  ],
   "optin_preferences": {
     "sms": {
-      "opt_in_active": false,
-      "opted_in_at": "2022-32-09 07:32:51",
-      "opt_in_updated_at": "2022-32-09 07:32:51"
+        "opt_in_active": false
     },
     "email": {
-      "opt_in_active": true,
-      "opted_in_at": "2022-32-09 07:32:59",
-      "opt_in_updated_at": "2022-32-09 07:32:59"
-
+        "opt_in_active": false,
+        "opted_in_at": "2023-05-19T03:48:22.075Z",
+        "opt_in_updated_at": "2023-05-19T03:48:22.075Z"
     }
-  },
-  "verified_email": true
+  }
 }
 
 ```
@@ -384,328 +261,319 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 
 HTTP Status Code: 
 ```json 
-- 200 OK
 - 201 Created
-- 204 Deleted
 - 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
 ```
 
-## Upload Customers
+
+
+
+## Create Multiple Customers
 This API is used to create an array of customers.
 
 *THIS API IS NOW DEPRICATED.  FOR UPLOADING MULTIPLE RECORDS PLEASE USE THE IMPEX API* 
 
-Endpoint: ```/api/v2/upload-customers```
 
-Method: ``` POST ```
+| Endpoint| ```/api/v2/upload-customers```|
+|-----------|---------------|
+| Method    | POST          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-Method Name: `uploadCustomer`
 
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
-<!-- <details>-->
- <summary>Request Headers</summary>
+<!-- <details> -->
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-<!-- </details> -->
 
-
-<!-- <details> -->
  <summary>Request sample</summary>
  
  ```json
   [
-  {
-    "accepts_marketing": true,
-    "active": true,
+    {
+    "email": "test@customer.com",
+    "customerRef": "CUST11959",
+    "firstName": "FirstName",
+    "lastName": "LastName",
+    "mobile": "623362386238",
+    "phone": "623362386238",
+    "dob": "25-10-1900",
     "addresses": [
       {
-        "address1": "string",
-        "address2": "string",
-        "addressName": "string",
-        "city": "string",
-        "company": "string",
-        "country": "string",
-        "countryCode": "string",
-        "customerId": "string",
-        "defaultAddress": true,
-        "email": "string",
-        "firstName": "string",
-        "id": "string",
-        "lastName": "string",
-        "phone": "string",
-        "postcode": "string",
-        "province": "string",
-        "provinceCode": "string"
+        "address1": "Wish Street 3",
+        "address2": "Corner of Wish Street and List Crescent",
+        "city": "Wishlist City",
+        "country": "Australia",
+        "countryCode": "AU",
+        "email": "cust@email.com",
+        "firstName": "Cust",
+        "lastName": "Test",
+        "phone": "0151 7445 6927",
+        "postcode": "10000",
+        "province": "New South Wales",
+        "provinceCode": "NSW",
+        "defaultAddress": true
       }
     ],
-   "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
+    "attributeGroups": {
+        "retailer_additional_info": {
+            "attributes": {
+                "crm_default_account_id": "1234",
+                "triquestra_person_code": "TQ1234"
+            },
+            "description": "CRM and Triquestra extra attributes"
+        }
     },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
+    "optin_preferences" : {
+        "email": {
+            "opted_in": true
+        }
     }
-  },
-    "createdDate": "2022-06-20T09:21:47.710Z",
-    "customerRef": "string",
-    "customer_state": "disabled",
-    "defaultAddress": {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
-    },
-    "dob": "25-10-1985",
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastModifiedDate": "2022-06-20T09:21:47.710Z",
-    "lastName": "string",
-    "marketing_optin_level": "single_opt_in",
-    "marketing_preferences_updated_at": "2022-06-20T09:21:47.710Z",
-    "mobile": "string",
-    "phone": "string",
-    "taxExempt": true,
-    "taxExemptions": [
-      "string"
-    ],
-    "optin_preferences": {
-      "sms": {
-        "opt_in_active": false,
-        "opted_in_at": "2022-32-09 07:32:51",
-        "opt_in_updated_at": "2022-32-09 07:32:51"
-      },
-      "email": {
-        "opt_in_active": true,
-        "opted_in_at": "2022-32-09 07:32:59",
-        "opt_in_updated_at": "2022-32-09 07:32:59"
-
-      }
-    },
-    "verified_email": true
   }
 ]
 
 ```
 <!-- </details> -->
 
-<summary>Response - 200 (OK)</summary>
+<summary>Response - 202 (Accepted)</summary>
 
 HTTP Status Code: 
-``` json
-- 200 OK
-- 201 Created
-- 204 Deleted
+```
+- 202 OK
 - 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
 ```
 
 
-## Validate Customer Payload
+### UPDATE
+
+#### Update Customer By ID
+
+| Endpoint| ```/api/v2/customers/id={id}```|
+|-----------|---------------|
+| Method    | PUT          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| url path variable |```id``` This is the TWC generated unique ID of the customer being updated. |
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
+
+
+<!-- <details> -->
+ <summary>Sample Customer Request: </summary>
+
+```json
+{
+   "email": "updated-email@customerportal.com",
+   "customerRef": "new-customer-ref",
+   "mobile": "623362386238",
+    "phone": "623362386250",
+    "attributeGroups": {
+        "retailer_additional_info": {
+            "attributes": {
+                "crm_default_account_id": "1234",
+                "triquestra_person_code": "TQ1234"
+            },
+            "description": "CRM and Triquestra extra attributes updated"
+        }
+    }
+}
+```
+
+Sample HTTP 200 response
+
+
+ ```json
+ {
+  "id": "7c14445d-c9fb-457d-90ec-114a04e57bc3",
+  "email": "test@customer.com",
+  "customerRef": "new-customer-ref",
+  "firstName": "FirstName",
+  "lastName": "LastName",
+  "mobile": "623362386238",
+  "phone": "623362386238",
+  "dob": "25-10-1900",
+  "addresses": [
+    {
+      "address1": "Wish Street 3",
+      "address2": "Corner of Wish Street and List Crescent",
+      "city": "Wishlist City",
+      "country": "Australia",
+      "countryCode": "AU",
+      "email": "cust@email.com",
+      "firstName": "Cust",
+      "lastName": "Test",
+      "phone": "0151 7445 6927",
+      "postcode": "10000",
+      "province": "New South Wales",
+      "provinceCode": "NSW",
+      "defaultAddress": true
+    }
+  ],
+  "attributeGroups": {
+      "retailer_additional_info": {
+          "attributes": {
+              "crm_default_account_id": "1234",
+              "triquestra_person_code": "TQ1234"
+          },
+          "description": "CRM and Triquestra extra attributes"
+      }
+  },
+  "active": true,
+  "accepts_marketing": false,
+  "marketing_preferences_updated_at": "2023-05-19T03:45:02.530Z",
+  "customer_state": "enabled",
+  "taxExempt": false,
+  "taxExemptions": [],
+  "verified_email": false,
+  "createdDate": "2023-05-19T03:14:32.181Z",
+  "lastModifiedDate": "2023-05-19T03:45:02.530Z",
+  "optin_preferences": {
+    "sms": {
+        "opt_in_active": false
+    },
+    "email": {
+        "opt_in_active": false,
+        "opted_in_at": "2023-05-19T03:48:22.075Z",
+        "opt_in_updated_at": "2023-05-19T03:48:22.075Z"
+    }
+  }
+}
+
+```
+<!-- </details>  -->
+
+HTTP Status Code: 
+```json 
+- 201 Created
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+```
+
+
+#### Update a customer by reference ID
+
+Update a customer by customer reference ID. TWC will lookup customer by its given reference ID
+
+| Endpoint| ```/api/v2/customers/customerRef={customerRef}```|
+|-----------|---------------|
+| Method    | PUT          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| url path variable |```customerRef``` This is the retailer assigned unique ID of the customer being updated. |
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
+
+
+<!-- <details> -->
+ <summary>Sample Customer Request: </summary>
+
+```json
+{
+    "email": "updated-email@customerportal.com",
+    "mobile": "623362386238",
+    "phone": "623362386250",
+    "attributeGroups": {
+        "retailer_additional_info": {
+            "attributes": {
+                "crm_default_account_id": "1234",
+                "triquestra_person_code": "TQ1234"
+            },
+            "description": "CRM and Triquestra extra attributes updated"
+        }
+    }
+}
+```
+
+Sample HTTP 200 response
+
+
+ ```json
+ {
+  "id": "7c14445d-c9fb-457d-90ec-114a04e57bc3",
+  "email": "test@customer.com",
+  "customerRef": "CUST11959",
+  "firstName": "FirstName",
+  "lastName": "LastName",
+  "mobile": "623362386238",
+  "phone": "623362386238",
+  "dob": "25-10-1900",
+  "addresses": [
+    {
+      "address1": "Wish Street 3",
+      "address2": "Corner of Wish Street and List Crescent",
+      "city": "Wishlist City",
+      "country": "Australia",
+      "countryCode": "AU",
+      "email": "cust@email.com",
+      "firstName": "Cust",
+      "lastName": "Test",
+      "phone": "0151 7445 6927",
+      "postcode": "10000",
+      "province": "New South Wales",
+      "provinceCode": "NSW",
+      "defaultAddress": true
+    }
+  ],
+  "attributeGroups": {
+      "retailer_additional_info": {
+          "attributes": {
+              "crm_default_account_id": "1234",
+              "triquestra_person_code": "TQ1234"
+          },
+          "description": "CRM and Triquestra extra attributes"
+      }
+  },
+  "active": true,
+  "accepts_marketing": false,
+  "marketing_preferences_updated_at": "2023-05-19T03:45:02.530Z",
+  "customer_state": "enabled",
+  "taxExempt": false,
+  "taxExemptions": [],
+  "verified_email": false,
+  "createdDate": "2023-05-19T03:14:32.181Z",
+  "lastModifiedDate": "2023-05-19T03:45:02.530Z",
+  "optin_preferences": {
+    "sms": {
+        "opt_in_active": false
+    },
+    "email": {
+        "opt_in_active": false,
+        "opted_in_at": "2023-05-19T03:48:22.075Z",
+        "opt_in_updated_at": "2023-05-19T03:48:22.075Z"
+    }
+  }
+}
+
+```
+<!-- </details>  -->
+
+HTTP Status Code: 
+```json 
+- 201 Created
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+```
+
+
+#### Validate Customer Payload
+
 This API is used to validate a payload format.  It is primarily an internal API and typically not required/used by customers, but we do make it available to developers if required.
 
-Endpoint: ```/api/v2/customers/validate```
+| Endpoint| ```/api/v2/customers/validate```|
+|-----------|---------------|
+| Method    | POST          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-Method: ``` POST ```
-
-Method Name: `validateCustomerRequest`
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
-<!--<details> -->
- <summary>Request Headers</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-<!--</details> 
-
-
-<details> -->
- <summary>Sample Request</summary>
-
-```json
-{
-  "accepts_marketing": true,
-  "active": true,
-  "addresses": [
-    {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
-    }
-  ],
- "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
-  },
-  "createdDate": "2022-06-20T09:26:27.726Z",
-  "customerRef": "string",
-  "customer_state": "disabled",
-  "defaultAddress": {
-    "address1": "string",
-    "address2": "string",
-    "addressName": "string",
-    "city": "string",
-    "company": "string",
-    "country": "string",
-    "countryCode": "string",
-    "customerId": "string",
-    "defaultAddress": true,
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastName": "string",
-    "phone": "string",
-    "postcode": "string",
-    "province": "string",
-    "provinceCode": "string"
-  },
-  "dob": "25-10-1985",
-  "email": "string",
-  "firstName": "string",
-  "id": "string",
-  "lastModifiedDate": "2022-06-20T09:26:27.726Z",
-  "lastName": "string",
-  "marketing_optin_level": "single_opt_in",
-  "marketing_preferences_updated_at": "2022-06-20T09:26:27.726Z",
-  "mobile": "string",
-  "phone": "string",
-  "taxExempt": true,
-  "taxExemptions": [
-    "string"
-  ],
-  "optin_preferences": {
-    "sms": {
-      "opt_in_active": false,
-      "opted_in_at": "2022-32-09 07:32:51",
-      "opt_in_updated_at": "2022-32-09 07:32:51"
-    },
-    "email": {
-      "opt_in_active": true,
-      "opted_in_at": "2022-32-09 07:32:59",
-      "opt_in_updated_at": "2022-32-09 07:32:59"
-
-    }
-  },
-  "verified_email": true
-}
-
-```
-<!-- </details> -->
-
-<summary>Response - 200 (OK)</summary>
-
-HTTP Status Code: 
-``` json
-- 200 OK
-- 201 Created
-- 204 Deleted
-- 400 Bad request
-- 401 Unauthorised
-- 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
-```
-
-## Update a Customer
-Updates Customer fields.  
-
-The updateCustomer API determines which customer to update by comparing the unique customer identifiers, in the priorithy of id, CustomerRef, then email. 
-
-*Note: There are two additional APIs to update customer using specifically the id or CustomerRef, which will work more efficiently than this API.*
-
-Endpoint: ```/api/v2/customers```
-
-Method: ``` PUT ```
-
-Method Name: `updateCustomer`
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
 <!-- <details> -->
- <summary>Request Headers</summary>
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
@@ -714,764 +582,86 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 
 <!-- </details> -->
 
-
 <!-- <details> -->
- <summary>Sample Request</summary>
+ <summary>Sample Customer Request: </summary>
 
 ```json
 {
-  "accepts_marketing": true,
-  "active": true,
+  "email": "test@customer.com",
+  "customerRef": "CUST11959",
+  "firstName": "FirstName",
+  "lastName": "LastName",
+  "mobile": "623362386238",
+  "phone": "623362386238",
+  "dob": "25-10-1900",
   "addresses": [
     {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
-    }
-  ],
-"attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
-  },
-  "createdDate": "2022-06-20T09:26:58.918Z",
-  "customerRef": "string",
-  "customer_state": "disabled",
-  "defaultAddress": {
-    "address1": "string",
-    "address2": "string",
-    "addressName": "string",
-    "city": "string",
-    "company": "string",
-    "country": "string",
-    "countryCode": "string",
-    "customerId": "string",
-    "defaultAddress": true,
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastName": "string",
-    "phone": "string",
-    "postcode": "string",
-    "province": "string",
-    "provinceCode": "string"
-  },
-  "dob": "25-10-1985",
-  "email": "string",
-  "firstName": "string",
-  "id": "string",
-  "lastModifiedDate": "2022-06-20T09:26:58.919Z",
-  "lastName": "string",
-  "marketing_optin_level": "single_opt_in",
-  "marketing_preferences_updated_at": "2022-06-20T09:26:58.919Z",
-  "mobile": "string",
-  "phone": "string",
-  "taxExempt": true,
-  "taxExemptions": [
-    "string"
-  ],
-  "optin_preferences": {
-    "sms": {
-      "opt_in_active": false,
-      "opted_in_at": "2022-32-09 07:32:51",
-      "opt_in_updated_at": "2022-32-09 07:32:51"
-    },
-    "email": {
-      "opt_in_active": true,
-      "opted_in_at": "2022-32-09 07:32:59",
-      "opt_in_updated_at": "2022-32-09 07:32:59"
-
-    }
-  },
-  "verified_email": true
-}
-
-```
-<!-- </details> -->
-
-<!-- <details> -->
-<summary>Response - 200 (OK)</summary>
-
-```json
- {
-  "accepts_marketing": true,
-  "active": true,
-  "addresses": [
-    {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
-    }
-  ],
- "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
-  },
-  "createdDate": "2022-06-20T09:26:58.956Z",
-  "customerRef": "string",
-  "customer_state": "disabled",
-  "defaultAddress": {
-    "address1": "string",
-    "address2": "string",
-    "addressName": "string",
-    "city": "string",
-    "company": "string",
-    "country": "string",
-    "countryCode": "string",
-    "customerId": "string",
-    "defaultAddress": true,
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastName": "string",
-    "phone": "string",
-    "postcode": "string",
-    "province": "string",
-    "provinceCode": "string"
-  },
-  "dob": "25-10-1985",
-  "email": "string",
-  "firstName": "string",
-  "id": "string",
-  "lastModifiedDate": "2022-06-20T09:26:58.956Z",
-  "lastName": "string",
-  "marketing_optin_level": "single_opt_in",
-  "marketing_preferences_updated_at": "2022-06-20T09:26:58.956Z",
-  "mobile": "string",
-  "phone": "string",
-  "taxExempt": true,
-  "taxExemptions": [
-    "string"
-  ],
-  "optin_preferences": {
-    "sms": {
-      "opt_in_active": false,
-      "opted_in_at": "2022-32-09 07:32:51",
-      "opt_in_updated_at": "2022-32-09 07:32:51"
-    },
-    "email": {
-      "opt_in_active": true,
-      "opted_in_at": "2022-32-09 07:32:59",
-      "opt_in_updated_at": "2022-32-09 07:32:59"
-
-    }
-  },
-  "verified_email": true
-}
-
-```
-<!-- </details> -->
-
-HTTP Status Code: 
-``` json
-- 200 OK
-- 201 Created
-- 204 Deleted
-- 400 Bad request 
-- 401 Unauthorised
-- 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
-```
-
-## Update a Customer By Customer Id
-Updates Customer based on The Wishlist system generated unique ID.
-
-Endpoint: ```/api/v2/customers/id={id:.*}"```
-
-Method: ``` PUT ```
-
-Method Name: `updateCustomer`
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
-<!-- <details> -->
- <summary>Request Headers</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-<!-- </details> -->
-
- Path Variable: `id: customer Id`
- 
-<!-- <details> -->
- <summary>Sample Request</summary>
-
-```json
-{
-  "accepts_marketing": true,
-  "active": true,
-  "addresses": [
-    {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
+      "address1": "Wish Street 3",
+      "address2": "Corner of Wish Street and List Crescent",
+      "city": "Wishlist City",
+      "country": "Australia",
+      "countryCode": "AU",
+      "email": "cust@email.com",
+      "firstName": "Cust",
+      "lastName": "Test",
+      "phone": "0151 7445 6927",
+      "postcode": "10000",
+      "province": "New South Wales",
+      "provinceCode": "NSW",
+      "defaultAddress": true
     }
   ],
   "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
+      "retailer_additional_info": {
+          "attributes": {
+              "crm_default_account_id": "1234",
+              "triquestra_person_code": "TQ1234"
+          },
+          "description": "CRM and Triquestra extra attributes"
+      }
   },
-  "createdDate": "2022-06-20T09:26:58.918Z",
-  "customer_state": "disabled",
-  "defaultAddress": {
-    "address1": "string",
-    "address2": "string",
-    "addressName": "string",
-    "city": "string",
-    "company": "string",
-    "country": "string",
-    "countryCode": "string",
-    "customerId": "string",
-    "defaultAddress": true,
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastName": "string",
-    "phone": "string",
-    "postcode": "string",
-    "province": "string",
-    "provinceCode": "string"
-  },
-  "dob": "25-10-1985",
-  "email": "string",
-  "firstName": "string",
-  "lastModifiedDate": "2022-06-20T09:26:58.919Z",
-  "lastName": "string",
-  "marketing_optin_level": "single_opt_in",
-  "marketing_preferences_updated_at": "2022-06-20T09:26:58.919Z",
-  "mobile": "string",
-  "phone": "string",
-  "taxExempt": true,
-  "taxExemptions": [
-    "string"
-  ],
-  "optin_preferences": {
-    "sms": {
-      "opt_in_active": false,
-      "opted_in_at": "2022-32-09 07:32:51",
-      "opt_in_updated_at": "2022-32-09 07:32:51"
-    },
-    "email": {
-      "opt_in_active": true,
-      "opted_in_at": "2022-32-09 07:32:59",
-      "opt_in_updated_at": "2022-32-09 07:32:59"
-
-    }
-  },
-  "verified_email": true
+  "optin_preferences" : {
+      "email": {
+          "opted_in": true
+      }
+  }
 }
-
 ```
-<!-- </details> -->
 
-<!-- <details> -->
-<summary>Response - 200 (OK)</summary>
+If customer payload is valid, it will respond with an HTTP 200
 
-```json
- {
-  "accepts_marketing": true,
-  "active": true,
-  "addresses": [
-    {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
-    }
-  ],
-  "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
-  },
-  "createdDate": "2022-06-20T09:26:58.956Z",
-  "customerRef": "string",
-  "customer_state": "disabled",
-  "defaultAddress": {
-    "address1": "string",
-    "address2": "string",
-    "addressName": "string",
-    "city": "string",
-    "company": "string",
-    "country": "string",
-    "countryCode": "string",
-    "customerId": "string",
-    "defaultAddress": true,
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastName": "string",
-    "phone": "string",
-    "postcode": "string",
-    "province": "string",
-    "provinceCode": "string"
-  },
-  "dob": "25-10-1985",
-  "email": "string",
-  "firstName": "string",
-  "id": "string",
-  "lastModifiedDate": "2022-06-20T09:26:58.956Z",
-  "lastName": "string",
-  "marketing_optin_level": "single_opt_in",
-  "marketing_preferences_updated_at": "2022-06-20T09:26:58.956Z",
-  "mobile": "string",
-  "phone": "string",
-  "taxExempt": true,
-  "taxExemptions": [
-    "string"
-  ],
-  "optin_preferences": {
-    "sms": {
-      "opt_in_active": false,
-      "opted_in_at": "2022-32-09 07:32:51",
-      "opt_in_updated_at": "2022-32-09 07:32:51"
-    },
-    "email": {
-      "opt_in_active": true,
-      "opted_in_at": "2022-32-09 07:32:59",
-      "opt_in_updated_at": "2022-32-09 07:32:59"
-
-    }
-  },
-  "verified_email": true
-}
-
-```
-<!-- </details> -->
+<!-- </details>  -->
 
 HTTP Status Code: 
-``` json
+```
 - 200 OK
-- 201 Created
-- 204 Deleted
 - 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
 ```
 
-## Update a Customer By Customer Ref
-Updates Customer matching the retailer's own unique identifier- CustomerRef.
+#### Add address to Existing Customer
 
-Endpoint: ```/api/v2/customers/customerRef={customerRef:.*}```
-
-Method: ``` PUT ```
-
-Method Name: `updateCustomer`
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
-<!-- <details> -->
- <summary>Request Headers</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-<!-- </details> -->
-
- Path Variable: `customerRef : customer Ref`
-
-<!-- <details> -->
- <summary>Sample Request</summary>
-
-```json
-{
-  "accepts_marketing": true,
-  "active": true,
-  "addresses": [
-    {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
-    }
-  ],
-  "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
-  },
-  "createdDate": "2022-06-20T09:26:58.918Z",  
-  "customer_state": "disabled",
-  "defaultAddress": {
-    "address1": "string",
-    "address2": "string",
-    "addressName": "string",
-    "city": "string",
-    "company": "string",
-    "country": "string",
-    "countryCode": "string",
-    "customerId": "string",
-    "defaultAddress": true,
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastName": "string",
-    "phone": "string",
-    "postcode": "string",
-    "province": "string",
-    "provinceCode": "string"
-  },
-  "dob": "25-10-1985",
-  "email": "string",
-  "firstName": "string",  
-  "lastModifiedDate": "2022-06-20T09:26:58.919Z",
-  "lastName": "string",
-  "marketing_optin_level": "single_opt_in",
-  "marketing_preferences_updated_at": "2022-06-20T09:26:58.919Z",
-  "mobile": "string",
-  "phone": "string",
-  "taxExempt": true,
-  "taxExemptions": [
-    "string"
-  ],
-  "optin_preferences": {
-    "sms": {
-      "opt_in_active": false,
-      "opted_in_at": "2022-32-09 07:32:51",
-      "opt_in_updated_at": "2022-32-09 07:32:51"
-    },
-    "email": {
-      "opt_in_active": true,
-      "opted_in_at": "2022-32-09 07:32:59",
-      "opt_in_updated_at": "2022-32-09 07:32:59"
-
-    }
-  },
-  "verified_email": true
-}
-
-```
-<!-- </details> -->
-
-<!-- <details> -->
-<summary>Response - 200 (OK)</summary>
-
-```json
- {
-  "accepts_marketing": true,
-  "active": true,
-  "addresses": [
-    {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
-    }
-  ],
- "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
-  },
-  "createdDate": "2022-06-20T09:26:58.956Z",
-  "customerRef": "string",
-  "customer_state": "disabled",
-  "defaultAddress": {
-    "address1": "string",
-    "address2": "string",
-    "addressName": "string",
-    "city": "string",
-    "company": "string",
-    "country": "string",
-    "countryCode": "string",
-    "customerId": "string",
-    "defaultAddress": true,
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastName": "string",
-    "phone": "string",
-    "postcode": "string",
-    "province": "string",
-    "provinceCode": "string"
-  },
-  "dob": "25-10-1985",
-  "email": "string",
-  "firstName": "string",
-  "id": "string",
-  "lastModifiedDate": "2022-06-20T09:26:58.956Z",
-  "lastName": "string",
-  "marketing_optin_level": "single_opt_in",
-  "marketing_preferences_updated_at": "2022-06-20T09:26:58.956Z",
-  "mobile": "string",
-  "phone": "string",
-  "taxExempt": true,
-  "taxExemptions": [
-    "string"
-  ],
-  "optin_preferences": {
-    "sms": {
-      "opt_in_active": false,
-      "opted_in_at": "2022-32-09 07:32:51",
-      "opt_in_updated_at": "2022-32-09 07:32:51"
-    },
-    "email": {
-      "opt_in_active": true,
-      "opted_in_at": "2022-32-09 07:32:59",
-      "opt_in_updated_at": "2022-32-09 07:32:59"
-
-    }
-  },
-  "verified_email": true
-}
-
-```
-<!-- </details> -->
-
-HTTP Status Code: 
-``` json
-- 200 OK
-- 201 Created
-- 204 Deleted
-- 400 Bad request 
-- 401 Unauthorised
-- 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
-```
-
-
-
-## Add address to Existing Customer
 Add a customer address using The Wishlist generated customer ID.
 
 *NOTE THIS CAN ALSO BE DONE DIRECTLY USING THE UPDATE CUSTOMER APIs*
 
 
-Endpoint: ```/api/v2/customers/{id}/address```
+| Endpoint| ```/api/v2/customers/{id}/address```|
+|-----------|---------------|
+| Method    | POST          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| url path variable |```id``` This is the TWC generated unique ID of the customer being updated. |
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-Method: ``` POST ```
 
-Method Name: `addCustomerAddress`
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
-<!--<details> -->
- <summary>Request Headers</summary>
+<!-- <details> -->
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
-
-<!-- <details> -->
 
 
 <!-- </details> -->
@@ -1479,142 +669,89 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 
 ```json
 {
-  "address1": "string",
-  "address2": "string",
-  "addressName": "string",
-  "city": "string",
-  "company": "string",
-  "country": "string",
-  "countryCode": "string",
-  "customerId": "string",
-  "defaultAddress": true,
-  "email": "string",
-  "firstName": "string",
-  "id": "string",
-  "lastName": "string",
-  "phone": "string",
-  "postcode": "string",
-  "province": "string",
-  "provinceCode": "string"
+  "address1": "Wish Street 3",
+  "address2": "Corner of Wish Street and List Crescent",
+  "city": "Wishlist City",
+  "country": "Australia",
+  "countryCode": "AU",
+  "email": "cust@email.com",
+  "firstName": "Cust",
+  "lastName": "Test",
+  "phone": "0151 7445 6927",
+  "postcode": "10000",
+  "province": "New South Wales",
+  "provinceCode": "NSW",
+  "defaultAddress": true
 }
 
 ```
-<!-- </details> -->
 
 <!-- <details> -->
 <summary>Response - 200 (OK)</summary>
 
-```json
- {
-  "accepts_marketing": true,
-  "active": true,
+``` json
+{
+  "id": "7c14445d-c9fb-457d-90ec-114a04e57bc3",
+  "email": "test@customer.com",
+  "customerRef": "new-customer-ref",
+  "firstName": "FirstName",
+  "lastName": "LastName",
+  "mobile": "623362386238",
+  "phone": "623362386238",
+  "dob": "25-10-1900",
   "addresses": [
     {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
+      "address1": "Wish Street 3",
+      "address2": "Corner of Wish Street and List Crescent",
+      "city": "Wishlist City",
+      "country": "Australia",
+      "countryCode": "AU",
+      "email": "cust@email.com",
+      "firstName": "Cust",
+      "lastName": "Test",
+      "phone": "0151 7445 6927",
+      "postcode": "10000",
+      "province": "New South Wales",
+      "provinceCode": "NSW",
+      "defaultAddress": true
     }
   ],
- "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
+  "attributeGroups": {
+      "retailer_additional_info": {
+          "attributes": {
+              "crm_default_account_id": "1234",
+              "triquestra_person_code": "TQ1234"
+          },
+          "description": "CRM and Triquestra extra attributes"
+      }
   },
-  "createdDate": "2022-06-20T09:27:37.333Z",
-  "customerRef": "string",
-  "customer_state": "disabled",
-  "defaultAddress": {
-    "address1": "string",
-    "address2": "string",
-    "addressName": "string",
-    "city": "string",
-    "company": "string",
-    "country": "string",
-    "countryCode": "string",
-    "customerId": "string",
-    "defaultAddress": true,
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastName": "string",
-    "phone": "string",
-    "postcode": "string",
-    "province": "string",
-    "provinceCode": "string"
-  },
-  "dob": "25-10-1985",
-  "email": "string",
-  "firstName": "string",
-  "id": "string",
-  "lastModifiedDate": "2022-06-20T09:27:37.333Z",
-  "lastName": "string",
-  "marketing_optin_level": "single_opt_in",
-  "marketing_preferences_updated_at": "2022-06-20T09:27:37.333Z",
-  "mobile": "string",
-  "phone": "string",
-  "taxExempt": true,
-  "taxExemptions": [
-    "string"
-  ],
+  "active": true,
+  "accepts_marketing": false,
+  "marketing_preferences_updated_at": "2023-05-19T03:45:02.530Z",
+  "customer_state": "enabled",
+  "taxExempt": false,
+  "taxExemptions": [],
+  "verified_email": false,
+  "createdDate": "2023-05-19T03:14:32.181Z",
+  "lastModifiedDate": "2023-05-19T03:45:02.530Z",
   "optin_preferences": {
     "sms": {
-      "opt_in_active": false,
-      "opted_in_at": "2022-32-09 07:32:51",
-      "opt_in_updated_at": "2022-32-09 07:32:51"
+        "opt_in_active": false
     },
     "email": {
-      "opt_in_active": true,
-      "opted_in_at": "2022-32-09 07:32:59",
-      "opt_in_updated_at": "2022-32-09 07:32:59"
-
+        "opt_in_active": false,
+        "opted_in_at": "2023-05-19T03:48:22.075Z",
+        "opt_in_updated_at": "2023-05-19T03:48:22.075Z"
     }
-  },
-  "verified_email": true
+  }
 }
 
 ```
 <!-- <details> -->
 
 HTTP Status Code: 
-``` json
-- 200 OK
+```
 - 201 Created
-- 204 Deleted
 - 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
@@ -1623,155 +760,103 @@ HTTP Status Code:
 ```
 
 
-## Delete Customer Address
+### DELETE
 
 Delete a customer address using either The Wishlist generated customer id and The Wishlist generated address id
 
-Endpoint: ```/api/v2/customers/{id}/address/{addressId}```
+| Endpoint| ```/api/v2/customers/{id}/address/{addressId}```|
+|-----------|---------------|
+| Method    | DELETE          |
+| Headers   | X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| url path variable |```id``` This is the TWC generated unique ID of the customer from whom address is being deleted. |
+| url path variable |```addressId``` This is the TWC generated unique ID of the customer address being deleted. |
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-Method: ``` DELETE ```
 
-Method Name: `deleteCustomerAddress`
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
-<!--<details> -->
- <summary>Request Headers</summary>
+<!-- <details> -->
+ <summary>Request Headers :</summary>
 
 | Key           | Value            |
 |---------------|------------------|
-| Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-
-Path Variable: 
-
-```
-id - customer id
-addressId - Customer Address Id
-```
 
 <!-- <details> -->
 <summary>Response - 200 (OK)</summary>
 
 ```json
  {
-  "accepts_marketing": true,
+  "id": "7c14445d-c9fb-457d-90ec-114a04e57bc3",
+  "email": "test@customer.com",
+  "customerRef": "new-customer-ref",
+  "firstName": "FirstName",
+  "lastName": "LastName",
+  "mobile": "623362386238",
+  "phone": "623362386238",
+  "dob": "25-10-1900",
+  "attributeGroups": {
+      "retailer_additional_info": {
+          "attributes": {
+              "crm_default_account_id": "1234",
+              "triquestra_person_code": "TQ1234"
+          },
+          "description": "CRM and Triquestra extra attributes"
+      }
+  },
   "active": true,
-  "addresses": [
-    {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
-    }
-  ],
- "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
-  },
-  "createdDate": "2022-06-20T09:27:37.333Z",
-  "customerRef": "string",
-  "customer_state": "disabled",
-  "defaultAddress": {
-    "address1": "string",
-    "address2": "string",
-    "addressName": "string",
-    "city": "string",
-    "company": "string",
-    "country": "string",
-    "countryCode": "string",
-    "customerId": "string",
-    "defaultAddress": true,
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastName": "string",
-    "phone": "string",
-    "postcode": "string",
-    "province": "string",
-    "provinceCode": "string"
-  },
-  "dob": "25-10-1985",
-  "email": "string",
-  "firstName": "string",
-  "id": "string",
-  "lastModifiedDate": "2022-06-20T09:27:37.333Z",
-  "lastName": "string",
-  "marketing_optin_level": "single_opt_in",
-  "marketing_preferences_updated_at": "2022-06-20T09:27:37.333Z",
-  "mobile": "string",
-  "phone": "string",
-  "taxExempt": true,
-  "taxExemptions": [
-    "string"
-  ],
-
+  "accepts_marketing": false,
+  "marketing_preferences_updated_at": "2023-05-19T03:45:02.530Z",
+  "customer_state": "enabled",
+  "taxExempt": false,
+  "taxExemptions": [],
+  "verified_email": false,
+  "createdDate": "2023-05-19T03:14:32.181Z",
+  "lastModifiedDate": "2023-05-19T03:45:02.530Z",
   "optin_preferences": {
     "sms": {
-      "opt_in_active": false,
-      "opted_in_at": "2022-32-09 07:32:51",
-      "opt_in_updated_at": "2022-32-09 07:32:51"
+        "opt_in_active": false
     },
     "email": {
-      "opt_in_active": true,
-      "opted_in_at": "2022-32-09 07:32:59",
-      "opt_in_updated_at": "2022-32-09 07:32:59"
-
+        "opt_in_active": false,
+        "opted_in_at": "2023-05-19T03:48:22.075Z",
+        "opt_in_updated_at": "2023-05-19T03:48:22.075Z"
     }
-  },
-  "verified_email": true
+  }
 }
+
 
 ```
 <!-- <details> -->
 
 HTTP Status Code: 
-``` json
+```
 - 200 OK
-- 201 Created
-- 204 Deleted
 - 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-- 405 Invalid input
 ```
+
+#### Delete Customer
+
+| Endpoint| ```/api/v2/customers/{id}```|
+|-----------|---------------|
+| Method    | DELETE          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| url path variable |```id``` This is the TWC generated unique ID of the customer being deleted. |
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
+
+<!-- <details> -->
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| X-TWC-Tenant  | {Tenant Name}    |
+
+
+<!-- <details> -->
+<summary>Response - 204 (No Content)</summary>
+
 
 ## Get Customer by Id
 Returns a customer using The Wishlist platform system generated customer ID. 
