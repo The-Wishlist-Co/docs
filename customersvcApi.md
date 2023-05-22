@@ -19,19 +19,12 @@ The Customer API is used to create and manage information about a retailer's cus
     - [Attribute Groups](#attributegroups)
     - [Attribute Group](#attributegroup)
   - [**Endpoints**](#rest-endpoints)
-    - [Create a Customer](#create-a-customer)
-    - [Upload Customers](#upload-customers)
-    - [Validate Customer Input](#validate-customer-input)
-    - [Update a Customer](#update-a-customer)
-    - [Update a Customer By Customer Id](#update-a-customer-by-customer-id)
-    - [Update a Customer By Customer Ref](#update-a-customer-by-customer-ref)
-    - [Add address to Existing Customer](#add-address-to-existing-customer)
-    - [Delete Customer Address](#delete-customer-address)
-    - [Find Customer by Id](#find-customer-by-id)
-    - [Find Customer by Ref](#find-customer-by-ref)
-    - [Look up  Customers by email/mobile/phone/firstName/lastName](#look-up--customers-by-emailmobilephonefirstnamelastname)
-    - [Delete Customer by ID](#delete-customer-by-id)
-    - [Delete Customer by Ref](#delete-customer-by-ref)
+    - [Customer](#customer)
+      - [Create](#create)
+      - [Update](#update)
+      - [Validate](#validate)
+      - [Delete](#delete)
+      - [Get](#get)
 
 
 ## **Representations**
@@ -560,86 +553,6 @@ HTTP Status Code:
 - 403 Forbidden 
 ```
 
-
-#### Validate Customer Payload
-
-This API is used to validate a payload format.  It is primarily an internal API and typically not required/used by customers, but we do make it available to developers if required.
-
-| Endpoint| ```/api/v2/customers/validate```|
-|-----------|---------------|
-| Method    | POST          |
-| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
-| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
-
-<!-- <details> -->
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-<!-- </details> -->
-
-<!-- <details> -->
- <summary>Sample Customer Request: </summary>
-
-```json
-{
-  "email": "test@customer.com",
-  "customerRef": "CUST11959",
-  "firstName": "FirstName",
-  "lastName": "LastName",
-  "mobile": "623362386238",
-  "phone": "623362386238",
-  "dob": "25-10-1900",
-  "addresses": [
-    {
-      "address1": "Wish Street 3",
-      "address2": "Corner of Wish Street and List Crescent",
-      "city": "Wishlist City",
-      "country": "Australia",
-      "countryCode": "AU",
-      "email": "cust@email.com",
-      "firstName": "Cust",
-      "lastName": "Test",
-      "phone": "0151 7445 6927",
-      "postcode": "10000",
-      "province": "New South Wales",
-      "provinceCode": "NSW",
-      "defaultAddress": true
-    }
-  ],
-  "attributeGroups": {
-      "retailer_additional_info": {
-          "attributes": {
-              "crm_default_account_id": "1234",
-              "triquestra_person_code": "TQ1234"
-          },
-          "description": "CRM and Triquestra extra attributes"
-      }
-  },
-  "optin_preferences" : {
-      "email": {
-          "opted_in": true
-      }
-  }
-}
-```
-
-If customer payload is valid, it will respond with an HTTP 200
-
-<!-- </details>  -->
-
-HTTP Status Code: 
-```
-- 200 OK
-- 400 Bad request 
-- 401 Unauthorised
-- 403 Forbidden 
-```
-
 #### Add address to Existing Customer
 
 Add a customer address using The Wishlist generated customer ID.
@@ -760,7 +673,91 @@ HTTP Status Code:
 ```
 
 
+### Validate
+
+#### Validate Customer Payload
+
+This API is used to validate a payload format.  It is primarily an internal API and typically not required/used by customers, but we do make it available to developers if required.
+
+| Endpoint| ```/api/v2/customers/validate```|
+|-----------|---------------|
+| Method    | POST          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
+
+
+<!-- <details> -->
+ <summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+<!-- </details> -->
+
+<!-- <details> -->
+ <summary>Sample Customer Request: </summary>
+
+```json
+{
+  "email": "test@customer.com",
+  "customerRef": "CUST11959",
+  "firstName": "FirstName",
+  "lastName": "LastName",
+  "mobile": "623362386238",
+  "phone": "623362386238",
+  "dob": "25-10-1900",
+  "addresses": [
+    {
+      "address1": "Wish Street 3",
+      "address2": "Corner of Wish Street and List Crescent",
+      "city": "Wishlist City",
+      "country": "Australia",
+      "countryCode": "AU",
+      "email": "cust@email.com",
+      "firstName": "Cust",
+      "lastName": "Test",
+      "phone": "0151 7445 6927",
+      "postcode": "10000",
+      "province": "New South Wales",
+      "provinceCode": "NSW",
+      "defaultAddress": true
+    }
+  ],
+  "attributeGroups": {
+      "retailer_additional_info": {
+          "attributes": {
+              "crm_default_account_id": "1234",
+              "triquestra_person_code": "TQ1234"
+          },
+          "description": "CRM and Triquestra extra attributes"
+      }
+  },
+  "optin_preferences" : {
+      "email": {
+          "opted_in": true
+      }
+  }
+}
+```
+
+If customer payload is valid, it will respond with an HTTP 200
+
+<!-- </details>  -->
+
+HTTP Status Code: 
+```
+- 200 OK
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+```
+
+
 ### DELETE
+
+#### Delete customer address
 
 Delete a customer address using either The Wishlist generated customer id and The Wishlist generated address id
 
@@ -842,152 +839,69 @@ HTTP Status Code:
 | Endpoint| ```/api/v2/customers/{id}```|
 |-----------|---------------|
 | Method    | DELETE          |
-| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| Headers   | X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | url path variable |```id``` This is the TWC generated unique ID of the customer being deleted. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
-<!-- <details> -->
- <summary>Request Headers :</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| X-TWC-Tenant  | {Tenant Name}    |
 
 
 <!-- <details> -->
 <summary>Response - 204 (No Content)</summary>
 
 
-## Get Customer by Id
+## GET
+
+#### Get Customer by Id
 Returns a customer using The Wishlist platform system generated customer ID. 
 
-Endpoint: ```/api/v2/customers/{id}```
+| Endpoint| ```/api/v2/customers/{id}```|
+|-----------|---------------|
+| Method    | GET          |
+| Headers   | X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| url path variable |```id``` This is the TWC generated unique ID of the customer. |
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-Method: ``` GET ``` 
-
-Method Name: `getCustomer`
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
-<!--<details> -->
- <summary>Request Headers</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-<!-- </details> -->
-
-
-<!-- <details> -->
- Path variable: `{id} : customer ID`
-<!-- </details> -->
 
 <!-- <details> -->
 <summary>Response - 200 (OK)</summary>
 
 ```json
  {
-  "accepts_marketing": true,
+  "id": "7c14445d-c9fb-457d-90ec-114a04e57bc3",
+  "email": "test@customer.com",
+  "customerRef": "new-customer-ref",
+  "firstName": "FirstName",
+  "lastName": "LastName",
+  "mobile": "623362386238",
+  "phone": "623362386238",
+  "dob": "25-10-1900",
+  "attributeGroups": {
+      "retailer_additional_info": {
+          "attributes": {
+              "crm_default_account_id": "1234",
+              "triquestra_person_code": "TQ1234"
+          },
+          "description": "CRM and Triquestra extra attributes"
+      }
+  },
   "active": true,
-  "addresses": [
-    {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
-    }
-  ],
-"attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
-  },
-  "createdDate": "2022-06-20T09:28:14.926Z",
-  "customerRef": "string",
-  "customer_state": "disabled",
-  "defaultAddress": {
-    "address1": "string",
-    "address2": "string",
-    "addressName": "string",
-    "city": "string",
-    "company": "string",
-    "country": "string",
-    "countryCode": "string",
-    "customerId": "string",
-    "defaultAddress": true,
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastName": "string",
-    "phone": "string",
-    "postcode": "string",
-    "province": "string",
-    "provinceCode": "string"
-  },
-  "dob": "25-10-1985",
-  "email": "string",
-  "firstName": "string",
-  "id": "string",
-  "lastModifiedDate": "2022-06-20T09:28:14.926Z",
-  "lastName": "string",
-  "marketing_optin_level": "single_opt_in",
-  "marketing_preferences_updated_at": "2022-06-20T09:28:14.926Z",
-  "mobile": "string",
-  "phone": "string",
-  "taxExempt": true,
-  "taxExemptions": [
-    "string"
-  ],
+  "accepts_marketing": false,
+  "marketing_preferences_updated_at": "2023-05-19T03:45:02.530Z",
+  "customer_state": "enabled",
+  "taxExempt": false,
+  "taxExemptions": [],
+  "verified_email": false,
+  "createdDate": "2023-05-19T03:14:32.181Z",
+  "lastModifiedDate": "2023-05-19T03:45:02.530Z",
   "optin_preferences": {
     "sms": {
-      "opt_in_active": false,
-      "opted_in_at": "2022-32-09 07:32:51",
-      "opt_in_updated_at": "2022-32-09 07:32:51"
+        "opt_in_active": false
     },
     "email": {
-      "opt_in_active": true,
-      "opted_in_at": "2022-32-09 07:32:59",
-      "opt_in_updated_at": "2022-32-09 07:32:59"
-
+        "opt_in_active": false,
+        "opted_in_at": "2023-05-19T03:48:22.075Z",
+        "opt_in_updated_at": "2023-05-19T03:48:22.075Z"
     }
-  },
-  "verified_email": true
+  }
 }
 
 ```
@@ -997,146 +911,64 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 HTTP Status Code: 
 ``` json
 - 200 OK
-- 201 Created
-- 204 Deleted
-- 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-- 405 Invalid input
 ```
 
-## Get Customer by CustomerRef
+#### Get Customer by CustomerRef
 Returns a customer using the retailers's own unique customer identifier CustomerRef.
 
-Endpoint: ```/api/v2/customers/{customerRef}/ref```
 
-Method: ``` GET ``` 
+| Endpoint| ```/api/v2/customers/{customerRef}/ref```|
+|-----------|---------------|
+| Method    | GET          |
+| Headers   | X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| url path variable |```customerRef``` This is the retailer assigned ID of the customer. |
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-Method Name: `getCustomerByRef`
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
-<!-- <details> -->
- <summary>Request Headers</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-<!-- </details> -->
-
-
-<!-- <details> -->
- Path Variable: `customerRef : customer Ref`
-	
-<!-- </details> -->
 
 <!-- <details> -->
 <summary>Response - 200 (OK)</summary>
 
 ```json
  {
-  "accepts_marketing": true,
+  "id": "7c14445d-c9fb-457d-90ec-114a04e57bc3",
+  "email": "test@customer.com",
+  "customerRef": "new-customer-ref",
+  "firstName": "FirstName",
+  "lastName": "LastName",
+  "mobile": "623362386238",
+  "phone": "623362386238",
+  "dob": "25-10-1900",
+  "attributeGroups": {
+      "retailer_additional_info": {
+          "attributes": {
+              "crm_default_account_id": "1234",
+              "triquestra_person_code": "TQ1234"
+          },
+          "description": "CRM and Triquestra extra attributes"
+      }
+  },
   "active": true,
-  "addresses": [
-    {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
-    }
-  ],
- "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
-  },
-  "createdDate": "2022-06-20T09:29:37.721Z",
-  "customerRef": "string",
-  "customer_state": "disabled",
-  "defaultAddress": {
-    "address1": "string",
-    "address2": "string",
-    "addressName": "string",
-    "city": "string",
-    "company": "string",
-    "country": "string",
-    "countryCode": "string",
-    "customerId": "string",
-    "defaultAddress": true,
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastName": "string",
-    "phone": "string",
-    "postcode": "string",
-    "province": "string",
-    "provinceCode": "string"
-  },
-  "dob": "25-10-1985",
-  "email": "string",
-  "firstName": "string",
-  "id": "string",
-  "lastModifiedDate": "2022-06-20T09:29:37.721Z",
-  "lastName": "string",
-  "marketing_optin_level": "single_opt_in",
-  "marketing_preferences_updated_at": "2022-06-20T09:29:37.721Z",
-  "mobile": "string",
-  "phone": "string",
-  "taxExempt": true,
-  "taxExemptions": [
-    "string"
-  ],
+  "accepts_marketing": false,
+  "marketing_preferences_updated_at": "2023-05-19T03:45:02.530Z",
+  "customer_state": "enabled",
+  "taxExempt": false,
+  "taxExemptions": [],
+  "verified_email": false,
+  "createdDate": "2023-05-19T03:14:32.181Z",
+  "lastModifiedDate": "2023-05-19T03:45:02.530Z",
   "optin_preferences": {
     "sms": {
-      "opt_in_active": false,
-      "opted_in_at": "2022-32-09 07:32:51",
-      "opt_in_updated_at": "2022-32-09 07:32:51"
+        "opt_in_active": false
     },
     "email": {
-      "opt_in_active": true,
-      "opted_in_at": "2022-32-09 07:32:59",
-      "opt_in_updated_at": "2022-32-09 07:32:59"
-
+        "opt_in_active": false,
+        "opted_in_at": "2023-05-19T03:48:22.075Z",
+        "opt_in_updated_at": "2023-05-19T03:48:22.075Z"
     }
-  },
-  "verified_email": true
+  }
 }
 
 ```
@@ -1145,156 +977,109 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 HTTP Status Code: 
 ``` json
 - 200 OK
-- 201 Created
-- 204 Deleted
-- 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-- 405 Invalid input
 ```
 
 
-## Retrieve Customers by email/mobile/phone/firstName/lastName
+#### Retrieve Customers by email/mobile/phone/firstName/lastName
 Returns a list of customers based on email/mobile/phone/firstName/lastName.  A record is returned only if all of the given criteria are matched.  
 
 If no customers exist, this method returns a empty list.
 
-Endpoint: ```/api/v2/customers/search```
+| Endpoint| ```/api/v2/customers/search```|
+|-----------|---------------|
+| Method    | GET          |
+| Headers   | X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| query parameters |```email``` Email being searched. |
+| query parameters |```firstName``` First name to search. |
+| query parameters |```lastName``` Last name to search |
+| query parameters |```mobile``` Mobile number to search. |
+| query parameters |```phone``` Phone to search. |
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-Method: ``` GET ``` 
-
-Method Name: `lookupCustomer`
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
-<!-- <details> -->
- <summary>Request Headers</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-<!-- </details> -->
-
-
-<!-- <details> -->
- Query Parameters : 
- ```
- - email
- - firstName
- - lastName
- - mobile
- - phone
-```
-<!-- </details> -->
 
 <!-- <details> -->
 <summary>Response - 200 (OK)</summary>
 
 ```json
  [
-  {
-    "accepts_marketing": true,
+    {
+    "id": "7c14445d-c9fb-457d-90ec-114a04e57bc3",
+    "email": "test@customer.com",
+    "customerRef": "new-customer-ref",
+    "firstName": "FirstName",
+    "lastName": "LastName",
+    "mobile": "623362386238",
+    "phone": "623362386238",
+    "dob": "25-10-1900",
+    "attributeGroups": {
+        "retailer_additional_info": {
+            "attributes": {
+                "crm_default_account_id": "1234",
+                "triquestra_person_code": "TQ1234"
+            },
+            "description": "CRM and Triquestra extra attributes"
+        }
+    },
     "active": true,
-    "addresses": [
-      {
-        "address1": "string",
-        "address2": "string",
-        "addressName": "string",
-        "city": "string",
-        "company": "string",
-        "country": "string",
-        "countryCode": "string",
-        "customerId": "string",
-        "defaultAddress": true,
-        "email": "string",
-        "firstName": "string",
-        "id": "string",
-        "lastName": "string",
-        "phone": "string",
-        "postcode": "string",
-        "province": "string",
-        "provinceCode": "string"
-      }
-    ],
-   "attributeGroups": {
-    "additionalProp1": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp2": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    },
-    "additionalProp3": {
-      "attributes": {
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
-      },
-      "description": "string"
-    }
-  },
-    "createdDate": "2022-06-20T09:30:38.997Z",
-    "customerRef": "string",
-    "customer_state": "disabled",
-    "defaultAddress": {
-      "address1": "string",
-      "address2": "string",
-      "addressName": "string",
-      "city": "string",
-      "company": "string",
-      "country": "string",
-      "countryCode": "string",
-      "customerId": "string",
-      "defaultAddress": true,
-      "email": "string",
-      "firstName": "string",
-      "id": "string",
-      "lastName": "string",
-      "phone": "string",
-      "postcode": "string",
-      "province": "string",
-      "provinceCode": "string"
-    },
-    "dob": "25-10-1985",
-    "email": "string",
-    "firstName": "string",
-    "id": "string",
-    "lastModifiedDate": "2022-06-20T09:30:38.997Z",
-    "lastName": "string",
-    "marketing_optin_level": "single_opt_in",
-    "marketing_preferences_updated_at": "2022-06-20T09:30:38.997Z",
-    "mobile": "string",
-    "phone": "string",
-    "taxExempt": true,
-    "taxExemptions": [
-      "string"
-    ],
+    "accepts_marketing": false,
+    "marketing_preferences_updated_at": "2023-05-19T03:45:02.530Z",
+    "customer_state": "enabled",
+    "taxExempt": false,
+    "taxExemptions": [],
+    "verified_email": false,
+    "createdDate": "2023-05-19T03:14:32.181Z",
+    "lastModifiedDate": "2023-05-19T03:45:02.530Z",
     "optin_preferences": {
       "sms": {
-        "opt_in_active": false,
-        "opted_in_at": "2022-32-09 07:32:51",
-        "opt_in_updated_at": "2022-32-09 07:32:51"
+          "opt_in_active": false
       },
       "email": {
-        "opt_in_active": true,
-        "opted_in_at": "2022-32-09 07:32:59",
-        "opt_in_updated_at": "2022-32-09 07:32:59"
-
+          "opt_in_active": false,
+          "opted_in_at": "2023-05-19T03:48:22.075Z",
+          "opt_in_updated_at": "2023-05-19T03:48:22.075Z"
       }
+    }
+  },
+  {
+    "id": "7c14445d-c9fb-457d-90ec-114a04e57bc3",
+    "email": "test@customer.com",
+    "customerRef": "new-customer-ref",
+    "firstName": "FirstName",
+    "lastName": "LastName",
+    "mobile": "623362386238",
+    "phone": "623362386238",
+    "dob": "25-10-1900",
+    "attributeGroups": {
+        "retailer_additional_info": {
+            "attributes": {
+                "crm_default_account_id": "1234",
+                "triquestra_person_code": "TQ1234"
+            },
+            "description": "CRM and Triquestra extra attributes"
+        }
     },
-    "verified_email": true
+    "active": true,
+    "accepts_marketing": false,
+    "marketing_preferences_updated_at": "2023-05-19T03:45:02.530Z",
+    "customer_state": "enabled",
+    "taxExempt": false,
+    "taxExemptions": [],
+    "verified_email": false,
+    "createdDate": "2023-05-19T03:14:32.181Z",
+    "lastModifiedDate": "2023-05-19T03:45:02.530Z",
+    "optin_preferences": {
+      "sms": {
+          "opt_in_active": false
+      },
+      "email": {
+          "opt_in_active": false,
+          "opted_in_at": "2023-05-19T03:48:22.075Z",
+          "opt_in_updated_at": "2023-05-19T03:48:22.075Z"
+      }
+    }
   }
 ]
 
@@ -1304,13 +1089,9 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 HTTP Status Code: 
 ``` json
 - 200 OK
-- 201 Created
-- 204 Deleted
-- 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
 - 404 Not Found
-- 405 Invalid input
 ```
 
 ## Delete Customer by ID
@@ -1357,51 +1138,6 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-
-## Delete Customer by CustomerRef
-Deletes a customer based on the retailer's unique customer identifier CustomerRef.
-
-Endpoint: ```/api/v2/customers/{customerRef}/ref```
-
-Method: ``` DELETE ``` 
-
-Method Name: `deleteCustomerByRef`
-
-OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
-<!-- <details> -->
- <summary>Request Headers</summary>
-
-| Key           | Value            |
-|---------------|------------------|
-| Content-Type  | application/json |
-| X-TWC-Tenant  | {Tenant Name}    |
-
-<!-- </details> -->
-
-
-<!-- <details> -->
- Query Paramters : ` customerRef : customer Ref , id : Customer ID`
-
-<!-- </details> -->
-
-<!-- <details> -->
-<summary>Response - 204 (Deleted)</summary>
-<!-- </details> -->
-
-HTTP Status Code: 
-``` json
-- 200 OK
-- 201 Created
-- 204 Deleted
-- 400 Bad request
-- 401 Unauthorised
-- 403 Forbidden 
-- 404 Not Found
-- 405 Invalid input
-```
-
-
 
 ***
 [Back to Top](#customer-api)
