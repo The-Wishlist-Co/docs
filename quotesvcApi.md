@@ -222,7 +222,6 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "id": "string",
   "lineItems": [
     {
-      "id": "string",
       "discountAmount": 0,
       "finalAmount": 0,
       "id": "string",
@@ -362,7 +361,6 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "id": "string",
   "lineItems": [
     {
-      "id": "string",
       "discountAmount": 0,
       "finalAmount": 0,
       "id": "string",
@@ -464,7 +462,6 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "id": "string",
   "lineItems": [
     {
-      "id": "string",
       "discountAmount": 0,
       "finalAmount": 0,
       "id": "string",
@@ -570,7 +567,6 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "id": "string",
   "lineItems": [
     {
-      "id": "string",
       "discountAmount": 0,
       "finalAmount": 0,
       "id": "string",
