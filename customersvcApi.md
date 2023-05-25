@@ -35,82 +35,82 @@ All requests or responses are JSON objects
 
 | Field | Type | Description |
 |---|---|---|
-| *customerRef* | string | Retailed assigned customer reference ID. This is not a mandatory field. If provided must be unique across tenant. |
-| *customer_state* | list | One of the following values in customer state. Allowed values are *disabled*, *invited*, *enabled* OR *declined* |
-| *dob* | date | Date of birth of customer in *dd-mm-yyy* format. for eg: 28-11-1999.|
-| *firstName* | string | first name |
-| *lastName* | string | last name |
-| *email* | string | customers email. Email is a mandatory field and must be unique within a tenant. |
-| *verified_email* | boolean | field indicating customer email is verified by retailer. TWC does not verify customer email. |
-| *mobile* | string | mobile phone number |
-| *phone* | string | phone number |
-| *taxExempt* | boolean | field indicating if a customer is tax excempt. |
-| *taxExemptions* | List<string> | List of tax exemptions. This is only info only field. |
-| *location* | string | TWC generated location id, this field indicates default store customer is associated with. |
-| *accepts_marketing* | boolean | This field is used by when retailers only require simple marketing acceptance. |
-| *marketing_preferences_updated_at* | date | date at which marketing optin levels are updated. |
-| *addresses* | array of [Address](#customeraddress) | Customers addresses go here. A customer can have more than one address. |
-| *optin_preferences* | [OptinPreferences](#optinpreferences) | This field indicates marketing preferences for email and sms. When using TWC native marketing, this field will decide if a customer be notified. |
-| *attributeGroups* |[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to entities in TWC. This field is in general available on most entities in The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"customer_origin":&nbsp;"social_media",<br>&emsp;&emsp;"category_affinity":&nbsp;"electronics,&nbsp;cameras,&nbsp;gaming",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;entities"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
+| *customerRef* | string | Retailer assigned customer reference ID. This is not a mandatory field. If provided it must be unique across your tenant. |
+| *customer_state* | list | One of the following values : *disabled*, *invited*, *enabled* OR *declined* |
+| *dob* | date | Date of birth of customer in *dd-mm-yyy* format. for example: 28-11-1999|
+| *firstName* | string | First name |
+| *lastName* | string | Last name |
+| *email* | string | Customers email address. Email is a mandatory field and must be unique within your tenant. |
+| *verified_email* | boolean | Indicates that the customer email is verified by the retailer. TWC does not verify customer emails. |
+| *mobile* | string | Mobile phone number |
+| *phone* | string | Phone number |
+| *taxExempt* | boolean | Indicates if a customer is tax excempt. |
+| *taxExemptions* | List<string> | List of tax exemptions. This is an information only field. |
+| *location* | string | TWC generated location id.  This field indicates the default store the customer is associated with. |
+| *accepts_marketing* | boolean | This field is used when the retailer only requires a simple marketing acceptance. Further deteail may be included in using the optin_preferences|
+| *marketing_preferences_updated_at* | date | Last date at which marketing optin details were updated. |
+| *addresses* | array of [Address](#customeraddress) | An array of the Customer's addresses. A customer can have more than one address. |
+| *optin_preferences* | [OptinPreferences](#optinpreferences) | This field indicates marketing preferences for email and SMS. When using TWC native marketing, this field will determine how and if a customer should be notified. |
+| *attributeGroups* |[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to entities in TWC and in general is available on most entities in The Wishlist Company platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"customer_origin":&nbsp;"social_media",<br>&emsp;&emsp;"category_affinity":&nbsp;"electronics,&nbsp;cameras,&nbsp;gaming",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;entities"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
 
 
 ### Customer Response
 
 | Field | Type | Description |
 |---|---|---|
-| *id* | string | TWC generated ID of customer entity. for e.g: *47235561-a5fe-43d1-a0ff-00b635208abe* |
-| *customerRef* | string | Retailed assigned customer reference ID. This is not a mandatory field. If provided must be unique across tenant. |
-| *customer_state* | list | One of the following values in customer state. Allowed values are *disabled*, *invited*, *enabled* OR *declined* |
+| *id* | string | TWC generated ID (internal identifier) of the customer entity. for example: *47235561-a5fe-43d1-a0ff-00b635208abe* |
+| *customerRef* | string | Retailer assigned customer identifier. This is not a mandatory field, but if provided it must be unique across your tenant. |
+| *customer_state* | list | One of the following values: *disabled*, *invited*, *enabled* OR *declined* |
 | *dob* | string | Date of birth |
-| *firstName* | string | first name |
-| *lastName* | string | last name |
-| *email* | string | customers email. Email is a unique across tenant |
-| *verified_email* | boolean | field indicating customer email is verified by retailer. TWC does not verify customer email. |
-| *mobile* | string | mobile phone number |
-| *phone* | string | phone number |
-| *taxExempt* | boolean | field indicating if a customer is tax excempt. |
-| *taxExemptions* | List<string> | List of tax exemptions. This is only info only field. |
-| *location* | string | TWC generated location id, this field indicates default store customer is associated with. |
-| *accepts_marketing* | boolean | This field is used by when retailers only require simple marketing acceptance. |
-| *marketing_preferences_updated_at* | date | date at which marketing optin levels are updated. |
+| *firstName* | string | First name |
+| *lastName* | string | Last name |
+| *email* | string | Customers email address.  Email must be unique across your tenant |
+| *verified_email* | boolean | Indicates the customer email is verified by retailer. TWC does not verify customer emails. |
+| *mobile* | string | Mobile phone number |
+| *phone* | string | Phone number |
+| *taxExempt* | boolean | Indicates if a customer is tax excempt. |
+| *taxExemptions* | List<string> | List of tax exemptions. This is only information only field. |
+| *location* | string | TWC generated location identifier.  This field indicates the default store the customer is associated with. |
+| *accepts_marketing* | boolean | This field is used when retailers only require simple marketing acceptance. optin_preferences can be used for more detailed preference management.|
+| *marketing_preferences_updated_at* | date | Last date at which marketing optin levels were updated. |
 | *defaultAddress* | [Address](#customer-address) | Customer's default address. |
-| *addresses* | array of [Address](#customer-address) | Customers addresses go here. A customer can have more than one address. |
-| *optin_preferences* | [OptinPreferences](#optin-preferences) | This field indicates marketing preferences for email and sms. When using TWC native marketing, this field will decide if a customer be notified. |
-| *attributeGroups* |[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to entities in TWC. This field is in general available on most entities in The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"customer_origin":&nbsp;"social_media",<br>&emsp;&emsp;"category_affinity":&nbsp;"electronics,&nbsp;cameras,&nbsp;gaming",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;entities"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
+| *addresses* | array of [Address](#customer-address) | Customers addresses array. A customer can have more than one address. |
+| *optin_preferences* | [OptinPreferences](#optin-preferences) | This field indicates marketing preferences for email and SMS. When using TWC native marketing, this field will determine if, and how a customer will be notified. |
+| *attributeGroups* |[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to entities in TWC. This field is generally available on most entities in The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"customer_origin":&nbsp;"social_media",<br>&emsp;&emsp;"category_affinity":&nbsp;"electronics,&nbsp;cameras,&nbsp;gaming",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;entities"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
 
 
 ### Customer Address
 
 | Field | Type | Description |
 |---|---|---|
-| *address1* | string | Address line 1. |
-| *address2* | string | Address line 2. |
-| *city* | list | One of the following values in customer state. Allowed values are *disabled*, *invited*, *enabled* OR *declined* |
+| *address1* | string | Address line 1 |
+| *address2* | string | Address line 2 |
+| *city* | list | City|
 | *province* | string | Date of birth |
-| *country* | string | country for e.g: *Australia* |
-| *postcode* | string | postal code |
-| *phone* | string | address phone number |
-| *email* | string | customer email. |
-| *provinceCode* | boolean | mobile phone number |
-| *countryCode* | string | country codes as per [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1). for e.g: *AU* for australia |
-| *defaultAddress* | boolean | indicating if its the default address of customer. Default address will appear as a separate filed under customer |
+| *country* | string | Country for example: *Australia* |
+| *postcode* | string | Postal code |
+| *phone* | string | Address phone number |
+| *email* | string | Customer email |
+| *provinceCode* | boolean | Mobile phone number |
+| *countryCode* | string | Country codes as per [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1). e.g: *AU* for australia |
+| *defaultAddress* | boolean | Indicates if the provided address is the default address for the customer. The default address will appear as a separate field under Customer |
 
 
 ### Optin Preferences
 
 | Field | Type | Description |
 |---|---|---|
-| *email* | [Optin Preference](#optin-preference) | Address line 1. |
-| *sms* | [Optin Preference](#optin-preference) | Address line 2. |
+| *email* | [Optin Preference](#optin-preference) | Opt In preference for email |
+| *sms* | [Optin Preference](#optin-preference) | Opt-in preference for SMS |
 
 
 ### Optin Preference
 
 | Field | Type | Description |
 |---|---|---|
-| *opt_in_active* | boolean | if customer has opted in |
-| *opt_in_updated_at* | date | Date at which optin preferences were updated. |
-| *opted_in_at* | date | Date at which optin preferences were first set. |
+| *opt_in_active* | boolean | Indicates if a customer has opted in |
+| *opt_in_updated_at* | date | Date at which optin preferences were updated |
+| *opted_in_at* | date | Date at which optin preferences were first set |
 
 
 ###  AttributeGroups
@@ -125,7 +125,7 @@ All requests or responses are JSON objects
 | Field | Type| Description |
 |---|---|---|
 | *attributes* | map | This field holds map of attributes as a map of <string, string> <br> e.g.: &nbsp;{<br>&emsp;&emsp;"customer_origin":&nbsp;"social_media",<br>&emsp;&emsp;"category_affinity":&nbsp;"electronics,&nbsp;cameras,&nbsp;gaming",&emsp;&emsp;<br>&emsp;&ensp;}<br> |
-| *description* | string | This field is a short description about the attributes captured under field *attributes*. This will only be used in the backoffice tools. |
+| *description* | string | This field is a short description about the attributes captured under field *attributes*. This is only  used in the TWC backoffice tools. |
 
 
 [Back to Index](#index)
@@ -133,14 +133,13 @@ All requests or responses are JSON objects
 # **Endpoints**
 ## **Customer**
 ### CREATE
-Creates a new Customer in the Wishlist platform. Fields 'email' and customerRef are unique fields. 
+Creates a new Customer in the Wishlist platform. Fields 'email' and 'customerRef' are unique fields. 
 
 | Endpoint| ```/api/v2/customers```|
 |-----------|---------------|
 | Method    | POST          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
 
 <!-- <details> -->
  <summary>Request Headers :</summary>
@@ -199,7 +198,6 @@ Creates a new Customer in the Wishlist platform. Fields 'email' and customerRef 
 ```
 
 Sample HTTP 201 response
-
 
  ```json
  {
@@ -261,20 +259,16 @@ HTTP Status Code:
 ```
 
 
-
-
 ## Create Multiple Customers
 This API is used to create an array of customers.
 
 *THIS API IS NOW DEPRICATED.  FOR UPLOADING MULTIPLE RECORDS PLEASE USE THE IMPEX API* 
-
 
 | Endpoint| ```/api/v2/upload-customers```|
 |-----------|---------------|
 | Method    | POST          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
 
 <!-- <details> -->
  <summary>Request Headers :</summary>
@@ -283,7 +277,6 @@ This API is used to create an array of customers.
 |---------------|------------------|
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
-
 
  <summary>Request sample</summary>
  
@@ -348,14 +341,15 @@ HTTP Status Code:
 ### UPDATE
 
 #### Update Customer By ID
+    
+    Update a customer using the TWC customer identifier. TWC will lookup customer by its given customer ID.
 
 | Endpoint| ```/api/v2/customers/id={id}```|
 |-----------|---------------|
 | Method    | PUT          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
-| url path variable |```id``` This is the TWC generated unique ID of the customer being updated. |
+| url path variable |```id``` This is the TWC generated unique identifier of the customer being updated. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
 
 <!-- <details> -->
  <summary>Sample Customer Request: </summary>
@@ -379,7 +373,6 @@ HTTP Status Code:
 ```
 
 Sample HTTP 200 response
-
 
  ```json
  {
@@ -452,7 +445,7 @@ HTTP Status Code:
 
 #### Update a customer by reference ID
 
-Update a customer by customer reference ID. TWC will lookup customer by its given reference ID
+Update a customer by customer reference ID. TWC will lookup customer by the given reference ID
 
 | Endpoint| ```/api/v2/customers/customerRef={customerRef}```|
 |-----------|---------------|
@@ -460,7 +453,6 @@ Update a customer by customer reference ID. TWC will lookup customer by its give
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | url path variable |```customerRef``` This is the retailer assigned unique ID of the customer being updated. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
 
 <!-- <details> -->
  <summary>Sample Customer Request: </summary>
@@ -483,7 +475,6 @@ Update a customer by customer reference ID. TWC will lookup customer by its give
 ```
 
 Sample HTTP 200 response
-
 
  ```json
  {
@@ -555,10 +546,9 @@ HTTP Status Code:
 
 #### Add address to Existing Customer
 
-Add a customer address using The Wishlist generated customer ID.
+Add a customer address using The Wishlist generated customer identifier.
 
 *NOTE THIS CAN ALSO BE DONE DIRECTLY USING THE UPDATE CUSTOMER APIs*
-
 
 | Endpoint| ```/api/v2/customers/{id}/address```|
 |-----------|---------------|
@@ -567,7 +557,6 @@ Add a customer address using The Wishlist generated customer ID.
 | url path variable |```id``` This is the TWC generated unique ID of the customer being updated. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-
 <!-- <details> -->
  <summary>Request Headers :</summary>
 
@@ -575,7 +564,6 @@ Add a customer address using The Wishlist generated customer ID.
 |---------------|------------------|
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
-
 
 <!-- </details> -->
  <summary>Sample Request</summary>
@@ -685,7 +673,6 @@ This API is used to validate a payload format.  It is primarily an internal API 
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-
 <!-- <details> -->
  <summary>Request Headers :</summary>
 
@@ -754,7 +741,6 @@ HTTP Status Code:
 - 403 Forbidden 
 ```
 
-
 ### DELETE
 
 #### Delete customer address
@@ -765,10 +751,9 @@ Delete a customer address using either The Wishlist generated customer id and Th
 |-----------|---------------|
 | Method    | DELETE          |
 | Headers   | X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
-| url path variable |```id``` This is the TWC generated unique ID of the customer from whom address is being deleted. |
-| url path variable |```addressId``` This is the TWC generated unique ID of the customer address being deleted. |
+| url path variable |```id``` This is the TWC generated unique ID of the customer whose address is being deleted. |
+| url path variable |```addressId``` This is the TWC generated unique ID of the customer whose address being deleted. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
 
 <!-- <details> -->
  <summary>Request Headers :</summary>
@@ -776,7 +761,6 @@ Delete a customer address using either The Wishlist generated customer id and Th
 | Key           | Value            |
 |---------------|------------------|
 | X-TWC-Tenant  | {Tenant Name}    |
-
 
 <!-- <details> -->
 <summary>Response - 200 (OK)</summary>
@@ -821,7 +805,6 @@ Delete a customer address using either The Wishlist generated customer id and Th
   }
 }
 
-
 ```
 <!-- <details> -->
 
@@ -834,6 +817,7 @@ HTTP Status Code:
 - 404 Not Found
 ```
 
+    
 #### Delete Customer
 
 | Endpoint| ```/api/v2/customers/{id}```|
@@ -843,7 +827,6 @@ HTTP Status Code:
 | url path variable |```id``` This is the TWC generated unique ID of the customer being deleted. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-
 <!-- <details> -->
 <summary>Response - 204 (No Content)</summary>
 
@@ -851,7 +834,7 @@ HTTP Status Code:
 ## GET
 
 #### Get Customer by Id
-Returns a customer using The Wishlist platform system generated customer ID. 
+Returns a customer using The Wishlist platform system generated customer identifier. 
 
 | Endpoint| ```/api/v2/customers/{id}```|
 |-----------|---------------|
@@ -859,7 +842,6 @@ Returns a customer using The Wishlist platform system generated customer ID.
 | Headers   | X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | url path variable |```id``` This is the TWC generated unique ID of the customer. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
 
 <!-- <details> -->
 <summary>Response - 200 (OK)</summary>
@@ -919,14 +901,12 @@ HTTP Status Code:
 #### Get Customer by CustomerRef
 Returns a customer using the retailers's own unique customer identifier CustomerRef.
 
-
 | Endpoint| ```/api/v2/customers/{customerRef}/ref```|
 |-----------|---------------|
 | Method    | GET          |
 | Headers   | X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | url path variable |```customerRef``` This is the retailer assigned ID of the customer. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
 
 <!-- <details> -->
 <summary>Response - 200 (OK)</summary>
@@ -984,9 +964,8 @@ HTTP Status Code:
 
 
 #### Retrieve Customers by email/mobile/phone/firstName/lastName
-Returns a list of customers based on email/mobile/phone/firstName/lastName.  A record is returned only if all of the given criteria are matched.  
 
-If no customers exist, this method returns a empty list.
+    Returns a list of customers based on email/mobile/phone/firstName/lastName.  A record is returned only if all of the given criteria are matched.   If no customers exist, this method returns a empty list.
 
 | Endpoint| ```/api/v2/customers/search```|
 |-----------|---------------|
@@ -998,7 +977,6 @@ If no customers exist, this method returns a empty list.
 | query parameters |```mobile``` Mobile number to search. |
 | query parameters |```phone``` Phone to search. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
 
 <!-- <details> -->
 <summary>Response - 200 (OK)</summary>
@@ -1095,9 +1073,8 @@ HTTP Status Code:
 ```
 
 ## Delete Customer by ID
-Deletes a customer.  
 
-*NOTE, A CUSTOMERS'S WISHLISTS ARE NOT DELETED.  (A CUSTOMER CANNOT BE IDENTIFIED FROM A WISHLIST RECORD).*
+    Deletes a customer using the TWC unique identifier.  The customer's wishlists are not deleted as they are required for reporting purposes.  (Note.  A customer cannot be identified from a wishlist record).*
 
 Endpoint: ```/api/v2/customers/{id}```
 
@@ -1116,7 +1093,6 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 | X-TWC-Tenant  | {Tenant Name}    |
 
 <!-- </details> -->
-
 
 <!-- <details> -->
  Path Variable: ` id : customer id `
