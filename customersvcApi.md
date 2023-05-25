@@ -745,7 +745,7 @@ HTTP Status Code:
 
 #### Delete customer address
 
-Delete a customer address using either The Wishlist generated customer id and The Wishlist generated address id
+Delete a customer address requires both the The Wishlist generated customer ID and The Wishlist generated address ID
 
 | Endpoint| ```/api/v2/customers/{id}/address/{addressId}```|
 |-----------|---------------|
