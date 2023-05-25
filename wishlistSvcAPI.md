@@ -48,7 +48,7 @@ All requests or responses are JSON objects
 | *customerRef* | string | Retailer's own unique customer identifier. Either customerId or customerRef is mandatory when creating wishlist |
 | *description* | string | Wishlist description.  This field is optional. It may be useful in social shopping scenarios |
 | *name* | string | The Wishlist name provided by the customer |
-| *wishlistRef* | string | This is an optional reference identifier given to the wishlist by the retailer. This field may be used to GET/UPDATE/DELETE the wishlist |
+| *wishlistRef* | string | This is an optional reference identifier given to the wishlist by the retailer. This field may be used to GET/UPDATE/DELETE the wishlist.  It is likely most useful for integrating with existing ecommerce wishlist systems. |
 | *isPrivate* | boolean | Indicates the wishlist is private to customer |
 | *attributeGroups* |[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_origin":&nbsp;"app",<br>&emsp;&emsp;"ecommerce_wishlist_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
 
@@ -62,7 +62,7 @@ All requests or responses are JSON objects
 | *customerRef* | string | Retailer's own unique identifier of customer.|
 | *description* | string | Wishlist description.|
 | *name* | string | Wishlist name provided by the customer |
-| *wishlistRef* | string | This is a reference identifier given to a wishlist by retailer. This field may be used to GET/UPDATE/DELETE the wishlist |
+| *wishlistRef* | string | This is a reference identifier given to a wishlist by retailer. This field may be used to GET/UPDATE/DELETE the wishlist.  It is likely most useful when integrating to existing ecoommerce wishlist systems. |
 | *isPrivate* | boolean | Indicates the wishlist is private to customer |
 | *attributeGroups* |[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_origin":&nbsp;"app",<br>&emsp;&emsp;"ecommerce_wishlist_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
 
@@ -127,14 +127,13 @@ All requests or responses are JSON objects
 
 ### Ceate a wishlist
 
-Creates a new wishlist. This API requires wishlist request to be passed to API. Customer must be created before creating a wishlist.
+Creates a new wishlist. This API requires wishlist request to be passed to API. The Customer must be created before creating their wishlist(s).
 
 | Endpoint| ```/api/wishlists```|
 |-----------|---------------|
 | Method    | POST          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
 
 Sample Request:
 ```json
@@ -205,9 +204,10 @@ HTTP Status Code:
 ## Update a wishlist
 
 ### Update Wishlist By ID
-Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *Note this API is NOT used to update items on the wishlist.*
+T
+his API uses the TWC generated identifier to update metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *Note this API is NOT used to update the items on the wishlist.*
 
-As this API uses Wishlist ID, then you can use it to update wishlistRef, which is the retailer's own wishlit ID (which, for example may be assigned in the ecommerce system)
+As this API uses TWC Wishlist ID, then you can use it to update the wishlistRef (the retailer's own wishlit unique identifier).   
 
 Endpoint: ```/api/wishlists/id={id}```
 
@@ -216,7 +216,7 @@ Endpoint: ```/api/wishlists/id={id}```
 |-----------|---------------|
 | Method    | PUT          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
-| url path variable |```id``` This is the TWC generated unique ID of the wishlist being updated. |
+| url path variable |```id``` This is the TWC generated unique identifier for the wishlist being updated. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 
@@ -292,17 +292,15 @@ HTTP Status Code:
 ```
 
 ### Update Wishlist By Ref
-Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *Note this API is NOT used to update items on the wishlist.*
 
-As this API uses wishlistRef, which is the retailer's own wishlit ID (which, for example may be assigned in the ecommerce system)
+Used to update the metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name, using the retailer's own unique wishlist identifier.  *Note this API is NOT used to update items on the wishlist.*
 
 | Endpoint| ```/api/wishlists/ref={ref}``` |
 |-----------|---------------|
 | Method    | PUT          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
-| url path variable |```ref``` This is the retailers reference ID of the wishlist being updated |
+| url path variable |```ref``` This is the retailers reference identifier for the wishlist being updated |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
 
 Sample Request:
 
@@ -375,20 +373,17 @@ HTTP Status Code:
 - 400 Invalid input
 ```
 
-### Update wishlist with either ID/Ref
+### Update wishlist by either ID or Ref
 
-Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *This API is NOT used to update items on the wishlist*
+Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *This API is NOT used to update items on the wishlist*  You can update by internal Wishlist ID or wishlistRef (the retailer's unique wishlist identifier).   
 
-You can update by internal Wishlist ID or wishlistRef, which is the retailer's own ID (which, for example may be assigned in the ecommerce system)
-
-**THIS API IS DEPRECIATED.  PLEASE USE UDATE WISHLIST BY ID OR WISHLISTREF BELOW**
+**THIS API IS DEPRECIATED.  PLEASE USE UDATE WISHLIST BY ID OR WISHLISTREF**
 
 | Endpoint| ```/api/wishlists```|
 |-----------|---------------|
 | Method    | PUT          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 |How to get access token| [Tenant Authentication](authenticationsvcApi.md)|
-
 
 Sample Request:
 
@@ -409,12 +404,12 @@ Sample Request:
         "retailer_defined_attribute1": "user defined attribute value",
         "another_attribute": "another value"
       },
-      "description": "retailer defined properties and its values, flexible data model to add additional properties."
+      "description": "retailer defined properties and values, flexible data model to add additional properties."
     }
   },
   "customerId": "twc-generated-customer-id", //either customerId or customerRef is mandatory
   "customerRef": "retailers_customer_id",
-  "description": "wishlists description", // This field may not be used for private wishlist scenario. This field however may be key in a social shopping scenario.
+  "description": "wishlists description", // This field may be useful in a social shopping scenario.
   "isPrivate": "true", //marking the wishlist private. not a mandatory field.
   "name": "wishlist name",
   "wishlistRef": "retailers wishlist id" // Either id or wishlistRef is mandatory to update a wishlist using this service.
@@ -440,7 +435,7 @@ Sample Request:
         "retailer_defined_attribute1": "user defined attribute value",
         "another_attribute": "another value"
       },
-      "description": "retailer defined properties and its values, flexible data model to add additional properties."
+      "description": "retailer defined properties and values, flexible data model to add additional properties."
     }
   },
   "wishlistRef": "17949",
@@ -451,8 +446,6 @@ Sample Request:
   "createdTime": "2023-05-01T00:02:38.048171Z",
 }
 ```
-
-
 
 <summary>HTTP Status Codes </summary>
 
@@ -466,7 +459,8 @@ Sample Request:
 
 
 ## GET Wishlist
-Below APIs provide mechanism to get wishlists by ID, reference ID or customer. 
+
+Below APIs provide mechanisms to get wishlists by internal TWC identifier, retailer's reference identifier or by customer. 
 
 ### Get Wishlist by Id
 
@@ -483,15 +477,12 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 | Path variable | ```id``` TWC generated unique ID of the wishlist |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-
-
 | Query Parameters | What is it for ? |
 |---|---|
-| ```pageSize``` | This parameter will determine the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
-| ```lastItemId``` | This parameter will determine which items to return. API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform API to respond items with ID greater than, but excluding the provided value. |
+| ```pageSize``` | Determines the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
+| ```lastItemId``` | Determines which items to return. The API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform the API to respond with the items with an identifier greater than, but excluding the value provided. |
 
-
-When provided with valid inputs, API responds with a ```application/json``` type content.
+When provided with valid inputs, the API responds with a ```application/json``` type content.
 
 <summary>sample response - 200 (OK)</summary>
 
@@ -548,8 +539,6 @@ When provided with valid inputs, API responds with a ```application/json``` type
 }
 ```        
 
-
-
 The API responds with below statuses. HTTP status differ depending on the input, access token etc.
 
 <summary>HTTP Status Codes </summary>
@@ -562,14 +551,13 @@ The API responds with below statuses. HTTP status differ depending on the input,
 ```
 
 
-
 ### Get Wishlist by Wishlist Reference
+
 Returns the wishlist that matches the provided wishlistRef (which is the retailer's own wishlist identifier), along with the wishlist items.
 
 The returned item array is paginated - 20 default (50 maximum).  The API will respond with the item count in the page, and the itemID the for the last item (lastitemID) returned for that response, which should then be used for the  subsequent API call to retrieve the next page.  
 
 If the wishlist does not exist, this method returns a ResourceNotFound error.
-
 
 | Endpoint| ```/api/wishlists/{wishlistRef}/byref``` |
 |-----------|---------------|
@@ -578,16 +566,12 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 | Path variable | ```wishlistRef``` retailer assigned reference id of wishlist |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-
-
 | Query Parameters | What is it for ? |
 |---|---|
-| ```pageSize``` | This parameter will determine the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
-| ```lastItemId``` | This parameter will determine which items to return. API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform API to respond items with ID greater than, but excluding the provided value. |
-
+| ```pageSize``` | Determines the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
+| ```lastItemId``` | Determines which items to return.  The API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform the API to respond with items with ID greater than, but excluding the provided value. |
 
 When provided with valid inputs, API responds with a ```application/json``` type content.
-
 
 <summary>sample response - 200 (OK)</summary>
 
@@ -644,10 +628,7 @@ When provided with valid inputs, API responds with a ```application/json``` type
 }
 ```        
 
-
-
 The API responds with below statuses. HTTP status differ depending on the input, access token etc.
-
 
 <summary>HTTP Status Codes </summary>
 
@@ -659,13 +640,11 @@ The API responds with below statuses. HTTP status differ depending on the input,
 ```
 
 
-
-
 ### Get Wishlist by id/wishlistRef
+
 Retrieves the wishlist and the wishlist items that belongs to the given Id and/or wishlistRef.  If the wishlist does not exist, this method returns a ResourceNotFound error.
 
-The returned item array is paginated - 20 default (50 maximum).  The API will respond with the item count in the page, and the itemID the for the last item (lastitemID) returned for that response, which should then be used for the  subsequent API call to retrieve the next page.  
-
+The returned item array is paginated - 20 default (50 maximum).  The API will respond with the item count in the page, and the itemID the for the last item (lastitemID) returned for that response, which should then be used for the subsequent API call to retrieve the next page.  
 
 | Endpoint| ```/api/wishlists/```|
 |-----------|---------------|
@@ -673,18 +652,14 @@ The returned item array is paginated - 20 default (50 maximum).  The API will re
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-
 | Query Parameters | What is it for ? |
 |---|---|
-| ```id``` | This is the TWC system generated unique wishlist ID. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will query database to for wishlists by ID. |
-| ```wishlistRef``` | This is the retailer assigned unique wishlist reference ID. e.g: ```WISH0001```. API will query database to for wishlists by reference ID. |
-| ```pageSize``` | This parameter will determine the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
-| ```lastItemId``` | This parameter will determine which items to return. API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform API to respond items with ID greater than, but excluding the provided value. |
-
-
+| ```id``` | This is the TWC system generated unique wishlist identifier. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. The API will query the database for wishlists by ID. |
+| ```wishlistRef``` | This is the retailer assigned unique wishlist reference identifier. e.g: ```WISH0001```. The API will query the database  for wishlists by reference value. |
+| ```pageSize``` | Determines the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
+| ```lastItemId``` | Determines which items to return. API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform the API to respond with items that have ID greater than, but excluding the value provided. |
 
 When provided with valid inputs, API responds with a ```application/json``` type content.
-
 
 <summary>sample response - 200 (OK)</summary>
 
@@ -740,9 +715,7 @@ When provided with valid inputs, API responds with a ```application/json``` type
     }
 }
 ```        
-        
-
-
+      
 <summary>HTTP Status Code:</summary>
 
 ``` 
@@ -753,15 +726,13 @@ When provided with valid inputs, API responds with a ```application/json``` type
 ```
 
 
-
 ## Get customer wishlists
 
-Returns the collection of wishlists that belong to either the internal TWC customer Id, or the retailer's own customerRef.
+Returns the collection of wishlists that belong to either the internal TWC customer identifier, or the retailer's own customerRef.
 
-The returned list is paginated - 20 default (50 maximum).  The API will respond with the number of wishlists returned in the page, and the wishlistID for the for the last wishlist returned for that response, which should then be used for the  subsequent API call to retrieve the next page.  
+The returned list is paginated - 20 default (50 maximum).  The API will respond with the number of wishlists returned in the page, and the wishlistID for the for the last wishlist returned for that response, which should then be used for the subsequent API call to retrieve the next page.  
 
 If no wishlists exist, this method returns a ResourceNotFound error.
-
 
 | Endpoint| ```/api/wishlists/lookup```|
 |-----------|---------------|
@@ -771,11 +742,10 @@ If no wishlists exist, this method returns a ResourceNotFound error.
 
 | Query Parameters | What is it for ? |
 |---|---|
-| ```customerId``` | This is the TWC generated unique customer ID. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will query database to for wishlists that belong to customer with the given ID. |
-| ```customerRef``` | This is the retailer assigned unique customer reference ID. e.g: ```CUST1111```. API will query database to for wishlists that belong to customer with the given reference ID. |
-| ```pageSize``` | This parameter will determine the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
-| ```lastItemId``` | This parameter will determine which items to return. API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform API to respond items with ID greater than, but excluding the provided value. |
-
+| ```customerId``` | This is the TWC generated unique customer identifier. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will query database for wishlists that belong to customer with the given ID. |
+| ```customerRef``` | This is the retailer assigned unique customer reference identifier. e.g: ```CUST1111```. API will query database for wishlists that belong to customer with the given reference value. |
+| ```pageSize``` | Determines the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
+| ```lastItemId``` | Determinse which items to return.  API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform API to respond items with ID greater than, but excluding the value provided. |
 
 <summary>Response - 200 (OK)</summary>
 
@@ -859,9 +829,6 @@ If no wishlists exist, this method returns a ResourceNotFound error.
 }
 ```
 
-
-
-
 <summary>HTTP Status Codes</summary>
 
 ``` 
@@ -872,10 +839,11 @@ If no wishlists exist, this method returns a ResourceNotFound error.
 ```
 
 
-
 ## Delete Wishlist
+
 ### Delete Wishlist by ID/Ref
-Delete Wishlist marks the wishlist as deleted and produces an HTTP response confirming the action.  The Wishlist is identified either by the TWC Internal wishlist Id or the retailers own wishlistRef
+
+Delete Wishlist marks the wishlist as deleted and produces an HTTP response confirming the action.  The Wishlist is identified either by the TWC Internal wishlist identifier or the retailers own wishlistRef.   The wishlists are actually retained in the system for reporting purposes, but are de-identified so cannot be linked back to the customer.
 
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
@@ -887,11 +855,10 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 | Query Parameters | What is it for ? |
 |---|---|
-| ```id``` | This is the TWC system generated unique wishlist ID. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will remove the wishlists for the given ID. Either ```id``` or ```wishlistRef``` must be provided with this API call.|
-| ```wishlistRef``` | This is the retailer assigned unique wishlist reference ID. e.g: ```WISH0001```. API will remove the wishlists for the given retailer wishlist reference ID. Either ```id``` or ```wishlistRef``` must be provided with this API call.|
+| ```id``` | This is the TWC system generated unique wishlist identifier. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will remove the wishlists for the given ID.  Either ```id``` or ```wishlistRef``` must be provided with this API call.|
+| ```wishlistRef``` | This is the retailers assigned unique wishlist reference identifier. e.g: ```WISH0001```. The API will remove the wishlists matching the given retailer wishlist reference ID.  Either ```id``` or ```wishlistRef``` must be provided with this API call.|
 
 <summary>Response - 204 (Deleted)</summary> 
-
 
 <summary>HTTP Status Code</summary> 
 
@@ -904,7 +871,8 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 
 ## Delete Wishlist by ID
-Delete Wishlist marks the matching wishlist as deleted and produces an HTTP response confirming the action.  In this case the Wishlist is identified by the TWC Internal wishlist Id.
+
+Delete Wishlist marks the matching wishlist as deleted and produces an HTTP response confirming the action.  In this case the Wishlist is identified by the TWC internal wishlist identifier.
 
 If the wishlist does not exist, this method returns a ResourceNotFound error.
 
@@ -916,11 +884,9 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 | Path Parameters | What is it for ? |
 |---|---|
-| ```id``` | This is the TWC system generated unique wishlist ID. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will remove the wishlists for the given ID.|
-
+| ```id``` | This is the TWC system generated unique wishlist identifier. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will remove the wishlists for the given TWC ID.|
 
 <summary>Response - 204 (Deleted)</summary> 
-
 
 <summary>HTTP Status Code</summary> 
 
@@ -933,6 +899,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 
 ### Delete Wishlist by Ref
+
 Delete Wishlist marks the matching wishlist as deleted and produces an HTTP response confirming the action.  In this case the Wishlist is identified by the retailer's wishlist identifer - wishlistRef.
 
 If the wishlist does not exist, this method returns a ResourceNotFound error.
@@ -945,11 +912,9 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 | Path Parameters | What is it for ? |
 |---|---|
-| ```wishlistRef``` | This is the retailer generated wishlist reference ID. e.g: ```WISH1111```. API will remove the wishlists for the given reference ID, if exists. |
-
+| ```wishlistRef``` | This is the retailer generated wishlist reference identifier. e.g: ```WISH1111```. The API will remove the wishlists for the given reference ID, if it exists. |
 
 <summary>Response - 204 (Deleted)</summary> 
-
 
 <summary>HTTP Status Code</summary> 
 
@@ -964,8 +929,8 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 # **WishlistItem**
 
 ## Create a Wishlist Item
-Adds a sinble wishlist item into an existing wishlist.  The wishlist can be identified by either the TWC internal ID, or the wishlistRef, which is the retailer's own wishlist identifier.  
 
+Adds a single wishlist item into an existing wishlist.  The wishlist can be identified by either the TWC internal identifier, or the wishlistRef, which is the retailer's own wishlist identifier.  
 
 | Endpoint| ```/api/wishlist/items```|
 |-----------|---------------|
@@ -973,9 +938,6 @@ Adds a sinble wishlist item into an existing wishlist.  The wishlist can be iden
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-
-
- 
 <summary>Sample Request:</summary>
  
 ```json
@@ -1000,7 +962,6 @@ Adds a sinble wishlist item into an existing wishlist.  The wishlist can be iden
     }
 }
 ```
-
 
 <summary>Response - 201 (created)</summary>
 
@@ -1034,10 +995,7 @@ Adds a sinble wishlist item into an existing wishlist.  The wishlist can be iden
 }
 ```
 
-
-
 <summary>HTTP Status Code: </summary>
-
 
 ``` 
 - 200 OK
@@ -1050,16 +1008,14 @@ Adds a sinble wishlist item into an existing wishlist.  The wishlist can be iden
 
 
 ## Add multple Wishlist Items
-Add multiple items to an existing wishlist in the TWC system.
 
+Add multiple items to an existing wishlist.
 
 | Endpoint| ```/api/wishlist/add-items```|
 |-----------|---------------|
 | Method    | POST          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
-
 
 <summary>Sample Request</summary>
 
@@ -1086,8 +1042,6 @@ Add multiple items to an existing wishlist in the TWC system.
 }
 ```
 
-
-
 <summary>Status Codes</summary>
 
 ``` 
@@ -1099,19 +1053,17 @@ Add multiple items to an existing wishlist in the TWC system.
 ```
 
 
-
 ## Update WishlistItems
 
-Below APIs provide mechanisms to update wishlist items. Retailer may choose the most appropriate API that suite their circumstance.
+The APIs below provide mechanisms to update wishlist items.  The retailer may choose the most appropriate API to suit their circumstances.
 
 ### Update a Wishlist Item
 
-Update a wishlist item, for example to change the selected variant.  Developer must supply either the wishlist ID and item ID (both internal TWC values) or the wishlistRef and itemRef (both retailer's own identifiers).
+Update a wishlist item (for example to change the chosen variant).  Developer must supply either the wishlist ID and item ID (both internal TWC values) or the wishlistRef and itemRef (both retailer's own identifiers).
 
-Note that itemRef is the client's unique identifier for a wishlist item associated with a single wishlist.  It is NOT the productRef, which typically could be the retailer's product SKU.
+Note that itemRef is the client's unique identifier for a wishlist item associated with a wishlist item.  It is NOT the productRef, which typically could be the retailer's product SKU.
 
 If the variant is being changed, then the original variant ID (TWC internal ID) must also be provided.
-
 
 | Endpoint| ```/api/wishlist/items```|
 |-----------|---------------|
@@ -1119,8 +1071,6 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-
-
 <summary>Sample Request:</summary>
 
 ```json
@@ -1144,9 +1094,6 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     }
 }
 ```
-
-
-
 
 <summary>Response - 200 (OK Updated)</summary>
 
@@ -1186,8 +1133,6 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 }
 ```
 
-
-
 <summary>HTTP Status Code:</summary>
 
 ``` 
@@ -1199,13 +1144,11 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 ```
 
 
-
-
 ### Update a Wishlist Item By Ref
 
-Update a wishlist item, for example to change the selected variant.  Developer must supply the wishlistRef and itemRef (both retailer's own identifiers).
+Update a wishlist item (for example to change the selected variant).  Developer must supply the wishlistRef and itemRef (both the retailer's own identifiers).
 
-Note that itemRef is the client's unique identifier for a wishlist item associated with a single wishlist.  It is NOT the productRef, which typically could be the retailer's product SKU.
+Note that itemRef is the client's unique identifier for a wishlist item associated with a single wishlist item.  It is NOT the productRef, which typically could be the retailer's product SKU.
 
 If the variant is being changed, then the original variant ID (TWC internal ID) must also be provided.
 
@@ -1213,10 +1156,8 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 |-----------|---------------|
 | Method    | PUT           |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
-| path variable | ```ref``` ref is the retailer assigned unique the wishlist item ID. |
+| path variable | ```ref``` ref is the retailer assigned unique wishlist item reference. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
-
 
 <summary>Sample Request:</summary>
 
@@ -1241,9 +1182,6 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     }
 }
 ```
-
-
-
 
 <summary>Response - 200 (OK Updated)</summary>
 
@@ -1282,9 +1220,6 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     "disableNotification": false
 }
 ```
-
-
-
 <summary>HTTP Status Code:</summary>
 
 ``` 
@@ -1296,10 +1231,9 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 ```
 
 
-
 ### Update a Wishlist Item By Id
 
-Update a wishlist item, for example to change the selected variant.  Developer must supply the wishlist ID and item ID (both TWC internal identifiers).
+Update a wishlist item (for example to change the selected variant).  Developer must supply the wishlist ID and item ID (both TWC internal identifiers).
 
 If the variant is being changed, then the original variant ID (TWC internal ID) must also be provided.
 
@@ -1307,10 +1241,8 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 |-----------|---------------|
 | Method    | PUT           |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
-| path variable | ```id``` id is the TWC generated unique ID of the wishlist item. |
+| path variable | ```id``` id is the TWC generated unique identifier of the wishlist item. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
-
 
 <summary>Sample Request:</summary>
 
@@ -1335,9 +1267,6 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     }
 }
 ```
-
-
-
 
 <summary>Response - 200 (OK Updated)</summary>
 
@@ -1377,8 +1306,6 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 }
 ```
 
-
-
 <summary>HTTP Status Code:</summary>
 
 ``` 
@@ -1390,17 +1317,15 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 ```
 
 
-
 ## Get Wishlist Items
 
-Below APIs provide mechanisms to get all items in a single wishlist or a single wishlist item.
+THe APIs below provide mechanisms to get all items in a single wishlist, or a single wishlist item.
 
 ### Get all Items in a Wishlist by Wishlist Id
-Returns a list of all wishlist items belonging to the given wishlist Id (TWC internal identifier).
 
-Results are paginated, page size is 20, maximum 50.
+Returns a list of all wishlist items belonging to the given wishlist identifier (TWC internal identifier).
 
-If item does not exist, this method returns a ResourceNotFound error.
+Results are paginated, page size is 20, maximum 50.  If the item does not exist, this method returns a ResourceNotFound error.
 
 | Endpoint| ```/api/wishlist/items```|
 |-----------|---------------|
@@ -1411,12 +1336,10 @@ If item does not exist, this method returns a ResourceNotFound error.
 
 | Query Parameters | What is it for ? |
 |---|---|
-| ```id``` | This is the TWC system generated unique wishlist ID. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will query database to for wishlists by ID. |
-| ```wishlistRef``` | This is the retailer assigned unique wishlist reference ID. e.g: ```WISH0001```. API will query database to for wishlists by reference ID. |
-| ```pageSize``` | This parameter will determine the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
-| ```lastItemId``` | This parameter will determine which items to return. API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform API to respond items with ID greater than, but excluding the provided value. |
-
-
+| ```id``` | This is the TWC system generated unique wishlist identifier. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. The API will query the database for wishlists by ID. |
+| ```wishlistRef``` | This is the retailer assigned unique wishlist reference identifier. e.g: ```WISH0001```. The API will query the database for wishlists by the reference value provided. |
+| ```pageSize``` | Determines the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
+| ```lastItemId``` | Determines which items to return. API returns wishlist items in the ascending order of their TWC generated wishlist ID. This parameter will inform the API to respond with the items with an identifier greater than, but excluding the value provided. |
 
 <summary>Sample Response - 200 (OK)</summary>
 
@@ -1489,9 +1412,9 @@ If item does not exist, this method returns a ResourceNotFound error.
 ```
 
 
-
 ### Get Wishlist Item by Item Id
-Returns the wishlist item belonging to the given item Id (TWC internal item ID)
+
+Returns the wishlist item belonging to the given item Id (TWC internal item identifier)
 
 If the item does not exist, this method returns a ResourceNotFound error.
 
@@ -1499,9 +1422,8 @@ If the item does not exist, this method returns a ResourceNotFound error.
 |-----------|---------------|
 | Method    | GET           |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
-| path variable | ```id``` id is the TWC generated unique ID of the wishlist item. |
+| path variable | ```id``` id is the TWC generated unique identifier of the wishlist item. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
 
 <summary>Sample Response - 200 (OK)</summary>
 
@@ -1540,9 +1462,6 @@ If the item does not exist, this method returns a ResourceNotFound error.
     "disableNotification": false
 }
 ```
-
-
-
 
 <summary>HTTP Status Code: </summary>
 
@@ -1555,6 +1474,7 @@ If the item does not exist, this method returns a ResourceNotFound error.
 
 
 ### Get Wishlist Item by Item Ref
+
 Returns the wishlist item belonging to the given itemRef (retailer's own item identifier).
 
 Note that itemRef is the client's unique identifier for a wishlist item associated with a single wishlist.  It is NOT the productRef, which typically could be the retailer's product SKU.
@@ -1565,9 +1485,8 @@ If the item does not exist, this method returns a ResourceNotFound error.
 |-----------|---------------|
 | Method    | GET           |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
-| path variable | ```wishlistItemRef``` is the retailer assigned unique wishlist reference ID. |
+| path variable | ```wishlistItemRef``` is the retailer assigned unique wishlist reference identifier. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
-
 
 <summary>Sample Response - 200 (OK)</summary>
 
@@ -1607,9 +1526,6 @@ If the item does not exist, this method returns a ResourceNotFound error.
 }
 ```
 
-
-
-
 <summary>HTTP Status Code: </summary>
 
 ``` 
@@ -1620,10 +1536,10 @@ If the item does not exist, this method returns a ResourceNotFound error.
 ```
 
 
-
 ## Delete Wishlist Item
 
 ### Delete Wishlist Item by Id
+
 Delete Wishlist item marks the item matching the given item ID (TWC internal platform ID) as deleted and produces an HTTP response confirming the action. 
 
 If the wishlist/item does not exist, this method returns a ResourceNotFound error.
@@ -1632,11 +1548,10 @@ If the wishlist/item does not exist, this method returns a ResourceNotFound erro
 |-----------|---------------|
 | Method    | DELETE          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
-| ```id``` | This is the TWC system generated unique wishlist item ID. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will remove the wishlist item for the given ID, if exists. |
+| ```id``` | This is the TWC system generated unique wishlist item identifier. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. The API will remove the wishlist item for the given identifier, if it exists. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 <summary>Response - 204 (Deleted)</summary> 
-
 
 <summary>HTTP Status Code</summary> 
 
@@ -1648,8 +1563,8 @@ If the wishlist/item does not exist, this method returns a ResourceNotFound erro
 ```
 
 
-
 ### Delete Wishlist Item by itemRef
+
 Delete Wishlist Item by itemRef marks the item matching the given itemRef (retailer's own identifier) as deleted and produces an HTTP response confirming the action. 
 
 Note that itemRef is the client's unique identifier for a wishlist item associated with a single wishlist.  It is NOT the productRef, which typically could be the retailer's product SKU.
@@ -1660,11 +1575,10 @@ If the wishlist/item does not exist, this method returns a ResourceNotFound erro
 |-----------|---------------|
 | Method    | DELETE          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
-| ```wishlistItemRef``` | This is the TWC retailer assigned unique wishlist item ID. e.g: ```WISHITEM111111```. API will remove the wishlist item for the given reference ID, if exists. |
+| ```wishlistItemRef``` | This is the TWC retailer assigned unique wishlist item identifier. e.g: ```WISHITEM111111```. The API will remove the wishlist item for the given reference, if it exists. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 <summary>Response - 204 (Deleted)</summary> 
-
 
 <summary>HTTP Status Code</summary> 
 
@@ -1674,9 +1588,6 @@ If the wishlist/item does not exist, this method returns a ResourceNotFound erro
 - 403 Forbidden 
 - 404 Not Found
 ```
-
-
-
 
 ***
 [Back to Top](#wishlist-api)
