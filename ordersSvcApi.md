@@ -2,18 +2,14 @@
 [Back to Home](index.md#welcome-to-the-wishlist)
 
 
-# **Order Svc API**
+# **Order API**
 An order is a customer's request to purchase one or more products from a shop. You can create, retrieve, update, and delete orders using the Order APIs.  The Wishlist Platform uses orders to determine if a wishlist item is purchased (a "conversion").
-
-
-[**Quote Service API**](quotesvcApi.md#quote-api)
     
-
 ### Index
 
 ***
 
-- [**Order Svc API**](#order-svc-api)
+- [**Order API**](#order-svc-api)
     <!-- - [Index](#index) -->
   - [**Representations**](#representations)
   - [**REST Endpoints**](#rest-endpoints)
@@ -45,9 +41,9 @@ All requests or responses are JSON objects.
 
 `acceptsMarketing` - boolean - option to enable of disable marketing notifications.
 
-`appliedDiscounts` - [applied discounts](Common_Fields/appliedDiscounts.md) - array - All discounds and applicable promotional offers etc are enabled here. This contains :
+`appliedDiscounts` - [applied discounts](Common_Fields/appliedDiscounts.md) - array - All discounds and applicable promotional offers etc are enabled here.  This contains:
 
-`appliedTaxes` - array - All applicable taxes are enabled here. This contains :
+`appliedTaxes` - array - All applicable taxes are enabled here. This contains:
 
 - `amount` -   
 - `amountInCent` -  
@@ -56,7 +52,7 @@ All requests or responses are JSON objects.
 - `id` - string
 - `name` - string
 
-`attributeGroups` - array -additional required properties that are not present by default are enabled here. Refer swagger documentation for more detailed  information on internal structure.
+`attributeGroups` - array - Additional required properties that are not present by default are enabled here. Refer swagger documentation for more detailed  information on internal structure.
 
 `billingAddress` - [address](Common_Fields/address.md) 
 
