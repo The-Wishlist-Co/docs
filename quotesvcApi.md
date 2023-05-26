@@ -34,9 +34,9 @@ All requests or responses are JSON objects.
 <details>
  <summary>Expand for details</summary> -->
 
-```storeName``` - string - The store name
+```storeName``` - string - The store name.
 
-```salesPerson_name``` - string - the sales person name
+```salesPerson_name``` - string - The Salesperson's name.
 
 ```address``` - [Address](Common_Fields/address.md) - The address is saved as an array. The Address of the store will be set to the ID of that address.
 
@@ -74,11 +74,11 @@ All requests or responses are JSON objects.
 
 ```quoteTax``` - decimal - The quote tax amount.
 
-```salesPerson_code``` - string - sale person code 
+```salesPerson_code``` - string - Salesperson code.
 
-```number_of_lines``` - ineteger - the number of lines in the quote
+```number_of_lines``` - ineteger - The number of lines in the quote.
 
-```attributeGroups``` - [AttributeGroup](Common_Fields/attributeGroup.md) - The group of attibute values stored under as a object in group of atributeGroups.
+```attributeGroups``` - [AttributeGroup](Common_Fields/attributeGroup.md) - A group of additional attibutes available to the retailer and stored as an object under atributeGroups.
 
 
 
@@ -115,15 +115,15 @@ All requests or responses are JSON objects.
 
 ```deleted``` - boolean - Indicates if the quote line is deleted.
 
-```discountCode``` - string - discount code
+```discountCode``` - string - The discount code.
 
-```voided``` - boolean  
+```voided``` - boolean - Indicates the quote is voided.
 
-```discountTotal``` - decimal - discount total
+```discountTotal``` - decimal - The total discount for this quote line.
 
-```rrp``` - decimal - rrp price
+```rrp``` - decimal - The recommended retail price for the item on this quote line.
 
-```attributeGroups``` - [AttributeGroup](Common_Fields/attributeGroup.md) - The group of attibute values stored under as a object in group of atributeGroups.
+```attributeGroups``` - [AttributeGroup](Common_Fields/attributeGroup.md) - A group of additional attibutes available to the retailer and stored as an object under atributeGroups.
 
 <!-- </details> -->
 
@@ -135,6 +135,7 @@ All requests or responses are JSON objects.
 - ##  **Quote**
 
 ## Create a Quote
+
 Creates a new Quote data set in the TWC system.
 
 Endpoint: ```/api/v1/quote```
@@ -381,7 +382,8 @@ HTTP Status Code:
 
 
 ## Update a Quote
-Updates Quote data set in the TWC system.
+
+Updates an existing Quote data set in the TWC platform.
 
 Endpoint: ```/api/v1/quote```
 
@@ -588,8 +590,10 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Find Quote
-Returns a quote by its ID from a specific Store while passing the respective ID as a path param in the endpoint. The Tenant authentication maps to a Store.
+## Get Quote
+
+Returns a quote using it's internal TWC identifier.  This returns a quote, including the quote lines.
+
 If the quote does not exist, this method returns a 404.
 
 Endpoint: ```/api/v1/quote```
@@ -740,8 +744,10 @@ HTTP Status Code:
 ```
 
 
-## Find Quotes By Customer Reference/Email
-Returns a list of quote by using cusromer reference or email from the specific store by passing the respective fields as a path param in the endpoint. The Tenant authentication maps to a Store.
+## Get Quotes By Customer Reference/Email
+
+Returns a list of quotes using the retailer's customer reference or email.
+
 If the quote does not exist, this method returns a 404.
 
 Endpoint: ```/api/v1/quote/customer```
@@ -761,7 +767,6 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 | X-TWC-Tenant  | {Tenant Name}    |
 
 <!-- </details> -->
-
 
 <!-- <details> -->
  Request Parameters: `customer_ref  : Customer reference, customer_email : Customer email,pageSize : no of expected quotes in a page, lastItemId: id of the last customer quote received in the page `  
@@ -896,7 +901,9 @@ HTTP Status Code:
 
 
 ## Delete Quote by ID
-Deleting a Quote marks the quote as deleted and produces the HTTP response confirming the action.
+
+Deleting a quote marks the quote as deleted and produces the HTTP response confirming the action.  Requires the TWC quote identifier.
+
 If the quote does not exist, this method returns 404 response.
 
 Endpoint: ```/api/v1/quote/{id}```
@@ -940,7 +947,9 @@ HTTP Status Code:
 ```
 
 ## Delete Quote by Ref
-Deleting a Quote by ref marks the quote as deleted and produces an HTTP response confirming the action.
+
+Deleting a quote by ref marks the quote as deleted and produces an HTTP response confirming the action.  This method uses the quote reference identifier assigned by the retailer.
+
 If the quote does not exist, this method returns 404 response.
 
 Endpoint: ```/api/v2/quote/{Ref}/byref```
@@ -986,7 +995,8 @@ HTTP Status Code:
 - ##  **Quote Line**
 
 ## Create a Quote Line
-Creates a new Quote line data set in the TWC system.
+
+Creates a new Quote line data set in the TWC system.  Requires the TWC quote identifier.
 
 Endpoint: ```/api/v1/quote/line```
 
@@ -1111,7 +1121,8 @@ HTTP Status Code:
 
 
 ## Update a Quote Line
-Updates Quote line data set in the TWC system.
+
+Updates Quote line data set.  Requires the TWC quote line identifier.
 
 Endpoint: ```/api/v1/quote/line```
 
@@ -1235,7 +1246,9 @@ HTTP Status Code:
 ```
 
 ## Delete Quote Line
-Deleting a Quote line marks the quote line as deleted and produces an HTTP response confirming the action.
+
+Deleting a Quote line marks the quote line as deleted and produces an HTTP response confirming the action.  Requires the TWC quote line identifier.  
+
 If the quote line does not exist, this method returns 404 response.
 
 Endpoint: ```/api/v1/quote/line/{id}```
