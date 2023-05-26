@@ -34,45 +34,45 @@ All requests or responses are JSON objects.
 <details>
  <summary>Expand for details</summary> -->
 
-```storeName``` - string - the store name
+```storeName``` - string - The store name
 
-```salesPerson``` - string - the sales person name
+```salesPerson``` - string - The salespersons name
 
 ```address``` - [Address](Common_Fields/address.md) - The address is saved as an array. The Address of the store will be set to the ID of that address.
 
-```customerId``` - string - the id of the customer who belongs to the quote
+```customerId``` - string - The TWC internal identifier for the customer who belongs to the quote.
 
-```customerRef``` - string - the ref of the customer who belongs to the quote
+```customerRef``` - string - The retailer's own customer identifier for the customer who belongs to the quote.
 
-```firstName``` - string -The customer's first name.
+```firstName``` - string - The customer's first name.
 
 ```lastName``` - string - The customer's last name.
 
-```email``` - string -The customer's email address 
+```email``` - string - The customer's email address.
 
-```referenceNo``` - string - User generated refernce number.
+```referenceNo``` - string - The reatiler's refernce number for the quote.
 
-```expiryDate``` - expiry date of the quote.The date and time (ISO 8601 format).
+```expiryDate``` - The expiry date of the quote.  The date and time are in ISO 8601 format.
 
 ```totalQuoteAmount``` - decimal - Total quote amount.
 
-```totalDiscount``` - decimal - total discount amount.
+```totalDiscount``` - decimal - Total discount amount.
 
-```externalNotes``` - string - external notes with time stamp
+```externalNotes``` - string - Quote notes with time stamp.
 
-```createdAt``` - The date and time (ISO 8601 format) when the customer was created.
+```createdAt``` - The date and time (ISO 8601 format) for when quote was created.
 
-```id``` - string -A unique identifier for the quote.
+```id``` - string - TWC's unique identifier for the quote.
 
-```updatedAt``` - The date and time (ISO 8601 format) when the customer information was last updated.
+```updatedAt``` - The date and time (ISO 8601 format) when the quote information was last updated.
 
-```deleted``` - boolean - The quote is deleted or not
+```deleted``` - boolean - Indicates the quote is deleted.
 
-```locationId``` - string - The store location id 
+```locationId``` - string - The store location id (TWC identifier).
 
-```locationRef``` - string - The store location ref
+```locationRef``` - string - The store location ref (retailer's own identifier).
 
-```quoteTax``` - decimal - The quote tax amount
+```quoteTax``` - decimal - The quote tax amount.
 
 <!-- </details> -->
 
@@ -81,29 +81,29 @@ All requests or responses are JSON objects.
 <details>
  <summary>Expand for details</summary> -->
 
-```quoteId``` - string - the unique quote id.
+```quoteId``` - string - The unique TWC internal quote identifier.
 
-```productCode``` - string - the code of the product.
+```productCode``` - string - The retailer's code for the product on this line item.
 
-```productDescription``` - string - the description of the product.
+```productDescription``` - string - The description of the product on this line item.
 
-```quantity``` - string -the quantity of the product
+```quantity``` - string - The quantity of the product for this line item.
 
-```unitPrice``` - decimal - product unit price
+```unitPrice``` - decimal - The product's unit price
 
-```discountAmount``` - decimal - discount amount.
+```discountAmount``` - decimal - The discount amount on this line item.
 
-```finalAmount``` - decimal - final amount after deducting the discount
+```finalAmount``` - decimal - The final amount after deducting the discount on this line item.
 
-```promotion``` - boolean - promotion flag.
+```promotion``` - boolean - Indicates if there is a promotion on this line item.
 
-```createdAt``` - The date and time (ISO 8601 format) when the customer was created.
+```createdAt``` - The date and time (ISO 8601 format) when the quote line item was created.
 
-```id``` - string -A unique identifier for the quote.
+```id``` - string - TWC's unique identifier for the quote line item.
 
-```updatedAt``` - The date and time (ISO 8601 format) when the customer information was last updated.
+```updatedAt``` - The date and time (ISO 8601 format) when the quote line item information was last updated.
 
-```deleted``` - boolean - The quote line is deleted or not
+```deleted``` - boolean - Indicates if the quote line is deleted.
 
 <!-- </details> -->
 
