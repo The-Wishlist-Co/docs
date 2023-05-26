@@ -30,6 +30,7 @@ The Quote APIs allow the developer to manage information about a quote, such as 
 All requests or responses are JSON objects.
 
 ## Quote
+
 <!-- 
 <details>
  <summary>Expand for details</summary> -->
@@ -80,12 +81,10 @@ All requests or responses are JSON objects.
 
 ```attributeGroups``` - [AttributeGroup](Common_Fields/attributeGroup.md) - A group of additional attibutes available to the retailer and stored as an object under atributeGroups.
 
-
-
-
 <!-- </details> -->
 
 ## Quote line
+
 <!-- 
 <details>
  <summary>Expand for details</summary> -->
@@ -103,7 +102,6 @@ All requests or responses are JSON objects.
 ```unitDiscount``` - decimal - discount amount.
 
 ```subTotal``` - decimal - final amount after deducting the discount
-
 
 ```promotion``` - boolean - Indicates if there is a promotion on this line item.
 
@@ -590,9 +588,9 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Get Quote
+## Get Quote by ID or Ref
 
-Returns a quote using it's internal TWC identifier.  This returns a quote, including the quote lines.
+Returns a quote using either it's internal TWC identifier (ID) or the customer's own quote reference (Ref).  This returns a quote, including the quote lines.
 
 If the quote does not exist, this method returns a 404.
 
