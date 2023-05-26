@@ -36,7 +36,7 @@ All requests or responses are JSON objects.
 
 ```storeName``` - string - The store name
 
-```salesPerson``` - string - The salespersons name
+```salesPerson_name``` - string - the sales person name
 
 ```address``` - [Address](Common_Fields/address.md) - The address is saved as an array. The Address of the store will be set to the ID of that address.
 
@@ -74,6 +74,15 @@ All requests or responses are JSON objects.
 
 ```quoteTax``` - decimal - The quote tax amount.
 
+```salesPerson_code``` - string - sale person code 
+
+```number_of_lines``` - ineteger - the number of lines in the quote
+
+```attributeGroups``` - [AttributeGroup](Common_Fields/attributeGroup.md) - The group of attibute values stored under as a object in group of atributeGroups.
+
+
+
+
 <!-- </details> -->
 
 ## Quote line
@@ -91,9 +100,10 @@ All requests or responses are JSON objects.
 
 ```unitPrice``` - decimal - The product's unit price
 
-```discountAmount``` - decimal - The discount amount on this line item.
+```unitDiscount``` - decimal - discount amount.
 
-```finalAmount``` - decimal - The final amount after deducting the discount on this line item.
+```subTotal``` - decimal - final amount after deducting the discount
+
 
 ```promotion``` - boolean - Indicates if there is a promotion on this line item.
 
@@ -104,6 +114,16 @@ All requests or responses are JSON objects.
 ```updatedAt``` - The date and time (ISO 8601 format) when the quote line item information was last updated.
 
 ```deleted``` - boolean - Indicates if the quote line is deleted.
+
+```discountCode``` - string - discount code
+
+```voided``` - boolean  
+
+```discountTotal``` - decimal - discount total
+
+```rrp``` - decimal - rrp price
+
+```attributeGroups``` - [AttributeGroup](Common_Fields/attributeGroup.md) - The group of attibute values stored under as a object in group of atributeGroups.
 
 <!-- </details> -->
 
@@ -155,34 +175,87 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "street": "string",
     "streetNumber": "string"
   },
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "createdAt": "2023-05-25T08:59:08.903Z",
   "customerId": "string",
   "customerRef": "string",
-  "expiryDate": "2022-08-31T10:04:35.660Z",
+  "expiryDate": "2023-05-25T08:59:08.903Z",
   "externalNotes": {
-    "Date": "notes",
-    "Date": "notes",
-    "Date": "notes"
-  },  
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "id": "string",
   "lineItems": [
     {
-      "discountAmount": 0,
-      "finalAmount": 0,
+      "attributeGroups": {
+        "additionalProp1": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "BLOB"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "BLOB"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "BLOB"
+            }
+          },
+          "is_obsolete": true
+        }
+      },
+      "createdAt": "2023-05-25T08:59:08.903Z",
+      "deleted": true,
+      "discountCode": "string",
+      "discountTotal": 0,
       "id": "string",
+      "lineNumber": "string",
       "productCode": "string",
       "productDescription": "string",
       "promotion": true,
       "quantity": 0,
-      "unitPrice": 0
+      "rrp": 0,
+      "subTotal": 0,
+      "unitDiscount": 0,
+      "unitPrice": 0,
+      "updatedAt": "2023-05-25T08:59:08.903Z",
+      "voided": true
     }
   ],
-  "referenceNo": "string",
-  "salesPerson": "string",
-  "storeName": "string",
-  "totalDiscount": 0,
-  "totalQuoteAmount": 0,
   "locationId": "string",
   "locationRef": "string",
+  "number_of_lines": 0,
   "quoteTax": 0,
+  "referenceNo": "string",
+  "salesPerson_code": "string",
+  "salesPerson_name": "string",
+  "status": "string",
+  "totalDiscount": 0,
+  "totalQuoteAmount": 0,
+  "updatedAt": "2023-05-25T08:59:08.903Z"
 }
 
 ```
@@ -208,43 +281,87 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "street": "string",
     "streetNumber": "string"
   },
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "createdAt": "2023-05-25T08:59:08.903Z",
   "customerId": "string",
   "customerRef": "string",
-  "firstName": "string",
-  "lastName": "string",
-  "email": "string",
-  "expiryDate": "2022-08-30T10:04:35.660Z",
+  "expiryDate": "2023-05-25T08:59:08.903Z",
   "externalNotes": {
-    "Date": "notes",
-    "Date": "notes",
-    "Date": "notes"
-  }, 
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
   "id": "string",
   "lineItems": [
     {
-      "discountAmount": 0,
-      "finalAmount": 0,
+      "attributeGroups": {
+        "additionalProp1": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "BLOB"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "BLOB"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "BLOB"
+            }
+          },
+          "is_obsolete": true
+        }
+      },
+      "createdAt": "2023-05-25T08:59:08.903Z",
+      "deleted": true,
+      "discountCode": "string",
+      "discountTotal": 0,
       "id": "string",
+      "lineNumber": "string",
       "productCode": "string",
       "productDescription": "string",
       "promotion": true,
       "quantity": 0,
+      "rrp": 0,
+      "subTotal": 0,
+      "unitDiscount": 0,
       "unitPrice": 0,
-      "created_at": "2022-08-30T10:07:35.710334200Z",
-      "updated_at": "2022-08-30T10:07:35.710334200Z"      
+      "updatedAt": "2023-05-25T08:59:08.903Z",
+      "voided": true
     }
   ],
   "locationId": "string",
   "locationRef": "string",
+  "number_of_lines": 0,
   "quoteTax": 0,
   "referenceNo": "string",
-  "salesPerson": "string",
-  "storeName": "string",
+  "salesPerson_code": "string",
+  "salesPerson_name": "string",
+  "status": "string",
   "totalDiscount": 0,
   "totalQuoteAmount": 0,
-  "deleted": false,
-  "created_at": "2022-08-30T10:07:35.710334200Z",
-  "updated_at": "2022-08-30T10:07:35.710334200Z"
+  "updatedAt": "2023-05-25T08:59:08.903Z"
 }
 
 ```
@@ -305,23 +422,46 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "street": "string",
     "streetNumber": "string"
   },
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
   "customerId": "string",
   "customerRef": "string",
-  "expiryDate": "2022-08-30T10:04:35.660Z",
+  "expiryDate": "2023-05-25T09:02:00.752Z",
   "externalNotes": {
-    "Date": "notes",
-    "Date": "notes",
-    "Date": "notes"
-  },  
-  "id":"string",  
-  "referenceNo": "string",
-  "salesPerson": "string",
-  "storeName": "string",
-  "totalDiscount": 0,
-  "totalQuoteAmount": 0,
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "id": "string",
   "locationId": "string",
   "locationRef": "string",
+  "number_of_lines": 0,
   "quoteTax": 0,
+  "referenceNo": "string",
+  "salesPerson_code": "string",
+  "salesPerson_name": "string",
+  "status": "string",
+  "totalDiscount": 0,
+  "totalQuoteAmount": 0,
+  "updatedAt": "2023-05-25T09:02:00.752Z"
 }
 
 ```
@@ -347,43 +487,91 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "street": "string",
     "streetNumber": "string"
   },
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "createdAt": "2023-05-25T09:02:00.770Z",
   "customerId": "string",
   "customerRef": "string",
-  "firstName": "string",
-  "lastName": "string",
+  "deleted": true,
   "email": "string",
-  "expiryDate": "2022-08-30T10:04:35.660Z",
+  "expiryDate": "2023-05-25T09:02:00.770Z",
   "externalNotes": {
-    "Date": "notes",
-    "Date": "notes",
-    "Date": "notes"
-  }, 
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "firstName": "string",
   "id": "string",
+  "lastName": "string",
   "lineItems": [
     {
-      "discountAmount": 0,
-      "finalAmount": 0,
+      "attributeGroups": {
+        "additionalProp1": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "BLOB"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "BLOB"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "BLOB"
+            }
+          },
+          "is_obsolete": true
+        }
+      },
+      "createdAt": "2023-05-25T09:02:00.770Z",
+      "deleted": true,
+      "discountCode": "string",
+      "discountTotal": 0,
       "id": "string",
+      "lineNumber": "string",
       "productCode": "string",
       "productDescription": "string",
       "promotion": true,
       "quantity": 0,
+      "rrp": 0,
+      "subTotal": 0,
+      "unitDiscount": 0,
       "unitPrice": 0,
-      "created_at": "2022-08-30T10:07:35.710334200Z",
-      "updated_at": "2022-08-30T10:07:35.710334200Z"      
+      "updatedAt": "2023-05-25T09:02:00.770Z",
+      "voided": true
     }
   ],
   "locationId": "string",
   "locationRef": "string",
+  "number_of_lines": 0,
   "quoteTax": 0,
   "referenceNo": "string",
-  "salesPerson": "string",
-  "storeName": "string",
+  "salesPerson_code": "string",
+  "salesPerson_name": "string",
+  "status": "string",
   "totalDiscount": 0,
   "totalQuoteAmount": 0,
-  "deleted": false,
-  "created_at": "2022-08-30T10:07:35.710334200Z",
-  "updated_at": "2022-08-30T10:07:35.710334200Z"
+  "updatedAt": "2023-05-25T09:02:00.770Z"
 }
 ```
 <!-- </details> -->
@@ -448,43 +636,91 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "street": "string",
     "streetNumber": "string"
   },
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "createdAt": "2023-05-25T09:04:46.766Z",
   "customerId": "string",
   "customerRef": "string",
-  "firstName": "string",
-  "lastName": "string",
+  "deleted": true,
   "email": "string",
-  "expiryDate": "2022-08-30T10:04:35.660Z",
+  "expiryDate": "2023-05-25T09:04:46.766Z",
   "externalNotes": {
-    "Date": "notes",
-    "Date": "notes",
-    "Date": "notes"
-  }, 
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "firstName": "string",
   "id": "string",
+  "lastName": "string",
   "lineItems": [
     {
-      "discountAmount": 0,
-      "finalAmount": 0,
+      "attributeGroups": {
+        "additionalProp1": {
+          "attribute_group": "string",
+          "attributes": {
+            "additionalProp1": {
+              "attribute_value": "string",
+              "value_type": "BLOB"
+            },
+            "additionalProp2": {
+              "attribute_value": "string",
+              "value_type": "BLOB"
+            },
+            "additionalProp3": {
+              "attribute_value": "string",
+              "value_type": "BLOB"
+            }
+          },
+          "is_obsolete": true
+        }
+      },
+      "createdAt": "2023-05-25T09:04:46.766Z",
+      "deleted": true,
+      "discountCode": "string",
+      "discountTotal": 0,
       "id": "string",
+      "lineNumber": "string",
       "productCode": "string",
       "productDescription": "string",
       "promotion": true,
       "quantity": 0,
+      "rrp": 0,
+      "subTotal": 0,
+      "unitDiscount": 0,
       "unitPrice": 0,
-      "created_at": "2022-08-30T10:07:35.710334200Z",
-      "updated_at": "2022-08-30T10:07:35.710334200Z"
+      "updatedAt": "2023-05-25T09:04:46.766Z",
+      "voided": true
     }
   ],
   "locationId": "string",
   "locationRef": "string",
+  "number_of_lines": 0,
   "quoteTax": 0,
   "referenceNo": "string",
-  "salesPerson": "string",
-  "storeName": "string",
+  "salesPerson_code": "string",
+  "salesPerson_name": "string",
+  "status": "string",
   "totalDiscount": 0,
   "totalQuoteAmount": 0,
-  "deleted": false,
-  "created_at": "2022-08-30T10:07:35.710334200Z",
-  "updated_at": "2022-08-30T10:07:35.710334200Z"
+  "updatedAt": "2023-05-25T09:04:46.766Z"
 }
 
 ```
@@ -537,60 +773,109 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 
 ```json
 [
- {
-  "address": {
-    "address": "string",
-    "address1": "string",
-    "city": "string",
-    "contactPerson": "string",
-    "countryIsocode": "string",
-    "countryName": "string",
-    "county": "string",
-    "fax": "string",
-    "phone": "string",
-    "postcode": "string",
-    "state": "string",
-    "street": "string",
-    "streetNumber": "string"
-  },
-  "customerId": "string",
-  "customerRef": "string",
-  "firstName": "string",
-  "lastName": "string",
-  "email": "string",
-  "expiryDate": "2022-08-30T10:04:35.660Z",
-  "externalNotes": {
-    "Date": "notes",
-    "Date": "notes",
-    "Date": "notes"
-  }, 
-  "id": "string",
-  "lineItems": [
-    {
-      "discountAmount": 0,
-      "finalAmount": 0,
-      "id": "string",
-      "productCode": "string",
-      "productDescription": "string",
-      "promotion": true,
-      "quantity": 0,
-      "unitPrice": 0,
-      "created_at": "2022-08-30T10:07:35.710334200Z",
-      "updated_at": "2022-08-30T10:07:35.710334200Z"
-    }
-  ],
-  "locationId": "string",
-  "locationRef": "string",
-  "quoteTax": 0,
-  "referenceNo": "string",
-  "salesPerson": "string",
-  "storeName": "string",
-  "totalDiscount": 0,
-  "totalQuoteAmount": 0,
-  "deleted": false,
-  "created_at": "2022-08-30T10:07:35.710334200Z",
-  "updated_at": "2022-08-30T10:07:35.710334200Z"
-}
+ [
+  {
+    "address": {
+      "address": "string",
+      "address1": "string",
+      "city": "string",
+      "contactPerson": "string",
+      "countryIsocode": "string",
+      "countryName": "string",
+      "county": "string",
+      "fax": "string",
+      "phone": "string",
+      "postcode": "string",
+      "state": "string",
+      "street": "string",
+      "streetNumber": "string"
+    },
+    "attributeGroups": {
+      "additionalProp1": {
+        "attribute_group": "string",
+        "attributes": {
+          "additionalProp1": {
+            "attribute_value": "string",
+            "value_type": "BLOB"
+          },
+          "additionalProp2": {
+            "attribute_value": "string",
+            "value_type": "BLOB"
+          },
+          "additionalProp3": {
+            "attribute_value": "string",
+            "value_type": "BLOB"
+          }
+        },
+        "is_obsolete": true
+      }
+    },
+    "createdAt": "2023-05-25T09:05:25.072Z",
+    "customerId": "string",
+    "customerRef": "string",
+    "deleted": true,
+    "email": "string",
+    "expiryDate": "2023-05-25T09:05:25.072Z",
+    "externalNotes": {
+      "additionalProp1": "string",
+      "additionalProp2": "string",
+      "additionalProp3": "string"
+    },
+    "firstName": "string",
+    "id": "string",
+    "lastName": "string",
+    "lineItems": [
+      {
+        "attributeGroups": {
+          "additionalProp1": {
+            "attribute_group": "string",
+            "attributes": {
+              "additionalProp1": {
+                "attribute_value": "string",
+                "value_type": "BLOB"
+              },
+              "additionalProp2": {
+                "attribute_value": "string",
+                "value_type": "BLOB"
+              },
+              "additionalProp3": {
+                "attribute_value": "string",
+                "value_type": "BLOB"
+              }
+            },
+            "is_obsolete": true
+          }
+        },
+        "createdAt": "2023-05-25T09:05:25.072Z",
+        "deleted": true,
+        "discountCode": "string",
+        "discountTotal": 0,
+        "id": "string",
+        "lineNumber": "string",
+        "productCode": "string",
+        "productDescription": "string",
+        "promotion": true,
+        "quantity": 0,
+        "rrp": 0,
+        "subTotal": 0,
+        "unitDiscount": 0,
+        "unitPrice": 0,
+        "updatedAt": "2023-05-25T09:05:25.072Z",
+        "voided": true
+      }
+    ],
+    "locationId": "string",
+    "locationRef": "string",
+    "number_of_lines": 0,
+    "quoteTax": 0,
+    "referenceNo": "string",
+    "salesPerson_code": "string",
+    "salesPerson_name": "string",
+    "status": "string",
+    "totalDiscount": 0,
+    "totalQuoteAmount": 0,
+    "updatedAt": "2023-05-25T09:05:25.072Z"
+  }
 ]
 
 ```
@@ -726,14 +1011,41 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
  
 ```json
 {
-  "quoteId":"string",
-  "discountAmount": 0,
-  "finalAmount": 0,  
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "createdAt": "2023-05-25T09:06:26.394Z",
+  "discountCode": "string",
+  "discountTotal": 0,
+  "lineNumber": "string",
   "productCode": "string",
   "productDescription": "string",
   "promotion": true,
   "quantity": 0,
-  "unitPrice": 0
+  "quoteId": "string",
+  "rrp": 0,
+  "subTotal": 0,
+  "unitDiscount": 0,
+  "unitPrice": 0,
+  "updatedAt": "2023-05-25T09:06:26.394Z",
+  "voided": true
 }
 
 ```
@@ -743,18 +1055,43 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
  <summary>Sample Response  - 201 (Created)</summary>
  
  ```json
- {  
-    "id": "string",
-    "discountAmount": 0,
-    "finalAmount": 0,
-    "id": "string",
-    "productCode": "string",
-    "productDescription": "string",
-    "promotion": true,
-    "quantity": 0,
-    "unitPrice": 0,
-    "created_at": "2022-08-30T05:23:49.908296Z",
-    "updated_at": "2022-08-30T05:23:49.908296Z"
+ {
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "createdAt": "2023-05-25T09:06:26.404Z",
+  "deleted": true,
+  "discountCode": "string",
+  "discountTotal": 0,
+  "id": "string",
+  "lineNumber": "string",
+  "productCode": "string",
+  "productDescription": "string",
+  "promotion": true,
+  "quantity": 0,
+  "rrp": 0,
+  "subTotal": 0,
+  "unitDiscount": 0,
+  "unitPrice": 0,
+  "updatedAt": "2023-05-25T09:06:26.405Z",
+  "voided": true
 }
 
 ```
@@ -800,15 +1137,41 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 
 ```json
 {
-   "id": "string",
-    "discountAmount": 0,
-    "finalAmount": 0,
-    "id": "string",
-    "productCode": "string",
-    "productDescription": "string",
-    "promotion": true,
-    "quantity": 0,
-    "unitPrice": 0  
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "createdAt": "2023-05-25T09:07:24.464Z",
+  "discountCode": "string",
+  "discountTotal": 0,
+  "id": "string",
+  "lineNumber": "string",
+  "productCode": "string",
+  "productDescription": "string",
+  "promotion": true,
+  "quantity": 0,
+  "rrp": 0,
+  "subTotal": 0,
+  "unitDiscount": 0,
+  "unitPrice": 0,
+  "updatedAt": "2023-05-25T09:07:24.464Z",
+  "voided": true
 }
 
 ```
@@ -818,18 +1181,43 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 <summary>Response - 200 (OK)</summary>
 
 ```json
- {
-    "id": "string",
-    "discountAmount": 0,
-    "finalAmount": 0,
-    "id": "string",
-    "productCode": "string",
-    "productDescription": "string",
-    "promotion": true,
-    "quantity": 0,
-    "unitPrice": 0,
-    "created_at": "2022-08-30T05:23:49.908296Z",
-    "updated_at": "2022-08-30T05:23:49.908296Z"      
+{
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "createdAt": "2023-05-25T09:07:24.475Z",
+  "deleted": true,
+  "discountCode": "string",
+  "discountTotal": 0,
+  "id": "string",
+  "lineNumber": "string",
+  "productCode": "string",
+  "productDescription": "string",
+  "promotion": true,
+  "quantity": 0,
+  "rrp": 0,
+  "subTotal": 0,
+  "unitDiscount": 0,
+  "unitPrice": 0,
+  "updatedAt": "2023-05-25T09:07:24.475Z",
+  "voided": true
 }
 ```
 <!-- </details> -->
