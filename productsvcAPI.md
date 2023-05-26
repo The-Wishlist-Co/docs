@@ -54,28 +54,28 @@ All requests or responses are JSON objects.
 ***
 Represents a product. 
  
- `active` - boolean - To enable  a product.
+ `active` - boolean - Indicates a product is enabled.
  
- `additionalImageLink` - string - Image link.
+ `additionalImageLink` - string - Additional image link (URL).
  
- `attributeGroups` - [AttributeGroup](Common_Fields/attributeGroup.md) - The group of attibute values stored under as a object in group of atributeGroups.
+ `attributeGroups` - [AttributeGroup](Common_Fields/attributeGroup.md) - An optional group of attibute values stored under as a object in the group "attributeGroups".
  
- `availability` - string - Product Availablity and value should be one of the below values.
+ `availability` - string - Product Availablity.  Should be one of:
  - available
  - preorder
  - disabled 
  
- `availabilityDescription` - String- detail of the product availability.
+ `availabilityDescription` - String- Product availability description.
  
- `brandId` - string - Product brand Id.
+ `brandId` - string - Product brand identifier.
  
- `brandName` - string - Product brand Name.
+ `brandName` - string - Product brand name.
  
  `calculatedPrice` - number - Product calculated price.
  
  `color` - string  - Product Color.
  
- `condition` - String - Product Condition - can be any of the below values.
+ `condition` - String - Product Condition - can be any of the values:
  - New
  - Used
  - Refurbished 
@@ -88,7 +88,7 @@ Represents a product.
  
  `description` -  string
  
- `digitalProduct` -  
+ `digitalProduct` -  Indicates if the product is digital only
  
  `disabled` - 
  
@@ -111,7 +111,7 @@ Represents a product.
   
  `id` - string - 
  
- `imageLink` - string -
+ `imageLink` - string - Main image link (URL) for the product.
  
  `inventoryLevel` - integer - 
  
@@ -136,7 +136,7 @@ Represents a product.
  
  `physicalSpecs	` - [PhysicalSpecifications](Common_Fields/physicalspecs.md) -
   
- `productRef` - string -
+ `productRef` - string - Mandatory field.  The customer's unique identifier for the product (e.g. UPC)
  
  `status` - 
  - APPROVED
