@@ -248,7 +248,7 @@ Represents a product Variant.
  
  `physicalSpecs	` - [PhysicalSpecifications](Common_Fields/physicalspecs.md) -
   
- `productRef` - string -
+ `productRef` - string -  A mandatory field
  
  `status` - 
  - APPROVED
@@ -275,6 +275,8 @@ Represents a product Variant.
  
 ## Create a Product
 Creates a new Product data set in the TWC system.
+
+Please note that it is mandatory for you to include a productRef (your own internal product identifier).
 
 Endpoint: ```/api/v2/products```
 
