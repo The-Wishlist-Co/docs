@@ -931,6 +931,10 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 Adds a single wishlist item into an existing wishlist.  The wishlist can be identified by either the TWC internal identifier, or the wishlistRef, which is the retailer's own wishlist identifier.  
 
+To create a wishlist item, you need to provide either of the following:
+- BOTH the *TWC* product identifier AND TWC variant identifer (i.e. the TWC productID and variantID which you can get from TWC in a prior call), **OR** 
+- BOTH your own *internal* product identifier AND variant identifer (i.e. productRef and variantRef).
+
 | Endpoint| ```/api/wishlist/items```|
 |-----------|---------------|
 | Method    | POST          |
