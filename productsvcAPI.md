@@ -154,9 +154,9 @@ Represents a product.
  
  `variantsAvailable` - boolean -
 
- `createdDate` - The date and time (ISO 8601 format) when the customer was created.
+ `createdDate` - The date and time (ISO 8601 format) when the product record was created.
 
- `lastModifiedDate` - The date and time (ISO 8601 format) when the customer information was last updated.
+ `lastModifiedDate` - The date and time (ISO 8601 format) when the product information was last updated.
 
 
 
