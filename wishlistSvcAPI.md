@@ -70,13 +70,13 @@ All requests or responses are JSON objects
 
 | Field | Type | Description |
 |---|---|---|
-| *addedFromCart* | boolean | Indicates the item was added from cart. |
+| *addedFromCart* | boolean | Indicates the item was added from cart.  Developers should set this flag if the item was added to the wishlist directly fom the shopping cart (this is considered an 'interaction' in The Wishlist reporting dashboards |
 | *disableNotification* | boolean| Disable notifications for this wishlist item. |
 | *wishlistId* | string | TWC generated unique identifier for the wishlist to which the item is being added. Either wishlistId or wishlistRef is mandatory when creating a wishlist item. |
 | *wishlistRef* | string | The reatailer assigned unique reference identifier for the wishlist. Either wishlistId or wishlistRef is mandatory when creating a wishlist item. |
 | *wishlistItemRef* | string | Retailer assigned unique reference identifier of the wishlist item. |
 | *prerelease* | boolean | Indicates that the customer is registering interest to a pre-released product.  Used in the Register Interest notification |
-| *purchased* | boolean | Indicates that the item has been purchased. |
+| *purchased* | boolean | Indicates that the item has been purchased.  Note, this field is for TWC internal use to track wishlist item conversions, and should not be updated directly by developers |
 | *product* | [Product](#wishlistitem-product) | Represents the item [product](#wishlistitem-product). This is a mandatory field. |
 | *attributeGroups* | [AttributeGroups](#attributegroups) | This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_item_origin":&nbsp;"mobile_app",<br>&emsp;&emsp;"ecommerce_wishlist_item_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
 
