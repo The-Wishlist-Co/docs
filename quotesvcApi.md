@@ -79,6 +79,8 @@ All requests or responses are JSON objects.
 
 ```number_of_lines``` - ineteger - The number of lines in the quote.
 
+```status``` - string - The quote status
+
 ```attributeGroups``` - [AttributeGroup](Common_Fields/attributeGroup.md) - A group of additional attibutes available to the retailer and stored as an object under atributeGroups.
 
 <!-- </details> -->
