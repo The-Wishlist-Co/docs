@@ -158,6 +158,18 @@ Represents a product.
 
  `lastModifiedDate` - The date and time (ISO 8601 format) when the product information was last updated.
 
+ `AdditionalImageLink2` - string - a further image link.
+
+ `swatchImageLink` - string - image link for product swatch.
+
+ `backOrderable` - boolean, indicates product is backorderable.
+
+ `supplier` - string - Product supplier.
+
+ `Category` - string - Product category
+
+ `Range` - string - Product range
+
 
 
 ##  Product Variant
@@ -396,6 +408,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "productRef": "string",
   "status": "APPROVED",
   "title": "string",
+  "additionalImageLink2": "string",
+  "backOrderable": true,
+  "category": "string",
+  "range": "string",
+  "supplier": "string",
+  "swatchImageLink": "string",
   "variance": [
     "string"
   ],
@@ -513,6 +531,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "productRef": "string",
   "status": "APPROVED",
   "title": "string",
+  "additionalImageLink2": "string",
+  "backOrderable": true,
+  "category": "string",
+  "range": "string",
+  "supplier": "string",
+  "swatchImageLink": "string",
   "variance": [
     "string"
   ],
@@ -797,6 +821,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "productRef": "string",
   "status": "APPROVED",
   "title": "string",
+  "additionalImageLink2": "string",
+  "backOrderable": true,
+  "category": "string",
+  "range": "string",
+  "supplier": "string",
+  "swatchImageLink": "string",
   "variance": [
     "string"
   ],
@@ -1046,6 +1076,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "productRef": "string",
   "status": "APPROVED",
   "title": "string",
+  "additionalImageLink2": "string",
+  "backOrderable": true,
+  "category": "string",
+  "range": "string",
+  "supplier": "string",
+  "swatchImageLink": "string",
   "variance": [
     "string"
   ],
@@ -1335,6 +1371,12 @@ id= Product id
   },
   "status": "APPROVED",
   "title": "string",
+  "additionalImageLink2": "string",
+  "backOrderable": true,
+  "category": "string",
+  "range": "string",
+  "supplier": "string",
+  "swatchImageLink": "string",
   "variance": [
     "string"
   ],
@@ -1582,6 +1624,12 @@ id= Product id
   "productRef": "string",
   "status": "APPROVED",
   "title": "string",
+  "additionalImageLink2": "string",
+  "backOrderable": true,
+  "category": "string",
+  "range": "string",
+  "supplier": "string",
+  "swatchImageLink": "string",
   "variance": [
     "string"
   ],
@@ -1871,6 +1919,12 @@ ref - variantRef
   },
   "status": "APPROVED",
   "title": "string",
+  "additionalImageLink2": "string",
+  "backOrderable": true,
+  "category": "string",
+  "range": "string",
+  "supplier": "string",
+  "swatchImageLink": "string",
   "variance": [
     "string"
   ],
@@ -2120,6 +2174,12 @@ ref - variantRef
   "productRef": "string",
   "status": "APPROVED",
   "title": "string",
+  "additionalImageLink2": "string",
+  "backOrderable": true,
+  "category": "string",
+  "range": "string",
+  "supplier": "string",
+  "swatchImageLink": "string",
   "variance": [
     "string"
   ],
@@ -2414,6 +2474,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
       "productRef": "string",
       "status": "APPROVED",
       "title": "string",
+      "additionalImageLink2": "string",
+      "backOrderable": true,
+      "category": "string",
+      "range": "string",
+      "supplier": "string",
+      "swatchImageLink": "string",
       "variance": [
         "string"
       ],
@@ -2831,6 +2897,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "productRef": "string",
   "status": "APPROVED",
   "title": "string",
+  "additionalImageLink2": "string",
+  "backOrderable": true,
+  "category": "string",
+  "range": "string",
+  "supplier": "string",
+  "swatchImageLink": "string",
   "variance": [
     "string"
   ],
@@ -3119,6 +3191,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "productRef": "string",
     "status": "APPROVED",
     "title": "string",
+    "additionalImageLink2": "string",
+    "backOrderable": true,
+    "category": "string",
+    "range": "string",
+    "supplier": "string",
+    "swatchImageLink": "string",
     "variance": [
       "string"
     ],
@@ -3541,6 +3619,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "productRef": "string",
     "status": "APPROVED",
     "title": "string",
+    "additionalImageLink2": "string",
+    "backOrderable": true,
+    "category": "string",
+    "range": "string",
+    "supplier": "string",
+    "swatchImageLink": "string",
     "variance": [
       "string"
     ],
@@ -3966,6 +4050,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "productRef": "string",
   "status": "APPROVED",
   "title": "string",
+  "additionalImageLink2": "string",
+  "backOrderable": true,
+  "category": "string",
+  "range": "string",
+  "supplier": "string",
+  "swatchImageLink": "string",
   "variance": [
     "string"
   ],
@@ -4297,6 +4387,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "productRef": "string",
   "status": "APPROVED",
   "title": "string",
+  "additionalImageLink2": "string",
+  "backOrderable": true,
+  "category": "string",
+  "range": "string",
+  "supplier": "string",
+  "swatchImageLink": "string",
   "variance": [
     "string"
   ],
@@ -4629,6 +4725,12 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
     "productRef": "string",
     "status": "APPROVED",
     "title": "string",
+    "additionalImageLink2": "string",
+    "backOrderable": true,
+    "category": "string",
+    "range": "string",
+    "supplier": "string",
+    "swatchImageLink": "string",
     "variance": [
       "string"
     ],
