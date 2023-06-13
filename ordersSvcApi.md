@@ -39,7 +39,7 @@ All requests or responses are JSON objects.
 <!-- <details> -->
  <!-- <summary><font size="4">Expand for details</font></summary> -->
 
-`acceptsMarketing` - boolean - option to enable of disable marketing notifications.
+`acceptsMarketing` - boolean - Depreciated field.  Do not use.
 
 `appliedDiscounts` - [applied discounts](Common_Fields/appliedDiscounts.md) - array - All discounds and applicable promotional offers etc are enabled here.  This contains:
 
