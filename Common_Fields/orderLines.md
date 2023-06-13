@@ -22,11 +22,11 @@
 
 `gtin` - string - Global Trade Item Number (GTIN) can be used by a company to uniquely identify all of its trade items. 
 
-`id` - string - Unigue id of the order line.
+`id` - string - Unique TWC identifier of the order line.
 
-`orderId`- string - Unigue id of the order.
+`orderId`- string - Unique TWC identifier for the order.
 
-`orderRef` - string - Unigue Ref of the order.
+`orderRef` - string - Unique customer reference for the order.
 
 `processedAt` - The date and time (ISO 8601 format) when an order was processed. This value is the date that appears on your orders and that's used in the analytic reports. If you're importing orders from an app or another platform, then you can set processed_at to a date and time in the past to match when the original order was created.
 
