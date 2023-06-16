@@ -15,6 +15,7 @@ A wishlist is created 'empty' and items added later, either one by one, or multi
 ***
 
 [**Wishlist API**](#wishlist-api)
+- [**General Notes**](#general-notes)
 - [**Representations**](#representations)
   - [Wishlist](#wishlist-request)
   - [Wishlist Item](#wishlistitem-request)
@@ -34,6 +35,11 @@ A wishlist is created 'empty' and items added later, either one by one, or multi
     - [Update Wishlist Item](#update-wishlistitems)
     - [Get Wishlist Items](#get-wishlist-items)
     - [Delete Wishlist Item](#delete-wishlist-item)
+
+## **General Notes**
+Wishlist endpoints must be prefixed with ```/services/wsservice``` for example create customer endpoint is ```/api/wishlists```, when you invoke the api it will be ```/services/wsservice/api/wishlists```
+
+Production api endpoint ```https://api.au-aws.thewishlist.io/services/wsservice/api/wishlists```
 
 ## **Representations**
 

@@ -8,23 +8,30 @@ The Customer API is used to create and manage information about a retailer's cus
 
 ***
 
-- [**Customer API**](#customer-api)
-    <!-- - [Index](#index) -->
-  - [**Representations**](#representations)
-    - [Customer Request](#customer-request)
-    - [Customer Response](#customer-response)
-    - [Customer Address](#customer-address)
-    - [Optin Preferences](#optin-preferences)
-    - [Optin Preference](#optin-preference)
-    - [Attribute Groups](#attributegroups)
-    - [Attribute Group](#attributegroup)
-  - [**Endpoints**](#rest-endpoints)
-    - [Customer](#customer)
-      - [Create](#create)
-      - [Update](#update)
-      - [Validate](#validate)
-      - [Delete](#delete)
-      - [Get](#get)
+[**Customer API**](#customer-api)
+- [**General Notes**](#general-notes)
+- [**Representations**](#representations)
+  - [Customer Request](#customer-request)
+  - [Customer Response](#customer-response)
+  - [Customer Address](#customer-address)
+  - [Optin Preferences](#optin-preferences)
+  - [Optin Preference](#optin-preference)
+  - [Attribute Groups](#attributegroups)
+  - [Attribute Group](#attributegroup)
+- [**Endpoints**](#rest-endpoints)
+  - [Customer](#customer)
+    - [Create](#create)
+    - [Update](#update)
+    - [Validate](#validate)
+    - [Delete](#delete)
+    - [Get](#get)
+
+
+## **General Notes**
+Customer endpoints must be prefixed with ```services/customerservice``` for example create customer endpoint is ```/api/v2/customers```, when you invoke the api it will be ```/services/customerservice/api/v2/customers```
+
+Production api endpoint ```https://api.au-aws.thewishlist.io/services/customerservice/api/v2/customers```
+
 
 
 ## **Representations**
