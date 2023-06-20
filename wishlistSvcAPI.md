@@ -85,6 +85,9 @@ All requests or responses are JSON objects
 | *purchased* | boolean | Indicates that the item has been purchased.  Note, this field is for TWC internal use to track wishlist item conversions, and should not be updated directly by developers |
 | *product* | [Product](#wishlistitem-product) | Represents the item [product](#wishlistitem-product). This is a mandatory field. |
 | *attributeGroups* | [AttributeGroups](#attributegroups) | This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_item_origin":&nbsp;"mobile_app",<br>&emsp;&emsp;"ecommerce_wishlist_item_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
+| *locationId* | string | The store location id. |
+| *locationRef* | string | The store location ref. |
+
 
 ###  WishlistItem Product
 
@@ -124,6 +127,9 @@ All requests or responses are JSON objects
 | *purchasedDate* | boolean | The date on which item was purchased. If orders are pushed to TWC, TWC will mark the item as purchased.|
 | *product* |[Product](#wishlistitem-product)| This field represents the field being added to item [product](#wishlistitem-product)|
 | *attributeGroups* | object | This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_item_origin":&nbsp;"mobile_app",<br>&emsp;&emsp;"ecommerce_wishlist_item_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
+| *locationId* | string | The store location id. |
+| *locationRef* | string | The store location ref. |
+
 
 
 # **Endpoints**
@@ -968,7 +974,9 @@ To create a wishlist item, you need to provide either of the following:
             },
             "description": "cart related attributes"
         }
-    }
+    },
+    "locationId": "string",
+    "locationRef": "string",
 }
 ```
 
@@ -1000,7 +1008,9 @@ To create a wishlist item, you need to provide either of the following:
     },
     "addedFromCart": false,
     "prerelease": false,
-    "disableNotification": false
+    "disableNotification": false,
+    "locationId": "string",
+    "locationRef": "string",
 }
 ```
 
@@ -1045,7 +1055,9 @@ Add multiple items to an existing wishlist.
             },
             "productId": "ede20e6c-88c8-41d9-b0a5-a631871b23d2",
             "selectedVariantId": "b72e501d-d87a-40bb-b0bb-2d4c3cbb4f0a",
-            "wishlistItemRef": "WI2000131662"
+            "wishlistItemRef": "WI2000131662",
+            "locationId": "string",
+            "locationRef": "string",
         }
     ]
 }
@@ -1100,7 +1112,9 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
             },
             "description": "cart info"
         }
-    }
+    },
+    "locationId": "string",
+    "locationRef": "string",
 }
 ```
 
@@ -1138,7 +1152,9 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     },
     "addedFromCart": false,
     "prerelease": false,
-    "disableNotification": false
+    "disableNotification": false,
+    "locationId": "string",
+    "locationRef": "string",
 }
 ```
 
@@ -1188,7 +1204,9 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
             },
             "description": "cart info"
         }
-    }
+    },
+    "locationId": "string",
+    "locationRef": "string",
 }
 ```
 
@@ -1226,7 +1244,9 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     },
     "addedFromCart": false,
     "prerelease": false,
-    "disableNotification": false
+    "disableNotification": false,
+    "locationId": "string",
+    "locationRef": "string",
 }
 ```
 <summary>HTTP Status Code:</summary>
@@ -1273,7 +1293,9 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
             },
             "description": "cart info"
         }
-    }
+    },
+    "locationId": "string",
+    "locationRef": "string",
 }
 ```
 
@@ -1311,7 +1333,9 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     },
     "addedFromCart": false,
     "prerelease": false,
-    "disableNotification": false
+    "disableNotification": false,
+    "locationId": "string",
+    "locationRef": "string",
 }
 ```
 
@@ -1414,7 +1438,9 @@ Results are paginated, page size is 20, maximum 50.  If the item does not exist,
             },
             "addedFromCart": false,
             "prerelease": false,
-            "disableNotification": false
+            "disableNotification": false,
+            "locationId": "string",
+            "locationRef": "string",
         }
     ]
 }
@@ -1468,7 +1494,9 @@ If the item does not exist, this method returns a ResourceNotFound error.
     },
     "addedFromCart": false,
     "prerelease": false,
-    "disableNotification": false
+    "disableNotification": false,
+    "locationId": "string",
+    "locationRef": "string",
 }
 ```
 
@@ -1531,7 +1559,9 @@ If the item does not exist, this method returns a ResourceNotFound error.
     },
     "addedFromCart": false,
     "prerelease": false,
-    "disableNotification": false
+    "disableNotification": false,
+    "locationId": "string",
+    "locationRef": "string",
 }
 ```
 

@@ -208,6 +208,11 @@ All requests or responses are JSON objects.
 `wrappingCostIncTax`	number
 
 `wrappingCostIncTaxInCent`	integer($int64)
+
+```locationId``` - string - The store location id 
+
+```locationRef``` - string - The store location ref
+
 <!-- </details> -->
 
 ## **REST Endpoints**
@@ -586,7 +591,9 @@ Sample Request :
   "wrappingCostExTaxInCent": 0,
   "wrappingCostInCent": 0,
   "wrappingCostIncTax": 0,
-  "wrappingCostIncTaxInCent": 0
+  "wrappingCostIncTaxInCent": 0,
+  "locationId": "string",
+  "locationRef": "string",
 }
 ```
 
@@ -766,6 +773,8 @@ Sample Request :
       "updated_at": "2022-06-27T14:39:07.853Z"
     }
   ],
+  "locationId": "string",
+  "locationRef": "string",
   "orderRef": "string",
   "orderStatus": "AWAITING_PAYMENT",
   "paymentMethod": "string",
@@ -1169,7 +1178,10 @@ Sample Request :
   "wrappingCostExTaxInCent": 0,
   "wrappingCostInCent": 0,
   "wrappingCostIncTax": 0,
-  "wrappingCostIncTaxInCent": 0
+  "wrappingCostIncTaxInCent": 0,
+  "locationId": "string",
+  "locationRef": "string",
+
 }
 ```
 
@@ -1349,6 +1361,8 @@ Sample Request :
       "updated_at": "2022-06-27T14:39:44.698Z"
     }
   ],
+  "locationId": "string",
+  "locationRef": "string",
   "orderRef": "string",
   "orderStatus": "AWAITING_PAYMENT",
   "paymentMethod": "string",
@@ -1757,7 +1771,9 @@ Sample Request :
   "wrappingCostExTaxInCent": 0,
   "wrappingCostInCent": 0,
   "wrappingCostIncTax": 0,
-  "wrappingCostIncTaxInCent": 0
+  "wrappingCostIncTaxInCent": 0,
+  "locationId": "string",
+  "locationRef": "string",
 }
 ```
 
@@ -1937,6 +1953,8 @@ Sample Request :
       "updated_at": "2022-06-27T14:39:44.698Z"
     }
   ],
+  "locationId": "string",
+  "locationRef": "string",
   "orderRef": "string",
   "orderStatus": "AWAITING_PAYMENT",
   "paymentMethod": "string",
@@ -2348,7 +2366,9 @@ Sample Request :
   "wrappingCostExTaxInCent": 0,
   "wrappingCostInCent": 0,
   "wrappingCostIncTax": 0,
-  "wrappingCostIncTaxInCent": 0
+  "wrappingCostIncTaxInCent": 0,
+  "locationId": "string",
+  "locationRef": "string",
 }
 ```
 
@@ -2528,6 +2548,8 @@ Sample Request :
       "updated_at": "2022-06-27T14:39:44.698Z"
     }
   ],
+  "locationId": "string",
+  "locationRef": "string",
   "orderRef": "string",
   "orderStatus": "AWAITING_PAYMENT",
   "paymentMethod": "string",
@@ -2940,7 +2962,9 @@ orderId - Order Id , orderRef - Order Ref
   "wrappingCostExTaxInCent": 0,
   "wrappingCostInCent": 0,
   "wrappingCostIncTax": 0,
-  "wrappingCostIncTaxInCent": 0
+  "wrappingCostIncTaxInCent": 0,
+  "locationId": "string",
+  "locationRef": "string",
 }
 ```
 
@@ -3253,7 +3277,9 @@ customerId - customer ID , customerRef - Customer ref , email - email , orderId 
   "wrappingCostExTaxInCent": 0,
   "wrappingCostInCent": 0,
   "wrappingCostIncTax": 0,
-  "wrappingCostIncTaxInCent": 0
+  "wrappingCostIncTaxInCent": 0,
+  "locationId": "string",
+  "locationRef": "string",
 }
 ```
 
