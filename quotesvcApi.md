@@ -16,8 +16,8 @@ The Quote APIs allow the developer to manage information about a quote, such as 
   - [**REST Endpoints**](#rest-endpoints)
   - [Create a Quote](#create-a-quote)
   - [Update a Quote](#update-a-quote)
-  - [Find Quote](#find-quote)
-  - [Find Quotes By Customer Reference/Email](#find-quotes-by-customer-referenceemail)
+  - [Get Quote by ID or Ref](#get-quote-by-id-or-ref)
+  - [Get Quotes By Customer Reference/Email](#get-quotes-by-customer-referenceemail)
   - [Delete Quote by ID](#delete-quote-by-id)
   - [Delete Quote by Ref](#delete-quote-by-ref)
   - [Create a Quote Line](#create-a-quote-line)
@@ -161,20 +161,22 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
  
 ```json
 {
-  "address": {
-    "address": "string",
+   "address": {
     "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
     "city": "string",
-    "contactPerson": "string",
-    "countryIsocode": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
     "countryName": "string",
-    "county": "string",
-    "fax": "string",
+    "email": "string",
+    "name": "string",
     "phone": "string",
     "postcode": "string",
-    "state": "string",
-    "street": "string",
-    "streetNumber": "string"
+    "province": "string",
+    "provinceCode": "string"
   },
   "attributeGroups": {
     "additionalProp1": {
@@ -267,20 +269,22 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
  
  ```json
  {
-  "address": {
-    "address": "string",
+   "address": {
     "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
     "city": "string",
-    "contactPerson": "string",
-    "countryIsocode": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
     "countryName": "string",
-    "county": "string",
-    "fax": "string",
+    "email": "string",
+    "name": "string",
     "phone": "string",
     "postcode": "string",
-    "state": "string",
-    "street": "string",
-    "streetNumber": "string"
+    "province": "string",
+    "provinceCode": "string"
   },
   "attributeGroups": {
     "additionalProp1": {
@@ -409,20 +413,22 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 
 ```json
 {
-  "address": {
-    "address": "string",
+ "address": {
     "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
     "city": "string",
-    "contactPerson": "string",
-    "countryIsocode": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
     "countryName": "string",
-    "county": "string",
-    "fax": "string",
+    "email": "string",
+    "name": "string",
     "phone": "string",
     "postcode": "string",
-    "state": "string",
-    "street": "string",
-    "streetNumber": "string"
+    "province": "string",
+    "provinceCode": "string"
   },
   "attributeGroups": {
     "additionalProp1": {
@@ -474,20 +480,22 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 
 ```json
  {
-  "address": {
-    "address": "string",
+ "address": {
     "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
     "city": "string",
-    "contactPerson": "string",
-    "countryIsocode": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
     "countryName": "string",
-    "county": "string",
-    "fax": "string",
+    "email": "string",
+    "name": "string",
     "phone": "string",
     "postcode": "string",
-    "state": "string",
-    "street": "string",
-    "streetNumber": "string"
+    "province": "string",
+    "provinceCode": "string"
   },
   "attributeGroups": {
     "additionalProp1": {
@@ -626,19 +634,21 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 ```json
  {
   "address": {
-    "address": "string",
     "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
     "city": "string",
-    "contactPerson": "string",
-    "countryIsocode": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
     "countryName": "string",
-    "county": "string",
-    "fax": "string",
+    "email": "string",
+    "name": "string",
     "phone": "string",
     "postcode": "string",
-    "state": "string",
-    "street": "string",
-    "streetNumber": "string"
+    "province": "string",
+    "provinceCode": "string"
   },
   "attributeGroups": {
     "additionalProp1": {
@@ -781,20 +791,22 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
  [
   {
     "address": {
-      "address": "string",
-      "address1": "string",
-      "city": "string",
-      "contactPerson": "string",
-      "countryIsocode": "string",
-      "countryName": "string",
-      "county": "string",
-      "fax": "string",
-      "phone": "string",
-      "postcode": "string",
-      "state": "string",
-      "street": "string",
-      "streetNumber": "string"
-    },
+    "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "countryName": "string",
+    "email": "string",
+    "name": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
     "attributeGroups": {
       "additionalProp1": {
         "attribute_group": "string",
