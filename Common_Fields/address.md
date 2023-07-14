@@ -16,6 +16,8 @@
 
 `countryCode` - The two-letter ISO country code for the customer's country.
 
+`email` - The customer's email.
+
 `firstName` - The customer's first name.
 
 `lastName` - The customer's last name.
