@@ -4,24 +4,19 @@
 
 `address2` - string - An additional field for the customer's mailing address.
 
-`city` - string - The customer's city, town, or village.
+`addressId` - A unique TWC identifier for the address (mandatory/internal field).
+
+`addressRef` - A unique customer identifier for the address if one exists (optional).`city` - string - The customer's city, town, or village.
+
+`city` - The customer's city.
 
 `company` - The customer's company.
 
 `country` - The customer's country.
 
-`country_code` - The two-letter country code corresponding to the customer's 
-country.
-
-`country_name` - The customer's normalized country name.
-
-`customer_id` - A unique identifier for the customer.
-
-`default` - Returns true for each default address.
+`country_code` - The two-letter ISO country code for the customer's country.
 
 `first_name` - The customer's first name.
-
-`id` - A unique identifier for the address.
 
 `last_name` - The customer's last name.
 
@@ -29,9 +24,10 @@ country.
 
 `phone` - The customer's phone number at this address.
 
-`province` - The customer's region name. Typically a province, a state, or a 
-prefecture.
+`postcode` - The customer's postcode or zip. 
 
-`province_code` - The two-letter code for the customer's region.
+`province` - The customer's region or state name. 
 
-`zip` - The customer's postal code, also known as zip, postcode, Eircode, etc.
+`province_code` - The abbreviation for the customer's province or state.
+
+
