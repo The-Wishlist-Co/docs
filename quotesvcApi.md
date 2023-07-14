@@ -39,7 +39,7 @@ All requests or responses are JSON objects.
 
 ```salesPerson_name``` - string - The Salesperson's name.
 
-```address``` - [Address](Common_Fields/address.md) - The address is saved as an array. The Address of the store will be set to the ID of that address.
+```address``` - [Address](Common_Fields/address.md) - The address is saved as an array. 
 
 ```customerId``` - string - The TWC internal identifier for the customer who belongs to the quote.
 
