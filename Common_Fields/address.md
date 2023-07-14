@@ -14,11 +14,11 @@
 
 `country` - The customer's country.
 
-`country_code` - The two-letter ISO country code for the customer's country.
+`countryCode` - The two-letter ISO country code for the customer's country.
 
-`first_name` - The customer's first name.
+`firstName` - The customer's first name.
 
-`last_name` - The customer's last name.
+`lastName` - The customer's last name.
 
 `name` - The customer's first and last names.
 
@@ -28,6 +28,6 @@
 
 `province` - The customer's region or state name. 
 
-`province_code` - The abbreviation for the customer's province or state.
+`provinceCode` - The abbreviation for the customer's province or state.
 
 
