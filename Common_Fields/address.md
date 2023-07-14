@@ -6,9 +6,9 @@
 
 `addressId` - A unique TWC identifier for the address (mandatory/internal field).
 
-`addressRef` - A unique customer identifier for the address if one exists (optional).`city` - string - The customer's city, town, or village.
+`addressRef` - A unique customer identifier for the address if one exists (optional).
 
-`city` - The customer's city.
+`city` - The customer's city or town.
 
 `company` - The customer's company.
 
