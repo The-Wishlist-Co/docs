@@ -92,15 +92,20 @@ All requests or responses are JSON objects
 |---|---|---|
 | *address1* | string | Address line 1 |
 | *address2* | string | Address line 2 |
-| *city* | list | City|
-| *province* | string | Date of birth |
-| *country* | string | Country for example: *Australia* |
+| *addressID* | string | Internal TWC identifier|
+| *addressRef* | string | Retailer's Address identifier if one exists|
+| *city* | string | City|
+| *company* | string | Company|
+| *email* | string | The email address associated with the address|
+| *firstName* | string | The first name of the person associated with the address|
+| *lastName* | string | The last name of the person associated with the address|
+| *name* | string | The name of the person associated with the address|
 | *postcode* | string | Postal code |
 | *phone* | string | Address phone number |
-| *email* | string | Customer email |
-| *provinceCode* | boolean | Mobile phone number |
+| *province* | string | The state or province for the address |
+| *provinceCode* | string | Abbreviation for the customer's province or state|
+| *country* | string | Country for example: *Australia* |
 | *countryCode* | string | Country codes as per [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1). e.g: *AU* for australia |
-| *defaultAddress* | boolean | Indicates if the provided address is the default address for the customer. The default address will appear as a separate field under Customer |
 
 
 ### Optin Preferences
