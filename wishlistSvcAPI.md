@@ -91,9 +91,9 @@ All requests or responses are JSON objects
 | Field | Type| Description |
 |---|---|---|
 | *productId* | string| This is the TWC generated product identifier. Either productId or productRef is mandatory when creating a wishlist item.|
-| *productRef* | string | This is the retailer assigned product reference identifier. Either productId or productRef is mandatory when creating a wishlist item.|
+| *productRef* | string | This is the retailer assigned product reference identifier. Either productId or productRef is mandatory when creating a wishlist item.  Please note that TWC does not validate the existance of a product when adding to the Wishlist.  This allows you to add an item that may not have yet been synched to the product catalogue.  However, notifications will not trigger if a product/variant does not exist.|
 | *selectedVariantId* | string | This is the TWC assigned variant identifier. Either selectedVariantId or selectedVariantRef is mandatory when creating a wishlist item.|
-| *selectedVariantRef* | string | This is the retailer assigned variant reference identifier. Either selectedVariantId or selectedVariantRef is mandatory when creating a wishlist item.|
+| *selectedVariantRef* | string | This is the retailer assigned variant reference identifier. Either selectedVariantId or selectedVariantRef is mandatory when creating a wishlist item.  Please note that TWC does not validate the existance of a variant when adding to the Wishlist.  This allows you to add an item that may not have yet been synched to the product catalogue.  However, notifications will not trigger if a product/variant does not exist.|
 | *oldVariantId* | string | When updating a wishlist item to another variant oldVariantId field is mandatory, to switch to another variant. This is TWC generated unique identifier.|
 
 ###  AttributeGroups
