@@ -57,7 +57,7 @@ All requests or responses are JSON objects
 | *accepts_marketing* | boolean | This field is used when the retailer only requires a simple marketing acceptance. Further deteail may be included in using the optin_preferences|
 | *marketing_preferences_updated_at* | date | Last date at which marketing optin details were updated. |
 | *addresses* | array of [Address](#customeraddress) | An array of the Customer's addresses. A customer can have more than one address. |
-| *optin_preferences* | [OptinPreferences](#optinpreferences) | This field indicates marketing preferences for email and SMS. When using TWC native marketing, this field will determine how and if a customer should be notified. |
+| *optin_preferences* | [OptinPreferences](#optinpreferences) | This object indicates marketing preferences for email and SMS |
 | *attributeGroups* |[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to entities in TWC and in general is available on most entities in The Wishlist Company platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"customer_origin":&nbsp;"social_media",<br>&emsp;&emsp;"category_affinity":&nbsp;"electronics,&nbsp;cameras,&nbsp;gaming",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;entities"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
 
 
@@ -82,7 +82,7 @@ All requests or responses are JSON objects
 | *marketing_preferences_updated_at* | date | Last date at which marketing optin levels were updated. |
 | *defaultAddress* | [Address](#customer-address) | Customer's default address. |
 | *addresses* | array of [Address](#customer-address) | Customers addresses array. A customer can have more than one address. |
-| *optin_preferences* | [OptinPreferences](#optin-preferences) | This field indicates marketing preferences for email and SMS. When using TWC native marketing, this field will determine if, and how a customer will be notified. |
+| *optin_preferences* | [OptinPreferences](#optin-preferences) | Indicates marketing preferences for email and SMS. |
 | *attributeGroups* |[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to entities in TWC. This field is generally available on most entities in The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"customer_origin":&nbsp;"social_media",<br>&emsp;&emsp;"category_affinity":&nbsp;"electronics,&nbsp;cameras,&nbsp;gaming",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;entities"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
 
 
@@ -188,8 +188,7 @@ Creates a new Customer in the Wishlist platform. Fields 'email' and 'customerRef
       "phone": "0151 7445 6927",
       "postcode": "10000",
       "province": "New South Wales",
-      "provinceCode": "NSW",
-      "defaultAddress": true
+      "provinceCode": "NSW"
     }
   ],
   "attributeGroups": {
@@ -203,7 +202,7 @@ Creates a new Customer in the Wishlist platform. Fields 'email' and 'customerRef
   },
   "optin_preferences" : {
       "email": {
-          "opted_in": true
+          "opt_in_active": true
       }
   }
 }
@@ -234,8 +233,7 @@ Sample HTTP 201 response
       "phone": "0151 7445 6927",
       "postcode": "10000",
       "province": "New South Wales",
-      "provinceCode": "NSW",
-      "defaultAddress": true
+      "provinceCode": "NSW"
     }
   ],
   "attributeGroups": {
@@ -315,8 +313,7 @@ This API is used to create an array of customers.
         "phone": "0151 7445 6927",
         "postcode": "10000",
         "province": "New South Wales",
-        "provinceCode": "NSW",
-        "defaultAddress": true
+        "provinceCode": "NSW"
       }
     ],
     "attributeGroups": {
@@ -330,7 +327,7 @@ This API is used to create an array of customers.
     },
     "optin_preferences" : {
         "email": {
-            "opted_in": true
+            "opt_in_active": true
         }
     }
   }
@@ -409,8 +406,7 @@ Sample HTTP 200 response
       "phone": "0151 7445 6927",
       "postcode": "10000",
       "province": "New South Wales",
-      "provinceCode": "NSW",
-      "defaultAddress": true
+      "provinceCode": "NSW"
     }
   ],
   "attributeGroups": {
@@ -511,8 +507,7 @@ Sample HTTP 200 response
       "phone": "0151 7445 6927",
       "postcode": "10000",
       "province": "New South Wales",
-      "provinceCode": "NSW",
-      "defaultAddress": true
+      "provinceCode": "NSW"
     }
   ],
   "attributeGroups": {
@@ -593,8 +588,7 @@ Add a customer address using The Wishlist generated customer identifier.
   "phone": "0151 7445 6927",
   "postcode": "10000",
   "province": "New South Wales",
-  "provinceCode": "NSW",
-  "defaultAddress": true
+  "provinceCode": "NSW"
 }
 
 ```
@@ -625,8 +619,7 @@ Add a customer address using The Wishlist generated customer identifier.
       "phone": "0151 7445 6927",
       "postcode": "10000",
       "province": "New South Wales",
-      "provinceCode": "NSW",
-      "defaultAddress": true
+      "provinceCode": "NSW"
     }
   ],
   "attributeGroups": {
@@ -720,8 +713,7 @@ This API is used to validate a payload format.  It is primarily an internal API 
       "phone": "0151 7445 6927",
       "postcode": "10000",
       "province": "New South Wales",
-      "provinceCode": "NSW",
-      "defaultAddress": true
+      "provinceCode": "NSW"
     }
   ],
   "attributeGroups": {
