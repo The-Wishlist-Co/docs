@@ -8,6 +8,12 @@
 
 `addressRef` - A unique customer identifier for the address if one exists (optional).
 
+`addressType` - The type of address (e.g. billing, shipping, delivery, home)
+
+`building` - The customer's building.
+
+`level` - The level of the customer's building.
+
 `city` - The customer's city or town.
 
 `company` - The customer's company.
