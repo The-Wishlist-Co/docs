@@ -143,6 +143,11 @@ Represents a product.
  - UNAPPROVED
  - CHECK
  - VERIFICATION_PENDING 
+ - ACTIVE
+ - ARCHIVED
+ - DRAFT
+ - QUIT
+ - DISCONTINUED
  
  `title` - string  -
   
@@ -158,7 +163,17 @@ Represents a product.
 
  `lastModifiedDate` - The date and time (ISO 8601 format) when the product information was last updated.
 
+ `additionalImageLink2` - string -
 
+ `swatchImageLink` - string -
+
+ `backOrderable` - boolean -
+
+ `supplier` - string -
+
+ `category` - string -
+
+ `range` - string -
 
 ##  Product Variant
 ***
@@ -255,6 +270,11 @@ Represents a product Variant.
  - UNAPPROVED
  - CHECK
  - VERIFICATION_PENDING 
+ - ACTIVE
+ - ARCHIVED
+ - DRAFT
+ - QUIT
+ - DISCONTINUED
  
  `stock` - [Stock](Common_Fields/stock.md)
  
@@ -264,10 +284,13 @@ Represents a product Variant.
   
  `variantOptions` - [VariantOptions](Common_Fields/variantoptions.md) - Array of variant Options. 
 
-`createdDate` - The date and time (ISO 8601 format) when the customer was created.
+ `createdDate` - The date and time (ISO 8601 format) when the customer was created.
+ 
+ `lastModifiedDate` - The date and time (ISO 8601 format) when the customer information was last updated.
+  
+ `additionalImageLink2` - string -
 
-`lastModifiedDate` - The date and time (ISO 8601 format) when the customer information was last updated.
-
+ `swatchImageLink` - string -
 
 ## **REST Endpoints**
 

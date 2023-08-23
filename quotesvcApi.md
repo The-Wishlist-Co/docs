@@ -81,6 +81,8 @@ All requests or responses are JSON objects.
 
 ```status``` - string - The quote status
 
+```purchased``` - boolean - Indicated the quote converted into order
+
 ```attributeGroups``` - [AttributeGroup](Common_Fields/attributeGroup.md) - A group of additional attibutes available to the retailer and stored as an object under atributeGroups.
 
 <!-- </details> -->
@@ -122,6 +124,9 @@ All requests or responses are JSON objects.
 ```discountTotal``` - decimal - The total discount for this quote line.
 
 ```rrp``` - decimal - The recommended retail price for the item on this quote line.
+
+```lineNumber``` - string - unique number of quote line
+
 
 ```attributeGroups``` - [AttributeGroup](Common_Fields/attributeGroup.md) - A group of additional attibutes available to the retailer and stored as an object under atributeGroups.
 
