@@ -1,14 +1,10 @@
 # **Welcome to The Wishlist**
 
+## Getting started ##
+
+- [Developers' guide to getting started](https://github.com/The-Wishlist-Co/getting-started/blob/main/docs/article.md)
 
 ## **The Wishlist HTTP Rest API Documentation**
-
-**The Wishlist**  is a microservices-based, API enabled engine that empowers retailers to understand and manage lists of products that their customers would like to purchase, and automates notifications to those customers when those items are low in stock, back in stock, or available at a discount (to name a few).  The Wishlist acts as a data hub that integrates key retailer systems such as ecommerce, Point of Sale, marketing platform, CDP, etc.  
-
-The Wishlist's API's provide a comprehensive range of integration options for our data entities including Wishlists, Customers, Products, Inventory, and Orders. 
-
-For more detailed informaation, check out the collection and follow the service documentation.
-
 
 ### Api Collection Index
 
