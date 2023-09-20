@@ -156,3 +156,7 @@
 
      If an API fails after a reasonable number of times, a fault should be reported into event collector.
 
+
+- [**Analytics Service**](reports.md#reports-api)
+
+    Analytics service is used to generate the reports
