@@ -29,6 +29,7 @@ A wishlist is created 'empty' and items added later, either one by one, or multi
     - [Get a Wishlist](#get-wishlist)
     - [Get customer wishlists](#get-customer-wishlists)
     - [Delete Wishlist](#delete-wishlist)
+    - [Get wishlists interactions](#get-wishlist-interactions)
   - [**WishlistItem**](#wishlistitem)
     - [Create a Wishlist Item](#create-a-wishlist-item)
     - [Create multiple Wishlist Items](#add-multple-wishlist-items)
@@ -925,6 +926,67 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 ``` 
 - 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
+## Get wishlist interactions
+
+Returns the collection of wishlists interactions that belong to tenantId.
+
+The returned list is paginated - 20 default (50 maximum).  The API will respond with the number of interactions returned in the page, and the interactionId for the  last interaction returned for that response, which should then be used for the subsequent API call to retrieve the next page.  
+
+If no interactions exist, this method returns a ResourceNotFound error.
+
+| Endpoint| ```/api//wishlists/interactions```|
+|-----------|---------------|
+| Method    | GET          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
+
+| Query Parameters | What is it for ? |
+|---|---|
+| ```updated_after``` | This is the time period for generating the data. e.g: ```2023-09-01```. API will query database for interactions that created after this particular date. |
+| ```pageSize``` | Determines the number of wishlist items returned in the API response. Default page size is 20 and max is 50. |
+| ```lastItemId``` | Determinse which items to return.  API returns wishlist items in the ascending order of their TWC generated interaction ID. This parameter will inform API to respond items with ID greater than, but excluding the value provided. |
+
+<summary>Response - 200 (OK)</summary>
+
+```json
+{
+    [
+        {
+            "id": "4812c4857e89ae6f63433d5557aec32b",
+            "customer_email": "vysakh.09801x@gmail.com",
+            "customerRef": "CUST0980x1",
+            "entityType": "WISHLISTITEM",
+            "interactionType": "CREATED",
+            "itemId": "d9138d39-6aba-4f6f-8454-e3f700fd277c",
+            "productRef": "PROD0045-1",
+            "variantRef": "VAR-321",
+            "varientAttributes": "color=blue,size=xl",
+            "wishlistId": "ee92caf3-5414-4e66-89c9-fd793e2748df",
+            "interaction_date": "2023-09-15T09:48:06.980Z"
+        },
+        {
+            "id": "04631734fb80332fd385dcbba428fc6d",
+            "customer_email": "manusankar88@gmail.com",
+            "customerRef": "Vys-1234",
+            "entityType": "WISHLIST",
+            "interactionType": "CREATED",
+            "itemId": "76eb38aa-7278-4bc7-9e4e-983f0f318164",
+            "wishlistId": "76eb38aa-7278-4bc7-9e4e-983f0f318164",
+            "interaction_date": "2023-06-05T10:29:05.827Z"
+        }
+    ]
+}
+```
+
+<summary>HTTP Status Codes</summary>
+
+``` 
+- 200 OK
 - 401 Unauthorized
 - 403 Forbidden 
 - 404 Not Found
