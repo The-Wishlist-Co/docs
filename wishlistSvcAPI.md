@@ -15,27 +15,47 @@ A wishlist is created 'empty' and items added later, either one by one, or multi
 ***
 
 [**Wishlist API**](#wishlist-api)
-- [**General Notes**](#general-notes)
-- [**Representations**](#representations)
-  - [Wishlist](#wishlist-request)
-  - [Wishlist Item](#wishlistitem-request)
-  - [Product](#wishlistitem-product)
-  - [AttributeGroups](#attributegroups)
-  - [AttributeGroup](#attributegroup)
-- [**Endpoints**](#rest-endpoints)
-  - [**Wishlist**](#wishlist-resource)
-    - [Create a wishlist](#ceate-a-wishlist)
-    - [Update a Wishlist](#update-a-wishlist)
-    - [Get a Wishlist](#get-wishlist)
-    - [Get customer wishlists](#get-customer-wishlists)
-    - [Delete Wishlist](#delete-wishlist)
-    - [Get wishlists interactions](#get-wishlist-interactions)
-  - [**WishlistItem**](#wishlistitem)
-    - [Create a Wishlist Item](#create-a-wishlist-item)
-    - [Create multiple Wishlist Items](#add-multple-wishlist-items)
-    - [Update Wishlist Item](#update-wishlistitems)
-    - [Get Wishlist Items](#get-wishlist-items)
-    - [Delete Wishlist Item](#delete-wishlist-item)
+- [**Wishlist API**](#wishlist-api)
+  - [**General Notes**](#general-notes)
+  - [**Representations**](#representations)
+    - [Wishlist Request](#wishlist-request)
+    - [Wishlist Response](#wishlist-response)
+    - [WishlistItem Request](#wishlistitem-request)
+    - [WishlistItem Product](#wishlistitem-product)
+    - [AttributeGroups](#attributegroups)
+    - [AttributeGroup](#attributegroup)
+    - [WishlistItem Response](#wishlistitem-response)
+- [**Endpoints**](#endpoints)
+  - [**Wishlist**](#wishlist)
+    - [Ceate a wishlist](#ceate-a-wishlist)
+  - [Update a wishlist](#update-a-wishlist)
+    - [Update Wishlist By ID](#update-wishlist-by-id)
+    - [Update Wishlist By Ref](#update-wishlist-by-ref)
+    - [Update wishlist by either ID or Ref](#update-wishlist-by-either-id-or-ref)
+  - [GET Wishlist](#get-wishlist)
+    - [Get Wishlist by Id](#get-wishlist-by-id)
+    - [Get Wishlist by Wishlist Reference](#get-wishlist-by-wishlist-reference)
+    - [Get Wishlist by id/wishlistRef](#get-wishlist-by-idwishlistref)
+  - [Get customer wishlists](#get-customer-wishlists)
+  - [Delete Wishlist](#delete-wishlist)
+    - [Delete Wishlist by ID/Ref](#delete-wishlist-by-idref)
+  - [Delete Wishlist by ID](#delete-wishlist-by-id)
+    - [Delete Wishlist by Ref](#delete-wishlist-by-ref)
+  - [Get wishlist interactions](#get-wishlist-interactions)
+- [**WishlistItem**](#wishlistitem)
+  - [Create a Wishlist Item](#create-a-wishlist-item)
+  - [Add multple Wishlist Items](#add-multple-wishlist-items)
+  - [Update WishlistItems](#update-wishlistitems)
+    - [Update a Wishlist Item](#update-a-wishlist-item)
+    - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
+    - [Update a Wishlist Item By Id](#update-a-wishlist-item-by-id)
+  - [Get Wishlist Items](#get-wishlist-items)
+    - [Get all Items in a Wishlist by Wishlist Id](#get-all-items-in-a-wishlist-by-wishlist-id)
+    - [Get Wishlist Item by Item Id](#get-wishlist-item-by-item-id)
+    - [Get Wishlist Item by Item Ref](#get-wishlist-item-by-item-ref)
+  - [Delete Wishlist Item](#delete-wishlist-item)
+    - [Delete Wishlist Item by Id](#delete-wishlist-item-by-id)
+    - [Delete Wishlist Item by itemRef](#delete-wishlist-item-by-itemref)
 
 ## **General Notes**
 Wishlist endpoints must be prefixed with ```/services/wsservice``` for example create customer endpoint is ```/api/wishlists```, when you invoke the api it will be ```/services/wsservice/api/wishlists```
@@ -84,6 +104,7 @@ All requests or responses are JSON objects
 | *wishlistItemRef* | string | Retailer assigned unique reference identifier of the wishlist item. |
 | *prerelease* | boolean | Indicates that the customer is registering interest to a pre-released product.  Used in the Register Interest notification |
 | *purchased* | boolean | Indicates that the item has been purchased.  Note, this field is for TWC internal use to track wishlist item conversions, and should not be updated directly by developers |
+| *purchasedAndRemoved* | boolean | This parameter is used to differentiate and identify the wishlist items removed after sale conversions. This can be set manually or automated based on a configuration. |
 | *product* | [Product](#wishlistitem-product) | Represents the item [product](#wishlistitem-product). This is a mandatory field. |
 | *attributeGroups* | [AttributeGroups](#attributegroups) | This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_item_origin":&nbsp;"mobile_app",<br>&emsp;&emsp;"ecommerce_wishlist_item_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
 
@@ -1620,6 +1641,8 @@ If the wishlist/item does not exist, this method returns a ResourceNotFound erro
 | Method    | DELETE          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | ```id``` | This is the TWC system generated unique wishlist item identifier. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. The API will remove the wishlist item for the given identifier, if it exists. |
+| Query Parameters |  |
+| ```purchasedAndRemoved``` | This Boolean parameter is used to differentiate and identify the wishlist items removed after sale conversions. This can be set manually or automated  |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 <summary>Response - 204 (Deleted)</summary> 
@@ -1647,7 +1670,8 @@ If the wishlist/item does not exist, this method returns a ResourceNotFound erro
 | Method    | DELETE          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | ```wishlistItemRef``` | This is the TWC retailer assigned unique wishlist item identifier. e.g: ```WISHITEM111111```. The API will remove the wishlist item for the given reference, if it exists. |
-| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
+| Query Parameters |  |
+| ```purchasedAndRemoved``` | This Boolean parameter is used to differentiate and identify the wishlist items removed after sale conversions. This can be set manually or automated  |
 
 <summary>Response - 204 (Deleted)</summary> 
 
