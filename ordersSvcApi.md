@@ -23,6 +23,7 @@ An order is a customer's request to purchase one or more products from a shop. Y
       - [FInd an orders](#find-an-orders)
       - [Search orders](#search-orders)
       - [Validate Order](#validate-order)
+      - [FInd an orders By Customer ID/REF](#find-an-orders-by-customer)
     - [**Order Item**](#order-item)
       - [Search entries for an order](#search-entries-for-an-order)
       - [Create an order entry](#create-an-order-entry)
@@ -2949,6 +2950,132 @@ HTTP Status Code:
 - 200 OK
 - 201 Created
 - 204 Deleted
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+## FInd an orders by Customer
+
+Endpoint: ```​/api​/v1​/orders/byCustomer```
+
+Method: ```GET ```
+
+OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
+
+<summary>Request Headers :</summary>
+
+| Key           | Value            |
+|---------------|------------------|
+| Content-Type  | application/json |
+| Authorization | {Bearer token}   |
+| X-TWC-Tenant  | {Tenant Name}    |
+
+Query Params: 
+
+```
+customerId - Customer Id , customerRef - Customer Ref
+```
+
+<summary>Response - 200 (OK)</summary>
+
+```json
+[
+  {
+  "acceptsMarketing": true,
+  "attributeGroups": {
+    "additionalProp1": {
+      "attribute_group": "string",
+      "attributes": {
+        "additionalProp1": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp2": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        },
+        "additionalProp3": {
+          "attribute_value": "string",
+          "value_type": "BLOB"
+        }
+      },
+      "is_obsolete": true
+    }
+  },
+  "billingAddress": {
+    "address1": "string",
+    "address2": "string",
+    "addressId": "string",
+    "addressRef": "string",
+    "city": "string",
+    "company": "string",
+    "country": "string",
+    "countryCode": "string",
+    "countryName": "string",
+    "email": "string",
+    "id": "string",
+    "name": "string",
+    "phone": "string",
+    "postcode": "string",
+    "province": "string",
+    "provinceCode": "string"
+  },
+  "cancelReason": "string",
+  "cancelled": true,
+  "cancelledAt": "2022-06-27T14:40:29.034Z",
+  "cartId": "string",
+  "channel": "MOBILE",
+  "confirmed": true,
+  "couponDiscounts": 0,
+  "couponDiscountsInCent": 0,
+  "created_at": "2022-06-27T14:40:29.034Z",
+  "currencyCode": "string",
+  "customerId": "string",
+  "customerLocale": "string",
+  "customerRef": "string",
+  "deliveryStatus": "DELIVERED",
+  "email": "string",
+  "id": "string",
+  "ipAddress": "string",
+  "ipAddressCountry": "string",
+  "ipAddressCountryIsocode": "string",
+  "itemsCancelled": 0,
+  "itemsReturned": 0,
+  "itemsShipped": 0,
+  "orderRef": "string",
+  "orderStatus": "AWAITING_PAYMENT",
+  "paymentMethod": "string",
+  "paymentProvider": "string",
+  "paymentStatus": "AUTHORIZED",
+  "processedAt": "2022-06-27T14:40:29.034Z",
+  "promotionalDiscounts": 0,
+  "promotionalDiscountsInCent": 0,
+  "refundedAmount": 0,
+  "refundedAmountInCent": 0,
+  "returnReason": "string",
+  "returned": true,
+  "returnedAt": "2022-06-27T14:40:29.034Z",
+  "shippingState": "CREATED",
+  "taxCategoryCode": "string",
+  "taxIncluded": true,
+  "totalAmount": 0,
+  "totalAmountBeforeDiscount": 0,
+  "totalAmountExTax": 0,
+  "totalAmountInCent": 0,
+  "totalAmountIncTax": 0,
+  "totalDiscounts": 0,
+  "totalItems": 0,
+  "updated_at": "2022-06-27T14:40:29.034Z"
+ }
+]
+```
+
+HTTP Status Code: 
+``` 
+- 200 OK
 - 400 Bad request 
 - 401 Unauthorised
 - 403 Forbidden 
