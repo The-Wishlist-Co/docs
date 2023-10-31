@@ -1101,7 +1101,7 @@ To create a wishlist item, you need to provide either of the following:
 
 ## Add multple Wishlist Items
 
-Add multiple items to an existing wishlist.
+Add multiple items to an existing wishlist. Please provide either item id or reference.
 
 | Endpoint| ```/api/wishlist/add-items```|
 |-----------|---------------|
@@ -1113,24 +1113,58 @@ Add multiple items to an existing wishlist.
 
 ```json
 {
-    "wishlistId": "67ccc612-0f1b-4d9d-b69e-d43511c6782d",
-    "itemId": [
-        {
-            "addedFromCart": true,
-            "attributeGroups": {
-                "cart_info": {
-                    "attributes": {
-                        "cart_id": "CART1111",
-                        "channel": "mobile-app"
-                    },
-                    "description": "cart related attributes"
-                }
-            },
-            "productId": "ede20e6c-88c8-41d9-b0a5-a631871b23d2",
-            "selectedVariantId": "b72e501d-d87a-40bb-b0bb-2d4c3cbb4f0a",
-            "wishlistItemRef": "WI2000131662"
+  "itemId": [
+    {
+      "addedFromCart": true,
+      "attributeGroups": {
+        "additionalProp1": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
         }
-    ]
+      },
+      "datePurchased": "2023-10-31T05:14:07.734Z",
+      "disableNotification": true,
+      "id": "string",
+      "locationId": "string",
+      "locationRef": "string",
+      "prerelease": true,
+      "productId": "string",
+      "purchased": true,
+      "selectedVariantId": "string",
+      "wishlistItemRef": "string"
+    }
+  ],
+  "itemRef": [
+    {
+      "addedFromCart": true,
+      "attributeGroups": {
+        "additionalProp1": {
+          "attributes": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "description": "string"
+        }
+      },
+      "datePurchased": "2023-10-31T05:14:07.734Z",
+      "disableNotification": true,
+      "id": "string",
+      "locationId": "string",
+      "locationRef": "string",
+      "prerelease": true,
+      "productRef": "string",
+      "purchased": true,
+      "selectedVariantRef": "string",
+      "wishlistItemRef": "string"
+    }
+  ],
+  "wishlistId": "string",
+  "wishlistRef": "string"
 }
 ```
 
