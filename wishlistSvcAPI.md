@@ -1101,7 +1101,7 @@ To create a wishlist item, you need to provide either of the following:
 
 ## Add multple Wishlist Items
 
-Add multiple items to an existing wishlist. Please provide either item id or reference.
+Add multiple items to an existing wishlist. Please provide either item ID or item reference (itemRef).
 
 | Endpoint| ```/api/wishlist/add-items```|
 |-----------|---------------|
