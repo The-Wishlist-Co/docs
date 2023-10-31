@@ -1126,14 +1126,10 @@ Add multiple items to an existing wishlist. Please provide either item id or ref
           "description": "string"
         }
       },
-      "datePurchased": "2023-10-31T05:14:07.734Z",
       "disableNotification": true,
-      "id": "string",
-      "locationId": "string",
       "locationRef": "string",
       "prerelease": true,
       "productId": "string",
-      "purchased": true,
       "selectedVariantId": "string",
       "wishlistItemRef": "string"
     }
@@ -1151,19 +1147,14 @@ Add multiple items to an existing wishlist. Please provide either item id or ref
           "description": "string"
         }
       },
-      "datePurchased": "2023-10-31T05:14:07.734Z",
       "disableNotification": true,
-      "id": "string",
-      "locationId": "string",
       "locationRef": "string",
       "prerelease": true,
       "productRef": "string",
-      "purchased": true,
       "selectedVariantRef": "string",
       "wishlistItemRef": "string"
     }
   ],
-  "wishlistId": "string",
   "wishlistRef": "string"
 }
 ```
