@@ -1,6 +1,5 @@
 
 # **Inventory**
-An inventory item represents a physical good. It holds essential information about the physical good, including its SKU and whether its inventory is tracked.
 
 There is a 1:1 relationship between a product variant and an inventory item. Each product variant includes the ID of its related inventory item. You can use the inventory item ID to query the InventoryLevel resource to retrieve the location and quantity for an inventory item.
 
@@ -202,7 +201,7 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-## Updated an inventory level
+## Update an inventory level
 
 Method: ``` PUT ``` 
 
@@ -350,7 +349,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Upload many inventory levels
+## Upload multiple inventory levels
 
 Method: ``` POST ``` 
 
@@ -496,7 +495,7 @@ HTTP Status Code:
 - 405 NOK Invalid input
 ```
 
-## Updated an inventory level
+## Update an inventory level
 
 Method: ``` PUT ``` 
 
@@ -559,7 +558,7 @@ HTTP Status Code:
 - 405 NOK Invalid input
 ```
 
-## Find InventoryLevel By Id
+## Find Inventory Level By Id
 
 Method: ``` GET ``` 
 
@@ -774,7 +773,7 @@ HTTP Status Code:
 - 405 NOK Invalid input
 ```
 
-## Updated an inventory level
+## Update an inventory level
 
 Method: ``` PUT ``` 
 
@@ -836,7 +835,7 @@ HTTP Status Code:
 - 405 NOK Invalid input
 ```
 
-## Find Customer by ID
+## Find Inventory location by ID
 
 Method: ``` GET ``` 
 
