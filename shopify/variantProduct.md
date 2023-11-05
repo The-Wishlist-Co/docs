@@ -75,7 +75,7 @@ All representations are JSON objects submitted or received as payload to API req
 
 ## **REST Endpoints**
 
-## Add products variant from shopify to TWC
+## Add variant from shopify to TWC
 A new variant is created for an existing product in the TWC system from the shopify data using the connector.
 
 Endpoint: ```/api/products/variants```
@@ -273,7 +273,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Add products from shopify to TWC
+## Add multiple variants from shopify to TWC
 Used for entering multiple variant data of a product to the TWC system from a bulk Shopify data. 
 
 Endpoint: ```/api/products/upload-variants```
@@ -588,8 +588,8 @@ HTTP Status Code:
 - 405 Validation exception
 ```
 
-## Find product by ID
-Returns an products by its id and variant id by passing the respective id's as a path params in the endpoint. 
+## Find Product Variant by ID
+Returns a products by its id and variant id by passing the respective id's as a path params in the endpoint. 
 If the products or the variant does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/products/{productId}/variants/{id}```
@@ -701,7 +701,7 @@ HTTP Status Code:
 - 404 Product Not Found
 ```
 
-## Deletes a product
+## Deletes a Variant
 
 Product variant is marked as deleted by passing id as a path param of the endpoint.
 
