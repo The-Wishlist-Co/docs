@@ -1266,7 +1266,6 @@ HTTP Status Code:
 
 
 
-
 ## **Stock Level Resource**
 
 ## Create an inventory level
@@ -1451,7 +1450,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Create Multiple inventory level
+## Create Multiple inventory levels
 
 Method : ``` POST ``` 
 
