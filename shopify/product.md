@@ -55,7 +55,7 @@ page uses the default template "product.liquid". (default: null)
 ## **REST Endpoints**
 
 ## Add products from shopify to TWC
-The shopify product data is translated and transformed according to the TWC system requiremennts through product section of the shopify connector api.
+The shopify product data is translated and transformed according to the TWC system requirements through the product section of the shopify connector api.
 Endpoint: ```/api/products```
 
 Method: ``` POST ```
@@ -438,8 +438,8 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Add products from shopify to TWC
-The shopify product data is translated and transformed according to the TWC system requiremennts through product section of the shopify connector api. This endpoint is for creating bulk entries at a time.
+## Add multiple products from shopify to TWC
+The shopify product data is translated and transformed according to the TWC system requirements through the product section of the shopify connector api. This endpoint is for creating bulk entries at a time.
 Endpoint: ```/api/products/upload-products```
 
 Method: ``` POST ```
@@ -582,7 +582,7 @@ HTTP Status Code:
 ```
 
 ## Update an existing product
-Updates an already existing product. If the product does not exist, this method returns a ResourceNotFound error.
+Updates an existing product. If the product does not exist, this method returns a ResourceNotFound error.
 
 Endpoint: ```/api/products```
 
