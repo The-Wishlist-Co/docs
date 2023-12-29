@@ -1,7 +1,8 @@
-
+The Impex API has been depreciated at this time.
 
 [Back to Home](index.md#welcome-to-the-wishlist)
 
+<!--
 # **Impex API**
 
 The ImpEx API provides asynchronous bulk data import. It works with multiple combinations of entity types and data is translated and transformed automatically into The Wishlist platform.  
@@ -12,8 +13,10 @@ A "resource" is an entity (e.g. order), and a "batch" is an import batch of one 
 
 ***
 
+
 - [**Impex API**](#impex-api)
     <!-- - [Index](#index) -->
+<!--    
   - [**Representations**](#representations)
   - [**REST Endpoints**](#rest-endpoints)
     - [**Impex Batch Resource**](#impex-batch-resource)
@@ -34,6 +37,7 @@ A "resource" is an entity (e.g. order), and a "batch" is an import batch of one 
 All requests or responses are JSON objects.
 
 <!-- <details> -->
+<!--
  <summary><font size="4">Import Batch Resource</font></summary>
 
 
@@ -68,6 +72,7 @@ All requests or responses are JSON objects.
 
 
 <!-- <details> -->
+<!--
  <summary><font size="4">Import Resource </font></summary>
 
 `batchId` - string - The batch ID for which the resources are being created.
@@ -134,6 +139,7 @@ withTotal Boolean Default FALSE
 
 `tenantId` - Unique to each tenant, authentication is based on this tenantId.
 <!--</details> -->
+<!--
 
 ## **REST Endpoints**
 
@@ -1546,5 +1552,7 @@ HTTP Status Code:
 
 ***
 [Back to Top](#impex-api)
+
+-->
 
 [Back to Home](index.md#welcome-to-the-wishlist)
