@@ -4,6 +4,12 @@
 # **Customer API**
 The Customer API is used to create and manage information about a retailer's customers, such as their contact details, and whether they've agreed to receive email marketing.  The Customer resource doesn't store any credit card information. 
 
+There are 4 customer identifiers supported:
+- customerID is TWCs internal unique customer identifier
+- customerRef is typically the main identifier assigned to the customer by the retailer (e.g. loyalty number)
+- alternateCustomerRef is a secondary customer identifier optionally assigned to the customer by the retailer
+- customer email is used in many of TWC's APIs, and must be unique
+
 ### Index
 
 ***
@@ -42,7 +48,8 @@ All requests or responses are JSON objects
 
 | Field | Type | Description |
 |---|---|---|
-| *customerRef* | string | Retailer assigned customer reference ID. This is not a mandatory field. If provided it must be unique across your tenant. |
+| *customerRef* | string | Retailer assigned customer reference number. This is not a mandatory field. If provided it must be unique across your tenant. |
+| *alternateCustomerRef* | string | Retailer assigned optional customer reference number. This is not a mandatory field. If provided it must be unique. |
 | *customer_state* | list | One of the following values : *disabled*, *invited*, *enabled* OR *declined* |
 | *dob* | date | Date of birth of customer in *dd-mm-yyy* format. for example: 28-11-1999|
 | *firstName* | string | First name |
@@ -67,6 +74,7 @@ All requests or responses are JSON objects
 |---|---|---|
 | *id* | string | TWC generated ID (internal identifier) of the customer entity. for example: *47235561-a5fe-43d1-a0ff-00b635208abe* |
 | *customerRef* | string | Retailer assigned customer identifier. This is not a mandatory field, but if provided it must be unique across your tenant. |
+| *alternateCustomerRef* | string | Retailer assigned optional customer reference number. This is not a mandatory field. If provided it must be unique. |
 | *customer_state* | list | One of the following values: *disabled*, *invited*, *enabled* OR *declined* |
 | *dob* | string | Date of birth |
 | *firstName* | string | First name |
@@ -144,6 +152,7 @@ All requests or responses are JSON objects
 
 # **Endpoints**
 ## **Customer**
+
 ### CREATE
 Creates a new Customer in the Wishlist platform. Fields 'email' and 'customerRef' are unique fields. 
 
@@ -268,7 +277,7 @@ HTTP Status Code:
 - 403 Forbidden 
 ```
 
-
+<!--
 ## Create Multiple Customers
 This API is used to create an array of customers.
 
@@ -281,6 +290,7 @@ This API is used to create an array of customers.
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 <!-- <details> -->
+<!--
  <summary>Request Headers :</summary>
 
 | Key           | Value            |
@@ -335,7 +345,7 @@ This API is used to create an array of customers.
 
 ```
 <!-- </details> -->
-
+<!--
 <summary>Response - 202 (Accepted)</summary>
 
 HTTP Status Code: 
@@ -345,13 +355,13 @@ HTTP Status Code:
 - 401 Unauthorised
 - 403 Forbidden 
 ```
-
+-->
 
 ### UPDATE
 
 #### Update Customer By ID
     
-    Update a customer using the TWC customer identifier. TWC will lookup customer by its given customer ID.
+  Update a customer using the TWC customer identifier. TWC will lookup customer by its given customer ID.
 
 | Endpoint| ```/api/v2/customers/id={id}```|
 |-----------|---------------|
@@ -361,8 +371,9 @@ HTTP Status Code:
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 <!-- <details> -->
- <summary>Sample Customer Request: </summary>
-
+<!--
+<summary>Sample Customer Request: </summary>
+-->
 ```json
 {
    "email": "updated-email@customerportal.com",
@@ -449,17 +460,17 @@ HTTP Status Code:
 - 401 Unauthorised
 - 403 Forbidden 
 ```
+-->
 
+#### Update a customer by reference number
 
-#### Update a customer by reference ID
-
-Update a customer by customer reference ID. TWC will lookup customer by the given reference ID
+Update a customer by customer reference number. TWC will lookup customer by the given reference number
 
 | Endpoint| ```/api/v2/customers/customerRef={customerRef}```|
 |-----------|---------------|
 | Method    | PUT          |
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
-| url path variable |```customerRef``` This is the retailer assigned unique ID of the customer being updated. |
+| url path variable |```customerRef``` This is the retailer assigned unique number of the customer being updated. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 <!-- <details> -->
@@ -903,13 +914,13 @@ HTTP Status Code:
 ```
 
 #### Get Customer by CustomerRef
-Returns a customer using the retailers's own unique customer identifier CustomerRef.
+Returns a customer using the retailers's own unique customer number.
 
 | Endpoint| ```/api/v2/customers/{customerRef}/ref```|
 |-----------|---------------|
 | Method    | GET          |
 | Headers   | X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
-| url path variable |```customerRef``` This is the retailer assigned ID of the customer. |
+| url path variable |```customerRef``` This is the retailer assigned number of the customer. |
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
 <!-- <details> -->
@@ -969,7 +980,7 @@ HTTP Status Code:
 
 #### Retrieve Customers by email/mobile/phone/firstName/lastName
 
-    Returns a list of customers based on email/mobile/phone/firstName/lastName.  A record is returned only if all of the given criteria are matched.   If no customers exist, this method returns a empty list.
+Returns a list of customers based on email/mobile/phone/firstName/lastName.  A record is returned only if all of the given criteria are matched.   If no customers exist, this method returns a empty list.
 
 | Endpoint| ```/api/v2/customers/search```|
 |-----------|---------------|
@@ -1078,7 +1089,7 @@ HTTP Status Code:
 
 ## Delete Customer by ID
 
-    Deletes a customer using the TWC unique identifier.  The customer's wishlists are not deleted as they are required for reporting purposes.  (Note.  A customer cannot be identified from a wishlist record).*
+Deletes a customer using the TWC unique identifier.  The customer's wishlists are not deleted as they are required for reporting purposes.  (Note.  A customer cannot be identified from a wishlist record).*
 
 Endpoint: ```/api/v2/customers/{id}```
 
