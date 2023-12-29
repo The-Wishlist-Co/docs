@@ -114,11 +114,9 @@
 
     - [*Wishlist Item Resource*](wishlistSvcAPI.md#wishlist-item-resource)
  
-
-
-- [**Impex Service API**](impexAPI.md#impex-api)
-
-    The ImpEx Service API allows you to interact with all the core API's in the The Wishlist platform at a unified REST interface for the seemless interegration of bulk data in to the system. 
+<!-- [**Impex Service API**](impexAPI.md#impex-api)
+#
+#   The ImpEx Service API allows you to interact with all the core API's in the The Wishlist platform at a unified REST interface for the seemless interegration of bulk data in to the system. 
 
   - [*Representations*](impexAPI.md#representations)
 
@@ -128,7 +126,8 @@
 
     - [*Impex Resource*](impexAPI.md#impex-resource)
 
-
+-->
+<!--
 
 - [**Shopify Connector**](ShopifyConnector.md#shopify-connect)
   
@@ -148,11 +147,11 @@
 
 <!-- 
 - [**Platform Generated Events**](platformgeneratedevents.md#platform-generated-messages)
- -->
+
 
 - [**Emarsys Integration**](emarsysIntegration.md#emarsys-integration)
 
 - [**Event Failure Reporting**](apiFails.md#event-collector-api)
 
-     If an API fails after a reasonable number of times, a fault should be reported into event collector.
-
+     If an API fails after a certain number of times, a fault should be reported into event collector.
+ -->
