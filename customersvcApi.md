@@ -977,6 +977,69 @@ HTTP Status Code:
 - 404 Not Found
 ```
 
+#### Get Customer by Email
+Returns a customer using the retailers's customer email.
+
+| Endpoint| ```/api/v2/customers/{email}/email```|
+|-----------|---------------|
+| Method    | GET          |
+| Headers   | X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| url path variable |```email``` This is the retailer customer email. |
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
+
+<!-- <details> -->
+<summary>Response - 200 (OK)</summary>
+
+```json
+ {
+  "id": "7c14445d-c9fb-457d-90ec-114a04e57bc3",
+  "email": "test@customer.com",
+  "customerRef": "new-customer-ref",
+  "firstName": "FirstName",
+  "lastName": "LastName",
+  "mobile": "623362386238",
+  "phone": "623362386238",
+  "dob": "25-10-1900",
+  "attributeGroups": {
+      "retailer_additional_info": {
+          "attributes": {
+              "crm_default_account_id": "1234",
+              "triquestra_person_code": "TQ1234"
+          },
+          "description": "CRM and Triquestra extra attributes"
+      }
+  },
+  "active": true,
+  "accepts_marketing": false,
+  "marketing_preferences_updated_at": "2023-05-19T03:45:02.530Z",
+  "customer_state": "enabled",
+  "taxExempt": false,
+  "taxExemptions": [],
+  "verified_email": false,
+  "createdDate": "2023-05-19T03:14:32.181Z",
+  "lastModifiedDate": "2023-05-19T03:45:02.530Z",
+  "optin_preferences": {
+    "sms": {
+        "opt_in_active": false
+    },
+    "email": {
+        "opt_in_active": false,
+        "opted_in_at": "2023-05-19T03:48:22.075Z",
+        "opt_in_updated_at": "2023-05-19T03:48:22.075Z"
+    }
+  }
+}
+
+```
+<!-- <details> -->
+
+HTTP Status Code: 
+``` json
+- 200 OK
+- 401 Unauthorised
+- 403 Forbidden 
+- 404 Not Found
+```
 
 #### Retrieve Customers by email/mobile/phone/firstName/lastName
 
