@@ -15,22 +15,36 @@ There are 4 customer identifiers supported:
 ***
 
 [**Customer API**](#customer-api)
-- [**General Notes**](#general-notes)
-- [**Representations**](#representations)
-  - [Customer Request](#customer-request)
-  - [Customer Response](#customer-response)
-  - [Customer Address](#customer-address)
-  - [Optin Preferences](#optin-preferences)
-  - [Optin Preference](#optin-preference)
-  - [Attribute Groups](#attributegroups)
-  - [Attribute Group](#attributegroup)
-- [**Endpoints**](#rest-endpoints)
-  - [Customer](#customer)
-    - [Create](#create)
-    - [Update](#update)
+- [**Customer API**](#customer-api)
+    - [Index](#index)
+  - [**General Notes**](#general-notes)
+  - [**Representations**](#representations)
+    - [Customer Request](#customer-request)
+    - [Customer Response](#customer-response)
+    - [Customer Address](#customer-address)
+    - [Optin Preferences](#optin-preferences)
+    - [Optin Preference](#optin-preference)
+    - [AttributeGroups](#attributegroups)
+    - [AttributeGroup](#attributegroup)
+- [**Endpoints**](#endpoints)
+  - [**Customer**](#customer)
+    - [CREATE](#create)
+  - [Create Multiple Customers](#create-multiple-customers)
+    - [UPDATE](#update)
+      - [Update Customer By ID](#update-customer-by-id)
+      - [Update a customer by reference ID](#update-a-customer-by-reference-id)
+      - [Update a customer by id/reference ID](#update-a-customer-by-idreference-id)
+      - [Add address to Existing Customer](#add-address-to-existing-customer)
     - [Validate](#validate)
-    - [Delete](#delete)
-    - [Get](#get)
+      - [Validate Customer Payload](#validate-customer-payload)
+    - [DELETE](#delete)
+      - [Delete customer address](#delete-customer-address)
+      - [Delete Customer](#delete-customer)
+  - [GET](#get)
+      - [Get Customer by Id](#get-customer-by-id)
+      - [Get Customer by CustomerRef](#get-customer-by-customerref)
+      - [Retrieve Customers by email/mobile/phone/firstName/lastName](#retrieve-customers-by-emailmobilephonefirstnamelastname)
+  - [Delete Customer by ID](#delete-customer-by-id)
 
 
 ## **General Notes**
@@ -561,6 +575,111 @@ HTTP Status Code:
 - 401 Unauthorised
 - 403 Forbidden 
 ```
+
+#### Update a customer by id/reference ID
+
+Update a customer by customer id/reference ID. TWC will lookup customer by the given reference ID.
+If both Id and Ref are provided, then the api will throw exeception with a message asking either id or ref.
+
+In the case where the existing customer data that dosent have a customerRef, it can be added by passing the customerRef to be added in the customerRef requestParam and passing only the customer id in the payload.This only works when no customerRef already exists, else an exception will be thrown. Once updated, it cannot be changed later.
+
+| Endpoint| ```/api/v2/customers```|
+|-----------|---------------|
+| Method    | PUT          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| Request Param variable |```customerRef``` This is the customer ref to be added if no customerRef already exists and the provide ref is to be assigned. Once assigned it cant be replaced |
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
+
+<!-- <details> -->
+ <summary>Sample Customer Request: </summary>
+
+```json
+{
+    "id": "7c14445d-c9fb-457d-90ec-114a04e57bc3",
+    "email": "updated-email@customerportal.com",
+    "mobile": "623362386238",
+    "phone": "623362386250",
+    "attributeGroups": {
+        "retailer_additional_info": {
+            "attributes": {
+                "crm_default_account_id": "1234",
+                "triquestra_person_code": "TQ1234"
+            },
+            "description": "extra attributes updated"
+        }
+    }
+}
+```
+
+Sample HTTP 200 response
+
+ ```json
+ {
+  "id": "7c14445d-c9fb-457d-90ec-114a04e57bc3",
+  "email": "test@customer.com",
+  "customerRef": "CUST11959",
+  "firstName": "FirstName",
+  "lastName": "LastName",
+  "mobile": "623362386238",
+  "phone": "623362386238",
+  "dob": "25-10-1900",
+  "addresses": [
+    {
+      "address1": "Wish Street 3",
+      "address2": "Corner of Wish Street and List Crescent",
+      "city": "Wishlist City",
+      "country": "Australia",
+      "countryCode": "AU",
+      "email": "cust@email.com",
+      "firstName": "Cust",
+      "lastName": "Test",
+      "phone": "0151 7445 6927",
+      "postcode": "10000",
+      "province": "New South Wales",
+      "provinceCode": "NSW"
+    }
+  ],
+  "attributeGroups": {
+      "retailer_additional_info": {
+          "attributes": {
+              "crm_default_account_id": "1234",
+              "triquestra_person_code": "TQ1234"
+          },
+          "description": "CRM and Triquestra extra attributes"
+      }
+  },
+  "active": true,
+  "accepts_marketing": false,
+  "marketing_preferences_updated_at": "2023-05-19T03:45:02.530Z",
+  "customer_state": "enabled",
+  "taxExempt": false,
+  "taxExemptions": [],
+  "verified_email": false,
+  "createdDate": "2023-05-19T03:14:32.181Z",
+  "lastModifiedDate": "2023-05-19T03:45:02.530Z",
+  "optin_preferences": {
+    "sms": {
+        "opt_in_active": false
+    },
+    "email": {
+        "opt_in_active": false,
+        "opted_in_at": "2023-05-19T03:48:22.075Z",
+        "opt_in_updated_at": "2023-05-19T03:48:22.075Z"
+    }
+  }
+}
+
+```
+<!-- </details>  -->
+
+HTTP Status Code: 
+```json 
+- 201 Created
+- 400 Bad request 
+- 401 Unauthorised
+- 403 Forbidden 
+```
+
 
 #### Add address to Existing Customer
 
