@@ -24,7 +24,7 @@ An order is a customer's request to purchase one or more products from a shop. Y
       - [Search orders](#search-orders)
       - [Validate Order](#validate-order)
     - [**Order Item**](#order-item)
-      - [Search entries for an order](#search-entries-for-an-order)
+      - [Search for all entries (lines) for an order](#search-entries-for-an-order)
       - [Create an order entry/line](#create-an-order-entry)
       - [Update an order entry/line](#update-an-order-entry)
 	  - [Update an order entry/line By Order Entry Id](#update-an-order-entry-by-order-entry-id)
