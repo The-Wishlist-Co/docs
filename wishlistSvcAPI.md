@@ -105,6 +105,7 @@ All requests or responses are JSON objects
 | *prerelease* | boolean | Indicates that the customer is registering interest to a pre-released product.  Used in the Register Interest notification |
 | *purchased* | boolean | Indicates that the item has been purchased.  Note, this field is for TWC internal use to track wishlist item conversions, and should not be updated directly by developers |
 | *purchasedAndRemoved* | boolean | This parameter is used to differentiate and identify the wishlist items removed after sale conversions. This can be set manually or automated based on a configuration. |
+| *notifyMe* | boolean | This parameter is used to notify the  customer once the wishlisted product comes in stock  |
 | *product* | [Product](#wishlistitem-product) | Represents the item [product](#wishlistitem-product). This is a mandatory field. |
 | *attributeGroups* | [AttributeGroups](#attributegroups) | This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_item_origin":&nbsp;"mobile_app",<br>&emsp;&emsp;"ecommerce_wishlist_item_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
 
@@ -143,6 +144,7 @@ All requests or responses are JSON objects
 | *wishlistItemRef* | string | reatailer assigned unique identifier for the wishlist item.|
 | *prerelease* | boolean | Indicates that customer is registering interest to a pre release item.  Used in the register interest notification|
 | *purchased* | boolean | Indicates that the item has been purchased.|
+| *notifyMe* | boolean | Indicates notifyMe flag  |
 | *purchasedDate* | boolean | The date on which item was purchased. If orders are pushed to TWC, TWC will mark the item as purchased.|
 | *product* |[Product](#wishlistitem-product)| This field represents the field being added to item [product](#wishlistitem-product)|
 | *attributeGroups* | object | This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_item_origin":&nbsp;"mobile_app",<br>&emsp;&emsp;"ecommerce_wishlist_item_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
@@ -1051,7 +1053,8 @@ To create a wishlist item, you need to provide either of the following:
             },
             "description": "cart related attributes"
         }
-    }
+    },
+    "notifyMe" : true
 }
 ```
 
@@ -1083,7 +1086,8 @@ To create a wishlist item, you need to provide either of the following:
     },
     "addedFromCart": false,
     "prerelease": false,
-    "disableNotification": false
+    "disableNotification": false,
+    "notifyMe" : true
 }
 ```
 
@@ -1131,7 +1135,7 @@ Add multiple items to an existing wishlist. Please provide either item ID or ite
       "prerelease": true,
       "productId": "string",
       "selectedVariantId": "string",
-      "wishlistItemRef": "string"
+      "wishlistItemRef": "string",
     }
   ],
   "itemRef": [
@@ -1208,7 +1212,8 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
             },
             "description": "cart info"
         }
-    }
+    },
+    "notifyMe" : true
 }
 ```
 
@@ -1246,7 +1251,8 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     },
     "addedFromCart": false,
     "prerelease": false,
-    "disableNotification": false
+    "disableNotification": false,
+    "notifyMe" : true
 }
 ```
 
@@ -1296,7 +1302,8 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
             },
             "description": "cart info"
         }
-    }
+    },
+    "notifyMe" : true
 }
 ```
 
@@ -1334,7 +1341,8 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     },
     "addedFromCart": false,
     "prerelease": false,
-    "disableNotification": false
+    "disableNotification": false,
+    "notifyMe" : true
 }
 ```
 <summary>HTTP Status Code:</summary>
@@ -1381,7 +1389,8 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
             },
             "description": "cart info"
         }
-    }
+    },
+    "notifyMe" : true
 }
 ```
 
@@ -1419,7 +1428,8 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
     },
     "addedFromCart": false,
     "prerelease": false,
-    "disableNotification": false
+    "disableNotification": false,
+    "notifyMe" : true
 }
 ```
 
@@ -1489,7 +1499,8 @@ Results are paginated, page size is 20, maximum 50.  If the item does not exist,
             },
             "addedFromCart": true,
             "prerelease": false,
-            "disableNotification": false
+            "disableNotification": false,
+            "notifyMe" : true
         },
         {
             "id": "9a5aee4a-f20a-4478-ab4e-02d8bf8c2837",
@@ -1522,7 +1533,8 @@ Results are paginated, page size is 20, maximum 50.  If the item does not exist,
             },
             "addedFromCart": false,
             "prerelease": false,
-            "disableNotification": false
+            "disableNotification": false,
+            "notifyMe" : true
         }
     ]
 }
@@ -1576,7 +1588,8 @@ If the item does not exist, this method returns a ResourceNotFound error.
     },
     "addedFromCart": false,
     "prerelease": false,
-    "disableNotification": false
+    "disableNotification": false,
+    "notifyMe" : true
 }
 ```
 
@@ -1639,7 +1652,8 @@ If the item does not exist, this method returns a ResourceNotFound error.
     },
     "addedFromCart": false,
     "prerelease": false,
-    "disableNotification": false
+    "disableNotification": false,
+    "notifyMe" : true
 }
 ```
 
