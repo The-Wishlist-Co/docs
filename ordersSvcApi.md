@@ -17,20 +17,20 @@ An order is a customer's request to purchase one or more products from a shop. Y
       - [Validate Order Entry](#validate-order-entry)
     - [**Order Resource**](#order-resource)
       - [Create an order](#create-an-order)
-      - [Updates an order](#updates-an-order)
-	  - [Updates an order By Order Id](#updates-an-order-by-order-id)
-	  - [Updates an order By Order Ref](#updates-an-order-by-order-ref)
-      - [FInd an orders](#find-an-orders)
+      - [Update an order](#updates-an-order)
+	  - [Update an order By Order Id](#updates-an-order-by-order-id)
+	  - [Update an order By Order Ref](#updates-an-order-by-order-ref)
+      - [Find orders](#find-orders)
       - [Search orders](#search-orders)
       - [Validate Order](#validate-order)
     - [**Order Item**](#order-item)
       - [Search entries for an order](#search-entries-for-an-order)
-      - [Create an order entry](#create-an-order-entry)
-      - [Update an order entry](#update-an-order-entry)
-	  - [Update an order entry By Order Entry Id](#update-an-order-entry-by-order-entry-id)
-	  - [Update an order entry By Order Entry Ref](#update-an-order-entry-by-order-entry-ref)
+      - [Create an order entry/line](#create-an-order-entry)
+      - [Update an order entry/line](#update-an-order-entry)
+	  - [Update an order entry/line By Order Entry Id](#update-an-order-entry-by-order-entry-id)
+	  - [Update an order entry/line By Order Entry Ref](#update-an-order-entry-by-order-entry-ref)
       - [Search an order entry](#search-an-order-entry)
-      - [Delete entry](#delete-entry)
+      - [Delete order entry](#delete-entry)
 
 ## **Representations**
 
@@ -881,7 +881,7 @@ HTTP Status Code:
 ```
 
 
-## Updates an order
+## Update an order
 
 Endpoint: ```​/api​/v1​/orders​```
 
@@ -1465,7 +1465,7 @@ HTTP Status Code:
 ```
 
 
-## Updates an order By Order Id
+## Update an order By Order Id
 
 Endpoint: ```​/api​/v1​/orders​/id={id:.*}```
 
@@ -2054,7 +2054,7 @@ HTTP Status Code:
 
 
 
-## Updates an order By Order Ref
+## Update an order By Order Refence
 
 Endpoint: ```​/api​/v1​/orders/ref={ref:.*}​```
 
@@ -2644,7 +2644,7 @@ HTTP Status Code:
 ```
 
 
-## FInd an orders
+## Find orders
 
 Endpoint: ```​/api​/v1​/orders```
 
@@ -4019,7 +4019,7 @@ HTTP Status Code:
 ```
 
 
-## Update an order entry
+## Update an order entry (order line)
 Endpoint: ```​​/api​/v1​/orders​/entries```
 
 Method: ```PUT ```
@@ -4147,7 +4147,7 @@ HTTP Status Code:
 ```
 
 
-## Update an order entry By Order Entry Id
+## Update an order entry/line By Order Entry Id
 
 Endpoint: ```​​/api​/v1​/orders​/entries/id={id:.*}```
 
@@ -4280,7 +4280,7 @@ HTTP Status Code:
 ```
 
 
-## Update an order entry By Order Entry Ref
+## Update an order entry/line by Order Entry Ref
 
 Endpoint: ```​​/api​/v1​/orders​/entries/{orderref}/ref={ref:.*}```
 
@@ -4413,7 +4413,7 @@ HTTP Status Code:
 ```
 
 
-## Search an order entry
+## Search an order entry/line
 
 Endpoint: ```​​/api​/v1​/orders​/entry```
 
@@ -4726,7 +4726,7 @@ HTTP Status Code:
 ```
 
 
-## Delete entry
+## Delete order entry/line
 
 Endpoint: ```​​/api​/v1​/orders​/entry```
 
