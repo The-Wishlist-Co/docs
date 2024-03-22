@@ -11,6 +11,8 @@ One customer may have mulitple wishlists.  You can only create a wishlist for a 
 
 A wishlist is created 'empty' and items added later, either one by one, or multiple items can be added at the same time.
 
+Wishlist items should be saved at the variant level, rather than the parent product level, as the customer will typically be wishlisting a variant, not a product.
+
 
 ***
 
@@ -73,7 +75,7 @@ All requests or responses are JSON objects
 | *customerId* | string | TWC generated unique customer identifier. Either customerId or customerRef is mandatory when creating a wishlist |
 | *customerRef* | string | Retailer's own unique customer identifier. Either customerId or customerRef is mandatory when creating wishlist |
 | *description* | string | Wishlist description.  This field is optional. It may be useful in social shopping scenarios |
-| *name* | string | The Wishlist name provided by the customer |
+| *name* | string | The Wishlist name provided by the customer.  *Name is mandatory* |
 | *wishlistRef* | string | This is an optional reference identifier given to the wishlist by the retailer. This field may be used to GET/UPDATE/DELETE the wishlist.  It is likely most useful for integrating with existing ecommerce wishlist systems. |
 | *isPrivate* | boolean | Indicates the wishlist is private to customer |
 | *attributeGroups* |[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_origin":&nbsp;"app",<br>&emsp;&emsp;"ecommerce_wishlist_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
@@ -87,7 +89,8 @@ All requests or responses are JSON objects
 | *customerId* | string | TWC unique customer identifier.|
 | *customerRef* | string | Retailer's own unique identifier of customer.|
 | *description* | string | Wishlist description.|
-| *name* | string | Wishlist name provided by the customer |
+| *deleted* | string | Indicates if the wishlist has been deleted |
+| *name* | string | Wishlist name |
 | *wishlistRef* | string | This is a reference identifier given to a wishlist by retailer. This field may be used to GET/UPDATE/DELETE the wishlist.  It is likely most useful when integrating to existing ecoommerce wishlist systems. |
 | *isPrivate* | boolean | Indicates the wishlist is private to customer |
 | *attributeGroups* |[AttributeGroups](#attributegroups)| This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_origin":&nbsp;"app",<br>&emsp;&emsp;"ecommerce_wishlist_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
@@ -97,16 +100,18 @@ All requests or responses are JSON objects
 
 | Field | Type | Description |
 |---|---|---|
-| *addedFromCart* | boolean | Indicates the item was added from cart.  Developers should set this flag if the item was added to the wishlist directly fom the shopping cart (this is considered an 'interaction' in The Wishlist reporting dashboards |
+| *addedFromCart* | boolean | Indicates the item was added from cart.  Developers should set this flag if the item was added to the wishlist directly fom the shopping cart |
+| *addedByStaff* | boolean | This optional field indicates the item was added by a staff member in a store.  Should be used in conjunction with staffRef and locationRef, which stores the retailer's store identifier.  Developers should set this flag if the item was added to the wishlist by a staff member to enable drill down reporting and staff attribution of interactions|
 | *disableNotification* | boolean| Disable notifications for this wishlist item. |
 | *wishlistId* | string | TWC generated unique identifier for the wishlist to which the item is being added. Either wishlistId or wishlistRef is mandatory when creating a wishlist item. |
 | *wishlistRef* | string | The reatailer assigned unique reference identifier for the wishlist. Either wishlistId or wishlistRef is mandatory when creating a wishlist item. |
 | *wishlistItemRef* | string | Retailer assigned unique reference identifier of the wishlist item. |
 | *prerelease* | boolean | Indicates that the customer is registering interest to a pre-released product.  Used in the Register Interest notification |
-| *purchased* | boolean | Indicates that the item has been purchased.  Note, this field is for TWC internal use to track wishlist item conversions, and should not be updated directly by developers |
 | *purchasedAndRemoved* | boolean | This parameter is used to differentiate and identify the wishlist items removed after sale conversions. This can be set manually or automated based on a configuration. |
 | *notifyMe* | boolean | This parameter is used to notify the  customer once the wishlisted product comes in stock  |
 | *product* | [Product](#wishlistitem-product) | Represents the item [product](#wishlistitem-product). This is a mandatory field. |
+| *staffRef* | string| The reference number of the staff that added the wishlist item for the customer. Should be used in conjunction with addedByStaff and locationRef |
+| *locationRef* | string| The reference number for the location where the item was added to the wishlist (typically a store identifier).  Should be used in conjunction with addedByStaff and staffRef|
 | *attributeGroups* | [AttributeGroups](#attributegroups) | This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_item_origin":&nbsp;"mobile_app",<br>&emsp;&emsp;"ecommerce_wishlist_item_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br> |
 
 ###  WishlistItem Product
@@ -117,8 +122,10 @@ All requests or responses are JSON objects
 | *productRef* | string | This is the retailer assigned product reference identifier. Either productId or productRef is mandatory when creating a wishlist item.  Please note that TWC does not validate the existance of a product when adding to the Wishlist.  This allows you to add an item that may not have yet been synched to the product catalogue.  However, notifications will not trigger if a product/variant does not exist.|
 | *selectedVariantId* | string | This is the TWC assigned variant identifier. Either selectedVariantId or selectedVariantRef is mandatory when creating a wishlist item.|
 | *selectedVariantRef* | string | This is the retailer assigned variant reference identifier. Either selectedVariantId or selectedVariantRef is mandatory when creating a wishlist item.  Please note that TWC does not validate the existance of a variant when adding to the Wishlist.  This allows you to add an item that may not have yet been synched to the product catalogue.  However, notifications will not trigger if a product/variant does not exist.|
-| *oldVariantId* | string | When updating a wishlist item to another variant oldVariantId field is mandatory, to switch to another variant. This is TWC generated unique identifier.|
+| *oldVariantId* | string | When updating a wishlist item to another variant using the ID, oldVariantId field is mandatory, to switch to another variant. This is TWC generated unique identifier.|
+| *oldVariantRef* | string | When updating a wishlist item to another variant using the variantRef, then oldVariantRef field is mandatory, to switch to another variant. |
 
+-->
 ###  AttributeGroups
 
 | Field | Type| Description |
@@ -138,25 +145,29 @@ All requests or responses are JSON objects
 |---|---|---|
 | *id* | string | This is the TWC generted unique identifier for the wishlist item.|
 | *addedFromCart* | boolean | Indicates the item was added from a shopping cart.|
+| *addedByStaff* | boolean | This optional field indicates the item was added by a staff member in a store.  Should be used in conjunction with staffRef and locationRef, which stores the retailer's store identifier.  Developers should set this flag if the item was added to the wishlist by a staff member to enable drill down reporting and staff attribution of interactions|
 | *disableNotification* | boolean | Disable notifications for this wishlist item.|
 | *wishlistId* | string | TWC generated unique identifier of wishlist, to which the item is being added. Either wishlistId or wishlistRef is mandatory when creating a wishlist item.|
 | *wishlistRef* | string | reatailer assigned unique identifier for the wishlist. Either wishlistId or wishlistRef is mandatory when creating a wishlist item.|
 | *wishlistItemRef* | string | reatailer assigned unique identifier for the wishlist item.|
 | *prerelease* | boolean | Indicates that customer is registering interest to a pre release item.  Used in the register interest notification|
 | *purchased* | boolean | Indicates that the item has been purchased.|
+| *purchasedAndRemoved* | boolean | This parameter is used to differentiate and identify the wishlist items removed after sale conversions. This can be set manually or automated based on a configuration. |
 | *notifyMe* | boolean | Indicates notifyMe flag  |
 | *purchasedDate* | boolean | The date on which item was purchased. If orders are pushed to TWC, TWC will mark the item as purchased.|
 | *product* |[Product](#wishlistitem-product)| This field represents the field being added to item [product](#wishlistitem-product)|
+| *staffRef* | string| The reference number of the staff that added the wishlist item for the customer. Should be used in conjunction with addedByStaff and locationRef |
+| *locationRef* | string| The reference number for the location where the item was added to the wishlist (typically a store identifier).  Should be used in conjunction with addedByStaff and staffRef|
 | *attributeGroups* | object | This field may be used to add additional attributes to the wishlist. This field is in general available on most entitiesin The Wishlist platform.<br> "attributeGroups":&nbsp;{<br>&emsp;"extra_attribute_group1":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"wishlist_item_origin":&nbsp;"mobile_app",<br>&emsp;&emsp;"ecommerce_wishlist_item_id":&nbsp;"ecommerce&nbsp;system&nbsp;generated&nbsp;id",&emsp;&emsp;<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"any&nbsp;additional&nbsp;attribute&nbsp;you&nbsp;want&nbsp;to&nbsp;add&nbsp;to&nbsp;wishlist"<br>&emsp;},<br>&emsp;"retailer_defined_name_of_group":&nbsp;{<br>&emsp;&ensp;"attributes":&nbsp;{<br>&emsp;&emsp;"retailer_defined_attribute1":&nbsp;"user&nbsp;defined&nbsp;attribute&nbsp;value",<br>&emsp;&emsp;"another_attribute":&nbsp;"another&nbsp;value"<br>&emsp;&ensp;},<br>&emsp;&ensp;"description":&nbsp;"retailer&nbsp;defined&nbsp;properties&nbsp;and&nbsp;its&nbsp;values,&nbsp;flexible&nbsp;data&nbsp;model&nbsp;to&nbsp;add&nbsp;additional&nbsp;properties."<br>&emsp;}<br>}<br>|
 
 
 # **Endpoints**
 
-## **Wishlist**
+# **Wishlist**
 
-### Ceate a wishlist
+## Ceate a wishlist
 
-Creates a new wishlist. This API requires wishlist request to be passed to API. The Customer must be created before creating their wishlist(s).
+Creates a new wishlist. The Customer must be created before creating their wishlist(s).
 
 | Endpoint| ```/api/wishlists```|
 |-----------|---------------|
@@ -228,13 +239,12 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+<!--
 
-
-## Update a wishlist
+### Update a wishlist
 
 ### Update Wishlist By ID
-T
-his API uses the TWC generated identifier to update metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *Note this API is NOT used to update the items on the wishlist.*
+This API uses the TWC generated identifier to update metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *Note this API is NOT used to update the items on the wishlist.*
 
 As this API uses TWC Wishlist ID, then you can use it to update the wishlistRef (the retailer's own wishlit unique identifier).   
 
@@ -251,7 +261,6 @@ Endpoint: ```/api/wishlists/id={id}```
 
 Sample Request:
 
-<!--  -->
 ```json
 {
   "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
@@ -279,7 +288,6 @@ Sample Request:
   "createdTime": "2023-05-01T00:02:38.048171Z",
 }
 ```
-<!--  -->
 
 <summary>Response - 200 (OK Updated)</summary>
 
@@ -333,7 +341,6 @@ Used to update the metadata about a wishlist, for example, attribute groups, sta
 
 Sample Request:
 
-<!--  -->
 ```json
 {
   "id": "2cd4e650-8f00-4d13-ba46-831c2cf29211",
@@ -361,7 +368,6 @@ Sample Request:
   "createdTime": "2023-05-01T00:02:38.048171Z",
 }
 ```
-<!--  -->
 
 <summary>Response - 200 (OK Updated)</summary>
 
@@ -401,12 +407,11 @@ HTTP Status Code:
 - 404 Not Found
 - 400 Invalid input
 ```
+-->
 
-### Update wishlist by either ID or Ref
+## Update wishlist by either ID or Ref
 
 Used to update any metadata about a wishlist, for example, attribute groups, staff/store ID or wishlist name.  *This API is NOT used to update items on the wishlist*  You can update by internal Wishlist ID or wishlistRef (the retailer's unique wishlist identifier).   
-
-**THIS API IS DEPRECIATED.  PLEASE USE UDATE WISHLIST BY ID OR WISHLISTREF**
 
 | Endpoint| ```/api/wishlists```|
 |-----------|---------------|
@@ -486,8 +491,9 @@ Sample Request:
 - 404 Not Found
 ```
 
+<!--
+### Get a Wishlist
 
-## GET Wishlist
 
 Below APIs provide mechanisms to get wishlists by internal TWC identifier, retailer's reference identifier or by customer. 
 
@@ -668,10 +674,10 @@ The API responds with below statuses. HTTP status differ depending on the input,
 - 404 Not Found
 ```
 
+-->
+## Get Wishlist by id or wishlistRef
 
-### Get Wishlist by id/wishlistRef
-
-Retrieves the wishlist and the wishlist items that belongs to the given Id and/or wishlistRef.  If the wishlist does not exist, this method returns a ResourceNotFound error.
+Retrieves the wishlist and the wishlist items that belongs to the given wishlist Id or wishlistRef.  If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 The returned item array is paginated - 20 default (50 maximum).  The API will respond with the item count in the page, and the itemID the for the last item (lastitemID) returned for that response, which should then be used for the subsequent API call to retrieve the next page.  
 
@@ -681,7 +687,7 @@ The returned item array is paginated - 20 default (50 maximum).  The API will re
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-| Query Parameters | What is it for ? |
+| Query Parameters | Description |
 |---|---|
 | ```id``` | This is the TWC system generated unique wishlist identifier. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. The API will query the database for wishlists by ID. |
 | ```wishlistRef``` | This is the retailer assigned unique wishlist reference identifier. e.g: ```WISH0001```. The API will query the database  for wishlists by reference value. |
@@ -755,7 +761,7 @@ When provided with valid inputs, API responds with a ```application/json``` type
 ```
 
 
-## Get customer wishlists
+## Get wishlist(s) by customer id or customerRef
 
 Returns the collection of wishlists that belong to either the internal TWC customer identifier, or the retailer's own customerRef.
 
@@ -769,7 +775,7 @@ If no wishlists exist, this method returns a ResourceNotFound error.
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-| Query Parameters | What is it for ? |
+| Query Parameters | Description |
 |---|---|
 | ```customerId``` | This is the TWC generated unique customer identifier. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will query database for wishlists that belong to customer with the given ID. |
 | ```customerRef``` | This is the retailer assigned unique customer reference identifier. e.g: ```CUST1111```. API will query database for wishlists that belong to customer with the given reference value. |
@@ -870,7 +876,7 @@ If no wishlists exist, this method returns a ResourceNotFound error.
 
 ## Delete Wishlist
 
-### Delete Wishlist by ID/Ref
+### Delete Wishlist by wishlist ID or wishlistRef
 
 Delete Wishlist marks the wishlist as deleted and produces an HTTP response confirming the action.  The Wishlist is identified either by the TWC Internal wishlist identifier or the retailers own wishlistRef.   The wishlists are actually retained in the system for reporting purposes, but are de-identified so cannot be linked back to the customer.
 
@@ -882,7 +888,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-| Query Parameters | What is it for ? |
+| Query Parameters | Description |
 |---|---|
 | ```id``` | This is the TWC system generated unique wishlist identifier. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will remove the wishlists for the given ID.  Either ```id``` or ```wishlistRef``` must be provided with this API call.|
 | ```wishlistRef``` | This is the retailers assigned unique wishlist reference identifier. e.g: ```WISH0001```. The API will remove the wishlists matching the given retailer wishlist reference ID.  Either ```id``` or ```wishlistRef``` must be provided with this API call.|
@@ -898,7 +904,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 - 404 Not Found
 ```
 
-
+<!--
 ## Delete Wishlist by ID
 
 Delete Wishlist marks the matching wishlist as deleted and produces an HTTP response confirming the action.  In this case the Wishlist is identified by the TWC internal wishlist identifier.
@@ -911,7 +917,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 | Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
 | How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
 
-| Path Parameters | What is it for ? |
+| Path Parameters | Description |
 |---|---|
 | ```id``` | This is the TWC system generated unique wishlist identifier. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will remove the wishlists for the given TWC ID.|
 
@@ -956,7 +962,7 @@ If the wishlist does not exist, this method returns a ResourceNotFound error.
 
 ## Get wishlist interactions
 
-Returns the collection of wishlists interactions that belong to tenantId.
+Returns the collection of wishlists interactions that belong to tenantId.  This API is internal only
 
 The returned list is paginated - 20 default (50 maximum).  The API will respond with the number of interactions returned in the page, and the interactionId for the  last interaction returned for that response, which should then be used for the subsequent API call to retrieve the next page.  
 
@@ -1014,7 +1020,64 @@ If no interactions exist, this method returns a ResourceNotFound error.
 - 403 Forbidden 
 - 404 Not Found
 ```
+-->
 
+## Delete Wishlist(s) by customer ID or customerRef
+
+Delete Wishlist by customer marks the specified customer's wishlist(s) as deleted and produces an HTTP response confirming the action.  The customer is identified either by the TWC Internal customer identifier or the retailers own customerRef.  All of the customer wishlists are deleted. The wishlists are actually retained in the system for reporting purposes, but are de-identified so cannot be linked back to the customer.
+
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+| Endpoint| ```/api/wishlists/customer```|
+|-----------|---------------|
+| Method    | DELETE          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
+
+| Query Parameters | Description |
+|---|---|
+| ```customerId``` | This is the TWC system generated unique customer identifier. e.g: ```bbccc612-0f1b-4d9d-b69e-d43511c6782d```. API will remove the wishlists for the given ID.  Either ```customerId``` or ```customerRef``` must be provided with this API call.|
+| ```customerRef``` | This is the retailers assigned unique customer reference identifier. e.g: ```CUST001```. The API will remove the wishlists matching the given customer reference number.  Either ```customerId``` or ```customerRef``` must be provided with this API call.|
+
+<summary>Response - 204 (Deleted)</summary> 
+
+<summary>HTTP Status Code</summary> 
+
+``` 
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+
+<!--
+## Delete Wishlist by ID
+
+Delete Wishlist marks the matching wishlist as deleted and produces an HTTP response confirming the action.  In this case the Wishlist is identified by the TWC internal wishlist identifier.
+
+If the wishlist does not exist, this method returns a ResourceNotFound error.
+
+| Endpoint| ```/api/wishlists/{id}```|
+|-----------|---------------|
+| Method    | DELETE          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
+
+| Path Parameters | Description |
+|---|---|
+| ```id``` | This is the TWC system generated unique wishlist identifier. e.g: ```67ccc612-0f1b-4d9d-b69e-d43511c6782d```. API will remove the wishlists for the given TWC ID.|
+
+<summary>Response - 204 (Deleted)</summary> 
+
+<summary>HTTP Status Code</summary> 
+
+``` 
+- 204 Deleted
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
+-->
 
 # **WishlistItem**
 
@@ -1103,9 +1166,9 @@ To create a wishlist item, you need to provide either of the following:
 ```
 
 
-## Add multple Wishlist Items
+## Add multple Wishlist Items using wishlist ID or wishlistRef
 
-Add multiple items to an existing wishlist. Please provide either item ID or item reference (itemRef).
+Add multiple items to an existing wishlist. Please provide either wislist ID or wishlistRef.
 
 | Endpoint| ```/api/wishlist/add-items```|
 |-----------|---------------|
@@ -1173,14 +1236,10 @@ Add multiple items to an existing wishlist. Please provide either item ID or ite
 - 409 Conflict
 ```
 
+<!--
+## Update a Wishlist Item
 
-## Update WishlistItems
-
-The APIs below provide mechanisms to update wishlist items.  The retailer may choose the most appropriate API to suit their circumstances.
-
-### Update a Wishlist Item
-
-Update a wishlist item (for example to change the chosen variant).  Developer must supply either the wishlist ID and item ID (both internal TWC values) or the wishlistRef and itemRef (both retailer's own identifiers).
+Update a wishlist item (for example to change the chosen variant).  Developer must supply the TWC wishlist Item ID item ID.
 
 Note that itemRef is the client's unique identifier for a wishlist item associated with a wishlist item.  It is NOT the productRef, which typically could be the retailer's product SKU.
 
@@ -1266,11 +1325,10 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 - 404 Not Found
 ```
 
+-->
+## Update a Wishlist Item By Wishlist item Id
 
-### Update a Wishlist Item By Ref
-
-Update a wishlist item (for example to change the selected variant).  Developer must supply the wishlistRef and itemRef (both the retailer's own identifiers).
-
+Update a wishlist item (for example to change the selected variant if the size or colour of the product is updated).  Developer must supply the wishlist Item Ref.
 Note that itemRef is the client's unique identifier for a wishlist item associated with a single wishlist item.  It is NOT the productRef, which typically could be the retailer's product SKU.
 
 If the variant is being changed, then the original variant ID (TWC internal ID) must also be provided.
@@ -1356,9 +1414,9 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 ```
 
 
-### Update a Wishlist Item By Id
+## Update a Wishlist Item By wishlist item Id
 
-Update a wishlist item (for example to change the selected variant).  Developer must supply the wishlist ID and item ID (both TWC internal identifiers).
+Update a wishlist item (for example to change the selected variant).  Developer must supply the item ID.  Note, this is the TWC wishlistItem identifier, NOT the productID or varantID.
 
 If the variant is being changed, then the original variant ID (TWC internal ID) must also be provided.
 
@@ -1444,11 +1502,7 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 ```
 
 
-## Get Wishlist Items
-
-THe APIs below provide mechanisms to get all items in a single wishlist, or a single wishlist item.
-
-### Get all Items in a Wishlist by Wishlist Id
+## Get all Items in a Wishlist by Wishlist Id
 
 Returns a list of all wishlist items belonging to the given wishlist identifier (TWC internal identifier).
 
@@ -1540,8 +1594,7 @@ Results are paginated, page size is 20, maximum 50.  If the item does not exist,
 }
 ```
 
-
-### Get Wishlist Item by Item Id
+## Get Wishlist Item by Item Id
 
 Returns the wishlist item belonging to the given item Id (TWC internal item identifier)
 
