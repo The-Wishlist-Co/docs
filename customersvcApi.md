@@ -32,9 +32,9 @@ The only mandatory field when creating a customer is email, although we recommen
   - [Customer](#customer)
     - [Create](#create)
     - [Update](#update)
-    - [Validate](#validate)
     - [Delete](#delete)
     - [Get](#get)
+    - [Notes](#notes)
 
 
 ## **General Notes**
