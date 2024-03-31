@@ -23,7 +23,6 @@ An **inventory location** represents a geographical location where your stores, 
       - [**Location Resource**](#location-resource)
         - [Create an inventory Location](#create-an-inventory-location)
         - [Create multiple inventory Locations](#create-multiple-inventory-locations)
-        - [Validate an inventory Location](#validate-an-inventory-location)
         - [Update an inventory Location By Id](#update-an-inventory-location-by-id)
         - [Update an inventory Location By Ref](#update-an-inventory-location-by-ref)
         - [Find Inventory Location by id and locationRef](#find-inventory-location-by-id-and-locationref)
