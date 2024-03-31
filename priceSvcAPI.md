@@ -2,7 +2,7 @@
 [Back to Home](index.md#welcome-to-the-wishlist)
 
 # **Price API**
-The price APIs allow developers to manage information about product and variant prices.  
+The price APIs allow developers to manage information about product and variant prices.  Normally these APIs are not used by retailers, as products and pricing are typically synchronised through other means (e.g. overnight batch).  However, these APIs are provided if required and may be useful if real-time price-drop notifications are required.
 
 ### Index
 
@@ -29,7 +29,7 @@ All requests or responses are JSON objects.
 <!-- <details> -->
  <summary><font size="4">Price </font></summary>
 
-```id``` - string - The unique ID of the price.It will auotmatically generate while creating the location.
+```id``` - string - The TWC unique ID of the price item.  This will auotmatically generate while creating the location.
 
 ```priceRef``` - string - The unique reference of the price.
 
@@ -183,7 +183,7 @@ HTTP Status Code:
 ```
 
 
-## Update A Price By ID
+## Update A Variant Price By Variant ID
 
 Method: ``` PUT ``` 
 
@@ -251,7 +251,7 @@ HTTP Status Code:
 ```
 
 
-## Update A Price By Ref
+## Update A Price By Variant Ref
 
 Method: ``` PUT ``` 
 
