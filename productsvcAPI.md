@@ -50,9 +50,10 @@ All requests or responses are JSON objects.
 ***
 Represents a product. 
  
- `active` - boolean - Indicates a product is enabled.
+ `active` - boolean - Used by Shopify to indicate a product is enabled.  Depreciated field in TWC
  
  `additionalImageLink` - string - Additional image link (URL).
+ `additionalImageLink2` - string - Second additional image link (URL) for product.
  
  `attributeGroups` - [AttributeGroup](Common_Fields/attributeGroup.md) - An optional group of attibute values stored under as a object in the group "attributeGroups".
  
@@ -292,7 +293,7 @@ Represents a product Variant.
 
 ## **Product Service**
  
-## Create a Product
+### Create a Product
 Creates a new Product data set in the TWC system.
 
 Please note that it is mandatory for you to include a productRef (your own internal product identifier).
@@ -693,7 +694,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Update a Product
+### Update a Product
 Update Product data set in the TWC system.
 
 Endpoint: ```/api/v2/products```
@@ -1225,7 +1226,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-
+<!--
 ## Update a Product By ID
 Update Product data set in the TWC system.
 
@@ -2297,10 +2298,10 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+-->
 
-
-## Look up Product by gtin/productRef
-Returns a list of  products  from a specific Store while passing the gtin/productRef as a query params in the endpoint. The Tenant authentication maps to a Store.
+### Find products by gtin (sku) or productRef
+Returns a list of  products  from a specific Store while passing the gtin (SKU) or productRef as a query parameters in the endpoint. 
 If the products does not exist, this method returns a empty list.
 
 Endpoint: ```/api/v2/products/lookup```
@@ -2308,7 +2309,6 @@ Endpoint: ```/api/v2/products/lookup```
 Method: ``` GET ``` 
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
-
 
 
  <summary>Request Headers :</summary>
@@ -2726,7 +2726,7 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-
+<!--
 ## Validate Request
 
 Validates the Product Request 
@@ -3850,11 +3850,12 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+-->
 
-## Find Product by ID
+### Get Product by ID
 
-Returns a Product by its ID from a specific Store while passing the respective ID as a path variable in the endpoint. The Tenant authentication maps to a Store.
-If the Product does not exist, this method returns a Blank.
+Returns a Product by its ID from a specific Store while passing the respective ID as a path variable in the endpoint. 
+If the Product does not exist, this method returns a blank value.
 
 Endpoint: ```/api/v2/products/{id}```
 
@@ -4144,7 +4145,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Delete Product by ID
+### Delete Product by ID
 Deleting a Product marks the Product as deleted and produces the HTTP response confirming the action.
 If the Product does not exist, this method returns a empty response.
 
@@ -4183,8 +4184,8 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-
-## Find Product by Ref
+<!--
+## Get Product by Ref
 
 Returns a Product by its Ref from a specific Store while passing the respective Ref as a path param in the endpoint. The Tenant authentication maps to a Store.
 If the Product does not exist, this method returns a blank response.
@@ -4474,8 +4475,8 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-
-## Delete Product by Ref
+-->
+### Delete Product by Ref
 
 Deleting a Product by ref marks the Product as deleted and produces the HTTP response confirming the action.
 If the product does not exist, this method returns a empty response.
@@ -4520,8 +4521,8 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Upload Products
-Creates an array of new products in the TWC system.
+### Add multiple Products
+Creates an array of new products.
 
 Endpoint: ```/api/v2/uploadProducts```
 
@@ -4808,7 +4809,7 @@ HTTP Status Code:
 
 ## **Product Variant Service**
 
-## Create a Product Variant
+### Create a Product Variant
 
 Creates a new Product Variants data set in the TWC system.
 
@@ -5416,7 +5417,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-
+<!--
 ## Update a Product Variant By ID
 Update Product Variant data set in the TWC system.
 
@@ -6202,10 +6203,10 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+-->
+## Get Variant by Variant ID
 
-## Find Product Variant by ID
-
-Returns a Product Variant by its ID from a specific Store while passing the respective ID as a query param in the endpoint. The Tenant authentication maps to a Store.
+Returns a Product Variant by its ID from a specific Store while passing the respective ID as a query param in the endpoint. 
 If the Product Variant does not exist, this method returns a Blank.
 Endpoint: ```/api/v2/products/variants/{id}```
 
@@ -6386,9 +6387,11 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-## Find Product Variant by Ref
 
-Returns a Product variant by its Ref from a specific Store while passing the respective Ref as a path param in the endpoint. The Tenant authentication maps to a Store.
+
+## Get Variant by Variant Ref
+
+Returns a Product variant by its Ref from a specific Store while passing the respective Ref as a path param in the endpoint. 
 If the Product does not exist, this method returns a blank response.
 
 Endpoint: ```/api/v2/products/variants/{variantRef}/byref```
@@ -6571,7 +6574,9 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-## Delete Product variant by Ref
+
+
+### Delete Variant by Variant Ref
 
 Deleting a Product variant by ref marks the Product variant as deleted and produces the HTTP response confirming the action.
 If the product variant does not exist, this method returns a empty response.
@@ -6615,8 +6620,10 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-## Find Product variants by productId
-Returns a list of Product variants from a specific Store while passing the productId as a Path variable in the endpoint. The Tenant authentication maps to a Store.
+
+
+### Get all product variants by productId
+Returns a list of Product variants using the productId as a path variable. 
 If the Product variants does not exist, this method returns a empty list.
 
 Endpoint: ```/api/v2/products/{productId}/variants```
@@ -6656,6 +6663,8 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+
+<!--  seems same as above
 ## Find  Product variants by productId
 Returns Product variant from a specific Store while passing the productId as a Path variable in the endpoint. The Tenant authentication maps to a Store.
 If the Product variant does not exist, this method returns a empty list.
@@ -6833,7 +6842,8 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-
+-->
+<!-- Internal use only
 ## Delete Product variants by product Id/variantId
 
 Deleting a Product variants marks the Product variants as deleted and produces the HTTP response confirming the action.
@@ -6877,8 +6887,8 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-
-## Upload Product Variants
+-->
+## Add multiple Variants
 Creates an array of new Product variants in the TWC system.
 
 Endpoint: ```/api/v2/uploadVariants```
