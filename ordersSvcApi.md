@@ -213,6 +213,7 @@ All requests or responses are JSON objects.
 
 ## **Order Item Resource**
 
+<!--
 ## Validate Order Entry
 
 Endpoint: ```​/api​/v1​/orders​/entries​/validate```
@@ -293,10 +294,10 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-
+-->
 ## **Order Resource**
 
-## Create an order
+### Create an order
 
 Endpoint: ```​/api​/v1​/orders​```
 
@@ -879,7 +880,7 @@ HTTP Status Code:
 ```
 
 
-## Update an order
+### Update an order using order Id or order Ref
 
 Endpoint: ```​/api​/v1​/orders​```
 
@@ -1462,7 +1463,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-
+<!--
 ## Update an order By Order Id
 
 Endpoint: ```​/api​/v1​/orders​/id={id:.*}```
@@ -2049,8 +2050,6 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-
-
 
 ## Update an order By Order Refence
 
@@ -2640,9 +2639,10 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+-->
 
-
-## Find orders
+## Get order
+Get an order by order Id or order Ref
 
 Endpoint: ```​/api​/v1​/orders```
 
@@ -2954,7 +2954,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-
+<!--
 ## Search orders
 
 Endpoint: ```​​/api​/v1​/orders​/search```
@@ -3572,11 +3572,11 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-
+-->
 
 ## **Order Item**
 
-## Search entries for an order
+### Get all order lines (entries) for an order using order Id or order Ref
 Endpoint: ```​​/api​/v1​/orders​/entries```
 
 Method: ```GET ```
@@ -3888,8 +3888,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-
-## Create an order entry
+## Create an order line (entry)
 Endpoint: ```​​/api​/v1​/orders​/entries```
 
 Method: ```POST ```
@@ -4411,7 +4410,7 @@ HTTP Status Code:
 ```
 
 
-## Search an order entry/line
+## Get an order entry/line using entry ID or entry Ref
 
 Endpoint: ```​​/api​/v1​/orders​/entry```
 
@@ -4724,7 +4723,7 @@ HTTP Status Code:
 ```
 
 
-## Delete order entry/line
+## Delete order entry/line by entry Id or entry Ref
 
 Endpoint: ```​​/api​/v1​/orders​/entry```
 
