@@ -3,10 +3,12 @@
 
 
 # **Inventory API**
-An inventory item represents a physical good.
+
+The inventory API is used to manage locations (both warehouses and stores), and stock levels within these locations
+
+TWC automatically synchronises inventory with our Shopify App, so this API is typically not used by retailers.   It is is provided for those retailers that want to update inventory in real-time within TWC, however in most non-Shopify situations, inventory is synchronised via regular batch updates.
 
 There is a 1:1 relationship between a product variant and an inventory level. Each product variant includes the ID of its related inventory level. You can use the product variant ID to query the InventoryLevel resource to retrieve the location and quantity for an inventory item.
-
 
 Each **inventory level** belongs to one product variant and has one location. For every location where an inventory item can be stocked, there's an inventory level that represents the product variant quantities relating to that location.
 
@@ -30,7 +32,6 @@ An **inventory location** represents a geographical location where your stores, 
       - [**Stock Level Resource**](#stock-level-resource)
         - [Create an inventory level](#create-an-inventory-level)
         - [Create Multiple inventory level](#create-multiple-inventory-level)
-        - [Validate inventory level](#validate-inventory-level)
         - [Update an inventory level](#update-an-inventory-level)
         - [Update Stock By Id](#update-stock-by-id)
         - [Update Stock By Ref](#update-stock-by-ref)
@@ -129,7 +130,7 @@ All requests or responses are JSON objects.
 
 ## **Location Resource**
 
-## Create an inventory Location
+### Create a Location
 
 Method : ``` POST ``` 
 
@@ -340,7 +341,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Create multiple inventory Locations
+## Create multiple Locations
 
 Method : ``` POST ``` 
 
@@ -545,7 +546,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-
+<!--
 ## Validate an inventory Location
 
 Method : ``` POST ``` 
@@ -561,7 +562,7 @@ OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcA
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-<!-- <details> --> 
+
 <summary> Sample Request : </summary>
 
 ```json
@@ -647,7 +648,7 @@ OAuth 2.0 Scopes : `Tenant authentication` - [authentication](authenticationsvcA
   "url": "string"
 }
 ```
-<!-- </details> -->
+
 
 <summary>Response - 200 (OK)</summary>
 
@@ -663,6 +664,8 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
+-->
+<!--
 ## Update an inventory Location By Id
 
 Update an inventory Location data set in the TWC system based on ID.
@@ -673,7 +676,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
-<!-- <details> -->
+
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -681,7 +684,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-<!-- </details> -->
+
 
  Path Variable: 
  
@@ -690,7 +693,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
  
  ```
  
-<!-- <details> -->
+
  <summary>Sample Request</summary>
 
 ```json
@@ -776,9 +779,9 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 }
 
 ```
-<!-- </details> -->
 
-<!-- <details> -->
+
+
 <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -868,7 +871,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 } 
 
 ```
-<!-- </details> -->
+
 
 HTTP Status Code: 
 ``` json
@@ -882,7 +885,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Update an inventory Location By Ref
+### Update an inventory Location By Ref
 Update an inventory Location data set in the The Wishlist system based on locationRef.
 
 Endpoint: ```/api/location/locationRef={locationRef}"```
@@ -891,7 +894,7 @@ Method: ``` PUT ```
 
 OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcApi.md)
 
-<!-- <details> -->
+
  <summary>Request Headers</summary>
 
 | Key           | Value            |
@@ -899,7 +902,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-<!-- </details> -->
+
 
  Path Variable: 
  
@@ -908,7 +911,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
  
  ```
  
-<!-- <details> -->
+
  <summary>Sample Request</summary>
 
 ```json
@@ -992,9 +995,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "url": "string"
 }
 ```
-<!-- </details> -->
 
-<!-- <details> -->
 <summary>Response - 200 (OK)</summary>
 
 ```json
@@ -1082,7 +1083,6 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "url": "string"
 }
 ```
-<!-- </details> -->
 
 HTTP Status Code: 
 ``` json
@@ -1095,8 +1095,8 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-
-## Find Inventory Location by id and locationRef
+-->
+### Get Location by id or Ref
 
 Endpoint : ```/api/location```
 
@@ -1224,7 +1224,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Delete Inventory Location
+### Delete Location by Id or Ref
 
 Endpoint: ```/api/location```
 
@@ -1264,10 +1264,9 @@ HTTP Status Code:
 ```
 
 
-
 ## **Stock Level Resource**
 
-## Create an inventory level
+### Create a stock level
 
 Method : ``` POST ``` 
 
@@ -1449,7 +1448,7 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Create Multiple inventory levels
+### Create multiple stock levels
 
 Method : ``` POST ``` 
 
@@ -1632,7 +1631,7 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-
+<!--
 ## Validate inventory level
 
 Method: ``` POST ``` 
@@ -1648,7 +1647,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 | Content-Type  | application/json |
 | X-TWC-Tenant  | {Tenant Name}    |
 
-<!-- <details> --> 
+
 <summary> Sample Request : </summary>
 
 ```json
@@ -1724,7 +1723,7 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
   "stockRef": "string"
 }
 ```
-<!-- </details> -->
+
 
 <summary>Response - 200 (OK)</summary>
 
@@ -1739,8 +1738,8 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
-
-## Update an inventory level
+-->
+### Update a stock level
 
 Method: ``` PUT ``` 
 
@@ -1908,7 +1907,6 @@ OAuth 2.0 Scopes: `Tenant authentication` - [authentication](authenticationsvcAp
 ```
 <!-- </details> --> 
 
-
 HTTP Status Code: 
 ``` 
 - 200 OK
@@ -1920,9 +1918,9 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+<!--
 
-
-## Update Stock By Id
+## Update stock By stock Id
 
 Method: ``` PUT ``` 
 
@@ -1943,7 +1941,6 @@ Path Variable:
 id - Stock Id
 ```
 
-<!-- <details> --> 
 <summary> Sample Request : </summary>
 
 ```json
@@ -2015,9 +2012,7 @@ id - Stock Id
   "stockRef": "string"
 }
 ```
-<!-- </details> -->
 
-<!-- <details> --> 
 <summary>Response - 200 (OK Updated)</summary>
  
 ``` json
@@ -2094,7 +2089,6 @@ id - Stock Id
 }
 
 ```
-<!-- </details> --> 
 
 
 HTTP Status Code: 
@@ -2132,7 +2126,7 @@ Path Variable:
 ref - Stock ref
 ```
 
-<!-- <details> --> 
+
 <summary> Sample Request : </summary>
 
 ```json
@@ -2202,9 +2196,7 @@ ref - Stock ref
   "stockOnHand": 0
 }
 ```
-<!-- </details> -->
 
-<!-- <details> --> 
 <summary>Response - 200 (OK Updated)</summary>
  
 ``` json
@@ -2283,8 +2275,6 @@ ref - Stock ref
 }
 
 ```
-<!-- </details> --> 
-
 
 HTTP Status Code: 
 ``` 
@@ -2297,10 +2287,9 @@ HTTP Status Code:
 - 404 Not Found
 - 405 Invalid input
 ```
+-->
 
-
-
-## Find Inventory level by id and stockRef
+### Get stock level by stock id or stockRef
 
 Endpoint: ```/api/stocklevel```
 
@@ -2339,7 +2328,8 @@ HTTP Status Code:
 ```
 
 
-## Find Inventory level for product and location
+### Get stock level for a product and location
+This API gets stock level by locaiton and product identifiers.  It requires either location ID and productVariantId, OR locationRef and product VariantRef.
 
 Endpoint: ```/api/product/stocklevels```
 
@@ -2460,7 +2450,8 @@ HTTP Status Code:
 - 405 Invalid input
 ```
 
-## Find Aggregated inventory level for a product variant
+### Get Aggregate stock level for a product variant using variant ID or variant Ref
+This API retrieves the aggregate of stock levels across all locations for a given variant.
 
 Endpoint: ```/api/stocklevel/{id}```
 
