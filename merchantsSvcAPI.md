@@ -3,7 +3,7 @@
 
 
 # **Merchants API**
-The Merchants API is used to store information about a merchant (retailer), their stores and their staff.  This functionality is useful for defining inventory locations and for when The Wishlist Platform is extended into the stores, as retailers can attribute actions to particular stores and staff and analyse performance of stores and staff.
+The Merchants API is used to store information about a merchant (retailer), their stores and their staff.  
 
 ### Index
 
