@@ -51,10 +51,12 @@ Wishlist items should be saved at the variant level, rather than the parent prod
     - [Update a Wishlist Item](#update-a-wishlist-item)
     - [Update a Wishlist Item By Ref](#update-a-wishlist-item-by-ref)
     - [Update a Wishlist Item By Id](#update-a-wishlist-item-by-id)
+    - [Reset notifyMe And preRelease By productRef/variantRef](#reset-wishlist-item-flag)
   - [Get Wishlist Items](#get-wishlist-items)
     - [Get all Items in a Wishlist by Wishlist Id](#get-all-items-in-a-wishlist-by-wishlist-id)
     - [Get Wishlist Item by Item Id](#get-wishlist-item-by-item-id)
     - [Get Wishlist Item by Item Ref](#get-wishlist-item-by-item-ref)
+    - [Get Wishlist Customers with flag](#get-wishlist-customers-with-flag)
   - [Delete Wishlist Item](#delete-wishlist-item)
     - [Delete Wishlist Item by Id](#delete-wishlist-item-by-id)
     - [Delete Wishlist Item by itemRef](#delete-wishlist-item-by-itemref)
@@ -1501,6 +1503,42 @@ If the variant is being changed, then the original variant ID (TWC internal ID) 
 - 404 Not Found
 ```
 
+## Reset wishlist item flag
+
+Reset the notifyMe and preRelease flag in the wishlist item. Retailer can reset those flags based on productRef OR variantRef but not possbile to update both flag in a single call. Have to update each flag separately.  
+
+The retailer should pass either 'productRef' OR 'variantRef' and 'notifyMe' OR 'preRelease'
+
+
+| Endpoint| ```/api/wishlist/items/resetFlag```|
+|-----------|---------------|
+| Method    | POST          |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
+
+| Query Parameters | What is it for ? |
+|---|---|
+| ```productRef``` | This is the TWC product identifier |
+| ```variantRef``` | This is the TWC variant identifier |
+| ```notifyMe``` | true or false |
+| ```preRelease``` | true or false |
+
+
+<summary>Response - 202 (accepted)</summary>
+
+<summary>HTTP Status Code: </summary>
+
+``` 
+- 202 Accepted
+- 400 Bad Request
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+- 405 Invalid input
+```
+
+
+
 
 ## Get all Items in a Wishlist by Wishlist Id
 
@@ -1719,6 +1757,85 @@ If the item does not exist, this method returns a ResourceNotFound error.
 - 404 Not Found
 ```
 
+### Get Wishlist Customers with flag
+
+Returns the wishlist customers which are enabled notifyMe or preRelease.
+Retailer can filter the customers by providing the  productRef OR variantRef. Also possible without providing those indetifiers. 
+
+The retailer should pass either 'notifyMe' or 'preRelease' in the request. 
+
+If the customers does not exist, this method returns a empty list
+
+| Endpoint| ```/api/wishlist/items/getCustomersWithFlag```|
+|-----------|---------------|
+| Method    | GET           |
+| Headers   | Content-Type: ```application/json``` <br> X-TWC-Tenant ```<tenant-key>``` <br> Authorization ```<tenant-access-token>```
+| How to get access token | [Tenant Authentication](authenticationsvcApi.md)|
+
+| Query Parameters | What is it for ? |
+|---|---|
+| ```productRef``` | This is the TWC product identifier |
+| ```variantRef``` | This is the TWC variant identifier |
+| ```notifyMe``` | true or false |
+| ```preRelease``` | true or false |
+
+<summary>Sample Response - 200 (OK)</summary>
+
+```json
+[
+    {
+        "createdDate": "2023-07-05T07:01:33.905Z",
+        "lastModifiedDate": "2023-07-05T07:01:34.905Z",
+        "id": "81215707-8f68-4478-a045-91b6fd786d29",
+        "customerRef": "LINJUN01",
+        "firstName": "Jun",
+        "lastName": "Lin",
+        "email": "1042796569@qq.com",
+        "addresses": [
+            {
+                "id": "25ebe77a-4caa-48c2-9b63-ce84ad8d7978",
+                "address1": "8 EATHER AVENUE",
+                "city": "NORTH ROCKS",
+                "province": "NSW",
+                "country": "AUSTRALIA",
+                "postcode": "2151",
+                "defaultAddress": false
+            }
+        ],
+        "active": true,
+        "accepts_marketing": false,
+        "marketing_preferences_updated_at": "2023-07-05T07:01:33.905Z",
+        "customer_state": "enabled",
+        "attributeGroups": {
+            "AP21Attributes": {
+                "description": "Customer",
+                "attributes": {
+                    "RETAIL_CUST": "Yes",
+                    "STORE_CODE": "Paddington",
+                    "CREATED_DATE": "6/03/2021",
+                    "PERIDX": "115096",
+                    "LAST_UPDATED": "5/06/2023",
+                    "REF1_GROUP": "REXMEM",
+                    "RETAIL_REP": "No",
+                    "STORE_NO": "204"
+                }
+            }
+        },
+        "taxExempt": false,
+        "taxExemptions": [],
+        "verified_email": false
+    }
+]
+```
+
+<summary>HTTP Status Code: </summary>
+
+``` 
+- 200 OK
+- 401 Unauthorized
+- 403 Forbidden 
+- 404 Not Found
+```
 
 ## Delete Wishlist Item
 
